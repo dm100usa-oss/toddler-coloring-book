@@ -33,9 +33,11 @@ const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }
       "adorables. Animales, animales marinos, personajes de cuentos, alimentos y juguetes",
   },
   ru: {
-    src: "/banner/top-ru.jpg",
-    w: 2364,
-    h: 526,
+    /* Имя с цифрой по той же причине, что и у английского: под старым
+       именем лежала прежняя картинка, и кеш мог подставить ее. */
+    src: "/banner/top-ru-2.jpg",
+    w: 1893,
+    h: 427,
     alt:
       "Первая книга-раскраска для малышей 1-3 года: 111 удивительных и милых рисунков. " +
       "Животные, морские обитатели, сказочные персонажи, продукты и игрушки",
