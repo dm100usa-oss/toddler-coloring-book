@@ -12,7 +12,10 @@ import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
    файлах сверху и снизу оставались пустые поля, из-за которых шапка
    занимала весь первый экран и обложку книги приходилось искать
    прокруткой. */
-const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }> = {
+const banners: Record<
+  UiLang,
+  { src: string; w: number; h: number; sm: string; smW: number; smH: number; alt: string }
+> = {
   en: {
     /* Имя изменено намеренно. Первый английский баннер лежал под
        именем top-en.jpg и был почти вдвое выше. Новое имя не дает
@@ -20,6 +23,9 @@ const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }
     src: "/banner/top-en-wide.jpg",
     w: 2172,
     h: 490,
+    sm: "/banner/top-en-sm.jpg",
+    smW: 1312,
+    smH: 440,
     alt:
       "First Coloring Book for Toddlers Ages 1-3: 111 amazing and cute pictures to color. " +
       "Animals, sea animals, fairy-tale characters, food, toys and more",
@@ -28,6 +34,9 @@ const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }
     src: "/banner/top-es.jpg",
     w: 2172,
     h: 487,
+    sm: "/banner/top-es-sm.jpg",
+    smW: 1418,
+    smH: 465,
     alt:
       "El Primer Libro de Colorear para Bebés de 1 a 3 Años: 111 dibujos sorprendentes y " +
       "adorables. Animales, animales marinos, personajes de cuentos, alimentos y juguetes",
@@ -38,6 +47,9 @@ const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }
     src: "/banner/top-ru-2.jpg",
     w: 1893,
     h: 427,
+    sm: "/banner/top-ru-sm.jpg",
+    smW: 1223,
+    smH: 401,
     alt:
       "Первая книга-раскраска для малышей 1-3 года: 111 удивительных и милых рисунков. " +
       "Животные, морские обитатели, сказочные персонажи, продукты и игрушки",
@@ -50,14 +62,21 @@ export function Header({ lang }: { lang: UiLang }) {
   return (
     <header>
       <div className="masthead masthead--art">
+        {/* На телефоне широкий баннер сжимается в полоску: лев и рыбка
+            становятся крошечными, а надпись почти нечитаемой. Поэтому
+            там показывается только сама надпись, крупно. Браузер
+            выбирает картинку сам и лишнюю не скачивает. */}
         <Link className="masthead__banner" href={homePath(lang)}>
-          <img
-            src={banner.src}
-            alt={banner.alt}
-            width={banner.w}
-            height={banner.h}
-            fetchPriority="high"
-          />
+          <picture>
+            <source media="(max-width: 640px)" srcSet={banner.sm} />
+            <img
+              src={banner.src}
+              alt={banner.alt}
+              width={banner.w}
+              height={banner.h}
+              fetchPriority="high"
+            />
+          </picture>
         </Link>
 
       </div>
