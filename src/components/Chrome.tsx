@@ -5,20 +5,37 @@ import { homePath, sectionPath } from "@/lib/routes";
 import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
 
 /* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
-   число рисунков и перечень тем сразу, одной картинкой.
+   число рисунков и перечень тем сразу, одной картинкой. Свой баннер
+   на каждом языке.
 
-   Баннер пока есть только на английском. Испанская и русская версии
-   до появления своих баннеров показывают шапку текстом: английская
-   надпись над испанским текстом сбивает с толку сильнее, чем
-   отсутствие картинки. */
-const banners: Partial<Record<UiLang, { src: string; w: number; h: number; alt: string }>> = {
+   Баннеры обрезаны сверху и снизу по самому рисунку: в исходных
+   файлах сверху и снизу оставались пустые поля, из-за которых шапка
+   занимала весь первый экран и обложку книги приходилось искать
+   прокруткой. */
+const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }> = {
   en: {
     src: "/banner/top-en.jpg",
-    w: 2388,
-    h: 800,
+    w: 2172,
+    h: 490,
     alt:
       "First Coloring Book for Toddlers Ages 1-3: 111 amazing and cute pictures to color. " +
       "Animals, sea animals, fairy-tale characters, food, toys and more",
+  },
+  es: {
+    src: "/banner/top-es.jpg",
+    w: 2172,
+    h: 487,
+    alt:
+      "El Primer Libro de Colorear para Bebés de 1 a 3 Años: 111 dibujos sorprendentes y " +
+      "adorables. Animales, animales marinos, personajes de cuentos, alimentos y juguetes",
+  },
+  ru: {
+    src: "/banner/top-ru.jpg",
+    w: 2364,
+    h: 526,
+    alt:
+      "Первая книга-раскраска для малышей 1-3 года: 111 удивительных и милых рисунков. " +
+      "Животные, морские обитатели, сказочные персонажи, продукты и игрушки",
   },
 };
 
@@ -27,31 +44,16 @@ export function Header({ lang }: { lang: UiLang }) {
   const banner = banners[lang];
   return (
     <header>
-      <div className={banner ? "masthead masthead--art" : "masthead"}>
-        {banner ? (
-          <Link className="masthead__banner" href={homePath(lang)}>
-            <img
-              src={banner.src}
-              alt={banner.alt}
-              width={banner.w}
-              height={banner.h}
-              fetchPriority="high"
-            />
-          </Link>
-        ) : (
-          <>
-            <p className="brand">
-              <Link href={homePath(lang)}>
-                <span>Toddler</span> <span>Coloring</span> <span>Book</span>
-              </Link>
-            </p>
-            <p className="tagline">
-              {lang === "es"
-                ? "La primera etapa del dibujo, explicada"
-                : "Первый этап рисования, понятными словами"}
-            </p>
-          </>
-        )}
+      <div className="masthead masthead--art">
+        <Link className="masthead__banner" href={homePath(lang)}>
+          <img
+            src={banner.src}
+            alt={banner.alt}
+            width={banner.w}
+            height={banner.h}
+            fetchPriority="high"
+          />
+        </Link>
 
         {/* Переключатель языка ведет на главную того языка. Точный
             адрес знает каждая страница отдельно, здесь стоит главная. */}
