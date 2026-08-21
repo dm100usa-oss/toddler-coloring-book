@@ -1191,27 +1191,35 @@ ul.award-list li {
   margin: 0 0 var(--gap-3);
 }
 
-/* Пять свойств, которые родители ищут словами. Стоят на месте
-   кнопки покупки: сначала человек понимает, что это за книга. */
+/* Пять свойств книги. Стоят прямо под полосой с возрастом и числом
+   страниц, на месте кнопки покупки: сначала человек понимает, что это
+   за книга, и только потом ему предлагают ее купить.
+
+   Каждый пункт отдельной строкой с тонким разделителем. Списком
+   подряд они сливались в один абзац, и глаз пробегал мимо. */
 .needs {
   list-style: none;
   margin: var(--gap-3) 0 0;
   padding: 0;
-  display: grid;
-  gap: 0.55rem;
+  border-top: 1px solid rgba(51, 32, 44, 0.09);
 }
 .needs li {
   position: relative;
-  padding-left: 1.9rem;
-  line-height: 1.5;
+  padding: 0.62rem 0 0.62rem 2.1rem;
+  border-bottom: 1px solid rgba(51, 32, 44, 0.09);
+  line-height: 1.45;
+  color: var(--ink);
 }
+/* Кружок с галочкой. Мятный, а не розовый: розовый здесь спорил бы
+   с кнопкой покупки, а она должна оставаться единственным ярким
+   пятном на первом экране. */
 .needs li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.42em;
-  width: 1.05rem;
-  height: 1.05rem;
+  top: 0.78em;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background: var(--mint);
   box-shadow: var(--bevel);
@@ -1219,14 +1227,30 @@ ul.award-list li {
 .needs li::after {
   content: "";
   position: absolute;
-  left: 0.3rem;
-  top: 0.72em;
-  width: 0.42rem;
-  height: 0.22rem;
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  left: 0.36rem;
+  top: 1.13em;
+  width: 0.5rem;
+  height: 0.26rem;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  border-radius: 1px;
   transform: rotate(-45deg);
 }
+
+/* Рядом с видео этот же список стоит на цветной подложке и в тесноте,
+   поэтому там он идет без разделителей и плотнее. */
+.video-card__text .needs {
+  border-top: none;
+  margin-top: var(--gap-2);
+}
+.video-card__text .needs li {
+  border-bottom: none;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  font-size: var(--t-small);
+}
+.video-card__text .needs li::before { top: 0.5em; width: 1.05rem; height: 1.05rem; }
+.video-card__text .needs li::after { top: 0.78em; left: 0.3rem; width: 0.42rem; height: 0.22rem; }
 
 /* ==================== СЕТКА РИСУНКОВ ==================== */
 

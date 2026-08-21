@@ -116,11 +116,11 @@ export const editions: Record<UiLang, Edition> = {
       "new. The word under each picture can be colored too, so first words and letters come along " +
       "with the coloring.",
     needs: [
-      "Thick outlines, so a child who cannot aim yet still sees a result",
-      "Large shapes and no small detail",
-      "One drawing per page, printed on one side, so a marker cannot show through",
-      "The word under each picture can be colored too, which turns coloring into first reading",
-      "Animals, sea animals, fairy-tale characters, food, toys and more",
+      "Big, simple pictures, drawn by hand",
+      "Thick outlines a child can actually see",
+      "One drawing per page, printed on one side only",
+      "111 different drawings on familiar, interesting subjects",
+      "A child colors and learns new words at the same time",
     ],
     inside: [
       "111 drawings, all hand drawn by professional illustrators",
@@ -207,11 +207,11 @@ export const editions: Record<UiLang, Edition> = {
       "cotidianos hacen que cada página sea nueva. La palabra debajo de cada dibujo también se " +
       "puede colorear, y así llegan las primeras palabras y letras.",
     needs: [
-      "Líneas gruesas, para que un niño que aún no apunta vea igualmente un resultado",
-      "Formas grandes y sin detalles pequeños",
-      "Un dibujo por página, impreso por una cara, para que el rotulador no traspase",
-      "La palabra debajo de cada dibujo también se colorea, y colorear se vuelve primera lectura",
-      "Animales, animales marinos, personajes de cuento, comida, juguetes y más",
+      "Dibujos grandes y simples, hechos a mano",
+      "Contornos gruesos que el niño ve de verdad",
+      "Un dibujo por página, impreso por una sola cara",
+      "111 dibujos distintos sobre temas conocidos e interesantes",
+      "El niño colorea y aprende palabras nuevas a la vez",
     ],
     inside: [
       "111 dibujos, todos hechos a mano por ilustradores profesionales",
@@ -300,11 +300,11 @@ export const editions: Record<UiLang, Edition> = {
       "каждая страница новая. Слово под рисунком тоже раскрашивается, и первые буквы приходят " +
       "вместе с рисованием.",
     needs: [
-      "Толстые линии: ребенок еще не попадает в контур, но результат видит",
-      "Крупные формы, никаких мелких деталей",
-      "Один рисунок на странице, печать с одной стороны, фломастер не проступает на следующий",
-      "Слово под рисунком тоже раскрашивается, и рисование становится первым чтением",
-      "Животные, морские животные, сказочные герои, еда, игрушки и другое",
+      "Большие и простые рисунки, нарисованные вручную",
+      "Толстые, хорошо заметные контуры",
+      "Один рисунок на странице, печать только с одной стороны",
+      "111 разнообразных рисунков на знакомые и интересные темы",
+      "Ребёнок не только раскрашивает, но и узнаёт новые слова",
     ],
     inside: [
       "111 рисунков, все нарисованы от руки профессиональными художниками",
