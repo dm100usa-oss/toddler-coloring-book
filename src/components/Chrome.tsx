@@ -14,7 +14,10 @@ import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
    прокруткой. */
 const banners: Record<UiLang, { src: string; w: number; h: number; alt: string }> = {
   en: {
-    src: "/banner/top-en.jpg",
+    /* Имя изменено намеренно. Первый английский баннер лежал под
+       именем top-en.jpg и был почти вдвое выше. Новое имя не дает
+       кешу браузера и сети подставить старую картинку. */
+    src: "/banner/top-en-wide.jpg",
     w: 2172,
     h: 490,
     alt:
