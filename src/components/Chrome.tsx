@@ -58,18 +58,10 @@ export function Header({ lang }: { lang: UiLang }) {
           />
         </Link>
 
-        {/* Переключатель языка ведет на главную того языка. Точный
-            адрес знает каждая страница отдельно, здесь стоит главная. */}
-        <nav className="langbar" aria-label="Language">
-          {activeLangs.map((l) => (
-            <Link key={l} href={homePath(l)} aria-current={l === lang ? "true" : undefined}>
-              {dictionaries[l].langName}
-            </Link>
-          ))}
-        </nav>
       </div>
 
-      {/* Раздела "книга" в меню нет: книга это и есть главная. */}
+      {/* Меню и языки в одной полосе: слева разделы, справа язык.
+          Раздела "книга" в меню нет, книга это и есть главная. */}
       <nav className="nav" aria-label={lang === "en" ? "Main" : lang === "es" ? "Principal" : "Основное"}>
         <ul>
           {navFor(lang).map((s) => (
@@ -78,6 +70,36 @@ export function Header({ lang }: { lang: UiLang }) {
             </li>
           ))}
         </ul>
+
+        {/* Язык одной кнопкой. Три языка подряд занимали отдельную
+            строку, а нужны они немногим: человек, пришедший из поиска
+            на своем языке, уже на нужной версии.
+
+            Связь языковых версий между собой при этом не теряется:
+            ее держат служебные записи в заголовке страницы и карта
+            сайта, а не эти ссылки.
+
+            Раскрывается без единой строки скриптов: обычный
+            раскрывающийся блок, он работает и когда скрипты
+            выключены. */}
+        <details className="langpick">
+          <summary aria-label={
+            lang === "en" ? "Language" : lang === "es" ? "Idioma" : "Язык"
+          }>
+            {dictionaries[lang].langName}
+          </summary>
+          <ul>
+            {activeLangs
+              .filter((x) => x !== lang)
+              .map((x) => (
+                <li key={x}>
+                  <Link href={homePath(x)} hrefLang={x}>
+                    {dictionaries[x].langName}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </details>
       </nav>
     </header>
   );

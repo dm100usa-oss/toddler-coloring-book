@@ -1324,3 +1324,104 @@ html[lang="ru"] .hero {
   font-weight: 800;
   letter-spacing: -0.01em;
 }
+
+/* ============ МЕНЮ И ЯЗЫК В ОДНОЙ ПОЛОСЕ ============ */
+
+/* Раньше языки занимали отдельную строку над меню. Две полосы подряд
+   съедали высоту первого экрана, а сами языки при этом терялись
+   между баннером и меню. Теперь одна полоса: разделы по центру,
+   язык прижат к правому краю. */
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding-right: clamp(0.6rem, 3vw, 1.6rem);
+}
+.nav ul { padding: 0.85rem 1rem; }
+
+/* Кнопка языка. Раскрывается без скриптов, обычным раскрывающимся
+   блоком: работает даже когда скрипты выключены. */
+.langpick {
+  position: absolute;
+  right: clamp(0.6rem, 3vw, 1.6rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.langpick > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  background: var(--paper);
+  border: var(--edge);
+  box-shadow: var(--shadow-raise);
+  color: var(--pink-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: var(--t-micro);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.langpick > summary::-webkit-details-marker { display: none; }
+.langpick > summary::after {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.12em) rotate(45deg);
+}
+.langpick[open] > summary::after { transform: translateY(0.09em) rotate(-135deg); }
+.langpick > summary:active { transform: scale(0.97); }
+
+.langpick > ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.4rem);
+  z-index: 20;
+  min-width: 100%;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  display: grid;
+  gap: 0.15rem;
+  background: var(--paper);
+  border: var(--edge);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lift);
+}
+.langpick > ul a {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.langpick > ul a:hover {
+  background: var(--pink-pale);
+  text-decoration: none;
+}
+
+/* На узком экране язык встает в общий поток под разделами:
+   прижатая к краю кнопка налезала бы на них. */
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 0.7rem;
+  }
+  .nav ul { padding-bottom: 0.5rem; }
+  .langpick {
+    position: static;
+    transform: none;
+  }
+  .langpick > ul {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
