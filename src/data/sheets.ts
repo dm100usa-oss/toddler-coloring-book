@@ -14,6 +14,7 @@ import type { UiLang } from "./dictionaries";
    и дальше решает сам.
 
    Файлы лежат в /printables. Английский лист: <id>. Испанский: <id>-es.
+   Русский: <id>-ru.
    У каждого три файла: превью .png и две версии для печати,
    -letter.pdf для американской бумаги и -a4.pdf для остального мира. */
 
@@ -23,19 +24,20 @@ export type Sheet = {
 };
 
 export const sheets: Sheet[] = [
-  { id: "lion", name: { en: "Lion", es: "León" } },
-  { id: "elephant", name: { en: "Elephant", es: "Elefante" } },
-  { id: "giraffe", name: { en: "Giraffe", es: "Jirafa" } },
-  { id: "zebra", name: { en: "Zebra", es: "Cebra" } },
-  { id: "rhino", name: { en: "Rhino", es: "Rinoceronte" } },
-  { id: "monkey", name: { en: "Monkey", es: "Mono" } },
-  { id: "crocodile", name: { en: "Crocodile", es: "Cocodrilo" } },
-  { id: "kangaroo", name: { en: "Kangaroo", es: "Canguro" } },
-  { id: "bear", name: { en: "Bear", es: "Oso" } },
-  { id: "fox", name: { en: "Fox", es: "Zorro" } },
+  { id: "lion", name: { en: "Lion", es: "León", ru: "Лев" } },
+  { id: "elephant", name: { en: "Elephant", es: "Elefante", ru: "Слон" } },
+  { id: "giraffe", name: { en: "Giraffe", es: "Jirafa", ru: "Жираф" } },
+  { id: "zebra", name: { en: "Zebra", es: "Cebra", ru: "Зебра" } },
+  { id: "rhino", name: { en: "Rhino", es: "Rinoceronte", ru: "Носорог" } },
+  { id: "monkey", name: { en: "Monkey", es: "Mono", ru: "Обезьяна" } },
+  { id: "crocodile", name: { en: "Crocodile", es: "Cocodrilo", ru: "Крокодил" } },
+  { id: "kangaroo", name: { en: "Kangaroo", es: "Canguro", ru: "Кенгуру" } },
+  { id: "bear", name: { en: "Bear", es: "Oso", ru: "Медведь" } },
+  { id: "fox", name: { en: "Fox", es: "Zorro", ru: "Лиса" } },
 ];
 
-export const sheetFile = (id: string, lang: UiLang) => (lang === "es" ? `${id}-es` : id);
+export const sheetFile = (id: string, lang: UiLang) =>
+  lang === "en" ? id : `${id}-${lang}`;
 
 export const sheetPreview = (id: string, lang: UiLang) =>
   `/printables/${sheetFile(id, lang)}.png`;

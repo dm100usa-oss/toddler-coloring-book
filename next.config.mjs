@@ -1,11 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* Домен новый, старых адресов у него нет, поэтому список перебросов пуст.
-     Он оставлен здесь намеренно: когда появятся страницы, которые придется
-     переименовать, каждый старый адрес нужно вписывать сюда, а не бросать
-     отвечать "страницы нет". */
+  /* Раздел "книга" убран: книга это и есть главная страница. Старые
+     адреса раздела не должны отвечать "страницы нет" — их знают
+     поисковики и, возможно, чьи-то закладки. Они переброшены
+     на главную того же языка, постоянным перебросом: раздел убран
+     навсегда, а не на время. */
   async redirects() {
-    return [];
+    return [
+      { source: "/en/coloring-book", destination: "/en", permanent: true },
+      { source: "/es/libro-para-colorear", destination: "/es", permanent: true },
+      { source: "/en/coloring-book/:path*", destination: "/en", permanent: true },
+      { source: "/es/libro-para-colorear/:path*", destination: "/es", permanent: true },
+    ];
   },
 };
 

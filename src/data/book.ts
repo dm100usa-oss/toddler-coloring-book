@@ -1,25 +1,42 @@
 import type { UiLang } from "./dictionaries";
 
-/* Единственная книга этого сайта. Два издания, английское и испанское,
-   это одна и та же книга: те же 111 рисунков, разные подписи под ними.
+/* Книга этого сайта. Три издания: английское, испанское и русское.
+   Рисунки во всех трех одни и те же, все 111, отличаются только слова
+   под ними.
 
-   Все данные взяты с настоящих карточек на Amazon. Ничего не придумано:
-   ни число страниц, ни оценка, ни размер. Расхождение между сайтом
-   и карточкой магазина замечает и покупатель, и поисковик. */
+   Английское и испанское издания продаются на Amazon в бумаге.
+   Русского бумажного издания нет: Amazon не печатает по-русски,
+   поэтому русская версия продается файлом для печати дома.
+
+   Все данные английского и испанского изданий взяты с настоящих
+   карточек Amazon. Ничего не придумано: ни число страниц, ни оценка,
+   ни размер. Расхождение между сайтом и карточкой магазина замечает
+   и покупатель, и поисковик. */
 
 export type Edition = {
   lang: UiLang;
   title: string;
   subtitle: string;
-  /** Номер книги в Amazon. По нему собирается ссылка на товар. */
-  asin: string;
-  price: string;
+  /** Одна законченная фраза под названием. Она отвечает на вопрос
+      целиком, поэтому нейросеть может процитировать ее как есть,
+      ничего не дописывая от себя. */
+  headline: string;
+  /** Номер книги в Amazon. У русского издания его нет. */
+  asin?: string;
+  /** Адрес страницы, где продается файл для печати. */
+  pdfUrl?: string;
+  price?: string;
   published: string;
   size: string;
   cover: string;
   coverSize: { w: number; h: number };
-  rating: { value: number; count: number };
+  rating?: { value: number; count: number };
   lead: string;
+  /** Пять свойств, которые родители ищут словами. Стоят справа
+      от обложки, на первом экране, вместо кнопки покупки:
+      сначала человек понимает, что это за книга, и только потом
+      ему предлагают ее купить. */
+  needs: string[];
   inside: string[];
   /** Кому книга подходит и кому нет. Второе важнее первого:
       родитель, которому честно сказали "не берите", возвращается. */
@@ -29,7 +46,7 @@ export type Edition = {
   slug: string;
   /** Ролик с перелистыванием книги. Снимает главное сомнение
       родителя перед покупкой: что там внутри на самом деле. */
-  video: {
+  video?: {
     src: string;
     poster: string;
     seconds: number;
@@ -48,13 +65,15 @@ export const BOOK = {
   amazonUrl: (asin: string) => `https://www.amazon.com/dp/${asin}`,
 
   /** Три квадратные картинки из книги: простая форма, крупный рисунок,
-      узнаваемый предмет. Ровно те три свойства, о которых говорит сайт. */
+      узнаваемый предмет. Ровно те три свойства, о которых говорит сайт.
+      Те же три, что стоят на карточке книги в каталоге издательства. */
   artwork: [
     {
       file: "/art/simple.png",
       alt: {
         en: "Simple: an outline turtle drawn with thick lines, one object on the page",
         es: "Simples: una tortuga de contorno grueso, un solo objeto en la página",
+        ru: "Просто: черепаха толстым контуром, один предмет на странице",
       },
     },
     {
@@ -62,6 +81,7 @@ export const BOOK = {
       alt: {
         en: "Big: a cow drawing filling the page, colored in by a small child",
         es: "Grandes: una vaca que llena la hoja, coloreada por un niño pequeño",
+        ru: "Крупно: корова во весь лист, раскрашенная маленьким ребенком",
       },
     },
     {
@@ -69,6 +89,7 @@ export const BOOK = {
       alt: {
         en: "Recognizable: a smiling red car, one of the everyday objects in the book",
         es: "Reconocibles: un coche rojo sonriente, uno de los objetos cotidianos del libro",
+        ru: "Узнаваемо: улыбающаяся красная машина, один из предметов книги",
       },
     },
   ],
@@ -79,6 +100,8 @@ export const editions: Record<UiLang, Edition> = {
     lang: "en",
     title: "First Coloring Book for Toddlers Ages 1-3",
     subtitle: "111 big, simple drawings, one per page",
+    headline:
+      "111 big, simple drawings with thick outlines, one per page, for children aged 1 to 3.",
     asin: "1963328272",
     price: "$6.99",
     published: "2024-04-22",
@@ -92,6 +115,13 @@ export const editions: Record<UiLang, Edition> = {
       "page. Animals, fairy-tale characters, flowers, foods and everyday objects keep every page " +
       "new. The word under each picture can be colored too, so first words and letters come along " +
       "with the coloring.",
+    needs: [
+      "Thick outlines, so a child who cannot aim yet still sees a result",
+      "Large shapes and no small detail",
+      "One drawing per page, printed on one side, so a marker cannot show through",
+      "The word under each picture can be colored too, which turns coloring into first reading",
+      "Animals, sea animals, fairy-tale characters, food, toys and more",
+    ],
     inside: [
       "111 drawings, all hand drawn by professional illustrators",
       "Thick outlines and large shapes, so a child who cannot aim yet still sees a result",
@@ -161,6 +191,8 @@ export const editions: Record<UiLang, Edition> = {
     lang: "es",
     title: "El Primer Libro de Colorear para Bebés de 1 a 3 Años",
     subtitle: "111 dibujos grandes y simples, uno por página",
+    headline:
+      "111 dibujos grandes y simples de línea gruesa, uno por página, para niños de 1 a 3 años.",
     asin: "1963328205",
     price: "$6.99",
     published: "2024-04-29",
@@ -174,6 +206,13 @@ export const editions: Record<UiLang, Edition> = {
       "con un dibujo por página. Animales, personajes de cuento, flores, comidas y objetos " +
       "cotidianos hacen que cada página sea nueva. La palabra debajo de cada dibujo también se " +
       "puede colorear, y así llegan las primeras palabras y letras.",
+    needs: [
+      "Líneas gruesas, para que un niño que aún no apunta vea igualmente un resultado",
+      "Formas grandes y sin detalles pequeños",
+      "Un dibujo por página, impreso por una cara, para que el rotulador no traspase",
+      "La palabra debajo de cada dibujo también se colorea, y colorear se vuelve primera lectura",
+      "Animales, animales marinos, personajes de cuento, comida, juguetes y más",
+    ],
     inside: [
       "111 dibujos, todos hechos a mano por ilustradores profesionales",
       "Líneas gruesas y formas grandes, para que un niño que aún no apunta vea igualmente un resultado",
@@ -237,5 +276,84 @@ export const editions: Record<UiLang, Edition> = {
         "gafas, el grifo, el trol, el cangrejo, el pulpo, el perro, la ardilla, el zorro y la " +
         "gallina. Diecinueve segundos, sin sonido.",
     },
+  },
+
+  ru: {
+    lang: "ru",
+    title: "Первая книга-раскраска для малышей от 1 до 3 лет",
+    subtitle: "111 больших простых рисунков, по одному на странице",
+    headline:
+      "111 больших простых рисунков с толстым контуром, по одному на странице, для детей от 1 до 3 лет.",
+    /* Русского бумажного издания нет. Файл для печати продается
+       отдельной страницей. Пока адреса нет, кнопки на сайте тоже нет:
+       кнопка, ведущая в пустоту, хуже, чем ее отсутствие. */
+    pdfUrl: undefined,
+    price: undefined,
+    published: "2024-04-22",
+    size: "21,6 x 27,9 см",
+    cover: "/covers/book-ru.jpg",
+    coverSize: { w: 900, h: 1165 },
+    slug: "pervaya-kniga-raskraska-1-3-goda",
+    lead:
+      "111 простых больших рисунков, нарисованных от руки толстой линией, без мелких деталей, " +
+      "по одному рисунку на странице. Животные, сказочные герои, цветы, еда и предметы вокруг: " +
+      "каждая страница новая. Слово под рисунком тоже раскрашивается, и первые буквы приходят " +
+      "вместе с рисованием.",
+    needs: [
+      "Толстые линии: ребенок еще не попадает в контур, но результат видит",
+      "Крупные формы, никаких мелких деталей",
+      "Один рисунок на странице, печать с одной стороны, фломастер не проступает на следующий",
+      "Слово под рисунком тоже раскрашивается, и рисование становится первым чтением",
+      "Животные, морские животные, сказочные герои, еда, игрушки и другое",
+    ],
+    inside: [
+      "111 рисунков, все нарисованы от руки профессиональными художниками",
+      "Толстый контур и крупные формы: ребенок, который еще не попадает, все равно видит результат",
+      "Один рисунок на странице, печать с одной стороны: фломастер не портит следующий рисунок",
+      "Слово под каждым рисунком тоже раскрашивается, и рисование становится первым чтением",
+      "Каждый рисунок в середине листа, удобно и левше, и правше",
+      "Животные, морские животные, сказочные герои, транспорт, цветы и еда",
+      "Страница в начале, где ребенок пишет свое имя",
+      "114 страниц, 21,6 x 27,9 см",
+    ],
+    forWhom:
+      "Книга сделана для этапа между первой осознанной чертой и первой формой, закрашенной " +
+      "нарочно. У большинства детей это возраст от года до трех. Подходит как первая раскраска, " +
+      "для детского сада и как подарок, когда вы плохо знаете ребенка.",
+    notFor:
+      "Если ребенок уже без усилий остается внутри контура и заканчивает страницу за несколько " +
+      "минут, книга ему будет скучна. В этот момент нужна картинка с большим числом участков " +
+      "или книга с рисованием по шагам, где ребенок строит рисунок сам.",
+    faq: [
+      {
+        q: "Не сложно ли это для ребенка в год?",
+        a:
+          "Нет. Рисунки нарочно сделаны простыми под самый младший возраст. Годовалый будет " +
+          "закрашивать поверх формы, трехлетний начнет попадать внутрь. Одна и та же книга " +
+          "работает все три года, в этом и смысл.",
+      },
+      {
+        q: "Чем лучше раскрашивать?",
+        a:
+          "В начале толстыми восковыми карандашами. Они не требуют силы в руке, не рвут бумагу и " +
+          "оставляют широкий след, который ребенок действительно видит. Фломастеры дают яркий " +
+          "цвет, но проходят бумагу насквозь. Цветные карандаши требуют хвата пальцами, которого " +
+          "у большинства детей до трех лет еще нет.",
+      },
+      {
+        q: "На какой бумаге печатать файл?",
+        a:
+          "Подойдет обычная бумага для принтера. Печатайте с одной стороны: если ребенок возьмет " +
+          "фломастер, он пройдет лист насквозь, и на двусторонней печати испортит рисунок с " +
+          "обратной стороны. Плотная бумага от 120 грамм решает это полностью.",
+      },
+      {
+        q: "Есть ли книга на бумаге?",
+        a:
+          "На английском и испанском да, они продаются на Amazon. Русского бумажного издания нет: " +
+          "Amazon не печатает книги на русском. Поэтому русская версия выходит файлом, который вы " +
+          "печатаете дома столько раз, сколько нужно.",
+      },
+    ],
   },
 };

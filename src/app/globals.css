@@ -1154,3 +1154,169 @@ ul.award-list li {
   padding: 0.7rem 0.9rem;
 }
 .label-card__watch b { display: block; color: var(--ink); margin-bottom: 0.2rem; }
+
+/* ==================== ШАПКА С БАННЕРОМ ==================== */
+
+/* Баннер книги во всю ширину. Небо, облака и солнце под ним не нужны:
+   баннер сам по себе картинка, два рисунка друг на друге спорят. */
+.masthead--art {
+  padding: 0 0 0.5rem;
+  background: #fdeef3;
+}
+.masthead__banner {
+  display: block;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.masthead__banner img {
+  width: 100%;
+  height: auto;
+}
+.masthead--art .langbar {
+  margin-top: 0.35rem;
+}
+
+/* ==================== ПЕРВЫЙ ЭКРАН КНИГИ ==================== */
+
+/* Одна законченная фраза под названием. Крупнее обычного текста,
+   но тише заголовка: ее читают сразу после названия. */
+.headline {
+  font-size: var(--t-lead);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 0 0 var(--gap-3);
+}
+
+/* Пять свойств, которые родители ищут словами. Стоят на месте
+   кнопки покупки: сначала человек понимает, что это за книга. */
+.needs {
+  list-style: none;
+  margin: var(--gap-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.needs li {
+  position: relative;
+  padding-left: 1.9rem;
+  line-height: 1.5;
+}
+.needs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: var(--bevel);
+}
+.needs li::after {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 0.72em;
+  width: 0.42rem;
+  height: 0.22rem;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+/* ==================== СЕТКА РИСУНКОВ ==================== */
+
+/* Рисунки вырезаны из книги без подписи. Подпись стоит текстом:
+   так она читается на любом размере и ее видит поисковик. */
+.thumbs {
+  list-style: none;
+  margin: var(--gap-3) 0 var(--gap-4);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--gap-2);
+}
+.thumbs li {
+  background: var(--paper);
+  border: var(--edge);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-raise);
+  padding: 0.6rem 0.5rem 0.7rem;
+  text-align: center;
+}
+.thumbs img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+.thumbs span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: var(--t-small);
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.25;
+}
+.thumbs--small {
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: var(--gap-3);
+}
+.thumbs--small li {
+  box-shadow: none;
+  padding: 0.35rem 0.3rem 0.45rem;
+}
+.thumbs--small span {
+  font-size: var(--t-micro);
+  font-weight: 400;
+}
+
+/* Все 111 рисунков. Свернуто, чтобы не оглушать человека, но лежит
+   на той же странице, поэтому список читают поисковик и нейросеть. */
+.all-drawings {
+  border: var(--edge);
+  border-radius: var(--radius);
+  background: var(--mint-pale);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: var(--gap-4);
+}
+.all-drawings > summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: var(--t-h3);
+  color: var(--mint-deep);
+  list-style: none;
+}
+.all-drawings > summary::-webkit-details-marker { display: none; }
+.all-drawings > summary::before {
+  content: "+ ";
+  font-weight: 800;
+}
+.all-drawings[open] > summary::before { content: "− "; }
+.all-drawings__body { margin-top: var(--gap-2); }
+.all-drawings__body h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-h3);
+  color: var(--ink-soft);
+  margin: var(--gap-2) 0 0.4rem;
+}
+.all-drawings__body li { background: var(--paper); }
+
+/* ==================== КИРИЛЛИЦА ==================== */
+
+/* Baloo 2 и Caveat Brush кириллицы не знают. Русский заголовок в них
+   рассыпался бы на системный шрифт, и страница выглядела бы чужой.
+   Nunito и Caveat кириллицу знают и держат ту же округлую манеру. */
+html[lang="ru"] {
+  --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+}
+html[lang="ru"] h1,
+html[lang="ru"] h2,
+html[lang="ru"] .section,
+html[lang="ru"] .hero {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}

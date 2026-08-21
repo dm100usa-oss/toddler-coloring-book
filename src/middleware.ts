@@ -10,7 +10,7 @@ import type { NextRequest } from "next/server";
    неизвестные адреса на главную нельзя: поисковик решит, что по адресу
    что-то есть, хотя там пусто, и перестанет доверять структуре сайта. */
 
-const OPEN_LANGS = ["es", "en"] as const;
+const OPEN_LANGS = ["ru", "es", "en"] as const;
 const FALLBACK = "en";
 
 function pickLang(header: string): string {

@@ -1,28 +1,60 @@
 import Link from "next/link";
-import { dictionaries, activeLangs } from "@/data/dictionaries";
+import { dictionaries, activeLangs, navFor } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
 import { homePath, sectionPath } from "@/lib/routes";
 import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
 
+/* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
+   число рисунков и перечень тем сразу, одной картинкой.
+
+   Баннер пока есть только на английском. Испанская и русская версии
+   до появления своих баннеров показывают шапку текстом: английская
+   надпись над испанским текстом сбивает с толку сильнее, чем
+   отсутствие картинки. */
+const banners: Partial<Record<UiLang, { src: string; w: number; h: number; alt: string }>> = {
+  en: {
+    src: "/banner/top-en.jpg",
+    w: 2388,
+    h: 800,
+    alt:
+      "First Coloring Book for Toddlers Ages 1-3: 111 amazing and cute pictures to color. " +
+      "Animals, sea animals, fairy-tale characters, food, toys and more",
+  },
+};
+
 export function Header({ lang }: { lang: UiLang }) {
   const t = dictionaries[lang];
+  const banner = banners[lang];
   return (
     <header>
-      <div className="masthead">
-        <p className="brand">
-          <Link href={homePath(lang)}>
-            <span>Toddler</span> <span>Coloring</span> <span>Book</span>
+      <div className={banner ? "masthead masthead--art" : "masthead"}>
+        {banner ? (
+          <Link className="masthead__banner" href={homePath(lang)}>
+            <img
+              src={banner.src}
+              alt={banner.alt}
+              width={banner.w}
+              height={banner.h}
+              fetchPriority="high"
+            />
           </Link>
-        </p>
-        <p className="tagline">
-          {lang === "en"
-            ? "The first stage of drawing, explained"
-            : "La primera etapa del dibujo, explicada"}
-        </p>
-        {/* Переключатель языка ведет на ту же по смыслу страницу, а не на
-            главную: человека, читавшего про двухлетних, нельзя выкидывать
-            в начало только за то, что он сменил язык. Здесь стоит главная,
-            потому что точный адрес знает каждая страница отдельно. */}
+        ) : (
+          <>
+            <p className="brand">
+              <Link href={homePath(lang)}>
+                <span>Toddler</span> <span>Coloring</span> <span>Book</span>
+              </Link>
+            </p>
+            <p className="tagline">
+              {lang === "es"
+                ? "La primera etapa del dibujo, explicada"
+                : "Первый этап рисования, понятными словами"}
+            </p>
+          </>
+        )}
+
+        {/* Переключатель языка ведет на главную того языка. Точный
+            адрес знает каждая страница отдельно, здесь стоит главная. */}
         <nav className="langbar" aria-label="Language">
           {activeLangs.map((l) => (
             <Link key={l} href={homePath(l)} aria-current={l === lang ? "true" : undefined}>
@@ -31,13 +63,15 @@ export function Header({ lang }: { lang: UiLang }) {
           ))}
         </nav>
       </div>
-      <nav className="nav" aria-label={lang === "en" ? "Main" : "Principal"}>
+
+      {/* Раздела "книга" в меню нет: книга это и есть главная. */}
+      <nav className="nav" aria-label={lang === "en" ? "Main" : lang === "es" ? "Principal" : "Основное"}>
         <ul>
-          <li><Link href={sectionPath(lang, "ages")}>{t.nav.ages}</Link></li>
-          <li><Link href={sectionPath(lang, "guides")}>{t.nav.guides}</Link></li>
-          <li><Link href={sectionPath(lang, "printables")}>{t.nav.printables}</Link></li>
-          <li><Link href={sectionPath(lang, "book")}>{t.nav.book}</Link></li>
-          <li><Link href={sectionPath(lang, "about")}>{t.nav.about}</Link></li>
+          {navFor(lang).map((s) => (
+            <li key={s}>
+              <Link href={sectionPath(lang, s)}>{t.nav[s]}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

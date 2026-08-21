@@ -1,4 +1,4 @@
-import type { UiLang } from "./dictionaries";
+import type { ContentLang } from "./dictionaries";
 
 /* ------------------------------------------------------------------ */
 /*  Этапы первого рисования                                            */
@@ -22,18 +22,18 @@ export type Stage = {
   /* Адрес страницы на каждом языке. Испанский родитель должен видеть
      испанский адрес: английское слово в адресе испанской страницы
      выглядит как недоделка и для человека, и для поисковика. */
-  slug: Record<UiLang, string>;
+  slug: Record<ContentLang, string>;
   /* Типичный возраст. Именно типичный: это диапазон, а не рубеж. */
-  ageLabel: Record<UiLang, string>;
-  title: Record<UiLang, string>;
+  ageLabel: Record<ContentLang, string>;
+  title: Record<ContentLang, string>;
   /* Что рука ребенка обычно уже делает на этом этапе. */
-  can: Record<UiLang, string[]>;
+  can: Record<ContentLang, string[]>;
   /* Чего от ребенка на этом этапе ждать рано. Этот кусок важнее
      предыдущего: почти все разочарования родителя растут из того,
      что от ребенка ждут следующего этапа. */
-  notYet: Record<UiLang, string>;
+  notYet: Record<ContentLang, string>;
   /* Каким должен быть лист, чтобы ребенок увидел результат. */
-  lookFor: Record<UiLang, string[]>;
+  lookFor: Record<ContentLang, string[]>;
   /* Подходит ли наша книга этому этапу и насколько честно. */
   bookFit: "core" | "edge" | "outgrown";
 };
@@ -215,7 +215,7 @@ export const stages: Stage[] = [
 export const stageById = (id: StageId) => stages.find((s) => s.id === id)!;
 
 /** Находит этап по адресу страницы на нужном языке. */
-export const stageBySlug = (lang: UiLang, slug: string) =>
+export const stageBySlug = (lang: ContentLang, slug: string) =>
   stages.find((s) => s.slug[lang] === slug);
 
 /* ------------------------------------------------------------------ */

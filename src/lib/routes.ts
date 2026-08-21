@@ -1,16 +1,20 @@
 import type { UiLang } from "@/data/dictionaries";
 
 /* Разделы сайта. Адрес каждого пишется на языке посетителя:
-   английский родитель видит английский адрес, испанский испанский.
-   Это заметно и человеку, и поисковику. */
-export type Section = "ages" | "guides" | "printables" | "book" | "about" | "terms";
+   английский родитель видит английский адрес, испанский испанский,
+   русский русский. Это заметно и человеку, и поисковику.
+
+   Раздела "книга" здесь больше нет. Книга это и есть главная
+   страница: человек приходит за ней, и отдельная страница про то же
+   самое спорила бы с главной за один и тот же запрос. Старые адреса
+   переброшены на главную в next.config.mjs. */
+export type Section = "ages" | "guides" | "printables" | "about" | "terms";
 
 export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
   en: {
     ages: "by-age",
     guides: "guides",
     printables: "free-coloring-pages",
-    book: "coloring-book",
     about: "about",
     terms: "terms-and-privacy",
   },
@@ -18,9 +22,15 @@ export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
     ages: "por-edad",
     guides: "guias",
     printables: "dibujos-para-colorear-gratis",
-    book: "libro-para-colorear",
     about: "quienes-somos",
     terms: "condiciones-y-privacidad",
+  },
+  ru: {
+    ages: "po-vozrastu",
+    guides: "stati",
+    printables: "raskraski-raspechatat",
+    about: "o-nas",
+    terms: "prava-i-privatnost",
   },
 };
 

@@ -1,4 +1,4 @@
-import type { UiLang } from "./dictionaries";
+import type { ContentLang } from "./dictionaries";
 import type { StageId } from "./stages";
 
 /* Руководства.
@@ -17,14 +17,14 @@ import type { StageId } from "./stages";
 
 export type Guide = {
   id: string;
-  slug: Record<UiLang, string>;
-  title: Record<UiLang, string>;
+  slug: Record<ContentLang, string>;
+  title: Record<ContentLang, string>;
   /* Короткий ответ на вопрос статьи. Стоит сразу под заголовком.
      Именно его забирает поисковик в выдачу и нейросеть в ответ,
      поэтому он должен быть законченным ответом, а не завлекалкой. */
-  lead: Record<UiLang, string>;
-  body: Record<UiLang, string[]>;
-  faq: Record<UiLang, { q: string; a: string }[]>;
+  lead: Record<ContentLang, string>;
+  body: Record<ContentLang, string[]>;
+  faq: Record<ContentLang, { q: string; a: string }[]>;
   /* Этап, к которому статья ближе всего. Связывает статью
      со страницей этапа в обе стороны. */
   stage?: StageId;
@@ -723,5 +723,5 @@ export const guides: Guide[] = [
   },
 ];
 
-export const guideBySlug = (lang: UiLang, slug: string) =>
+export const guideBySlug = (lang: ContentLang, slug: string) =>
   guides.find((g) => g.slug[lang] === slug);

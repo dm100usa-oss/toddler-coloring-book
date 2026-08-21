@@ -3,12 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { dictionaries } from "@/data/dictionaries";
-import type { UiLang } from "@/data/dictionaries";
+import type { ContentLang } from "@/data/dictionaries";
 import { pickStage, stageById } from "@/data/stages";
 import type { Answers } from "@/data/stages";
 import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
-import { sectionPath } from "@/lib/routes";
+import { homePath, sectionPath } from "@/lib/routes";
 
 /* Подборщик первой раскраски.
 
@@ -23,7 +23,7 @@ import { sectionPath } from "@/lib/routes";
 const KEYS = ["age", "grip", "inside", "attention"] as const;
 type Key = (typeof KEYS)[number];
 
-export default function Picker({ lang }: { lang: UiLang }) {
+export default function Picker({ lang }: { lang: ContentLang }) {
   const t = dictionaries[lang].picker;
   const c = dictionaries[lang].common;
   const [answers, setAnswers] = useState<Partial<Answers>>({});
@@ -144,7 +144,7 @@ export default function Picker({ lang }: { lang: UiLang }) {
         <div className="result__block">
           <h4>{t.bookLine}</h4>
           <div className="pick">
-            <Link className="pick__cover" href={sectionPath(lang, "book")}>
+            <Link className="pick__cover" href={homePath(lang)}>
               <img
                 src={ed.cover}
                 alt={ed.title}
@@ -154,13 +154,13 @@ export default function Picker({ lang }: { lang: UiLang }) {
             </Link>
             <div>
               <p className="subtitle">
-                <Link href={sectionPath(lang, "book")}>{ed.title}</Link>
+                <Link href={homePath(lang)}>{ed.title}</Link>
               </p>
               <p style={{ fontSize: "var(--t-small)", margin: "0 0 0.9rem" }}>{ed.lead}</p>
               <p style={{ margin: 0 }}>
                 <a
                   className="btn btn--pink"
-                  href={BOOK.amazonUrl(ed.asin)}
+                  href={BOOK.amazonUrl(ed.asin!)}
                   rel="nofollow sponsored noopener"
                   target="_blank"
                 >

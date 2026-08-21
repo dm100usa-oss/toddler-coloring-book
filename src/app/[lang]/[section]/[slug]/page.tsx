@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { activeLangs, dictionaries } from "@/data/dictionaries";
-import type { UiLang } from "@/data/dictionaries";
+import { activeLangs, contentLangs, dictionaries, isContentLang } from "@/data/dictionaries";
+import type { UiLang, ContentLang } from "@/data/dictionaries";
 import { stages, stageBySlug, stageById } from "@/data/stages";
 import { guides, guideBySlug } from "@/data/guides";
 import type { Guide } from "@/data/guides";
 import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
-import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
+import { homePath, sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
 import { jsonLd, organization, breadcrumbs, langAlternates, faqPage } from "@/lib/schema";
 import { Sources } from "../page";
@@ -23,7 +23,9 @@ import { Sources } from "../page";
 
 export function generateStaticParams() {
   const out: { lang: string; section: string; slug: string }[] = [];
-  for (const lang of activeLangs) {
+  /* Этапы и статьи написаны на английском и испанском. Русских
+     страниц этих разделов пока нет, и адреса для них не строятся. */
+  for (const lang of contentLangs) {
     for (const st of stages) {
       out.push({ lang, section: sectionSlugs[lang].ages, slug: st.slug[lang] });
     }
@@ -41,7 +43,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, section, slug } = await params;
   if (!activeLangs.includes(lang as UiLang)) return {};
-  const l = lang as UiLang;
+  const ui = lang as UiLang;
+  if (!isContentLang(ui)) return {};
+  const l = ui;
   const sec = sectionFromSlug(l, section);
 
   if (sec === "guides") {
@@ -89,7 +93,9 @@ export default async function StagePage({
 }) {
   const { lang, section, slug } = await params;
   if (!activeLangs.includes(lang as UiLang)) notFound();
-  const l = lang as UiLang;
+  const ui = lang as UiLang;
+  if (!isContentLang(ui)) notFound();
+  const l = ui;
   const sec = sectionFromSlug(l, section);
   if (sec === "guides") {
     const g = guideBySlug(l, slug);
@@ -223,21 +229,21 @@ export default async function StagePage({
               {l === "en" ? "The book we publish for this stage" : "El libro que publicamos para esta etapa"}
             </h2>
             <div className="pick">
-              <Link className="pick__cover" href={sectionPath(l, "book")}>
+              <Link className="pick__cover" href={homePath(l)}>
                 <img src={ed.cover} alt={ed.title} width={ed.coverSize.w} height={ed.coverSize.h} />
               </Link>
               <div>
                 <p className="subtitle">
-                  <Link href={sectionPath(l, "book")}>{ed.title}</Link>
+                  <Link href={homePath(l)}>{ed.title}</Link>
                 </p>
                 <p style={{ margin: "0 0 0.9rem" }}>{ed.lead}</p>
                 <p style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", margin: 0 }}>
-                  <Link className="btn btn--ghost" href={sectionPath(l, "book")}>
+                  <Link className="btn btn--ghost" href={homePath(l)}>
                     {t.home.bookCta}
                   </Link>
                   <a
                     className="btn btn--pink"
-                    href={BOOK.amazonUrl(ed.asin)}
+                    href={BOOK.amazonUrl(ed.asin!)}
                     rel="nofollow sponsored noopener"
                     target="_blank"
                   >
@@ -294,7 +300,7 @@ export default async function StagePage({
    забирает в ответ целиком, поэтому он написан как законченный ответ,
    а не как подводка к чтению. */
 
-function GuideArticle({ lang, guide }: { lang: UiLang; guide: Guide }) {
+function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
   const t = dictionaries[lang];
   const ed = editions[lang];
   const picks = sample(4);
@@ -433,7 +439,7 @@ function GuideArticle({ lang, guide }: { lang: UiLang; guide: Guide }) {
                 ? "We publish one coloring book for this age: 111 drawings, thick outlines, one per page, printed on one side."
                 : "Publicamos un libro para colorear para esta edad: 111 dibujos, contornos gruesos, uno por página, impreso por una cara."}
             </span>
-            <Link className="btn btn--ghost" href={sectionPath(lang, "book")}>
+            <Link className="btn btn--ghost" href={homePath(lang)}>
               {t.home.bookCta}
             </Link>
           </p>
