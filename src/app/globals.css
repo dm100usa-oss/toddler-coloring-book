@@ -1425,3 +1425,16 @@ html[lang="ru"] .hero {
     transform: translateX(-50%);
   }
 }
+
+
+/* Кнопка, которой пока некуда вести. Выглядит как кнопка, но это
+   не ссылка: нажать нельзя, курсор обычный, цвет приглушен. Так
+   человек видит, что издание существует, и не проваливается в пустоту. */
+.btn--soon {
+  background: var(--mint-pale);
+  color: var(--mint-deep);
+  border: 1px dashed rgba(23, 114, 108, 0.45);
+  box-shadow: none;
+  cursor: default;
+}
+.btn--soon:hover { text-decoration: none; }
