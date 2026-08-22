@@ -3,6 +3,7 @@ import { activeLangs, isContentLang } from "@/data/dictionaries";
 import { stages } from "@/data/stages";
 import { guides } from "@/data/guides";
 import { basisSlug } from "@/data/tool";
+import { agePages } from "@/data/agepages";
 import { SITE_URL, SITE_UPDATED } from "@/lib/site";
 import { homePath, sectionPath, sectionSlugs, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -43,6 +44,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified,
         priority: 0.7,
       });
+
+      /* Возрастные страницы. Стоят наравне со страницами этапов:
+         именно на них приходит родитель с запросом, где есть цифра. */
+      for (const ap of agePages) {
+        out.push({
+          url: SITE_URL + itemPath(lang, "tools", ap.slug[lang]),
+          lastModified,
+          priority: 0.85,
+        });
+      }
     }
   }
   return out;

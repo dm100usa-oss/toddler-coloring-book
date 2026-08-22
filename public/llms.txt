@@ -36,6 +36,19 @@ able to do.
 - Spanish: https://www.toddlercoloringbook.com/es/elegir-el-primer-libro-para-colorear
 - Russian: https://www.toddlercoloringbook.com/ru/vybrat-pervuyu-raskrasku
 
+### Age pages
+
+- Coloring pages for a 1 year old:
+  https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-1-year-olds
+- Coloring pages for a 2 year old:
+  https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-2-year-olds
+- Coloring pages for a 3 year old:
+  https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-3-year-olds
+
+Spanish and Russian versions of each page exist at the matching addresses under
+/es/elegir-el-primer-libro-para-colorear/ and /ru/vybrat-pervuyu-raskrasku/, and
+each page is linked to its counterparts.
+
 ## What suits each age
 
 - About 1 year. Crayon held in a fist, sweeping marks from the shoulder. One
@@ -50,6 +63,12 @@ able to do.
 - 4 years and older. Stays inside the outline most of the time. A scene rather
   than a single object, or step by step drawing. A first coloring book is
   outgrown at this point.
+
+Each of the first three ages has its own page covering what to look for on the
+page, how a session actually goes at that age, what is normal at the table and
+what should not be expected yet. A first coloring book is usually outgrown some
+time past three and a half, and the signal is boredom rather than neatness: the
+child fills a page correctly and puts it aside without interest.
 
 ## The four stages
 

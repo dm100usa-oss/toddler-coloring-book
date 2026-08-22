@@ -9,6 +9,8 @@ import type { Guide } from "@/data/guides";
 import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
 import { basisCopy, basisSlug, toolLabels } from "@/data/tool";
+import { agePages, agePageBySlug, agePageLabels } from "@/data/agepages";
+import type { AgePage } from "@/data/agepages";
 import { homePath, sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
 import { jsonLd, organization, breadcrumbs, langAlternates, faqPage } from "@/lib/schema";
@@ -36,6 +38,11 @@ export function generateStaticParams() {
     /* Страница оснований лежит внутри раздела инструмента: правила
        подбора это часть инструмента, а не отдельная тема сайта. */
     out.push({ lang, section: sectionSlugs[lang].tools, slug: basisSlug[lang] });
+    /* Возрастные страницы лежат в том же разделе: родитель приходит
+       на них по запросу с цифрой, а инструмент стоит над ними. */
+    for (const ap of agePages) {
+      out.push({ lang, section: sectionSlugs[lang].tools, slug: ap.slug[lang] });
+    }
   }
   return out;
 }
@@ -70,6 +77,22 @@ export async function generateMetadata({
   }
 
   if (sec === "tools") {
+    const ap = agePageBySlug(l, slug);
+    if (ap) {
+      const c = ap.copy[l];
+      return {
+        title: c.title,
+        description: c.lead,
+        alternates: {
+          canonical: `${SITE_URL}${itemPath(l, "tools", ap.slug[l])}`,
+          languages: langAlternates({
+            en: `${SITE_URL}${itemPath("en", "tools", ap.slug.en)}`,
+            es: `${SITE_URL}${itemPath("es", "tools", ap.slug.es)}`,
+            ru: `${SITE_URL}${itemPath("ru", "tools", ap.slug.ru)}`,
+          }),
+        },
+      };
+    }
     if (slug !== basisSlug[l]) return {};
     const b = basisCopy[l];
     return {
@@ -123,6 +146,8 @@ export default async function StagePage({
     return <GuideArticle lang={l} guide={g} />;
   }
   if (sec === "tools") {
+    const ap = agePageBySlug(l, slug);
+    if (ap) return <AgeArticle lang={l} page={ap} />;
     if (slug !== basisSlug[l]) notFound();
     return <BasisPage lang={l} />;
   }
@@ -587,6 +612,223 @@ function BasisPage({ lang }: { lang: ContentLang }) {
               {t.nav.tools}
             </Link>
           </p>
+        </div>
+      </section>
+
+      <Sources lang={lang} />
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Страница одного возраста                                           */
+/* ------------------------------------------------------------------ */
+
+/* Родитель ищет "раскраска для 2 лет", с цифрой. Эта страница отвечает
+   именно на такой запрос и отвечает целиком, не отсылая читать другое.
+
+   Со страницей этапа она не спорит, потому что говорит о другом.
+   Страница этапа объясняет, что происходит с рукой ребенка и почему.
+   Эта отвечает родителю, который стоит перед полкой: что брать, что
+   будет происходить за столом и что считать нормальным. Ссылки стоят
+   в обе стороны, чтобы человек с любого входа дошел до нужного. */
+
+function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
+  const t = dictionaries[lang];
+  const c = page.copy[lang];
+  const x = agePageLabels[lang];
+  const st = stageById(page.stage);
+  const ed = editions[lang];
+  const picks = sample(4);
+
+  /* Соседние возрасты. Родитель, попавший не туда, должен уйти на
+     нужную страницу в один шаг, а не через меню. */
+  const others = agePages.filter((p) => p.id !== page.id);
+
+  const data = jsonLd(
+    organization(),
+    breadcrumbs(lang, [
+      { name: t.nav.tools, path: sectionPath(lang, "tools") },
+      { name: c.title, path: itemPath(lang, "tools", page.slug[lang]) },
+    ]),
+    {
+      "@type": "Article",
+      headline: c.title,
+      description: c.lead,
+      inLanguage: t.htmlLang,
+      dateModified: SITE_UPDATED,
+      author: { "@type": "Organization", name: PUBLISHER },
+      publisher: { "@id": `${SITE_URL}/#publisher` },
+      citation: SOURCES.map((src) => ({
+        "@type": "CreativeWork",
+        name: src.title,
+        publisher: { "@type": "Organization", name: src.publisher },
+        url: src.url,
+      })),
+    },
+    faqPage(c.faq)
+  );
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+
+      <div className="pagehead">
+        <h1>{c.title}</h1>
+        <p>{c.lead}</p>
+      </div>
+
+      <section className="band">
+        <div className="wrap">
+          <div className="teach">
+            {c.body.map((p) => (
+              <p className="teach-p" key={p.slice(0, 40)}>
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band band--cream">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{c.doTitle}</h2>
+            <ul className="teach-list">
+              {c.steps.map((line) => (
+                <li key={line.slice(0, 40)}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Листы из книги, бесплатно. Родителю, который дочитал до сюда,
+          проще один раз распечатать и посмотреть своими глазами, чем
+          поверить нам на слово. */}
+      <section className="band">
+        <div className="wrap">
+          <h2 className="section">{t.sec.stagePages}</h2>
+          <div className="sheets">
+            {picks.map((sh) => (
+              <figure className="sheet" key={sh.id}>
+                <a className="sheet__link" href={sheetPdf(sh.id, lang, "letter")} download>
+                  <img
+                    src={sheetPreview(sh.id, lang)}
+                    alt={t.sec.sheetAlt(sh.name[lang])}
+                    loading="lazy"
+                  />
+                </a>
+                <h3>{sh.name[lang]}</h3>
+                <p className="sheet__links">
+                  <a className="btn btn--sky" href={sheetPdf(sh.id, lang, "letter")} download>
+                    {t.common.letter}
+                  </a>
+                  <a className="btn btn--ghost" href={sheetPdf(sh.id, lang, "a4")} download>
+                    {t.common.a4}
+                  </a>
+                </p>
+              </figure>
+            ))}
+          </div>
+          <p>
+            <Link className="btn btn--sun" href={sectionPath(lang, "printables")}>
+              {t.home.printablesCta}
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="band band--cream">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{t.sec.questions}</h2>
+            <div className="faq faq--two">
+              {c.faq.map((item) => (
+                <details key={item.q}>
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Книга. Все три возраста внутри того, для чего она сделана,
+          поэтому здесь она стоит честно. */}
+      <section className="band">
+        <div className="wrap">
+          <h2 className="section">{t.picker.bookLine}</h2>
+          <div className="pick">
+            <Link className="pick__cover" href={homePath(lang)}>
+              <img
+                src={ed.cover}
+                alt={ed.title}
+                width={ed.coverSize.w}
+                height={ed.coverSize.h}
+              />
+            </Link>
+            <div>
+              <p className="subtitle">
+                <Link href={homePath(lang)}>{ed.title}</Link>
+              </p>
+              <p style={{ fontSize: "var(--t-small)", margin: "0 0 0.9rem" }}>{ed.lead}</p>
+              <p style={{ margin: 0 }}>
+                {ed.asin ? (
+                  <a
+                    className="btn btn--pink"
+                    href={BOOK.amazonUrl(ed.asin)}
+                    rel="nofollow sponsored noopener"
+                    target="_blank"
+                  >
+                    {t.common.amazon}
+                    {ed.price ? ` · ${ed.price}` : ""}
+                  </a>
+                ) : ed.pdfUrl ? (
+                  <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                    {t.sec.buyPdf}
+                    {ed.price ? ` · ${ed.price}` : ""}
+                  </a>
+                ) : (
+                  <span className="btn btn--soon" aria-disabled="true">
+                    {t.sec.soon}
+                  </span>
+                )}
+              </p>
+              <p className="buy-note" style={{ marginBottom: 0 }}>
+                {t.sec.buyNote}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Соседние возрасты, этап и сам инструмент. Три выхода со
+          страницы, каждый в свою сторону. */}
+      <section className="band band--mint">
+        <div className="wrap">
+          <h2 className="section">{x.otherAges}</h2>
+          <ul className="guides">
+            {others.map((p) => (
+              <li key={p.id}>
+                <Link href={itemPath(lang, "tools", p.slug[lang])}>{p.copy[lang].title}</Link>
+                <span>{p.copy[lang].lead}</span>
+              </li>
+            ))}
+            <li>
+              <Link href={itemPath(lang, "ages", st.slug[lang])}>{st.title[lang]}</Link>
+              <span>
+                <b>{st.ageLabel[lang]}</b>
+                {". "}
+                {x.stageLink}
+              </span>
+            </li>
+            <li>
+              <Link href={sectionPath(lang, "tools")}>{t.nav.tools}</Link>
+              <span>{x.toolLink}</span>
+            </li>
+          </ul>
         </div>
       </section>
 

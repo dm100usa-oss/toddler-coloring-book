@@ -9,6 +9,7 @@ import { stages, stageById } from "@/data/stages";
 import type { StageId } from "@/data/stages";
 import { sheets, sheetPreview, sheetPdf } from "@/data/sheets";
 import { toolCopy, toolLabels, ageRows, basisSlug } from "@/data/tool";
+import { agePages, agePageLabels } from "@/data/agepages";
 import Picker from "@/components/Picker";
 import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -190,6 +191,7 @@ export default async function SectionPage({
         </section>
       )}
 
+      {s === "tools" && isContentLang(l) && <AgePageList lang={l} />}
       {s === "tools" && isContentLang(l) && <BasisLink lang={l} />}
 
       {s !== "about" && s !== "terms" && <Sources lang={l} />}
@@ -227,11 +229,20 @@ function AgeTable({ lang }: { lang: ContentLang }) {
             <tbody>
               {ageRows.map((r) => {
                 const st = stageById(r.stage as StageId);
+                /* У первых трех строк есть своя возрастная страница,
+                   и ссылка ведет туда. У последней строки такой
+                   страницы нет: после четырех лет первая раскраска
+                   уже мала, и вести туда родителя незачем. Он уходит
+                   на страницу этапа, где сказано, что искать дальше. */
+                const ap = agePages.find((p) => p.id === r.id);
+                const href = ap
+                  ? itemPath(lang, "tools", ap.slug[lang])
+                  : itemPath(lang, "ages", st.slug[lang]);
                 return (
                   <tr key={r.id}>
                     <th scope="row">
                       {r.age[lang]}
-                      <Link href={itemPath(lang, "ages", st.slug[lang])}>{x.moreAbout}</Link>
+                      <Link href={href}>{x.moreAbout}</Link>
                     </th>
                     <td data-label={x.colHand}>{r.hand[lang]}</td>
                     <td data-label={x.colPage}>{r.page[lang]}</td>
@@ -267,6 +278,34 @@ function ToolPicker({ lang }: { lang: ContentLang }) {
           {x.pickerLead}
         </p>
         <Picker lang={lang} />
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Разбор по возрастам                                                */
+/* ------------------------------------------------------------------ */
+
+/* Три страницы под инструментом, каждая под свой запрос с цифрой.
+   Инструмент это центр, а они ловят конкретные поиски и ведут
+   обратно к нему. */
+
+function AgePageList({ lang }: { lang: ContentLang }) {
+  const x = agePageLabels[lang];
+  return (
+    <section className="band">
+      <div className="wrap">
+        <h2 className="section">{x.listTitle}</h2>
+        <p className="lead">{x.listLead}</p>
+        <ul className="guides">
+          {agePages.map((p) => (
+            <li key={p.id}>
+              <Link href={itemPath(lang, "tools", p.slug[lang])}>{p.copy[lang].title}</Link>
+              <span>{p.copy[lang].lead}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
