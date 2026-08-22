@@ -8,11 +8,12 @@ import type { UiLang } from "@/data/dictionaries";
    страница: человек приходит за ней, и отдельная страница про то же
    самое спорила бы с главной за один и тот же запрос. Старые адреса
    переброшены на главную в next.config.mjs. */
-export type Section = "tools" | "ages" | "guides" | "printables" | "about" | "terms";
+export type Section = "tools" | "programs" | "ages" | "guides" | "printables" | "about" | "terms";
 
 export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
   en: {
     tools: "choose-a-first-coloring-book",
+    programs: "coloring-books-for-daycare-and-programs",
     ages: "by-age",
     guides: "guides",
     printables: "free-coloring-pages",
@@ -21,6 +22,7 @@ export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
   },
   es: {
     tools: "elegir-el-primer-libro-para-colorear",
+    programs: "libros-para-colorear-para-guarderias-y-programas",
     ages: "por-edad",
     guides: "guias",
     printables: "dibujos-para-colorear-gratis",
@@ -29,6 +31,7 @@ export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
   },
   ru: {
     tools: "vybrat-pervuyu-raskrasku",
+    programs: "raskraski-dlya-detskih-programm",
     ages: "po-vozrastu",
     guides: "stati",
     printables: "raskraski-raspechatat",
