@@ -162,6 +162,13 @@ export const featured: number[] = [
 export const drawingFile = (n: number) =>
   `/drawings/${String(n).padStart(3, "0")}.png`;
 
+/** Страница книги целиком, вместе со словом полыми буквами.
+    Слово в книге на каждом языке свое, поэтому и файл свой.
+    Такие страницы стоят в верхней двадцатке: по ним сразу видно,
+    что слово под рисунком тоже раскрашивается. */
+export const pageFile = (n: number, lang: UiLang) =>
+  `/pages/${lang}/${String(n).padStart(3, "0")}.png`;
+
 export const drawingByNumber = (n: number) =>
   drawings.find((d) => d.n === n);
 

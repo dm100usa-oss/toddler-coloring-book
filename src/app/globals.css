@@ -1212,31 +1212,24 @@ ul.award-list li {
   line-height: 1.45;
   color: var(--ink);
 }
-/* Кружок с галочкой. Мятный, а не розовый: розовый здесь спорил бы
-   с кнопкой покупки, а она должна оставаться единственным ярким
-   пятном на первом экране. */
+/* Кружок без галочки. Галочка это самый заезженный значок в сети,
+   она сразу читается как реклама. Простой кружок с мягкой тенью
+   и светлым бликом сверху держит строку не хуже и выглядит тише.
+   Мятный, а не розовый: розовый спорил бы с кнопкой покупки,
+   а она должна оставаться единственным ярким пятном. */
 .needs li::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0.78em;
-  width: 1.25rem;
-  height: 1.25rem;
+  left: 0.12rem;
+  top: 0.82em;
+  width: 0.85rem;
+  height: 0.85rem;
   border-radius: 50%;
-  background: var(--mint);
-  box-shadow: var(--bevel);
-}
-.needs li::after {
-  content: "";
-  position: absolute;
-  left: 0.36rem;
-  top: 1.13em;
-  width: 0.5rem;
-  height: 0.26rem;
-  border-left: 2.5px solid #fff;
-  border-bottom: 2.5px solid #fff;
-  border-radius: 1px;
-  transform: rotate(-45deg);
+  background: radial-gradient(circle at 34% 30%, #8fe0d8 0%, var(--mint) 58%, #4fbfb5 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 2px rgba(51, 32, 44, 0.16),
+    0 3px 6px rgba(51, 32, 44, 0.11);
 }
 
 /* Добавочные пункты под тремя картинками. Идут в два столбца:
@@ -1273,8 +1266,7 @@ ul.award-list li {
   padding-bottom: 0.3rem;
   font-size: var(--t-small);
 }
-.video-card__text .needs li::before { top: 0.5em; width: 1.05rem; height: 1.05rem; }
-.video-card__text .needs li::after { top: 0.78em; left: 0.3rem; width: 0.42rem; height: 0.22rem; }
+.video-card__text .needs li::before { top: 0.6em; width: 0.7rem; height: 0.7rem; }
 
 /* ==================== СЕТКА РИСУНКОВ ==================== */
 
@@ -1310,6 +1302,13 @@ ul.award-list li {
   color: var(--ink-soft);
   line-height: 1.25;
 }
+/* Верхняя двадцатка это страницы книги целиком, со словом полыми
+   буквами. Пропорция листа, а не квадрат, и подписи текстом под ними
+   нет: слово уже нарисовано на самой странице. */
+.thumbs--pages { grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); }
+.thumbs--pages img { aspect-ratio: 480 / 620; }
+.thumbs--pages li { padding-bottom: 0.6rem; }
+
 .thumbs--small {
   grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
   gap: 0.6rem;

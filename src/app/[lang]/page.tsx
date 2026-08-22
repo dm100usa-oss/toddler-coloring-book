@@ -11,6 +11,7 @@ import {
   drawings,
   featured,
   drawingFile,
+  pageFile,
   drawingByNumber,
   groupOrder,
   groupTitles,
@@ -32,7 +33,7 @@ export async function generateMetadata({
   const ed = editions[l];
   return {
     title: ed.title,
-    description: ed.headline + " " + ed.lead.slice(0, 140),
+    description: ed.headline + " " + ed.note,
     alternates: {
       canonical: `${SITE_URL}${homePath(l)}`,
       languages: langAlternates({
@@ -107,7 +108,9 @@ const words = {
     video: "Книга внутри",
     videoLead:
       "Съемка без монтажа, на столе. Обложка, оборот и страница за страницей, чтобы вы увидели " +
-      "толщину линии и сколько листа занимает один рисунок, прежде чем решать.",
+      "толщину линии и сколько листа занимает один рисунок, прежде чем решать. Снято с " +
+      "английского издания: рисунки во всех изданиях одни и те же, отличается только слово " +
+      "под рисунком.",
     forWhom: "Кому подходит",
     notFor: "Когда эта книга не подойдет",
     faq: "Что спрашивают родители",
@@ -150,7 +153,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       datePublished: ed.published,
       author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
-      description: ed.headline + " " + ed.lead,
+      description: ed.headline + " " + ed.note,
       /* Весь состав книги словами: что внутри, что она дает и где
          пригодится. Человек это читает на странице, машина здесь. */
       disambiguatingDescription: [...ed.needs, ...ed.extras, ...ed.inside].join(". "),
@@ -306,24 +309,31 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           ))}
         </ul>
 
-        <p className="lead-text">{ed.lead}</p>
+        {/* От длинного вводного абзаца осталась одна строка. Все
+            остальное, что в нем было, стоит выше в пунктах, и второй
+            раз человеку это читать незачем. */}
+        <p className="lead-text">{ed.note}</p>
 
         {/* ============ 3. Что внутри: сами рисунки ============ */}
         {/* Пояснения под заголовком нет намеренно: под словами
             "что внутри" и так стоят сами рисунки, объяснять нечего. */}
         <h2 className="section" id="inside">{w.inside}</h2>
 
-        <ul className="thumbs">
+        {/* Двадцать страниц так, как они выглядят в книге: рисунок
+            и слово под ним полыми буквами. Подпись здесь не текстом,
+            а частью страницы, и это важнее: человек сразу видит, что
+            слово тоже раскрашивается. Название для поисковика стоит
+            в подписи к картинке. */}
+        <ul className="thumbs thumbs--pages">
           {top.map((d) => (
             <li key={d!.n}>
               <img
-                src={drawingFile(d!.n)}
+                src={pageFile(d!.n, l)}
                 alt={`${d!.name[l]} ${l === "en" ? "coloring page" : l === "es" ? "para colorear" : "раскраска"}`}
-                width={420}
-                height={420}
+                width={480}
+                height={620}
                 loading="lazy"
               />
-              <span>{d!.name[l]}</span>
             </li>
           ))}
         </ul>

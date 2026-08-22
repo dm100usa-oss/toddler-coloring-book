@@ -32,6 +32,10 @@ export type Edition = {
   coverSize: { w: number; h: number };
   rating?: { value: number; count: number };
   lead: string;
+  /* Одна строка, которая остается на экране после списков. Все
+     остальное, что было в длинном вводном абзаце, уже стоит выше
+     в пунктах: повторять его второй раз незачем. */
+  note: string;
   /** Пять свойств, которые родители ищут словами. Стоят справа
       от обложки, на первом экране, вместо кнопки покупки:
       сначала человек понимает, что это за книга, и только потом
@@ -119,6 +123,9 @@ export const editions: Record<UiLang, Edition> = {
       "111 big, simple pictures, hand drawn with thick lines, no small detail, one drawing per " +
       "page. Animals, fairy-tale characters, flowers, foods and everyday objects keep every page " +
       "new. The word under each picture can be colored too, so first words and letters come along " +
+      "with the coloring.",
+    note:
+      "The word under each picture can be colored too, so first words and letters come along " +
       "with the coloring.",
     needs: [
       "Big, simple pictures, drawn by hand",
@@ -232,6 +239,9 @@ export const editions: Record<UiLang, Edition> = {
       "con un dibujo por página. Animales, personajes de cuento, flores, comidas y objetos " +
       "cotidianos hacen que cada página sea nueva. La palabra debajo de cada dibujo también se " +
       "puede colorear, y así llegan las primeras palabras y letras.",
+    note:
+      "La palabra debajo de cada dibujo también se puede colorear, y así llegan las primeras " +
+      "palabras y letras.",
     needs: [
       "Dibujos grandes y simples, hechos a mano",
       "Contornos gruesos que el niño ve de verdad",
@@ -347,6 +357,8 @@ export const editions: Record<UiLang, Edition> = {
       "по одному рисунку на странице. Животные, сказочные герои, цветы, еда и предметы вокруг: " +
       "каждая страница новая. Слово под рисунком тоже раскрашивается, и первые буквы приходят " +
       "вместе с рисованием.",
+    note:
+      "Слово под рисунком тоже раскрашивается, и первые буквы приходят вместе с рисованием.",
     needs: [
       "Большие и простые рисунки, нарисованные вручную",
       "Толстые, хорошо заметные контуры",
@@ -418,6 +430,13 @@ export const editions: Record<UiLang, Edition> = {
           "игрушек и занимает ребенка надолго, а не на один вечер.",
       },
       {
+        q: "Почему в ролике слова английские?",
+        a:
+          "Ролик снят с английского издания: русского на бумаге нет, снимать нечего. Рисунки во " +
+          "всех изданиях одни и те же, все 111 и в том же порядке, отличается только слово под " +
+          "рисунком. В русском файле все слова русские.",
+      },
+      {
         q: "Есть ли книга на бумаге?",
         a:
           "На английском и испанском да, они продаются на Amazon. Русского бумажного издания нет: " +
@@ -425,5 +444,22 @@ export const editions: Record<UiLang, Edition> = {
           "печатаете дома столько раз, сколько нужно.",
       },
     ],
+    /* Ролик английский: русского издания на бумаге нет, снимать нечего.
+       Рисунки во всех изданиях одни и те же, поэтому ролик честно
+       показывает то, что получит покупатель. Что съемка с английского
+       издания, сказано прямо под роликом и в вопросах. */
+    video: {
+      src: "/video/flip-en.mp4",
+      poster: "/video/flip-en-poster.jpg",
+      seconds: 46,
+      w: 608,
+      h: 1080,
+      description:
+        "Съемка книги без монтажа, на столе. Видно обложку, оборот, титульную страницу и " +
+        "страницу за страницей: один крупный рисунок на листе, печать с одной стороны, слово " +
+        "под рисунком полыми буквами. Среди них брокколи, лотос, подсолнух, пляжная шляпа, " +
+        "воздушный змей и вертолет. В конце страница, где ребенок пишет свое имя. Сорок шесть " +
+        "секунд, без звука. Снято с английского издания, рисунки во всех изданиях одни и те же.",
+    },
   },
 };
