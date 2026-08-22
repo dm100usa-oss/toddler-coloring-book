@@ -4,6 +4,7 @@ import { stages } from "@/data/stages";
 import { guides } from "@/data/guides";
 import { basisSlug } from "@/data/tool";
 import { agePages } from "@/data/agepages";
+import { proPages } from "@/data/propages";
 import { SITE_URL, SITE_UPDATED } from "@/lib/site";
 import { homePath, sectionPath, sectionSlugs, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -50,6 +51,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       for (const ap of agePages) {
         out.push({
           url: SITE_URL + itemPath(lang, "tools", ap.slug[lang]),
+          lastModified,
+          priority: 0.85,
+        });
+      }
+
+      /* Страницы для тех, кто покупает книгу на работу. */
+      for (const pp of proPages) {
+        out.push({
+          url: SITE_URL + itemPath(lang, "programs", pp.slug[lang]),
           lastModified,
           priority: 0.85,
         });

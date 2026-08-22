@@ -10,6 +10,9 @@ import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
 import { basisCopy, basisSlug, toolLabels } from "@/data/tool";
 import { agePages, agePageBySlug, agePageLabels } from "@/data/agepages";
+import { proPages, proPageBySlug, proLabels } from "@/data/propages";
+import type { ProPage } from "@/data/propages";
+import { CONTACT_EMAIL } from "@/lib/site";
 import type { AgePage } from "@/data/agepages";
 import { homePath, sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
@@ -43,6 +46,10 @@ export function generateStaticParams() {
     for (const ap of agePages) {
       out.push({ lang, section: sectionSlugs[lang].tools, slug: ap.slug[lang] });
     }
+    /* Четыре страницы для тех, кто покупает книгу на работу. */
+    for (const pp of proPages) {
+      out.push({ lang, section: sectionSlugs[lang].programs, slug: pp.slug[lang] });
+    }
   }
   return out;
 }
@@ -71,6 +78,24 @@ export async function generateMetadata({
           en: `${SITE_URL}${itemPath("en", "guides", g.slug.en)}`,
           es: `${SITE_URL}${itemPath("es", "guides", g.slug.es)}`,
           ru: `${SITE_URL}${itemPath("ru", "guides", g.slug.ru)}`,
+        }),
+      },
+    };
+  }
+
+  if (sec === "programs") {
+    const pp = proPageBySlug(l, slug);
+    if (!pp) return {};
+    const c = pp.copy[l];
+    return {
+      title: c.title,
+      description: c.lead,
+      alternates: {
+        canonical: `${SITE_URL}${itemPath(l, "programs", pp.slug[l])}`,
+        languages: langAlternates({
+          en: `${SITE_URL}${itemPath("en", "programs", pp.slug.en)}`,
+          es: `${SITE_URL}${itemPath("es", "programs", pp.slug.es)}`,
+          ru: `${SITE_URL}${itemPath("ru", "programs", pp.slug.ru)}`,
         }),
       },
     };
@@ -144,6 +169,11 @@ export default async function StagePage({
     const g = guideBySlug(l, slug);
     if (!g) notFound();
     return <GuideArticle lang={l} guide={g} />;
+  }
+  if (sec === "programs") {
+    const pp = proPageBySlug(l, slug);
+    if (!pp) notFound();
+    return <ProArticle lang={l} page={pp} />;
   }
   if (sec === "tools") {
     const ap = agePageBySlug(l, slug);
@@ -827,6 +857,219 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
             <li>
               <Link href={sectionPath(lang, "tools")}>{t.nav.tools}</Link>
               <span>{x.toolLink}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <Sources lang={lang} />
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Страница для одного вида работы                                    */
+/* ------------------------------------------------------------------ */
+
+/* Разговор с коллегой, а не объяснение человеку, как ему работать.
+   Мы говорим то, что знаем только мы: что внутри книги, сколько
+   стоит, как получить пятнадцать штук, что можно печатать.
+
+   Цель страницы покупка, поэтому книга с ценой стоит выше образцов,
+   а не после них. Бесплатные листы здесь образец, по которому видно
+   толщину контура до заказа, а не замена книги. */
+
+function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
+  const t = dictionaries[lang];
+  const c = page.copy[lang];
+  const x = proLabels[lang];
+  const ed = editions[lang];
+  const picks = sample(3);
+  const others = proPages.filter((p) => p.id !== page.id);
+
+  const data = jsonLd(
+    organization(),
+    breadcrumbs(lang, [
+      { name: t.nav.programs, path: sectionPath(lang, "programs") },
+      { name: c.title, path: itemPath(lang, "programs", page.slug[lang]) },
+    ]),
+    {
+      "@type": "Article",
+      headline: c.title,
+      description: c.lead,
+      inLanguage: t.htmlLang,
+      dateModified: SITE_UPDATED,
+      author: { "@type": "Organization", name: PUBLISHER },
+      publisher: { "@id": `${SITE_URL}/#publisher` },
+    },
+    faqPage(c.faq)
+  );
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+
+      <div className="pagehead">
+        <h1>{c.title}</h1>
+        <p>{c.lead}</p>
+      </div>
+
+      <section className="band">
+        <div className="wrap">
+          <div className="teach">
+            {c.body.map((p) => (
+              <p className="teach-p" key={p.slice(0, 40)}>
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band band--cream">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{c.fitTitle}</h2>
+            <ul className="teach-list">
+              {c.fit.map((line) => (
+                <li key={line.slice(0, 30)}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Книга с ценой. Стоит выше образцов: человек пришел сюда
+          покупать, и прятать кнопку под бесплатным незачем. */}
+      <section className="band">
+        <div className="wrap">
+          <h2 className="section">{x.buyTitle}</h2>
+          <p className="lead">{x.buyLead}</p>
+          <div className="pick">
+            <Link className="pick__cover" href={homePath(lang)}>
+              <img
+                src={ed.cover}
+                alt={ed.title}
+                width={ed.coverSize.w}
+                height={ed.coverSize.h}
+              />
+            </Link>
+            <div>
+              <p className="subtitle">
+                <Link href={homePath(lang)}>{ed.title}</Link>
+              </p>
+              <p style={{ fontSize: "var(--t-small)", margin: "0 0 0.9rem" }}>{ed.lead}</p>
+              <p style={{ margin: 0 }}>
+                {ed.asin ? (
+                  <a
+                    className="btn btn--pink"
+                    href={BOOK.amazonUrl(ed.asin)}
+                    rel="nofollow sponsored noopener"
+                    target="_blank"
+                  >
+                    {t.common.amazon}
+                    {ed.price ? ` · ${ed.price}` : ""}
+                  </a>
+                ) : ed.pdfUrl ? (
+                  <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                    {t.sec.buyPdf}
+                    {ed.price ? ` · ${ed.price}` : ""}
+                  </a>
+                ) : (
+                  <span className="btn btn--soon" aria-disabled="true">
+                    {t.sec.soon}
+                  </span>
+                )}
+              </p>
+              <p className="buy-note" style={{ marginBottom: 0 }}>
+                {t.sec.buyNote}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Крупный заказ. Вторая причина этого блока в том, что пока
+          покупатель не написал, мы не знаем, кто он. */}
+      <section className="band band--mint">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{x.bulkTitle}</h2>
+            <p className="teach-p">{x.bulkLead}</p>
+            <p style={{ margin: 0 }}>
+              <a className="btn btn--pink" href={`mailto:${CONTACT_EMAIL}`}>
+                {x.bulkCta}
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Образцы. Здесь это доказательство перед покупкой, а не
+          бесплатная замена книги. */}
+      <section className="band">
+        <div className="wrap">
+          <h2 className="section">{x.sampleTitle}</h2>
+          <p className="lead">{x.sampleLead}</p>
+          <div className="sheets">
+            {picks.map((sh) => (
+              <figure className="sheet" key={sh.id}>
+                <a className="sheet__link" href={sheetPdf(sh.id, lang, "letter")} download>
+                  <img
+                    src={sheetPreview(sh.id, lang)}
+                    alt={t.sec.sheetAlt(sh.name[lang])}
+                    loading="lazy"
+                  />
+                </a>
+                <h3>{sh.name[lang]}</h3>
+                <p className="sheet__links">
+                  <a className="btn btn--sky" href={sheetPdf(sh.id, lang, "letter")} download>
+                    {t.common.letter}
+                  </a>
+                  <a className="btn btn--ghost" href={sheetPdf(sh.id, lang, "a4")} download>
+                    {t.common.a4}
+                  </a>
+                </p>
+              </figure>
+            ))}
+          </div>
+          <p>
+            <Link className="btn btn--sun" href={sectionPath(lang, "printables")}>
+              {t.home.printablesCta}
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="band band--cream">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{t.sec.questions}</h2>
+            <div className="faq faq--two">
+              {c.faq.map((item) => (
+                <details key={item.q}>
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="band band--mint">
+        <div className="wrap">
+          <h2 className="section">{x.otherPages}</h2>
+          <ul className="guides">
+            {others.map((p) => (
+              <li key={p.id}>
+                <Link href={itemPath(lang, "programs", p.slug[lang])}>{p.copy[lang].title}</Link>
+                <span>{p.copy[lang].lead}</span>
+              </li>
+            ))}
+            <li>
+              <Link href={sectionPath(lang, "programs")}>{t.nav.programs}</Link>
+              <span>{x.backToSection}</span>
             </li>
           </ul>
         </div>

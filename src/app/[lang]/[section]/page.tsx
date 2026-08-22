@@ -10,6 +10,9 @@ import type { StageId } from "@/data/stages";
 import { sheets, sheetPreview, sheetPdf } from "@/data/sheets";
 import { toolCopy, toolLabels, ageRows, basisSlug } from "@/data/tool";
 import { agePages, agePageLabels } from "@/data/agepages";
+import { programsCopy, programsLabels, audiences, specs } from "@/data/programs";
+import { proPages, proLabels } from "@/data/propages";
+import { CONTACT_EMAIL } from "@/lib/site";
 import Picker from "@/components/Picker";
 import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -50,6 +53,7 @@ function copyFor(section: Section, lang: UiLang) {
   if (section === "terms") return termsCopy[lang];
   if (!isContentLang(lang)) return null;
   if (section === "tools") return toolCopy[lang];
+  if (section === "programs") return programsCopy[lang];
   if (section === "ages") return agesCopy[lang];
   if (section === "guides") return guidesCopy[lang];
   return null;
@@ -191,8 +195,13 @@ export default async function SectionPage({
         </section>
       )}
 
+      {s === "programs" && isContentLang(l) && <ProPageList lang={l} />}
+      {s === "programs" && isContentLang(l) && <Audiences lang={l} />}
+      {s === "programs" && isContentLang(l) && <Specs lang={l} />}
+      {s === "printables" && isContentLang(l) && <ProgramsNote lang={l} />}
       {s === "tools" && isContentLang(l) && <AgePageList lang={l} />}
       {s === "tools" && isContentLang(l) && <BasisLink lang={l} />}
+      {s === "programs" && isContentLang(l) && <ProgramsContact lang={l} />}
 
       {s !== "about" && s !== "terms" && <Sources lang={l} />}
     </>
@@ -330,6 +339,159 @@ function BasisLink({ lang }: { lang: ContentLang }) {
             <span>{x.basisLinkLead}</span>
           </li>
         </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Четыре страницы для покупки на работу                              */
+/* ------------------------------------------------------------------ */
+
+/* Стоят выше блока "где такие страницы используют": человек, который
+   пришел покупать, должен попасть на свою страницу с первого экрана,
+   а не после общих рассуждений. */
+
+function ProPageList({ lang }: { lang: ContentLang }) {
+  const x = proLabels[lang];
+  return (
+    <section className="band band--mint">
+      <div className="wrap">
+        <h2 className="section">{x.listTitle}</h2>
+        <p className="lead">{x.listLead}</p>
+        <ul className="guides">
+          {proPages.map((p) => (
+            <li key={p.id}>
+              <Link href={itemPath(lang, "programs", p.slug[lang])}>{p.copy[lang].title}</Link>
+              <span>{p.copy[lang].lead}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Кому подходит: пять видов работы с малышами                        */
+/* ------------------------------------------------------------------ */
+
+/* Каждый из пяти видов работы позже получит свою страницу. Пока это
+   один блок: сначала имеет смысл выпустить главную страницу раздела
+   и посмотреть, кто на нее приходит. */
+
+function Audiences({ lang }: { lang: ContentLang }) {
+  const x = programsLabels[lang];
+  return (
+    <section className="band band--cream">
+      <div className="wrap">
+        <h2 className="section">{x.audiencesTitle}</h2>
+        <ul className="labels">
+          {audiences.map((a) => (
+            <li className="label-card" key={a.id}>
+              <p className="label-card__stage">{a.name[lang]}</p>
+              <p className="label-card__means">{a.text[lang]}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Что в книге и что можно печатать                                   */
+/* ------------------------------------------------------------------ */
+
+/* Человек, который берет пятнадцать книг, читает характеристики,
+   а не описание. Рядом стоит разрешение на печать: это первый
+   вопрос всякого, кто работает с группой, и ответ на него должен
+   лежать на виду, а не в правах мелким шрифтом. */
+
+function Specs({ lang }: { lang: ContentLang }) {
+  const x = programsLabels[lang];
+  const t = dictionaries[lang];
+  return (
+    <section className="band">
+      <div className="wrap">
+        <div className="teach">
+          <h2 className="section">{x.specsTitle}</h2>
+          <ul className="teach-list">
+            {specs[lang].map((line) => (
+              <li key={line.slice(0, 30)}>{line}</li>
+            ))}
+          </ul>
+
+          <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
+            {x.printTitle}
+          </h2>
+          <p className="teach-p">{x.printText}</p>
+          <p style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+            <Link className="btn btn--sun" href={sectionPath(lang, "printables")}>
+              {x.printCta}
+            </Link>
+            <Link className="btn btn--ghost" href={sectionPath(lang, "terms")}>
+              {x.termsCta}
+            </Link>
+            <Link className="btn btn--mint" href={sectionPath(lang, "tools")}>
+              {x.toolCta}
+            </Link>
+          </p>
+          <p style={{ fontSize: "var(--t-small)", color: "var(--ink-2)", margin: 0 }}>
+            {t.sec.buyNote}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Связь для крупных заказов                                          */
+/* ------------------------------------------------------------------ */
+
+/* Почта стоит здесь по двум причинам. Первая очевидна: тому, кому
+   нужно пятнадцать книг, надо куда-то написать. Вторая важнее:
+   пока покупатель не написал, мы не знаем, кто он, а Amazon этого
+   не покажет никогда. */
+
+function ProgramsContact({ lang }: { lang: ContentLang }) {
+  const x = programsLabels[lang];
+  return (
+    <section className="band band--mint">
+      <div className="wrap">
+        <div className="teach">
+          <h2 className="section">{x.contactTitle}</h2>
+          <p className="teach-p">{x.contactText}</p>
+          <p style={{ margin: 0 }}>
+            <a className="btn btn--pink" href={`mailto:${CONTACT_EMAIL}`}>
+              {x.contactCta}
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Строка для специалистов на странице бесплатных листов              */
+/* ------------------------------------------------------------------ */
+
+/* Специалист приходит на сайт за листами, а не за разделом о себе.
+   Эта строка встречает его там, где он оказался. */
+
+function ProgramsNote({ lang }: { lang: ContentLang }) {
+  const x = programsLabels[lang];
+  return (
+    <section className="band band--mint">
+      <div className="wrap">
+        <p className="teach-other">
+          <span>{x.printablesNote}</span>
+          <Link className="btn btn--ghost" href={sectionPath(lang, "programs")}>
+            {x.printablesCta}
+          </Link>
+        </p>
       </div>
     </section>
   );
