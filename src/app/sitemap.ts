@@ -19,13 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     out.push({ url: SITE_URL + homePath(lang), lastModified, priority: 1 });
 
     for (const s of Object.keys(sectionSlugs[lang]) as Section[]) {
-      /* Разделы этапов и статей на русском еще не написаны. */
-      if (!isContentLang(lang) && (s === "ages" || s === "guides")) continue;
       out.push({ url: SITE_URL + sectionPath(lang, s), lastModified, priority: 0.8 });
     }
 
-    /* Этапы и статьи написаны на английском и испанском. Русских
-       страниц этих разделов пока нет, и в карте их быть не должно. */
+    /* Этапы и статьи написаны на всех трех языках. Проверка оставлена:
+       если появится язык интерфейса без справочной части, его пустые
+       страницы не должны попасть в карту. */
     if (isContentLang(lang)) {
       for (const st of stages) {
         out.push({ url: SITE_URL + itemPath(lang, "ages", st.slug[lang]), lastModified, priority: 0.85 });

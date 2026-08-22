@@ -41,9 +41,13 @@ export type Stage = {
 export const stages: Stage[] = [
   {
     id: "scribble",
-    slug: { en: "first-marks", es: "primeras-marcas" },
-    ageLabel: { en: "about 12 to 18 months", es: "unos 12 a 18 meses" },
-    title: { en: "First marks", es: "Primeras marcas" },
+    slug: { en: "first-marks", es: "primeras-marcas", ru: "pervye-cherty" },
+    ageLabel: {
+      en: "about 12 to 18 months",
+      es: "unos 12 a 18 meses",
+      ru: "примерно от 12 до 18 месяцев",
+    },
+    title: { en: "First marks", es: "Primeras marcas", ru: "Первые черты" },
     can: {
       en: [
         "Holds a crayon in a fist and makes marks on paper on purpose",
@@ -55,6 +59,11 @@ export const stages: Stage[] = [
         "Entiende que mover la mano deja rastro, y lo repite para verlo otra vez",
         "Mueve el hombro y el codo, así que las marcas son largas y amplias",
       ],
+      ru: [
+        "Держит мелок в кулаке и нарочно оставляет след на бумаге",
+        "Понимает, что от движения руки остается след, и повторяет движение, чтобы увидеть это снова",
+        "Двигает плечом и локтем, поэтому черты выходят длинными и размашистыми",
+      ],
     },
     notYet: {
       en:
@@ -63,6 +72,9 @@ export const stages: Stage[] = [
       es:
         "Apuntar a algo todavía está por venir. El objetivo es la hoja, no el dibujo que hay en " +
         "ella, y para eso sirve precisamente esta etapa.",
+      ru:
+        "Целиться во что-то ребенок пока не умеет. Мишень для него это сам лист, а не рисунок " +
+        "на листе, и ровно для этого нужен первый этап.",
     },
     lookFor: {
       en: [
@@ -77,15 +89,33 @@ export const stages: Stage[] = [
         "Papel resistente, porque en esta etapa el crayón aprieta fuerte y a veces rompe",
         "Motivos que el niño ya sepa nombrar en voz alta: una pelota, un gato, una manzana",
       ],
+      ru: [
+        "Очень толстый контур. Тонкая линия пропадает под мелком, зажатым в кулаке, и ребенок не видит, что что-то произошло",
+        "Одна крупная форма во весь лист, чтобы любая черта попадала туда, где она заметна",
+        "Плотная бумага: на этом этапе нажим сильный, и тонкий лист иногда рвется",
+        "Предметы, которые ребенок уже может назвать вслух: мяч, кошка, яблоко",
+      ],
     },
     bookFit: "core",
   },
 
   {
     id: "control",
-    slug: { en: "controlled-scribbling", es: "garabato-con-control" },
-    ageLabel: { en: "about 18 months to 2 years", es: "de unos 18 meses a 2 años" },
-    title: { en: "Controlled scribbling", es: "Garabato con control" },
+    slug: {
+      en: "controlled-scribbling",
+      es: "garabato-con-control",
+      ru: "osoznannye-karakuli",
+    },
+    ageLabel: {
+      en: "about 18 months to 2 years",
+      es: "de unos 18 meses a 2 años",
+      ru: "примерно от 18 месяцев до 2 лет",
+    },
+    title: {
+      en: "Controlled scribbling",
+      es: "Garabato con control",
+      ru: "Осознанные каракули",
+    },
     can: {
       en: [
         "Scribbles without being shown first, and can copy a line someone else draws",
@@ -99,6 +129,12 @@ export const stages: Stage[] = [
         "Pasa las páginas de un libro de una en una",
         "Deja la mayoría de las marcas sobre el dibujo y no por toda la mesa",
       ],
+      ru: [
+        "Начинает черкать сам, без показа, и может повторить линию, которую нарисовал кто-то другой",
+        "Нарочно делает круглые петли и черты сверху вниз",
+        "Переворачивает страницы книги по одной",
+        "Большая часть черт попадает на рисунок, а не на стол вокруг",
+      ],
     },
     notYet: {
       en:
@@ -107,6 +143,9 @@ export const stages: Stage[] = [
       es:
         "Quedarse dentro de la línea todavía no está a su alcance, y exigirlo ahora es la manera " +
         "más rápida de que el niño suelte el crayón.",
+      ru:
+        "Оставаться внутри контура ребенку пока не по силам, и требовать этого сейчас это самый " +
+        "быстрый способ добиться того, что мелок будет отложен.",
     },
     lookFor: {
       en: [
@@ -121,15 +160,33 @@ export const stages: Stage[] = [
         "Una palabra impresa debajo del dibujo, para que nombrar acompañe al colorear",
         "Hojas impresas por una cara, porque a esta edad el rotulador traspasa",
       ],
+      ru: [
+        "Контур по-прежнему толстый, но форма уже может состоять из двух-трех частей",
+        "Один рисунок на странице, и рядом ничего, что отвлекало бы внимание",
+        "Слово под рисунком, чтобы называние шло вместе с раскрашиванием",
+        "Печать с одной стороны: фломастер в этом возрасте проходит лист насквозь",
+      ],
     },
     bookFit: "core",
   },
 
   {
     id: "aim",
-    slug: { en: "aiming-at-the-shape", es: "apuntando-a-la-forma" },
-    ageLabel: { en: "about 2 to 3 years", es: "de unos 2 a 3 años" },
-    title: { en: "Aiming at the shape", es: "Apuntando a la forma" },
+    slug: {
+      en: "aiming-at-the-shape",
+      es: "apuntando-a-la-forma",
+      ru: "popadanie-v-risunok",
+    },
+    ageLabel: {
+      en: "about 2 to 3 years",
+      es: "de unos 2 a 3 años",
+      ru: "примерно от 2 до 3 лет",
+    },
+    title: {
+      en: "Aiming at the shape",
+      es: "Apuntando a la forma",
+      ru: "Попадание в рисунок",
+    },
     can: {
       en: [
         "Copies a vertical line, a horizontal line and a circle when shown",
@@ -143,6 +200,12 @@ export const stages: Stage[] = [
         "Apunta al dibujo y deja casi todo el color encima, saliéndose del contorno sin problema",
         "Nombra lo que hay en la hoja antes de empezar",
       ],
+      ru: [
+        "Повторяет вертикальную линию, горизонтальную линию и круг, если показать",
+        "Держит мелок пальцами, а не всей ладонью",
+        "Целится в рисунок и попадает по нему большей частью цвета, свободно выходя за контур",
+        "Называет то, что нарисовано на листе, еще до начала",
+      ],
     },
     notYet: {
       en:
@@ -151,6 +214,9 @@ export const stages: Stage[] = [
       es:
         "Los bordes limpios todavía no son el objetivo. Salirse de la línea en esta etapa no es un " +
         "error, es el aspecto que tiene apuntar antes de que la mano llegue.",
+      ru:
+        "Аккуратные края пока не цель. Выход за контур на этом этапе не ошибка, а то, как " +
+        "выглядит попадание, пока рука не догнала глаз.",
     },
     lookFor: {
       en: [
@@ -165,15 +231,25 @@ export const stages: Stage[] = [
         "Suficiente variedad para que dos páginas seguidas no se parezcan",
         "Espacio en el borde de la hoja, para que quien quiera añadir un sol tenga dónde ponerlo",
       ],
+      ru: [
+        "Хорошо заметный контур и несколько отдельных участков внутри формы, которые можно закрасить по-разному",
+        "Рисунки, которые ребенок узнает сам, без подсказки",
+        "Достаточно разнообразия, чтобы две страницы подряд не были похожи",
+        "Свободное место у края листа, чтобы ребенку, который хочет дорисовать солнце, было где его поставить",
+      ],
     },
     bookFit: "core",
   },
 
   {
     id: "shape",
-    slug: { en: "inside-the-line", es: "dentro-de-la-linea" },
-    ageLabel: { en: "about 3 to 4 years and up", es: "de unos 3 a 4 años en adelante" },
-    title: { en: "Inside the line", es: "Dentro de la línea" },
+    slug: { en: "inside-the-line", es: "dentro-de-la-linea", ru: "vnutri-kontura" },
+    ageLabel: {
+      en: "about 3 to 4 years and up",
+      es: "de unos 3 a 4 años en adelante",
+      ru: "примерно от 3 до 4 лет и старше",
+    },
+    title: { en: "Inside the line", es: "Dentro de la línea", ru: "Внутри контура" },
     can: {
       en: [
         "Copies a circle accurately, and a cross closer to four years old",
@@ -187,6 +263,12 @@ export const stages: Stage[] = [
         "Elige los colores a propósito y sabe explicar por qué",
         "Se queda con la misma hoja diez minutos o más",
       ],
+      ru: [
+        "Точно повторяет круг, а ближе к четырем годам и крестик",
+        "Большую часть времени остается внутри контура и замечает, когда цвет вышел наружу",
+        "Выбирает цвета нарочно и может объяснить выбор",
+        "Занят одной страницей десять минут и дольше",
+      ],
     },
     notYet: {
       en:
@@ -195,6 +277,9 @@ export const stages: Stage[] = [
       es:
         "Aquí es donde un primer libro para colorear empieza a resultar demasiado fácil. Aburrirse " +
         "en este punto es buena señal, no un problema que se arregle con más de lo mismo.",
+      ru:
+        "Здесь первая раскраска начинает казаться слишком легкой. Скука в этой точке хороший " +
+        "знак, а не задача, которую решают такими же страницами.",
     },
     lookFor: {
       en: [
@@ -206,6 +291,11 @@ export const stages: Stage[] = [
         "Más zonas que rellenar dentro de un mismo dibujo, y una escena en vez de un objeto suelto",
         "Algo que hacer además de colorear: una forma que calcar, una palabra que copiar, un fondo que inventar",
         "Dibujo paso a paso, donde el niño construye la imagen en vez de rellenar la de otro",
+      ],
+      ru: [
+        "Больше участков внутри одного рисунка и сюжет вместо отдельного предмета",
+        "Занятие помимо раскрашивания: форма, которую надо обвести, слово, которое можно повторить, фон, который можно придумать",
+        "Рисование по шагам, где ребенок строит картинку сам, а не закрашивает чужую",
       ],
     },
     bookFit: "outgrown",

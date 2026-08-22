@@ -23,8 +23,8 @@ import { Sources } from "../page";
 
 export function generateStaticParams() {
   const out: { lang: string; section: string; slug: string }[] = [];
-  /* Этапы и статьи написаны на английском и испанском. Русских
-     страниц этих разделов пока нет, и адреса для них не строятся. */
+  /* Справочная часть написана на всех трех языках, поэтому адреса
+     строятся для каждого из них. */
   for (const lang of contentLangs) {
     for (const st of stages) {
       out.push({ lang, section: sectionSlugs[lang].ages, slug: st.slug[lang] });
@@ -59,6 +59,7 @@ export async function generateMetadata({
         languages: langAlternates({
           en: `${SITE_URL}${itemPath("en", "guides", g.slug.en)}`,
           es: `${SITE_URL}${itemPath("es", "guides", g.slug.es)}`,
+          ru: `${SITE_URL}${itemPath("ru", "guides", g.slug.ru)}`,
         }),
       },
     };
@@ -68,10 +69,7 @@ export async function generateMetadata({
   const st = stageBySlug(l, slug);
   if (!st) return {};
 
-  const title =
-    l === "en"
-      ? `${st.title.en}: coloring at ${st.ageLabel.en}`
-      : `${st.title.es}: colorear a ${st.ageLabel.es}`;
+  const title = dictionaries[l].sec.stageTitle(st.title[l], st.ageLabel[l]);
 
   return {
     title,
@@ -81,6 +79,7 @@ export async function generateMetadata({
       languages: langAlternates({
         en: `${SITE_URL}${itemPath("en", "ages", st.slug.en)}`,
         es: `${SITE_URL}${itemPath("es", "ages", st.slug.es)}`,
+        ru: `${SITE_URL}${itemPath("ru", "ages", st.slug.ru)}`,
       }),
     },
   };
@@ -115,10 +114,7 @@ export default async function StagePage({
   const i = stages.findIndex((s) => s.id === st.id);
   const neighbours = [stages[i - 1], stages[i + 1]].filter(Boolean);
 
-  const title =
-    l === "en"
-      ? `${st.title.en}: coloring at ${st.ageLabel.en}`
-      : `${st.title.es}: colorear a ${st.ageLabel.es}`;
+  const title = t.sec.stageTitle(st.title[l], st.ageLabel[l]);
 
   const data = jsonLd(
     organization(),
@@ -155,11 +151,7 @@ export default async function StagePage({
       <section className="band">
         <div className="wrap">
           <div className="teach">
-            <h2 className="section">
-              {l === "en"
-                ? "What a child at this stage can usually do"
-                : "Lo que suele poder hacer un niño en esta etapa"}
-            </h2>
+            <h2 className="section">{t.picker.canTitle}</h2>
             <ul className="teach-list">
               {st.can[l].map((line) => (
                 <li key={line}>{line}</li>
@@ -167,7 +159,7 @@ export default async function StagePage({
             </ul>
 
             <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
-              {l === "en" ? "What to look for in a page" : "Qué buscar en una hoja"}
+              {t.sec.lookForPage}
             </h2>
             <ul className="teach-list">
               {st.lookFor[l].map((line) => (
@@ -184,7 +176,7 @@ export default async function StagePage({
       <section className="band band--cream">
         <div className="wrap">
           <h2 className="section">
-            {l === "en" ? "Pages for this stage, free to print" : "Hojas para esta etapa, gratis"}
+            {t.sec.stagePages}
           </h2>
           <div className="sheets">
             {picks.map((sh) => (
@@ -192,11 +184,7 @@ export default async function StagePage({
                 <a className="sheet__link" href={sheetPdf(sh.id, l, "letter")} download>
                   <img
                     src={sheetPreview(sh.id, l)}
-                    alt={
-                      l === "en"
-                        ? `Free printable coloring page: ${sh.name.en}`
-                        : `Dibujo para colorear gratis: ${sh.name.es}`
-                    }
+                    alt={t.sec.sheetAlt(sh.name[l])}
                     loading="lazy"
                   />
                 </a>
@@ -226,7 +214,7 @@ export default async function StagePage({
         <section className="band">
           <div className="wrap">
             <h2 className="section">
-              {l === "en" ? "The book we publish for this stage" : "El libro que publicamos para esta etapa"}
+              {t.picker.bookLine}
             </h2>
             <div className="pick">
               <Link className="pick__cover" href={homePath(l)}>
@@ -237,23 +225,36 @@ export default async function StagePage({
                   <Link href={homePath(l)}>{ed.title}</Link>
                 </p>
                 <p style={{ margin: "0 0 0.9rem" }}>{ed.lead}</p>
+                {/* Английское и испанское издания продаются на Amazon,
+                    русское выходит файлом для печати. Пока адреса файла
+                    нет, кнопка стоит на месте, но нажать ее нельзя. */}
                 <p style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", margin: 0 }}>
                   <Link className="btn btn--ghost" href={homePath(l)}>
                     {t.home.bookCta}
                   </Link>
-                  <a
-                    className="btn btn--pink"
-                    href={BOOK.amazonUrl(ed.asin!)}
-                    rel="nofollow sponsored noopener"
-                    target="_blank"
-                  >
-                    {t.common.amazon} · {ed.price}
-                  </a>
+                  {ed.asin ? (
+                    <a
+                      className="btn btn--pink"
+                      href={BOOK.amazonUrl(ed.asin)}
+                      rel="nofollow sponsored noopener"
+                      target="_blank"
+                    >
+                      {t.common.amazon}
+                      {ed.price ? ` · ${ed.price}` : ""}
+                    </a>
+                  ) : ed.pdfUrl ? (
+                    <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                      {t.sec.buyPdf}
+                      {ed.price ? ` · ${ed.price}` : ""}
+                    </a>
+                  ) : (
+                    <span className="btn btn--soon" aria-disabled="true">
+                      {t.sec.soon}
+                    </span>
+                  )}
                 </p>
                 <p className="buy-note" style={{ marginBottom: 0 }}>
-                  {l === "en"
-                    ? "Sold and shipped by Amazon. We earn from the sale."
-                    : "Vendido y enviado por Amazon. Nosotros ganamos con la venta."}
+                  {t.sec.buyNote}
                 </p>
               </div>
             </div>
@@ -265,7 +266,7 @@ export default async function StagePage({
       <section className="band band--mint">
         <div className="wrap">
           <h2 className="section">
-            {l === "en" ? "Before and after this stage" : "Antes y después de esta etapa"}
+            {t.sec.neighbours}
           </h2>
           <ul className="guide-next" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(16rem, 1fr))" }}>
             {neighbours.map((n) => (
@@ -358,7 +359,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
         <div className="wrap">
           <div className="teach">
             <h2 className="section">
-              {lang === "en" ? "Questions parents ask" : "Preguntas que hacen los padres"}
+              {t.sec.questions}
             </h2>
             <div className="faq faq--two">
               {guide.faq[lang].map((item) => (
@@ -376,7 +377,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
       <section className="band">
         <div className="wrap">
           <h2 className="section">
-            {lang === "en" ? "Try it on a page today" : "Pruébelo hoy en una hoja"}
+            {t.sec.tryToday}
           </h2>
           <div className="sheets">
             {picks.map((sh) => (
@@ -384,11 +385,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
                 <a className="sheet__link" href={sheetPdf(sh.id, lang, "letter")} download>
                   <img
                     src={sheetPreview(sh.id, lang)}
-                    alt={
-                      lang === "en"
-                        ? `Free printable coloring page: ${sh.name.en}`
-                        : `Dibujo para colorear gratis: ${sh.name.es}`
-                    }
+                    alt={t.sec.sheetAlt(sh.name[lang])}
                     loading="lazy"
                   />
                 </a>
@@ -413,7 +410,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
         <section className="band band--mint">
           <div className="wrap">
             <h2 className="section">
-              {lang === "en" ? "Where this fits in development" : "Dónde encaja esto en el desarrollo"}
+              {t.sec.whereFits}
             </h2>
             <ul className="guides">
               <li>
@@ -434,11 +431,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
       <section className="band">
         <div className="wrap">
           <p className="teach-other">
-            <span>
-              {lang === "en"
-                ? "We publish one coloring book for this age: 111 drawings, thick outlines, one per page, printed on one side."
-                : "Publicamos un libro para colorear para esta edad: 111 dibujos, contornos gruesos, uno por página, impreso por una cara."}
-            </span>
+            <span>{t.sec.bookOneLiner}</span>
             <Link className="btn btn--ghost" href={homePath(lang)}>
               {t.home.bookCta}
             </Link>
@@ -448,7 +441,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
 
       <section className="band band--cream">
         <div className="wrap">
-          <h2 className="section">{lang === "en" ? "Read next" : "Siga leyendo"}</h2>
+          <h2 className="section">{t.sec.readNext}</h2>
           <ul className="guide-next">
             {others.map((g) => (
               <li key={g.id}>

@@ -6,14 +6,17 @@ export type UiLang = "en" | "es" | "ru";
 export const activeLangs: UiLang[] = ["en", "es", "ru"];
 
 /* Языки, на которых написана вся справочная часть сайта: этапы
-   первого рисования и статьи. Русская версия построена вокруг книги
-   и бесплатных листов, справочные разделы на ней появятся позже.
-   Отдельный тип нужен, чтобы страница, которой нет, честно отвечала
-   "страницы нет", а не подставляла английский текст. */
-export type ContentLang = "en" | "es";
-export const contentLangs: ContentLang[] = ["en", "es"];
+   первого рисования и статьи. Теперь это все три языка.
+
+   Отдельный тип оставлен намеренно. Справочная часть и интерфейс
+   растут по-разному: интерфейс может появиться на новом языке за
+   один вечер, а связный текст статей пишется отдельно. Пока тип
+   стоит на месте, страница, которой нет, честно отвечает
+   "страницы нет", а не подставляет английский текст. */
+export type ContentLang = "en" | "es" | "ru";
+export const contentLangs: ContentLang[] = ["en", "es", "ru"];
 export const isContentLang = (l: UiLang): l is ContentLang =>
-  l === "en" || l === "es";
+  (contentLangs as UiLang[]).includes(l);
 
 /** Разделы, которые есть на данном языке. */
 export const navFor = (l: UiLang): ("ages" | "guides" | "printables" | "about")[] =>
@@ -70,6 +73,35 @@ export type Dict = {
       inside: { q: string; a: { value: string; label: string }[] };
       attention: { q: string; a: { value: string; label: string }[] };
     };
+  };
+  /* Надписи страниц справочной части: заголовки блоков, подписи
+     к картинкам, короткие пояснения. Раньше они стояли прямо в коде
+     страниц выбором из двух языков. С третьим языком такой выбор
+     молча подставлял бы русскому читателю испанский текст, поэтому
+     все эти надписи собраны здесь и разобраны по языкам наравне
+     с остальным словарем. */
+  sec: {
+    questions: string;
+    coverAgeTitle: string;
+    coverAgeLead: string;
+    agesLabel: (n: string) => string;
+    watchOut: string;
+    stagesInOrder: string;
+    stagesHome: string;
+    lookForPage: string;
+    stagePages: string;
+    neighbours: string;
+    tryToday: string;
+    whereFits: string;
+    readNext: string;
+    buyNote: string;
+    bookOneLiner: string;
+    outgrown: string;
+    soon: string;
+    buyPdf: string;
+    stageTitle: (title: string, age: string) => string;
+    sheetAlt: (name: string) => string;
+    pageAlt: (name: string) => string;
   };
   footer: {
     about: string;
@@ -187,6 +219,38 @@ export const dictionaries: Record<UiLang, Dict> = {
           ],
         },
       },
+    },
+    sec: {
+      questions: "Questions parents ask",
+      coverAgeTitle: "What the age on the cover actually means",
+      coverAgeLead:
+        "There is no standard behind these numbers and no body that checks them. The publisher " +
+        "chooses the range, which is why two books both labelled ages 2-4 can differ by a factor " +
+        "of two in difficulty. Here is what each label usually means and where it misleads.",
+      agesLabel: (n) => `Ages ${n}`,
+      watchOut: "Watch out",
+      stagesInOrder: "The four stages, in order",
+      stagesHome: "The four stages of first drawing",
+      lookForPage: "What to look for in a page",
+      stagePages: "Pages for this stage, free to print",
+      neighbours: "Before and after this stage",
+      tryToday: "Try it on a page today",
+      whereFits: "Where this fits in development",
+      readNext: "Read next",
+      buyNote: "Sold and shipped by Amazon. We earn from the sale.",
+      bookOneLiner:
+        "We publish one coloring book for this age: 111 drawings, thick outlines, one per page, " +
+        "printed on one side.",
+      outgrown:
+        "Our own book is made for an earlier stage than this, so we are not going to suggest it. " +
+        "What suits your child now is a book with more to fill inside one drawing, or a step by " +
+        "step drawing book.",
+      soon: "Printable file, coming soon",
+      buyPdf: "Get the printable file",
+      stageTitle: (title, age) => `${title}: coloring at ${age}`,
+      sheetAlt: (name) => `Free printable coloring page: ${name}`,
+      pageAlt: (name) =>
+        `Page from the book, free to print: ${name}, thick outlines, one drawing per page`,
     },
     footer: {
       about:
@@ -307,6 +371,39 @@ export const dictionaries: Record<UiLang, Dict> = {
         },
       },
     },
+    sec: {
+      questions: "Preguntas que hacen los padres",
+      coverAgeTitle: "Qué significa de verdad la edad de la portada",
+      coverAgeLead:
+        "No hay ningún estándar detrás de estos números ni ningún organismo que los compruebe. " +
+        "La editorial elige el rango, y por eso dos libros marcados los dos de 2 a 4 años pueden " +
+        "diferir al doble en dificultad. Esto es lo que suele significar cada etiqueta y dónde " +
+        "induce a error.",
+      agesLabel: (n) => `De ${n} años`,
+      watchOut: "Ojo",
+      stagesInOrder: "Las cuatro etapas, en orden",
+      stagesHome: "Las cuatro etapas del primer dibujo",
+      lookForPage: "Qué buscar en una hoja",
+      stagePages: "Hojas para esta etapa, gratis",
+      neighbours: "Antes y después de esta etapa",
+      tryToday: "Pruébelo hoy en una hoja",
+      whereFits: "Dónde encaja esto en el desarrollo",
+      readNext: "Siga leyendo",
+      buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
+      bookOneLiner:
+        "Publicamos un libro para colorear para esta edad: 111 dibujos, contornos gruesos, uno " +
+        "por página, impreso por una cara.",
+      outgrown:
+        "Nuestro propio libro está hecho para una etapa anterior a esta, así que no se lo vamos " +
+        "a proponer. Lo que le conviene ahora es un libro con más que rellenar dentro de un mismo " +
+        "dibujo, o un libro de dibujo paso a paso.",
+      soon: "Archivo para imprimir, pronto",
+      buyPdf: "Conseguir el archivo para imprimir",
+      stageTitle: (title, age) => `${title}: colorear a ${age}`,
+      sheetAlt: (name) => `Dibujo para colorear gratis: ${name}`,
+      pageAlt: (name) =>
+        `Página del libro, gratis para imprimir: ${name}, contornos gruesos, un dibujo por página`,
+    },
     footer: {
       about:
         "Toddler Coloring Book pertenece a Magic of Discoveries LLC, una editorial de libros " +
@@ -421,6 +518,38 @@ export const dictionaries: Record<UiLang, Dict> = {
           ],
         },
       },
+    },
+    sec: {
+      questions: "Что спрашивают родители",
+      coverAgeTitle: "Что на самом деле значит возраст на обложке",
+      coverAgeLead:
+        "За этими числами не стоит никакого стандарта, и никто их не проверяет. Диапазон " +
+        "выбирает издатель, поэтому две книги с одинаковой пометкой 2-4 могут отличаться по " +
+        "сложности вдвое. Вот что каждая пометка обычно означает и где она вводит в заблуждение.",
+      agesLabel: (n) => `Возраст ${n}`,
+      watchOut: "Осторожно",
+      stagesInOrder: "Четыре этапа по порядку",
+      stagesHome: "Четыре этапа первого рисования",
+      lookForPage: "На что смотреть в странице",
+      stagePages: "Страницы для этого этапа, бесплатно",
+      neighbours: "До и после этого этапа",
+      tryToday: "Проверьте сегодня на одном листе",
+      whereFits: "Где это в развитии ребенка",
+      readNext: "Читайте дальше",
+      buyNote: "Файл для печати. Вы печатаете его дома столько раз, сколько нужно.",
+      bookOneLiner:
+        "Мы издаем одну раскраску для этого возраста: 111 рисунков, толстый контур, по одному " +
+        "на странице, печать с одной стороны.",
+      outgrown:
+        "Наша книга сделана для более раннего этапа, поэтому предлагать ее мы не будем. Сейчас " +
+        "ребенку подойдет книга, где внутри одного рисунка больше участков, или книга с " +
+        "рисованием по шагам.",
+      soon: "Файл для печати, скоро",
+      buyPdf: "Купить файл для печати",
+      stageTitle: (title, age) => `${title}: раскрашивание ${age}`,
+      sheetAlt: (name) => `Бесплатная раскраска для печати: ${name}`,
+      pageAlt: (name) =>
+        `Страница из книги, бесплатно для печати: ${name}, толстый контур, один рисунок на странице`,
     },
     footer: {
       about:

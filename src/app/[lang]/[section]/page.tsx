@@ -28,18 +28,19 @@ export function generateStaticParams() {
   const out: { lang: string; section: string }[] = [];
   for (const lang of activeLangs) {
     for (const s of Object.keys(sectionSlugs[lang]) as Section[]) {
-      /* Этапы и статьи на русском еще не написаны: адрес для них
-         не строим, чтобы не собирать заведомо пустую страницу. */
-      if (!isContentLang(lang) && (s === "ages" || s === "guides")) continue;
+      /* Справочная часть написана на всех трех языках, поэтому
+         адреса строятся для каждого. Если появится язык, на котором
+         статей еще нет, проверка ниже в copyFor честно вернет
+         "страницы нет", а не подставит чужой текст. */
       out.push({ lang, section: sectionSlugs[lang][s] });
     }
   }
   return out;
 }
 
-/* Этапы и статьи пока написаны на двух языках. На русском таких
-   страниц нет, и адрес обязан честно ответить "страницы нет":
-   подставлять английский текст под русским адресом нельзя. */
+/* Раздел существует на языке только тогда, когда для него написан
+   текст. Пустой раздел обязан честно ответить "страницы нет":
+   подставлять чужой язык под адресом нельзя. */
 function copyFor(section: Section, lang: UiLang) {
   if (section === "printables") return printablesCopy[lang];
   if (section === "about") return aboutCopy[lang];
@@ -64,8 +65,6 @@ export async function generateMetadata({
   const copy = copyFor(s, l);
   if (!copy) return {};
 
-  const everywhere = s === "printables" || s === "about" || s === "terms";
-
   return {
     title: copy.title,
     description: copy.lead,
@@ -74,7 +73,7 @@ export async function generateMetadata({
       languages: langAlternates({
         en: `${SITE_URL}${sectionPath("en", s)}`,
         es: `${SITE_URL}${sectionPath("es", s)}`,
-        ...(everywhere ? { ru: `${SITE_URL}${sectionPath("ru", s)}` } : {}),
+        ru: `${SITE_URL}${sectionPath("ru", s)}`,
       }),
     },
   };
@@ -143,9 +142,8 @@ export default async function SectionPage({
         </div>
       </section>
 
-      {/* Этапы и статьи есть только на языках со справочной частью.
-          Сюда русский попасть не может: copyFor выше уже ответил
-          "страницы нет". Проверка нужна разбору типов. */}
+      {/* Проверка нужна разбору типов: эти блоки берут тексты этапов
+          и статей, а они есть только на языках справочной части. */}
       {s === "ages" && isContentLang(l) && <AgeLabels lang={l} />}
       {s === "ages" && isContentLang(l) && <AgeLadder lang={l} />}
       {s === "printables" && <SheetGrid lang={l} />}
@@ -155,9 +153,7 @@ export default async function SectionPage({
         <section className="band band--cream">
           <div className="wrap">
             <div className="teach">
-              <h2 className="section">
-                {l === "en" ? "Questions parents ask" : "Preguntas que hacen los padres"}
-              </h2>
+              <h2 className="section">{t.sec.questions}</h2>
               <div className="faq faq--two">
                 {copy.faq.map((item) => (
                   <details key={item.q}>
@@ -185,33 +181,24 @@ export default async function SectionPage({
    об этом родителю не говорит. Этот блок говорит. */
 
 function AgeLabels({ lang }: { lang: ContentLang }) {
+  const t = dictionaries[lang];
   return (
     <section className="band band--pink">
       <div className="wrap">
-        <h2 className="section">
-          {lang === "en"
-            ? "What the age on the cover actually means"
-            : "Qué significa de verdad la edad de la portada"}
-        </h2>
-        <p className="lead">
-          {lang === "en"
-            ? "There is no standard behind these numbers and no body that checks them. The publisher chooses the range, which is why two books both labelled ages 2-4 can differ by a factor of two in difficulty. Here is what each label usually means and where it misleads."
-            : "No hay ningún estándar detrás de estos números ni ningún organismo que los compruebe. La editorial elige el rango, y por eso dos libros marcados los dos de 2 a 4 años pueden diferir al doble en dificultad. Esto es lo que suele significar cada etiqueta y dónde induce a error."}
-        </p>
+        <h2 className="section">{t.sec.coverAgeTitle}</h2>
+        <p className="lead">{t.sec.coverAgeLead}</p>
         <ul className="labels">
           {ageLabels.map((al) => {
             const st = stageById(al.stage as StageId);
             return (
               <li className="label-card" key={al.label}>
-                <p className="label-card__n">
-                  {lang === "en" ? `Ages ${al.label}` : `De ${al.label} años`}
-                </p>
+                <p className="label-card__n">{t.sec.agesLabel(al.label)}</p>
                 <p className="label-card__stage">
                   <Link href={itemPath(lang, "ages", st.slug[lang])}>{st.title[lang]}</Link>
                 </p>
                 <p className="label-card__means">{al.means[lang]}</p>
                 <p className="label-card__watch">
-                  <b>{lang === "en" ? "Watch out" : "Ojo"}</b>
+                  <b>{t.sec.watchOut}</b>
                   {al.watch[lang]}
                 </p>
               </li>
@@ -231,9 +218,7 @@ function AgeLadder({ lang }: { lang: ContentLang }) {
   return (
     <section className="band band--mint">
       <div className="wrap">
-        <h2 className="section">
-          {lang === "en" ? "The four stages, in order" : "Las cuatro etapas, en orden"}
-        </h2>
+        <h2 className="section">{dictionaries[lang].sec.stagesInOrder}</h2>
         <ul className="guides">
           {stages.map((st) => (
             <li key={st.id}>
@@ -287,11 +272,7 @@ function SheetGrid({ lang }: { lang: UiLang }) {
               <a className="sheet__link" href={sheetPdf(sh.id, lang, "letter")} download>
                 <img
                   src={sheetPreview(sh.id, lang)}
-                  alt={
-                    lang === "en"
-                      ? `Page from the book, free to print: ${sh.name.en}, thick outlines, one drawing per page`
-                      : `Página del libro, gratis para imprimir: ${sh.name.es}, contornos gruesos, un dibujo por página`
-                  }
+                  alt={dictionaries[lang].sec.pageAlt(sh.name[lang])}
                   loading="lazy"
                 />
               </a>

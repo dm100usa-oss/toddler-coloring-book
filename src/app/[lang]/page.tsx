@@ -488,11 +488,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           <section className="band band--cream">
             <div className="wrap">
-              <h2 className="section">
-                {l === "en"
-                  ? "The four stages of first drawing"
-                  : "Las cuatro etapas del primer dibujo"}
-              </h2>
+              <h2 className="section">{t.sec.stagesHome}</h2>
               <ul className="ladder">
                 {stages.map((s) => (
                   <li className="ladder__step" key={s.id}>
@@ -596,7 +592,7 @@ function Buy({ lang }: { lang: UiLang }) {
           </span>
         ) : null}
         <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
-          {lang === "ru" ? "Купить файл для печати" : t.common.amazon}
+          {t.sec.buyPdf}
         </a>
       </p>
     );
@@ -611,11 +607,7 @@ function Buy({ lang }: { lang: UiLang }) {
   return (
     <p className="buys">
       <span className="btn btn--soon" aria-disabled="true">
-        {lang === "ru"
-          ? "Файл для печати, скоро"
-          : lang === "es"
-            ? "Archivo para imprimir, pronto"
-            : "Printable file, coming soon"}
+        {t.sec.soon}
       </span>
     </p>
   );

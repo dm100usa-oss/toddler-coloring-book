@@ -26,6 +26,7 @@ type Key = (typeof KEYS)[number];
 export default function Picker({ lang }: { lang: ContentLang }) {
   const t = dictionaries[lang].picker;
   const c = dictionaries[lang].common;
+  const sec = dictionaries[lang].sec;
   const [answers, setAnswers] = useState<Partial<Answers>>({});
 
   const step = KEYS.findIndex((k) => !answers[k]);
@@ -118,11 +119,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
             <a key={s.id} href={sheetPdf(s.id, lang, "letter")} download>
               <img
                 src={sheetPreview(s.id, lang)}
-                alt={
-                  lang === "en"
-                    ? `Free printable coloring page: ${s.name.en}`
-                    : `Dibujo para colorear gratis: ${s.name.es}`
-                }
+                alt={dictionaries[lang].sec.sheetAlt(s.name[lang])}
                 loading="lazy"
               />
             </a>
@@ -157,20 +154,35 @@ export default function Picker({ lang }: { lang: ContentLang }) {
                 <Link href={homePath(lang)}>{ed.title}</Link>
               </p>
               <p style={{ fontSize: "var(--t-small)", margin: "0 0 0.9rem" }}>{ed.lead}</p>
+              {/* Английское и испанское издания продаются на Amazon,
+                  русское выходит файлом для печати. Пока адреса файла
+                  нет, кнопка стоит на месте, но нажать ее нельзя:
+                  ссылка в никуда читается и человеком, и поисковиком
+                  как поломка сайта. */}
               <p style={{ margin: 0 }}>
-                <a
-                  className="btn btn--pink"
-                  href={BOOK.amazonUrl(ed.asin!)}
-                  rel="nofollow sponsored noopener"
-                  target="_blank"
-                >
-                  {c.amazon} · {ed.price}
-                </a>
+                {ed.asin ? (
+                  <a
+                    className="btn btn--pink"
+                    href={BOOK.amazonUrl(ed.asin)}
+                    rel="nofollow sponsored noopener"
+                    target="_blank"
+                  >
+                    {c.amazon}
+                    {ed.price ? ` · ${ed.price}` : ""}
+                  </a>
+                ) : ed.pdfUrl ? (
+                  <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                    {sec.buyPdf}
+                    {ed.price ? ` · ${ed.price}` : ""}
+                  </a>
+                ) : (
+                  <span className="btn btn--soon" aria-disabled="true">
+                    {sec.soon}
+                  </span>
+                )}
               </p>
               <p className="buy-note" style={{ marginBottom: 0 }}>
-                {lang === "en"
-                  ? "Sold and shipped by Amazon. We earn from the sale."
-                  : "Vendido y enviado por Amazon. Nosotros ganamos con la venta."}
+                {sec.buyNote}
               </p>
             </div>
           </div>
@@ -179,9 +191,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
         <div className="result__block">
           <h4>{t.bookLine}</h4>
           <p className="result__notyet" style={{ marginBottom: "0.9rem" }}>
-            {lang === "en"
-              ? "Our own book is made for an earlier stage than this, so we are not going to suggest it. What suits your child now is a book with more to fill inside one drawing, or a step by step drawing book."
-              : "Nuestro propio libro está hecho para una etapa anterior a esta, así que no se lo vamos a proponer. Lo que le conviene ahora es un libro con más que rellenar dentro de un mismo dibujo, o un libro de dibujo paso a paso."}
+            {sec.outgrown}
           </p>
           <p style={{ margin: 0 }}>
             <Link className="btn btn--ghost" href={sectionPath(lang, "guides")}>
