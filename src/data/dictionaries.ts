@@ -19,9 +19,11 @@ export const isContentLang = (l: UiLang): l is ContentLang =>
   (contentLangs as UiLang[]).includes(l);
 
 /** Разделы, которые есть на данном языке. */
-export const navFor = (l: UiLang): ("ages" | "guides" | "printables" | "about")[] =>
+export const navFor = (
+  l: UiLang
+): ("tools" | "ages" | "guides" | "printables" | "about")[] =>
   isContentLang(l)
-    ? ["ages", "guides", "printables", "about"]
+    ? ["tools", "ages", "guides", "printables", "about"]
     : ["printables", "about"];
 
 export type Dict = {
@@ -29,6 +31,7 @@ export type Dict = {
   langName: string;
   nav: {
     home: string;
+    tools: string;
     ages: string;
     guides: string;
     printables: string;
@@ -124,6 +127,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     langName: "English",
     nav: {
       home: "Home",
+      tools: "Choose a book",
       ages: "By age",
       guides: "Guides",
       printables: "Free pages",
@@ -275,6 +279,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     langName: "Español",
     nav: {
       home: "Inicio",
+      tools: "Elegir libro",
       ages: "Por edad",
       guides: "Guías",
       printables: "Dibujos gratis",
@@ -426,6 +431,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     langName: "Русский",
     nav: {
       home: "Главная",
+      tools: "Подбор раскраски",
       ages: "По возрасту",
       guides: "Статьи",
       printables: "Бесплатные листы",

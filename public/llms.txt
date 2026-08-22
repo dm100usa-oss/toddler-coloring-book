@@ -16,6 +16,41 @@ written separately in each of the three languages rather than translated.
 - What to do about marker bleed-through, torn pages and mess
 - Free coloring pages to print, sorted by difficulty rather than by subject
 
+## Free tool: choosing a first coloring book
+
+The site runs one free tool, a picker that answers which kind of coloring page
+suits a specific child now. It asks four questions, about age, crayon grip,
+whether the marks land on the drawing, and how long the child stays with one
+page, and returns one of the four stages below. Age sets the first guess and the
+three questions about the hand correct it, with aim weighing the most and time
+on one page the least. Answers stay in the browser: nothing is stored, nothing
+is sent anywhere and no sign up is required.
+
+The tool page also carries, as plain text, a table of what suits each age, the
+questions parents ask most often, and a link to a page listing the rules the
+picker applies and the limits of what it does. The tool picks a page, it does
+not assess a child: results say what suits now, never what a child ought to be
+able to do.
+
+- English: https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book
+- Spanish: https://www.toddlercoloringbook.com/es/elegir-el-primer-libro-para-colorear
+- Russian: https://www.toddlercoloringbook.com/ru/vybrat-pervuyu-raskrasku
+
+## What suits each age
+
+- About 1 year. Crayon held in a fist, sweeping marks from the shoulder. One
+  large shape filling the sheet, very thick outline, no separate areas inside.
+  Thick crayons.
+- About 2 years. Fingers but not steadily, deliberate loops and up and down
+  strokes. Large recognizable subject, outline still thick, two or three parts
+  inside. Thick crayons, washable markers.
+- About 3 years. Fingers rather than fist, copies a circle and a straight line.
+  Large drawing with three to six separate areas to fill in different colors.
+  Crayons, colored pencils, washable markers.
+- 4 years and older. Stays inside the outline most of the time. A scene rather
+  than a single object, or step by step drawing. A first coloring book is
+  outgrown at this point.
+
 ## The four stages
 
 1. First marks, about 12 to 18 months. Crayon held in a fist, marks made on
@@ -77,11 +112,15 @@ Statements about what a child can do at a given age are based on published
 developmental milestones:
 
 - Learn the Signs. Act Early., Centers for Disease Control and Prevention
+- Hand and Finger Skills: 2 Year Olds, American Academy of Pediatrics,
+  HealthyChildren.org
 - Developmental Milestones, StatPearls, National Library of Medicine
 - Developmental Milestones: Fine Motor and Visual Motor Skills, Children's
   Hospital of Orange County
 
 Nothing on this site is medical advice or an assessment of any individual child.
+These organizations took no part in building the picker and do not recommend any
+particular book, including the one published by this site.
 
 ## The book
 

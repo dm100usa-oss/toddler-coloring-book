@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Picker from "@/components/Picker";
+import { toolLabels } from "@/data/tool";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
 import { stages } from "@/data/stages";
@@ -483,6 +484,17 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 {t.home.pickerLead}
               </p>
               <Picker lang={l} />
+
+              {/* Ссылка на полную страницу инструмента. Подборщик здесь
+                  остается коротким входом, а весь разбор по возрастам,
+                  таблица и вопросы родителей лежат на своей странице:
+                  два одинаковых развернутых текста спорили бы за один
+                  и тот же запрос. */}
+              <p style={{ textAlign: "center", margin: "var(--gap-3) 0 0" }}>
+                <Link className="btn btn--ghost" href={sectionPath(l, "tools")}>
+                  {toolLabels[l].fullPage}
+                </Link>
+              </p>
             </div>
           </section>
 

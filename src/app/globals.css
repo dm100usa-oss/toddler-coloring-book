@@ -1485,3 +1485,93 @@ html[lang="ru"] .hero {
   cursor: default;
 }
 .btn--soon:hover { text-decoration: none; }
+
+
+/* ==================== ТАБЛИЦА ПО ВОЗРАСТАМ ==================== */
+
+/* Настоящая таблица, а не сетка из блоков. Это важно не для вида,
+   а для того, кто читает страницу машиной: таблицу нейросеть берет
+   целиком и не пересказывает, а набор блоков ей приходится собирать
+   заново и она при этом ошибается.
+
+   На узком экране строки разворачиваются в карточки: заголовок
+   столбца подставляется перед значением из data-label, поэтому
+   подпись не дублируется в разметке и не читается дважды. */
+
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.agetable {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 720px;
+  font-size: var(--t-small);
+  background: var(--paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-raise);
+}
+.agetable th,
+.agetable td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(51, 32, 44, 0.09);
+}
+.agetable thead th {
+  background: var(--mint-pale);
+  color: var(--mint-deep);
+  font-family: var(--font-display);
+  font-size: var(--t-body);
+  font-weight: 700;
+  border-bottom: 2px solid var(--mint);
+}
+.agetable tbody th {
+  font-family: var(--font-display);
+  font-size: var(--t-body);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.agetable tbody th a {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--t-micro);
+  font-weight: 700;
+  white-space: normal;
+  margin-top: 0.2rem;
+}
+.agetable tbody tr:last-child th,
+.agetable tbody tr:last-child td { border-bottom: none; }
+.agetable tbody tr:nth-child(even) { background: rgba(255, 243, 226, 0.55); }
+
+@media (max-width: 760px) {
+  .tablewrap { overflow-x: visible; }
+  .agetable { min-width: 0; box-shadow: none; background: transparent; }
+  .agetable thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .agetable tbody tr {
+    display: block;
+    background: var(--paper);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-raise);
+    padding: 0.4rem 0.2rem 0.6rem;
+    margin-bottom: var(--gap-2);
+  }
+  .agetable tbody tr:nth-child(even) { background: var(--paper); }
+  .agetable tbody th,
+  .agetable tbody td { display: block; border-bottom: none; padding: 0.35rem 1rem; }
+  .agetable tbody th {
+    white-space: normal;
+    font-size: var(--t-h3);
+    border-bottom: 2px solid var(--pink-pale);
+    margin-bottom: 0.35rem;
+    padding-bottom: 0.5rem;
+  }
+  .agetable tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: var(--t-micro);
+    font-weight: 800;
+    color: var(--mint-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}

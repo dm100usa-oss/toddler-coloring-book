@@ -8,6 +8,8 @@ import { guides } from "@/data/guides";
 import { stages, stageById } from "@/data/stages";
 import type { StageId } from "@/data/stages";
 import { sheets, sheetPreview, sheetPdf } from "@/data/sheets";
+import { toolCopy, toolLabels, ageRows, basisSlug } from "@/data/tool";
+import Picker from "@/components/Picker";
 import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
 import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
@@ -46,6 +48,7 @@ function copyFor(section: Section, lang: UiLang) {
   if (section === "about") return aboutCopy[lang];
   if (section === "terms") return termsCopy[lang];
   if (!isContentLang(lang)) return null;
+  if (section === "tools") return toolCopy[lang];
   if (section === "ages") return agesCopy[lang];
   if (section === "guides") return guidesCopy[lang];
   return null;
@@ -119,6 +122,24 @@ export default async function SectionPage({
                   url: src.url,
                 })),
               },
+              /* Инструмент описывается как приложение, а не как статья:
+                 это разные записи, и поисковик показывает их по-разному. */
+              ...(s === "tools" && isContentLang(l)
+                ? [
+                    {
+                      "@type": "WebApplication",
+                      name: copy.title,
+                      description: copy.lead,
+                      url: `${SITE_URL}${sectionPath(l, "tools")}`,
+                      applicationCategory: "EducationalApplication",
+                      operatingSystem: "Any",
+                      inLanguage: t.htmlLang,
+                      isAccessibleForFree: true,
+                      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+                      publisher: { "@id": `${SITE_URL}/#publisher` },
+                    },
+                  ]
+                : []),
               ...(copy.faq ? [faqPage(copy.faq)] : [])
             )
           ),
@@ -144,6 +165,8 @@ export default async function SectionPage({
 
       {/* Проверка нужна разбору типов: эти блоки берут тексты этапов
           и статей, а они есть только на языках справочной части. */}
+      {s === "tools" && isContentLang(l) && <AgeTable lang={l} />}
+      {s === "tools" && isContentLang(l) && <ToolPicker lang={l} />}
       {s === "ages" && isContentLang(l) && <AgeLabels lang={l} />}
       {s === "ages" && isContentLang(l) && <AgeLadder lang={l} />}
       {s === "printables" && <SheetGrid lang={l} />}
@@ -167,8 +190,109 @@ export default async function SectionPage({
         </section>
       )}
 
+      {s === "tools" && isContentLang(l) && <BasisLink lang={l} />}
+
       {s !== "about" && s !== "terms" && <Sources lang={l} />}
     </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Таблица по возрастам                                               */
+/* ------------------------------------------------------------------ */
+
+/* Стоит выше подборщика намеренно. Подборщик показывает свой ответ
+   только после нажатий, а таблица лежит на странице обычным текстом:
+   ее читает поисковик, ее целиком берет нейросеть, и родителю, который
+   пришел за одной строкой, не приходится ничего нажимать. */
+
+function AgeTable({ lang }: { lang: ContentLang }) {
+  const x = toolLabels[lang];
+  return (
+    <section className="band band--cream">
+      <div className="wrap">
+        <h2 className="section">{x.tableTitle}</h2>
+        <p className="lead">{x.tableLead}</p>
+        <div className="tablewrap">
+          <table className="agetable">
+            <thead>
+              <tr>
+                <th scope="col">{x.colAge}</th>
+                <th scope="col">{x.colHand}</th>
+                <th scope="col">{x.colPage}</th>
+                <th scope="col">{x.colParts}</th>
+                <th scope="col">{x.colTools}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ageRows.map((r) => {
+                const st = stageById(r.stage as StageId);
+                return (
+                  <tr key={r.id}>
+                    <th scope="row">
+                      {r.age[lang]}
+                      <Link href={itemPath(lang, "ages", st.slug[lang])}>{x.moreAbout}</Link>
+                    </th>
+                    <td data-label={x.colHand}>{r.hand[lang]}</td>
+                    <td data-label={x.colPage}>{r.page[lang]}</td>
+                    <td data-label={x.colParts}>{r.parts[lang]}</td>
+                    <td data-label={x.colTools}>{r.tools[lang]}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Живой подбор                                                       */
+/* ------------------------------------------------------------------ */
+
+/* Тот же самый подборщик, что стоит на главной. Он здесь не копия:
+   компонент один, и правится он в одном месте. */
+
+function ToolPicker({ lang }: { lang: ContentLang }) {
+  const x = toolLabels[lang];
+  return (
+    <section className="band band--mint" id="picker">
+      <div className="wrap">
+        <h2 className="section" style={{ textAlign: "center" }}>
+          {x.pickerTitle}
+        </h2>
+        <p className="lead" style={{ textAlign: "center", marginInline: "auto" }}>
+          {x.pickerLead}
+        </p>
+        <Picker lang={lang} />
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Ссылка на страницу оснований                                       */
+/* ------------------------------------------------------------------ */
+
+/* Инструменту верят не за слово "подбор", а за перечисленные вслух
+   правила. Правила лежат на отдельной странице, и ссылка на нее стоит
+   прямо под инструментом, а не спрятана в подвале. */
+
+function BasisLink({ lang }: { lang: ContentLang }) {
+  const x = toolLabels[lang];
+  return (
+    <section className="band">
+      <div className="wrap">
+        <ul className="guides">
+          <li>
+            <Link href={itemPath(lang, "tools", basisSlug[lang])}>{x.basisLink}</Link>
+            <span>{x.basisLinkLead}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
   );
 }
 

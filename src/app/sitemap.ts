@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { activeLangs, isContentLang } from "@/data/dictionaries";
 import { stages } from "@/data/stages";
 import { guides } from "@/data/guides";
+import { basisSlug } from "@/data/tool";
 import { SITE_URL, SITE_UPDATED } from "@/lib/site";
 import { homePath, sectionPath, sectionSlugs, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -33,6 +34,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       for (const g of guides) {
         out.push({ url: SITE_URL + itemPath(lang, "guides", g.slug[lang]), lastModified, priority: 0.85 });
       }
+
+      /* Страница правил подбора. Стоит ниже самого инструмента
+         по важности, но поисковик должен ее знать: именно на нее
+         опирается доверие ко всему инструменту. */
+      out.push({
+        url: SITE_URL + itemPath(lang, "tools", basisSlug[lang]),
+        lastModified,
+        priority: 0.7,
+      });
     }
   }
   return out;

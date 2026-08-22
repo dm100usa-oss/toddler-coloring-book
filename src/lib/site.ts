@@ -53,6 +53,14 @@ export const SOURCES = [
     url: "https://www.cdc.gov/act-early/milestones/index.html",
   },
   {
+    id: "aap",
+    title: "Hand and Finger Skills: 2 Year Olds",
+    publisher: "American Academy of Pediatrics, HealthyChildren.org",
+    url:
+      "https://www.healthychildren.org/English/ages-stages/toddler/Pages/" +
+      "Hand-and-Finger-Skills-2-Year-Olds.aspx",
+  },
+  {
     id: "statpearls",
     title: "Developmental Milestones",
     publisher: "StatPearls, National Library of Medicine",

@@ -8,6 +8,7 @@ import { guides, guideBySlug } from "@/data/guides";
 import type { Guide } from "@/data/guides";
 import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
+import { basisCopy, basisSlug, toolLabels } from "@/data/tool";
 import { homePath, sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
 import { jsonLd, organization, breadcrumbs, langAlternates, faqPage } from "@/lib/schema";
@@ -32,6 +33,9 @@ export function generateStaticParams() {
     for (const g of guides) {
       out.push({ lang, section: sectionSlugs[lang].guides, slug: g.slug[lang] });
     }
+    /* Страница оснований лежит внутри раздела инструмента: правила
+       подбора это часть инструмента, а не отдельная тема сайта. */
+    out.push({ lang, section: sectionSlugs[lang].tools, slug: basisSlug[lang] });
   }
   return out;
 }
@@ -60,6 +64,23 @@ export async function generateMetadata({
           en: `${SITE_URL}${itemPath("en", "guides", g.slug.en)}`,
           es: `${SITE_URL}${itemPath("es", "guides", g.slug.es)}`,
           ru: `${SITE_URL}${itemPath("ru", "guides", g.slug.ru)}`,
+        }),
+      },
+    };
+  }
+
+  if (sec === "tools") {
+    if (slug !== basisSlug[l]) return {};
+    const b = basisCopy[l];
+    return {
+      title: b.title,
+      description: b.lead,
+      alternates: {
+        canonical: `${SITE_URL}${itemPath(l, "tools", basisSlug[l])}`,
+        languages: langAlternates({
+          en: `${SITE_URL}${itemPath("en", "tools", basisSlug.en)}`,
+          es: `${SITE_URL}${itemPath("es", "tools", basisSlug.es)}`,
+          ru: `${SITE_URL}${itemPath("ru", "tools", basisSlug.ru)}`,
         }),
       },
     };
@@ -100,6 +121,10 @@ export default async function StagePage({
     const g = guideBySlug(l, slug);
     if (!g) notFound();
     return <GuideArticle lang={l} guide={g} />;
+  }
+  if (sec === "tools") {
+    if (slug !== basisSlug[l]) notFound();
+    return <BasisPage lang={l} />;
   }
   if (sec !== "ages") notFound();
   const st = stageBySlug(l, slug);
@@ -452,6 +477,116 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <Sources lang={lang} />
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  На чем основаны рекомендации                                       */
+/* ------------------------------------------------------------------ */
+
+/* Страница правил подбора.
+
+   Она нужна не родителю в первую очередь, а тому, кто решает, можно
+   ли этому инструменту верить: поисковику, нейросети и внимательному
+   человеку. Инструмент, который называет свои правила вслух, стоит
+   дороже инструмента, который говорит про себя "умный подбор".
+
+   Здесь описано ровно то, что делает pickStage в data/stages.ts.
+   Если правило там изменится, эта страница меняется вместе с ним. */
+
+function BasisPage({ lang }: { lang: ContentLang }) {
+  const t = dictionaries[lang];
+  const b = basisCopy[lang];
+  const x = toolLabels[lang];
+
+  const data = jsonLd(
+    organization(),
+    breadcrumbs(lang, [
+      { name: t.nav.tools, path: sectionPath(lang, "tools") },
+      { name: b.title, path: itemPath(lang, "tools", basisSlug[lang]) },
+    ]),
+    {
+      "@type": "Article",
+      headline: b.title,
+      description: b.lead,
+      inLanguage: t.htmlLang,
+      dateModified: SITE_UPDATED,
+      author: { "@type": "Organization", name: PUBLISHER },
+      publisher: { "@id": `${SITE_URL}/#publisher` },
+      citation: SOURCES.map((src) => ({
+        "@type": "CreativeWork",
+        name: src.title,
+        publisher: { "@type": "Organization", name: src.publisher },
+        url: src.url,
+      })),
+    }
+  );
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+
+      <div className="pagehead">
+        <h1>{b.title}</h1>
+        <p>{b.lead}</p>
+      </div>
+
+      <section className="band">
+        <div className="wrap">
+          <div className="teach">
+            {b.body.map((p) => (
+              <p className="teach-p" key={p.slice(0, 40)}>
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Четыре признака и вес каждого. Вес назван словами, а не числом:
+          число выглядело бы как точность, которой здесь нет. */}
+      <section className="band band--cream">
+        <div className="wrap">
+          <h2 className="section">{b.signsTitle}</h2>
+          <ul className="labels">
+            {b.signs.map((sg) => (
+              <li className="label-card" key={sg.name}>
+                <p className="label-card__stage">{sg.name}</p>
+                <p className="label-card__means">{sg.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Чего инструмент не делает. Этот блок важнее предыдущего:
+          он снимает с родителя мысль, что сайт оценивает его ребенка. */}
+      <section className="band band--mint">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{b.notTitle}</h2>
+            <ul className="teach-list">
+              {b.not.map((line) => (
+                <li key={line.slice(0, 40)}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="band">
+        <div className="wrap">
+          <p className="teach-other">
+            <span>{x.pickerTitle}</span>
+            <Link className="btn btn--pink" href={sectionPath(lang, "tools")}>
+              {t.nav.tools}
+            </Link>
+          </p>
         </div>
       </section>
 
