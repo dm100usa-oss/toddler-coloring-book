@@ -57,9 +57,6 @@ const words = {
     pages: "Pages",
     size: "Size",
     inside: "What is inside",
-    insideLead:
-      "Every drawing in the book, in the order it appears. These twenty are the ones we put on " +
-      "the cover and in the ads, because they show best what the whole book looks like.",
     seeAll: "See all 111 drawings",
     video: "A look inside the book",
     videoLead:
@@ -83,9 +80,6 @@ const words = {
     pages: "Páginas",
     size: "Tamaño",
     inside: "Qué hay dentro",
-    insideLead:
-      "Todos los dibujos del libro, en el orden en que aparecen. Estos veinte son los que pusimos " +
-      "en la portada y en los anuncios, porque muestran mejor cómo es el libro entero.",
     seeAll: "Ver los 111 dibujos",
     video: "El libro por dentro",
     videoLead:
@@ -109,9 +103,6 @@ const words = {
     pages: "Страниц",
     size: "Размер",
     inside: "Что внутри",
-    insideLead:
-      "Все рисунки книги, в том порядке, в каком они в ней идут. Эти двадцать стоят на обложке " +
-      "и на рекламных баннерах: они лучше всего показывают, какая книга в целом.",
     seeAll: "Посмотреть все 111 рисунков",
     video: "Книга внутри",
     videoLead:
@@ -160,9 +151,17 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
       description: ed.headline + " " + ed.lead,
+      /* Весь состав книги словами: что внутри, что она дает и где
+         пригодится. Человек это читает на странице, машина здесь. */
+      disambiguatingDescription: [...ed.needs, ...ed.extras, ...ed.inside].join(". "),
+      /* У книги две аудитории. Без этой строки сайт не отвечал на
+         вопрос "раскраска для детского сада". */
+      audience: [
+        { "@type": "PeopleAudience", suggestedMinAge: 1, suggestedMaxAge: 3 },
+        { "@type": "EducationalAudience", educationalRole: "teacher" },
+      ],
       image: `${SITE_URL}${ed.cover}`,
       typicalAgeRange: "1-3",
-      audience: { "@type": "PeopleAudience", suggestedMinAge: 1, suggestedMaxAge: 3 },
       /* Полный состав книги для машины. Нейросеть читает его мгновенно
          и по нему рекомендует книгу тому, кто спросил про конкретное
          животное или предмет. */
@@ -252,10 +251,11 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           <div>
             <h1>{ed.title}</h1>
-            {/* Одна законченная фраза: количество, толщина линии,
-                один рисунок на странице, возраст. Ее можно
-                процитировать целиком, ничего не дописывая. */}
-            <p className="headline">{ed.headline}</p>
+            {/* Строки с числом рисунков и возрастом здесь больше нет:
+                ровно то же самое стоит на два сантиметра ниже, в полосе
+                с возрастом и рисунками и в пяти пунктах. Как описание
+                страницы для поиска эта фраза осталась: там рядом ничего
+                нет и повторять нечего. */}
 
             <ul className="key-specs">
               <li>
@@ -296,11 +296,22 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           ))}
         </div>
 
+        {/* Что книга дает ребенку и где еще пригодится. Стоит сразу
+            под картинками: человек уже увидел, какие внутри рисунки,
+            и здесь узнает, зачем они. Детский сад и подарок это две
+            отдельные причины купить, и раньше их на странице не было. */}
+        <ul className="needs needs--extras">
+          {ed.extras.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+
         <p className="lead-text">{ed.lead}</p>
 
         {/* ============ 3. Что внутри: сами рисунки ============ */}
+        {/* Пояснения под заголовком нет намеренно: под словами
+            "что внутри" и так стоят сами рисунки, объяснять нечего. */}
         <h2 className="section" id="inside">{w.inside}</h2>
-        <p>{w.insideLead}</p>
 
         <ul className="thumbs">
           {top.map((d) => (

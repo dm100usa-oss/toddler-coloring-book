@@ -472,7 +472,9 @@ ul.inside li::marker { color: var(--pink-hot); }
   border-top: 1px solid rgba(51, 32, 44, 0.1);
   border-bottom: 1px solid rgba(51, 32, 44, 0.1);
 }
-.key-specs li { display: grid; gap: 0.15rem; }
+/* Значение стоит ровно под своей подписью, по центру: подписи разной
+   длины, и прижатые влево числа выглядели рассыпанными. */
+.key-specs li { display: grid; gap: 0.15rem; justify-items: center; text-align: center; }
 .key-specs__label {
   font-size: var(--t-micro);
   text-transform: uppercase;
@@ -1235,6 +1237,28 @@ ul.award-list li {
   border-bottom: 2.5px solid #fff;
   border-radius: 1px;
   transform: rotate(-45deg);
+}
+
+/* Добавочные пункты под тремя картинками. Идут в два столбца:
+   основные пять стоят в узкой колонке рядом с обложкой, а здесь
+   вся ширина страницы, и одна колонка растянулась бы через весь экран. */
+.needs--extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--gap-4);
+  margin: 0 0 var(--gap-4);
+}
+.needs--extras li:nth-last-child(-n + 2) { border-bottom: none; }
+@media (max-width: 640px) {
+  .needs--extras { grid-template-columns: 1fr; }
+  .needs--extras li:nth-last-child(2) { border-bottom: 1px solid rgba(51, 32, 44, 0.09); }
+}
+
+/* На телефоне из трех квадратов остаются два: втроем в ряд они
+   становятся марками, а в два ряда третий висит один. */
+@media (max-width: 640px) {
+  .artwork { grid-template-columns: repeat(2, 1fr); }
+  .artwork img:nth-child(3) { display: none; }
 }
 
 /* Рядом с видео этот же список стоит на цветной подложке и в тесноте,

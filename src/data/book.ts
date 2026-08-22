@@ -37,6 +37,11 @@ export type Edition = {
       сначала человек понимает, что это за книга, и только потом
       ему предлагают ее купить. */
   needs: string[];
+  /* Что книга дает ребенку и где еще пригодится. Стоит сразу под
+     тремя картинками: человек уже увидел, какие внутри рисунки,
+     и здесь узнает, зачем они. Взято с карточки книги в магазине,
+     а не придумано заново. */
+  extras: string[];
   inside: string[];
   /** Кому книга подходит и кому нет. Второе важнее первого:
       родитель, которому честно сказали "не берите", возвращается. */
@@ -122,6 +127,12 @@ export const editions: Record<UiLang, Edition> = {
       "111 different drawings on familiar, interesting subjects",
       "A child colors and learns new words at the same time",
     ],
+    extras: [
+      "Develops fine motor skills, creativity and concentration",
+      "Keeps a child busy for a long time and gives them happy moments",
+      "Works in preschool and daycare, not only at home",
+      "Makes a good gift for a birthday or any celebration",
+    ],
     inside: [
       "111 drawings, all hand drawn by professional illustrators",
       "Thick outlines and large shapes, so a child who cannot aim yet still sees a result",
@@ -135,8 +146,8 @@ export const editions: Record<UiLang, Edition> = {
     forWhom:
       "Made for the stage between the first deliberate mark and the first shape colored on " +
       "purpose, which for most children falls between one and three years old. It works as a " +
-      "first coloring book, in preschool and daycare, and as a gift when you do not know the " +
-      "child well.",
+      "first coloring book at home, in preschool and daycare, where one book keeps a whole " +
+      "group busy, and as a birthday or holiday gift when you do not know the child well.",
     notFor:
       "If your child already stays inside the line without effort and finishes a page in a few " +
       "minutes, this book will bore them. At that point look for a scene with more areas to " +
@@ -164,6 +175,21 @@ export const editions: Record<UiLang, Edition> = {
           "and they leave a wide mark that a child can actually see. Markers give a brighter result " +
           "but go through the paper. Colored pencils need a finger grip that most children do not " +
           "have before three.",
+      },
+      {
+        q: "Can I use this book in a preschool or daycare?",
+        a:
+          "Yes, and it is one of the places it works best. Every drawing sits on its own page, " +
+          "so a page can be pulled out and handed to a child, and one book keeps a whole group " +
+          "busy. The subjects are ordinary things a child can name, which is why teachers use " +
+          "them for first words as well as for coloring.",
+      },
+      {
+        q: "Does this work as a gift?",
+        a:
+          "It does, and it is a safe one when you do not know the child well. The range is wide, " +
+          "one to three, so the book does not stop being useful in a month. It costs less than " +
+          "most toys and it keeps a child busy for a long time rather than for one evening.",
       },
       {
         q: "Is there a Spanish edition?",
@@ -213,6 +239,12 @@ export const editions: Record<UiLang, Edition> = {
       "111 dibujos distintos sobre temas conocidos e interesantes",
       "El niño colorea y aprende palabras nuevas a la vez",
     ],
+    extras: [
+      "Desarrolla las habilidades creativas, la motricidad fina y la concentración",
+      "Mantiene al pequeño ocupado durante mucho tiempo y le brinda momentos felices",
+      "Es útil para niños en edad preescolar y de educación infantil",
+      "Es el regalo perfecto para cumpleaños, celebraciones y cualquier evento importante",
+    ],
     inside: [
       "111 dibujos, todos hechos a mano por ilustradores profesionales",
       "Líneas gruesas y formas grandes, para que un niño que aún no apunta vea igualmente un resultado",
@@ -226,7 +258,8 @@ export const editions: Record<UiLang, Edition> = {
     forWhom:
       "Hecho para la etapa que va desde la primera marca intencionada hasta la primera forma " +
       "coloreada a propósito, que en la mayoría de los niños cae entre uno y tres años. Sirve como " +
-      "primer libro para colorear, en preescolar y guardería, y como regalo cuando no se conoce " +
+      "primer libro para colorear en casa, en preescolar y guardería, donde un solo libro " +
+      "entretiene a todo el grupo, y como regalo de cumpleaños o de fiesta cuando no se conoce " +
       "bien al niño.",
     notFor:
       "Si su hijo ya se queda dentro de la línea sin esfuerzo y termina una página en pocos " +
@@ -255,6 +288,21 @@ export const editions: Record<UiLang, Edition> = {
           "marca ancha que el niño ve de verdad. Los rotuladores dan más color pero traspasan el " +
           "papel. Los lápices de colores piden un agarre con los dedos que la mayoría no tiene antes " +
           "de los tres años.",
+      },
+      {
+        q: "¿Sirve para preescolar o guardería?",
+        a:
+          "Sí, y es uno de los sitios donde mejor funciona. Cada dibujo ocupa su propia página, " +
+          "así que se puede arrancar una hoja y dársela a un niño, y un solo libro entretiene a " +
+          "todo el grupo. Los motivos son cosas corrientes que el niño sabe nombrar, y por eso " +
+          "las maestras los usan también para las primeras palabras.",
+      },
+      {
+        q: "¿Va bien como regalo?",
+        a:
+          "Sí, y es un regalo seguro cuando no se conoce bien al niño. El rango es amplio, de uno " +
+          "a tres años, así que el libro no deja de servir al mes siguiente. Cuesta menos que la " +
+          "mayoría de los juguetes y ocupa al niño durante mucho tiempo, no una sola tarde.",
       },
       {
         q: "¿Hay edición en inglés?",
@@ -306,6 +354,12 @@ export const editions: Record<UiLang, Edition> = {
       "111 разнообразных рисунков на знакомые и интересные темы",
       "Ребёнок не только раскрашивает, но и узнаёт новые слова",
     ],
+    extras: [
+      "Развивает мелкую моторику, творческие способности и умение сосредоточиться",
+      "Занимает ребенка надолго и дарит счастливые моменты",
+      "Подходит для детского сада и подготовки к школе, не только для дома",
+      "Хороший подарок на день рождения и любой праздник",
+    ],
     inside: [
       "111 рисунков, все нарисованы от руки профессиональными художниками",
       "Толстый контур и крупные формы: ребенок, который еще не попадает, все равно видит результат",
@@ -318,8 +372,9 @@ export const editions: Record<UiLang, Edition> = {
     ],
     forWhom:
       "Книга сделана для этапа между первой осознанной чертой и первой формой, закрашенной " +
-      "нарочно. У большинства детей это возраст от года до трех. Подходит как первая раскраска, " +
-      "для детского сада и как подарок, когда вы плохо знаете ребенка.",
+      "нарочно. У большинства детей это возраст от года до трех. Подходит как первая раскраска " +
+      "дома, в детском саду и в подготовке к школе, где одной книги хватает на целую группу, " +
+      "и как подарок на день рождения или праздник, когда вы плохо знаете ребенка.",
     notFor:
       "Если ребенок уже без усилий остается внутри контура и заканчивает страницу за несколько " +
       "минут, книга ему будет скучна. В этот момент нужна картинка с большим числом участков " +
@@ -346,6 +401,21 @@ export const editions: Record<UiLang, Edition> = {
           "Подойдет обычная бумага для принтера. Печатайте с одной стороны: если ребенок возьмет " +
           "фломастер, он пройдет лист насквозь, и на двусторонней печати испортит рисунок с " +
           "обратной стороны. Плотная бумага от 120 грамм решает это полностью.",
+      },
+      {
+        q: "Подойдет ли книга для детского сада?",
+        a:
+          "Да, это одно из мест, где она работает лучше всего. Каждый рисунок занимает свою " +
+          "страницу, поэтому лист можно вынуть и дать ребенку, а одной книги хватает на целую " +
+          "группу. Предметы обычные, ребенок может их назвать, и воспитатели используют их не " +
+          "только для рисования, но и для первых слов.",
+      },
+      {
+        q: "Годится ли книга в подарок?",
+        a:
+          "Да, и это безопасный подарок, когда вы плохо знаете ребенка. Возраст широкий, от года " +
+          "до трех, так что через месяц книга не станет ненужной. Стоит она меньше большинства " +
+          "игрушек и занимает ребенка надолго, а не на один вечер.",
       },
       {
         q: "Есть ли книга на бумаге?",
