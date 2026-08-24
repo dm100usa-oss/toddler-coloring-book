@@ -416,7 +416,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         {/* ============ 6. Покупка ============ */}
         <div className="buy-block">
           <Buy lang={l} />
-          <p className="buy-note">{w.buyNote}</p>
+          {/* Подпись объясняет обе кнопки: бумажная книга приходит
+              из Amazon, файл для печати из нашего магазина. */}
+          <p className="buy-note">
+            {ed.asin ? w.buyNote : ""}
+            {ed.asin && ed.pdfUrl ? " " : ""}
+            {ed.pdfUrl ? t.sec.pdfNote : ""}
+            {!ed.asin && !ed.pdfUrl ? w.buyNote : ""}
+          </p>
         </div>
 
         {/* ============ 7. Кому подходит и кому нет ============ */}
@@ -573,26 +580,40 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   );
 }
 
-/* Кнопка покупки. На английском и испанском ведет на Amazon.
-   На русском ведет на страницу, где продается файл для печати:
-   пока ее нет, кнопки тоже нет, а вместо нее человеку предлагаются
-   бесплатные листы ниже по странице. Кнопка, ведущая в пустоту,
-   хуже, чем ее отсутствие: и человек, и поисковик считают ее
-   сломанной ссылкой. */
+/* Кнопки покупки. Их две, и они стоят рядом, как в основном каталоге
+   издательства: розовая ведет на Amazon за бумажной книгой, голубая
+   в наш собственный магазин за файлом для печати. Это два разных
+   товара, а не два способа купить одно и то же, поэтому выбор
+   остается за человеком и ни одна из кнопок не прячется.
+
+   У русского издания нет ни того, ни другого: бумажного нет вовсе,
+   а страница с файлом еще не готова. Там стоит серая надпись, которую
+   нельзя нажать. Ссылка в пустоту хуже ее отсутствия: и человек,
+   и поисковик считают ее поломкой. */
 function Buy({ lang }: { lang: UiLang }) {
   const ed = editions[lang];
   const t = dictionaries[lang];
   const w = words[lang];
 
-  if (ed.asin) {
+  if (!ed.asin && !ed.pdfUrl) {
     return (
       <p className="buys">
-        {ed.price ? (
-          <span className="top-price">
-            <span className="top-price__value">{ed.price}</span>
-            <span className="top-price__label">{w.priceFrom}</span>
-          </span>
-        ) : null}
+        <span className="btn btn--soon" aria-disabled="true">
+          {t.sec.soon}
+        </span>
+      </p>
+    );
+  }
+
+  return (
+    <p className="buys">
+      {ed.price ? (
+        <span className="top-price">
+          <span className="top-price__value">{ed.price}</span>
+          <span className="top-price__label">{w.priceFrom}</span>
+        </span>
+      ) : null}
+      {ed.asin ? (
         <a
           className="btn btn--pink"
           href={BOOK.amazonUrl(ed.asin)}
@@ -601,37 +622,12 @@ function Buy({ lang }: { lang: UiLang }) {
         >
           {t.common.amazon}
         </a>
-      </p>
-    );
-  }
-
-  if (ed.pdfUrl) {
-    return (
-      <p className="buys">
-        {ed.price ? (
-          <span className="top-price">
-            <span className="top-price__value">{ed.price}</span>
-            <span className="top-price__label">{w.priceFrom}</span>
-          </span>
-        ) : null}
-        <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+      ) : null}
+      {ed.pdfUrl ? (
+        <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
           {t.sec.buyPdf}
         </a>
-      </p>
-    );
-  }
-
-  /* Русское издание есть, а страницы, где оно продается, еще нет.
-     Кнопка стоит на месте и показывает, как книга будет продаваться,
-     но она не ссылка и нажать ее нельзя. Ссылка в никуда хуже:
-     человек запоминает ее как поломку сайта, поисковик как
-     небрежность. Как только в book.ts появится pdfUrl, кнопка выше
-     станет обычной ссылкой, здесь менять нечего. */
-  return (
-    <p className="buys">
-      <span className="btn btn--soon" aria-disabled="true">
-        {t.sec.soon}
-      </span>
+      ) : null}
     </p>
   );
 }

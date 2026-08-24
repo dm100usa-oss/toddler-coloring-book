@@ -103,6 +103,10 @@ export type Dict = {
     outgrown: string;
     soon: string;
     buyPdf: string;
+    /** Стоит рядом с подписью про Amazon, когда на странице обе
+        кнопки. Без нее человек видит вторую кнопку и не понимает,
+        чем она отличается от первой. */
+    pdfNote: string;
     stageTitle: (title: string, age: string) => string;
     sheetAlt: (name: string) => string;
     pageAlt: (name: string) => string;
@@ -253,6 +257,9 @@ export const dictionaries: Record<UiLang, Dict> = {
         "step drawing book.",
       soon: "Printable file, coming soon",
       buyPdf: "Get the printable file",
+      pdfNote:
+        "The printable file opens in our own shop and arrives by email after checkout. Print it " +
+        "at home as many times as you need.",
       stageTitle: (title, age) => `${title}: coloring at ${age}`,
       sheetAlt: (name) => `Free printable coloring page: ${name}`,
       pageAlt: (name) =>
@@ -423,6 +430,9 @@ export const dictionaries: Record<UiLang, Dict> = {
           "sí mismo.",
       soon: "Archivo para imprimir, próximamente",
       buyPdf: "Conseguir el archivo para imprimir",
+      pdfNote:
+        "El archivo para imprimir se abre en nuestra propia tienda y llega por correo tras la " +
+        "compra. Se puede imprimir en casa tantas veces como haga falta.",
       stageTitle: (title, age) => `${title}: colorear a ${age}`,
       sheetAlt: (name) => `Dibujo para colorear gratis: ${name}`,
       pageAlt: (name) =>
@@ -582,6 +592,9 @@ export const dictionaries: Record<UiLang, Dict> = {
           "пошаговым рисованием, где он сможет создавать рисунок сам.",
       soon: "Файл для печати, скоро появится",
       buyPdf: "Купить файл для печати",
+      pdfNote:
+        "Файл для печати открывается в нашем собственном магазине и приходит на почту после " +
+        "оплаты. Печатать его дома можно столько раз, сколько нужно.",
       stageTitle: (title, age) => `${title}: раскрашивание ${age}`,
       sheetAlt: (name) => `Бесплатная раскраска для печати: ${name}`,
       pageAlt: (name) =>

@@ -154,12 +154,12 @@ export default function Picker({ lang }: { lang: ContentLang }) {
                 <Link href={homePath(lang)}>{ed.title}</Link>
               </p>
               <p style={{ fontSize: "var(--t-small)", margin: "0 0 0.9rem" }}>{ed.lead}</p>
-              {/* Английское и испанское издания продаются на Amazon,
-                  русское выходит файлом для печати. Пока адреса файла
-                  нет, кнопка стоит на месте, но нажать ее нельзя:
-                  ссылка в никуда читается и человеком, и поисковиком
-                  как поломка сайта. */}
-              <p style={{ margin: 0 }}>
+              {/* Бумажная книга и файл для печати это два разных
+                  товара, поэтому кнопки стоят рядом. У русского
+                  издания пока нет ни того, ни другого: там серая
+                  надпись, нажать ее нельзя. Ссылка в никуда читается
+                  и человеком, и поисковиком как поломка сайта. */}
+              <p style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", margin: 0 }}>
                 {ed.asin ? (
                   <a
                     className="btn btn--pink"
@@ -170,19 +170,22 @@ export default function Picker({ lang }: { lang: ContentLang }) {
                     {c.amazon}
                     {ed.price ? ` · ${ed.price}` : ""}
                   </a>
-                ) : ed.pdfUrl ? (
-                  <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                ) : null}
+                {ed.pdfUrl ? (
+                  <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
                     {sec.buyPdf}
-                    {ed.price ? ` · ${ed.price}` : ""}
                   </a>
-                ) : (
+                ) : null}
+                {!ed.asin && !ed.pdfUrl ? (
                   <span className="btn btn--soon" aria-disabled="true">
                     {sec.soon}
                   </span>
-                )}
+                ) : null}
               </p>
               <p className="buy-note" style={{ marginBottom: 0 }}>
-                {sec.buyNote}
+                {ed.asin ? sec.buyNote : ""}
+                {ed.asin && ed.pdfUrl ? " " : ""}
+                {ed.pdfUrl ? sec.pdfNote : ""}
               </p>
             </div>
           </div>

@@ -305,9 +305,10 @@ export default async function StagePage({
                   <Link href={homePath(l)}>{ed.title}</Link>
                 </p>
                 <p style={{ margin: "0 0 0.9rem" }}>{ed.lead}</p>
-                {/* Английское и испанское издания продаются на Amazon,
-                    русское выходит файлом для печати. Пока адреса файла
-                    нет, кнопка стоит на месте, но нажать ее нельзя. */}
+                {/* Бумажная книга и файл для печати это два разных
+                    товара, поэтому кнопки стоят рядом, а не вместо
+                    друг друга. У русского издания пока нет ни того,
+                    ни другого: там серая надпись, нажать нельзя. */}
                 <p style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", margin: 0 }}>
                   <Link className="btn btn--ghost" href={homePath(l)}>
                     {t.home.bookCta}
@@ -322,19 +323,22 @@ export default async function StagePage({
                       {t.common.amazon}
                       {ed.price ? ` · ${ed.price}` : ""}
                     </a>
-                  ) : ed.pdfUrl ? (
-                    <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                  ) : null}
+                  {ed.pdfUrl ? (
+                    <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
                       {t.sec.buyPdf}
-                      {ed.price ? ` · ${ed.price}` : ""}
                     </a>
-                  ) : (
+                  ) : null}
+                  {!ed.asin && !ed.pdfUrl ? (
                     <span className="btn btn--soon" aria-disabled="true">
                       {t.sec.soon}
                     </span>
-                  )}
+                  ) : null}
                 </p>
                 <p className="buy-note" style={{ marginBottom: 0 }}>
-                  {t.sec.buyNote}
+                  {ed.asin ? t.sec.buyNote : ""}
+                  {ed.asin && ed.pdfUrl ? " " : ""}
+                  {ed.pdfUrl ? t.sec.pdfNote : ""}
                 </p>
               </div>
             </div>
@@ -815,19 +819,22 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
                     {t.common.amazon}
                     {ed.price ? ` · ${ed.price}` : ""}
                   </a>
-                ) : ed.pdfUrl ? (
-                  <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                ) : null}
+                {ed.pdfUrl ? (
+                  <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
                     {t.sec.buyPdf}
-                    {ed.price ? ` · ${ed.price}` : ""}
                   </a>
-                ) : (
+                ) : null}
+                {!ed.asin && !ed.pdfUrl ? (
                   <span className="btn btn--soon" aria-disabled="true">
                     {t.sec.soon}
                   </span>
-                )}
+                ) : null}
               </p>
               <p className="buy-note" style={{ marginBottom: 0 }}>
-                {t.sec.buyNote}
+                {ed.asin ? t.sec.buyNote : ""}
+                {ed.asin && ed.pdfUrl ? " " : ""}
+                {ed.pdfUrl ? t.sec.pdfNote : ""}
               </p>
             </div>
           </div>
@@ -970,19 +977,22 @@ function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
                     {t.common.amazon}
                     {ed.price ? ` · ${ed.price}` : ""}
                   </a>
-                ) : ed.pdfUrl ? (
-                  <a className="btn btn--pink" href={ed.pdfUrl} rel="noopener" target="_blank">
+                ) : null}
+                {ed.pdfUrl ? (
+                  <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
                     {t.sec.buyPdf}
-                    {ed.price ? ` · ${ed.price}` : ""}
                   </a>
-                ) : (
+                ) : null}
+                {!ed.asin && !ed.pdfUrl ? (
                   <span className="btn btn--soon" aria-disabled="true">
                     {t.sec.soon}
                   </span>
-                )}
+                ) : null}
               </p>
               <p className="buy-note" style={{ marginBottom: 0 }}>
-                {t.sec.buyNote}
+                {ed.asin ? t.sec.buyNote : ""}
+                {ed.asin && ed.pdfUrl ? " " : ""}
+                {ed.pdfUrl ? t.sec.pdfNote : ""}
               </p>
             </div>
           </div>

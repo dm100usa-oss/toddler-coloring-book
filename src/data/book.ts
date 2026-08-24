@@ -67,6 +67,11 @@ export type Edition = {
   };
 };
 
+/* Магазин, где издательство продает файлы для печати. Тот же самый,
+   что стоит на карточках книг в основном каталоге: человек, пришедший
+   с обоих сайтов, попадает в одно и то же место. */
+const WIX = "https://dvchbooks.wixsite.com/website-13/product-page/";
+
 export const BOOK = {
   drawings: 111,
   pages: 114,
@@ -112,6 +117,7 @@ export const editions: Record<UiLang, Edition> = {
     headline:
       "111 big, simple drawings with thick outlines, one per page, for children aged 1 to 3.",
     asin: "1963328272",
+    pdfUrl: WIX + "english-4",
     price: "$6.99",
     published: "2024-04-22",
     size: "8.5 x 11 in",
@@ -232,6 +238,7 @@ export const editions: Record<UiLang, Edition> = {
       "111 dibujos grandes y simples con líneas gruesas, uno por página, para bebés de 1 a 3 " +
         "años.",
     asin: "1963328205",
+    pdfUrl: WIX + "spanish-4",
     price: "$6.99",
     published: "2024-04-29",
     size: "21.6 x 27.9 cm",
