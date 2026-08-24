@@ -55,6 +55,7 @@ export async function generateMetadata({
 const words = {
   en: {
     ages: "Ages",
+    coverNote: "An example of a first coloring book for toddlers",
     drawings: "Drawings",
     pages: "Pages",
     size: "Size",
@@ -78,6 +79,7 @@ const words = {
   },
   es: {
     ages: "Edad",
+    coverNote: "Un ejemplo de primer libro para colorear para bebés",
     drawings: "Dibujos",
     pages: "Páginas",
     size: "Tamaño",
@@ -101,6 +103,7 @@ const words = {
   },
   ru: {
     ages: "Возраст",
+    coverNote: "Пример первой раскраски для малышей",
     drawings: "Рисунков",
     pages: "Страниц",
     size: "Размер",
@@ -251,6 +254,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 fetchPriority="high"
               />
             </div>
+            {/* Подпись к обложке. Объясняет, почему на сайте о первых
+                раскрасках вообще стоит одна конкретная книга: она здесь
+                как образец, а не как реклама. */}
+            <p className="book__cover-note">{w.coverNote}</p>
           </div>
 
           <div>

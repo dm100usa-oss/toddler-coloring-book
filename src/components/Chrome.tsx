@@ -17,42 +17,41 @@ const banners: Record<
   { src: string; w: number; h: number; sm: string; smW: number; smH: number; alt: string }
 > = {
   en: {
-    /* Имя изменено намеренно. Первый английский баннер лежал под
-       именем top-en.jpg и был почти вдвое выше. Новое имя не дает
-       кешу браузера и сети подставить старую картинку. */
-    src: "/banner/top-en-wide.jpg",
-    w: 2172,
-    h: 490,
-    sm: "/banner/top-en-sm.jpg",
-    smW: 1312,
-    smH: 440,
+    /* Цифра в имени намеренно. Под прежними именами лежали старые
+       картинки, и кеш браузера мог подставить их вместо новых. */
+    src: "/banner/top-en-wide-3.jpg",
+    w: 2388,
+    h: 583,
+    sm: "/banner/top-en-sm-3.jpg",
+    smW: 1240,
+    smH: 1269,
     alt:
-      "First Coloring Book for Toddlers Ages 1-3: 111 amazing and cute pictures to color. " +
-      "Animals, sea animals, fairy-tale characters, food, toys and more",
+      "First coloring books for toddlers ages 1-3: a practical guide on when to introduce " +
+      "crayons and colored pencils and which coloring books work best at this age",
   },
   es: {
-    src: "/banner/top-es.jpg",
-    w: 2172,
-    h: 487,
-    sm: "/banner/top-es-sm.jpg",
-    smW: 1418,
-    smH: 465,
+    src: "/banner/top-es-wide-3.jpg",
+    w: 2388,
+    h: 570,
+    sm: "/banner/top-es-sm-3.jpg",
+    smW: 1239,
+    smH: 1269,
     alt:
-      "El Primer Libro de Colorear para Bebés de 1 a 3 Años: 111 dibujos sorprendentes y " +
-      "adorables. Animales, animales marinos, personajes de cuentos, alimentos y juguetes",
+      "El primer libro de colorear para bebés de 1 a 3 años: guía práctica sobre cuándo " +
+      "empezar con crayones y lápices de colores y qué libros para colorear elegir",
   },
   ru: {
     /* Имя с цифрой по той же причине, что и у английского: под старым
        именем лежала прежняя картинка, и кеш мог подставить ее. */
-    src: "/banner/top-ru-2.jpg",
-    w: 1893,
-    h: 427,
-    sm: "/banner/top-ru-sm.jpg",
-    smW: 1223,
-    smH: 401,
+    src: "/banner/top-ru-wide-3.jpg",
+    w: 2388,
+    h: 557,
+    sm: "/banner/top-ru-sm-3.jpg",
+    smW: 1254,
+    smH: 1254,
     alt:
-      "Первая книга-раскраска для малышей 1-3 года: 111 удивительных и милых рисунков. " +
-      "Животные, морские обитатели, сказочные персонажи, продукты и игрушки",
+      "Первые раскраски малыша: все о первых раскрасках для малышей от 1 до 3 лет. Когда " +
+      "знакомить ребенка с мелками и карандашами и какие раскраски выбрать в 1-3 года",
   },
 };
 

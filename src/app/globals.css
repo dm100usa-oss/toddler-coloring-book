@@ -228,6 +228,16 @@ h3.block { font-family: var(--font-display); font-size: var(--t-h3); margin: var
 .book__cover .inner:not(:has(img)) { aspect-ratio: 3 / 4; }
 @media (min-width: 900px) { .book__cover { position: sticky; top: 1.5rem; } }
 
+/* Подпись к обложке. Тише заголовка и чуть мельче обычного текста:
+   это пояснение к картинке, а не отдельная мысль. */
+.book__cover-note {
+  margin: var(--gap-1) 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
 .book h1 { font-family: var(--font-display); font-size: var(--t-h1); margin: 0 0 var(--gap-1); line-height: 1.14; color: var(--ink-soft); }
 .book .subtitle { color: var(--pink-deep); font-size: var(--t-lead); font-weight: 700; margin: 0 0 var(--gap-3); }
 .book .lead-text { font-size: var(--t-lead); margin: 0 0 var(--gap-3); }
