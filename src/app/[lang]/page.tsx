@@ -478,15 +478,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </a>
         </p>
 
-        {/* ============ 7. Что в книге, списком ============ */}
-        <h2 className="section">{w.specs}</h2>
-        <ul className="inside">
-          {ed.inside.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-        </ul>
-
-        {/* ============ 8. Видео, справа подтверждение ============ */}
+        {/* ============ 7. Видео, справа подтверждение ============ */}
         {ed.video ? (
           <>
             <h2 className="section">{w.video}</h2>
@@ -514,6 +506,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
           </>
         ) : null}
+
+        {/* ============ 8. Что в книге, подробно ============ */}
+        <h2 className="section">{w.specs}</h2>
+        <ul className="inside">
+          {ed.inside.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
 
         {/* ============ 9. Кому подходит и кому нет ============ */}
         <h2 className="section">{w.forWhom}</h2>
