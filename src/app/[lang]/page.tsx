@@ -56,6 +56,7 @@ const words = {
   en: {
     ages: "Ages",
     coverNote: "An example of a first coloring book for toddlers",
+    whySuits: "What else makes a good coloring book for toddlers",
     drawings: "Drawings",
     pages: "Pages",
     size: "Size",
@@ -80,6 +81,7 @@ const words = {
   es: {
     ages: "Edad",
     coverNote: "Un ejemplo de primer libro para colorear para bebés",
+    whySuits: "Qué más distingue a un buen libro para colorear para bebés",
     drawings: "Dibujos",
     pages: "Páginas",
     size: "Tamaño",
@@ -104,6 +106,7 @@ const words = {
   ru: {
     ages: "Возраст",
     coverNote: "Пример первой раскраски для малышей",
+    whySuits: "Чем еще отличается хорошая раскраска для малышей",
     drawings: "Рисунков",
     pages: "Страниц",
     size: "Размер",
@@ -307,20 +310,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           ))}
         </div>
 
-        {/* Что книга дает ребенку и где еще пригодится. Стоит сразу
-            под картинками: человек уже увидел, какие внутри рисунки,
-            и здесь узнает, зачем они. Детский сад и подарок это две
-            отдельные причины купить, и раньше их на странице не было. */}
+        {/* Заголовок начинается со слова "еще" намеренно: сразу над
+            списком стоят три картинки с надписями simple, big, cute,
+            то есть признаки хорошей раскраски уже названы, и список
+            продолжает ту же мысль.
+            Пятым пунктом сюда убрана строка про слово под рисунком:
+            раньше она висела отдельным абзацем ниже и читалась как
+            обрывок. */}
+        <h3 className="block">{w.whySuits}</h3>
         <ul className="needs needs--extras">
           {ed.extras.map((line) => (
             <li key={line}>{line}</li>
           ))}
         </ul>
-
-        {/* От длинного вводного абзаца осталась одна строка. Все
-            остальное, что в нем было, стоит выше в пунктах, и второй
-            раз человеку это читать незачем. */}
-        <p className="lead-text">{ed.note}</p>
 
         {/* ============ 3. Что внутри: сами рисунки ============ */}
         {/* Пояснения под заголовком нет намеренно: под словами

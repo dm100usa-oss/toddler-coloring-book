@@ -139,6 +139,7 @@ export const editions: Record<UiLang, Edition> = {
       "Keeps a child busy for a long time and gives them happy moments",
       "Works in preschool and daycare, not only at home",
       "Makes a good gift for a birthday or any celebration",
+      "The word under each picture can be colored too, so first words and letters come along with the coloring",
     ],
     inside: [
       "111 drawings, all hand drawn by professional illustrators",
@@ -254,6 +255,7 @@ export const editions: Record<UiLang, Edition> = {
       "Mantiene al pequeño ocupado durante mucho tiempo y le brinda momentos felices",
       "Es útil para niños en edad preescolar y de educación infantil",
       "Es el regalo perfecto para cumpleaños, celebraciones y cualquier evento importante",
+      "La palabra debajo de cada dibujo también se puede colorear, y así llegan las primeras palabras y letras",
     ],
     inside: [
       "111 dibujos, todos hechos a mano por ilustradores profesionales",
@@ -371,6 +373,7 @@ export const editions: Record<UiLang, Edition> = {
       "Занимает ребенка надолго и дарит счастливые моменты",
       "Подходит для детского сада и подготовки к школе, не только для дома",
       "Хороший подарок на день рождения и любой праздник",
+      "Слово под рисунком тоже раскрашивается, и первые буквы приходят вместе с рисованием",
     ],
     inside: [
       "111 рисунков, все нарисованы от руки профессиональными художниками",
