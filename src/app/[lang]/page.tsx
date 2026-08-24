@@ -64,6 +64,9 @@ const words = {
     seeAll: "See all 111 drawings",
     parents: "What parents notice",
     parentsCta: "Read the reviews on Amazon",
+    critic: "What an independent reviewer said",
+    criticCta: "Read the full review",
+    criticBy: "Maalin Ogaja, reviewer for Readers' Favorite, October 2024",
     parentsRating: (v: number, n: number) => `${v} out of 5 on Amazon, ${n} ratings`,
     parentsNote:
       "Written by us from the reviews left on Amazon, in our own words. Both paperback \
@@ -96,6 +99,9 @@ editions are there and anyone can read the originals.",
     seeAll: "Ver los 111 dibujos",
     parents: "Lo que notan los padres",
     parentsCta: "Leer las reseñas en Amazon",
+    critic: "Lo que dijo una reseñadora independiente",
+    criticCta: "Leer la reseña completa",
+    criticBy: "Maalin Ogaja, reseñadora de Readers' Favorite, octubre de 2024",
     parentsRating: (v: number, n: number) => `${v} sobre 5 en Amazon, ${n} valoraciones`,
     parentsNote:
       "Redactado por nosotros a partir de las reseñas dejadas en Amazon, con nuestras \
@@ -129,6 +135,9 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
     seeAll: "Посмотреть все 111 рисунков",
     parents: "Что отмечают родители",
     parentsCta: "Читать отзывы на Amazon",
+    critic: "Что сказал независимый рецензент",
+    criticCta: "Читать рецензию целиком",
+    criticBy: "Маалин Огая, рецензент Readers' Favorite, октябрь 2024",
     parentsRating: (v: number, n: number) => `${v} из 5 на Amazon, ${n} оценок`,
     parentsNote:
       "Написано нами по отзывам, оставленным на Amazon, своими словами. Отзывы относятся \
@@ -436,7 +445,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             проверить наши слова, а не покупать. Кнопка светлая, чтобы
             не спорить с двумя кнопками покупки выше. */}
         {reviewsUrl ? (
-          <p style={{ margin: "0.6rem 0 0" }}>
+          <p className="btn-row">
             <a
               className="btn btn--ghost"
               href={reviewsUrl}
@@ -448,7 +457,28 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </p>
         ) : null}
 
-        {/* ============ 6. Что в книге, списком ============ */}
+        {/* ============ 6. Рецензия независимой площадки ============ */}
+        {/* Внешнее подтверждение весит больше, чем наши слова о себе:
+            рецензия стоит на чужом сайте, подписана именем и открыта
+            для проверки. Одно предложение приведено дословно, дальше
+            наш пересказ. Звезды рецензента в машинную разметку не
+            идут: там только оценка покупателей. */}
+        <h2 className="section">{w.critic}</h2>
+        <blockquote className="critic-quote">{ed.criticQuote}</blockquote>
+        <p>{ed.critic}</p>
+        <p className="buy-note">{w.criticBy}</p>
+        <p className="btn-row">
+          <a
+            className="btn btn--ghost"
+            href={BOOK.criticUrl}
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            {w.criticCta}
+          </a>
+        </p>
+
+        {/* ============ 7. Что в книге, списком ============ */}
         <h2 className="section">{w.specs}</h2>
         <ul className="inside">
           {ed.inside.map((line) => (
@@ -456,7 +486,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           ))}
         </ul>
 
-        {/* ============ 7. Видео, справа подтверждение ============ */}
+        {/* ============ 8. Видео, справа подтверждение ============ */}
         {ed.video ? (
           <>
             <h2 className="section">{w.video}</h2>
@@ -485,14 +515,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </>
         ) : null}
 
-        {/* ============ 8. Кому подходит и кому нет ============ */}
+        {/* ============ 9. Кому подходит и кому нет ============ */}
         <h2 className="section">{w.forWhom}</h2>
         <p>{ed.forWhom}</p>
 
         <h2 className="section">{w.notFor}</h2>
         <p>{ed.notFor}</p>
 
-        {/* ============ 9. Вопросы ============ */}
+        {/* ============ 10. Вопросы ============ */}
         <h2 className="section">{w.faq}</h2>
         <div className="faq faq--two">
           {ed.faq.map((item) => (
@@ -520,7 +550,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         ) : null}
       </div>
 
-      {/* ============ 10. Бесплатные листы ============ */}
+      {/* ============ 11. Бесплатные листы ============ */}
       <section className="band band--pink">
         <div className="wrap">
           <h2 className="section">{w.freeTitle}</h2>
@@ -549,7 +579,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 11. Справочная часть ============ */}
+      {/* ============ 12. Справочная часть ============ */}
       {isContentLang(l) ? (
         <>
           <section className="band band--mint" id="picker">
@@ -597,7 +627,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </>
       ) : null}
 
-      {/* ============ 12. Что это за сайт ============ */}
+      {/* ============ 13. Что это за сайт ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.whatTitle}</h2>
@@ -616,7 +646,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 13. Источники ============ */}
+      {/* ============ 14. Источники ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.sourcesTitle}</h2>

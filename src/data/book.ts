@@ -54,6 +54,13 @@ export type Edition = {
       в жизни, а не из чего она состоит. Иначе страница начинает
       повторять сама себя, и человек перестает ее читать. */
   parents: string[];
+  /** Пересказ рецензии независимой площадки. Своими словами, а не
+      копией: тот же текст уже стоит на сайте рецензента и на карточке
+      Amazon, и третий его экземпляр поисковик просто не станет
+      учитывать. Одно предложение взято дословно, чтобы было видно,
+      что рецензия настоящая, остальное наше. */
+  critic: string;
+  criticQuote: string;
   /** Кому книга подходит и кому нет. Второе важнее первого:
       родитель, которому честно сказали "не берите", возвращается. */
   forWhom: string;
@@ -90,6 +97,14 @@ export const BOOK = {
       открывается сразу на них, без прокрутки. */
   reviewsUrl: (asin: string) =>
     `https://www.amazon.com/product-reviews/${asin}`,
+
+  /** Рецензия независимой площадки. Ссылка на первоисточник: любой
+      может открыть и сверить, и именно поэтому она весит больше,
+      чем наши собственные слова о книге. */
+  criticUrl: "https://readersfavorite.com/book-review/first-coloring-book-for-toddlers-ages-1-3",
+  criticName: "Maalin Ogaja",
+  criticSource: "Readers' Favorite",
+  criticDate: "2024-10-05",
 
   /** Три квадратные картинки из книги: простая форма, крупный рисунок,
       узнаваемый предмет. Ровно те три свойства, о которых говорит сайт.
@@ -187,6 +202,17 @@ export const editions: Record<UiLang, Edition> = {
       "coloring books",
       "Finished pages get cut out, dated and kept",
     ],
+    criticQuote:
+      "Each picture is thoughtfully placed in the center of the page, and features bold and " +
+      "curved outlines, helping little ones color within the boundaries.",
+    critic:
+      "Readers' Favorite gave First Coloring Book for Toddlers Ages 1-3 five stars and found " +
+      "that it takes the youngest children into account. The reviewer notes the large, simple drawings, " +
+      "the clear thick outlines, and the picture placed in the center of the page, which suits " +
+      "a right handed and a left handed child equally. The many familiar objects and characters " +
+      "give a child variety and room to practise, and the words under the drawings, which can " +
+      "be colored too, add something to learn. In the reviewer's words the book helps a child " +
+      "build skills step by step and lets parents see the progress as the pages go by.",
     forWhom:
       "Made for the stage between the first deliberate mark and the first shape colored on " +
       "purpose, which for most children falls between one and three years old. It works as a " +
@@ -326,6 +352,19 @@ export const editions: Record<UiLang, Edition> = {
         "difíciles",
       "Las páginas terminadas se recortan, se les pone la fecha y se guardan",
     ],
+    criticQuote:
+      "Cada dibujo está colocado con cuidado en el centro de la página, con contornos gruesos " +
+        "y redondeados que ayudan a los pequeños a colorear dentro de los bordes.",
+    critic:
+      "Readers' Favorite le dio cinco estrellas a El Primer Libro de Colorear para Bebés de " +
+        "1 a 3 Años y encontró que el libro tiene en cuenta a los niños más pequeños. La reseñadora destaca " +
+        "los dibujos grandes y simples, los contornos gruesos y claros, y el dibujo colocado en " +
+        "el centro de la página, cómodo tanto para un niño diestro como para uno zurdo. La " +
+        "cantidad de objetos y personajes conocidos le da al niño variedad y espacio para " +
+        "practicar, y las palabras bajo los dibujos, que también se pueden colorear, añaden un " +
+        "elemento de aprendizaje. Según la reseñadora, el libro ayuda al niño a desarrollar sus " +
+        "habilidades paso a paso y permite a los padres ver su avance a medida que pasan las " +
+        "páginas.",
     forWhom:
       "El libro está pensado para niños que empiezan a dibujar y a colorear formas sencillas " +
         "de manera intencionada. Por lo general, esta etapa corresponde a edades de uno a tres " +
@@ -472,6 +511,18 @@ export const editions: Record<UiLang, Edition> = {
       "Ее берут младшему в семье, когда старшим уже нужны раскраски посложнее",
       "Готовые страницы вырезают, подписывают датой и оставляют на память",
     ],
+    criticQuote:
+      "Каждый рисунок продуманно расположен в центре страницы, с толстым скругленным контуром, " +
+        "который помогает малышу оставаться внутри рисунка.",
+    critic:
+      "Readers' Favorite поставил книге First Coloring Book for Toddlers Ages 1-3 пять звезд " +
+        "и отметил, что она действительно учитывает особенности самых маленьких детей. Рецензент отмечает " +
+        "крупные и простые рисунки, четкие толстые контуры и расположение изображения по " +
+        "центру страницы, удобное как для правшей, так и для левшей. Большое количество " +
+        "знакомых предметов и персонажей дает ребенку разнообразие и возможность " +
+        "практиковаться, а слова под рисунками, которые тоже можно раскрашивать, добавляют " +
+        "обучающий элемент. По мнению рецензента, книга помогает ребенку постепенно развивать " +
+        "навыки и позволяет родителям видеть его прогресс по мере прохождения страниц.",
     forWhom:
       "Книга создана для детей, которые только начинают рисовать и учатся осознанно " +
         "раскрашивать простые формы. Обычно это возраст от одного до трех лет. Она подойдет " +
