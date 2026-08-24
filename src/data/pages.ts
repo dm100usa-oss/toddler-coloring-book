@@ -153,25 +153,24 @@ export const agesCopy: Record<ContentLang, SectionCopy> = {
       "changes in a child's hand between one and four years old, and what kind of page suits each " +
       "point along the way.",
     body: [
-      "Drawing develops in the same order for every child, and the order matters more than the " +
-      "calendar. A child first discovers that moving a hand leaves a mark. Then the marks become " +
-      "deliberate: loops, up and down strokes, shapes copied from someone else. Then the child " +
-      "starts aiming at something on the page. Only after that does staying inside a line become " +
-      "possible, and it arrives gradually rather than one morning.",
+      "Drawing skills develop gradually. First a child discovers that moving a hand leaves a mark " +
+      "on paper. Then the lines become more deliberate: loops appear, along with up and down " +
+      "strokes and attempts to repeat a line an adult has shown. Later the child begins to aim more " +
+      "accurately at the drawing, and only after that gradually learns to color inside the outline.",
 
-      "Two children of exactly the same age can sit at different points on this path, and both are " +
-      "developing normally. A few months either way is ordinary. What is worth paying attention to " +
-      "is not the pace but the order: the steps do not get skipped.",
+      "Two children of the same age can be at different points along this path, and that is " +
+      "entirely natural. A difference of a few months is quite ordinary, so it is better to look " +
+      "not only at age but at what the child can already do.",
 
       "This is why a coloring book that says ages 1 to 3 on the cover has a hard job. It has to work " +
       "for a child who scribbles across the sheet and for a child who is starting to aim, which is " +
       "only possible if the drawings stay very simple and very large. A book that instead aims at " +
       "the middle of that range ends up too hard at one end and too dull at the other.",
 
-      "The practical consequence for a parent is small and useful: judge the book by the page, not " +
-      "by the age on the cover. Thick outline, one drawing filling the sheet, a subject the child " +
-      "can name, nothing printed on the back. Those four things decide whether a child stays at the " +
-      "table, and they are visible in three seconds of looking inside.",
+      "The practical advice is simple: judge a book by its pages as well as by the age on the " +
+      "cover. For a first coloring book what matters is a thick outline, one large drawing per " +
+      "page, pictures the child knows, and printing on one side only. All of that can be seen by " +
+      "simply looking inside the book.",
     ],
     faq: [
       {
@@ -210,10 +209,10 @@ export const agesCopy: Record<ContentLang, SectionCopy> = {
       {
         q: "Is the age on the cover of a coloring book a standard?",
         a:
-          "No. There is no standard behind those numbers and no body that checks them. The " +
+          "There is no single standard that sets the age figures on the cover of a coloring book. The " +
           "publisher chooses the range, which is why two books both labelled ages 2-4 can differ " +
-          "by a factor of two in difficulty. Judge the book by looking inside at the line thickness " +
-          "and how much of the sheet one drawing takes up, not by the number on the cover.",
+          "noticeably in difficulty. When choosing, it is better to look at the pages themselves: the " +
+          "size of the drawings, the thickness of the outline and the amount of detail.",
       },
       {
         q: "My child is four and finds coloring boring. What now?",

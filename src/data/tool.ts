@@ -40,16 +40,17 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
         "works, because the child can now choose a different color for each one. From about four " +
         "years old a first coloring book starts to feel too easy, and what suits better is a book " +
         "with more detail inside one drawing or a step by step drawing book.",
-      "Age is not what decides this. An eighteen month old may already hold a crayon steadily " +
-        "with the fingers, while a three year old still scribbles across the sheet, and both are " +
-        "developing normally. The hand shows it more honestly than the birthday: how the crayon is " +
-        "held, and whether the marks land on the drawing. That is why the picker below asks about " +
-        "age and about the hand, and weighs the hand more heavily.",
-      "The picker looks at four signs: age, grip, aim, and how long the child stays with one page. " +
-        "Age gives the first guess. Aim corrects it the most, because a parent sees it with their " +
-        "own eyes and cannot really get it wrong. Time on one page counts least, since attention " +
-        "depends on the day and on whether the drawing itself is interesting. The answers stay in " +
-        "the browser: nothing is sent anywhere and nothing is saved.",
+      "Age alone is not the best guide. An eighteen month old may already hold a crayon steadily " +
+      "with the fingers, while a three year old still makes sweeping marks across the sheet, and " +
+      "neither necessarily points to a problem. It is more useful to watch how the crayon is held " +
+      "and how closely the marks land on the drawing. The picker below considers both age and what " +
+      "the hand does, and gives more weight to the hand.",
+      "The picker looks at four signs: age, how the crayon or pencil is held, how closely the marks " +
+      "land on the drawing, and how long the child stays with one page. Age is the starting point. " +
+      "Aim influences the result most, because it is easy to see while the child is coloring. Time " +
+      "on one page counts for less, since it depends a great deal on the mood of the day and on how " +
+      "interesting the child finds the drawing. The answers stay in the browser: nothing is sent " +
+      "anywhere and nothing is saved.",
       "This picks a page, it does not assess a child. The result answers what suits now, never " +
         "what a child ought to be able to do. Age ranges here come from published developmental " +
         "milestones, listed at the bottom of this page, and a few months either way is ordinary. " +
@@ -60,18 +61,18 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "What kind of coloring page suits a one year old?",
         a:
-          "One large shape that fills the sheet, a very thick outline, and almost nothing inside " +
-          "it. At this age a child holds the crayon in a fist and moves from the shoulder, so the " +
-          "marks are long and sweeping and a thin line disappears underneath them. A one year old " +
-          "is not trying to fill the shape, and does not need to.",
+          "One large shape filling most of the sheet, a very thick outline, and few details inside it. " +
+          "At this age a child often holds the crayon in the whole hand and works with broad sweeping " +
+          "movements, which is why a large drawing and a clearly visible outline suit them better. " +
+          "There is no need to expect a one year old to fill the shape neatly.",
       },
       {
         q: "Should a two year old color inside the lines?",
         a:
-          "No. At two a child is still learning to hold the crayon with the fingers and to aim at " +
-          "the drawing at all. A thick outline works as a visible target, but going over it is " +
-          "normal and expected. Asking for neat edges at this age is the fastest way to make a " +
-          "child put the crayon down.",
+          "No. At two a child is still learning to hold the crayon more confidently and to guide it. A " +
+          "thick outline works as a clearly visible landmark, and going past it at this age is " +
+          "completely normal. Rather than asking for neat edges inside the outline, it is far more " +
+          "useful now to keep the child interested in the activity itself.",
       },
       {
         q: "What should a first coloring book have?",
@@ -100,10 +101,10 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "How long should a toddler color for?",
         a:
-          "There is no target. One or two minutes is ordinary at a year old, five minutes is " +
-          "common at two, and ten minutes or more happens closer to three. Stopping when the " +
-          "child loses interest and coming back to the same page later is fine, and repeating one " +
-          "favorite drawing many times is fine too.",
+          "There is no strict norm. At a year old a child may spend only a minute or two with a " +
+          "coloring page, at two around five minutes, and closer to three the interest often lasts " +
+          "longer. If the child is tired or has lost interest, you can stop and come back to the " +
+          "drawing later. Coloring a favorite picture several times over is completely normal too.",
       },
     ],
   },
@@ -563,9 +564,9 @@ export const basisCopy: Record<ContentLang, BasisCopy> = {
       {
         name: "Grip",
         text:
-          "A crayon held in a fist moves the result toward the beginning of the scale whatever " +
-          "the age, because the whole hand moving from the shoulder cannot aim yet. An adult " +
-          "style grip moves it forward.",
+          "If a child holds the crayon in the whole hand, the result moves toward an earlier stage, " +
+          "since movements of that kind are usually less precise. A more confident finger grip, closer " +
+          "to an adult one, moves the result toward the next stage.",
       },
       {
         name: "Aim",

@@ -57,10 +57,9 @@ export const proPages: ProPage[] = [
             "as in the English edition and the word under each drawing is Spanish, printed in " +
             "outline letters so it can be colored as well. Nothing else is on the page: one " +
             "subject, one word, thick outline, white space around it.",
-          "Every drawing is a common noun a child of this age is likely to meet: animals, sea " +
-            "animals, food, toys, vehicles, flowers, fairy tale characters. There are 111 of them " +
-            "and they do not repeat, so the same book carries a caseload through a year without " +
-            "the same page coming up twice.",
+          "Every drawing shows a familiar object, animal or character: animals, sea creatures, food, " +
+          "toys, vehicles, flowers and fairy tale characters. There are 111 different drawings with no " +
+          "repeats, so the book provides material for a long stretch of sessions.",
           "The paperback is on Amazon at a price that makes one copy per child realistic, and any " +
             "quantity can be ordered there. If you need a set for a whole caseload, or something " +
             "an ordinary order does not cover, write to us. Ten pages from the book are free to " +
@@ -71,7 +70,7 @@ export const proPages: ProPage[] = [
         fit: [
           "One drawing and one word per page, nothing else competing for attention",
           "The word in Spanish in the Spanish edition, in English in the English edition",
-          "Thick outlines that hold up under a fist grip and under dot markers",
+          "Thick outlines, suited to early coloring and to dot markers",
           "111 different subjects, no repeats",
           "Printed on one side only, so a marker does not come through onto the next page",
           "8.5 by 11 inches, 114 pages",
@@ -101,9 +100,9 @@ export const proPages: ProPage[] = [
           {
             q: "What age does the book actually work for?",
             a:
-              "It is made for one to three years old, and in practice it follows the hand rather " +
-              "than the birthday. Children still scribbling across the sheet and children already " +
-              "aiming at the shape both get something from the same page.",
+              "The book is made for children aged one to three, though it is better to look at what a child " +
+              "can do as well as at their age. It suits both children who still make sweeping marks across " +
+              "the sheet and children who are already trying to color the drawing itself.",
           },
         ],
       },
@@ -455,10 +454,9 @@ export const proPages: ProPage[] = [
             "something. Here the drawing is for the child and the word under it is for the adult, " +
             "printed in outline letters so it can be colored as well as read. In the Spanish " +
             "edition that word is Spanish, in the English edition English.",
-          "Fifteen identical copies are easy to work with: everyone is on the same page, literally, " +
-            "and nobody is left comparing a different book. There are 111 drawings and they do not " +
-            "repeat, so a group can meet through a whole year without going over the same subject " +
-            "twice.",
+          "Identical copies are convenient for group sessions: everyone can work from the same page. " +
+          "There are 111 different drawings with no repeats, so the book provides material for many " +
+          "meetings.",
           "The paperback is on Amazon in both languages and any quantity can be ordered there. For " +
             "a set for a series of sessions, or a giveaway larger than an ordinary order, write to " +
             "us and say how many people it is for. Ten pages are free to print here in any number, " +
@@ -467,8 +465,8 @@ export const proPages: ProPage[] = [
         fitTitle: "What is in the book",
         fit: [
           "The word under each drawing, to read aloud as well as color",
-          "One drawing per page, so a room of mixed ages works from the same sheet",
-          "111 subjects, no repeats across a year of sessions",
+          "One large drawing per page, suited to children at different levels",
+          "111 different drawings, no repeats",
           "Separate English and Spanish editions, each with its own words",
           "Thick outlines and large drawings, printed on one side only",
           "8.5 by 11 inches, 114 pages",
@@ -497,9 +495,9 @@ export const proPages: ProPage[] = [
           {
             q: "What ages does it suit in a mixed group?",
             a:
-              "One to three years old, and the pages hold up across that range because each drawing " +
-              "is large and simple. A child who scribbles and a child who aims at the shape can " +
-              "work on the same page without either one being lost.",
+              "The book is made for children aged one to three. Large, simple drawings mean the same pages " +
+              "can be used with children at different levels: those who still make sweeping marks and those " +
+              "who are already trying to color inside the shape.",
           },
         ],
       },
@@ -650,10 +648,10 @@ export const proPages: ProPage[] = [
           "One book per child or one for the shelf, in English or Spanish. 111 drawings, printed " +
           "on one side, ordered in any quantity on Amazon.",
         body: [
-          "A toddler room has as many levels in it as it has children, and the same page has to " +
-            "work for all of them. That is why every drawing here is large, simple and alone on the " +
-            "page: a child who is still scribbling covers it, and a child who aims fills the parts " +
-            "inside it, and neither one is doing the wrong thing.",
+          "In a toddler room, children are often at different points in the development of drawing " +
+          "skills. That is why every drawing in the book is large, simple and alone on the page. A " +
+          "child who still makes sweeping marks can work freely on such a page, while a child with " +
+          "steadier hand control tries to color separate areas.",
           "Printing on one side matters more in a room than anywhere else. A marker goes through " +
             "ordinary paper, and on a double sided page it ruins the drawing underneath. Here it " +
             "marks a blank back instead. The word printed under each drawing is in outline letters " +
@@ -667,11 +665,11 @@ export const proPages: ProPage[] = [
         ],
         fitTitle: "What is in the book",
         fit: [
-          "Large, simple drawings that work across the levels in one room",
+          "Large, simple drawings for children at different levels in one room",
           "One drawing per page, printed on one side only",
-          "111 different subjects, enough for a year without repeats",
+          "111 different drawings, no repeats",
           "The word under each drawing, Spanish in the Spanish edition",
-          "Thick outlines that hold up under a fist grip",
+          "Thick, clearly visible outlines",
           "8.5 by 11 inches, 114 pages",
         ],
         faq: [
@@ -692,17 +690,16 @@ export const proPages: ProPage[] = [
           {
             q: "Will a marker come through the page?",
             a:
-              "It goes through ordinary paper, as it does in any book at this price. The pages here " +
-              "are printed on one side only, so what it marks is a blank back rather than the next " +
-              "drawing. A spare sheet underneath stops it completely.",
+              "Marker ink can go through ordinary paper. Since the book is printed on one side only, it " +
+              "lands on a blank back rather than spoiling the next drawing. An extra sheet of paper or card " +
+              "under the page will also protect the surface underneath.",
           },
           {
             q: "Is it too easy for the older children in a mixed room?",
             a:
-              "Past about three and a half most children find these pages easy, and the sign is " +
-              "boredom rather than neatness. For those children a scene with more areas to fill, or " +
-              "a step by step drawing book, suits better, and we will say so rather than sell you " +
-              "the wrong thing.",
+              "Past about three and a half, many children may find these pages too simple. The main sign is " +
+              "that the child becomes bored. In that case a coloring book with more complex drawings, or a " +
+              "step by step drawing book, is a better fit.",
           },
         ],
       },

@@ -72,9 +72,10 @@ export const guides: Guide[] = [
         "picture. They are learning that their own movement changes the world outside their body. " +
         "That is the whole lesson, and a scribbled-over page is proof it landed.",
 
-        "Around twelve to fifteen months a child can make a mark and will repeat it deliberately to " +
-        "watch it happen again. The grip is a fist, the movement comes from the shoulder and elbow, " +
-        "and the marks are long and sweeping. Nothing about this is aimed at anything.",
+        "Between about twelve and eighteen months a child can leave a mark on paper on purpose and " +
+        "repeat the movement to see it happen again. The crayon is usually held in the whole hand, " +
+        "with the movement coming from the shoulder and elbow, so the lines are long and sweeping. " +
+        "Aiming them along a drawing comes later.",
 
         "By about eighteen months to two years the scribbling becomes controlled. The child " +
         "scribbles without being shown first, can copy a line someone else has just drawn, and " +
@@ -170,11 +171,10 @@ export const guides: Guide[] = [
         {
           q: "Can a 1 year old use a coloring book?",
           a:
-            "Yes, with the right kind of page. At one year old a child holds the crayon in a fist " +
-            "and makes sweeping marks without aiming, so the page needs a very thick outline and " +
-            "one large shape filling the sheet. On that kind of page any mark lands somewhere that " +
-            "counts and the child sees a result. On a page of small detailed drawings nothing " +
-            "visible happens and the child loses interest in under a minute.",
+            "Yes, with the right kind of page. At a year old a child usually holds the crayon in the " +
+            "whole hand and makes broad sweeping marks, so one large shape filling most of the sheet, " +
+            "with a very thick outline and few details, suits them best. On a page like that it is easier " +
+            "for a child to see the traces of their own movements and the result of what they did.",
         },
         {
           q: "Is it safe to give a one year old crayons?",
@@ -186,9 +186,9 @@ export const guides: Guide[] = [
         {
           q: "How long should the first coloring session last?",
           a:
-            "Two or three minutes is normal at the very beginning and is not a sign of a short " +
-            "attention span. End the session when the child stands up rather than trying to finish " +
-            "the page. Sessions lengthen on their own over months as the child gets more out of them.",
+            "Two or three minutes is a perfectly normal length at the very beginning. If the child has " +
+            "lost interest, there is no need to ask them to finish the page. Sessions usually grow longer " +
+            "as the child gets older.",
         },
       ],
       es: [
@@ -262,10 +262,9 @@ export const guides: Guide[] = [
     },
     lead: {
       en:
-        "Thick crayons first, for at least the first year of drawing. They need no grip strength, " +
-        "they will not tear the page, they do not bleed through, and they leave a wide mark a child " +
-        "can actually see. Markers come later, colored pencils later still, and both for specific " +
-        "reasons rather than as an upgrade.",
+        "Thick wax crayons are the best place to start. They leave a visible mark without much " +
+        "pressure and do not soak through the paper. Washable markers can come later, and colored " +
+        "pencils later still, as the movements of the hand become more precise.",
       es:
         "Para empezar, suelen ser más adecuados los crayones gruesos, especialmente durante " +
           "las primeras etapas del dibujo. Dejan un trazo visible sin necesidad de presionar " +
@@ -284,27 +283,24 @@ export const guides: Guide[] = [
         "child sees a result. A child who presses hard and gets a faint line concludes that nothing " +
         "is happening and stops. Everything below follows from that one fact.",
 
-        "Thick crayons are the right first tool for four separate reasons. They mark with almost no " +
-        "pressure, so a hand that has no strength yet still produces a strong line. They are wide " +
-        "enough to be held in a fist, which is how a child holds things before the fingers take " +
-        "over. They cannot tear paper, which a sharp pencil in a heavy fist easily can. And they do " +
-        "not go through the page, so a marked sheet stays a marked sheet.",
+        "Thick wax crayons suit first sessions for several reasons. They leave a visible mark with " +
+        "almost no pressure, they are comfortable to hold in the whole hand, they have no sharp point " +
+        "to catch the paper, and they do not soak through the sheet. Together that makes them a " +
+        "convenient first tool for drawing.",
 
         "Markers give the brightest result and children love them for exactly that reason. The cost " +
         "is that they go straight through ordinary paper, so a double sided page loses the drawing " +
         "on the back, and they mark the table, clothes and skin far more readily than crayons. " +
         "Washable markers solve most of that. A spare sheet under the page solves the rest.",
 
-        "Colored pencils need a finger grip and steady pressure, both of which most children do not " +
-        "have before about three. Given earlier, the pencil either leaves nothing visible or snaps. " +
-        "They come into their own once a child stays inside the line and wants finer control, which " +
-        "is a real want and not one to rush.",
+        "Colored pencils call for a more precise finger grip and steadier pressure. Young children " +
+        "often find them harder to use than thick crayons. They are worth trying later, once the " +
+        "movements of the hand are more precise and the child wants to color smaller areas.",
 
-        "Two smaller things are worth knowing. Chunky triangular or egg-shaped crayons encourage the " +
-        "fingers to sit where they will eventually need to sit, which is a gentle nudge rather than " +
-        "a training device. And a child who is left handed needs nothing different in the way of " +
-        "tools, but does benefit from a drawing placed in the middle of the page rather than off to " +
-        "one side, where a left hand covers it while working.",
+        "A few smaller details are worth knowing. Thick triangular crayons sit comfortably in the " +
+        "hand and help a child grow used to a more precise grip over time. A left handed child needs " +
+        "no special tools, but a drawing placed in the middle of the sheet is usually more " +
+        "comfortable, since the hand covers less of the picture while working.",
       ],
       es: [
         "La elección del material importa más de lo que puede parecer. Un niño pequeño " +
@@ -365,25 +361,26 @@ export const guides: Guide[] = [
         {
           q: "Are washable markers safe for a two year old?",
           a:
-            "Washable markers labelled non-toxic are widely used at this age, and the washable " +
-            "formula is what makes the difference on skin, clothes and furniture. They still go " +
-            "through paper, so put a spare sheet underneath. Keep the caps out of reach: they are " +
-            "small enough to be a choking hazard.",
+            "For young children, choose washable markers labelled non-toxic. They come off skin, clothes " +
+            "and many surfaces more easily, but they can still go through paper, so it is better to put a " +
+            "spare sheet underneath. Watch the caps as well: small parts should stay out of a child's " +
+            "reach.",
         },
         {
           q: "My child holds the crayon in a fist. Should I correct it?",
           a:
-            "No. A fist grip is normal and expected before about two and a half, and correcting it " +
-            "by force usually ends the drawing session rather than fixing the grip. The finger grip " +
-            "arrives on its own as the hand develops. Chunky triangular crayons gently encourage it " +
-            "without any instruction.",
+            "No. Holding the crayon in the whole hand is completely normal in the early years. There is " +
+            "no need to move a child's fingers by force: the way the crayon is held changes gradually as " +
+            "the movements of the hand develop. Thick or triangular crayons can make the grip more " +
+            "comfortable without any special exercises.",
         },
         {
           q: "What about paint at this age?",
           a:
-            "Paint works and children enjoy it, but it is a different activity rather than a step up " +
-            "from crayons. It teaches color and coverage rather than the aiming and control that a " +
-            "coloring page builds. Most families do both and use paint when they have time to clean up.",
+            "Yes, paint suits young children too, but it is a somewhat different kind of activity. It " +
+            "lets a child experiment with color, mixing and spreading paint over a surface, while " +
+            "coloring with crayons or pencils has more to do with guiding the movements of the hand. The " +
+            "two go well together.",
         },
       ],
       es: [
@@ -461,10 +458,9 @@ export const guides: Guide[] = [
     },
     lead: {
       en:
-        "Most of the mess comes from three things: the wrong tool, a page that gives the child " +
-        "nothing to aim at, and a session that runs past the point where the child was still " +
-        "interested. Fixing those three removes most of the cleaning, and does more than any mat " +
-        "or smock.",
+        "Most of the mess around coloring can be reduced in three simple ways: choose suitable " +
+        "materials, give the child a large clear drawing, and end the session when the interest " +
+        "fades. That is often enough to keep drawing from turning into a big clean up.",
       es:
         "La mayor parte del desorden al colorear puede reducirse con tres medidas sencillas: " +
           "elegir materiales adecuados, ofrecer un dibujo grande y claro y terminar la " +
@@ -478,20 +474,18 @@ export const guides: Guide[] = [
     },
     body: {
       en: [
-        "It helps to separate two different worries that get called the same thing. One is marks " +
-        "where they should not be: the table, the wall, the child. The other is the page itself " +
-        "looking chaotic. The second is not mess at all, it is what drawing looks like at this age, " +
-        "and treating it as a problem is the fastest way to make a child stop enjoying it.",
+        "It helps to separate two different things. The first is actual marks from crayons or markers " +
+        "on the table, the walls, clothes and hands. The second is the child's own work, which may " +
+        "look chaotic. Uneven lines and marks outside the outline are completely normal in the early " +
+        "years and do not mean the child is drawing the wrong way.",
 
-        "For marks in the wrong place, the tool does most of the work. Crayons stay largely where " +
-        "they are put and wipe off hard surfaces easily. Washable markers are made for exactly this " +
-        "situation and come off skin and most fabrics. Ordinary permanent markers do not belong " +
-        "anywhere near a two year old, and neither do open paint pots on a carpet.",
+        "To reduce stray marks around the page, start with the materials. Wax crayons are usually " +
+        "easier to remove from hard surfaces, and washable markers come off skin and many fabrics " +
+        "more easily. Permanent markers are better kept away from young children.",
 
-        "For the page, the fix is aiming. A child scribbles past the edge of the paper mainly when " +
-        "there is nothing on the paper worth staying on. A large drawing with a thick outline gives " +
-        "the hand a target, and a target keeps the crayon on the sheet far more effectively than " +
-        "any instruction to be careful.",
+        "The right page helps too. A large drawing with a thick outline gives a child a clearly " +
+        "visible area to color, which makes it easier to keep the movements on the sheet. That works " +
+        "better than repeated requests to be careful.",
 
         "Session length is the quietest of the three and the most reliable. A child who has finished " +
         "being interested does not put the crayon down politely, they start testing what else the " +
@@ -672,10 +666,10 @@ export const guides: Guide[] = [
     },
     lead: {
       en:
-        "Ordinary book paper does not stop a marker, and almost no coloring book at this price is " +
-        "printed on paper that would. A spare sheet slipped under the page solves it completely in " +
-        "one move. Choosing a book printed on one side only solves it permanently, because a marker " +
-        "that soaks through then ruins a blank back rather than the next drawing.",
+        "Ordinary paper in coloring books often lets marker ink through. The simplest solution is to " +
+        "slip an extra sheet of paper or card under the page. It is more convenient still when a book " +
+        "is printed on one side only: the ink may then mark a blank back rather than spoiling the " +
+        "next drawing.",
       es:
         "El papel corriente de muchos libros para colorear puede dejar pasar la tinta de los " +
           "rotuladores. La solución más sencilla es colocar una hoja adicional o un cartón " +
@@ -690,32 +684,27 @@ export const guides: Guide[] = [
     },
     body: {
       en: [
-        "This is the single most common complaint in reviews of children's coloring books, and it " +
-        "is worth understanding why it happens rather than treating it as a defect. Paper thick " +
-        "enough to stop a marker costs several times more per page and makes the book heavier and " +
-        "far more expensive. A book that used it would cost three or four times as much, which for " +
-        "a book a child will scribble through in a month is a trade most parents would not choose " +
-        "if it were spelled out.",
+        "Marker ink often goes through the paper in children's coloring books, and that does not " +
+        "necessarily mean the book is badly printed. Paper heavy enough to hold the ink is thicker " +
+        "and more expensive, and it adds noticeably to the weight and the price of a book. That is " +
+        "why many children's coloring books use ordinary paper and solve the problem with single " +
+        "sided printing or a spare sheet under the page.",
 
-        "The one move that fixes it takes a second. Put a plain sheet of paper, or a piece of card, " +
-        "under the page the child is working on. Whatever soaks through lands on that sheet. It " +
-        "works with every book, costs nothing, and is worth doing as a habit rather than after the " +
-        "first ruined drawing.",
+        "The simplest solution takes a few seconds: put a clean sheet of paper or thin card under the " +
+        "page the child is coloring. Whatever soaks through lands on it. It is worth doing straight " +
+        "away when markers come out, rather than after the next drawing has been spoiled.",
 
-        "The structural fix is to buy a book printed on one side only. Then the back of every " +
-        "drawing is blank by design, and a marker that goes through marks an empty sheet. This is " +
-        "worth checking before buying: it is easy to see in the look inside preview, and books " +
-        "rarely state it on the cover. A book with a drawing on both sides of every sheet loses two " +
-        "pictures every time a marker is used.",
+        "When choosing a book, look at whether it is printed on one side only. If the back of every " +
+        "drawing is blank, marker ink that goes through the paper will not spoil the next picture. " +
+        "That is particularly convenient for children who like coloring with markers.",
 
-        "The other approach is to change the tool rather than the paper. Crayons do not bleed at " +
-        "all. Colored pencils do not bleed. Only markers and paint do, and markers are the ones " +
-        "children reach for because the color is brighter. If bleed matters more than brightness on " +
-        "a given day, that is a two second decision at the crayon box.",
+        "You can also change the tool. Wax crayons and colored pencils do not soak through the paper, " +
+        "which makes them more convenient than markers on thin paper. If it does not matter to the " +
+        "child whether they use markers, that is the simplest way to avoid marks on the back.",
 
-        "One thing not to do: pressing a hot iron or a hairdryer on a page to dry it, or trying to " +
-        "lift marker ink off paper with solvent. Neither works on book paper and both usually make " +
-        "a small problem into a torn page.",
+        "It is better not to dry a page with a hairdryer, press it with an iron, or try to remove the " +
+        "ink with solvent. None of that removes marks that have already gone through the paper, and " +
+        "it can damage the page.",
       ],
       es: [
         "La tinta de los rotuladores puede traspasar el papel de muchos libros infantiles " +
@@ -774,10 +763,9 @@ export const guides: Guide[] = [
         {
           q: "Which coloring books do not bleed through?",
           a:
-            "Bleed depends on the paper weight, and almost no children's coloring book in the usual " +
-            "price range uses paper heavy enough to stop a marker. What separates a good book from " +
-            "a bad one here is not the paper but the printing: single sided printing means a marker " +
-            "that soaks through marks a blank back instead of the next drawing.",
+            "It depends mainly on the weight of the paper. The ordinary paper used in many children's " +
+            "coloring books can let marker ink through. It is more useful to look for single sided " +
+            "printing: the mark then lands on a blank back rather than spoiling the next drawing.",
         },
         {
           q: "Will a coloring book bleed with crayons?",
@@ -860,9 +848,10 @@ export const guides: Guide[] = [
     },
     lead: {
       en:
-        "Two or three minutes at the very beginning, around five minutes for most two year olds, " +
-        "and ten minutes or more once a child is staying inside the line and choosing colors on " +
-        "purpose. A session that ends when the child stands up is a normal session, not a failed one.",
+        "Two or three minutes may be enough at the very beginning. At around two the interest in one " +
+        "page often lasts about five minutes, and closer to three it may last ten minutes or longer. " +
+        "There is no strict norm, though: if a child gets up and moves on to something else, that is " +
+        "completely normal.",
       es:
         "Al principio pueden bastar dos o tres minutos. Alrededor de los dos años, el " +
           "interés por una misma página suele durar unos cinco minutos y, cerca de los tres, " +
@@ -880,25 +869,24 @@ export const guides: Guide[] = [
         "they are trying to work out whether something is wrong. Almost always nothing is. The " +
         "expectation is what needs adjusting, not the child.",
 
-        "Attention at this age is not a fixed quantity. The same child will spend ninety seconds on " +
-        "one page and eight minutes on the next, and the difference is usually the page rather than " +
-        "the day. A drawing the child recognizes and can name holds them longer than one they " +
-        "cannot, for the simple reason that naming it is half of what makes it interesting.",
+        "At this age the length of a session can vary a great deal, even for the same child. One page " +
+        "may hold them for a minute while another drawing keeps them much longer. Familiar and " +
+        "interesting pictures usually hold attention better, especially when a child can recognize " +
+        "and name what is drawn.",
 
-        "Three things reliably lengthen a session, and none of them involve asking a child to " +
-        "concentrate. A subject the child knows: a dog holds a two year old better than an " +
-        "elaborate fantasy creature. A drawing large enough that progress is visible after a few " +
-        "strokes. And an adult sitting at the table doing the same thing on their own sheet, which " +
-        "works better than any encouragement offered from across the room.",
+        "There are a few simple ways to make a session more interesting. Choose pictures the child " +
+        "knows, such as a dog, a ball or a favorite food. The drawing should be large enough for the " +
+        "result to show after a few strokes. And it helps to sit alongside: an adult can color their " +
+        "own sheet or simply talk with the child about the picture.",
 
-        "Two things reliably shorten it. Asking the child to stay inside the line before they are " +
-        "able to, which turns a pleasant activity into a test they keep failing. And carrying on " +
-        "after the child has finished being interested, which is the moment when the crayon starts " +
-        "being used on the table instead.",
+        "Repeated requests to stay inside the outline, or to finish the page, can have the opposite " +
+        "effect and cut the interest short. If a child is tired or starting to be distracted, it is " +
+        "better to end the session and come back to it later.",
 
-        "Sessions lengthen on their own over months. There is nothing to train and no exercise to " +
-        "do. What changes is the hand, the grip and the amount the child gets out of the activity, " +
-        "and all three move forward without any adult effort at all.",
+        "As children grow, they usually begin to spend longer on coloring by themselves. The " +
+        "movements of the hand develop, the way the crayon or pencil is held changes, and the " +
+        "activity itself becomes clearer and more interesting. There is no need to train the length " +
+        "of a coloring session.",
       ],
       es: [
         "Los padres suelen hacerse esta pregunta cuando la actividad termina mucho antes de " +
@@ -958,16 +946,17 @@ export const guides: Guide[] = [
         {
           q: "My two year old colors for one minute and walks away. Is that normal?",
           a:
-            "Yes. Short sessions are ordinary at two, and they get longer over months without any " +
-            "intervention. Try a drawing the child can name out loud and sit down to color your own " +
-            "sheet beside them: both reliably add time without asking the child to concentrate.",
+            "Yes. Short sessions are completely normal at two. Try offering a drawing the child knows and " +
+            "sit down beside them, either coloring your own sheet or talking about the picture. If the " +
+            "interest fades after a minute, you can stop and try again another time.",
         },
         {
           q: "Should I make my child finish the page?",
           a:
-            "No. Finishing is an adult idea of what a coloring page is for. At this age the value is " +
-            "in the marks made, not in complete coverage, and requiring completion is the most " +
-            "common way children come to dislike coloring.",
+            "No. A young child does not have to color every page completely. At this stage the process " +
+            "matters more: the movements of the hand, the choice of color and the interest in the " +
+            "picture. If the child is tired or wants to do something else, the page can be left and " +
+            "picked up later.",
         },
         {
           q: "Does coloring improve attention span?",

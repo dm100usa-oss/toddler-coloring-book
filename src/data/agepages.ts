@@ -87,33 +87,32 @@ export const agePages: AgePage[] = [
           {
             q: "Can a one year old use a coloring book at all?",
             a:
-              "Yes, as long as the page is built for a fist grip: one large shape, a very thick " +
-              "outline and no small detail. What a one year old gets from it is the discovery that " +
-              "moving the hand leaves a trace, plus the name of whatever is drawn there. Filling " +
-              "the shape is not part of it yet.",
+              "Yes, if the page is made for the youngest children: one large shape, a very thick outline " +
+              "and few small details. At a year old a child is mainly discovering that a crayon leaves a " +
+              "trace on paper, and gradually connecting a picture with its name. Filling the shape neatly " +
+              "is not expected yet.",
           },
           {
             q: "My child just scribbles across the whole page. Is that normal?",
             a:
-              "It is exactly what this age looks like. Aiming needs the crayon held in the fingers " +
-              "and the movement coming from the wrist, and at one year old the whole arm swings " +
-              "from the shoulder instead. Marks that cross the drawing and run off the sheet are " +
-              "the ordinary result, not a sign that anything went wrong.",
+              "Yes. At a year old a child usually cannot aim the crayon along the drawing. They often hold " +
+              "it in the whole hand and work with broad movements of the arm. Marks that cross the drawing " +
+              "and run off the sheet are entirely natural at this age.",
           },
           {
             q: "Which crayons work for a one year old?",
             a:
-              "Thick ones made for this age, because a small hand holds them in a fist and they " +
-              "leave a wide mark that is easy to see. Thin pencils need a finger grip that comes " +
-              "later, and markers are best kept for when the child aims at the drawing. Coloring " +
-              "at this age happens with an adult sitting alongside.",
+              "Thick crayons made for young children are the better choice. They are comfortable to hold in " +
+              "the whole hand and leave a wide mark that is easy to see. Thin colored pencils are harder to " +
+              "use, because they call for a more precise finger grip. At this age it helps for a child to " +
+              "color with an adult sitting alongside.",
           },
           {
             q: "How long should a one year old sit and color?",
             a:
-              "A minute or two is ordinary, and five minutes is a good day. The session ends when " +
-              "the child stands up, and that is the normal ending rather than a failed one. The " +
-              "same page can come out again tomorrow and often works better the second time.",
+              "A minute or two is a perfectly normal length for a one year old. Sometimes the interest " +
+              "lasts longer, sometimes it fades almost at once. End the session when the child stops being " +
+              "interested, and come back to the same drawing later if they want to.",
           },
         ],
       },
@@ -285,26 +284,22 @@ export const agePages: AgePage[] = [
           "A large recognizable subject, an outline that is still thick, and two or three parts " +
           "inside the shape. What changes at two, and what does not change yet.",
         body: [
-          "At two a child needs a large recognizable subject with a thick outline and two or three " +
-            "separate parts inside it. The crayon has moved from the fist to the fingers, though " +
-            "not steadily, and the marks now include deliberate loops and up and down strokes " +
-            "rather than one long sweep. Most of the color lands somewhere on the drawing, which " +
-            "means the drawing has finally become the target.",
-          "What has not changed is staying inside the line, and asking for it now is the fastest " +
-            "way to end the session. A thick outline works as a visible landmark rather than a " +
-            "border: the child can see where the shape is, aims at it, and goes over the edge " +
-            "constantly. Two or three parts inside the shape are enough for the child to use a " +
-            "second color on purpose, which is usually the first thing a parent notices at this age.",
-          "One drawing per page still matters more than variety. Two or three subjects on one sheet " +
-            "split the attention of a child who holds it for about five minutes, and the page ends " +
-            "up half done in three places. A word printed under the drawing earns its space here, " +
-            "because at two the child names what is on the page before starting, and naming it is " +
-            "half of what keeps them at the table.",
-          "A session at two runs about five minutes, sometimes ten if the subject is a favorite. " +
-            "Ask what is on the page and let the child answer, offer a choice of color rather than " +
-            "a color, and say what you see instead of judging it: a lot of blue here, a line all " +
-            "the way down there. Coming back to the same drawing several times is normal and often " +
-            "means it was chosen well.",
+          "By about two a child may be ready for a large recognizable subject with a thick outline and " +
+          "two or three separate parts inside it. Many children begin to hold the crayon in the fingers " +
+          "more confidently, and the marks become more directed: rounded lines, loops and up and down " +
+          "strokes appear. More and more often the child tries to draw on the picture itself.",
+          "Staying inside the outline is still difficult at this stage, and there is no need to ask for " +
+          "neatness. A thick outline works as a clearly visible landmark rather than a strict border. " +
+          "Two or three separate parts inside the drawing are enough for a child to try different " +
+          "colors without crowding the page with detail.",
+          "One large drawing per page is still easier to work with than several small ones. Extra " +
+          "subjects can pull attention away, especially when a child colors for only a few minutes at a " +
+          "time. A word printed under the drawing becomes useful here too: the child already recognizes " +
+          "many pictures and can name them together with an adult.",
+          "At two a child may color for around five minutes, and sometimes longer if they particularly " +
+          "like the drawing. Ask who or what is on the page, offer a choice of color, and talk about " +
+          "what you see rather than judging the result. Coming back to a favorite drawing several times " +
+          "is completely normal.",
         ],
         doTitle: "How to run the session",
         steps: [
@@ -317,18 +312,16 @@ export const agePages: AgePage[] = [
           {
             q: "Should a 2 year old stay inside the lines?",
             a:
-              "No, and it is not a goal worth setting at this age. At two the hand is still " +
-              "learning to hold the crayon with the fingers and to aim at the shape at all. A thick " +
-              "outline gives the child something visible to aim at, and crossing it is the ordinary " +
-              "result rather than a mistake to correct.",
+              "No, and it is not worth setting that as a goal at this age. At two a child is still learning " +
+              "to hold the crayon more confidently and to guide the movements of the hand. A thick outline " +
+              "helps them see where the drawing is, and going past it at this age is completely normal.",
           },
           {
             q: "How much detail should a coloring book for a 2 year old have?",
             a:
-              "Two or three separate parts inside one large shape is about right, with the outline " +
-              "still thick. That is enough for a child to reach for a second color on purpose, and " +
-              "few enough that the page still looks finished when only part of it is colored. " +
-              "Books crowded with small areas belong to a later age.",
+              "Two or three separate parts inside one large drawing are enough, with the outline still " +
+              "thick and clearly visible. A child can then try coloring different parts in different " +
+              "colors, while the page stays free of small crowded detail.",
           },
           {
             q: "Are washable markers a good idea at two?",
@@ -341,9 +334,9 @@ export const agePages: AgePage[] = [
           {
             q: "My child colors the same page over and over. Should I stop that?",
             a:
-              "There is no reason to. Repeating a favorite drawing is how a two year old practices, " +
-              "and the second and third attempt usually look more deliberate than the first. " +
-              "Printing the same page again is easier than persuading a child to move on to a new one.",
+              "No. Repeating a favorite drawing is completely normal: the child gets to know the movements " +
+              "of the hand, the colors and the picture itself better. If they want to color the same " +
+              "picture again, simply print it once more.",
           },
         ],
       },

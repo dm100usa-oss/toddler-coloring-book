@@ -39,11 +39,10 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
         "library story time, parent groups and church nurseries. What all of that work has in " +
         "common is a group of children at different levels and very little time to prepare, which " +
         "changes what makes a page usable.",
-      "Three things decide whether a page works with this age. The outline has to be thick enough " +
-        "to survive a crayon held in a fist, or half the children see no result from what they " +
-        "did. One drawing per page, because two or three subjects split attention that lasts a few " +
-        "minutes. Printing on one side only, because a marker goes through ordinary paper and " +
-        "otherwise ruins the next sheet in the pile.",
+      "Three features of a page matter particularly for group sessions. A thick, clearly visible " +
+      "outline suits children who still hold the crayon in the whole hand. One large drawing per " +
+      "page helps to keep attention from being pulled away by extra detail. And printing on one " +
+      "side only protects the next drawing if marker ink goes through the paper.",
       "The word printed under each drawing is there for the adult as much as for the child. It " +
         "gives you something to say and something to point at, and it turns a coloring page into a " +
         "short exchange about what is on it. In a Spanish speaking setting the word is in Spanish, " +
@@ -93,10 +92,9 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
       {
         q: "What age is this book actually for?",
         a:
-          "One to three years old, and the working range is wider than the number on the cover " +
-          "suggests, because what matters is what the hand does rather than the birthday. Past " +
-          "about three and a half most children find these pages too easy, and the signal is " +
-          "boredom rather than neatness.",
+          "The book is made for children aged one to three, though it is better to look at what a child " +
+          "can do as well as at their age. Past about three and a half, many children find pages like " +
+          "these too simple. The sign is a loss of interest rather than neat coloring.",
       },
       {
         q: "Can I give the printed pages to families to take home?",
@@ -307,10 +305,11 @@ export const audiences: Audience[] = [
     },
     text: {
       en:
-        "A group of eight has eight different levels in it, and one page has to work for the child " +
-        "who scribbles across the sheet and for the one who already aims. Very simple, very large " +
-        "drawings are what covers both. Single sided printing matters more here than anywhere: a " +
-        "marker that soaks through marks a blank back rather than the next child's drawing.",
+        "In a group, children may be at different points in the development of drawing skills. Large, " +
+        "simple drawings suit both those who still make sweeping marks across the sheet and those who " +
+        "are already trying to aim at the drawing. Single sided printing is especially convenient in " +
+        "a group: if marker ink goes through the paper, it lands on a blank back rather than on the " +
+        "next drawing.",
       es:
         "En un grupo, los niños pueden encontrarse en distintas etapas del desarrollo de sus " +
           "habilidades de dibujo. Los dibujos grandes y sencillos sirven tanto a quienes " +
@@ -361,10 +360,10 @@ export const audiences: Audience[] = [
     },
     text: {
       en:
-        "Naming is the point of the page here, and the drawing has to be recognizable without being " +
-        "explained first. One subject per sheet keeps the target single, and the printed word gives " +
-        "the same label every session. In Spanish the word is Spanish, which is the part that is " +
-        "hardest to find in materials for this age.",
+        "Simple, easily recognizable pictures matter particularly for this kind of session. One " +
+        "drawing per page helps to keep the focus on a single word, and the printed word underneath " +
+        "lets an adult name the picture the same way every time. In the Spanish edition all the words " +
+        "are printed in Spanish.",
       es:
         "Para este tipo de actividades son especialmente útiles los dibujos sencillos y " +
           "fáciles de reconocer. Un solo dibujo por página permite centrarse en una palabra, y " +

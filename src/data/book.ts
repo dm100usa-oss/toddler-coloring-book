@@ -144,9 +144,11 @@ export const editions: Record<UiLang, Edition> = {
     ],
     inside: [
       "111 drawings, all hand drawn by professional illustrators",
-      "Thick outlines and large shapes, so a child who cannot aim yet still sees a result",
+      "Thick outlines and large shapes, so a child who is still learning to aim can see a clear " +
+      "result",
       "One drawing per page, printed on one side, so a marker cannot show through onto the next one",
-      "The word under each picture can be colored too, which turns coloring into first reading",
+      "The word under each picture can be colored too, which brings first words and letters into " +
+      "the coloring",
       "Every picture sits in the center of the page, comfortable for a left or a right handed child",
       "Animals, sea creatures, fairy-tale characters, vehicles, flowers and food",
       "A page at the front where a child writes their name",
@@ -165,25 +167,25 @@ export const editions: Record<UiLang, Edition> = {
       {
         q: "Is this too hard for a 1 year old?",
         a:
-          "No. The drawings were made deliberately simple for the youngest end of the range. A one " +
-          "year old will scribble across the shape, a three year old will start staying inside it. " +
-          "The same book carries through all three years, which is the point of it.",
+          "No. The drawings were made deliberately simple for the youngest end of the range. At one a " +
+          "child may scribble across the shape, while closer to three they often begin to stay inside " +
+          "it. The same book is meant to work across all three years.",
       },
       {
         q: "How thick is the paper?",
         a:
           "It is standard book paper, printed by Amazon, and some parents have wished for something " +
-          "heavier. The book is built around that: each drawing sits on its own page with a blank " +
-          "back, so a marker that soaks through marks an empty sheet rather than a second picture. " +
-          "A spare sheet underneath solves it completely.",
+          "heavier. The book is built around that: each drawing sits on its own page with a blank back, " +
+          "so a marker that soaks through marks an empty sheet rather than a second picture. A spare " +
+          "sheet underneath takes care of most of it.",
       },
       {
         q: "Crayons, markers or colored pencils?",
         a:
-          "Thick crayons at the beginning. They need no grip strength, they will not tear the page, " +
-          "and they leave a wide mark that a child can actually see. Markers give a brighter result " +
-          "but go through the paper. Colored pencils need a finger grip that most children do not " +
-          "have before three.",
+          "Thick crayons at the beginning. They mark with very little pressure, they are easier on the " +
+          "page, and they leave a wide mark that a child can actually see. Markers give a brighter " +
+          "result but go through the paper. Colored pencils call for a more precise finger grip, which " +
+          "usually comes later.",
       },
       {
         q: "Can I use this book in a preschool or daycare?",
@@ -388,7 +390,7 @@ export const editions: Record<UiLang, Edition> = {
       "Один рисунок на странице, печать только с одной стороны",
       "111 разных рисунков на знакомые и интересные детям темы",
       "Ребенок не только раскрашивает, но и узнает и запоминает новые слова",
-      "Десять рисунков из книги можно распечатать прямо сейчас бесплатно и без регистрации",
+      "Десять рисунков из книги можно распечатать прямо сейчас, бесплатно и без регистрации",
     ],
     extras: [
       "Помогает развивать мелкую моторику, творческие способности и внимание",
