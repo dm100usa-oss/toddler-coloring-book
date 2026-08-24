@@ -494,10 +494,16 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               >
                 <source src={ed.video.src} type="video/mp4" />
               </video>
+              {/* Справа от ролика подробный список того, что в книге.
+                  Раньше здесь стояли те же пять строк, что и наверху
+                  у обложки, слово в слово, а список шел отдельным
+                  блоком сразу под видео: два списка подряд. Теперь
+                  каждый список на странице ровно один раз. */}
               <div className="video-card__text">
                 <p className="video-card__lead">{w.videoLead}</p>
-                <ul className="needs">
-                  {ed.needs.map((line) => (
+                <h3 className="block">{w.specs}</h3>
+                <ul className="inside">
+                  {ed.inside.map((line) => (
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
@@ -507,22 +513,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </>
         ) : null}
 
-        {/* ============ 8. Что в книге, подробно ============ */}
-        <h2 className="section">{w.specs}</h2>
-        <ul className="inside">
-          {ed.inside.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-        </ul>
-
-        {/* ============ 9. Кому подходит и кому нет ============ */}
+        {/* ============ 8. Кому подходит и кому нет ============ */}
         <h2 className="section">{w.forWhom}</h2>
         <p>{ed.forWhom}</p>
 
         <h2 className="section">{w.notFor}</h2>
         <p>{ed.notFor}</p>
 
-        {/* ============ 10. Вопросы ============ */}
+        {/* ============ 9. Вопросы ============ */}
         <h2 className="section">{w.faq}</h2>
         <div className="faq faq--two">
           {ed.faq.map((item) => (
@@ -550,7 +548,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         ) : null}
       </div>
 
-      {/* ============ 11. Бесплатные листы ============ */}
+      {/* ============ 10. Бесплатные листы ============ */}
       <section className="band band--pink">
         <div className="wrap">
           <h2 className="section">{w.freeTitle}</h2>
@@ -579,7 +577,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 12. Справочная часть ============ */}
+      {/* ============ 11. Справочная часть ============ */}
       {isContentLang(l) ? (
         <>
           <section className="band band--mint" id="picker">
@@ -627,7 +625,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </>
       ) : null}
 
-      {/* ============ 13. Что это за сайт ============ */}
+      {/* ============ 12. Что это за сайт ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.whatTitle}</h2>
@@ -646,7 +644,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 14. Источники ============ */}
+      {/* ============ 13. Источники ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.sourcesTitle}</h2>
