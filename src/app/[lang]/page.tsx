@@ -62,11 +62,18 @@ const words = {
     size: "Size",
     inside: "What is inside",
     seeAll: "See all 111 drawings",
+    parents: "What parents notice",
+    parentsCta: "Read the reviews on Amazon",
+    parentsRating: (v: number, n: number) => `${v} out of 5 on Amazon, ${n} ratings`,
+    parentsNote:
+      "Written by us from the reviews left on Amazon, in our own words. Both paperback \
+editions are there and anyone can read the originals.",
+    specs: "What is in the book",
     video: "A look inside the book",
     videoLead:
-      "An unedited flip through, filmed on a table. Cover, back cover, and page after page, so " +
-      "you can see the line thickness and how much of the sheet one drawing takes up before you " +
-      "decide.",
+      "Filmed by one of the parents who bought the book, on a table at home, with no editing. " +
+      "Cover, back cover, and page after page, so you can see the line thickness and how much " +
+      "of the sheet one drawing takes up before you decide.",
     forWhom: "Who it is for",
     notFor: "When this book is the wrong choice",
     faq: "Questions parents ask",
@@ -87,11 +94,18 @@ const words = {
     size: "Tamaño",
     inside: "Qué hay dentro",
     seeAll: "Ver los 111 dibujos",
+    parents: "Lo que notan los padres",
+    parentsCta: "Leer las reseñas en Amazon",
+    parentsRating: (v: number, n: number) => `${v} sobre 5 en Amazon, ${n} valoraciones`,
+    parentsNote:
+      "Redactado por nosotros a partir de las reseñas dejadas en Amazon, con nuestras \
+palabras. Las dos ediciones en papel están allí y cualquiera puede leer los originales.",
+    specs: "Qué hay en el libro",
     video: "El libro por dentro",
     videoLead:
-      "Un recorrido sin cortes, grabado sobre una mesa. Verá la portada, la contraportada y " +
-        "todas las páginas en orden, para que pueda apreciar el grosor de las líneas y el " +
-        "tamaño de los dibujos antes de decidir.",
+      "Grabado por una de las madres que compró el libro, sobre una mesa de su casa y sin " +
+        "cortes. Verá la portada, la contraportada y todas las páginas en orden, para que " +
+        "pueda apreciar el grosor de las líneas y el tamaño de los dibujos antes de decidir.",
     forWhom: "Para quién es",
     notFor: "Cuándo este libro no es la opción",
     faq: "Preguntas que hacen los padres",
@@ -113,9 +127,17 @@ const words = {
     size: "Размер",
     inside: "Что внутри",
     seeAll: "Посмотреть все 111 рисунков",
+    parents: "Что отмечают родители",
+    parentsCta: "Читать отзывы на Amazon",
+    parentsRating: (v: number, n: number) => `${v} из 5 на Amazon, ${n} оценок`,
+    parentsNote:
+      "Написано нами по отзывам, оставленным на Amazon, своими словами. Отзывы относятся \
+к бумажным изданиям на английском и испанском: рисунки во всех изданиях одни и те же.",
+    specs: "Что в книге",
     video: "Книга внутри",
     videoLead:
-      "Книга снята без монтажа, просто на столе. Вы увидите обложку, оборот и все страницы " +
+      "Снято одним из родителей, купивших книгу, дома на столе и без монтажа. Вы увидите " +
+        "обложку, оборот и все страницы " +
         "по порядку, сможете оценить толщину линий и размер рисунков. В ролике показано " +
         "английское издание: рисунки во всех изданиях одинаковые, отличается только слово под " +
         "каждым рисунком.",
@@ -141,6 +163,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const ed = editions[l];
   const w = words[l];
   const other = l === "es" ? editions.en : editions.es;
+
+  /* Ссылка на отзывы есть только там, где книга продается на Amazon.
+     У русского издания карточки нет, поэтому кнопки тоже нет. */
+  const reviewsUrl = ed.asin ? BOOK.reviewsUrl(ed.asin) : null;
 
   /* Двадцать отобранных рисунков наверху, все 111 в раскрывающемся
      списке ниже. Список раскрыт для машины всегда: по нему нейросеть
@@ -377,14 +403,60 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </div>
         </details>
 
-        {/* ============ 4. Список словами ============ */}
+        {/* ============ 4. Покупка. Первое из двух мест ============ */}
+        {/* Кнопки стоят здесь, а не выше: человек уже посмотрел
+            двадцать страниц и при желании раскрыл все сто одиннадцать.
+            Это и есть та минута, когда решение принимается. */}
+        <div className="buy-block">
+          <Buy lang={l} />
+          <p className="buy-note">
+            {ed.asin ? w.buyNote : ""}
+            {ed.asin && ed.pdfUrl ? " " : ""}
+            {ed.pdfUrl ? t.sec.pdfNote : ""}
+            {!ed.asin && !ed.pdfUrl ? w.buyNote : ""}
+          </p>
+        </div>
+
+        {/* ============ 5. Что отмечают родители ============ */}
+        {/* Здесь только то, чего нет в списках выше: как книга ведет
+            себя дома и в дороге. Свойства книги перечислены отдельно,
+            ниже, и повторять их тут незачем. */}
+        <h2 className="section">{w.parents}</h2>
+        <ul className="needs">
+          {ed.parents.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+        <p className="buy-note">
+          {ed.rating ? `${w.parentsRating(ed.rating.value, ed.rating.count)}. ` : ""}
+          {w.parentsNote}
+        </p>
+        {/* Ссылка ведет прямо в отзывы на карточке книги, а не на саму
+            карточку: человек, который дошел до этой кнопки, хочет
+            проверить наши слова, а не покупать. Кнопка светлая, чтобы
+            не спорить с двумя кнопками покупки выше. */}
+        {reviewsUrl ? (
+          <p style={{ margin: "0.6rem 0 0" }}>
+            <a
+              className="btn btn--ghost"
+              href={reviewsUrl}
+              rel="nofollow noopener"
+              target="_blank"
+            >
+              {w.parentsCta}
+            </a>
+          </p>
+        ) : null}
+
+        {/* ============ 6. Что в книге, списком ============ */}
+        <h2 className="section">{w.specs}</h2>
         <ul className="inside">
           {ed.inside.map((line) => (
             <li key={line}>{line}</li>
           ))}
         </ul>
 
-        {/* ============ 5. Видео, справа подтверждение ============ */}
+        {/* ============ 7. Видео, справа подтверждение ============ */}
         {ed.video ? (
           <>
             <h2 className="section">{w.video}</h2>
@@ -413,27 +485,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </>
         ) : null}
 
-        {/* ============ 6. Покупка ============ */}
-        <div className="buy-block">
-          <Buy lang={l} />
-          {/* Подпись объясняет обе кнопки: бумажная книга приходит
-              из Amazon, файл для печати из нашего магазина. */}
-          <p className="buy-note">
-            {ed.asin ? w.buyNote : ""}
-            {ed.asin && ed.pdfUrl ? " " : ""}
-            {ed.pdfUrl ? t.sec.pdfNote : ""}
-            {!ed.asin && !ed.pdfUrl ? w.buyNote : ""}
-          </p>
-        </div>
-
-        {/* ============ 7. Кому подходит и кому нет ============ */}
+        {/* ============ 8. Кому подходит и кому нет ============ */}
         <h2 className="section">{w.forWhom}</h2>
         <p>{ed.forWhom}</p>
 
         <h2 className="section">{w.notFor}</h2>
         <p>{ed.notFor}</p>
 
-        {/* ============ 8. Вопросы ============ */}
+        {/* ============ 9. Вопросы ============ */}
         <h2 className="section">{w.faq}</h2>
         <div className="faq faq--two">
           {ed.faq.map((item) => (
@@ -461,7 +520,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         ) : null}
       </div>
 
-      {/* ============ 9. Бесплатные листы ============ */}
+      {/* ============ 10. Бесплатные листы ============ */}
       <section className="band band--pink">
         <div className="wrap">
           <h2 className="section">{w.freeTitle}</h2>
@@ -490,7 +549,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 10. Справочная часть ============ */}
+      {/* ============ 11. Справочная часть ============ */}
       {isContentLang(l) ? (
         <>
           <section className="band band--mint" id="picker">
@@ -538,7 +597,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </>
       ) : null}
 
-      {/* ============ 11. Что это за сайт ============ */}
+      {/* ============ 12. Что это за сайт ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.whatTitle}</h2>
@@ -557,7 +616,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 12. Источники ============ */}
+      {/* ============ 13. Источники ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.sourcesTitle}</h2>

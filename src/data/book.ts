@@ -47,6 +47,13 @@ export type Edition = {
      а не придумано заново. */
   extras: string[];
   inside: string[];
+  /** Что говорят родители, купившие книгу. Написано нами по смыслу
+      отзывов на Amazon, своими словами и без имен: чужой текст
+      в кавычках на своем сайте это чужая собственность. Сюда идет
+      только то, чего нет в списках выше: как книга ведет себя
+      в жизни, а не из чего она состоит. Иначе страница начинает
+      повторять сама себя, и человек перестает ее читать. */
+  parents: string[];
   /** Кому книга подходит и кому нет. Второе важнее первого:
       родитель, которому честно сказали "не берите", возвращается. */
   forWhom: string;
@@ -77,6 +84,12 @@ export const BOOK = {
   pages: 114,
   ages: "1-3",
   amazonUrl: (asin: string) => `https://www.amazon.com/dp/${asin}`,
+
+  /** Отзывы на карточке книги. Отдельный адрес, а не якорь на середину
+      страницы: Amazon держит для отзывов собственную страницу, и она
+      открывается сразу на них, без прокрутки. */
+  reviewsUrl: (asin: string) =>
+    `https://www.amazon.com/product-reviews/${asin}`,
 
   /** Три квадратные картинки из книги: простая форма, крупный рисунок,
       узнаваемый предмет. Ровно те три свойства, о которых говорит сайт.
@@ -159,6 +172,20 @@ export const editions: Record<UiLang, Edition> = {
       "Animals, sea creatures, fairy-tale characters, vehicles, flowers and food",
       "A page at the front where a child writes their name",
       "114 pages, 8.5 x 11 inches",
+    ],
+    parents: [
+      "A child finishes one picture on their own and turns the page for the next one",
+      "Large, simple pictures color in almost without effort, and a child starts to trust " +
+      "their own hand",
+      "Right for the age, which is what parents mention more often than anything else",
+      "One book is enough for a long drive, a waiting room or a rainy afternoon",
+      "Light enough that it leaves the house with you",
+      "Children look through the pages even without crayons and ask what each animal is called",
+      "Enough different subjects, from a mermaid to a submarine to a donut, that a child can " +
+      "pick",
+      "Bought for the youngest in the family, when the older ones have moved on to harder " +
+      "coloring books",
+      "Finished pages get cut out, dated and kept",
     ],
     forWhom:
       "Made for the stage between the first deliberate mark and the first shape colored on " +
@@ -285,6 +312,19 @@ export const editions: Record<UiLang, Edition> = {
       "Animales, animales marinos, personajes de cuentos, vehículos, flores y comida",
       "Una página al principio del libro donde el niño puede escribir su nombre",
       "114 páginas, 21,6 x 27,9 cm",
+    ],
+    parents: [
+      "El niño termina un dibujo por su cuenta y pasa la página para el siguiente",
+      "Los dibujos grandes y simples se colorean casi sin esfuerzo, y el niño empieza a confiar " +
+        "en su propia mano",
+      "Adecuado para la edad, que es lo que más mencionan los padres",
+      "Un solo libro alcanza para un viaje largo, una sala de espera o una tarde de lluvia",
+      "Pesa poco, así que sale de casa con la familia",
+      "Los niños hojean el libro incluso sin lápices y preguntan cómo se llama cada animal",
+      "Hay temas de sobra, de una sirena a un submarino o una rosquilla, y el niño puede elegir",
+      "Se compra para el más pequeño de la casa, cuando los mayores ya pasaron a libros más " +
+        "difíciles",
+      "Las páginas terminadas se recortan, se les pone la fecha y se guardan",
     ],
     forWhom:
       "El libro está pensado para niños que empiezan a dibujar y a colorear formas sencillas " +
@@ -419,6 +459,18 @@ export const editions: Record<UiLang, Edition> = {
       "Животные, морские животные, сказочные герои, транспорт, цветы и еда",
       "В начале книги есть страница, где ребенок может написать свое имя",
       "114 страниц, 21,6 x 27,9 см",
+    ],
+    parents: [
+      "Ребенок заканчивает рисунок сам и переворачивает страницу за следующим",
+      "Крупные простые картинки раскрашиваются почти без усилий, и ребенок начинает верить " +
+        "своей руке",
+      "Подходит по возрасту, и это то, что родители отмечают чаще всего",
+      "Одной книги хватает на долгую дорогу, на ожидание в очереди и на дождливый день",
+      "Книга легкая, ее берут с собой из дома",
+      "Дети листают ее даже без карандашей и спрашивают, как называется каждое животное",
+      "Тем много, от русалки до подводной лодки и пончика, ребенку есть из чего выбрать",
+      "Ее берут младшему в семье, когда старшим уже нужны раскраски посложнее",
+      "Готовые страницы вырезают, подписывают датой и оставляют на память",
     ],
     forWhom:
       "Книга создана для детей, которые только начинают рисовать и учатся осознанно " +
