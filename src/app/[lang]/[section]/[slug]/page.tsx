@@ -453,6 +453,13 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
                 </details>
               ))}
             </div>
+            {/* Отсюда человек уходит в общий раздел вопросов: здесь
+                разобрано только то, что относится к этой странице. */}
+            <p className="btn-row">
+              <Link className="btn btn--ghost" href={sectionPath(lang, "faq")}>
+                {t.sec.faqAll}
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -785,6 +792,13 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
                 </details>
               ))}
             </div>
+            {/* Отсюда человек уходит в общий раздел вопросов: здесь
+                разобрано только то, что относится к этой странице. */}
+            <p className="btn-row">
+              <Link className="btn btn--ghost" href={sectionPath(lang, "faq")}>
+                {t.sec.faqAll}
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -1063,6 +1077,13 @@ function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
                 </details>
               ))}
             </div>
+            {/* Отсюда человек уходит в общий раздел вопросов: здесь
+                разобрано только то, что относится к этой странице. */}
+            <p className="btn-row">
+              <Link className="btn btn--ghost" href={sectionPath(lang, "faq")}>
+                {t.sec.faqAll}
+              </Link>
+            </p>
           </div>
         </div>
       </section>

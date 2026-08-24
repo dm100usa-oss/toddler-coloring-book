@@ -23,6 +23,15 @@ export type Edition = {
   headline: string;
   /** Номер книги в Amazon. У русского издания его нет. */
   asin?: string;
+  /** Международный номер книги. Он принадлежит только ей и больше ни
+      одной книге в мире. Названия у первых раскрасок похожи до
+      неразличимости, и без номера нейросеть не может понять, о какой
+      именно книге речь, и ставит ссылку куда попало. */
+  isbn?: string;
+  /** Карточка книги в Wikidata, международной базе знаний. Она
+      подтверждает, что книга существует как самостоятельный объект,
+      а не только как название на этом сайте. */
+  wikidata?: string;
   /** Адрес страницы, где продается файл для печати. */
   pdfUrl?: string;
   price?: string;
@@ -145,6 +154,8 @@ export const editions: Record<UiLang, Edition> = {
     headline:
       "111 big, simple drawings with thick outlines, one per page, for children aged 1 to 3.",
     asin: "1963328272",
+    isbn: "978-1-963328-27-1",
+    wikidata: "Q137217801",
     pdfUrl: WIX + "english-4",
     price: "$6.99",
     published: "2024-04-22",
@@ -291,6 +302,8 @@ export const editions: Record<UiLang, Edition> = {
       "111 dibujos grandes y simples con líneas gruesas, uno por página, para bebés de 1 a 3 " +
         "años.",
     asin: "1963328205",
+    isbn: "978-1-963328-20-2",
+    wikidata: "Q137261547",
     pdfUrl: WIX + "spanish-4",
     price: "$6.99",
     published: "2024-04-29",

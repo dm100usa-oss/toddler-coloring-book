@@ -8,7 +8,15 @@ import type { UiLang } from "@/data/dictionaries";
    страница: человек приходит за ней, и отдельная страница про то же
    самое спорила бы с главной за один и тот же запрос. Старые адреса
    переброшены на главную в next.config.mjs. */
-export type Section = "tools" | "programs" | "ages" | "guides" | "printables" | "about" | "terms";
+export type Section =
+  | "tools"
+  | "programs"
+  | "ages"
+  | "guides"
+  | "printables"
+  | "faq"
+  | "about"
+  | "terms";
 
 export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
   en: {
@@ -17,6 +25,7 @@ export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
     ages: "by-age",
     guides: "guides",
     printables: "free-coloring-pages",
+    faq: "questions",
     about: "about",
     terms: "terms-and-privacy",
   },
@@ -26,6 +35,7 @@ export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
     ages: "por-edad",
     guides: "guias",
     printables: "dibujos-para-colorear-gratis",
+    faq: "preguntas",
     about: "quienes-somos",
     terms: "condiciones-y-privacidad",
   },
@@ -35,6 +45,7 @@ export const sectionSlugs: Record<UiLang, Record<Section, string>> = {
     ages: "po-vozrastu",
     guides: "stati",
     printables: "raskraski-raspechatat",
+    faq: "voprosy",
     about: "o-nas",
     terms: "prava-i-privatnost",
   },

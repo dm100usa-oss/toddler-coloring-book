@@ -264,6 +264,34 @@ h3.block { font-family: var(--font-display); font-size: var(--t-h3); margin: var
    прилипает к следующему заголовку. */
 .btn-row { margin: var(--gap-2) 0 var(--gap-4); }
 
+/* ==================== РАЗДЕЛ ВОПРОСОВ ==================== */
+
+/* Ответы стоят открытыми, поэтому страница длинная, и главная забота
+   здесь одна: чтобы глаз находил вопрос без усилий. Вопрос темнее и
+   крупнее ответа, между вопросами воздух, группы отбиты сильнее, чем
+   вопросы внутри группы. */
+.faq-group { margin-bottom: var(--gap-4); }
+.faq-item { margin-bottom: var(--gap-3); max-width: 68ch; }
+.faq-q {
+  font-family: var(--font-display);
+  font-size: var(--t-lead);
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+.faq-a { margin: 0 0 0.6rem; }
+.faq-a:last-child { margin-bottom: 0; }
+
+/* Указатель на вопросы, отвеченные в других местах сайта. Две колонки
+   на широком экране: список длинный, в одну колонку он тянется на
+   несколько экранов. */
+.faq-index { margin: 0; padding-left: 1.15rem; max-width: 68ch; }
+.faq-index li { margin-bottom: 0.45rem; }
+.faq-index li::marker { color: var(--pink-hot); }
+@media (min-width: 900px) {
+  .faq-index { columns: 2; column-gap: var(--gap-4); max-width: none; }
+  .faq-index li { break-inside: avoid; }
+}
+
 /* Цитата из чужой рецензии. Отбита слева розовой чертой, чтобы
    человек сразу видел: это не наши слова. Курсив намеренно не
    ставится, длинный курсивный текст читается хуже. */

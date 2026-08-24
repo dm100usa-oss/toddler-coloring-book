@@ -195,6 +195,13 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       numberOfPages: BOOK.pages,
       inLanguage: t.htmlLang,
       datePublished: ed.published,
+      /* Номер книги и ее карточка в международной базе знаний. Без них
+         нейросеть не отличает эту книгу от десятка похожих названий
+         и ставит ссылку в чужой магазин. */
+      ...(ed.isbn ? { isbn: ed.isbn } : {}),
+      ...(ed.wikidata
+        ? { sameAs: [`https://www.wikidata.org/wiki/${ed.wikidata}`] }
+        : {}),
       author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
       description: ed.headline + " " + ed.note,
@@ -230,6 +237,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               priceCurrency: "USD",
               url: BOOK.amazonUrl(ed.asin),
               availability: "https://schema.org/InStock",
+              /* Продавец назван явно: официальная страница книги одна,
+                 и она на Amazon. В других магазинах книга появляется
+                 через распространителей Amazon. */
+              seller: { "@type": "Organization", name: "Amazon" },
             },
           }
         : {}),
@@ -530,6 +541,15 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </details>
           ))}
         </div>
+
+        {/* Ссылка на весь раздел вопросов. Стоит здесь, а не в шапке:
+            в меню и так шесть пунктов, а человек, дочитавший до этого
+            места, как раз тот, кому раздел нужен. */}
+        <p className="btn-row">
+          <Link className="btn btn--ghost" href={sectionPath(l, "faq")}>
+            {t.sec.faqAll}
+          </Link>
+        </p>
 
         {/* Издание на другом языке. Строкой, не карточкой:
             карточка спорила бы с основной книгой. */}

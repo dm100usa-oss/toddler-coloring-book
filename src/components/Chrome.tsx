@@ -136,8 +136,11 @@ export function Footer({ lang }: { lang: UiLang }) {
       <p>
         <a href={CATALOG_URL} rel="noopener">{t.footer.catalog}</a>
         {" · "}
-        {/* Права и приватность стоят в подвале, а не в меню: страница
-            нужная, но не та, ради которой человек пришел. */}
+        {/* Вопросы, права и приватность стоят в подвале, а не в меню.
+            Страницы нужные, но не те, ради которых человек пришел, а
+            в шапке на телефоне и без них уже две строки. */}
+        <Link href={sectionPath(lang, "faq")}>{t.nav.faq}</Link>
+        {" · "}
         <Link href={sectionPath(lang, "terms")}>{t.nav.terms}</Link>
         {" · "}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>

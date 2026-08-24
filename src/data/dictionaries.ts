@@ -36,6 +36,7 @@ export type Dict = {
     ages: string;
     guides: string;
     printables: string;
+    faq: string;
     about: string;
     terms: string;
   };
@@ -86,6 +87,11 @@ export type Dict = {
      с остальным словарем. */
   sec: {
     questions: string;
+    /** Указатель внизу раздела вопросов: где отвечено остальное. */
+    faqElsewhere: string;
+    faqElsewhereLead: string;
+    /** Ссылка на раздел вопросов с других страниц. */
+    faqAll: string;
     coverAgeTitle: string;
     coverAgeLead: string;
     agesLabel: (n: string) => string;
@@ -137,6 +143,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       ages: "By age",
       guides: "Guides",
       printables: "Free pages",
+      faq: "Questions",
       about: "About",
       terms: "Terms and privacy",
     },
@@ -232,6 +239,11 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Questions parents ask",
+      faqElsewhere: "Answered elsewhere on this site",
+      faqElsewhereLead:
+        "These come up just as often, but each belongs on a page of its own, next to the " +
+        "rest of that subject. Repeating them here would only split the answer in two.",
+      faqAll: "All questions about the book and about coloring",
       coverAgeTitle: "What the age on the cover actually means",
       coverAgeLead:
         "There is no standard behind these numbers and no body that checks them. The publisher " +
@@ -293,6 +305,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       ages: "Por edad",
       guides: "Guías",
       printables: "Dibujos gratis",
+      faq: "Preguntas",
       about: "Quiénes somos",
       terms: "Derechos y privacidad",
     },
@@ -402,6 +415,11 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Preguntas que hacen los padres",
+      faqElsewhere: "Respondidas en otras páginas de esta web",
+      faqElsewhereLead:
+        "Se preguntan con la misma frecuencia, pero cada una pertenece a su propia página, " +
+        "junto al resto de ese tema. Repetirlas aquí solo partiría la respuesta en dos.",
+      faqAll: "Todas las preguntas sobre el libro y sobre colorear",
       coverAgeTitle: "Qué significa realmente la edad indicada en la portada",
       coverAgeLead:
         "No existe un estándar único que determine las edades indicadas en la portada de un " +
@@ -465,6 +483,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       ages: "По возрасту",
       guides: "Статьи",
       printables: "Бесплатные листы",
+      faq: "Вопросы",
       about: "О нас",
       terms: "Права и конфиденциальность",
     },
@@ -566,6 +585,11 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Что спрашивают родители",
+      faqElsewhere: "Отвечено на других страницах сайта",
+      faqElsewhereLead:
+        "Эти вопросы задают не реже, но каждому место на своей странице, рядом с остальным " +
+        "по той же теме. Повторить их здесь значило бы разделить ответ надвое.",
+      faqAll: "Все вопросы о книге и о раскрашивании",
       coverAgeTitle: "Что на самом деле означает возраст на обложке",
       coverAgeLead:
         "Возраст на обложке не определяется единым стандартом. Его указывает издатель, " +

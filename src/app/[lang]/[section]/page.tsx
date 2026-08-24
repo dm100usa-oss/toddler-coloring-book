@@ -3,7 +3,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
 import type { UiLang, ContentLang } from "@/data/dictionaries";
-import { agesCopy, printablesCopy, aboutCopy, guidesCopy, ageLabels, termsCopy } from "@/data/pages";
+import {
+  agesCopy,
+  printablesCopy,
+  aboutCopy,
+  guidesCopy,
+  ageLabels,
+  termsCopy,
+  faqCopy,
+} from "@/data/pages";
+import { faq, faqFlat } from "@/data/faq";
 import { guides } from "@/data/guides";
 import { stages, stageById } from "@/data/stages";
 import type { StageId } from "@/data/stages";
@@ -51,6 +60,7 @@ function copyFor(section: Section, lang: UiLang) {
   if (section === "printables") return printablesCopy[lang];
   if (section === "about") return aboutCopy[lang];
   if (section === "terms") return termsCopy[lang];
+  if (section === "faq") return faqCopy[lang];
   if (!isContentLang(lang)) return null;
   if (section === "tools") return toolCopy[lang];
   if (section === "programs") return programsCopy[lang];
@@ -145,6 +155,13 @@ export default async function SectionPage({
                     },
                   ]
                 : []),
+              /* Все полсотни вопросов раздела в машинной разметке.
+                 Показа в выдаче Google она больше не дает, но Bing
+                 и сборщики нейросетей ее по-прежнему читают, а нам
+                 важны именно они. */
+              ...(s === "faq"
+                ? [faqPage(faqFlat(l).map((it) => ({ q: it.q, a: it.a.join(" ") })))]
+                : []),
               ...(copy.faq ? [faqPage(copy.faq)] : [])
             )
           ),
@@ -194,6 +211,8 @@ export default async function SectionPage({
           </div>
         </section>
       )}
+
+      {s === "faq" && <FaqBody lang={l} />}
 
       {s === "programs" && isContentLang(l) && <ProPageList lang={l} />}
       {s === "programs" && isContentLang(l) && <Audiences lang={l} />}
@@ -563,6 +582,115 @@ function AgeLadder({ lang }: { lang: ContentLang }) {
 
 /* ------------------------------------------------------------------ */
 /*  Список руководств                                                  */
+/* ------------------------------------------------------------------ */
+/*  Раздел вопросов                                                     */
+/* ------------------------------------------------------------------ */
+
+/* Вопросы группами, каждая под своим заголовком, с якорем: на группу
+   можно дать прямую ссылку.
+
+   Ответы открыты, а не спрятаны в раскрывающиеся списки. Свернутый
+   ответ человек чаще всего не раскрывает, а машине приходится
+   догадываться, что он вообще есть. Полсотни открытых ответов дают
+   длинную страницу, но длина здесь не порок: человек приходит с одним
+   вопросом и находит его поиском по странице.
+
+   Внизу указатель на вопросы, отвеченные в других местах сайта. Он не
+   повторяет ответы, только ведет к ним: это единственный способ собрать
+   все вопросы в одном месте, не создавая на сайте два текста об одном
+   и том же. */
+
+function FaqBody({ lang }: { lang: UiLang }) {
+  const t = dictionaries[lang];
+  const groups = faq[lang];
+
+  return (
+    <>
+      <section className="band">
+        <div className="wrap">
+          <div className="teach">
+            {groups.map((g) => (
+              <div key={g.id} id={g.id} className="faq-group">
+                <h2 className="section">{g.title}</h2>
+                {g.items.map((item) => (
+                  <div className="faq-item" key={item.q}>
+                    <h3 className="faq-q">{item.q}</h3>
+                    {item.a.map((para) => (
+                      <p className="faq-a" key={para.slice(0, 40)}>
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {isContentLang(lang) && <FaqElsewhere lang={lang} />}
+    </>
+  );
+}
+
+/* Указатель. Вопрос ссылкой ведет на страницу, где он разобран целиком.
+   Ответ здесь не повторяется намеренно: два одинаковых текста на сайте
+   ослабляют оба адреса. */
+
+function FaqElsewhere({ lang }: { lang: ContentLang }) {
+  const t = dictionaries[lang];
+
+  const rows: { q: string; href: string }[] = [
+    ...guides.flatMap((g) =>
+      g.faq[lang].map((f) => ({
+        q: f.q,
+        href: itemPath(lang, "guides", g.slug[lang]),
+      }))
+    ),
+    ...agePages.flatMap((ap) =>
+      ap.copy[lang].faq.map((f) => ({
+        q: f.q,
+        href: itemPath(lang, "tools", ap.slug[lang]),
+      }))
+    ),
+    ...proPages.flatMap((pp) =>
+      pp.copy[lang].faq.map((f) => ({
+        q: f.q,
+        href: itemPath(lang, "programs", pp.slug[lang]),
+      }))
+    ),
+  ];
+
+  /* Один и тот же вопрос иногда стоит на двух страницах: например, про
+     фломастер, который проходит насквозь. В указателе он должен быть
+     один раз, иначе список выглядит небрежно. */
+  const seen = new Set<string>();
+  const unique = rows.filter((r) => {
+    const key = r.q.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  return (
+    <section className="band band--cream">
+      <div className="wrap">
+        <div className="teach">
+          <h2 className="section">{t.sec.faqElsewhere}</h2>
+          <p className="teach-p">{t.sec.faqElsewhereLead}</p>
+          <ul className="faq-index">
+            {unique.map((r) => (
+              <li key={r.q}>
+                <Link href={r.href}>{r.q}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 
 function GuideList({ lang }: { lang: ContentLang }) {
