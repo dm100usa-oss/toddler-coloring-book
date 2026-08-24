@@ -10,7 +10,7 @@ export const CONTACT_EMAIL = "magicofdiscoveries@gmail.com";
     материал с понятной датой, а без даты обновления страница
     со временем начинает выглядеть заброшенной. */
 export const SITE_PUBLISHED = "2026-08-21";
-export const SITE_UPDATED = "2026-08-21";
+export const SITE_UPDATED = "2026-08-24";
 
 /** Где находится издательство. Улицу не публикуем, только город. */
 export const ADDRESS = {
