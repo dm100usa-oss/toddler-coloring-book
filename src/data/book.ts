@@ -120,7 +120,7 @@ export const BOOK = {
       Те же три, что стоят на карточке книги в каталоге издательства. */
   artwork: [
     {
-      file: "/art/simple.png",
+      file: "/art/simple.webp",
       alt: {
         en: "Simple: an outline turtle drawn with thick lines, one object on the page",
         es: "Simples: una tortuga con contorno grueso y un solo dibujo en la página",
@@ -128,7 +128,7 @@ export const BOOK = {
       },
     },
     {
-      file: "/art/big.png",
+      file: "/art/big.webp",
       alt: {
         en: "Big: a cow drawing filling the page, colored in by a small child",
         es: "Grandes: una vaca que ocupa casi toda la hoja, coloreada por un niño pequeño",
@@ -136,7 +136,7 @@ export const BOOK = {
       },
     },
     {
-      file: "/art/cute.png",
+      file: "/art/cute.webp",
       alt: {
         en: "Recognizable: a smiling red car, one of the everyday objects in the book",
         es: "Reconocibles: un coche rojo sonriente, uno de los dibujos del libro",

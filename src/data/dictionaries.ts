@@ -99,6 +99,8 @@ export type Dict = {
     stagesInOrder: string;
     stagesHome: string;
     lookForPage: string;
+    /** Заголовок раздела про то, как проходит занятие за столом. */
+    atTable: string;
     stagePages: string;
     neighbours: string;
     tryToday: string;
@@ -143,7 +145,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       ages: "By age",
       guides: "Guides",
       printables: "Free pages",
-      faq: "Questions",
+      faq: "FAQ",
       about: "About",
       terms: "Terms and privacy",
     },
@@ -254,6 +256,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       stagesInOrder: "The four stages, in order",
       stagesHome: "The four stages of first drawing",
       lookForPage: "What to look for in a page",
+      atTable: "How it actually goes at the table",
       stagePages: "Pages for this stage, free to print",
       neighbours: "Before and after this stage",
       tryToday: "Try it on a page today",
@@ -305,7 +308,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       ages: "Por edad",
       guides: "Guías",
       printables: "Dibujos gratis",
-      faq: "Preguntas",
+      faq: "Preguntas frecuentes",
       about: "Quiénes somos",
       terms: "Derechos y privacidad",
     },
@@ -432,6 +435,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       stagesInOrder: "Las cuatro etapas, en orden",
       stagesHome: "Las cuatro etapas del primer dibujo",
       lookForPage: "En qué fijarse en una página",
+      atTable: "Cómo transcurre en realidad la sesión",
       stagePages: "Hojas para esta etapa, gratis",
       neighbours: "Antes y después de esta etapa",
       tryToday: "Pruébelo hoy con una sola página",
@@ -483,7 +487,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       ages: "По возрасту",
       guides: "Статьи",
       printables: "Бесплатные листы",
-      faq: "Вопросы",
+      faq: "Часто задаваемые вопросы",
       about: "О нас",
       terms: "Права и конфиденциальность",
     },
@@ -601,6 +605,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       stagesInOrder: "Четыре этапа по порядку",
       stagesHome: "Четыре этапа первого рисования",
       lookForPage: "На что обратить внимание на странице",
+      atTable: "Как это проходит за столом на самом деле",
       stagePages: "Страницы для этого этапа, бесплатно",
       neighbours: "До и после этого этапа",
       tryToday: "Попробуйте сегодня на одном листе",

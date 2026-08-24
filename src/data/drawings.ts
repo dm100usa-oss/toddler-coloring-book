@@ -37,7 +37,7 @@ export const drawings: Drawing[] = [
   { n: 15, group: "land", name: { en: "Alpaca", es: "Alpaca", ru: "Альпака" } },
   { n: 16, group: "land", name: { en: "Bunny", es: "Conejo", ru: "Кролик" } },
   { n: 17, group: "land", name: { en: "Owl", es: "Lechuza", ru: "Сова" } },
-  { n: 18, group: "land", name: { en: "Hedgehog", es: "Erizo", ru: "Ёж" } },
+  { n: 18, group: "land", name: { en: "Hedgehog", es: "Erizo", ru: "Еж" } },
   { n: 19, group: "land", name: { en: "Goat", es: "Cabra", ru: "Коза" } },
   { n: 20, group: "land", name: { en: "Bat", es: "Murciélago", ru: "Летучая мышь" } },
   { n: 21, group: "land", name: { en: "Raccoon", es: "Mapache", ru: "Енот" } },
@@ -161,14 +161,14 @@ export const featured: number[] = [
 ];
 
 export const drawingFile = (n: number) =>
-  `/drawings/${String(n).padStart(3, "0")}.png`;
+  `/drawings/${String(n).padStart(3, "0")}.webp`;
 
 /** Страница книги целиком, вместе со словом полыми буквами.
     Слово в книге на каждом языке свое, поэтому и файл свой.
     Такие страницы стоят в верхней двадцатке: по ним сразу видно,
     что слово под рисунком тоже раскрашивается. */
 export const pageFile = (n: number, lang: UiLang) =>
-  `/pages/${lang}/${String(n).padStart(3, "0")}.png`;
+  `/pages/${lang}/${String(n).padStart(3, "0")}.webp`;
 
 export const drawingByNumber = (n: number) =>
   drawings.find((d) => d.n === n);

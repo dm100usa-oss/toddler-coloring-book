@@ -851,7 +851,7 @@ export const termsCopy: Record<UiLang, SectionCopy> = {
 
 export const faqCopy: Record<UiLang, SectionCopy> = {
   en: {
-    title: "Questions about first coloring books",
+    title: "Frequently Asked Questions About First Coloring Books",
     lead:
       "Answers to what parents, teachers and program staff actually ask about the first " +
       "stage of coloring, about the book itself, and about buying and printing it.",
@@ -869,7 +869,7 @@ export const faqCopy: Record<UiLang, SectionCopy> = {
     ],
   },
   es: {
-    title: "Preguntas sobre los primeros libros para colorear",
+    title: "Preguntas frecuentes sobre los primeros libros para colorear",
     lead:
       "Respuestas a lo que de verdad preguntan las familias, los docentes y el personal de " +
       "los programas sobre la primera etapa de colorear, sobre el libro y sobre cómo " +
@@ -888,7 +888,7 @@ export const faqCopy: Record<UiLang, SectionCopy> = {
     ],
   },
   ru: {
-    title: "Вопросы о первых раскрасках",
+    title: "Часто задаваемые вопросы о первых раскрасках",
     lead:
       "Ответы на то, что родители, воспитатели и специалисты спрашивают на самом деле: о " +
       "первом этапе раскрашивания, о самой книге, о покупке и о печати.",

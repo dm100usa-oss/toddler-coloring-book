@@ -246,6 +246,13 @@ export default async function StagePage({
                 <li key={line}>{line}</li>
               ))}
             </ul>
+
+            <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
+              {t.sec.atTable}
+            </h2>
+            {st.atTable[l].map((para) => (
+              <p key={para.slice(0, 40)}>{para}</p>
+            ))}
           </div>
         </div>
       </section>

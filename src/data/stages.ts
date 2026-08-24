@@ -34,6 +34,11 @@ export type Stage = {
   notYet: Record<ContentLang, string>;
   /* Каким должен быть лист, чтобы ребенок увидел результат. */
   lookFor: Record<ContentLang, string[]>;
+  /* Как проходит занятие за столом: что видно на листе, сколько
+     ребенок обычно держится, что делать, если он ушел через минуту,
+     и на чем чаще всего спотыкается взрослый. Этого нет больше
+     нигде на сайте, и родителю это нужнее описания этапа. */
+  atTable: Record<ContentLang, string[]>;
   /* Подходит ли наша книга этому этапу и насколько честно. */
   bookFit: "core" | "edge" | "outgrown";
 };
@@ -103,6 +108,52 @@ export const stages: Stage[] = [
           "тонкий лист может порваться",
         "Знакомые ребенку предметы и животные, которые взрослый может назвать вместе с ним: " +
           "мяч, кошка, яблоко",
+      ],
+    },
+    atTable: {
+      en: [
+        "The sheet is the honest record of this stage. Expect long sweeping arcs that run off the " +
+          "paper and onto the table, a knot of marks wherever the hand stopped, and a drawing that " +
+          "is barely covered at all. Torn paper is common, because a fist grip presses hard.",
+        "A session at this age runs about two to five minutes. That is not a short attention span " +
+          "to be fixed. It is what twelve to eighteen months looks like.",
+        "If the child walks away after a minute, do not call them back to the table. Leave the " +
+          "sheet and the crayons where they were. Toddlers at this stage often return to the same " +
+          "page two or three times in one afternoon, and each return lasts a little longer than the " +
+          "last.",
+        "The most common mistake is guiding the small hand along the outline. There is no inside " +
+          "and outside yet, so the correction teaches nothing and usually ends the session. The " +
+          "child is not learning to color. They are learning that moving a hand leaves a mark, and " +
+          "that is the whole task right now.",
+      ],
+      es: [
+        "La hoja es el registro honesto de esta etapa. Espere trazos largos y amplios que se " +
+          "salen del papel y llegan a la mesa, una maraña de marcas allí donde se detuvo la mano y " +
+          "un dibujo apenas cubierto. Es normal que el papel se rompa: la mano cerrada presiona con " +
+          "fuerza.",
+        "Una sesión a esta edad dura entre dos y cinco minutos. No es una falta de atención que " +
+          "haya que corregir. Así se ve un niño de doce a dieciocho meses.",
+        "Si el niño se marcha al cabo de un minuto, no lo llame de vuelta a la mesa. Deje la hoja " +
+          "y los crayones donde estaban. A esta edad los niños suelen volver a la misma página dos " +
+          "o tres veces en una tarde, y cada regreso dura un poco más que el anterior.",
+        "El error más frecuente es guiar la manita a lo largo del contorno. Todavía no existe un " +
+          "dentro y un fuera, así que la corrección no enseña nada y casi siempre acaba con la " +
+          "sesión. El niño no está aprendiendo a colorear. Está aprendiendo que mover la mano deja " +
+          "una marca, y esa es toda la tarea por ahora.",
+      ],
+      ru: [
+        "Лист честно показывает, что происходит на этом этапе. Ждите длинных размашистых дуг, " +
+          "которые уходят за край бумаги на стол, клубка линий там, где рука остановилась, и почти " +
+          "нетронутого рисунка. Порванная бумага дело обычное: ладонь давит сильно.",
+        "Занятие в этом возрасте длится примерно две-пять минут. Это не короткое внимание, " +
+          "которое надо исправлять. Так выглядит ребенок от года до полутора.",
+        "Если ребенок ушел через минуту, не зовите его обратно за стол. Оставьте лист и мелки " +
+          "там, где они лежали. Дети на этом этапе часто возвращаются к одной и той же странице " +
+          "два-три раза за день, и каждый следующий подход длится чуть дольше предыдущего.",
+        "Самая частая ошибка взрослого - водить маленькой рукой по контуру. Внутри и снаружи для " +
+          "ребенка пока не существует, поэтому поправка ничему не учит и обычно заканчивает " +
+          "занятие. Ребенок сейчас учится не раскрашивать. Он учится тому, что движение руки " +
+          "оставляет след, и это вся задача.",
       ],
     },
     bookFit: "core",
@@ -179,6 +230,52 @@ export const stages: Stage[] = [
         "Один рисунок на странице, без лишних деталей вокруг, которые могут отвлекать внимание",
         "Слово под рисунком, чтобы ребенок одновременно раскрашивал и знакомился с названием",
         "Печать только с одной стороны: фломастер может пройти сквозь обычную бумагу",
+      ],
+    },
+    atTable: {
+      en: [
+        "On the sheet you start to see the change. The marks gather nearer the middle of the " +
+          "drawing instead of running off the page, round scribbles appear alongside the straight " +
+          "sweeps, and one spot often gets colored over and over until the paper shines.",
+        "A session now runs about three to seven minutes. The child also starts lifting the " +
+          "crayon and putting it down again, rather than dragging it in one continuous motion, " +
+          "which is why the page looks busier than it did a few months ago.",
+        "If the child leaves after a minute, check the crayon before you check the child. A thin " +
+          "marker or a short stub is hard to hold at this age, and a page that has already been " +
+          "scribbled over gives nothing new to look at. A fresh sheet often brings them straight " +
+          "back.",
+        "The most common mistake is turning to a new page every time the child pauses. Pausing is " +
+          "part of the work at this stage, and the same drawing returned to three times teaches " +
+          "more than three drawings abandoned once each.",
+      ],
+      es: [
+        "En la hoja empieza a notarse el cambio. Las marcas se agrupan más cerca del centro del " +
+          "dibujo en lugar de salirse de la página, aparecen garabatos redondeados junto a los " +
+          "trazos rectos y un mismo punto se colorea una y otra vez hasta que el papel queda " +
+          "brillante.",
+        "Ahora la sesión dura entre tres y siete minutos. El niño también empieza a levantar el " +
+          "crayón y volver a apoyarlo, en vez de arrastrarlo en un movimiento continuo, y por eso " +
+          "la página parece más llena que unos meses atrás.",
+        "Si el niño se va al cabo de un minuto, revise el crayón antes que al niño. Un rotulador " +
+          "fino o un trozo corto son difíciles de sujetar a esta edad, y una hoja ya garabateada no " +
+          "ofrece nada nuevo que mirar. Una hoja limpia suele traerlo de vuelta enseguida.",
+        "El error más frecuente es pasar a una página nueva cada vez que el niño se detiene. " +
+          "Detenerse forma parte del trabajo en esta etapa, y un mismo dibujo retomado tres veces " +
+          "enseña más que tres dibujos abandonados una vez cada uno.",
+      ],
+      ru: [
+        "На листе начинает быть заметна перемена. Линии собираются ближе к середине рисунка, а не " +
+          "уходят за край, рядом с прямыми размашистыми появляются круглые каракули, и одно место " +
+          "часто закрашивается снова и снова, пока бумага не залоснится.",
+        "Занятие теперь длится примерно три-семь минут. Ребенок начинает отрывать мелок и ставить " +
+          "его заново, а не тащить одним непрерывным движением, поэтому страница выглядит гуще, чем " +
+          "несколько месяцев назад.",
+        "Если ребенок ушел через минуту, проверьте сначала мелок, а не ребенка. Тонкий фломастер " +
+          "или короткий огрызок в этом возрасте держать трудно, а уже исчерканный лист не дает " +
+          "ничего нового. Чистая страница часто возвращает ребенка сразу.",
+        "Самая частая ошибка - переворачивать на новую страницу каждый раз, когда ребенок замер. " +
+          "Пауза здесь часть работы, и один рисунок, к которому вернулись трижды, дает больше, чем " +
+          "три рисунка, брошенных по разу.",
       ],
     },
     bookFit: "core",
@@ -260,6 +357,53 @@ export const stages: Stage[] = [
           "дорисовать",
       ],
     },
+    atTable: {
+      en: [
+        "The sheet changes character here. Most of the color lands on the drawing itself, the " +
+          "outline is crossed freely and without concern, and the child often announces what they " +
+          "are doing before and during the work. Colors have nothing to do with real life yet: a " +
+          "blue cat and a purple apple are normal and are not mistakes.",
+        "A session runs about five to ten minutes, and for the first time the child may finish a " +
+          "page rather than abandon it.",
+        "If the child gives up quickly at this age, look at the page rather than the child. A " +
+          "drawing that is too small, or one broken into separate parts to fill, asks for a hand " +
+          "that is not ready. One large shape brings them back.",
+        "The most common mistake is correcting the color. Saying that a cat is not blue turns a " +
+          "child's own decision into a wrong answer, and at this age that is the fastest way to end " +
+          "interest in coloring. The second most common is finishing the page for them after they " +
+          "walk away.",
+      ],
+      es: [
+        "Aquí la hoja cambia de carácter. La mayor parte del color cae sobre el propio dibujo, el " +
+          "contorno se cruza con libertad y sin preocupación, y el niño suele anunciar lo que está " +
+          "haciendo antes y durante el trabajo. Los colores todavía no tienen relación con la " +
+          "realidad: un gato azul y una manzana morada son normales y no son errores.",
+        "La sesión dura entre cinco y diez minutos y, por primera vez, el niño puede terminar una " +
+          "página en lugar de abandonarla.",
+        "Si a esta edad el niño se rinde enseguida, mire la página antes que al niño. Un dibujo " +
+          "demasiado pequeño, o dividido en partes separadas para rellenar, exige una mano que aún " +
+          "no está lista. Una sola forma grande lo trae de vuelta.",
+        "El error más frecuente es corregir el color. Decir que un gato no es azul convierte una " +
+          "decisión del niño en una respuesta equivocada, y a esta edad esa es la manera más rápida " +
+          "de acabar con el interés por colorear. El segundo error más común es terminarle la " +
+          "página cuando se ha ido.",
+      ],
+      ru: [
+        "Здесь лист меняет характер. Большая часть цвета ложится на сам рисунок, контур " +
+          "пересекается свободно и без беспокойства, а ребенок часто объявляет вслух, что он " +
+          "делает, до начала и по ходу работы. Цвета пока никак не связаны с настоящей жизнью: " +
+          "синяя кошка и фиолетовое яблоко это норма, а не ошибка.",
+        "Занятие длится примерно пять-десять минут, и впервые ребенок может закончить страницу, а " +
+          "не бросить ее.",
+        "Если в этом возрасте ребенок быстро сдается, смотрите на страницу, а не на ребенка. " +
+          "Слишком мелкий рисунок или рисунок, разбитый на отдельные части для закрашивания, " +
+          "требует руки, которая еще не готова. Одна крупная форма возвращает интерес.",
+        "Самая частая ошибка - поправлять цвет. Слова о том, что кошка не бывает синей, " +
+          "превращают собственное решение ребенка в неправильный ответ, а в этом возрасте это самый " +
+          "быстрый способ отбить желание раскрашивать. Вторая по частоте - дорисовать страницу за " +
+          "ребенком, когда он ушел.",
+      ],
+    },
     bookFit: "core",
   },
 
@@ -325,6 +469,52 @@ export const stages: Stage[] = [
           "придумать и дорисовать фон",
         "Пошаговое рисование, где ребенок сам создает картинку, а не только раскрашивает " +
           "готовую",
+      ],
+    },
+    atTable: {
+      en: [
+        "By now the sheet looks like coloring in the ordinary sense. The color stays inside the " +
+          "outline most of the time, the child notices when it does not, and pressure is heavier " +
+          "because they want solid coverage rather than a trace. Many children start filling the " +
+          "background too, and some return to the same page across several days.",
+        "A session runs ten minutes or longer.",
+        "If a child this age stops early, it is usually frustration rather than boredom. They can " +
+          "now see the gap between what they meant and what is on the paper. Handing them a fresh " +
+          "sheet says the first one was a failure. Better to leave it, say what you see rather than " +
+          "how good it is, and let them come back to it.",
+        "The most common mistake at this stage is staying too long with pages built for younger " +
+          "hands. A child who can hold the line needs detail to aim at, and a single large shape " +
+          "that was ideal a year ago now finishes in two minutes and teaches nothing.",
+      ],
+      es: [
+        "A estas alturas la hoja ya parece coloreada en el sentido corriente. El color se " +
+          "mantiene dentro del contorno la mayor parte del tiempo, el niño se da cuenta cuando se " +
+          "sale y presiona más fuerte porque busca un relleno sólido y no un simple trazo. Muchos " +
+          "niños empiezan también a colorear el fondo, y algunos vuelven a la misma página durante " +
+          "varios días.",
+        "La sesión dura diez minutos o más.",
+        "Si un niño de esta edad se detiene pronto, suele ser por frustración y no por " +
+          "aburrimiento. Ya percibe la distancia entre lo que quería hacer y lo que hay en el " +
+          "papel. Darle una hoja nueva le dice que la primera fue un fracaso. Es mejor dejarla, " +
+          "comentar lo que uno ve en lugar de lo bien que está, y permitir que vuelva a ella.",
+        "El error más frecuente en esta etapa es quedarse demasiado tiempo con páginas pensadas " +
+          "para manos más pequeñas. Un niño que ya respeta el contorno necesita detalles a los que " +
+          "apuntar, y una sola forma grande que era ideal hace un año ahora se termina en dos " +
+          "minutos y no le enseña nada.",
+      ],
+      ru: [
+        "К этому моменту лист выглядит раскрашенным в обычном смысле слова. Цвет большую часть " +
+          "времени остается внутри контура, ребенок замечает, когда выходит за него, и нажимает " +
+          "сильнее, потому что хочет плотную заливку, а не след. Многие начинают закрашивать и фон, " +
+          "а некоторые возвращаются к одной странице несколько дней подряд.",
+        "Занятие длится десять минут и дольше.",
+        "Если ребенок этого возраста бросает рано, дело обычно в досаде, а не в скуке. Он уже " +
+          "видит разницу между тем, что задумал, и тем, что вышло на бумаге. Новый чистый лист в " +
+          "такую минуту говорит ему, что первый не удался. Лучше оставить лист, сказать, что вы на " +
+          "нем видите, а не насколько хорошо получилось, и дать ребенку вернуться самому.",
+        "Самая частая ошибка на этом этапе - слишком долго оставаться со страницами, сделанными " +
+          "для рук помладше. Ребенку, который держит контур, нужны детали, куда целиться, а одна " +
+          "крупная форма, идеальная год назад, теперь заканчивается за две минуты и ничему не учит.",
       ],
     },
     bookFit: "outgrown",

@@ -15,7 +15,7 @@ import type { UiLang } from "./dictionaries";
 
    Файлы лежат в /printables. Английский лист: <id>. Испанский: <id>-es.
    Русский: <id>-ru.
-   У каждого три файла: превью .png и две версии для печати,
+   У каждого три файла: превью .webp и две версии для печати,
    -letter.pdf для американской бумаги и -a4.pdf для остального мира. */
 
 export type Sheet = {
@@ -40,7 +40,7 @@ export const sheetFile = (id: string, lang: UiLang) =>
   lang === "en" ? id : `${id}-${lang}`;
 
 export const sheetPreview = (id: string, lang: UiLang) =>
-  `/printables/${sheetFile(id, lang)}.png`;
+  `/printables/${sheetFile(id, lang)}.webp`;
 
 export const sheetPdf = (id: string, lang: UiLang, size: "letter" | "a4") =>
   `/printables/${sheetFile(id, lang)}-${size}.pdf`;
