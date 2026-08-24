@@ -133,6 +133,7 @@ export const editions: Record<UiLang, Edition> = {
       "One drawing per page, printed on one side only",
       "111 different drawings on familiar, interesting subjects",
       "A child colors and learns new words at the same time",
+      "Ten drawings from the book can be printed right now, free and without signing up",
     ],
     extras: [
       "Develops fine motor skills, creativity and concentration",
@@ -251,6 +252,7 @@ export const editions: Record<UiLang, Edition> = {
       "Un dibujo por página, impreso por una sola cara",
       "111 dibujos distintos sobre temas conocidos e interesantes",
       "El niño colorea y, al mismo tiempo, descubre y aprende palabras nuevas",
+      "Diez dibujos del libro se pueden imprimir ahora mismo, gratis y sin registro",
     ],
     extras: [
       "Ayuda a desarrollar la motricidad fina, la creatividad y la atención",
@@ -386,6 +388,7 @@ export const editions: Record<UiLang, Edition> = {
       "Один рисунок на странице, печать только с одной стороны",
       "111 разных рисунков на знакомые и интересные детям темы",
       "Ребенок не только раскрашивает, но и узнает и запоминает новые слова",
+      "Десять рисунков из книги можно распечатать прямо сейчас бесплатно и без регистрации",
     ],
     extras: [
       "Помогает развивать мелкую моторику, творческие способности и внимание",
