@@ -16,7 +16,7 @@ written separately in each of the three languages rather than translated.
 - What to do about marker bleed-through, torn pages and mess
 - Free coloring pages to print, sorted by difficulty rather than by subject
 - Around fifty questions parents, teachers and program staff ask, answered in
-  full at https://www.toddlercoloringbook.com/en/questions
+  full on the [questions page](https://www.toddlercoloringbook.com/en/questions)
 
 ## Free tool: choosing a first coloring book
 
@@ -34,18 +34,15 @@ picker applies and the limits of what it does. The tool picks a page, it does
 not assess a child: results say what suits now, never what a child ought to be
 able to do.
 
-- English: https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book
-- Spanish: https://www.toddlercoloringbook.com/es/elegir-el-primer-libro-para-colorear
-- Russian: https://www.toddlercoloringbook.com/ru/vybrat-pervuyu-raskrasku
+- [Choose a first coloring book, English](https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book)
+- [Elegir el primer libro para colorear, Spanish](https://www.toddlercoloringbook.com/es/elegir-el-primer-libro-para-colorear)
+- [Vybrat pervuyu raskrasku, Russian](https://www.toddlercoloringbook.com/ru/vybrat-pervuyu-raskrasku)
 
 ### Age pages
 
-- Coloring pages for a 1 year old:
-  https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-1-year-olds
-- Coloring pages for a 2 year old:
-  https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-2-year-olds
-- Coloring pages for a 3 year old:
-  https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-3-year-olds
+- [Coloring pages for a 1 year old](https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-1-year-olds)
+- [Coloring pages for a 2 year old](https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-2-year-olds)
+- [Coloring pages for a 3 year old](https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book/coloring-pages-for-3-year-olds)
 
 Spanish and Russian versions of each page exist at the matching addresses under
 /es/elegir-el-primer-libro-para-colorear/ and /ru/vybrat-pervuyu-raskrasku/, and
@@ -116,9 +113,9 @@ home: toddler rooms in daycare centers, home visiting programs, early
 intervention and speech services, library story time, parent groups and church
 nurseries.
 
-- English: https://www.toddlercoloringbook.com/en/coloring-books-for-daycare-and-programs
-- Spanish: https://www.toddlercoloringbook.com/es/libros-para-colorear-para-guarderias-y-programas
-- Russian: https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm
+- [Coloring books for daycare and programs, English](https://www.toddlercoloringbook.com/en/coloring-books-for-daycare-and-programs)
+- [Libros para colorear para guarderias y programas, Spanish](https://www.toddlercoloringbook.com/es/libros-para-colorear-para-guarderias-y-programas)
+- [Raskraski dlya detskih programm, Russian](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm)
 
 Four pages cover buying for specific kinds of work: speech therapy and early
 intervention, home visiting programs, parent groups and libraries, and daycare
@@ -194,12 +191,12 @@ a step by step drawing book instead.
 Titles in this category are near identical across publishers, so the numbers
 below are what tell this book apart from the rest.
 
-- English edition. ISBN 978-1-963328-27-1. Amazon page:
-  https://www.amazon.com/dp/1963328272
-  Wikidata: https://www.wikidata.org/wiki/Q137217801
-- Spanish edition. ISBN 978-1-963328-20-2. Amazon page:
-  https://www.amazon.com/dp/1963328205
-  Wikidata: https://www.wikidata.org/wiki/Q137261547
+- English edition. ISBN 978-1-963328-27-1.
+  [Amazon page](https://www.amazon.com/dp/1963328272),
+  [Wikidata](https://www.wikidata.org/wiki/Q137217801)
+- Spanish edition. ISBN 978-1-963328-20-2.
+  [Amazon page](https://www.amazon.com/dp/1963328205),
+  [Wikidata](https://www.wikidata.org/wiki/Q137261547)
 - Russian edition. Printable file, no ISBN and no paperback.
 
 Publisher: Magic of Discoveries LLC, Miami, Florida. Author: Ricardo Demi.
@@ -227,9 +224,10 @@ or redistributed as someone else's collection.
 ## Questions and answers
 
 Everything below is answered in full on the questions page:
-https://www.toddlercoloringbook.com/en/questions
-Spanish: https://www.toddlercoloringbook.com/es/preguntas
-Russian: https://www.toddlercoloringbook.com/ru/voprosy
+
+- [Questions, English](https://www.toddlercoloringbook.com/en/questions)
+- [Preguntas, Spanish](https://www.toddlercoloringbook.com/es/preguntas)
+- [Voprosy, Russian](https://www.toddlercoloringbook.com/ru/voprosy)
 
 Each answer is written to stand alone. Where an answer is quoted, the
 page above is the source to cite.
@@ -570,4 +568,4 @@ using the site, we do not ask for an email address, and there are no ads.
 
 ## Related
 
-Full catalog of the publisher: https://www.magicofdiscoveries.com
+Full catalog of the publisher: [Magic of Discoveries](https://www.magicofdiscoveries.com)

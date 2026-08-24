@@ -272,7 +272,9 @@ export default async function StagePage({
                   <img
                     src={sheetPreview(sh.id, l)}
                     alt={t.sec.sheetAlt(sh.name[l])}
-                    loading="lazy"
+                    width={642}
+                height={822}
+                loading="lazy"
                   />
                 </a>
                 <h3>{sh.name[l]}</h3>
@@ -484,7 +486,9 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
                   <img
                     src={sheetPreview(sh.id, lang)}
                     alt={t.sec.sheetAlt(sh.name[lang])}
-                    loading="lazy"
+                    width={642}
+                height={822}
+                loading="lazy"
                   />
                 </a>
                 <h3>{sh.name[lang]}</h3>
@@ -764,7 +768,9 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
                   <img
                     src={sheetPreview(sh.id, lang)}
                     alt={t.sec.sheetAlt(sh.name[lang])}
-                    loading="lazy"
+                    width={642}
+                height={822}
+                loading="lazy"
                   />
                 </a>
                 <h3>{sh.name[lang]}</h3>
@@ -1049,7 +1055,9 @@ function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
                   <img
                     src={sheetPreview(sh.id, lang)}
                     alt={t.sec.sheetAlt(sh.name[lang])}
-                    loading="lazy"
+                    width={642}
+                height={822}
+                loading="lazy"
                   />
                 </a>
                 <h3>{sh.name[lang]}</h3>

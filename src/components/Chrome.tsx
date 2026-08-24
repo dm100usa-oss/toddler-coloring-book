@@ -19,10 +19,10 @@ const banners: Record<
   en: {
     /* Цифра в имени намеренно. Под прежними именами лежали старые
        картинки, и кеш браузера мог подставить их вместо новых. */
-    src: "/banner/top-en-wide-3.jpg",
+    src: "/banner/top-en-wide-3.webp",
     w: 2388,
     h: 583,
-    sm: "/banner/top-en-sm-3.jpg",
+    sm: "/banner/top-en-sm-3.webp",
     smW: 1240,
     smH: 1269,
     alt:
@@ -30,10 +30,10 @@ const banners: Record<
       "crayons and colored pencils and which coloring books work best at this age",
   },
   es: {
-    src: "/banner/top-es-wide-3.jpg",
+    src: "/banner/top-es-wide-3.webp",
     w: 2388,
     h: 570,
-    sm: "/banner/top-es-sm-3.jpg",
+    sm: "/banner/top-es-sm-3.webp",
     smW: 1239,
     smH: 1269,
     alt:
@@ -44,10 +44,10 @@ const banners: Record<
   ru: {
     /* Имя с цифрой по той же причине, что и у английского: под старым
        именем лежала прежняя картинка, и кеш мог подставить ее. */
-    src: "/banner/top-ru-wide-3.jpg",
+    src: "/banner/top-ru-wide-3.webp",
     w: 2388,
     h: 557,
-    sm: "/banner/top-ru-sm-3.jpg",
+    sm: "/banner/top-ru-sm-3.webp",
     smW: 1254,
     smH: 1254,
     alt:
@@ -68,7 +68,16 @@ export function Header({ lang }: { lang: UiLang }) {
             выбирает картинку сам и лишнюю не скачивает. */}
         <Link className="masthead__banner" href={homePath(lang)}>
           <picture>
-            <source media="(max-width: 640px)" srcSet={banner.sm} />
+            {/* Размеры узкой картинки заданы здесь намеренно. Без них
+                браузер на телефоне держит пропорцию широкого баннера,
+                примерно четыре к одному, а подставляет почти квадратный:
+                шапка резко вырастает и вся страница уезжает вниз. */}
+            <source
+              media="(max-width: 640px)"
+              srcSet={banner.sm}
+              width={banner.smW}
+              height={banner.smH}
+            />
             <img
               src={banner.src}
               alt={banner.alt}

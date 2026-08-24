@@ -726,7 +726,9 @@ function SheetGrid({ lang }: { lang: UiLang }) {
                 <img
                   src={sheetPreview(sh.id, lang)}
                   alt={dictionaries[lang].sec.pageAlt(sh.name[lang])}
-                  loading="lazy"
+                  width={642}
+                height={822}
+                loading="lazy"
                 />
               </a>
               <h3>{sh.name[lang]}</h3>

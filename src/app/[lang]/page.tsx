@@ -354,7 +354,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         {/* ============ 2. Три свойства картинками ============ */}
         <div className="artwork">
           {BOOK.artwork.map((a) => (
-            <img key={a.file} src={a.file} alt={a.alt[l]} loading="lazy" />
+            <img
+              key={a.file}
+              src={a.file}
+              alt={a.alt[l]}
+              width={601}
+              height={601}
+              loading="lazy"
+            />
           ))}
         </div>
 
@@ -585,6 +592,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                       ? `Dibujo para colorear gratis para niños pequeños: ${s.name.es}`
                       : `Бесплатная раскраска для малышей: ${s.name.ru}`
                 }
+                width={642}
+                height={822}
                 loading="lazy"
               />
             ))}

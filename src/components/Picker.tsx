@@ -120,6 +120,8 @@ export default function Picker({ lang }: { lang: ContentLang }) {
               <img
                 src={sheetPreview(s.id, lang)}
                 alt={dictionaries[lang].sec.sheetAlt(s.name[lang])}
+                width={642}
+                height={822}
                 loading="lazy"
               />
             </a>
