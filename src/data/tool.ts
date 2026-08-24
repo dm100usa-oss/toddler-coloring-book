@@ -111,81 +111,92 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
   es: {
     title: "Cómo elegir el primer libro para colorear para un niño de 1 a 3 años",
     lead:
-      "Responda cuatro preguntas sobre lo que su hijo hace con la mano y vea qué tipo de página le " +
-      "conviene ahora. No se guarda nada y no hace falta registrarse.",
+      "Responda cuatro preguntas sobre cómo dibuja su hijo y cómo sujeta el crayón, y " +
+        "descubra qué tipo de página le conviene ahora. No se guarda nada y no hace falta " +
+        "registrarse.",
     body: [
-      "Alrededor del año, un niño necesita una sola forma grande que llene la hoja, un contorno " +
-        "muy grueso y casi ningún detalle dentro. Alrededor de los dos años el contorno sigue " +
-        "siendo grueso, pero la forma ya puede tener dos o tres partes. Alrededor de los tres " +
-        "funciona un dibujo grande con varias zonas separadas, porque el niño ya puede elegir un " +
-        "color distinto para cada una. A partir de los cuatro años un primer libro para colorear " +
-        "empieza a resultar demasiado fácil, y le conviene más un libro con más detalle dentro de " +
-        "un mismo dibujo o un libro de dibujo paso a paso.",
-      "La edad no es lo que decide. Un niño de dieciocho meses puede sostener el crayón con los " +
-        "dedos con firmeza, mientras que uno de tres todavía garabatea por toda la hoja, y los dos " +
-        "se desarrollan con normalidad. La mano lo muestra con más honestidad que el cumpleaños: " +
-        "cómo agarra el crayón y si las marcas caen sobre el dibujo. Por eso el selector de abajo " +
-        "pregunta por la edad y por la mano, y da más peso a la mano.",
-      "El selector mira cuatro señales: edad, agarre, puntería y cuánto tiempo se queda el niño " +
-        "con una página. La edad da la primera suposición. La puntería es la que más la corrige, " +
-        "porque el padre o la madre la ve con sus propios ojos y ahí no hay error posible. El " +
-        "tiempo en una página es lo que menos pesa, porque la atención depende del día y de si el " +
-        "dibujo le interesa. Las respuestas se quedan en el navegador: no se envían a ninguna " +
-        "parte y no se guardan.",
-      "Esto elige una página, no evalúa a un niño. El resultado responde qué le conviene ahora, " +
-        "nunca qué debería saber hacer. Los rangos de edad vienen de hitos del desarrollo " +
-        "publicados, indicados al final de esta página, y unos meses de diferencia en cualquier " +
-        "sentido es algo corriente. Si algo del desarrollo de su hijo le preocupa, esa " +
-        "conversación es con su pediatra y no con un sitio web.",
+      "Alrededor del año, suele ser más adecuada una sola forma grande que ocupe casi toda " +
+        "la hoja, con un contorno muy grueso y pocos detalles. Alrededor de los dos años, el " +
+        "contorno puede seguir siendo grueso, pero el dibujo ya puede tener dos o tres partes. " +
+        "Cerca de los tres años, puede funcionar bien un dibujo grande con varias zonas " +
+        "separadas que el niño pueda colorear con distintos colores. A partir de los cuatro " +
+        "años, el primer libro para colorear suele empezar a resultar demasiado sencillo, y " +
+        "puede ser mejor elegir uno con dibujos más detallados o un libro de dibujo paso a " +
+        "paso.",
+      "No conviene fijarse únicamente en la edad. Un niño de dieciocho meses puede sujetar " +
+        "el crayón con los dedos con bastante seguridad, mientras que uno de tres años todavía " +
+        "puede hacer trazos por toda la hoja, y eso no significa necesariamente que haya un " +
+        "problema. Por eso es más útil observar cómo sujeta el crayón y con qué precisión " +
+        "dirige los trazos hacia el dibujo. El selector tiene en cuenta tanto la edad como " +
+        "estas habilidades, pero da más importancia a lo que el niño ya puede hacer.",
+      "El selector tiene en cuenta cuatro aspectos: la edad, la forma de sujetar el crayón, " +
+        "la precisión de los movimientos y el tiempo que el niño dedica a una página. La edad " +
+        "sirve como punto de partida. La precisión es el aspecto que más influye en el " +
+        "resultado, porque es fácil observarla mientras el niño colorea. El tiempo que dedica " +
+        "a una página tiene menos peso, ya que depende mucho del estado de ánimo y de cuánto " +
+        "le interese el dibujo. Las respuestas permanecen en el navegador: no se envían ni se " +
+        "guardan.",
+      "Esta herramienta ayuda a elegir un tipo de página, no a evaluar el desarrollo de un " +
+        "niño. El resultado indica qué puede convenirle ahora, no lo que debería saber hacer a " +
+        "una edad determinada. Los rangos de edad se basan en hitos del desarrollo publicados, " +
+        "cuyas fuentes aparecen al final de esta página. Una diferencia de algunos meses es " +
+        "completamente normal. Si algo le preocupa sobre el desarrollo de su hijo, consúltelo " +
+        "con su pediatra.",
     ],
     faq: [
       {
         q: "¿Qué tipo de dibujo para colorear le conviene a un niño de un año?",
         a:
-          "Una sola forma grande que llene la hoja, un contorno muy grueso y casi nada dentro. A " +
-          "esta edad el niño agarra el crayón con el puño y mueve el hombro, así que las marcas " +
-          "son largas y amplias y una línea fina desaparece debajo. Un niño de un año no intenta " +
-          "rellenar la forma, y no hace falta que lo haga.",
+          "Una sola forma grande que ocupe casi toda la hoja, con un contorno muy grueso y " +
+            "pocos detalles. A esta edad, el niño suele sujetar el crayón con toda la mano y " +
+            "hacer movimientos amplios desde el hombro y el codo. Por eso, un dibujo grande y " +
+            "un contorno bien visible resultan más adecuados. No es necesario esperar que un " +
+            "niño de un año intente rellenar toda la forma.",
       },
       {
         q: "¿Debe un niño de dos años colorear dentro de las líneas?",
         a:
-          "No. A los dos años todavía está aprendiendo a sujetar el crayón con los dedos y a " +
-          "apuntar al dibujo. Un contorno grueso sirve como referencia visible, pero salirse de él " +
-          "es normal y esperable. Exigir bordes limpios a esta edad es la manera más rápida de que " +
-          "el niño suelte el crayón.",
+          "No. A los dos años, el niño todavía está aprendiendo a sujetar el crayón con más " +
+            "seguridad y a dirigir sus movimientos. Un contorno grueso sirve como referencia " +
+            "visual, pero salirse de él es completamente normal. No hace falta exigir que " +
+            "coloree con precisión dentro de las líneas: en esta etapa es mucho más importante " +
+            "que disfrute del proceso.",
       },
       {
         q: "¿Qué debe tener un primer libro para colorear?",
         a:
-          "Dibujos grandes y reconocibles, contornos gruesos, un dibujo por página, muy pocos " +
-          "detalles finos, impresión por una sola cara para que el rotulador no arruine la hoja " +
-          "siguiente, y motivos que el niño ya sepa nombrar. Una palabra impresa debajo del dibujo " +
-          "ayuda, porque nombrar la imagen es la mitad de la razón por la que sigue en la mesa.",
+          "Dibujos grandes y reconocibles, contornos gruesos, un solo dibujo por página, " +
+            "pocos detalles pequeños e impresión por una sola cara para que el rotulador no " +
+            "estropee el dibujo siguiente. Conviene elegir temas familiares para el niño: " +
+            "animales, comida, juguetes y objetos cotidianos. Una palabra debajo del dibujo " +
+            "también puede ser útil: el adulto puede nombrar la imagen y el niño empieza a " +
+            "relacionar la palabra con lo que ve.",
       },
       {
         q: "¿Qué crayones van mejor para los más pequeños?",
         a:
-          "Los crayones gruesos pensados para esta edad son los más fáciles, porque una mano " +
-          "pequeña los sostiene con el puño y dejan una marca ancha y visible. Los rotuladores " +
-          "lavables son la opción práctica más adelante, cuando el niño ya apunta al dibujo. " +
-          "Colorear es una actividad para hacer con un adulto cerca, sea cual sea el material.",
+          "Para empezar, suelen ser más cómodos los crayones gruesos pensados para niños " +
+            "pequeños. Son fáciles de sujetar con una mano pequeña y dejan un trazo ancho y " +
+            "visible. Los rotuladores lavables pueden probarse más adelante, cuando el niño ya " +
+            "dirige la mano con mayor seguridad. Sea cual sea el material, es mejor que un " +
+            "niño pequeño coloree con un adulto cerca.",
       },
       {
         q: "¿Para qué imprimir una palabra debajo de cada dibujo?",
         a:
-          "Porque le da al adulto algo que decir. El niño oye el nombre, mira la imagen y une las " +
-          "dos cosas, y la página se convierte en una conversación corta en lugar de una tarea " +
-          "silenciosa. Además la misma hoja sirve dos veces: una para colorear y otra para nombrar " +
-          "lo que hay en ella.",
+          "Permite que el adulto nombre lo que aparece en la página y que el niño relacione " +
+            "poco a poco la palabra con la imagen. Así, colorear puede convertirse en una " +
+            "pequeña actividad compartida: nombrar el dibujo, repetir la palabra y hablar " +
+            "sobre lo que aparece en él.",
       },
       {
         q: "¿Cuánto tiempo debe colorear un niño pequeño?",
         a:
-          "No hay una cifra que alcanzar. Uno o dos minutos es lo corriente al año, cinco minutos " +
-          "es habitual a los dos, y diez minutos o más aparece cerca de los tres. Parar cuando el " +
-          "niño pierde el interés y volver a la misma hoja más tarde está bien, y repetir muchas " +
-          "veces el dibujo preferido también.",
+          "No existe una duración exacta. Alrededor del año, un niño puede colorear solo uno " +
+            "o dos minutos; a los dos años, unos cinco minutos; y cerca de los tres, el " +
+            "interés puede mantenerse durante más tiempo. Si se cansa o pierde el interés, se " +
+            "puede terminar la actividad y volver al dibujo más tarde. También es " +
+            "completamente normal querer colorear varias veces una imagen favorita.",
       },
     ],
   },
@@ -309,12 +320,12 @@ export const ageRows: AgeRow[] = [
     age: { en: "About 1 year", es: "Alrededor de 1 año", ru: "Около 1 года" },
     hand: {
       en: "Holds the crayon in a fist, sweeping marks from the shoulder",
-      es: "Agarra el crayón con el puño, marcas amplias desde el hombro",
+      es: "Sujeta el crayón con toda la mano y hace trazos amplios",
       ru: "Держит мелок всей ладонью, рисует широкими размашистыми линиями",
     },
     page: {
       en: "One large shape filling the sheet, very thick outline",
-      es: "Una forma grande que llena la hoja, contorno muy grueso",
+      es: "Una forma grande que ocupa casi toda la hoja, con un contorno muy grueso",
       ru: "Одна крупная форма почти во весь лист, очень толстый контур",
     },
     parts: {
@@ -334,12 +345,13 @@ export const ageRows: AgeRow[] = [
     age: { en: "About 2 years", es: "Alrededor de 2 años", ru: "Около 2 лет" },
     hand: {
       en: "Fingers, not steadily. Loops and up and down strokes on purpose",
-      es: "Con los dedos, sin firmeza. Bucles y trazos arriba abajo a propósito",
+      es: "Lo sujeta con los dedos, pero todavía con poca firmeza. Hace bucles y trazos de " +
+            "arriba abajo",
       ru: "Держит мелок пальцами, но пока неуверенно. Рисует петли и линии сверху вниз",
     },
     page: {
       en: "Large recognizable subject, outline still thick",
-      es: "Motivo grande y reconocible, contorno todavía grueso",
+      es: "Dibujo grande y reconocible, con un contorno todavía grueso",
       ru: "Крупный узнаваемый рисунок, контур по-прежнему толстый",
     },
     parts: {
@@ -359,13 +371,14 @@ export const ageRows: AgeRow[] = [
     age: { en: "About 3 years", es: "Alrededor de 3 años", ru: "Около 3 лет" },
     hand: {
       en: "Fingers rather than fist, copies a circle and a straight line",
-      es: "Con los dedos y no con el puño, copia un círculo y una línea recta",
+      es: "Sujeta el crayón con los dedos, no con toda la mano, y puede copiar un círculo y " +
+            "una línea recta",
       ru: "Держит карандаш или мелок пальцами, а не всей ладонью, может повторить круг и " +
             "прямую линию",
     },
     page: {
       en: "Large drawing with separate areas to fill differently",
-      es: "Dibujo grande con zonas separadas para rellenar de otro color",
+      es: "Dibujo grande con zonas separadas que se pueden colorear con distintos colores",
       ru: "Крупный рисунок с отдельными участками, которые можно раскрашивать разными цветами",
     },
     parts: {
@@ -389,13 +402,14 @@ export const ageRows: AgeRow[] = [
     },
     hand: {
       en: "Stays inside the outline most of the time and notices when it does not",
-      es: "Se queda dentro del contorno casi siempre y nota cuándo se sale",
+      es: "Colorea dentro del contorno la mayor parte del tiempo y se da cuenta cuando se sale",
       ru: "Большую часть времени раскрашивает внутри контура и замечает, когда выходит за " +
             "его границы",
     },
     page: {
       en: "A scene rather than one object, or step by step drawing",
-      es: "Una escena en vez de un objeto suelto, o dibujo paso a paso",
+      es: "Un dibujo más complejo o una pequeña escena en lugar de un solo objeto, además de " +
+            "actividades de dibujo paso a paso",
       ru: "Более сложный рисунок или небольшая композиция вместо одного предмета, а также " +
             "пошаговое рисование",
     },
@@ -456,20 +470,21 @@ export const toolLabels: Record<ContentLang, ToolLabels> = {
   es: {
     tableTitle: "Qué le conviene a cada edad",
     tableLead:
-      "Las edades de aquí son rangos habituales y no plazos. Use la fila que coincide con lo que " +
-      "su hijo hace con la mano, y no solo la que coincide con su cumpleaños.",
+      "Las edades son orientativas, no límites estrictos. Fíjese sobre todo en lo que su " +
+        "hijo ya puede hacer con la mano, y no únicamente en su edad.",
     colAge: "Edad",
-    colHand: "Qué hace la mano",
+    colHand: "Cómo dibuja",
     colPage: "Cómo debe ser la página",
     colParts: "Zonas para rellenar",
     colTools: "Con qué colorear",
     moreAbout: "Leer sobre esta etapa",
     pickerTitle: "Responda cuatro preguntas sobre su hijo",
     pickerLead:
-      "Unos treinta segundos. No se guarda nada ni se envía nada a ninguna parte.",
+      "Unos treinta segundos. No se guarda ni se envía ninguna información.",
     basisLink: "En qué se basan estas recomendaciones",
     basisLinkLead:
-      "Qué señales pesa el selector, de dónde salen los rangos de edad y qué no hace esta herramienta.",
+      "Qué aspectos tiene en cuenta el selector, de dónde proceden los rangos de edad y qué " +
+        "no hace esta herramienta.",
     fullPage: "La guía completa por edades",
   },
   ru: {
@@ -580,60 +595,63 @@ export const basisCopy: Record<ContentLang, BasisCopy> = {
   },
 
   es: {
-    title: "En qué se basan nuestras recomendaciones para colorear",
+    title: "En qué se basan nuestras recomendaciones para elegir un libro para colorear",
     lead:
-      "Las cuatro señales que pesa el selector, de dónde salen los rangos de edad y qué no hace " +
-      "esta herramienta.",
+      "Los cuatro aspectos que tiene en cuenta el selector, de dónde proceden los rangos de " +
+        "edad y qué no hace esta herramienta.",
     body: [
-      "El selector sitúa al niño en una de las cuatro etapas del primer dibujo, no en una edad. " +
-        "Una etapa se define por lo que hace la mano: si el crayón está en el puño o en los dedos, " +
-        "y si las marcas caen sobre el dibujo. Dos niños nacidos el mismo mes pueden estar en " +
-        "etapas distintas, y ese es el caso corriente y no la excepción.",
-      "La edad cuenta igualmente, porque un padre siempre la sabe con exactitud. Marca la " +
-        "suposición inicial, y las tres preguntas sobre la mano mueven esa suposición hacia " +
-        "delante o hacia atrás. El resultado nunca se sale de la escala, así que siempre hay una " +
-        "respuesta, y esa respuesta siempre nombra una etapa que tiene aquí su propia página para " +
-        "leerla entera.",
+      "El selector sitúa al niño en una de las cuatro etapas iniciales del dibujo, no " +
+        "determina su edad. Para ello tiene en cuenta cómo sujeta el crayón - con toda la mano " +
+        "o con los dedos - y con qué precisión sus trazos caen sobre el dibujo. Dos niños de " +
+        "la misma edad pueden encontrarse en etapas diferentes, y eso es completamente normal.",
+      "La edad también se tiene en cuenta y sirve como punto de partida. Después, las " +
+        "respuestas a las tres preguntas sobre las habilidades del niño pueden desplazar el " +
+        "resultado hacia una etapa anterior o posterior. El resultado siempre corresponde a " +
+        "una de las cuatro etapas, y cada una tiene en este sitio su propia página con una " +
+        "explicación más detallada.",
     ],
-    signsTitle: "Las cuatro señales y cuánto pesa cada una",
+    signsTitle: "Los cuatro aspectos y su importancia",
     signs: [
       {
         name: "Edad",
         text:
-          "Marca la primera suposición y nada más. Un año empieza al principio de la escala, " +
-          "cuatro años en adelante al final.",
+          "Sirve como punto de partida. Alrededor de un año corresponde al inicio de la " +
+            "escala y cuatro años o más, al final.",
       },
       {
         name: "Agarre",
         text:
-          "Un crayón sujeto con el puño mueve el resultado hacia el principio de la escala sea " +
-          "cual sea la edad, porque una mano entera que se mueve desde el hombro todavía no puede " +
-          "apuntar. Un agarre parecido al de un adulto lo mueve hacia delante.",
+          "Si el niño sujeta el crayón con toda la mano, el resultado se desplaza hacia una " +
+            "etapa anterior, porque esos movimientos suelen ser menos precisos. Un agarre más " +
+            "seguro con los dedos, parecido al de un adulto, desplaza el resultado hacia una " +
+            "etapa posterior.",
       },
       {
-        name: "Puntería",
+        name: "Precisión",
         text:
-          "Es la que más pesa de las cuatro. Marcas por toda la hoja mueven el resultado hacia " +
-          "atrás, marcas que se quedan casi siempre dentro del contorno lo mueven hacia delante. " +
-          "Es algo que el padre o la madre ve suceder y ahí no hay error posible.",
+          "Es el aspecto que más influye en el resultado. Si el niño hace trazos por toda la " +
+            "hoja, el resultado se desplaza hacia una etapa anterior. Si colorea dentro del " +
+            "contorno la mayor parte del tiempo, se desplaza hacia una etapa posterior. Es una " +
+            "de las habilidades más fáciles de observar mientras el niño colorea.",
       },
       {
         name: "Tiempo en una página",
         text:
-          "Es la que menos pesa. La atención a esta edad depende del día, del humor y de si el " +
-          "dibujo le interesa al niño, así que empuja el resultado en lugar de decidirlo.",
+          "Es el aspecto que menos influye en el resultado. El tiempo que el niño dedica a " +
+            "una página depende del estado de ánimo, el cansancio y el interés que le produzca " +
+            "el dibujo, por lo que solo ajusta ligeramente el resultado.",
       },
     ],
     notTitle: "Qué no hace esta herramienta",
     not: [
-      "No evalúa al niño. El resultado dice qué le conviene ahora, nunca qué debería saber hacer " +
-        "a una edad determinada.",
-      "No diagnostica nada y no es consejo médico. Las dudas sobre el desarrollo de un niño son " +
-        "para el pediatra.",
-      "No recoge nada. Las respuestas se quedan en el navegador, no se envía nada a ninguna parte " +
-        "y no se pide registro.",
-      "Las organizaciones citadas como fuentes más abajo no participaron en la creación de esta " +
-        "herramienta y no recomiendan ningún libro concreto, tampoco el nuestro.",
+      "No evalúa el desarrollo del niño. El resultado indica qué tipo de página puede " +
+        "convenirle ahora, pero no lo que debería saber hacer a una edad determinada.",
+      "No realiza diagnósticos ni sustituye una consulta médica. Si algo le preocupa sobre " +
+        "el desarrollo de su hijo, consulte con su pediatra.",
+      "No recopila sus datos. Las respuestas permanecen en el navegador, no se envían a " +
+        "ninguna parte y no es necesario registrarse.",
+      "Las organizaciones citadas como fuentes no participaron en la creación de esta " +
+        "herramienta ni recomiendan ningún libro concreto, incluido el nuestro.",
     ],
   },
 

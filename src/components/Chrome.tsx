@@ -38,7 +38,8 @@ const banners: Record<
     smH: 1269,
     alt:
       "El primer libro de colorear para bebés de 1 a 3 años: guía práctica sobre cuándo " +
-      "empezar con crayones y lápices de colores y qué libros para colorear elegir",
+        "empezar a usar crayones y lápices de colores y cómo elegir su primer libro para " +
+        "colorear.",
   },
   ru: {
     /* Имя с цифрой по той же причине, что и у английского: под старым

@@ -281,68 +281,81 @@ export const dictionaries: Record<UiLang, Dict> = {
     langName: "Español",
     nav: {
       home: "Inicio",
-      tools: "Elegir libro",
+      tools: "Elegir un libro",
       programs: "Para programas",
       ages: "Por edad",
       guides: "Guías",
       printables: "Dibujos gratis",
       about: "Quiénes somos",
-      terms: "Condiciones y privacidad",
+      terms: "Derechos y privacidad",
     },
     home: {
-      hero: "El primer libro para colorear de su hijo, elegido por lo que ya sabe hacer",
+      hero: "El primer libro para colorear de su hijo, elegido según lo que ya sabe hacer",
       lead:
-        "Un niño de un año garabatea por toda la hoja. Uno de tres empieza a quedarse dentro de la " +
-        "línea. El mismo libro no sirve para los dos. Responda cuatro preguntas sobre su hijo y vea " +
-        "qué le conviene, con dibujos gratis para imprimir hoy mismo.",
+        "Un niño de un año suele garabatear por toda la hoja. Uno de tres empieza a intentar " +
+          "colorear dentro del contorno. El mismo tipo de página no siempre sirve para ambos. " +
+          "Responda cuatro preguntas sobre su hijo y descubra qué tipo de libro puede " +
+          "convenirle ahora, con dibujos gratis para imprimir.",
       pickerTitle: "Encuentre el primer libro para colorear adecuado",
       pickerLead:
-        "Cuatro preguntas, unos treinta segundos. No se guarda nada ni se envía nada a ninguna parte.",
+        "Cuatro preguntas, unos treinta segundos. No guardamos ni enviamos sus respuestas.",
       whatTitle: "Qué es este sitio",
       whatText:
-        "Una guía sobre la primera etapa del dibujo, desde el primer garabato hasta la primera forma " +
-        "que un niño colorea a propósito. Cada afirmación sobre lo que un niño puede hacer a cierta " +
-        "edad se apoya en hitos del desarrollo publicados, y las fuentes están al final de esta " +
-        "página. El sitio pertenece a Magic of Discoveries LLC, una pequeña editorial de libros " +
-        "infantiles en Miami, Florida, y presenta un libro para colorear propio.",
-      whyTitle: "Por qué un primer libro para colorear no es solo un libro más pequeño",
+        "Este sitio está dedicado a la primera etapa del dibujo: desde los primeros " +
+          "garabatos hasta los primeros intentos de colorear formas sencillas de manera " +
+          "intencionada. La información sobre lo que los niños suelen poder hacer a distintas " +
+          "edades se basa en hitos del desarrollo publicados. Las fuentes aparecen al final de " +
+          "esta página. El sitio pertenece a Magic of Discoveries LLC, una pequeña editorial " +
+          "de libros infantiles de Miami, Florida.",
+      whyTitle: "Por qué el primer libro para colorear es diferente",
       why: [
-        "El grosor de la línea lo decide todo. Un contorno fino desaparece bajo un crayón agarrado con el puño, y el niño no ve ningún resultado.",
-        "Un dibujo por página. Dos o tres motivos en una hoja reparten la atención de un niño que apenas la sostiene unos minutos.",
-        "El dibujo tiene que llenar la hoja. Una figura pequeña en el centro de una página grande exige una precisión que la mano todavía no tiene.",
-        "El motivo tiene que reconocerse. Un niño pequeño colorea lo que sabe nombrar, y nombrarlo es la mitad de la razón por la que sigue en la mesa.",
-        "Impresión por una sola cara. El rotulador traspasa el papel corriente y, en una hoja impresa por los dos lados, arruina el dibujo siguiente.",
+        "El grosor de la línea importa. A un niño pequeño le cuesta más ver un contorno " +
+          "fino, sobre todo cuando apenas está aprendiendo a sujetar el crayón y todavía se " +
+          "sale con frecuencia de los límites del dibujo.",
+        "Un dibujo por página. Varios elementos en una misma hoja pueden distraer a un niño " +
+          "pequeño, que todavía tiene dificultad para mantener la atención durante mucho " +
+          "tiempo.",
+        "El dibujo debe ser grande. Una imagen pequeña en una página grande exige una " +
+          "precisión de movimientos que el niño todavía no tiene.",
+        "El dibujo debe ser reconocible. A los niños pequeños les resulta más interesante " +
+          "colorear animales, objetos y otras imágenes que ya conocen y pueden nombrar.",
+        "Impresión por una sola cara. La tinta de un rotulador puede traspasar el papel " +
+          "corriente y estropear el dibujo del reverso.",
       ],
       printablesTitle: "Dibujos gratis para imprimir",
       printablesLead:
-        "Veinticuatro dibujos, ordenados por dificultad y no por tema. Imprima uno, dele un crayón a " +
-        "su hijo y en cinco minutos sabrá cuál es su nivel.",
+        "Veinticuatro dibujos ordenados por dificultad, no por tema. Imprima uno, dele un " +
+          "crayón a su hijo y en unos minutos podrá hacerse una idea de qué tipo de página le " +
+          "conviene.",
       printablesCta: "Ver todos los dibujos gratis",
       bookLead:
-        "Publicamos un libro para colorear para esta edad, y este sitio existe porque respondíamos " +
-        "una y otra vez las mismas preguntas de los padres. No es el único libro bueno para un niño " +
-        "pequeño, y las guías de aquí le dirán cuándo le conviene otro tipo de libro.",
+        "Publicamos un libro para colorear para esta edad, y este sitio nació de las " +
+          "preguntas que los padres nos hacían una y otra vez. No es el único libro que puede " +
+          "ser adecuado para un niño pequeño, y nuestras guías también explican cuándo " +
+          "conviene elegir otro tipo de libro.",
       bookTitle: "El libro detrás de este sitio",
       bookCta: "Sobre el libro",
-      sourcesTitle: "De dónde salen los datos sobre el desarrollo",
+      sourcesTitle: "En qué se basa la información sobre el desarrollo",
       sourcesLead:
-        "Las edades de este sitio son rangos habituales, no plazos. Cada niño llega a estos puntos a " +
-        "su ritmo, y unos meses de diferencia en cualquier sentido es algo corriente.",
+        "Las edades que aparecen en este sitio son orientativas, no límites estrictos. Cada " +
+          "niño se desarrolla a su propio ritmo, y una diferencia de algunos meses es " +
+          "completamente normal.",
     },
     picker: {
       start: "Empezar",
       stepOf: (n, total) => `Pregunta ${n} de ${total}`,
       back: "Atrás",
       again: "Empezar de nuevo",
-      resultTitle: "Lo que le conviene a su hijo ahora",
-      canTitle: "Lo que suele poder hacer un niño en esta etapa",
-      lookForTitle: "Qué buscar en un libro para colorear",
-      tryTitle: "Imprima estos y pruebe hoy",
-      tryLead: "Dibujos elegidos para esta etapa. Gratis, sin registro.",
+      resultTitle: "Qué le conviene a su hijo ahora",
+      canTitle: "Qué suele poder hacer un niño en esta etapa",
+      lookForTitle: "Qué buscar al elegir un libro para colorear",
+      tryTitle: "Imprima estos dibujos y pruébelos hoy",
+      tryLead: "Dibujos seleccionados para esta etapa. Gratis y sin registro.",
       bookLine: "El libro que publicamos para esta etapa",
       disclaimer:
         "Esta es una orientación general basada en hitos del desarrollo publicados, no una " +
-        "evaluación de su hijo. Si tiene dudas sobre su desarrollo, hable con su pediatra.",
+          "evaluación del desarrollo de su hijo. Si algo le preocupa, consulte con su " +
+          "pediatra.",
       q: {
         age: {
           q: "¿Qué edad tiene su hijo?",
@@ -354,23 +367,24 @@ export const dictionaries: Record<UiLang, Dict> = {
           ],
         },
         grip: {
-          q: "¿Cómo agarra el crayón?",
+          q: "¿Cómo sujeta el crayón?",
           a: [
-            { value: "fist", label: "Con el puño, toda la mano" },
-            { value: "fingers", label: "Con los dedos, pero sin firmeza" },
-            { value: "pencil", label: "Casi como un adulto agarra un lápiz" },
+            { value: "fist", label: "Con toda la mano" },
+            { value: "fingers", label: "Con los dedos, pero todavía con poca firmeza" },
+            { value: "pencil", label: "Casi como un adulto sujeta un lápiz" },
           ],
         },
         inside: {
-          q: "¿Qué pasa cuando colorea?",
+          q: "¿Cómo suele colorear?",
           a: [
-            { value: "across", label: "Las marcas van por toda la hoja" },
-            { value: "near", label: "Caen sobre el dibujo, pero se salen de la línea" },
-            { value: "inside", label: "Se queda dentro de la línea casi siempre" },
+            { value: "across", label: "Hace trazos por toda la hoja" },
+            { value: "near", label: "Colorea sobre el dibujo, pero se sale con frecuencia " +
+                                      "del contorno" },
+            { value: "inside", label: "Colorea dentro del contorno la mayor parte del tiempo" },
           ],
         },
         attention: {
-          q: "¿Cuánto tiempo sigue con la misma hoja?",
+          q: "¿Cuánto tiempo suele dedicar a una misma página?",
           a: [
             { value: "short", label: "Uno o dos minutos" },
             { value: "medium", label: "Unos cinco minutos" },
@@ -381,31 +395,33 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Preguntas que hacen los padres",
-      coverAgeTitle: "Qué significa de verdad la edad de la portada",
+      coverAgeTitle: "Qué significa realmente la edad indicada en la portada",
       coverAgeLead:
-        "No hay ningún estándar detrás de estos números ni ningún organismo que los compruebe. " +
-        "La editorial elige el rango, y por eso dos libros marcados los dos de 2 a 4 años pueden " +
-        "diferir al doble en dificultad. Esto es lo que suele significar cada etiqueta y dónde " +
-        "induce a error.",
+        "No existe un estándar único que determine las edades indicadas en la portada de un " +
+          "libro para colorear. Es la editorial quien elige el rango, por lo que dos libros " +
+          "marcados para niños de 2 a 4 años pueden tener niveles de dificultad muy distintos. " +
+          "Aquí explicamos qué suelen significar estas edades y por qué no conviene fijarse " +
+          "únicamente en ellas.",
       agesLabel: (n) => `De ${n} años`,
       watchOut: "Ojo",
       stagesInOrder: "Las cuatro etapas, en orden",
       stagesHome: "Las cuatro etapas del primer dibujo",
-      lookForPage: "Qué buscar en una hoja",
+      lookForPage: "En qué fijarse en una página",
       stagePages: "Hojas para esta etapa, gratis",
       neighbours: "Antes y después de esta etapa",
-      tryToday: "Pruébelo hoy en una hoja",
-      whereFits: "Dónde encaja esto en el desarrollo",
+      tryToday: "Pruébelo hoy con una sola página",
+      whereFits: "Cómo se relaciona esta etapa con el desarrollo del niño",
       readNext: "Siga leyendo",
       buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
       bookOneLiner:
-        "Publicamos un libro para colorear para esta edad: 111 dibujos, contornos gruesos, uno " +
-        "por página, impreso por una cara.",
+        "Publicamos un libro para colorear para esta edad: 111 dibujos con contornos " +
+          "gruesos, uno por página e impresos por una sola cara.",
       outgrown:
-        "Nuestro propio libro está hecho para una etapa anterior a esta, así que no se lo vamos " +
-        "a proponer. Lo que le conviene ahora es un libro con más que rellenar dentro de un mismo " +
-        "dibujo, o un libro de dibujo paso a paso.",
-      soon: "Archivo para imprimir, pronto",
+        "Nuestro libro está pensado para una etapa anterior, así que aquí no se lo " +
+          "recomendamos. En este momento, al niño probablemente le convenga más un libro con " +
+          "dibujos más detallados o uno de dibujo paso a paso, donde pueda crear la imagen por " +
+          "sí mismo.",
+      soon: "Archivo para imprimir, próximamente",
       buyPdf: "Conseguir el archivo para imprimir",
       stageTitle: (title, age) => `${title}: colorear a ${age}`,
       sheetAlt: (name) => `Dibujo para colorear gratis: ${name}`,
@@ -414,11 +430,11 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     footer: {
       about:
-        "Toddler Coloring Book pertenece a Magic of Discoveries LLC, una editorial de libros " +
-        "infantiles en Miami, Florida. Escribimos sobre la primera etapa del dibujo y publicamos " +
-        "un libro para colorear para esta edad.",
+        "Toddler Coloring Book es un proyecto de Magic of Discoveries LLC, una editorial de " +
+          "libros infantiles de Miami, Florida. Aquí hablamos de las primeras etapas del " +
+          "dibujo y publicamos materiales para niños pequeños.",
       catalog: "Nuestro catálogo completo",
-      rights: "Todos los dibujos de este sitio son obra nuestra.",
+      rights: "Todos los dibujos de este sitio han sido creados por nosotros.",
     },
     common: {
       free: "Gratis",

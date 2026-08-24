@@ -121,67 +121,74 @@ export const agePages: AgePage[] = [
       es: {
         title: "Dibujos para colorear para un niño de 1 año: qué le conviene y qué esperar",
         lead:
-          "Una forma grande que llena la hoja, un contorno muy grueso y crayones gruesos. Qué hace " +
-          "la mano a esta edad y cómo transcurre de verdad una sesión.",
+          "Una forma grande que ocupe casi toda la hoja, un contorno muy grueso y crayones " +
+            "gruesos. Qué suele poder hacer un niño a esta edad y cómo puede ser su primer " +
+            "contacto con un libro para colorear.",
         body: [
-          "Un niño de un año necesita una hoja en la que un solo dibujo ocupe casi toda la página, " +
-            "con un contorno muy grueso y sin zonas separadas que rellenar dentro de la forma. La " +
-            "razón está en la mano: el crayón va en el puño y el brazo se mueve desde el hombro, " +
-            "así que cada marca sale larga y amplia. Una línea fina desaparece debajo de un crayón " +
-            "agarrado así, y el niño no ve ningún resultado de lo que acaba de hacer.",
-          "Al año, el niño ni rellena el dibujo ni apunta a él. Hace una marca a propósito y repite " +
-            "el movimiento para verlo otra vez, y el objetivo es la hoja misma y no la imagen que " +
-            "hay en ella. Las marcas que cruzan el dibujo, se salen del borde y acaban en la mesa " +
-            "no son una sesión fallida: así es como se ve esta edad.",
-          "Qué mirar en la página: un contorno más o menos tan grueso como el propio crayón, una " +
-            "forma que llene la hoja, papel resistente porque a esta edad la presión basta para " +
-            "romper uno fino, y un motivo que el niño ya sepa nombrar en voz alta, como una pelota, " +
-            "un gato o una manzana. La impresión por una sola cara también importa, porque el " +
-            "rotulador traspasa el papel corriente y arruina el dibujo del otro lado.",
-          "Una sesión al año dura un minuto o dos, y esa es una duración normal y no corta. Diga en " +
-            "voz alta qué hay en la hoja, deje que el niño elija el crayón y no corrija las marcas. " +
-            "El momento de parar es cuando el niño se levanta de la mesa, no cuando la página está " +
-            "rellena: a esta edad una página rellena normalmente no llega a existir.",
+          "Para un niño de un año, lo más adecuado suele ser una página con un solo dibujo " +
+            "que ocupe casi toda la hoja, un contorno muy grueso y sin pequeños detalles " +
+            "separados. A esta edad, el niño suele sujetar el crayón con toda la mano y mover " +
+            "el brazo desde el hombro, por lo que los trazos son largos y amplios. Un contorno " +
+            "grueso y bien visible resulta mucho más fácil de distinguir mientras dibuja.",
+          "Alrededor del año, el niño normalmente todavía no intenta rellenar el dibujo con " +
+            "precisión. Lo importante es el descubrimiento de que al mover la mano aparece un " +
+            "trazo en el papel y que puede repetirlo una y otra vez. Por eso, hacer líneas " +
+            "sobre el dibujo y fuera de sus límites es completamente natural en esta etapa.",
+          "Al elegir una página, conviene fijarse en varios aspectos: un contorno muy " +
+            "visible, una sola forma grande que ocupe casi toda la hoja, pocos detalles " +
+            "pequeños y un papel suficientemente resistente. Es mejor elegir imágenes " +
+            "familiares que puedan nombrarse en voz alta, como una pelota, un gato o una " +
+            "manzana. La impresión por una sola cara también resulta práctica, sobre todo si " +
+            "el niño utiliza rotuladores.",
+          "Alrededor del año, el interés por una página puede durar solo uno o dos minutos, " +
+            "y es completamente normal. Nombre lo que aparece en el dibujo, deje que el niño " +
+            "elija un crayón y permita que dibuje a su manera. No es necesario esperar a que " +
+            "coloree toda la imagen: la actividad puede terminar en cuanto pierda el interés.",
         ],
-        doTitle: "Cómo llevar la sesión",
+        doTitle: "Cómo acompañar la actividad",
         steps: [
-          "Nombre el dibujo en voz alta antes de que el crayón toque el papel, y vuelva a " +
-            "nombrarlo cuando el niño levante la vista.",
-          "Ofrezca dos o tres crayones para que el niño elija, en vez de darle uno.",
-          "Siéntese al lado y dibuje en su propia hoja, nunca en la del niño.",
-          "Pare cuando se acabe el interés y deje la misma hoja a mano para volver más tarde.",
+          "Nombre el dibujo antes de empezar a colorear y vuelva a repetir su nombre durante " +
+            "la actividad.",
+          "Ofrezca dos o tres crayones para que el niño elija, en lugar de escoger el color " +
+            "por él.",
+          "Siéntese a su lado. Si quiere mostrarle un ejemplo, dibuje en su propia hoja, no " +
+            "en la del niño.",
+          "Termine la actividad cuando el niño pierda el interés. Siempre puede volver al " +
+            "mismo dibujo más tarde.",
         ],
         faq: [
           {
             q: "¿Puede un niño de un año usar un libro para colorear?",
             a:
-              "Sí, siempre que la página esté hecha para un agarre de puño: una forma grande, un " +
-              "contorno muy grueso y ningún detalle pequeño. Lo que un niño de un año saca de ahí " +
-              "es el descubrimiento de que mover la mano deja rastro, más el nombre de lo que hay " +
-              "dibujado. Rellenar la forma todavía no forma parte de esto.",
+              "Sí, siempre que el libro esté pensado para los más pequeños: una sola forma " +
+                "grande, un contorno muy grueso y pocos detalles. Alrededor del año, el niño " +
+                "está descubriendo principalmente cómo el crayón deja un trazo en el papel y " +
+                "empieza a relacionar la imagen con su nombre. Todavía no es necesario que " +
+                "coloree la forma con precisión.",
           },
           {
             q: "Mi hijo solo garabatea por toda la hoja. ¿Es normal?",
             a:
-              "Es exactamente el aspecto que tiene esta edad. Apuntar exige sujetar el crayón con " +
-              "los dedos y mover la muñeca, y al año el brazo entero se balancea desde el hombro. " +
-              "Las marcas que cruzan el dibujo y se salen de la hoja son el resultado corriente, " +
-              "no una señal de que algo vaya mal.",
+              "Sí. Alrededor del año, el niño normalmente todavía no sabe dirigir el crayón " +
+                "con precisión hacia el dibujo. Suele sujetarlo con toda la mano y hacer " +
+                "movimientos amplios con el brazo. Por eso, los trazos sobre el dibujo y fuera " +
+                "de sus límites son completamente normales a esta edad.",
           },
           {
             q: "¿Qué crayones sirven para un niño de un año?",
             a:
-              "Los gruesos pensados para esta edad, porque una mano pequeña los sujeta con el puño " +
-              "y dejan una marca ancha y fácil de ver. Los lápices finos piden un agarre con los " +
-              "dedos que llega más tarde, y los rotuladores conviene guardarlos para cuando el " +
-              "niño ya apunte al dibujo. A esta edad se colorea con un adulto al lado.",
+              "Conviene elegir crayones gruesos pensados para niños pequeños. Son fáciles de " +
+                "sujetar con toda la mano y dejan un trazo ancho y visible. Los lápices de " +
+                "colores finos suelen resultar más difíciles porque requieren un agarre más " +
+                "preciso con los dedos. A esta edad, es mejor colorear con un adulto cerca.",
           },
           {
             q: "¿Cuánto rato debe colorear un niño de un año?",
             a:
-              "Un minuto o dos es lo corriente, y cinco minutos es un buen día. La sesión termina " +
-              "cuando el niño se levanta, y ese es el final normal y no uno fallido. La misma hoja " +
-              "puede volver a salir mañana y muchas veces funciona mejor la segunda vez.",
+              "Uno o dos minutos es una duración completamente normal para un niño de un " +
+                "año. A veces el interés dura más y otras veces desaparece casi de inmediato. " +
+                "Termine la actividad cuando deje de interesarle y, si quiere, vuelva al mismo " +
+                "dibujo más tarde.",
           },
         ],
       },
@@ -344,70 +351,71 @@ export const agePages: AgePage[] = [
       es: {
         title: "Dibujos para colorear para un niño de 2 años: qué le conviene y qué esperar",
         lead:
-          "Un motivo grande y reconocible, un contorno todavía grueso y dos o tres partes dentro de " +
-          "la forma. Qué cambia a los dos años y qué todavía no cambia.",
+          "Un dibujo grande y reconocible, un contorno todavía grueso y dos o tres partes " +
+            "dentro de la forma. Qué cambia aproximadamente a los dos años y qué todavía sigue " +
+            "igual.",
         body: [
-          "A los dos años el niño necesita un motivo grande y reconocible, con contorno grueso y " +
-            "dos o tres partes separadas dentro. El crayón ha pasado del puño a los dedos, aunque " +
-            "sin firmeza, y las marcas ya incluyen bucles a propósito y trazos de arriba abajo en " +
-            "vez de un único barrido largo. Casi todo el color cae en algún punto del dibujo, lo " +
-            "que significa que el dibujo por fin se ha convertido en el objetivo.",
-          "Lo que no ha cambiado es quedarse dentro de la línea, y exigirlo ahora es la manera más " +
-            "rápida de terminar la sesión. Un contorno grueso funciona como referencia visible y no " +
-            "como frontera: el niño ve dónde está la forma, apunta a ella y se sale del borde " +
-            "continuamente. Dos o tres partes dentro bastan para que use un segundo color a " +
-            "propósito, que suele ser lo primero que un padre nota a esta edad.",
-          "Un dibujo por página sigue importando más que la variedad. Dos o tres motivos en una " +
-            "hoja reparten la atención de un niño que la sostiene unos cinco minutos, y la página " +
-            "acaba a medias en tres sitios. Una palabra impresa debajo del dibujo se gana aquí su " +
-            "sitio, porque a los dos años el niño nombra lo que hay en la hoja antes de empezar, y " +
-            "nombrarlo es la mitad de lo que lo mantiene en la mesa.",
-          "Una sesión a los dos años dura unos cinco minutos, a veces diez si el motivo es de los " +
-            "preferidos. Pregunte qué hay en la hoja y deje que el niño conteste, ofrezca a elegir " +
-            "entre colores en vez de dar un color, y diga lo que ve sin juzgarlo: cuánto azul por " +
-            "aquí, una línea que baja hasta abajo por allá. Volver varias veces al mismo dibujo es " +
-            "normal y suele significar que estaba bien elegido.",
+          "Alrededor de los dos años, ya puede ser adecuado un dibujo grande y reconocible, " +
+            "con un contorno grueso y dos o tres partes separadas. Muchos niños empiezan a " +
+            "sujetar el crayón con los dedos con mayor seguridad y sus movimientos se vuelven " +
+            "más dirigidos: aparecen trazos redondeados, bucles y líneas de arriba abajo. Cada " +
+            "vez intentan con más frecuencia colorear el propio dibujo.",
+          "Sin embargo, mantenerse dentro del contorno todavía resulta difícil y no conviene " +
+            "exigir precisión. El contorno grueso funciona como una referencia visual, no como " +
+            "un límite que el niño deba respetar perfectamente. Dos o tres partes separadas " +
+            "dentro del dibujo son suficientes para que pueda probar distintos colores sin que " +
+            "la página tenga demasiados detalles.",
+          "Un solo dibujo grande por página sigue siendo más adecuado que varios dibujos " +
+            "pequeños. Los elementos adicionales pueden distraer, especialmente si el niño " +
+            "solo colorea durante unos minutos. La palabra debajo del dibujo también empieza a " +
+            "ser útil: el niño ya reconoce muchas imágenes y puede nombrarlas junto con el " +
+            "adulto.",
+          "A los dos años, un niño puede colorear durante unos cinco minutos y, a veces, más " +
+            "si el dibujo le gusta especialmente. Pregúntele qué aparece en la página, deje " +
+            "que elija un color y hable sobre lo que ven sin juzgar el resultado. Volver " +
+            "varias veces a un dibujo favorito es completamente normal.",
         ],
-        doTitle: "Cómo llevar la sesión",
+        doTitle: "Cómo acompañar la actividad",
         steps: [
-          "Pregunte qué hay en la hoja y espere la respuesta antes de dar el crayón.",
-          "Ofrezca elegir entre dos colores en lugar de escoger usted uno.",
-          "Describa lo que ve sin corregirlo y deje en paz las líneas que se salen.",
-          "Mantenga una sola hoja delante del niño y guarde las demás.",
+          "Pregunte qué aparece en la página y dele tiempo para responder.",
+          "Ofrézcale elegir entre dos colores en lugar de escoger el color por él.",
+          "Hable sobre lo que ve sin corregir al niño ni llamar la atención sobre los trazos " +
+            "que salen del contorno.",
+          "Deje una sola hoja delante del niño y guarde las demás por el momento.",
         ],
         faq: [
           {
             q: "¿Debe un niño de 2 años quedarse dentro de las líneas?",
             a:
-              "No, y no es un objetivo que valga la pena plantearse a esta edad. A los dos años la " +
-              "mano todavía está aprendiendo a sujetar el crayón con los dedos y a apuntar a la " +
-              "forma. Un contorno grueso le da algo visible a lo que apuntar, y salirse de él es el " +
-              "resultado corriente y no un error que haya que corregir.",
+              "No, no conviene plantearlo como objetivo a esta edad. A los dos años, el niño " +
+                "todavía está aprendiendo a sujetar el crayón con mayor seguridad y a dirigir " +
+                "los movimientos de la mano. Un contorno grueso le ayuda a ver los límites del " +
+                "dibujo, pero salirse de ellos es completamente normal.",
           },
           {
             q: "¿Cuánto detalle debe tener un libro para colorear de 2 años?",
             a:
-              "Dos o tres partes separadas dentro de una forma grande es lo adecuado, con el " +
-              "contorno todavía grueso. Eso basta para que el niño coja un segundo color a " +
-              "propósito, y es poco suficiente para que la página parezca terminada aunque solo " +
-              "esté coloreada en parte. Los libros llenos de zonas pequeñas son para una edad " +
-              "posterior.",
+              "Dos o tres partes separadas dentro de un dibujo grande suelen ser " +
+                "suficientes, y el contorno debe seguir siendo grueso y bien visible. Así, el " +
+                "niño puede probar a colorear distintas partes con diferentes colores sin que " +
+                "la página resulte demasiado complicada.",
           },
           {
             q: "¿Son buena idea los rotuladores lavables a los dos años?",
             a:
-              "Funcionan bien a esta edad, porque el niño ya apunta al dibujo, y los lavables " +
-              "salvan la mesa y la ropa. Lo único que conviene comprobar es que la hoja esté " +
-              "impresa por una sola cara, porque el rotulador traspasa el papel corriente y " +
-              "arruinaría el dibujo siguiente.",
+              "Sí, se pueden utilizar rotuladores lavables si al niño le resulta cómodo " +
+                "dibujar con ellos. Dejan un trazo intenso y visible y suelen limpiarse con " +
+                "facilidad de las manos y de muchas superficies. Es preferible elegir páginas " +
+                "impresas por una sola cara, porque la tinta puede traspasar el papel " +
+                "corriente.",
           },
           {
             q: "Mi hijo colorea la misma hoja una y otra vez. ¿Debo cortarlo?",
             a:
-              "No hay razón para hacerlo. Repetir un dibujo preferido es la forma en que un niño de " +
-              "dos años practica, y el segundo y el tercer intento suelen salir más intencionados " +
-              "que el primero. Imprimir otra vez la misma hoja es más fácil que convencerlo de " +
-              "pasar a una nueva.",
+              "No. Repetir un dibujo favorito es completamente normal: el niño se " +
+                "familiariza mejor con los movimientos de la mano, los colores y la propia " +
+                "imagen. Si quiere volver a colorear el mismo dibujo, simplemente puede " +
+                "imprimirlo otra vez.",
           },
         ],
       },
@@ -565,70 +573,75 @@ export const agePages: AgePage[] = [
       es: {
         title: "Dibujos para colorear para un niño de 3 años: qué le conviene y qué esperar",
         lead:
-          "Un dibujo grande con tres a seis zonas separadas, un contorno marcado y sitio para " +
-          "añadir algo. Dónde encaja todavía un primer libro para colorear y dónde empieza a " +
-          "quedarse corto.",
+          "Un dibujo grande con entre tres y seis zonas separadas, un contorno bien visible " +
+            "y algo de espacio libre para que el niño pueda añadir sus propios detalles. " +
+            "Cuándo sigue siendo adecuado un primer libro para colorear y cuándo puede ser el " +
+            "momento de pasar a actividades más complejas.",
         body: [
-          "A los tres años el niño necesita un dibujo grande con tres a seis zonas separadas para " +
-            "rellenar, todavía con un contorno marcado. El crayón se sujeta con los dedos y no con " +
-            "el puño entero, puede copiar un círculo y una línea recta si se lo piden, y elige un " +
-            "color para cada zona a propósito y sabe decir por qué. Casi todo el color cae sobre el " +
-            "dibujo, y salirse del contorno sigue siendo frecuente y sigue siendo normal.",
-          "Esta es la edad en la que una hoja puede llevar algo más que color. El espacio en el " +
-            "borde le da sitio a quien quiera añadir un sol, y una palabra impresa debajo del " +
-            "dibujo se convierte en algo que calcar o copiar. Preguntar quién está en la imagen, de " +
-            "qué color es y qué está pasando suele obtener una respuesta de verdad a los tres años, " +
-            "y esa es la parte de la sesión que más aporta.",
-          "La variedad empieza a importar tanto como el tamaño. Un niño de tres años nota cuándo " +
-            "dos páginas seguidas se parecen, y un libro de solo animales se agota antes que uno " +
-            "que va de animales a comida, vehículos y objetos conocidos. Las sesiones duran diez " +
-            "minutos y a veces más, así que una hoja que se acaba demasiado rápido ya es una " +
-            "decepción real y no un final normal.",
-          "También es la edad en la que un primer libro para colorear empieza a quedarse pequeño, " +
-            "normalmente pasados los tres años y medio. La señal es el aburrimiento y no la " +
-            "destreza: el niño rellena la página correctamente y la aparta sin interés. Lo que " +
-            "viene después es una escena en lugar de un objeto suelto, o un libro de dibujo paso a " +
-            "paso donde el niño construye la imagen en vez de rellenar la de otro.",
+          "Alrededor de los tres años, ya puede ser adecuado un dibujo grande con entre tres " +
+            "y seis zonas separadas y un contorno todavía bien visible. Muchos niños a esta " +
+            "edad sujetan el crayón con los dedos, pueden copiar un círculo y una línea recta " +
+            "y empiezan a elegir distintos colores de forma intencionada para diferentes " +
+            "partes del dibujo. Aun así, salirse del contorno sigue siendo completamente " +
+            "normal.",
+          "A esta edad, colorear puede combinarse con otras actividades sencillas. El " +
+            "espacio libre alrededor del dibujo permite añadir algún detalle, y la palabra " +
+            "debajo de la imagen se puede repasar o intentar copiar. También puede preguntarle " +
+            "al niño quién aparece, de qué color es o qué está ocurriendo en el dibujo, " +
+            "convirtiendo la actividad en una pequeña conversación.",
+          "La variedad de dibujos empieza a ser cada vez más importante. Resulta más " +
+            "interesante cuando los animales se alternan con comida, vehículos, personajes de " +
+            "cuentos y objetos familiares. A los tres años, el interés por una misma página " +
+            "puede durar más tiempo, por lo que un dibujo demasiado sencillo puede empezar a " +
+            "aburrir rápidamente.",
+          "Alrededor de esta edad, el primer libro para colorear puede empezar poco a poco a " +
+            "resultar demasiado sencillo, especialmente cerca de los cuatro años. La principal " +
+            "señal es que el niño termina la página con facilidad y pierde rápidamente el " +
+            "interés. En ese caso, puede pasar a dibujos más detallados, pequeñas escenas o " +
+            "actividades de dibujo paso a paso.",
         ],
-        doTitle: "Cómo llevar la sesión",
+        doTitle: "Cómo acompañar la actividad",
         steps: [
-          "Pregunte quién está en la imagen y qué está pasando, y deje que la respuesta se alargue.",
-          "Ponga toda la caja de colores a la vista y no participe en la elección.",
-          "Ofrezca el borde de la hoja para lo que el niño quiera añadir.",
-          "Cuando una página se rellena bien y se abandona sin interés, suba de nivel.",
+          "Pregunte quién aparece en el dibujo y qué está ocurriendo, y dele tiempo para " +
+            "responder con calma.",
+          "Ponga a su alcance todos los colores y deje que el niño elija por sí mismo.",
+          "Deje algo de espacio libre alrededor del dibujo por si el niño quiere añadir " +
+            "algún detalle.",
+          "Si termina la página con facilidad y pierde rápidamente el interés, puede probar " +
+            "una actividad más compleja.",
         ],
         faq: [
           {
             q: "¿Cuántas zonas debe tener un dibujo para colorear a los 3 años?",
             a:
-              "De tres a seis zonas separadas dentro de un dibujo grande funciona bien, con el " +
-              "contorno todavía marcado. Es suficiente para que el niño elija un color distinto " +
-              "para cada parte, que es lo que quiere hacer a esta edad, y no tantas como para que " +
-              "la página dure más que el interés.",
+              "Entre tres y seis zonas separadas dentro de un dibujo grande suele ser " +
+                "suficiente, con un contorno todavía bien visible. Así, el niño puede utilizar " +
+                "varios colores sin que la página tenga demasiados detalles.",
           },
           {
             q: "Mi hijo de 3 años sigue saliéndose de las líneas. ¿Es un problema?",
             a:
-              "No. Quedarse dentro del contorno con fiabilidad suele llegar cerca de los cuatro " +
-              "años, y hasta entonces la mano está trabajando en apuntar a la forma y dejar encima " +
-              "casi todo el color. Señalar los bordes que se salen suele costar más interés del " +
-              "que aporta en precisión.",
+              "No. A los tres años, muchos niños todavía se salen del contorno con " +
+                "frecuencia. La precisión de los movimientos se desarrolla gradualmente, por " +
+                "lo que el interés por colorear es más importante que conseguir bordes " +
+                "perfectos.",
           },
           {
             q: "¿Cuándo se queda pequeño un primer libro para colorear?",
             a:
-              "Cuando el niño rellena una página correctamente y se va de ella sin interés, " +
-              "normalmente pasados los tres años y medio. La señal es el aburrimiento y no la " +
-              "pulcritud. En ese punto le conviene más una escena con más zonas que rellenar, o un " +
-              "libro de dibujo paso a paso, que más hojas del mismo tipo.",
+              "Cuando el niño termina con facilidad los dibujos grandes y sencillos y pierde " +
+                "rápidamente el interés. A menudo ocurre cerca de los cuatro años, pero no " +
+                "existe una edad exacta. En ese momento, puede ser mejor probar libros con más " +
+                "detalles, pequeñas escenas o actividades de dibujo paso a paso.",
           },
           {
             q: "¿Sirven los lápices de colores a los tres años?",
             a:
-              "Normalmente sí, porque el agarre con los dedos que necesitan ya está a esta edad, y " +
-              "el lápiz permite un trazo más suave dentro de una zona pequeña. Los crayones y los " +
-              "rotuladores lavables siguen funcionando bien, y la mayoría de los niños de tres años " +
-              "alternan entre los tres según lo que estén coloreando.",
+              "Por lo general, sí. Alrededor de los tres años, a muchos niños ya les resulta " +
+                "más cómodo sujetar un lápiz con los dedos, por lo que se pueden introducir " +
+                "poco a poco los lápices de colores. Los crayones gruesos y los rotuladores " +
+                "lavables también siguen siendo adecuados: la elección depende de lo que le " +
+                "resulte más cómodo e interesante al niño.",
           },
         ],
       },
@@ -732,10 +745,10 @@ export const agePageLabels: Record<ContentLang, AgePageLabels> = {
   es: {
     listTitle: "Edad por edad",
     listLead:
-      "Qué le conviene a un niño al año, a los dos y a los tres, con qué esperar en la mesa y qué " +
-      "no esperar todavía.",
+      "Qué suele convenir a un niño alrededor del año, de los dos y de los tres años, cómo " +
+        "puede desarrollarse la actividad y qué no conviene esperar todavía.",
     otherAges: "Otras edades",
-    stageLink: "Cómo se desarrolla la mano en este punto",
+    stageLink: "Cómo se desarrollan las habilidades de la mano en esta etapa",
     toolLink: "Responda cuatro preguntas sobre su hijo",
   },
   ru: {

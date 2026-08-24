@@ -52,10 +52,11 @@ export const guides: Guide[] = [
         "a separate skill that arrives closer to three, and waiting for it before handing over a " +
         "crayon means waiting about eighteen months too long.",
       es:
-        "La mayoría de los niños hace sus primeras marcas intencionadas en el papel entre los doce " +
-        "y los dieciocho meses, agarrando el crayón con el puño. Ese es el comienzo real. Quedarse " +
-        "dentro de la línea es otra habilidad distinta que llega más cerca de los tres años, y " +
-        "esperar a eso para darle un crayón significa esperar unos dieciocho meses de más.",
+        "La mayoría de los niños empiezan a dejar marcas intencionadas en el papel entre los " +
+          "doce y los dieciocho meses, normalmente sujetando el crayón con toda la mano. Ese " +
+          "es el comienzo del dibujo. La capacidad de colorear dentro del contorno aparece " +
+          "bastante más tarde, cerca de los tres o cuatro años, así que no es necesario " +
+          "esperar hasta entonces para ofrecerle un crayón.",
       ru:
         "Большинство детей начинают осознанно оставлять следы на бумаге примерно между " +
           "двенадцатью и восемнадцатью месяцами, обычно держа мелок всей ладонью. Это и есть " +
@@ -96,37 +97,40 @@ export const guides: Guide[] = [
         "like.",
       ],
       es: [
-        "La pregunta que hay detrás de la pregunta suele ser otra: no cuándo puede un niño sostener " +
-        "un crayón, sino cuándo deja de ser un desperdicio de papel dárselo. La respuesta honesta " +
-        "es que nunca lo es, porque lo que el niño aprende a los doce meses no tiene nada que ver " +
-        "con el dibujo. Está aprendiendo que su propio movimiento cambia el mundo fuera de su " +
-        "cuerpo. Esa es toda la lección, y una hoja llena de garabatos es la prueba de que caló.",
+        "A muchos padres les preocupa si tiene sentido dar un libro para colorear a un niño " +
+          "que todavía se limita a garabatear. Sí lo tiene: a esta edad no está aprendiendo a " +
+          "colorear con precisión, sino a comprender la relación entre el movimiento de la " +
+          "mano y el trazo que aparece en el papel. Incluso una hoja llena de líneas " +
+          "desordenadas representa una experiencia nueva e importante para el niño.",
 
-        "Alrededor de los doce a quince meses un niño puede hacer una marca y la repite a propósito " +
-        "para verla otra vez. Agarra con el puño, el movimiento sale del hombro y del codo, y las " +
-        "marcas son largas y amplias. Nada de esto apunta a nada.",
+        "Entre los doce y los quince meses, aproximadamente, un niño ya puede dejar una " +
+          "marca de forma intencionada y repetir el movimiento para verla de nuevo. Suele " +
+          "sujetar el crayón con toda la mano y mover el brazo desde el hombro y el codo, por " +
+          "lo que los trazos son largos y amplios. Todavía no sabe dirigirlos con precisión " +
+          "hacia el dibujo.",
 
-        "Hacia los dieciocho meses o dos años el garabato se vuelve controlado. El niño garabatea " +
-        "sin que se lo enseñen antes, puede imitar una línea que otra persona acaba de dibujar, y " +
-        "hace marcas redondas en bucle y trazos de arriba abajo a propósito. Ahora las marcas caen " +
-        "casi todas sobre el dibujo y no por toda la mesa.",
+        "Entre los dieciocho meses y los dos años, aproximadamente, los garabatos se vuelven " +
+          "más controlados. El niño empieza a dibujar por iniciativa propia, puede intentar " +
+          "imitar una línea que acaba de hacer un adulto y aparecen trazos redondeados, bucles " +
+          "y líneas de arriba abajo. Poco a poco, cada vez más trazos caen sobre el propio " +
+          "dibujo.",
 
-        "Entre los dos y los tres años el niño empieza a apuntar. Puede copiar una línea vertical, " +
-        "una horizontal y un círculo, y deja casi todo el color sobre el dibujo mientras se sale " +
-        "del contorno sin problema. Esta es la etapa que los padres confunden más a menudo con un " +
-        "fracaso. Salirse de la línea aquí no es un error, es el aspecto que tiene apuntar antes de " +
-        "que la mano alcance al ojo.",
+        "Entre los dos y los tres años, el niño empieza a dirigir los movimientos de la mano " +
+          "con mayor precisión. Puede copiar una línea vertical, una horizontal y un círculo, " +
+          "y al colorear intenta cada vez más hacerlo sobre el propio dibujo, aunque todavía " +
+          "se sale del contorno con frecuencia. Es completamente normal: la precisión de los " +
+          "movimientos aún se está desarrollando.",
 
-        "Alrededor de los tres años, y con más seguridad cerca de los cuatro, quedarse dentro del " +
-        "contorno se hace posible y el niño empieza a notar cuándo el color se sale. Una cruz se " +
-        "copia hacia los cuatro. Este es también el punto en el que un libro hecho para la primera " +
-        "etapa empieza a resultar demasiado fácil.",
+        "A partir de los tres años, aproximadamente, al niño le resulta cada vez más fácil " +
+          "colorear dentro del contorno y, cerca de los cuatro, suele darse cuenta con mayor " +
+          "frecuencia cuando se sale. Alrededor de esta edad, un primer libro para colorear " +
+          "sencillo también puede empezar a resultarle demasiado fácil.",
 
-        "La regla práctica para el primer crayón es sencilla. Dele un crayón grueso, no un lápiz ni " +
-        "un rotulador. Siente al niño en una mesa con una hoja, no con un libro entero. Cuente con " +
-        "que las primeras sesiones duren dos o tres minutos y terminen cuando el niño se levante, " +
-        "no cuando la hoja esté acabada. Nada de eso es un problema que haya que arreglar. Es " +
-        "exactamente el aspecto que tiene el principio.",
+        "Para el primer contacto con el dibujo, lo mejor es empezar con crayones gruesos. " +
+          "Ofrézcale una sola hoja en lugar del libro entero y no espere una actividad larga: " +
+          "al principio, el interés puede durar solo dos o tres minutos. Puede terminar en " +
+          "cuanto el niño quiera hacer otra cosa. En esta primera etapa es completamente " +
+          "normal.",
       ],
       ru: [
         "Родителей часто волнует, есть ли смысл давать раскраску ребенку, который пока " +
@@ -191,25 +195,26 @@ export const guides: Guide[] = [
         {
           q: "¿Puede un niño de 1 año usar un libro para colorear?",
           a:
-            "Sí, con el tipo de hoja adecuado. Al año el niño agarra el crayón con el puño y hace " +
-            "marcas amplias sin apuntar, así que la hoja necesita un contorno muy grueso y una sola " +
-            "forma grande que llene el papel. En ese tipo de hoja cualquier marca cae donde cuenta " +
-            "y el niño ve un resultado. En una hoja de dibujos pequeños y detallados no pasa nada " +
-            "visible y el niño pierde el interés en menos de un minuto.",
+            "Sí, siempre que se elija una página adecuada. Alrededor del año, el niño suele " +
+              "sujetar el crayón con toda la mano y hacer trazos amplios, por lo que conviene " +
+              "una sola forma grande que ocupe casi toda la hoja, con un contorno muy grueso y " +
+              "pocos detalles. En una página así le resulta más fácil ver los trazos que hace " +
+              "y el resultado de sus movimientos.",
         },
         {
           q: "¿Es seguro darle crayones a un niño de un año?",
           a:
-            "Use crayones marcados como no tóxicos y lo bastante grandes como para que no se puedan " +
-            "tragar, y quédese en la mesa mientras el niño los usa. A esta edad los niños se llevan " +
-            "las cosas a la boca, y un crayón grueso se elige tanto por eso como por el agarre.",
+            "Utilice crayones destinados a niños pequeños, con indicación de que no son " +
+              "tóxicos y de un tamaño suficiente para reducir el riesgo de que puedan " +
+              "tragarse. Mientras dibuja, un adulto debe permanecer cerca, ya que a esta edad " +
+              "los niños suelen llevarse objetos a la boca.",
         },
         {
           q: "¿Cuánto debe durar la primera sesión de colorear?",
           a:
-            "Dos o tres minutos es normal al principio y no es señal de poca atención. Termine la " +
-            "sesión cuando el niño se levante en vez de intentar acabar la hoja. Las sesiones se " +
-            "alargan solas a lo largo de los meses según el niño saca más de ellas.",
+            "Dos o tres minutos es una duración completamente normal al principio. Si el " +
+              "niño pierde el interés, no es necesario pedirle que termine la página. Con el " +
+              "tiempo, estas actividades suelen durar más.",
         },
       ],
       ru: [
@@ -262,10 +267,11 @@ export const guides: Guide[] = [
         "can actually see. Markers come later, colored pencils later still, and both for specific " +
         "reasons rather than as an upgrade.",
       es:
-        "Primero crayones gruesos, al menos durante el primer año de dibujo. No exigen fuerza en la " +
-        "mano, no rompen la hoja, no traspasan el papel y dejan una marca ancha que el niño ve de " +
-        "verdad. Los rotuladores llegan después, los lápices de colores más tarde aún, y ambos por " +
-        "razones concretas, no como una mejora.",
+        "Para empezar, suelen ser más adecuados los crayones gruesos, especialmente durante " +
+          "las primeras etapas del dibujo. Dejan un trazo visible sin necesidad de presionar " +
+          "mucho, son fáciles de sujetar con una mano pequeña y no traspasan el papel. Más " +
+          "adelante se pueden probar rotuladores lavables y, después, lápices de colores, a " +
+          "medida que los movimientos de la mano se vuelven más precisos.",
       ru:
         "Для начала лучше всего подходят толстые восковые мелки. Они легко оставляют " +
           "заметный след, не требуют сильного нажима и не пропитывают бумагу насквозь. Позже " +
@@ -301,33 +307,31 @@ export const guides: Guide[] = [
         "one side, where a left hand covers it while working.",
       ],
       es: [
-        "La elección importa más de lo que parece, porque a esta edad la herramienta decide si el " +
-        "niño ve un resultado. Un niño que aprieta fuerte y obtiene una línea tenue concluye que no " +
-        "pasa nada y lo deja. Todo lo que sigue nace de ese único hecho.",
+        "La elección del material importa más de lo que puede parecer. Un niño pequeño " +
+          "necesita ver enseguida el resultado del movimiento de su mano. Si tiene que " +
+          "presionar con fuerza y apenas aparece un trazo, puede perder rápidamente el interés " +
+          "por la actividad.",
 
-        "Los crayones gruesos son la primera herramienta adecuada por cuatro razones distintas. " +
-        "Marcan casi sin presión, así que una mano que todavía no tiene fuerza produce igualmente " +
-        "una línea fuerte. Son lo bastante anchos para agarrarse con el puño, que es como agarra un " +
-        "niño antes de que los dedos tomen el relevo. No pueden romper el papel, cosa que un lápiz " +
-        "afilado en un puño pesado sí hace con facilidad. Y no traspasan la hoja, así que una hoja " +
-        "marcada sigue siendo una hoja marcada.",
+        "Los crayones gruesos son una buena opción para las primeras actividades por varias " +
+          "razones. Dejan un trazo visible con poca presión, son fáciles de sujetar con toda " +
+          "la mano, no tienen una punta afilada que pueda dañar el papel y no traspasan la " +
+          "hoja. Todo esto los convierte en una herramienta cómoda para empezar a dibujar.",
 
-        "Los rotuladores dan el resultado más vivo y a los niños les encantan justo por eso. El " +
-        "precio es que traspasan el papel corriente, así que una hoja impresa por los dos lados " +
-        "pierde el dibujo del reverso, y manchan la mesa, la ropa y la piel mucho más fácilmente " +
-        "que los crayones. Los rotuladores lavables resuelven casi todo eso. Una hoja suelta debajo " +
-        "resuelve el resto.",
+        "Los rotuladores dejan colores intensos, y por eso gustan a muchos niños. Sin " +
+          "embargo, la tinta puede traspasar el papel corriente y dejar manchas en la mesa, la " +
+          "ropa o la piel. Para los más pequeños, conviene elegir rotuladores lavables y " +
+          "colocar una hoja adicional debajo de la página.",
 
-        "Los lápices de colores piden un agarre con los dedos y una presión constante, y la mayoría " +
-        "de los niños no tiene ninguna de las dos cosas antes de los tres años. Dados antes, el " +
-        "lápiz o no deja nada visible o se parte. Cobran sentido cuando el niño ya se queda dentro " +
-        "de la línea y quiere más control fino, que es un deseo real y no conviene apresurar.",
+        "Los lápices de colores requieren un agarre más preciso con los dedos y cierta " +
+          "presión constante. Para un niño pequeño suelen resultar más difíciles de usar que " +
+          "los crayones gruesos. Se pueden introducir más adelante, cuando los movimientos de " +
+          "la mano sean más precisos y al niño le interese colorear zonas más pequeñas.",
 
-        "Hay dos detalles menores que vale la pena saber. Los crayones gruesos triangulares o con " +
-        "forma de huevo animan a los dedos a colocarse donde acabarán teniendo que colocarse, lo " +
-        "cual es un empujón suave y no un aparato de entrenamiento. Y un niño zurdo no necesita " +
-        "herramientas distintas, pero sí agradece un dibujo colocado en el centro de la hoja y no " +
-        "hacia un lado, donde la mano izquierda lo tapa mientras trabaja.",
+        "Hay otros dos detalles que pueden ser útiles. Los crayones gruesos de forma " +
+          "triangular pueden resultar cómodos de sujetar y ayudar al niño a acostumbrarse poco " +
+          "a poco a un agarre más preciso. Los niños zurdos no necesitan materiales " +
+          "especiales, pero un dibujo centrado en la página suele resultar más cómodo, porque " +
+          "la mano tapa menos la imagen mientras colorean.",
       ],
       ru: [
         "Выбор инструмента важнее, чем может показаться. Маленькому ребенку нужно сразу " +
@@ -386,26 +390,29 @@ export const guides: Guide[] = [
         {
           q: "¿Son seguros los rotuladores lavables para un niño de dos años?",
           a:
-            "Los rotuladores lavables marcados como no tóxicos se usan mucho a esta edad, y la " +
-            "fórmula lavable es lo que marca la diferencia en la piel, la ropa y los muebles. Aun " +
-            "así traspasan el papel, así que ponga una hoja suelta debajo. Mantenga los capuchones " +
-            "fuera del alcance: son lo bastante pequeños para atragantarse.",
+            "Para los niños pequeños, elija rotuladores lavables con indicación de que no " +
+              "son tóxicos. Suelen limpiarse con mayor facilidad de la piel, la ropa y muchas " +
+              "superficies, aunque la tinta todavía puede traspasar el papel, por lo que " +
+              "conviene colocar una hoja adicional debajo. Mantenga también los capuchones " +
+              "fuera de su alcance, ya que son piezas pequeñas.",
         },
         {
           q: "Mi hijo agarra el crayón con el puño. ¿Debo corregirlo?",
           a:
-            "No. El agarre con el puño es normal y esperable antes de los dos años y medio, y " +
-            "corregirlo a la fuerza suele terminar la sesión de dibujo en vez de arreglar el " +
-            "agarre. El agarre con los dedos llega solo a medida que la mano se desarrolla. Los " +
-            "crayones gruesos triangulares lo favorecen sin ninguna instrucción.",
+            "No. Sujetar el crayón con toda la mano es completamente normal en las primeras " +
+              "etapas. No conviene colocarle los dedos a la fuerza: la forma de sujetar el " +
+              "crayón cambia gradualmente a medida que se desarrollan los movimientos de la " +
+              "mano. Los crayones gruesos o triangulares pueden facilitar un agarre cómodo sin " +
+              "necesidad de ejercicios especiales.",
         },
         {
           q: "¿Y la pintura a esta edad?",
           a:
-            "La pintura funciona y a los niños les gusta, pero es una actividad distinta y no un " +
-            "paso por encima de los crayones. Enseña color y cobertura más que la puntería y el " +
-            "control que construye una hoja para colorear. La mayoría de las familias hace las dos " +
-            "cosas y saca la pintura cuando tiene tiempo de limpiar.",
+            "La pintura también es adecuada para los niños pequeños, pero es un tipo de " +
+              "actividad diferente. Permite experimentar con el color, las mezclas y la " +
+              "aplicación de pintura sobre una superficie, mientras que colorear con crayones " +
+              "o lápices está más relacionado con dirigir los movimientos de la mano. Ambas " +
+              "actividades pueden complementarse perfectamente.",
         },
       ],
       ru: [
@@ -459,10 +466,10 @@ export const guides: Guide[] = [
         "interested. Fixing those three removes most of the cleaning, and does more than any mat " +
         "or smock.",
       es:
-        "Casi toda la suciedad viene de tres cosas: la herramienta equivocada, una hoja que no le " +
-        "da al niño nada a lo que apuntar, y una sesión que se alarga más allá del punto en que el " +
-        "niño seguía interesado. Arreglar esas tres cosas quita casi toda la limpieza, y sirve más " +
-        "que cualquier mantel o babi.",
+        "La mayor parte del desorden al colorear puede reducirse con tres medidas sencillas: " +
+          "elegir materiales adecuados, ofrecer un dibujo grande y claro y terminar la " +
+          "actividad cuando el niño pierda el interés. A menudo, esto es suficiente para que " +
+          "colorear no termine convirtiéndose en una gran limpieza.",
       ru:
         "Большую часть беспорядка во время раскрашивания можно уменьшить тремя простыми " +
           "способами: выбрать подходящие материалы, дать ребенку крупный и понятный рисунок и " +
@@ -503,37 +510,38 @@ export const guides: Guide[] = [
         "have their place. They are not substitutes for each other.",
       ],
       es: [
-        "Ayuda separar dos preocupaciones distintas que se llaman igual. Una son las marcas donde no " +
-        "deberían estar: la mesa, la pared, el niño. La otra es que la hoja misma quede caótica. Lo " +
-        "segundo no es suciedad en absoluto, es el aspecto que tiene dibujar a esta edad, y tratarlo " +
-        "como un problema es la manera más rápida de que el niño deje de disfrutarlo.",
+        "Conviene distinguir dos cosas. Una son las marcas de crayón o rotulador que acaban " +
+          "en la mesa, las paredes, la ropa o las manos. Otra es que el propio dibujo del niño " +
+          "parezca desordenado. Los trazos irregulares y las líneas que salen del contorno son " +
+          "completamente normales a esta edad y no significan que el niño esté coloreando mal.",
 
-        "Para las marcas en el sitio equivocado, la herramienta hace casi todo el trabajo. Los " +
-        "crayones se quedan en gran medida donde se ponen y se limpian fácil de las superficies " +
-        "duras. Los rotuladores lavables están hechos justo para esta situación y salen de la piel " +
-        "y de casi todos los tejidos. Los rotuladores permanentes corrientes no pintan nada cerca " +
-        "de un niño de dos años, y tampoco los botes de pintura abiertos sobre una alfombra.",
+        "Para reducir las marcas accidentales fuera del papel, lo primero es elegir " +
+          "materiales adecuados. Los crayones suelen ser más fáciles de limpiar de las " +
+          "superficies duras, y los rotuladores lavables se eliminan mejor de la piel y de " +
+          "muchos tejidos. Los rotuladores permanentes no son apropiados para que un niño " +
+          "pequeño coloree.",
 
-        "Para la hoja, la solución es la puntería. Un niño garabatea más allá del borde del papel " +
-        "sobre todo cuando en el papel no hay nada que merezca quedarse. Un dibujo grande con " +
-        "contorno grueso le da a la mano un objetivo, y un objetivo mantiene el crayón sobre la " +
-        "hoja mucho mejor que cualquier instrucción de tener cuidado.",
+        "También ayuda elegir bien la página. Un dibujo grande con un contorno grueso ofrece " +
+          "al niño una zona claramente visible para colorear y le facilita mantener los " +
+          "movimientos dentro de la hoja. Suele ser más eficaz que recordarle constantemente " +
+          "que tenga cuidado.",
 
-        "La duración de la sesión es la más silenciosa de las tres y la más fiable. Un niño que ha " +
-        "terminado de estar interesado no suelta el crayón con educación, empieza a probar qué más " +
-        "hace el crayón. Terminar la sesión a la primera señal de eso, y no al final de la hoja, " +
-        "evita casi todos los incidentes que los padres recuerdan.",
+        "Otra causa frecuente del desorden es alargar demasiado la actividad. Cuando el niño " +
+          "pierde el interés por el dibujo, puede empezar a probar el crayón sobre la mesa, " +
+          "los muebles u otras superficies. Por eso conviene terminar cuando aparezcan las " +
+          "primeras señales de cansancio o aburrimiento y volver al dibujo más tarde.",
 
-        "Dos arreglos prácticos merecen el pequeño esfuerzo. Ponga una hoja suelta debajo de la " +
-        "página, que recoge tanto lo que traspasa el rotulador como lo que se sale por los bordes. " +
-        "Y dé una hoja cada vez en lugar del libro abierto, lo que quita la tentación de pasar de " +
-        "página a media faena y reduce a la mitad la superficie disponible para accidentes.",
+        "Hay dos medidas sencillas que ayudan mucho. Coloque debajo de la página una hoja " +
+          "adicional o un trozo de cartón: protegerá la superficie tanto de la tinta que " +
+          "traspase el papel como de los trazos que salgan por los bordes. Además, puede darle " +
+          "al niño una sola hoja en lugar del libro abierto para que le resulte más fácil " +
+          "concentrarse en un dibujo.",
 
-        "Una cosa que conviene saber antes de comprar: buscar colorear sin manchas suele llevar a " +
-        "otro producto, el de los rotuladores especiales que solo aparecen sobre papel tratado. " +
-        "Funcionan como prometen y son de verdad limpios, pero el niño colorea con un rotulador que " +
-        "no muestra nada en ningún otro sitio, lo cual es una actividad distinta de dibujar en " +
-        "papel. Cada cosa tiene su lugar. No son sustitutos la una de la otra.",
+        "También conviene distinguir los libros para colorear normales de los productos que " +
+          "se venden como actividades «sin manchas». Estos utilizan rotuladores especiales " +
+          "cuyo color solo aparece sobre un papel preparado para ellos. Son prácticos, " +
+          "especialmente para viajar, pero no sustituyen el dibujo normal con crayones o " +
+          "rotuladores sobre papel. Son simplemente dos tipos de actividad diferentes.",
       ],
       ru: [
         "Важно различать две вещи. Первая - реальные следы мелков или фломастеров на столе, " +
@@ -597,26 +605,26 @@ export const guides: Guide[] = [
         {
           q: "¿Cómo quito el crayón de una pared?",
           a:
-            "Agua tibia con un poco de jabón de vajilla en un paño suave quita casi todo el crayón " +
-            "de las paredes pintadas, frotando con suavidad para no dañar la pintura. Una esponja " +
-            "borradora se lleva lo que quede pero puede apagar un acabado mate, así que pruebe " +
-            "primero en una zona escondida. Mire el envase del crayón: muchas marcas publican " +
-            "instrucciones para quitar su propio producto.",
+            "Empiece con agua tibia y una pequeña cantidad de lavavajillas en un paño suave. " +
+              "Frote con cuidado para no dañar la pintura de la pared. Una esponja de melamina " +
+              "puede ayudar con las marcas que queden, pero también puede alterar el aspecto " +
+              "de una superficie mate, así que pruébela primero en una zona poco visible. " +
+              "Conviene consultar además las recomendaciones del fabricante de los crayones.",
         },
         {
           q: "¿Los libros para colorear sin manchas son lo mismo que un libro normal?",
           a:
-            "No. Los juegos sin manchas usan rotuladores especiales que solo aparecen sobre su " +
-            "propio papel tratado, así que nada mancha la mesa ni al niño. Son de verdad limpios y " +
-            "útiles para viajar, pero el niño no dibuja sobre papel corriente y no puede usar ese " +
-            "rotulador en ningún otro sitio. Funcionan junto a un libro de papel, no en su lugar.",
+            "No. Los productos «sin manchas» utilizan rotuladores especiales cuyo color solo " +
+              "aparece sobre el papel preparado para ellos. Son prácticos y ayudan a evitar " +
+              "manchas en la mesa o la ropa, especialmente durante los viajes. Pero se trata " +
+              "de una actividad diferente y no sustituyen el dibujo normal sobre papel.",
         },
         {
           q: "¿Debe llevar babi mi hijo?",
           a:
-            "Con crayones casi nunca hace falta. Con rotuladores o pintura, una camisa vieja es más " +
-            "cómoda que un babi de verdad y funciona igual. El ahorro mayor está en elegir " +
-            "herramientas lavables desde el principio.",
+            "Con crayones, normalmente no hace falta. Si el niño utiliza rotuladores o " +
+              "pintura, puede ponerse una camiseta o una camisa vieja. La forma más sencilla " +
+              "de reducir las manchas es elegir desde el principio materiales lavables.",
         },
       ],
       ru: [
@@ -669,11 +677,11 @@ export const guides: Guide[] = [
         "one move. Choosing a book printed on one side only solves it permanently, because a marker " +
         "that soaks through then ruins a blank back rather than the next drawing.",
       es:
-        "El papel de libro corriente no detiene un rotulador, y casi ningún libro para colorear a " +
-        "este precio está impreso en un papel que lo hiciera. Una hoja suelta metida debajo lo " +
-        "resuelve del todo de una vez. Elegir un libro impreso por una sola cara lo resuelve para " +
-        "siempre, porque entonces el rotulador que traspasa arruina un reverso en blanco y no el " +
-        "dibujo siguiente.",
+        "El papel corriente de muchos libros para colorear puede dejar pasar la tinta de los " +
+          "rotuladores. La solución más sencilla es colocar una hoja adicional o un cartón " +
+          "debajo de la página. También resulta muy práctico que el libro esté impreso por una " +
+          "sola cara: así, si la tinta traspasa el papel, dejará una marca en el reverso en " +
+          "blanco y no estropeará el dibujo siguiente.",
       ru:
         "Обычная бумага в раскрасках часто пропускает чернила фломастера. Самое простое " +
           "решение - подложить под страницу дополнительный лист бумаги или картона. Еще " +
@@ -710,32 +718,30 @@ export const guides: Guide[] = [
         "a small problem into a torn page.",
       ],
       es: [
-        "Esta es la queja más frecuente en las reseñas de libros infantiles para colorear, y vale la " +
-        "pena entender por qué pasa en vez de tratarlo como un defecto. Un papel lo bastante grueso " +
-        "para detener un rotulador cuesta varias veces más por página y hace el libro más pesado y " +
-        "mucho más caro. Un libro que lo usara costaría tres o cuatro veces más, lo cual, para un " +
-        "libro que un niño va a garabatear en un mes, es un cambio que la mayoría de los padres no " +
-        "elegiría si se lo explicaran.",
+        "La tinta de los rotuladores puede traspasar el papel de muchos libros infantiles " +
+          "para colorear, y eso no significa necesariamente que el libro esté mal impreso. " +
+          "Para impedirlo por completo se necesita un papel más grueso, que aumenta el coste y " +
+          "el peso del libro. Por eso, muchos libros utilizan papel corriente y solucionan el " +
+          "problema mediante impresión por una sola cara o colocando una hoja adicional " +
+          "debajo.",
 
-        "El gesto que lo arregla lleva un segundo. Ponga una hoja de papel corriente, o un cartón, " +
-        "debajo de la página en la que trabaja el niño. Lo que traspase cae en esa hoja. Funciona " +
-        "con cualquier libro, no cuesta nada, y conviene hacerlo por costumbre y no después del " +
-        "primer dibujo arruinado.",
+        "La solución más sencilla lleva solo unos segundos: coloque una hoja de papel o un " +
+          "cartón fino debajo de la página que está coloreando el niño. La tinta que traspase " +
+          "quedará en esa hoja. Conviene hacerlo desde el principio cuando se utilizan " +
+          "rotuladores, en lugar de esperar a que se estropee el dibujo siguiente.",
 
-        "El arreglo de fondo es comprar un libro impreso por una sola cara. Entonces el reverso de " +
-        "cada dibujo está en blanco por diseño, y un rotulador que traspasa marca una hoja vacía. " +
-        "Vale la pena comprobarlo antes de comprar: se ve fácil en la vista previa del interior, y " +
-        "los libros rara vez lo dicen en la portada. Un libro con dibujo en las dos caras de cada " +
-        "hoja pierde dos ilustraciones cada vez que se usa un rotulador.",
+        "Al elegir un libro, fíjese en si está impreso por una sola cara. Si el reverso de " +
+          "cada dibujo está en blanco, la tinta que traspase el papel no estropeará la " +
+          "ilustración siguiente. Es especialmente práctico para los niños a los que les gusta " +
+          "colorear con rotuladores.",
 
-        "El otro camino es cambiar la herramienta en vez del papel. Los crayones no traspasan nada. " +
-        "Los lápices de colores tampoco. Solo lo hacen los rotuladores y la pintura, y los " +
-        "rotuladores son los que los niños buscan porque el color es más vivo. Si un día importa " +
-        "más que no traspase que el color, esa es una decisión de dos segundos junto a la caja.",
+        "Otra opción es cambiar de material. Los crayones y los lápices de colores no " +
+          "traspasan el papel como la tinta de los rotuladores. Si al niño no le importa " +
+          "utilizar otro material, es la forma más sencilla de evitar marcas en el reverso.",
 
-        "Una cosa que no hay que hacer: pasar una plancha caliente o un secador por la hoja para " +
-        "secarla, ni intentar levantar la tinta del rotulador con disolvente. Ninguna de las dos " +
-        "funciona en papel de libro y las dos suelen convertir un problema pequeño en una hoja rota.",
+        "No intente secar la página con un secador o una plancha ni eliminar la tinta con " +
+          "disolventes. Estas medidas no solucionan las marcas que ya han traspasado el papel " +
+          "y pueden dañar la página.",
       ],
       ru: [
         "Чернила фломастеров нередко проходят сквозь бумагу в детских раскрасках, и это не " +
@@ -792,24 +798,24 @@ export const guides: Guide[] = [
         {
           q: "¿Qué libros para colorear no traspasan?",
           a:
-            "Que traspase depende del gramaje del papel, y casi ningún libro infantil para colorear " +
-            "en el rango de precio habitual usa un papel lo bastante grueso para detener un " +
-            "rotulador. Lo que separa aquí un buen libro de uno malo no es el papel sino la " +
-            "impresión: por una sola cara, el rotulador que traspasa marca un reverso en blanco y " +
-            "no el dibujo siguiente.",
+            "Depende principalmente del grosor del papel. El papel corriente de muchos " +
+              "libros infantiles para colorear puede dejar pasar la tinta de los rotuladores. " +
+              "Por eso, suele ser más útil fijarse en si el libro está impreso por una sola " +
+              "cara: así, la tinta quedará en un reverso en blanco y no estropeará el dibujo " +
+              "siguiente.",
         },
         {
           q: "¿Traspasa un libro para colorear con crayones?",
           a:
-            "No. El crayón es cera y se queda en la superficie del papel en vez de calar, así que no " +
-            "pasa al otro lado con ninguna presión que pueda hacer un niño pequeño. Lo mismo vale " +
-            "para los lápices de colores.",
+            "No. El crayón queda sobre la superficie del papel y no penetra en él como la " +
+              "tinta de un rotulador. Lo mismo ocurre con los lápices de colores.",
         },
         {
           q: "¿Puedo usar rotuladores igualmente en papel fino?",
           a:
-            "Sí, con una hoja suelta debajo. Recoge todo lo que traspasa y el niño no nota la " +
-            "diferencia. Es la costumbre más sencilla de adquirir y elimina el problema por completo.",
+            "Sí. Coloque una hoja adicional o un trozo de cartón debajo de la página. " +
+              "Recogerá la tinta que traspase y protegerá tanto la página siguiente como la " +
+              "superficie de la mesa.",
         },
       ],
       ru: [
@@ -849,7 +855,7 @@ export const guides: Guide[] = [
     stage: "aim",
     title: {
       en: "How long will a toddler actually sit and color?",
-      es: "¿Cuánto tiempo aguanta coloreando de verdad un niño pequeño?",
+      es: "¿Cuánto tiempo suele colorear un niño pequeño?",
       ru: "Сколько времени маленький ребенок обычно занимается раскраской?",
     },
     lead: {
@@ -858,10 +864,10 @@ export const guides: Guide[] = [
         "and ten minutes or more once a child is staying inside the line and choosing colors on " +
         "purpose. A session that ends when the child stands up is a normal session, not a failed one.",
       es:
-        "Dos o tres minutos al principio, unos cinco minutos para la mayoría de los niños de dos " +
-        "años, y diez minutos o más cuando el niño ya se queda dentro de la línea y elige los " +
-        "colores a propósito. Una sesión que termina cuando el niño se levanta es una sesión " +
-        "normal, no una fracasada.",
+        "Al principio pueden bastar dos o tres minutos. Alrededor de los dos años, el " +
+          "interés por una misma página suele durar unos cinco minutos y, cerca de los tres, " +
+          "puede mantenerse diez minutos o más. No existe una duración exacta: si el niño se " +
+          "levanta y decide hacer otra cosa, es completamente normal.",
       ru:
         "В самом начале ребенку может быть достаточно двух-трех минут. Примерно в два года " +
           "интерес к одной странице нередко сохраняется около пяти минут, а ближе к трем годам " +
@@ -895,30 +901,30 @@ export const guides: Guide[] = [
         "and all three move forward without any adult effort at all.",
       ],
       es: [
-        "Los padres suelen hacer esta pregunta porque una sesión terminó mucho antes de lo esperado " +
-        "y están intentando averiguar si algo va mal. Casi siempre no va mal nada. Lo que hay que " +
-        "ajustar es la expectativa, no al niño.",
+        "Los padres suelen hacerse esta pregunta cuando la actividad termina mucho antes de " +
+          "lo que esperaban. En la mayoría de los casos no hay motivo para preocuparse: a los " +
+          "niños pequeños les cuesta permanecer mucho tiempo en una misma actividad y la " +
+          "duración suele aumentar gradualmente con la edad.",
 
-        "La atención a esta edad no es una cantidad fija. El mismo niño pasará noventa segundos en " +
-        "una hoja y ocho minutos en la siguiente, y la diferencia suele estar en la hoja más que en " +
-        "el día. Un dibujo que el niño reconoce y sabe nombrar lo retiene más que uno que no, por " +
-        "la sencilla razón de que nombrarlo es la mitad de lo que lo hace interesante.",
+        "A esta edad, la duración puede variar mucho incluso en un mismo niño. Puede dedicar " +
+          "un minuto a una página y mucho más tiempo a otra. Los dibujos familiares e " +
+          "interesantes suelen mantener mejor su atención, especialmente si reconoce y puede " +
+          "nombrar lo que aparece en ellos.",
 
-        "Tres cosas alargan la sesión de forma fiable, y ninguna consiste en pedirle al niño que se " +
-        "concentre. Un motivo que el niño conozca: un perro retiene a un niño de dos años mejor que " +
-        "una criatura fantástica elaborada. Un dibujo lo bastante grande como para que el avance se " +
-        "vea después de unos pocos trazos. Y un adulto sentado a la mesa haciendo lo mismo en su " +
-        "propia hoja, que funciona mejor que cualquier ánimo dado desde el otro lado de la " +
-        "habitación.",
+        "Hay varias formas sencillas de hacer la actividad más interesante. Elija imágenes " +
+          "familiares para el niño, como un perro, una pelota o su comida favorita. El dibujo " +
+          "debe ser lo bastante grande para que el resultado se vea después de unos pocos " +
+          "trazos. También ayuda sentarse a su lado: el adulto puede colorear su propia hoja o " +
+          "simplemente hablar con el niño sobre lo que aparece en la página.",
 
-        "Dos cosas la acortan de forma fiable. Pedirle al niño que se quede dentro de la línea antes " +
-        "de que pueda, lo que convierte una actividad agradable en un examen que suspende una y " +
-        "otra vez. Y seguir después de que el niño haya terminado de estar interesado, que es el " +
-        "momento en que el crayón empieza a usarse sobre la mesa.",
+        "En cambio, pedirle constantemente que no se salga del contorno o que termine toda " +
+          "la página puede hacer que pierda el interés más rápido. Si está cansado o empieza a " +
+          "distraerse, es mejor terminar la actividad y volver a ella más tarde.",
 
-        "Las sesiones se alargan solas a lo largo de los meses. No hay nada que entrenar ni ningún " +
-        "ejercicio que hacer. Lo que cambia es la mano, el agarre y lo que el niño saca de la " +
-        "actividad, y las tres cosas avanzan sin ningún esfuerzo por parte del adulto.",
+        "A medida que crece, el niño suele dedicar por sí mismo más tiempo a colorear. Se " +
+          "desarrollan los movimientos de la mano, cambia la forma de sujetar el crayón o el " +
+          "lápiz y la propia actividad se vuelve más comprensible e interesante. No es " +
+          "necesario entrenar específicamente la duración de las sesiones.",
       ],
       ru: [
         "Родители часто задают этот вопрос, когда занятие заканчивается гораздо быстрее, чем " +
@@ -976,25 +982,27 @@ export const guides: Guide[] = [
         {
           q: "Mi hijo de dos años colorea un minuto y se va. ¿Es normal?",
           a:
-            "Sí. Las sesiones cortas son corrientes a los dos años, y se alargan con los meses sin " +
-            "ninguna intervención. Pruebe con un dibujo que el niño sepa nombrar en voz alta y " +
-            "siéntese a colorear su propia hoja a su lado: las dos cosas añaden tiempo sin pedirle " +
-            "que se concentre.",
+            "Sí. Las sesiones cortas son completamente normales a los dos años. Pruebe con " +
+              "un dibujo que el niño conozca y pueda nombrar, y siéntese a su lado para " +
+              "colorear su propia hoja o hablar sobre la imagen. Si pierde el interés al cabo " +
+              "de un minuto, puede terminar y volver a intentarlo en otro momento.",
         },
         {
           q: "¿Debo hacer que termine la hoja?",
           a:
-            "No. Terminar es una idea adulta de para qué sirve una hoja para colorear. A esta edad " +
-            "el valor está en las marcas hechas, no en cubrirlo todo, y exigir que se acabe es la " +
-            "manera más común de que a un niño acabe disgustándole colorear.",
+            "No. Un niño pequeño no tiene que terminar de colorear todas las páginas. En " +
+              "esta etapa, lo importante es el proceso: mover la mano, elegir colores e " +
+              "interesarse por el dibujo. Si se cansa o quiere hacer otra cosa, puede dejar la " +
+              "página y volver a ella más tarde.",
         },
         {
           q: "¿Colorear mejora la capacidad de atención?",
           a:
-            "Colorear es una de muchas actividades en las que los niños practican quedarse con una " +
-            "tarea, junto con construir, clasificar y mirar libros. El tiempo dedicado así es útil, " +
-            "pero la atención a esta edad depende sobre todo del desarrollo normal y no de ninguna " +
-            "actividad concreta.",
+            "Colorear es una de las muchas actividades tranquilas en las que el niño aprende " +
+              "poco a poco a permanecer más tiempo con una misma tarea. Sin embargo, la " +
+              "atención depende de muchos factores y no se desarrolla gracias a una sola " +
+              "actividad. Los libros para colorear pueden formar parte del juego y el " +
+              "aprendizaje, pero no son un entrenamiento específico de la atención.",
         },
       ],
       ru: [

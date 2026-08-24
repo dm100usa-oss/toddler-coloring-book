@@ -110,84 +110,87 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
 
   es: {
     title:
-      "Libros para colorear para programas de primera infancia: guarderías, visitas al hogar, intervención temprana y bibliotecas",
+      "Libros para colorear para programas infantiles: guarderías, visitas al hogar, " +
+        "intervención temprana y bibliotecas",
     lead:
-      "Qué hay en el libro, qué puede imprimir para un grupo y cómo conseguir más de unos pocos " +
-      "ejemplares. Escrito para quienes trabajan con niños de uno a tres años.",
+      "Qué contiene el libro, qué páginas puede imprimir gratuitamente para un grupo y cómo " +
+        "pedir varios ejemplares. Información para profesionales que trabajan con niños de uno " +
+        "a tres años.",
     body: [
-      "Esta página es para adultos que usan dibujos para colorear en su trabajo y no en casa: " +
-        "salas de bebés y niños pequeños en guarderías, programas de visitas al hogar, " +
-        "intervención temprana y terapia del habla, hora del cuento en bibliotecas, grupos de " +
-        "padres y salas infantiles de iglesias. Todo ese trabajo tiene algo en común: un grupo de " +
-        "niños con niveles distintos y muy poco tiempo para preparar, y eso cambia lo que hace " +
-        "que una hoja sirva.",
-      "Tres cosas deciden si una hoja funciona a esta edad. El contorno tiene que ser lo bastante " +
-        "grueso para sobrevivir a un crayón agarrado con el puño, o la mitad de los niños no verá " +
-        "ningún resultado de lo que hizo. Un dibujo por página, porque dos o tres motivos reparten " +
-        "una atención que dura unos minutos. Impresión por una sola cara, porque el rotulador " +
-        "traspasa el papel corriente y si no arruina la hoja siguiente del montón.",
-      "La palabra impresa debajo de cada dibujo está ahí tanto para el adulto como para el niño. " +
-        "Le da algo que decir y algo que señalar, y convierte una hoja para colorear en un " +
-        "intercambio corto sobre lo que hay en ella. En un entorno hispanohablante la palabra está " +
-        "en español, porque la edición en español es un libro aparte con sus propias palabras y no " +
-        "un libro en inglés con la portada traducida.",
-      "Las hojas gratis de este sitio pueden imprimirse en la cantidad que haga falta para los " +
-        "niños a su cargo, en casa, en un aula, en una guardería, en una biblioteca o en una sala " +
-        "de espera. No hace falta permiso ni mención. Lo que no se permite es venderlas, ponerlas " +
-        "detrás de un pago o reunirlas en una colección que se distribuya como obra propia. Hay " +
-        "diez hojas disponibles, tomadas del propio libro y en el mismo orden, así que lo que " +
-        "imprime es una muestra honesta de cómo es el libro.",
-      "En cuanto al libro, la edición en papel se vende en Amazon en inglés y en español y allí " +
-        "se puede pedir cualquier cantidad. Si necesita muchos ejemplares, un juego para varias " +
-        "salas o un archivo imprimible para un grupo, escríbanos indicando qué necesita y para " +
-        "cuántos niños. Respondemos en español, inglés y ruso.",
+      "Esta página está dirigida a profesionales que utilizan dibujos para colorear en su " +
+        "trabajo con niños: personal de guarderías y centros infantiles, programas de visitas " +
+        "al hogar e intervención temprana, logopedas, bibliotecarios, responsables de " +
+        "actividades infantiles, grupos de padres y otros programas para niños. En todos estos " +
+        "casos es importante que el material sea adecuado para distintos niveles de habilidad " +
+        "y no requiera una preparación complicada.",
+      "Para las actividades en grupo hay tres características especialmente importantes. Un " +
+        "contorno grueso y fácil de ver resulta adecuado para niños que todavía sujetan el " +
+        "crayón con toda la mano. Un solo dibujo grande por página evita sobrecargar la " +
+        "atención con demasiados elementos. Y la impresión por una sola cara protege el dibujo " +
+        "siguiente si la tinta del rotulador traspasa el papel.",
+      "La palabra debajo de cada dibujo también puede ser útil para el adulto: permite " +
+        "nombrar la imagen y empezar una breve conversación con el niño sobre lo que aparece " +
+        "en la página. En la edición española, todas las palabras están impresas en español, " +
+        "por lo que resulta adecuada para trabajar con niños y familias hispanohablantes.",
+      "Las páginas gratuitas de este sitio pueden imprimirse en cualquier cantidad para los " +
+        "niños con los que trabaja: en casa, en un aula, una guardería, una biblioteca u otro " +
+        "entorno. No es necesario pedir permiso ni citarnos. No está permitido vender estos " +
+        "materiales, ofrecer acceso a ellos mediante pago ni distribuirlos como una colección " +
+        "propia. Las diez páginas gratuitas están tomadas directamente del libro y permiten " +
+        "ver cómo está diseñado.",
+      "La edición impresa está disponible en Amazon en español e inglés y allí puede pedir " +
+        "la cantidad de ejemplares que necesite. Si necesita un pedido grande para varias " +
+        "salas o algún formato que no pueda solicitar de la forma habitual, escríbanos e " +
+        "indique el número de niños. Respondemos en español, inglés y ruso.",
     ],
     faq: [
       {
         q: "¿Puedo imprimir sus hojas gratis para todo mi grupo?",
         a:
-          "Sí, en tantas copias como necesite, y no hace falta permiso ni mención. Eso incluye " +
-          "casas, aulas, guarderías, bibliotecas y salas de espera. El único límite es que las " +
-          "hojas no pueden venderse, ponerse detrás de un pago ni reunirse en un conjunto que se " +
-          "distribuya como obra de otra persona.",
+          "Sí. Las diez páginas gratuitas pueden imprimirse en cualquier cantidad para los " +
+            "niños con los que trabaja. No es necesario pedir permiso ni citarnos. No está " +
+            "permitido vender estos materiales, ofrecer acceso a ellos mediante pago ni " +
+            "distribuirlos como una colección propia.",
       },
       {
         q: "¿Puedo fotocopiar páginas del libro para un grupo?",
         a:
-          "No. Las hojas gratis de este sitio están hechas para imprimirse en cualquier cantidad, " +
-          "y copiar el libro en su lugar no es algo que podamos permitir. Si necesita un ejemplar " +
-          "por niño y un pedido grande le resulta complicado, escríbanos y cuéntenos la situación " +
-          "en vez de buscar un rodeo.",
+          "No. Las páginas del libro no se pueden fotocopiar. Para imprimir en cualquier " +
+            "cantidad están disponibles las páginas gratuitas del sitio. Si necesita un " +
+            "ejemplar para cada niño y un pedido normal no se adapta a sus necesidades, " +
+            "escríbanos e indique cuántos ejemplares necesita.",
       },
       {
         q: "¿Cómo pido muchos ejemplares a la vez?",
         a:
-          "La edición en papel está en Amazon en inglés y en español, y allí se puede pedir " +
-          "cualquier cantidad directamente. Para pedidos más grandes, juegos para varias salas o " +
-          "cualquier cosa que un pedido normal no cubra, escríbanos diciendo para cuántos niños es.",
+          "La edición impresa está disponible en Amazon en español e inglés y allí puede " +
+            "pedir directamente la cantidad de ejemplares que necesite. Si necesita un pedido " +
+            "grande para varias salas o para un programa, escríbanos e indique el número de " +
+            "niños.",
       },
       {
         q: "¿La edición en español es una traducción de la inglesa?",
         a:
-          "Es un libro aparte. Los dibujos son los mismos y la palabra debajo de cada dibujo está " +
-          "en español, no es una palabra inglesa con una etiqueta añadida. Se vende con su propio " +
-          "título, así que una familia o un aula hispanohablante recibe un libro en español y no " +
-          "un libro traducido.",
+          "Es una edición independiente en español. Los dibujos son los mismos que en la " +
+            "edición inglesa, pero debajo de cada imagen aparece una palabra en español. El " +
+            "libro se vende con su propio título en español y está pensado para niños y " +
+            "familias hispanohablantes.",
       },
       {
         q: "¿Para qué edad es realmente este libro?",
         a:
-          "De uno a tres años, y el rango real es más amplio de lo que sugiere el número de la " +
-          "portada, porque lo que importa es lo que hace la mano y no el cumpleaños. Pasados los " +
-          "tres años y medio la mayoría de los niños encuentra estas hojas demasiado fáciles, y la " +
-          "señal es el aburrimiento y no la pulcritud.",
+          "El libro está pensado para niños de uno a tres años, aunque conviene fijarse no " +
+            "solo en la edad, sino también en las habilidades del niño. A partir de los tres " +
+            "años y medio, aproximadamente, estas páginas pueden empezar a resultar demasiado " +
+            "sencillas para muchos niños. La principal señal es la pérdida de interés, no la " +
+            "precisión con la que colorean.",
       },
       {
         q: "¿Puedo dar las hojas impresas a las familias para que se las lleven?",
         a:
-          "Sí. Imprimir hojas y entregarlas a las familias con las que trabaja es exactamente para " +
-          "lo que están las hojas gratis, y no hace falta permiso. Lo único que no se permite es " +
-          "venderlas o presentarlas como una colección propia.",
+          "Sí. Las páginas gratuitas pueden imprimirse y entregarse a las familias con las " +
+            "que trabaja. No es necesario pedir un permiso adicional. No está permitido vender " +
+            "estos materiales ni distribuirlos como una colección propia.",
       },
     ],
   },
@@ -309,10 +312,12 @@ export const audiences: Audience[] = [
         "drawings are what covers both. Single sided printing matters more here than anywhere: a " +
         "marker that soaks through marks a blank back rather than the next child's drawing.",
       es:
-        "Un grupo de ocho tiene dentro ocho niveles distintos, y una misma hoja tiene que servir al " +
-        "niño que garabatea por toda la hoja y al que ya apunta. Dibujos muy simples y muy grandes " +
-        "es lo que cubre a los dos. La impresión por una cara importa aquí más que en ningún sitio: " +
-        "un rotulador que traspasa marca un dorso en blanco y no el dibujo del niño siguiente.",
+        "En un grupo, los niños pueden encontrarse en distintas etapas del desarrollo de sus " +
+          "habilidades de dibujo. Los dibujos grandes y sencillos sirven tanto a quienes " +
+          "todavía hacen trazos amplios por toda la hoja como a quienes ya intentan colorear " +
+          "el propio dibujo. La impresión por una sola cara resulta especialmente práctica: si " +
+          "la tinta del rotulador traspasa el papel, llegará al reverso en blanco y no al " +
+          "dibujo siguiente.",
       ru:
         "В группе дети могут находиться на разных этапах развития навыков рисования. Крупные " +
           "и простые рисунки подходят и тем, кто пока рисует размашистые линии по всему листу, " +
@@ -335,10 +340,11 @@ export const audiences: Audience[] = [
         "script: name it, point at it, let the child choose the color. Pages can be printed for " +
         "every family on your list and handed over to keep.",
       es:
-        "Lo que queda en la casa tiene que seguir funcionando cuando usted se va, y eso significa " +
-        "que la madre o el padre necesita algo que decir y no una ficha que terminar. La palabra " +
-        "debajo del dibujo es ese guion: nombrarlo, señalarlo, dejar que el niño elija el color. " +
-        "Las hojas pueden imprimirse para cada familia de su lista y entregarse para que se queden.",
+        "El material que queda en casa después de una visita debe ser fácil de utilizar sin " +
+          "instrucciones adicionales. La palabra debajo del dibujo ayuda al adulto a iniciar " +
+          "la actividad: nombrar la imagen, mostrársela al niño y dejarle elegir un color. Las " +
+          "páginas gratuitas pueden imprimirse para cada familia y entregarse al final de la " +
+          "visita.",
       ru:
         "Материал, который остается дома после визита, должен быть понятен семье без " +
           "дополнительных инструкций. Слово под рисунком помогает взрослому начать занятие: " +
@@ -360,10 +366,10 @@ export const audiences: Audience[] = [
         "the same label every session. In Spanish the word is Spanish, which is the part that is " +
         "hardest to find in materials for this age.",
       es:
-        "Aquí lo importante de la hoja es nombrar, y el dibujo tiene que reconocerse sin que haya " +
-        "que explicarlo antes. Un motivo por hoja mantiene un solo objetivo, y la palabra impresa " +
-        "da la misma etiqueta en cada sesión. En español la palabra es española, que es justo lo " +
-        "más difícil de encontrar en materiales para esta edad.",
+        "Para este tipo de actividades son especialmente útiles los dibujos sencillos y " +
+          "fáciles de reconocer. Un solo dibujo por página permite centrarse en una palabra, y " +
+          "la palabra impresa debajo ayuda al adulto a nombrar la imagen de forma clara y " +
+          "constante. En la edición española, todas las palabras están impresas en español.",
       ru:
         "Для таких занятий особенно важны простые и легко узнаваемые изображения. Один " +
           "рисунок на странице помогает сосредоточиться на одном слове, а подпись под ним " +
@@ -385,10 +391,10 @@ export const audiences: Audience[] = [
         "in any quantity with no permission and no attribution, and each one is a page from the " +
         "book rather than a sample made to look good.",
       es:
-        "Una hoja que se reparte después de la hora del cuento tiene que poder imprimirse en " +
-        "cantidades desconocidas y servir a quien entre por la puerta, a cualquier edad entre uno " +
-        "y tres años. Las hojas gratis de aquí pueden imprimirse en cualquier cantidad sin permiso " +
-        "ni mención, y cada una es una página del libro y no una muestra hecha para lucir.",
+        "Una página que se entrega después de una actividad infantil en la biblioteca debe " +
+          "ser adecuada para niños diferentes y fácil de imprimir en la cantidad necesaria. " +
+          "Las páginas gratuitas de este sitio pueden imprimirse en cualquier cantidad para " +
+          "los niños con los que trabaja. Cada una está tomada directamente del libro.",
       ru:
         "Страница, которую раздают после детского занятия в библиотеке, должна подходить " +
           "разным детям и легко печататься в нужном количестве. Бесплатные листы с этого сайта " +
@@ -410,10 +416,10 @@ export const audiences: Audience[] = [
         "the page. For a Spanish speaking group the Spanish edition carries Spanish words, so the " +
         "reading part is in the family's own language.",
       es:
-        "Aquí el adulto y el niño trabajan en la misma mesa, y la hoja tiene que darles algo que " +
-        "hacer a los dos. El niño colorea, el adulto lee la palabra en voz alta y pregunta qué hay " +
-        "en la hoja. Para un grupo hispanohablante la edición en español lleva palabras en español, " +
-        "así que la parte de leer está en el idioma de la familia.",
+        "En un grupo de padres, el adulto y el niño pueden compartir la misma actividad: el " +
+          "niño colorea el dibujo y el adulto lee la palabra en voz alta y habla con él sobre " +
+          "lo que aparece en la página. En la edición española, las palabras están impresas en " +
+          "español, por lo que la actividad puede realizarse en el idioma de la familia.",
       ru:
         "В родительской группе взрослый и ребенок могут заниматься одной страницей вместе: " +
           "ребенок раскрашивает рисунок, а взрослый читает слово вслух и говорит с ним о том, " +
@@ -441,12 +447,12 @@ export const specs: Record<ContentLang, string[]> = {
     "8.5 by 11 inches, separate English and Spanish editions",
   ],
   es: [
-    "111 dibujos, todos distintos, hechos a mano",
-    "Contornos gruesos, sin detalles pequeños",
+    "111 dibujos diferentes, hechos a mano",
+    "Contornos gruesos y pocos detalles pequeños",
     "Un dibujo por página",
     "Impreso por una sola cara",
     "La palabra debajo de cada dibujo, en letras huecas que también se colorean",
-    "8,5 por 11 pulgadas, ediciones separadas en inglés y en español",
+    "Formato de 8,5 × 11 pulgadas, con ediciones independientes en español e inglés",
   ],
   ru: [
     "111 разных рисунков, нарисованных вручную",
@@ -505,20 +511,22 @@ export const programsLabels: Record<ContentLang, ProgramsLabels> = {
     specsTitle: "Qué hay en el libro",
     printTitle: "Imprimir para un grupo",
     printText:
-      "Diez hojas del libro, gratis, en tamaño Carta y A4. Imprima tantas copias como necesite " +
-      "para los niños con los que trabaja. Sin permiso, sin mención, sin cuenta.",
+      "Diez páginas gratuitas del libro en formatos US Letter y A4. Imprima tantas copias " +
+        "como necesite para los niños con los que trabaja. No es necesario pedir permiso, " +
+        "citarnos ni registrarse.",
     printCta: "Ver todas las hojas gratis",
     termsCta: "Condiciones de uso completas",
-    contactTitle: "Muchos ejemplares, o algo que todavía no vendemos",
+    contactTitle: "Varios ejemplares o un formato especial",
     contactText:
-      "Escríbanos indicando qué necesita y para cuántos niños. Pedidos grandes, juegos para varias " +
-      "salas, un archivo imprimible para un grupo: si es posible, se lo diremos, y si no lo es, " +
-      "también. Respondemos en español, inglés y ruso.",
+      "Escríbanos indicando qué necesita y para cuántos niños. Si necesita un pedido grande, " +
+        "libros para varias salas o algún otro formato, le diremos si podemos ofrecer una " +
+        "opción adecuada. Respondemos en español, inglés y ruso.",
     contactCta: "Escríbanos",
-    toolCta: "Qué hoja le conviene a un niño concreto",
+    toolCta: "Qué página puede ser adecuada para un niño concreto",
     printablesNote:
-      "¿Trabaja con un grupo? Estas hojas pueden imprimirse en cualquier cantidad para una " +
-      "guardería, una biblioteca, una visita al hogar o una sala de espera.",
+      "¿Trabaja con un grupo? Las páginas gratuitas pueden imprimirse en cualquier cantidad " +
+        "para guarderías, bibliotecas, visitas al hogar, salas de espera y otras actividades " +
+        "con niños.",
     printablesCta: "Para programas y profesionales",
   },
   ru: {

@@ -89,18 +89,19 @@ const words = {
     seeAll: "Ver los 111 dibujos",
     video: "El libro por dentro",
     videoLead:
-      "Un recorrido sin cortes, filmado sobre una mesa. Portada, contraportada y una página tras " +
-      "otra, para que vea el grosor de la línea y cuánto ocupa un dibujo en la hoja antes de " +
-      "decidir.",
+      "Un recorrido sin cortes, grabado sobre una mesa. Verá la portada, la contraportada y " +
+        "todas las páginas en orden, para que pueda apreciar el grosor de las líneas y el " +
+        "tamaño de los dibujos antes de decidir.",
     forWhom: "Para quién es",
     notFor: "Cuándo este libro no es la opción",
     faq: "Preguntas que hacen los padres",
     buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
     priceFrom: "tapa blanda en Amazon",
-    freeTitle: "Pruebe primero diez páginas, gratis",
+    freeTitle: "Pruebe primero diez páginas gratis",
     freeLead:
-      "Diez dibujos sacados directamente del libro, en dos tamaños de papel. Imprima uno, dele un " +
-      "crayón a su hijo y en cinco minutos sabrá si este tipo de página le conviene.",
+      "Diez dibujos sacados directamente del libro, en dos tamaños de papel. Imprima uno, " +
+        "dele un crayón a su hijo y en unos minutos sabrá si este tipo de página es adecuado " +
+        "para él.",
     alsoIn: "Los mismos 111 dibujos con las palabras en inglés debajo, como libro aparte.",
   },
   ru: {

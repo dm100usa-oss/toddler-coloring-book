@@ -48,9 +48,10 @@ export const ageLabels: AgeLabel[] = [
         "child who scribbles across the sheet and for one who is starting to aim, which is only " +
         "possible if every drawing stays very simple and very large.",
       es:
-        "La etiqueta más amplia del estante y el libro más difícil de hacer bien. Tiene que servir " +
-        "a un niño que garabatea por toda la hoja y a otro que empieza a apuntar, y eso solo es " +
-        "posible si cada dibujo se mantiene muy simple y muy grande.",
+        "Es el rango de edad más amplio y uno de los más difíciles para un libro para " +
+          "colorear. Debe servir tanto a un niño que todavía garabatea por toda la hoja como a " +
+          "otro que ya intenta dirigir los trazos hacia el dibujo. Por eso, las imágenes " +
+          "tienen que seguir siendo muy grandes y sencillas.",
       ru:
         "Самый широкий возрастной диапазон и одна из самых сложных задач для раскраски. Она " +
           "должна подойти и ребенку, который пока рисует линии по всему листу, и тому, кто уже " +
@@ -62,9 +63,10 @@ export const ageLabels: AgeLabel[] = [
         "Check that the drawings are simple enough for the youngest end. Many books labelled 1-3 " +
         "are really made for a three year old, and a one year old gets nothing from them.",
       es:
-        "Compruebe que los dibujos son bastante simples para el extremo más pequeño. Muchos libros " +
-        "marcados de 1 a 3 están hechos en realidad para un niño de tres años, y uno de un año no " +
-        "saca nada de ellos.",
+        "Compruebe que los dibujos sean adecuados para los niños más pequeños del rango " +
+          "indicado. Muchos libros marcados para edades de 1 a 3 años están pensados en " +
+          "realidad para niños algo mayores y pueden resultar demasiado difíciles para un niño " +
+          "de un año.",
       ru:
         "Проверьте, подходят ли рисунки самым маленьким детям из указанного возрастного " +
           "диапазона. Многие книги с пометкой 1-3 года на самом деле рассчитаны на детей " +
@@ -80,9 +82,10 @@ export const ageLabels: AgeLabel[] = [
         "color onto it. Outlines are still bold, but there are more separate areas inside one shape " +
         "than in a 1-3 book.",
       es:
-        "La etiqueta más útil para un niño que ya apunta al dibujo y deja casi todo el color " +
-        "encima. Los contornos siguen siendo marcados, pero hay más zonas separadas dentro de una " +
-        "misma forma que en un libro de 1 a 3.",
+        "Este rango suele ser adecuado para un niño que ya intenta colorear el propio dibujo " +
+          "y deja la mayor parte del color sobre él. El contorno debe seguir siendo fácil de " +
+          "ver, pero dentro de la imagen puede haber más zonas separadas que en un libro para " +
+          "niños de 1 a 3 años.",
       ru:
         "Такой возрастной диапазон часто подходит ребенку, который уже старается " +
           "раскрашивать сам рисунок и большую часть цвета наносит на него. Контур все еще " +
@@ -94,8 +97,10 @@ export const ageLabels: AgeLabel[] = [
         "This range overlaps heavily with 1-3. If your child is closer to two than four, a good " +
         "1-3 book often suits better than a crowded 2-4 one.",
       es:
-        "Este rango se solapa mucho con el de 1 a 3. Si su hijo está más cerca de los dos que de " +
-        "los cuatro, un buen libro de 1 a 3 suele convenirle más que uno de 2 a 4 recargado.",
+        "Los rangos de 1 a 3 y de 2 a 4 años se solapan bastante. Por eso, al elegir " +
+          "conviene fijarse no solo en la edad indicada en la portada, sino también en las " +
+          "propias páginas: el tamaño de los dibujos, el grosor del contorno y la cantidad de " +
+          "detalles.",
       ru:
         "Диапазоны 1-3 и 2-4 года заметно пересекаются. Поэтому при выборе лучше смотреть не " +
           "только на цифры на обложке, но и на сами страницы: размер рисунков, толщину контура " +
@@ -111,9 +116,10 @@ export const ageLabels: AgeLabel[] = [
         "page beyond filling shapes. Expect scenes rather than single objects, and often something " +
         "to do besides color: a shape to trace, a word to copy, a maze.",
       es:
-        "Para un niño que se queda dentro de la línea sin esfuerzo y quiere que en la hoja pase " +
-        "algo más que rellenar formas. Espere escenas en vez de objetos sueltos, y a menudo algo " +
-        "que hacer además de colorear: una forma que calcar, una palabra que copiar, un laberinto.",
+        "Para un niño que ya colorea dentro del contorno con bastante seguridad y busca " +
+          "actividades más complejas. Pueden ser adecuadas pequeñas escenas en lugar de un " +
+          "solo objeto y actividades adicionales, como repasar una forma, copiar una palabra o " +
+          "resolver un laberinto sencillo.",
       ru:
         "Для ребенка, который уже уверенно раскрашивает внутри контура и хочет более сложных " +
           "заданий. Подойдут небольшие сюжеты вместо одного предмета и дополнительные задания: " +
@@ -124,8 +130,9 @@ export const ageLabels: AgeLabel[] = [
         "Given to a two year old, a 3-5 book usually produces frustration rather than practice. " +
         "The detail is too fine for a hand that cannot stop at a line yet.",
       es:
-        "Dado a un niño de dos años, un libro de 3 a 5 suele producir frustración en vez de " +
-        "práctica. El detalle es demasiado fino para una mano que todavía no sabe parar en una línea.",
+        "Para un niño de dos años, un libro de 3 a 5 años suele resultar demasiado complejo. " +
+          "Los detalles pequeños exigen una precisión de movimientos que todavía se está " +
+          "desarrollando a esta edad.",
       ru:
         "Для двухлетнего ребенка раскраска 3-5 лет часто оказывается слишком сложной. Мелкие " +
           "детали требуют большей точности движений, которая в этом возрасте еще развивается.",
@@ -220,84 +227,89 @@ export const agesCopy: Record<ContentLang, SectionCopy> = {
   },
 
   es: {
-    title: "Colorear por edad: qué puede hacer de verdad un niño a los 1, 2, 3 y 4 años",
+    title: "Colorear según la edad: qué suele ser adecuado al año, a los dos, a los tres y a " +
+             "los cuatro años",
     lead:
-      "Los padres compran un libro para colorear por la edad impresa en la portada. Ese número dice " +
-      "para quién se hizo el libro, no si le sirve al niño que uno tiene delante. Esta página " +
-      "describe qué cambia en la mano de un niño entre el año y los cuatro años, y qué tipo de hoja " +
-      "conviene en cada punto del camino.",
+      "Los padres suelen elegir un libro para colorear por la edad indicada en la portada. " +
+        "Sin embargo, ese número solo señala el grupo de edad para el que la editorial creó el " +
+        "libro. Es más importante observar lo que el niño ya sabe hacer con la mano. Aquí " +
+        "explicamos cómo suelen cambiar las habilidades de dibujo entre el año y los cuatro " +
+        "años y qué tipo de páginas pueden resultar más adecuadas en cada etapa.",
     body: [
-      "El dibujo se desarrolla en el mismo orden en todos los niños, y el orden importa más que el " +
-      "calendario. Primero el niño descubre que mover la mano deja una marca. Después las marcas se " +
-      "vuelven intencionadas: bucles, trazos de arriba abajo, formas copiadas de otra persona. " +
-      "Luego empieza a apuntar a algo de la hoja. Solo después se hace posible quedarse dentro de " +
-      "una línea, y llega poco a poco, no de un día para otro.",
+      "Las habilidades de dibujo se desarrollan gradualmente. Primero, el niño descubre que " +
+        "el movimiento de la mano deja un trazo en el papel. Después, los trazos se vuelven " +
+        "más intencionados: aparecen bucles, líneas de arriba abajo e intentos de imitar una " +
+        "línea hecha por un adulto. Más adelante, empieza a dirigir los movimientos hacia el " +
+        "dibujo y, solo después, aprende poco a poco a colorear dentro del contorno.",
 
-      "Dos niños exactamente de la misma edad pueden estar en puntos distintos de este camino, y " +
-      "los dos se desarrollan con normalidad. Unos meses de diferencia en cualquier sentido es algo " +
-      "corriente. Lo que merece atención no es el ritmo sino el orden: los pasos no se saltan.",
+      "Dos niños de la misma edad pueden encontrarse en etapas diferentes del desarrollo de " +
+        "las habilidades de dibujo, y es completamente natural. Una diferencia de algunos " +
+        "meses es habitual, por lo que conviene fijarse no solo en la edad, sino también en lo " +
+        "que el niño ya sabe hacer.",
 
-      "Por eso un libro que pone de 1 a 3 años en la portada tiene una tarea difícil. Tiene que " +
-      "servir a un niño que garabatea por toda la hoja y a uno que empieza a apuntar, y eso solo es " +
-      "posible si los dibujos se mantienen muy simples y muy grandes. Un libro que en cambio apunta " +
-      "al centro de ese rango acaba siendo demasiado difícil en un extremo y demasiado soso en el otro.",
+      "Por eso, un libro marcado para niños de 1 a 3 años tiene una tarea difícil. Debe " +
+        "servir tanto a un niño que todavía hace trazos amplios por toda la hoja como a otro " +
+        "que ya intenta colorear el dibujo. Para conseguirlo, las imágenes deben ser grandes, " +
+        "sencillas y sin demasiados detalles pequeños.",
 
-      "La consecuencia práctica para un padre es pequeña y útil: juzgue el libro por la página, no " +
-      "por la edad de la portada. Contorno grueso, un dibujo que llene la hoja, un motivo que el " +
-      "niño sepa nombrar, nada impreso en el reverso. Esas cuatro cosas deciden si el niño se queda " +
-      "en la mesa, y se ven en tres segundos de mirar dentro.",
+      "El consejo práctico es sencillo: no se fije únicamente en la edad de la portada, sino " +
+        "también en las páginas. Para un primer libro para colorear son importantes un " +
+        "contorno grueso, un solo dibujo grande por página, imágenes familiares para el niño e " +
+        "impresión por una sola cara. Todo esto puede comprobarse simplemente mirando el " +
+        "interior del libro.",
     ],
     faq: [
       {
         q: "¿A qué edad puede empezar a colorear un niño?",
         a:
-          "La mayoría de los niños hace sus primeras marcas intencionadas en el papel entre los doce " +
-          "y los dieciocho meses, agarrando el crayón con el puño. Eso es colorear en el único " +
-          "sentido que importa a esa edad: el niño descubre que mover la mano deja rastro y lo " +
-          "repite a propósito. Quedarse dentro de la línea es otra habilidad distinta que llega " +
-          "alrededor de los tres años.",
+          "La mayoría de los niños empiezan a dejar marcas intencionadas en el papel entre " +
+            "los doce y los dieciocho meses, normalmente sujetando el crayón con toda la mano. " +
+            "En esta etapa, el niño descubre principalmente la relación entre el movimiento de " +
+            "la mano y el trazo que aparece en el papel. La capacidad de colorear dentro del " +
+            "contorno llega bastante más tarde.",
       },
       {
         q: "¿Por qué mi hijo de dos años colorea por encima del dibujo?",
         a:
-          "Porque apuntar y detenerse son dos capacidades distintas, y detenerse llega después. Un " +
-          "niño de dos años suele poder apuntar el crayón al dibujo y dejar casi todo el color " +
-          "encima, saliéndose del contorno sin problema. Salirse de la línea a esta edad no es un " +
-          "error, es el aspecto que tiene apuntar antes de que la mano alcance al ojo.",
+          "Porque dirigir el crayón hacia el dibujo y detener el movimiento al llegar al " +
+            "contorno son habilidades que no se desarrollan al mismo tiempo. A los dos años, " +
+            "el niño ya puede intentar colorear el propio dibujo, pero todavía se sale de sus " +
+            "límites con frecuencia. Es completamente normal a esta edad.",
       },
       {
         q: "¿Mi hijo va retrasado si a los tres años todavía garabatea?",
         a:
-          "Por sí solo, no. Cada niño llega a estos puntos a su ritmo y unos meses de diferencia es " +
-          "algo corriente, sobre todo si ha pasado poco tiempo con crayones. Lo que importa es que " +
-          "el patrón avance a lo largo de los meses y no se quede congelado. Si tiene dudas sobre el " +
-          "desarrollo de su hijo, su pediatra es la persona indicada.",
+          "Por sí solo, esto no significa que exista un retraso. Los niños desarrollan las " +
+            "habilidades de dibujo a ritmos diferentes, y una diferencia de algunos meses es " +
+            "completamente normal. Lo importante es observar cómo cambian sus habilidades con " +
+            "el tiempo. Si algo le preocupa sobre el desarrollo de su hijo, consulte con su " +
+            "pediatra.",
       },
       {
         q: "¿Qué diferencia hay entre un libro para colorear de 1 a 3 años y uno de 2 a 4?",
         a:
-          "En la práctica, cuántas zonas separadas hay que rellenar dentro de un mismo dibujo. Un " +
-          "libro de 1 a 3 mantiene una forma grande con pocas partes, así que un niño que no sabe " +
-          "parar en una línea produce igualmente algo que parece terminado. Un libro de 2 a 4 pone " +
-          "más partes dentro de la misma forma, lo que conviene a un niño que ya apunta al dibujo. " +
-          "Los dos rangos se solapan mucho, y para un niño de dos años un buen libro de 1 a 3 suele " +
-          "funcionar mejor que uno de 2 a 4 recargado.",
+          "La principal diferencia no suele estar en las cifras de la portada, sino en la " +
+            "complejidad de las páginas. En un libro para niños de 1 a 3 años, los dibujos " +
+            "suelen ser más grandes y sencillos, con pocas partes separadas. En los libros de " +
+            "2 a 4 años puede haber más detalles. Como ambos rangos se solapan bastante, " +
+            "conviene fijarse en las habilidades del niño y en el diseño de las páginas.",
       },
       {
         q: "¿La edad de la portada de un libro para colorear es un estándar?",
         a:
-          "No. No hay ningún estándar detrás de esos números ni ningún organismo que los " +
-          "compruebe. La editorial elige el rango, y por eso dos libros marcados los dos de 2 a 4 " +
-          "años pueden diferir al doble en dificultad. Juzgue el libro mirando dentro el grosor de " +
-          "la línea y cuánto ocupa un dibujo en la hoja, no por el número de la portada.",
+          "No existe un estándar único que determine las edades indicadas en la portada de " +
+            "un libro para colorear. Es la editorial quien establece el rango, por lo que dos " +
+            "libros marcados para edades de 2 a 4 años pueden tener niveles de dificultad muy " +
+            "diferentes. Al elegir, conviene mirar las páginas: el tamaño de los dibujos, el " +
+            "grosor del contorno y la cantidad de detalles.",
       },
       {
         q: "Mi hijo tiene cuatro años y colorear le aburre. ¿Y ahora qué?",
         a:
-          "El aburrimiento a los cuatro suele significar que la hoja ha dejado de pedirle algo al " +
-          "niño. La solución no es un libro más fácil sino uno más lleno: una escena con varias " +
-          "zonas que rellenar en vez de un objeto suelto, o un libro de dibujo paso a paso donde el " +
-          "niño construya la imagen en lugar de rellenar la de otro.",
+          "Si a los cuatro años los libros para colorear sencillos ya no le interesan, " +
+            "probablemente necesite actividades más complejas. Puede probar dibujos con más " +
+            "zonas separadas, pequeñas escenas o libros de dibujo paso a paso, donde el niño " +
+            "cree la imagen por sí mismo.",
       },
     ],
   },
@@ -448,52 +460,56 @@ export const printablesCopy: Record<UiLang, SectionCopy> = {
   es: {
     title: "Diez páginas del libro, gratis para imprimir",
     lead:
-      "Diez dibujos sacados directamente del libro, en el mismo orden en que aparecen en él. " +
-      "Imprima uno, dele un crayón a su hijo y en cinco minutos sabrá si este tipo de hoja le " +
-      "conviene. Gratis, sin registro, sin nada que rellenar.",
+      "Diez dibujos sacados directamente del libro y presentados en el mismo orden. Imprima " +
+        "uno, dele un crayón a su hijo y en unos minutos podrá comprobar si este tipo de " +
+        "página le resulta adecuado. Gratis, sin registro y sin formularios.",
     body: [
-      "Son muestras, no una colección. Diez páginas bastan para ver lo grueso que es el contorno, " +
-      "cuánto ocupa un dibujo en la hoja y si su hijo se queda con ella. No bastan para sustituir " +
-      "el libro, y no pretenden hacerlo.",
+      "Son páginas de muestra, no una colección independiente. Diez dibujos son suficientes " +
+        "para valorar el grosor del contorno, el tamaño de las imágenes y el interés que " +
+        "despiertan en el niño.",
 
-      "Nos parece que ese es el orden honesto. Un padre que ha impreso una hoja y ha visto a su " +
-      "propio hijo usarla sabe algo que ninguna descripción de producto puede contarle. Si la " +
-      "respuesta resulta ser que no, imprimir le costó una hoja de papel en vez del precio de un libro.",
+      "Así puede comprobar si el libro es adecuado antes de comprarlo. Imprima una página y " +
+        "observe si al niño le resulta cómodo colorear ese tipo de dibujo y si la actividad le " +
+        "interesa. Si la página no le conviene, lo sabrá antes de comprar el libro.",
 
-      "Cada hoja viene en dos tamaños de papel. Carta para Estados Unidos y Canadá, A4 para Europa, " +
-      "América Latina y casi todo el resto del mundo. Imprima por una sola cara: el rotulador " +
-      "traspasa el papel corriente y en una hoja impresa por los dos lados arruina lo que haya detrás.",
+      "Cada página está disponible en dos formatos: US Letter para Estados Unidos y Canadá, " +
+        "y A4 para Europa, América Latina y la mayoría de los demás países. Conviene imprimir " +
+        "por una sola cara, especialmente si el niño utiliza rotuladores, ya que la tinta " +
+        "puede traspasar el papel corriente.",
 
-      "Estos dibujos son obra nuestra. Puede imprimirlos en casa, en un aula, en una guardería o en " +
-      "una biblioteca, tantas copias como necesite. No puede venderlos ni reunirlos en una " +
-      "colección propia.",
+      "Todos estos dibujos han sido creados por nosotros. Puede imprimirlos gratuitamente " +
+        "para actividades en casa, en un aula, una guardería o una biblioteca, en tantas " +
+        "copias como necesite. No está permitido venderlos ni incluirlos en colecciones " +
+        "propias para su distribución.",
     ],
     faq: [
       {
         q: "¿Hay que registrarse o dar un correo?",
         a:
-          "No. Cada hoja se descarga directamente en PDF. No hay formulario, ni cuenta, ni correo " +
-          "en ningún momento.",
+          "No. Cada página se descarga directamente en formato PDF. No es necesario " +
+            "registrarse, proporcionar una dirección de correo electrónico ni rellenar " +
+            "formularios.",
       },
       {
         q: "¿Son los mismos dibujos que están en el libro?",
         a:
-          "Sí. Estos diez están tomados directamente del libro, sin cambios, en el orden en que " +
-          "aparecen en él. El libro tiene 111 dibujos en total, así que lo que ve aquí es una " +
-          "muestra suya y no un conjunto aparte.",
+          "Sí. Estos diez dibujos están tomados directamente del libro, sin cambios y en el " +
+            "mismo orden en que aparecen. El libro contiene 111 dibujos en total, por lo que " +
+            "estas páginas gratuitas permiten ver cómo está diseñado antes de comprarlo.",
       },
       {
         q: "¿Qué tamaño de papel elijo?",
         a:
-          "Carta si está en Estados Unidos o Canadá, A4 en casi todos los demás sitios. Si imprime " +
-          "el que no toca el dibujo sale igual, solo que con márgenes desiguales.",
+          "Elija US Letter si está en Estados Unidos o Canadá y A4 en Europa, América Latina " +
+            "y la mayoría de los demás países. Si utiliza el otro formato, la página también " +
+            "se imprimirá, aunque los márgenes pueden quedar diferentes.",
       },
       {
         q: "¿Puedo usarlos en mi aula o guardería?",
         a:
-          "Sí. Imprima tantas copias como necesite para los niños a su cargo, en casa, en un aula, " +
-          "en una guardería o en una biblioteca. Lo único que no se permite es venderlos ni " +
-          "reunirlos en una colección que distribuya como propia.",
+          "Sí. Puede imprimir tantas copias como necesite para los niños con los que trabaja " +
+            "en casa, en un aula, una guardería o una biblioteca. No está permitido vender " +
+            "estos materiales ni distribuirlos como una colección propia.",
       },
     ],
   },
@@ -588,28 +604,32 @@ export const aboutCopy: Record<UiLang, SectionCopy> = {
   es: {
     title: "Quién está detrás de este sitio",
     lead:
-      "Toddler Coloring Book pertenece a Magic of Discoveries LLC, una pequeña editorial de libros " +
-      "infantiles en Miami, Florida, llevada por Ricardo y Maria Demi.",
+      "Toddler Coloring Book es un proyecto de Magic of Discoveries LLC, una pequeña " +
+        "editorial de libros infantiles de Miami, Florida. Ricardo y Maria Demi están detrás " +
+        "del proyecto y de este sitio.",
     body: [
-      "Publicamos libros para colorear, libros de dibujo paso a paso y cuentos ilustrados para " +
-      "niños pequeños, en inglés y en español. Uno de esos libros es un libro para colorear de uno " +
-      "a tres años, y este sitio existe por las preguntas que los padres nos hacían una y otra vez. " +
-      "No preguntas sobre el libro: preguntas sobre su hijo. Si el de un año es demasiado pequeño. " +
-      "Por qué colorea justo por encima del dibujo. Qué hacer cuando el rotulador traspasa la hoja.",
+      "Publicamos libros para colorear, libros de dibujo paso a paso y cuentos ilustrados " +
+        "para niños en inglés y español. Uno de nuestros libros es un primer libro para " +
+        "colorear para niños de uno a tres años. Este sitio nació a partir de preguntas que " +
+        "los padres nos hacían con frecuencia: si un niño de un año es demasiado pequeño para " +
+        "empezar a colorear, por qué dibuja por encima de la imagen o qué hacer cuando la " +
+        "tinta del rotulador traspasa el papel.",
 
-      "Responder a eso como es debido ocupa más espacio del que permite la descripción de un " +
-      "producto, y las respuestas sirven igual compre alguien algo o no. Así que viven aquí, en su " +
-      "propio sitio, escritas con claridad y apoyadas en investigación publicada sobre el " +
-      "desarrollo, no en nuestra opinión.",
+      "Estas preguntas requieren más espacio del que permite la descripción de un libro, y " +
+        "las respuestas pueden ser útiles independientemente de que alguien compre nuestro " +
+        "libro o no. Por eso las hemos reunido en este sitio y hemos intentado explicarlas con " +
+        "claridad, basándonos en información publicada sobre el desarrollo infantil.",
 
-      "No somos médicos y nada de lo que hay aquí es consejo médico ni una evaluación de ningún " +
-      "niño concreto. Las edades que damos son rangos habituales tomados de hitos del desarrollo " +
-      "publicados, y las fuentes aparecen nombradas en cada página donde las usamos. Si tiene " +
-      "dudas sobre cómo se desarrolla su hijo, su pediatra es la persona indicada.",
+      "No somos médicos, por lo que la información de este sitio no constituye consejo " +
+        "médico ni una evaluación del desarrollo de un niño concreto. Los rangos de edad se " +
+        "basan en información publicada sobre hitos del desarrollo, y las fuentes se indican " +
+        "en las páginas donde se utilizan. Si algo le preocupa sobre el desarrollo de su hijo, " +
+        "consulte con su pediatra.",
 
-      "Presentamos un libro propio, y decimos claramente cuándo no le conviene a un niño. Un libro " +
-      "hecho para la primera etapa del dibujo aburrirá a un niño de cuatro años que ya se queda " +
-      "dentro de la línea, y decírselo a un padre nos cuesta una venta y nos gana un lector que vuelve.",
+      "En este sitio presentamos uno de nuestros propios libros y explicamos claramente " +
+        "cuándo puede dejar de ser adecuado para un niño. Si ya colorea dentro del contorno " +
+        "con facilidad y las páginas sencillas han dejado de interesarle, probablemente sea " +
+        "mejor elegir un libro más complejo.",
     ],
   },
 
@@ -662,16 +682,16 @@ export const guidesCopy: Record<ContentLang, SectionCopy> = {
     ],
   },
   es: {
-    title: "Guías para padres: la parte práctica de colorear con un niño pequeño",
+    title: "Guías para padres: consejos prácticos para colorear con niños pequeños",
     lead:
-      "Las preguntas que aparecen cuando el libro ya está sobre la mesa. Con qué dibujar, qué hacer " +
-      "con la suciedad, por qué el rotulador traspasa la hoja y cuánto tiempo aguanta ahí sentado " +
-      "de verdad un niño pequeño. Primero las respuestas cortas, el razonamiento debajo.",
+      "Preguntas que suelen surgir cuando el libro ya está sobre la mesa: qué materiales " +
+        "utilizar, cómo reducir el desorden, qué hacer si el rotulador traspasa el papel y " +
+        "cuánto tiempo suele dedicar un niño pequeño a una página. En cada guía encontrará " +
+        "primero una respuesta breve y después una explicación más detallada.",
     body: [
-      "Ninguna de estas es una pregunta sobre libros para colorear. Son preguntas sobre un niño " +
-      "concreto en una mesa concreta una tarde concreta, y por eso las descripciones de producto " +
-      "nunca las responden bien. Cada guía de abajo toma una de ellas y la responde entera, sin " +
-      "mandarle antes a leer otra cosa.",
+      "Estas preguntas no se refieren tanto al libro como a la actividad con un niño " +
+        "concreto. Por eso, una descripción de producto no suele ser suficiente. Cada guía se " +
+        "centra en una cuestión práctica y ofrece una explicación completa en un solo lugar.",
     ],
   },
   ru: {
@@ -740,40 +760,44 @@ export const termsCopy: Record<UiLang, SectionCopy> = {
     ],
   },
   es: {
-    title: "Uso de nuestros dibujos y qué hace este sitio con sus datos",
+    title: "Uso de nuestros dibujos y privacidad",
     lead:
-      "Versión corta: imprima nuestras hojas gratis cuanto quiera, en casa o en un aula, pero no " +
-      "las venda. No pedimos su correo, no ponemos cookies de publicidad, y ganamos una comisión " +
-      "cuando alguien compra nuestro libro a través de un enlace de aquí.",
+      "En resumen: puede imprimir nuestras páginas gratuitas tantas veces como necesite para " +
+        "utilizarlas en casa o con un grupo de niños, pero no puede venderlas. No pedimos su " +
+        "dirección de correo electrónico ni utilizamos cookies publicitarias. Algunos enlaces " +
+        "a Amazon son enlaces de afiliado, por lo que podemos recibir una comisión si realiza " +
+        "una compra a través de ellos.",
     body: [
-      "Los dibujos de este sitio son obra nuestra, hechos por ilustradores que contratamos, y " +
-      "tomados de libros que publicamos. Puede descargarlos e imprimirlos para los niños a su " +
-      "cargo: en casa, en un aula, en una guardería, en una biblioteca o en una sala de espera, en " +
-      "tantas copias como necesite. No hace falta permiso ni hace falta citarnos.",
+      "Todos los dibujos de este sitio han sido creados para nuestros libros por " +
+        "ilustradores con los que trabajamos. Puede descargarlos e imprimirlos gratuitamente " +
+        "para actividades con niños en casa, en un aula, una guardería, una biblioteca u otro " +
+        "entorno educativo, en tantas copias como necesite. Para este uso no es necesario " +
+        "pedir permiso ni citarnos.",
 
-      "Lo que no puede hacer es venderlos, ponerlos detrás de un muro de pago, ni reunirlos en una " +
-      "colección que distribuya como obra propia, sea gratis o de pago. Eso incluye subirlos a un " +
-      "servicio de impresión bajo demanda o a un sitio que vende recursos didácticos.",
+      "No está permitido vender estos dibujos, ofrecer acceso a ellos mediante pago, " +
+        "incluirlos en colecciones propias ni distribuirlos como si fueran un trabajo propio, " +
+        "ya sea de forma gratuita o de pago. Tampoco pueden subirse a servicios de impresión " +
+        "bajo demanda ni a plataformas de venta de materiales educativos.",
 
-      "Sobre los datos, la respuesta honesta es que hay muy poco que contar. Descargar una hoja no " +
-      "requiere cuenta, ni correo, ni formulario. No mostramos publicidad y no ponemos cookies " +
-      "publicitarias. Si más adelante añadimos estadísticas básicas de visitas, esta página lo " +
-      "dirá con claridad y nombrará la herramienta usada.",
+      "En cuanto a los datos, el sitio funciona de forma muy sencilla. Para descargar las " +
+        "páginas no es necesario crear una cuenta, proporcionar una dirección de correo " +
+        "electrónico ni rellenar formularios. No mostramos publicidad ni utilizamos cookies " +
+        "publicitarias. Si en el futuro añadimos un sistema de estadísticas de visitas, lo " +
+        "indicaremos aquí y especificaremos qué herramienta utilizamos.",
 
-      "Los enlaces a Amazon de este sitio son enlaces de afiliado, lo que significa que recibimos " +
-      "una comisión si usted compra a través de ellos. A usted no le cuesta nada más y el precio " +
-      "no cambia. Lo decimos en cada página donde aparece un enlace así, porque una recomendación " +
-      "vale menos cuando el lector no sabe cómo cobra quien recomienda.",
+      "Algunos enlaces a Amazon de este sitio son enlaces de afiliado. Si realiza una compra " +
+        "a través de uno de ellos, podemos recibir una comisión. El precio para usted no " +
+        "cambia. En las páginas que contienen estos enlaces lo indicamos expresamente.",
 
-      "El libro que presentamos aquí es nuestro, así que nuestro interés en que lo compre es " +
-      "directo y no por comisión. Precisamente por eso este sitio dice con claridad cuándo el " +
-      "libro no es la opción adecuada para un niño. Una recomendación que nunca dice que no, no es " +
-      "una recomendación.",
+      "El libro que presentamos en este sitio es nuestro, por lo que tenemos un interés " +
+        "directo en su venta. Precisamente por eso consideramos importante explicar con " +
+        "claridad también cuándo puede no ser adecuado para un niño. Una recomendación solo " +
+        "resulta útil si tiene en cuenta tanto las ventajas como las limitaciones.",
 
-      "Nada de lo que hay en este sitio es consejo médico ni una evaluación de ningún niño " +
-      "concreto. Los rangos de desarrollo que damos vienen de fuentes publicadas, nombradas en las " +
-      "páginas donde las usamos. Si tiene dudas sobre el desarrollo de su hijo, su pediatra es la " +
-      "persona indicada.",
+      "La información de este sitio no constituye consejo médico ni una evaluación del " +
+        "desarrollo de un niño concreto. Los rangos de edad se basan en fuentes publicadas, " +
+        "que se indican en las páginas correspondientes. Si algo le preocupa sobre el " +
+        "desarrollo de su hijo, consulte con su pediatra.",
     ],
   },
 

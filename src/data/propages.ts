@@ -110,63 +110,70 @@ export const proPages: ProPage[] = [
 
       es: {
         title:
-          "Un libro para colorear en español para terapia del habla e intervención temprana con niños pequeños",
+          "Un libro para colorear en español para logopedas y programas de intervención " +
+            "temprana",
         lead:
-          "111 dibujos, uno por página, con la palabra impresa debajo en español. Se vende en " +
-          "Amazon en español e inglés, y se puede pedir en cantidad para toda una lista de niños.",
+          "111 dibujos, uno por página, con la palabra en español debajo de cada imagen. El " +
+            "libro está disponible en Amazon en español e inglés, y se puede pedir la cantidad " +
+            "de ejemplares necesaria para todo el grupo.",
         body: [
-          "La edición en español es un libro aparte, no una traducción. Los dibujos son los mismos " +
-            "que en la edición inglesa y la palabra debajo de cada dibujo está en español, en " +
-            "letras huecas para que también se pueda colorear. En la página no hay nada más: un " +
-            "motivo, una palabra, contorno grueso y espacio en blanco alrededor.",
-          "Cada dibujo es un sustantivo corriente que un niño de esta edad se encuentra: animales, " +
-            "animales marinos, comida, juguetes, vehículos, flores, personajes de cuentos. Son 111 " +
-            "y no se repiten, así que el mismo libro acompaña a toda una lista de niños durante un " +
-            "año sin que salga dos veces la misma página.",
-          "La edición en papel está en Amazon a un precio que hace realista un ejemplar por niño, " +
-            "y allí se puede pedir cualquier cantidad. Si necesita un juego para toda su lista, o " +
-            "algo que un pedido normal no cubre, escríbanos. Diez hojas del libro se pueden " +
-            "imprimir gratis aquí, así ve el grosor del contorno y el tamaño de los dibujos antes " +
-            "de comprar nada.",
+          "La edición en español es una versión independiente del libro. Los dibujos son los " +
+            "mismos que en la edición inglesa, pero debajo de cada imagen aparece una palabra " +
+            "en español impresa con letras de contorno que también se pueden colorear. En cada " +
+            "página hay un solo dibujo, una palabra, un contorno grueso y espacio libre " +
+            "alrededor.",
+          "Cada página muestra algo familiar para un niño pequeño: animales, animales " +
+            "marinos, comida, juguetes, vehículos, flores y personajes de cuentos. En total " +
+            "hay 111 dibujos diferentes, sin repeticiones, por lo que el libro ofrece material " +
+            "para muchas sesiones.",
+          "La edición impresa se vende en Amazon, donde puede pedir la cantidad de " +
+            "ejemplares que necesite. Si necesita un pedido grande para un programa o tiene " +
+            "alguna necesidad especial, escríbanos. También puede imprimir gratis diez páginas " +
+            "del libro para comprobar de antemano el grosor del contorno y el tamaño de los " +
+            "dibujos.",
         ],
         fitTitle: "Qué hay en el libro",
         fit: [
-          "Un dibujo y una palabra por página, sin nada más que compita por la atención",
-          "La palabra en español en la edición española, en inglés en la inglesa",
-          "Contornos gruesos que aguantan el agarre de puño y los rotuladores de puntos",
+          "Un dibujo y una palabra por página, sin elementos innecesarios que distraigan la " +
+            "atención",
+          "La palabra aparece en español en la edición española y en inglés en la edición " +
+            "inglesa",
+          "Contornos gruesos, adecuados para las primeras etapas del coloreado y para " +
+            "rotuladores de puntos",
           "111 motivos distintos, sin repeticiones",
-          "Impreso por una sola cara, el rotulador no traspasa a la página siguiente",
+          "Impresión por una sola cara, para que el rotulador no estropee el dibujo siguiente",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
         faq: [
           {
             q: "¿La edición en español es una traducción de la inglesa?",
             a:
-              "No, es un libro aparte con su propio título. Los dibujos son los mismos y la palabra " +
-              "debajo de cada dibujo está en español, no es una palabra inglesa con una etiqueta " +
-              "añadida. Una familia que habla español recibe un libro en español.",
+              "No. Es una edición independiente con su propio título. Los dibujos son los " +
+                "mismos, pero debajo de cada uno aparece una palabra en español. Así, una " +
+                "familia hispanohablante recibe una versión completamente en español.",
           },
           {
             q: "¿Puedo comprar ejemplares para toda mi lista de niños?",
             a:
-              "Sí. La edición en papel está en Amazon en los dos idiomas y allí se puede pedir " +
-              "cualquier cantidad directamente. Para un juego más grande, o para algo que un pedido " +
-              "normal no cubre, escríbanos indicando para cuántos niños es.",
+              "Sí. La edición impresa está disponible en Amazon en ambos idiomas y allí " +
+                "puede pedir la cantidad de ejemplares que necesite. Si necesita un pedido " +
+                "grande para un programa, escríbanos e indique para cuántos niños sería.",
           },
           {
             q: "¿Puedo imprimir hojas en vez de comprar un ejemplar por niño?",
             a:
-              "Diez hojas del libro son gratis aquí y pueden imprimirse en cualquier cantidad para " +
-              "los niños con los que trabaja, incluidas copias para que las familias se las queden. " +
-              "El resto del libro no se puede copiar, y para eso están precisamente las hojas " +
-              "gratis.",
+              "Diez páginas del libro están disponibles aquí gratuitamente y pueden " +
+                "imprimirse en cualquier cantidad para los niños con los que trabaja, " +
+                "incluidas copias para entregar a las familias. El resto de las páginas del " +
+                "libro no se pueden copiar.",
           },
           {
-            q: "¿Para qué edad funciona el libro de verdad?",
+            q: "¿Para qué edad está pensado el libro?",
             a:
-              "Está hecho para niños de uno a tres años, y en la práctica sigue a la mano y no al " +
-              "cumpleaños. Tanto el niño que todavía garabatea por toda la hoja como el que ya " +
-              "apunta a la forma sacan algo de la misma página.",
+              "El libro está pensado para niños de uno a tres años, aunque conviene fijarse " +
+                "no solo en la edad, sino también en sus habilidades. Puede servir tanto a un " +
+                "niño que todavía hace trazos amplios por toda la hoja como a otro que ya " +
+                "intenta colorear el dibujo.",
           },
         ],
       },
@@ -305,63 +312,63 @@ export const proPages: ProPage[] = [
       },
 
       es: {
-        title: "Un libro para colorear que se queda en casa: programas de visitas al hogar",
+        title: "Un libro para colorear para programas de visitas al hogar",
         lead:
-          "Un libro en el idioma de la familia que se queda en el hogar. Ediciones en español e " +
-          "inglés en Amazon, cualquier cantidad, uno por familia de su lista.",
+          "Un libro en el idioma de la familia que puede quedarse en casa después de la " +
+            "visita. Las ediciones en español e inglés están disponibles en Amazon y se puede " +
+            "pedir un ejemplar para cada familia.",
         body: [
-          "El libro está en el idioma de la familia, no traducido a él. La edición en español es un " +
-            "libro propio con palabras en español debajo de los dibujos, así que lo que se queda en " +
-            "la casa después de la visita es un libro en español y no uno en inglés con una " +
-            "pegatina en la portada.",
-          "No necesita nada para funcionar: ni impresora, ni tijeras, ni preparación, ni materiales " +
-            "que la familia quizá no tenga. Un crayón y la hoja. La palabra debajo de cada dibujo " +
-            "está en letras huecas y también se colorea, lo que da al adulto y al niño algo que " +
-            "hacer con la misma página.",
-          "La edición en papel está en Amazon en los dos idiomas y allí se puede pedir cualquier " +
-            "cantidad, así que un ejemplar por familia de una lista es un solo pedido. Si el pedido " +
-            "es para un programa entero y no para una sola persona, escríbanos. Diez hojas se " +
-            "pueden imprimir gratis aquí, en cualquier cantidad, incluidas copias para que las " +
-            "familias se las queden.",
+          "La edición en español es una versión independiente del libro, con palabras en " +
+            "español debajo de los dibujos. Así, después de la visita, una familia " +
+            "hispanohablante puede quedarse con un libro completamente en su idioma.",
+          "No hace falta impresora, tijeras ni preparación previa. Basta con el libro y unos " +
+            "crayones o lápices. La palabra debajo de cada dibujo está impresa con letras de " +
+            "contorno que también se pueden colorear, de modo que una misma página permite " +
+            "mirar la imagen, nombrarla y colorearla juntos.",
+          "La edición impresa está disponible en Amazon en ambos idiomas y allí puede pedir " +
+            "la cantidad de ejemplares necesaria para las familias. Si el pedido es para todo " +
+            "un programa, escríbanos. Las diez páginas gratuitas pueden imprimirse en " +
+            "cualquier cantidad y entregarse a las familias después de la visita.",
         ],
         fitTitle: "Qué hay en el libro",
         fit: [
-          "El idioma de la familia, en un libro propio y no en una traducción",
-          "111 dibujos, uno por página, sin preparación y sin materiales especiales",
+          "Ediciones independientes en español e inglés",
+          "111 dibujos, uno por página, sin preparación previa ni materiales especiales",
           "La palabra debajo de cada dibujo, en letras huecas que se colorean",
           "Contornos gruesos, dibujos grandes, impresión por una sola cara",
-          "Lo bastante ligero para llevar varios ejemplares en el bolso",
+          "El libro es fácil de llevar a las visitas al hogar",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
         faq: [
           {
             q: "¿Puedo pedir un ejemplar para cada familia de mi lista?",
             a:
-              "Sí, la edición en papel está en Amazon en español e inglés y allí se puede pedir " +
-              "cualquier cantidad directamente. Si el pedido es para un programa entero y no para " +
-              "una lista, escríbanos indicando a cuántas familias cubre.",
+              "Sí. La edición impresa está disponible en Amazon en español e inglés y allí " +
+                "puede pedir la cantidad de ejemplares que necesite. Si necesita libros para " +
+                "todo un programa, escríbanos e indique el número de familias.",
           },
           {
             q: "¿Puedo imprimir hojas para repartir durante las visitas?",
             a:
-              "Sí. Diez hojas del libro son gratis aquí y pueden imprimirse en cualquier cantidad " +
-              "para los niños con los que trabaja, y entregarse a las familias para que se las " +
-              "queden. No pueden venderse ni reunirse en una colección que se distribuya como obra " +
-              "de otra persona.",
+              "Sí. Diez páginas del libro están disponibles aquí gratuitamente y pueden " +
+                "imprimirse en cualquier cantidad para los niños con los que trabaja y " +
+                "entregarse después a las familias. No está permitido vender estos materiales " +
+                "ni distribuirlos como una colección propia.",
           },
           {
             q: "¿La familia necesita algo además del libro?",
             a:
-              "Un crayón o un lápiz. Las páginas están impresas por una cara, así que un rotulador " +
-              "que traspase marca un dorso en blanco y no el dibujo siguiente. No hay que recortar, " +
-              "imprimir ni preparar nada de antemano.",
+              "Solo hace falta un crayón, un lápiz o un rotulador. Las páginas están " +
+                "impresas por una sola cara, por lo que, si la tinta traspasa el papel, " +
+                "llegará al reverso en blanco y no al dibujo siguiente. No es necesario " +
+                "recortar, imprimir ni preparar nada de antemano.",
           },
           {
             q: "¿Existe una edición en ruso?",
             a:
-              "La edición en ruso existe como archivo imprimible y no en papel, porque Amazon no " +
-              "imprime libros en ruso. Si trabaja con familias rusohablantes y la necesita, " +
-              "escríbanos.",
+              "La edición en ruso está disponible como archivo para imprimir, no como libro " +
+                "impreso. Si trabaja con familias rusohablantes y necesita esta versión, " +
+                "escríbanos.",
           },
         ],
       },
@@ -498,30 +505,33 @@ export const proPages: ProPage[] = [
       },
 
       es: {
-        title: "El mismo libro para toda la sala: grupos de padres y bibliotecas",
+        title: "Un mismo libro para todo el grupo: grupos de padres y bibliotecas",
         lead:
-          "Un título, quince ejemplares, un idioma para toda la sala. Ediciones en español e " +
-          "inglés en Amazon, y diez hojas gratis para imprimir para una sesión o un reparto.",
+          "Ejemplares iguales para todo el grupo, en español o en inglés. Las ediciones " +
+            "impresas están disponibles en Amazon y diez páginas del libro pueden imprimirse " +
+            "gratuitamente para una sesión o para repartir entre los participantes.",
         body: [
-          "Cuando el adulto y el niño se sientan a la misma mesa, una hoja tiene que darles algo a " +
-            "los dos. Aquí el dibujo es para el niño y la palabra de debajo es para el adulto, en " +
-            "letras huecas para colorearla además de leerla. En la edición en español esa palabra " +
-            "está en español, y en la inglesa en inglés.",
-          "Quince ejemplares iguales son fáciles de manejar: todos están literalmente en la misma " +
-            "página y nadie se queda comparando con otro libro. Hay 111 dibujos y no se repiten, " +
-            "así que un grupo puede reunirse todo un año sin repetir motivo.",
-          "La edición en papel está en Amazon en los dos idiomas y allí se puede pedir cualquier " +
-            "cantidad. Para un juego para una serie de sesiones, o un reparto mayor de lo que cubre " +
-            "un pedido normal, escríbanos indicando para cuántas personas es. Diez hojas se " +
-            "imprimen gratis aquí en cualquier cantidad, lo que cubre una sesión suelta o un " +
-            "reparto en la puerta.",
+          "Cuando el adulto y el niño se sientan juntos a la mesa, una misma página puede " +
+            "convertirse en una actividad compartida. El niño colorea el dibujo y el adulto " +
+            "lee la palabra que aparece debajo y nombra la imagen. La palabra está impresa con " +
+            "letras de contorno, por lo que también se puede colorear. En la edición española " +
+            "aparece en español y en la inglesa, en inglés.",
+          "Tener ejemplares iguales facilita las actividades en grupo, porque todos pueden " +
+            "trabajar con la misma página. El libro contiene 111 dibujos diferentes, sin " +
+            "repeticiones, por lo que ofrece material para muchas sesiones.",
+          "La edición impresa está disponible en Amazon en ambos idiomas y allí puede pedir " +
+            "la cantidad de ejemplares que necesite. Si necesita un pedido grande para una " +
+            "serie de sesiones o un programa, escríbanos e indique el número de participantes. " +
+            "Las diez páginas gratuitas pueden imprimirse en cualquier cantidad para " +
+            "utilizarlas en actividades o repartirlas.",
         ],
         fitTitle: "Qué hay en el libro",
         fit: [
           "La palabra debajo de cada dibujo, para leerla en voz alta además de colorearla",
-          "Un dibujo por página, para que una sala de edades mezcladas use la misma hoja",
-          "111 motivos, sin repeticiones a lo largo de un año de sesiones",
-          "Ediciones separadas en español e inglés, cada una con sus palabras",
+          "Un dibujo grande por página, adecuado para niños con distintos niveles de habilidad",
+          "111 dibujos diferentes, sin repeticiones",
+          "Ediciones independientes en español e inglés, con las palabras en el idioma " +
+            "correspondiente",
           "Contornos gruesos y dibujos grandes, impresión por una sola cara",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
@@ -529,29 +539,33 @@ export const proPages: ProPage[] = [
           {
             q: "¿Puedo comprar quince ejemplares para un grupo?",
             a:
-              "Sí, la edición en papel está en Amazon en español e inglés y allí se puede pedir " +
-              "cualquier cantidad directamente. Si necesita más de lo que cubre un pedido normal, o " +
-              "un juego para una serie de sesiones, escríbanos indicando para cuántas personas es.",
+              "Sí. La edición impresa está disponible en Amazon en español e inglés y allí " +
+                "puede pedir la cantidad de ejemplares que necesite. Si necesita un pedido " +
+                "grande para una serie de sesiones, escríbanos e indique el número de " +
+                "participantes.",
           },
           {
             q: "¿Puedo imprimir hojas para una sesión o para repartir en la puerta?",
             a:
-              "Sí, en cualquier cantidad, y no hace falta permiso ni mención. Diez hojas del libro " +
-              "son gratis aquí en tamaño Carta y A4. No pueden venderse, ponerse detrás de un pago " +
-              "ni reunirse en una colección que se distribuya como obra de otra persona.",
+              "Sí. Las diez páginas gratuitas pueden imprimirse en cualquier cantidad y no " +
+                "es necesario pedir permiso ni citarnos. Están disponibles en formatos US " +
+                "Letter y A4. No está permitido venderlas, ofrecer acceso a ellas mediante " +
+                "pago ni distribuirlas como una colección propia.",
           },
           {
             q: "¿Las ediciones en español y en inglés tienen los mismos dibujos?",
             a:
-              "Sí. Los dibujos son idénticos y solo cambia la palabra de debajo, lo que permite que " +
-              "una sala bilingüe use las dos ediciones a la vez sobre el mismo motivo.",
+              "Sí. Los dibujos son los mismos en ambas ediciones; solo cambia la palabra que " +
+                "aparece debajo. Por eso, en un grupo bilingüe se pueden utilizar al mismo " +
+                "tiempo las ediciones en español e inglés trabajando con el mismo dibujo.",
           },
           {
             q: "¿Para qué edades sirve en un grupo mezclado?",
             a:
-              "De uno a tres años, y las hojas aguantan ese rango porque cada dibujo es grande y " +
-              "simple. Un niño que garabatea y otro que ya apunta a la forma pueden trabajar en la " +
-              "misma página sin que ninguno se pierda.",
+              "El libro está pensado para niños de uno a tres años. Los dibujos grandes y " +
+                "sencillos permiten utilizar las mismas páginas con niños que se encuentran en " +
+                "etapas diferentes: desde quienes todavía hacen trazos amplios por toda la " +
+                "hoja hasta quienes ya intentan colorear dentro de la forma.",
           },
         ],
       },
@@ -694,64 +708,69 @@ export const proPages: ProPage[] = [
       },
 
       es: {
-        title: "Libros para colorear para una sala de niños pequeños: guarderías y cuidado infantil familiar",
+        title: "Libros para colorear para guarderías y centros de cuidado infantil",
         lead:
-          "Un libro por niño o uno para la estantería, en español o en inglés. 111 dibujos, " +
-          "impresión por una cara, cualquier cantidad en Amazon.",
+          "Un ejemplar para cada niño o uno para el grupo, en español o en inglés. 111 " +
+            "dibujos, impresión por una sola cara y la posibilidad de pedir en Amazon la " +
+            "cantidad de ejemplares que necesite.",
         body: [
-          "Una sala de niños pequeños tiene tantos niveles como niños, y la misma hoja tiene que " +
-            "servir para todos. Por eso cada dibujo de aquí es grande, simple y está solo en la " +
-            "página: el niño que todavía garabatea la cubre entera, el que ya apunta rellena las " +
-            "partes de dentro, y ninguno de los dos lo está haciendo mal.",
-          "La impresión por una cara importa en una sala más que en ningún sitio. El rotulador " +
-            "traspasa el papel corriente y en una hoja impresa por los dos lados arruina el dibujo " +
-            "de debajo. Aquí marca un dorso en blanco. La palabra impresa debajo de cada dibujo " +
-            "está en letras huecas y se colorea, y en la edición en español es una palabra española " +
-            "y no una traducida.",
-          "La edición en papel está en Amazon en los dos idiomas y se puede pedir cualquier " +
-            "cantidad, sea un ejemplar para la estantería o uno para cada niño. Para un juego que " +
-            "cubra varias salas, escríbanos indicando para cuántos niños es. Diez hojas se imprimen " +
-            "gratis aquí en cualquier cantidad, suficiente para ver si estas páginas encajan en su " +
-            "sala antes de pedir nada.",
+          "En un grupo de niños pequeños puede haber distintos niveles de habilidad. Por " +
+            "eso, cada dibujo del libro es grande, sencillo y ocupa una página independiente. " +
+            "El niño que todavía hace trazos amplios puede trabajar libremente sobre ella, " +
+            "mientras que quien ya controla mejor la mano puede intentar colorear las " +
+            "distintas zonas.",
+          "La impresión por una sola cara resulta especialmente práctica en actividades de " +
+            "grupo. La tinta de un rotulador puede traspasar el papel corriente, pero en este " +
+            "libro llegará al reverso en blanco y no estropeará el dibujo siguiente. La " +
+            "palabra debajo de cada imagen está impresa con letras de contorno y también se " +
+            "puede colorear. En la edición española, todas las palabras están en español.",
+          "La edición impresa está disponible en Amazon en ambos idiomas. Puede pedir un " +
+            "ejemplar para el grupo o uno para cada niño. Si necesita un pedido grande para " +
+            "varias salas o grupos, escríbanos e indique el número de niños. También puede " +
+            "imprimir diez páginas gratuitas para comprobar de antemano si este tipo de dibujo " +
+            "es adecuado para su grupo.",
         ],
         fitTitle: "Qué hay en el libro",
         fit: [
-          "Dibujos grandes y simples que sirven para los distintos niveles de una sala",
+          "Dibujos grandes y sencillos para niños con distintos niveles de habilidad dentro " +
+            "de un mismo grupo",
           "Un dibujo por página, impresión por una sola cara",
-          "111 motivos distintos, suficientes para un año sin repetir",
-          "La palabra debajo de cada dibujo, en español en la edición española",
-          "Contornos gruesos que aguantan el agarre de puño",
+          "111 dibujos diferentes, sin repeticiones",
+          "Una palabra debajo de cada dibujo, en español en la edición española",
+          "Contornos gruesos y fáciles de ver",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
         faq: [
           {
             q: "¿Puedo pedir un ejemplar para cada niño de la sala?",
             a:
-              "Sí. La edición en papel está en Amazon en español e inglés y allí se puede pedir " +
-              "cualquier cantidad directamente. Para un juego que cubra varias salas o un centro " +
-              "entero, escríbanos indicando para cuántos niños es.",
+              "Sí. La edición impresa está disponible en Amazon en español e inglés y allí " +
+                "puede pedir la cantidad de ejemplares que necesite. Si necesita un pedido " +
+                "grande para varias salas o para todo el centro, escríbanos e indique el " +
+                "número de niños.",
           },
           {
             q: "¿Puedo fotocopiar páginas del libro para la sala?",
             a:
-              "No, pero no hace falta. Diez hojas del libro son gratis aquí y pueden imprimirse en " +
-              "cualquier cantidad para los niños a su cargo, incluidas copias para mandar a casa " +
-              "con las familias.",
+              "Las páginas del libro no se pueden fotocopiar. Para actividades de grupo " +
+                "hemos preparado diez páginas gratuitas que pueden imprimirse en cualquier " +
+                "cantidad y, si lo desea, entregarse a los niños para llevar a casa.",
           },
           {
             q: "¿El rotulador traspasa la página?",
             a:
-              "Traspasa el papel corriente, como en cualquier libro de este precio. Las páginas de " +
-              "aquí están impresas por una sola cara, así que lo que marca es un dorso en blanco y " +
-              "no el dibujo siguiente. Una hoja suelta debajo lo detiene del todo.",
+              "La tinta de los rotuladores puede traspasar el papel corriente. Como el libro " +
+                "está impreso por una sola cara, llegará al reverso en blanco y no estropeará " +
+                "el dibujo siguiente. Colocar una hoja de papel o un cartón debajo de la " +
+                "página también ayuda a proteger la superficie.",
           },
           {
             q: "¿Resulta demasiado fácil para los mayores de una sala mezclada?",
             a:
-              "Pasados los tres años y medio la mayoría encuentra estas hojas fáciles, y la señal " +
-              "es el aburrimiento y no la pulcritud. A esos niños les conviene más una escena con " +
-              "más zonas que rellenar o un libro de dibujo paso a paso, y se lo diremos en vez de " +
-              "venderle lo que no encaja.",
+              "A partir de los tres años y medio, aproximadamente, estas páginas pueden " +
+                "empezar a resultar demasiado sencillas para muchos niños. La principal señal " +
+                "es que pierden el interés. En ese caso, suele ser mejor elegir un libro con " +
+                "dibujos más complejos o uno de dibujo paso a paso.",
           },
         ],
       },
@@ -869,21 +888,22 @@ export const proLabels: Record<ContentLang, ProLabels> = {
   es: {
     listTitle: "Comprar para el trabajo",
     listLead:
-      "Cuatro páginas sobre qué es el libro, cuánto cuesta, cómo conseguir muchos ejemplares y qué " +
-      "puede imprimir, escritas para el tipo de trabajo que hace.",
+      "Cuatro páginas sobre el libro, su precio, los pedidos de varios ejemplares y las " +
+        "condiciones para imprimir los materiales gratuitos, pensadas para distintos tipos de " +
+        "trabajo con niños.",
     buyTitle: "El libro",
     buyLead:
-      "Edición en papel, vendida y enviada por Amazon en inglés y en español. Allí se puede pedir " +
-      "cualquier cantidad directamente.",
-    bulkTitle: "Más ejemplares de los que cubre un pedido normal",
+      "Las ediciones impresas en español e inglés se venden y se envían a través de Amazon. " +
+        "Allí puede pedir directamente la cantidad de ejemplares que necesite.",
+    bulkTitle: "Si necesita más ejemplares de los que puede pedir de la forma habitual",
     bulkLead:
       "Escríbanos indicando qué necesita y para cuántos niños. Respondemos en español, inglés y " +
       "ruso.",
     bulkCta: "Escríbanos",
     sampleTitle: "Véalo antes de pedir",
     sampleLead:
-      "Diez hojas del libro, gratis, en tamaño Carta y A4. Imprima una y el grosor del contorno y " +
-      "el tamaño del dibujo responden a la pregunta más rápido que cualquier descripción.",
+      "Diez páginas del libro disponibles gratuitamente en formatos US Letter y A4. Imprima " +
+        "una para comprobar de antemano el grosor del contorno y el tamaño del dibujo.",
     otherPages: "Otros tipos de trabajo",
     backToSection: "Todo en una página",
   },

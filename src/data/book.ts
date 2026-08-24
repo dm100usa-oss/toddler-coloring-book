@@ -81,7 +81,7 @@ export const BOOK = {
       file: "/art/simple.png",
       alt: {
         en: "Simple: an outline turtle drawn with thick lines, one object on the page",
-        es: "Simples: una tortuga de contorno grueso, un solo objeto en la página",
+        es: "Simples: una tortuga con contorno grueso y un solo dibujo en la página",
         ru: "Просто: черепаха с толстым контуром, один рисунок на странице",
       },
     },
@@ -89,7 +89,7 @@ export const BOOK = {
       file: "/art/big.png",
       alt: {
         en: "Big: a cow drawing filling the page, colored in by a small child",
-        es: "Grandes: una vaca que llena la hoja, coloreada por un niño pequeño",
+        es: "Grandes: una vaca que ocupa casi toda la hoja, coloreada por un niño pequeño",
         ru: "Крупно: корова почти во весь лист, раскрашенная маленьким ребенком",
       },
     },
@@ -97,7 +97,7 @@ export const BOOK = {
       file: "/art/cute.png",
       alt: {
         en: "Recognizable: a smiling red car, one of the everyday objects in the book",
-        es: "Reconocibles: un coche rojo sonriente, uno de los objetos cotidianos del libro",
+        es: "Reconocibles: un coche rojo sonriente, uno de los dibujos del libro",
         ru: "Узнаваемо: улыбающаяся красная машина, один из рисунков книги",
       },
     },
@@ -226,7 +226,8 @@ export const editions: Record<UiLang, Edition> = {
     title: "El Primer Libro de Colorear para Bebés de 1 a 3 Años",
     subtitle: "111 dibujos grandes y simples, uno por página",
     headline:
-      "111 dibujos grandes y simples de línea gruesa, uno por página, para niños de 1 a 3 años.",
+      "111 dibujos grandes y simples con líneas gruesas, uno por página, para bebés de 1 a 3 " +
+        "años.",
     asin: "1963328205",
     price: "$6.99",
     published: "2024-04-29",
@@ -236,91 +237,106 @@ export const editions: Record<UiLang, Edition> = {
     rating: { value: 4.9, count: 26 },
     slug: "primer-libro-para-colorear-bebes-1-3-anos",
     lead:
-      "111 dibujos simples y grandes, dibujados a mano con líneas gruesas, sin detalles pequeños y " +
-      "con un dibujo por página. Animales, personajes de cuento, flores, comidas y objetos " +
-      "cotidianos hacen que cada página sea nueva. La palabra debajo de cada dibujo también se " +
-      "puede colorear, y así llegan las primeras palabras y letras.",
+      "111 dibujos grandes y simples, hechos a mano con líneas gruesas, sin detalles " +
+        "pequeños y con un solo dibujo por página. Animales, personajes de cuentos, flores, " +
+        "comida y objetos cotidianos: en cada página hay algo nuevo para colorear. La palabra " +
+        "debajo de cada dibujo también se puede colorear, para que el niño empiece a " +
+        "familiarizarse con las palabras y las letras.",
     note:
-      "La palabra debajo de cada dibujo también se puede colorear, y así llegan las primeras " +
-      "palabras y letras.",
+      "La palabra debajo de cada dibujo también se puede colorear, para que el niño empiece " +
+        "a familiarizarse con las palabras y las letras.",
     needs: [
       "Dibujos grandes y simples, hechos a mano",
-      "Contornos gruesos que el niño ve de verdad",
+      "Contornos gruesos y bien definidos",
       "Un dibujo por página, impreso por una sola cara",
       "111 dibujos distintos sobre temas conocidos e interesantes",
-      "El niño colorea y aprende palabras nuevas a la vez",
+      "El niño colorea y, al mismo tiempo, descubre y aprende palabras nuevas",
     ],
     extras: [
-      "Desarrolla las habilidades creativas, la motricidad fina y la concentración",
-      "Mantiene al pequeño ocupado durante mucho tiempo y le brinda momentos felices",
-      "Es útil para niños en edad preescolar y de educación infantil",
-      "Es el regalo perfecto para cumpleaños, celebraciones y cualquier evento importante",
-      "La palabra debajo de cada dibujo también se puede colorear, y así llegan las primeras palabras y letras",
+      "Ayuda a desarrollar la motricidad fina, la creatividad y la atención",
+      "Entretiene al pequeño durante mucho tiempo y convierte el momento de colorear en una " +
+        "actividad agradable",
+      "Adecuado tanto para casa como para preescolar y guardería",
+      "Una buena opción como regalo de cumpleaños o para otra ocasión especial",
+      "La palabra debajo de cada dibujo también se puede colorear, para que el niño empiece " +
+        "a familiarizarse con las letras",
     ],
     inside: [
       "111 dibujos, todos hechos a mano por ilustradores profesionales",
-      "Líneas gruesas y formas grandes, para que un niño que aún no apunta vea igualmente un resultado",
-      "Un dibujo por página, impreso por una cara, para que el rotulador no traspase al siguiente",
-      "La palabra debajo de cada dibujo también se puede colorear, y así colorear se convierte en primera lectura",
-      "Cada dibujo está en el centro de la página, cómodo tanto para zurdos como para diestros",
+      "Líneas gruesas y formas grandes: aunque el niño todavía se salga con frecuencia del " +
+        "contorno, le resultará cómodo colorear",
+      "Un dibujo por página e impresión por una sola cara, para que el rotulador no estropee " +
+        "el dibujo siguiente",
+      "La palabra debajo de cada dibujo también se puede colorear, para que el niño empiece " +
+        "a familiarizarse con las letras y las palabras",
+      "Cada dibujo está centrado en la página, para que resulte cómodo tanto a niños zurdos " +
+        "como diestros",
       "Animales, animales marinos, personajes de cuentos, vehículos, flores y comida",
-      "Una página al principio donde el niño escribe su nombre",
+      "Una página al principio del libro donde el niño puede escribir su nombre",
       "114 páginas, 21,6 x 27,9 cm",
     ],
     forWhom:
-      "Hecho para la etapa que va desde la primera marca intencionada hasta la primera forma " +
-      "coloreada a propósito, que en la mayoría de los niños cae entre uno y tres años. Sirve como " +
-      "primer libro para colorear en casa, en preescolar y guardería, donde un solo libro " +
-      "entretiene a todo el grupo, y como regalo de cumpleaños o de fiesta cuando no se conoce " +
-      "bien al niño.",
+      "El libro está pensado para niños que empiezan a dibujar y a colorear formas sencillas " +
+        "de manera intencionada. Por lo general, esta etapa corresponde a edades de uno a tres " +
+        "años. Puede ser su primer libro para colorear en casa, en preescolar o en la " +
+        "guardería, y también es una buena opción como regalo de cumpleaños o para otra " +
+        "ocasión, incluso si no conoce muy bien al niño.",
     notFor:
-      "Si su hijo ya se queda dentro de la línea sin esfuerzo y termina una página en pocos " +
-      "minutos, este libro le aburrirá. En ese punto conviene buscar una escena con más zonas que " +
-      "rellenar, o un libro de dibujo paso a paso donde el niño construya la imagen él mismo.",
+      "Si su hijo ya colorea dentro del contorno con facilidad y termina una página en pocos " +
+        "minutos, este libro puede resultarle demasiado sencillo. En ese caso, conviene elegir " +
+        "un libro con dibujos más detallados o uno de dibujo paso a paso, donde el niño cree " +
+        "la imagen por sí mismo.",
     faq: [
       {
         q: "¿Es demasiado difícil para un niño de 1 año?",
         a:
-          "No. Los dibujos se hicieron deliberadamente simples para el extremo más pequeño del " +
-          "rango. Un niño de un año garabateará por encima de la forma, uno de tres empezará a " +
-          "quedarse dentro. El mismo libro acompaña los tres años, y esa es justamente la idea.",
+          "No. Los dibujos se han hecho deliberadamente simples para los más pequeños. Un " +
+            "niño de un año puede limitarse a pasar el crayón por el dibujo y salirse del " +
+            "contorno, mientras que cerca de los tres años ya empezará a intentar colorear " +
+            "dentro de la forma. Por eso, el mismo libro puede acompañar distintas etapas de " +
+            "aprendizaje.",
       },
       {
         q: "¿Qué grosor tiene el papel?",
         a:
-          "Es papel de libro corriente, impreso por Amazon, y algunos padres habrían preferido algo " +
-          "más grueso. El libro está pensado con eso en cuenta: cada dibujo ocupa su propia página " +
-          "con el reverso en blanco, así que un rotulador que traspase marca una hoja vacía y no un " +
-          "segundo dibujo. Una hoja suelta debajo lo resuelve del todo.",
+          "Es papel de libro corriente, impreso por Amazon, y algunos padres preferirían que " +
+            "fuera más grueso. Por eso, cada dibujo está impreso en una sola cara y el reverso " +
+            "queda en blanco: si el rotulador traspasa el papel, manchará una página vacía y " +
+            "no el dibujo siguiente. Colocar una hoja suelta debajo ofrece una protección " +
+            "adicional.",
       },
       {
         q: "¿Crayones, rotuladores o lápices de colores?",
         a:
-          "Crayones gruesos al principio. No exigen fuerza en la mano, no rompen la hoja y dejan una " +
-          "marca ancha que el niño ve de verdad. Los rotuladores dan más color pero traspasan el " +
-          "papel. Los lápices de colores piden un agarre con los dedos que la mayoría no tiene antes " +
-          "de los tres años.",
+          "Para empezar, lo mejor son los crayones gruesos. Son fáciles de sujetar con una " +
+            "mano pequeña, dejan una marca visible sin necesidad de presionar mucho y no " +
+            "suelen dañar el papel. Los rotuladores dan un color más intenso, pero pueden " +
+            "traspasar la hoja. Los lápices de colores requieren un agarre más preciso y " +
+            "suelen resultar más difíciles para los niños pequeños.",
       },
       {
         q: "¿Sirve para preescolar o guardería?",
         a:
-          "Sí, y es uno de los sitios donde mejor funciona. Cada dibujo ocupa su propia página, " +
-          "así que se puede arrancar una hoja y dársela a un niño, y un solo libro entretiene a " +
-          "todo el grupo. Los motivos son cosas corrientes que el niño sabe nombrar, y por eso " +
-          "las maestras los usan también para las primeras palabras.",
+          "Sí. El libro funciona bien para actividades en preescolar o guardería. Cada " +
+            "dibujo ocupa una página independiente, por lo que se puede trabajar con una " +
+            "página concreta con cada niño. Los dibujos representan animales, objetos y otros " +
+            "elementos familiares, de modo que también pueden utilizarse para aprender y " +
+            "practicar palabras nuevas.",
       },
       {
         q: "¿Va bien como regalo?",
         a:
-          "Sí, y es un regalo seguro cuando no se conoce bien al niño. El rango es amplio, de uno " +
-          "a tres años, así que el libro no deja de servir al mes siguiente. Cuesta menos que la " +
-          "mayoría de los juguetes y ocupa al niño durante mucho tiempo, no una sola tarde.",
+          "Sí. Es una buena opción como regalo incluso si no conoce muy bien al niño. Está " +
+            "pensado para un periodo amplio, de uno a tres años, por lo que puede seguir " +
+            "utilizándolo a medida que desarrolla nuevas habilidades. Es un regalo sencillo y " +
+            "útil que puede entretener al pequeño durante mucho tiempo.",
       },
       {
         q: "¿Hay edición en inglés?",
         a:
-          "Sí. Los mismos 111 dibujos con las palabras en inglés debajo. Es un libro aparte, no " +
-          "bilingüe, para que la página no se recargue.",
+          "Sí. Son los mismos 111 dibujos, pero con las palabras en inglés debajo. Es una " +
+            "edición independiente, no bilingüe, para que las páginas sigan siendo sencillas y " +
+            "no estén sobrecargadas.",
       },
     ],
     video: {

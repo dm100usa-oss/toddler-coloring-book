@@ -44,7 +44,7 @@ export const stages: Stage[] = [
     slug: { en: "first-marks", es: "primeras-marcas", ru: "pervye-cherty" },
     ageLabel: {
       en: "about 12 to 18 months",
-      es: "unos 12 a 18 meses",
+      es: "aproximadamente de 12 a 18 meses",
       ru: "примерно от 12 до 18 месяцев",
     },
     title: { en: "First marks", es: "Primeras marcas", ru: "Первые черты" },
@@ -55,9 +55,9 @@ export const stages: Stage[] = [
         "Moves from the shoulder and elbow, so the marks are long and sweeping",
       ],
       es: [
-        "Agarra el crayón con el puño y hace marcas en el papel a propósito",
-        "Entiende que mover la mano deja rastro, y lo repite para verlo otra vez",
-        "Mueve el hombro y el codo, así que las marcas son largas y amplias",
+        "Sujeta el crayón con toda la mano y deja marcas en el papel de forma intencionada",
+        "Comprende que al mover la mano deja un trazo en el papel y repite el movimiento",
+        "Mueve principalmente el hombro y el codo, por eso los trazos son largos y amplios",
       ],
       ru: [
         "Держит мелок всей ладонью и уже осознанно оставляет следы на бумаге",
@@ -71,8 +71,9 @@ export const stages: Stage[] = [
         "Aiming at anything is still ahead. The page is the target, not the drawing on it, and " +
         "that is exactly what this stage is for.",
       es:
-        "Apuntar a algo todavía está por venir. El objetivo es la hoja, no el dibujo que hay en " +
-        "ella, y para eso sirve precisamente esta etapa.",
+        "Todavía no sabe dirigir los trazos hacia el dibujo con precisión. En esta etapa, lo " +
+          "importante es la hoja y la posibilidad de dejar marcas en ella, no los límites de " +
+          "la imagen.",
       ru:
         "Точно попадать по рисунку ребенок пока не умеет. Для него важен сам лист и " +
           "возможность оставлять на нем следы, а не границы картинки.",
@@ -85,10 +86,14 @@ export const stages: Stage[] = [
         "Subjects the child can already name out loud: a ball, a cat, an apple",
       ],
       es: [
-        "Contornos muy gruesos. Una línea fina desaparece bajo el puño y el niño no ve que pase nada",
-        "Una sola forma grande que llene la hoja, para que cualquier marca caiga donde cuenta",
-        "Papel resistente, porque en esta etapa el crayón aprieta fuerte y a veces rompe",
-        "Motivos que el niño ya sepa nombrar en voz alta: una pelota, un gato, una manzana",
+        "Contornos muy gruesos y fáciles de ver. Una línea fina puede quedar oculta bajo los " +
+          "trazos anchos del crayón.",
+        "Una sola forma grande que ocupe casi toda la hoja, para que al niño le resulte más " +
+          "fácil hacer los trazos sobre el dibujo",
+        "Papel suficientemente resistente: los niños pequeños suelen presionar con fuerza el " +
+          "crayón y una hoja fina puede romperse",
+        "Objetos y animales familiares que el adulto pueda nombrar con el niño: una pelota, " +
+          "un gato, una manzana",
       ],
       ru: [
         "Очень толстый и хорошо заметный контур. Тонкую линию малышу сложнее увидеть под " +
@@ -112,12 +117,12 @@ export const stages: Stage[] = [
     },
     ageLabel: {
       en: "about 18 months to 2 years",
-      es: "de unos 18 meses a 2 años",
+      es: "aproximadamente de 18 meses a 2 años",
       ru: "примерно от 18 месяцев до 2 лет",
     },
     title: {
       en: "Controlled scribbling",
-      es: "Garabato con control",
+      es: "Garabatos más controlados",
       ru: "Осознанные каракули",
     },
     can: {
@@ -128,10 +133,11 @@ export const stages: Stage[] = [
         "Keeps most of the marks somewhere on the drawing rather than all over the table",
       ],
       es: [
-        "Garabatea sin que se lo enseñen antes, y puede imitar una línea que dibuja otra persona",
-        "Hace marcas redondas en bucle y trazos de arriba abajo a propósito",
+        "Empieza a dibujar por iniciativa propia, sin que un adulto tenga que mostrarle " +
+          "cómo, y puede intentar imitar una línea sencilla",
+        "Hace de forma intencionada trazos redondeados, bucles y líneas de arriba abajo",
         "Pasa las páginas de un libro de una en una",
-        "Deja la mayoría de las marcas sobre el dibujo y no por toda la mesa",
+        "La mayoría de los trazos ya caen sobre el dibujo",
       ],
       ru: [
         "Начинает рисовать самостоятельно, без показа взрослого, и может попытаться " +
@@ -146,8 +152,8 @@ export const stages: Stage[] = [
         "Staying inside a line is still out of reach, and asking for it now is the fastest way to " +
         "make a child put the crayon down.",
       es:
-        "Quedarse dentro de la línea todavía no está a su alcance, y exigirlo ahora es la manera " +
-        "más rápida de que el niño suelte el crayón.",
+        "Todavía le resulta difícil mantenerse dentro del contorno, y no conviene exigirle " +
+          "que coloree con precisión en esta etapa.",
       ru:
         "Оставаться внутри контура ребенку пока трудно, и требовать от него аккуратного " +
           "раскрашивания на этом этапе не стоит.",
@@ -160,10 +166,12 @@ export const stages: Stage[] = [
         "Single-sided pages, because a marker at this age goes straight through",
       ],
       es: [
-        "Contornos todavía gruesos, pero la forma ya puede tener dos o tres partes",
-        "Un dibujo por página, y nada más en la hoja que compita por la atención",
-        "Una palabra impresa debajo del dibujo, para que nombrar acompañe al colorear",
-        "Hojas impresas por una cara, porque a esta edad el rotulador traspasa",
+        "El contorno debe seguir siendo grueso, pero el dibujo ya puede tener dos o tres partes",
+        "Un solo dibujo por página, sin elementos innecesarios alrededor que puedan distraer",
+        "Una palabra debajo del dibujo, para que el niño pueda colorear mientras se " +
+          "familiariza con su nombre",
+        "Impresión por una sola cara: la tinta de un rotulador puede traspasar el papel " +
+          "corriente",
       ],
       ru: [
         "Контур по-прежнему должен быть толстым, но рисунок уже может состоять из двух-трех " +
@@ -185,12 +193,12 @@ export const stages: Stage[] = [
     },
     ageLabel: {
       en: "about 2 to 3 years",
-      es: "de unos 2 a 3 años",
+      es: "aproximadamente de 2 a 3 años",
       ru: "примерно от 2 до 3 лет",
     },
     title: {
       en: "Aiming at the shape",
-      es: "Apuntando a la forma",
+      es: "Aprende a dirigir los trazos hacia el dibujo",
       ru: "Учится попадать по рисунку",
     },
     can: {
@@ -201,10 +209,12 @@ export const stages: Stage[] = [
         "Names what is on the page before starting",
       ],
       es: [
-        "Copia una línea vertical, una horizontal y un círculo cuando se lo muestran",
-        "Agarra el crayón con los dedos y no con todo el puño",
-        "Apunta al dibujo y deja casi todo el color encima, saliéndose del contorno sin problema",
-        "Nombra lo que hay en la hoja antes de empezar",
+        "Puede copiar una línea vertical, una horizontal y un círculo si se le muestra cómo " +
+          "hacerlo",
+        "Sujeta el crayón con los dedos, en lugar de con toda la mano",
+        "Intenta colorear el propio dibujo y aplica la mayor parte del color sobre él, " +
+          "aunque todavía se sale del contorno con frecuencia",
+        "Reconoce y nombra lo que aparece en la página antes de empezar a colorear",
       ],
       ru: [
         "Может повторить вертикальную и горизонтальную линии и круг, если показать, как это " +
@@ -220,8 +230,9 @@ export const stages: Stage[] = [
         "Neat edges are not the goal yet. Crossing the line at this stage is not a mistake, it is " +
         "what aiming looks like before the hand catches up.",
       es:
-        "Los bordes limpios todavía no son el objetivo. Salirse de la línea en esta etapa no es un " +
-        "error, es el aspecto que tiene apuntar antes de que la mano llegue.",
+        "Mantenerse dentro del contorno todavía no es lo más importante. Salirse de las " +
+          "líneas en esta etapa es completamente normal: la precisión de los movimientos aún " +
+          "se está desarrollando.",
       ru:
         "Аккуратно оставаться внутри контура пока не главное. Выходить за его границы на " +
           "этом этапе совершенно нормально: точность движений еще развивается.",
@@ -234,10 +245,11 @@ export const stages: Stage[] = [
         "Room at the edge of the page, so a child who wants to add a sun has somewhere to put it",
       ],
       es: [
-        "Contornos marcados, con algunas zonas separadas dentro de la forma para rellenar",
-        "Dibujos que el niño reconozca sin que le digan qué son",
-        "Suficiente variedad para que dos páginas seguidas no se parezcan",
-        "Espacio en el borde de la hoja, para que quien quiera añadir un sol tenga dónde ponerlo",
+        "Un contorno bien visible y varias zonas separadas dentro del dibujo que se puedan " +
+          "colorear con distintos colores",
+        "Dibujos familiares que el niño reconozca sin ayuda",
+        "Suficiente variedad para que las páginas consecutivas no parezcan iguales",
+        "Algo de espacio libre alrededor del dibujo, por si el niño quiere añadir algo",
       ],
       ru: [
         "Хорошо заметный контур и несколько отдельных участков внутри рисунка, которые можно " +
@@ -256,7 +268,7 @@ export const stages: Stage[] = [
     slug: { en: "inside-the-line", es: "dentro-de-la-linea", ru: "vnutri-kontura" },
     ageLabel: {
       en: "about 3 to 4 years and up",
-      es: "de unos 3 a 4 años en adelante",
+      es: "aproximadamente de 3 a 4 años en adelante",
       ru: "примерно от 3 до 4 лет и старше",
     },
     title: { en: "Inside the line", es: "Dentro de la línea", ru: "Внутри контура" },
@@ -268,10 +280,10 @@ export const stages: Stage[] = [
         "Sits with one page for ten minutes or longer",
       ],
       es: [
-        "Copia un círculo con precisión, y una cruz más cerca de los cuatro años",
-        "Se queda dentro del contorno casi siempre y nota cuándo el color se sale",
-        "Elige los colores a propósito y sabe explicar por qué",
-        "Se queda con la misma hoja diez minutos o más",
+        "Puede copiar un círculo con seguridad y, cerca de los cuatro años, también una cruz",
+        "Colorea dentro del contorno la mayor parte del tiempo y se da cuenta cuando se sale",
+        "Elige los colores de forma intencionada y puede explicar su elección",
+        "Puede dedicar diez minutos o más a una misma página",
       ],
       ru: [
         "Уверенно повторяет круг, а ближе к четырем годам может повторить и крестик",
@@ -286,8 +298,9 @@ export const stages: Stage[] = [
         "This is where a first coloring book starts to feel too easy. Boredom here is a good sign, " +
         "not a problem to solve with more of the same.",
       es:
-        "Aquí es donde un primer libro para colorear empieza a resultar demasiado fácil. Aburrirse " +
-        "en este punto es buena señal, no un problema que se arregle con más de lo mismo.",
+        "En esta etapa, el primer libro para colorear puede empezar a resultarle demasiado " +
+          "sencillo. Si termina las páginas con facilidad y pierde el interés rápidamente, " +
+          "puede ser el momento de pasar a actividades más complejas.",
       ru:
         "На этом этапе первая раскраска может стать ребенку слишком простой. Если он быстро " +
           "справляется со страницей и теряет интерес, пора переходить к более сложным " +
@@ -300,9 +313,11 @@ export const stages: Stage[] = [
         "Step by step drawing, where the child builds the picture instead of filling in someone else's",
       ],
       es: [
-        "Más zonas que rellenar dentro de un mismo dibujo, y una escena en vez de un objeto suelto",
-        "Algo que hacer además de colorear: una forma que calcar, una palabra que copiar, un fondo que inventar",
-        "Dibujo paso a paso, donde el niño construye la imagen en vez de rellenar la de otro",
+        "Más zonas separadas dentro del dibujo y pequeñas escenas en lugar de un solo objeto",
+        "Otras actividades además de colorear: repasar una forma, copiar una palabra o " +
+          "inventar y dibujar un fondo",
+        "Dibujo paso a paso, donde el niño crea la imagen por sí mismo en lugar de limitarse " +
+          "a colorear una ya hecha",
       ],
       ru: [
         "Больше отдельных участков внутри рисунка и небольшие сюжеты вместо одного предмета",
