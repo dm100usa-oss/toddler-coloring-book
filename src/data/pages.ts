@@ -754,8 +754,21 @@ export const termsCopy: Record<UiLang, SectionCopy> = {
 
       "Nothing on this site is medical advice or an assessment of any individual child. The " +
       "developmental ranges we give come from published sources, named on the pages where we use " +
-      "them. If you have a concern about your child's development, your pediatrician is the right " +
-      "person to ask.",
+      "them. They describe children in general and are typical ranges rather than deadlines. If " +
+      "you have a concern about your child's development, your pediatrician is the right person " +
+      "to ask.",
+
+      "The same applies to everything we write about buying. Pages on this site describe how " +
+      "ordering, invoicing and tax exemption generally work on the platforms we sell through, " +
+      "and those rules are set by those platforms and by the law where you are, not by us. " +
+      "Nothing here is legal, tax or financial advice. Before you commit an organization's " +
+      "money, check the current terms on the platform itself and ask your own accountant or " +
+      "adviser.",
+
+      "We keep this site accurate and correct it when we find a mistake, but we cannot promise " +
+      "that every statement is complete or current at the moment you read it. Prices, " +
+      "availability and platform rules change without telling us. Decisions you make about a " +
+      "child, or about spending, remain yours.",
     ],
   },
   es: {
@@ -795,8 +808,23 @@ export const termsCopy: Record<UiLang, SectionCopy> = {
 
       "La información de este sitio no constituye consejo médico ni una evaluación del " +
         "desarrollo de un niño concreto. Los rangos de edad se basan en fuentes publicadas, " +
-        "que se indican en las páginas correspondientes. Si algo le preocupa sobre el " +
-        "desarrollo de su hijo, consulte con su pediatra.",
+        "que se indican en las páginas correspondientes, describen a los niños en general y " +
+        "son orientativos, no plazos. Si algo le preocupa sobre el desarrollo de su hijo, " +
+        "consulte con su pediatra.",
+
+      "Lo mismo vale para todo lo que escribimos sobre la compra. Las páginas de este sitio " +
+        "explican cómo funcionan en general los pedidos, las facturas y la exención de " +
+        "impuestos en las plataformas a través de las cuales vendemos. Esas condiciones las " +
+        "fijan dichas plataformas y la legislación de su país, no nosotros. Nada de lo que " +
+        "aquí se dice constituye asesoramiento jurídico, fiscal ni financiero. Antes de " +
+        "comprometer el dinero de una organización, consulte las condiciones vigentes en la " +
+        "propia plataforma y hable con su asesor o su contable.",
+
+      "Mantenemos este sitio actualizado y corregimos los errores cuando los detectamos, pero " +
+        "no podemos garantizar que toda la información esté completa o vigente en el momento " +
+        "en que usted la lee. Los precios, la disponibilidad y las condiciones de las " +
+        "plataformas cambian sin avisarnos. Las decisiones sobre un niño o sobre un gasto " +
+        "siguen siendo suyas.",
     ],
   },
 
@@ -835,8 +863,21 @@ export const termsCopy: Record<UiLang, SectionCopy> = {
 
       "Информация на этом сайте не является медицинской рекомендацией или оценкой развития " +
         "конкретного ребенка. Возрастные ориентиры основаны на опубликованных источниках, " +
-        "которые указаны на соответствующих страницах. Если вас беспокоит развитие ребенка, " +
-        "обратитесь к педиатру.",
+        "которые указаны на соответствующих страницах, описывают детей в целом и являются " +
+        "ориентиром, а не сроком. Если вас беспокоит развитие ребенка, обратитесь к педиатру.",
+
+      "То же самое относится ко всему, что мы пишем о покупке. Страницы сайта объясняют, как " +
+        "в общих чертах устроены заказ, документы для бухгалтерии и освобождение от налога на " +
+        "площадках, через которые мы продаем книги. Эти правила устанавливают сами площадки и " +
+        "законы вашей страны, а не мы. Ничто из написанного здесь не является юридической, " +
+        "налоговой или финансовой консультацией. Прежде чем тратить деньги организации, " +
+        "проверьте действующие условия на самой площадке и обратитесь к своему бухгалтеру " +
+        "или консультанту.",
+
+      "Мы следим за точностью сайта и исправляем ошибки, когда их находим, но не можем " +
+        "обещать, что каждое утверждение полно и актуально в тот момент, когда вы его " +
+        "читаете. Цены, наличие и правила площадок меняются без предупреждения. Решения о " +
+        "ребенке и о расходах остаются за вами.",
     ],
   },
 };

@@ -25,7 +25,14 @@ import { CONTACT_EMAIL } from "@/lib/site";
 import Picker from "@/components/Picker";
 import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
-import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER, PICKER_NAME } from "@/lib/site";
+import {
+  SITE_URL,
+  SOURCES,
+  SITE_PUBLISHED,
+  SITE_UPDATED,
+  AUTHOR,
+  PICKER_NAME,
+} from "@/lib/site";
 import {
   jsonLd,
   organization,
@@ -127,8 +134,16 @@ export default async function SectionPage({
                 headline: copy.title,
                 description: copy.lead,
                 inLanguage: t.htmlLang,
+                /* Две даты, а не одна. Без даты публикации страница
+                   выглядит так, будто ее только что сочинили, а с одной
+                   лишь датой правки непонятно, сколько она уже живет. */
+                datePublished: SITE_PUBLISHED,
                 dateModified: SITE_UPDATED,
-                author: { "@type": "Organization", name: PUBLISHER },
+                /* Автор статей человек, а не компания. У компании нет
+                   биографии, которую можно проверить, а у автора есть:
+                   полка на Amazon с его книгами для детей. Издательство
+                   осталось на своем месте, отдельной строкой ниже. */
+                author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
                 publisher: { "@id": `${SITE_URL}/#publisher` },
                 citation: SOURCES.map((src) => ({
                   "@type": "CreativeWork",

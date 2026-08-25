@@ -15,7 +15,7 @@ import type { ProPage } from "@/data/propages";
 import { CONTACT_EMAIL } from "@/lib/site";
 import type { AgePage } from "@/data/agepages";
 import { homePath, sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
-import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
+import { SITE_URL, SOURCES, SITE_PUBLISHED, SITE_UPDATED, AUTHOR } from "@/lib/site";
 import { jsonLd, organization, breadcrumbs, langAlternates, faqPage } from "@/lib/schema";
 import { Sources } from "../page";
 
@@ -207,8 +207,16 @@ export default async function StagePage({
       headline: title,
       description: st.notYet[l],
       inLanguage: t.htmlLang,
+      /* Две даты, а не одна. Без даты публикации страница
+         выглядит так, будто ее только что сочинили, а с одной
+         лишь датой правки непонятно, сколько она уже живет. */
+      datePublished: SITE_PUBLISHED,
       dateModified: SITE_UPDATED,
-      author: { "@type": "Organization", name: PUBLISHER },
+      /* Автор статей человек, а не компания. У компании нет
+         биографии, которую можно проверить, а у автора есть:
+         полка на Amazon с его книгами для детей. Издательство
+         осталось на своем месте, отдельной строкой ниже. */
+      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@id": `${SITE_URL}/#publisher` },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
@@ -412,8 +420,16 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
       headline: guide.title[lang],
       description: guide.lead[lang],
       inLanguage: t.htmlLang,
+      /* Две даты, а не одна. Без даты публикации страница
+         выглядит так, будто ее только что сочинили, а с одной
+         лишь датой правки непонятно, сколько она уже живет. */
+      datePublished: SITE_PUBLISHED,
       dateModified: SITE_UPDATED,
-      author: { "@type": "Organization", name: PUBLISHER },
+      /* Автор статей человек, а не компания. У компании нет
+         биографии, которую можно проверить, а у автора есть:
+         полка на Amazon с его книгами для детей. Издательство
+         осталось на своем месте, отдельной строкой ниже. */
+      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@id": `${SITE_URL}/#publisher` },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
@@ -592,8 +608,16 @@ function BasisPage({ lang }: { lang: ContentLang }) {
       headline: b.title,
       description: b.lead,
       inLanguage: t.htmlLang,
+      /* Две даты, а не одна. Без даты публикации страница
+         выглядит так, будто ее только что сочинили, а с одной
+         лишь датой правки непонятно, сколько она уже живет. */
+      datePublished: SITE_PUBLISHED,
       dateModified: SITE_UPDATED,
-      author: { "@type": "Organization", name: PUBLISHER },
+      /* Автор статей человек, а не компания. У компании нет
+         биографии, которую можно проверить, а у автора есть:
+         полка на Amazon с его книгами для детей. Издательство
+         осталось на своем месте, отдельной строкой ниже. */
+      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@id": `${SITE_URL}/#publisher` },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
@@ -708,8 +732,16 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
       headline: c.title,
       description: c.lead,
       inLanguage: t.htmlLang,
+      /* Две даты, а не одна. Без даты публикации страница
+         выглядит так, будто ее только что сочинили, а с одной
+         лишь датой правки непонятно, сколько она уже живет. */
+      datePublished: SITE_PUBLISHED,
       dateModified: SITE_UPDATED,
-      author: { "@type": "Organization", name: PUBLISHER },
+      /* Автор статей человек, а не компания. У компании нет
+         биографии, которую можно проверить, а у автора есть:
+         полка на Amazon с его книгами для детей. Издательство
+         осталось на своем месте, отдельной строкой ниже. */
+      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@id": `${SITE_URL}/#publisher` },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
@@ -932,8 +964,16 @@ function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
       headline: c.title,
       description: c.lead,
       inLanguage: t.htmlLang,
+      /* Две даты, а не одна. Без даты публикации страница
+         выглядит так, будто ее только что сочинили, а с одной
+         лишь датой правки непонятно, сколько она уже живет. */
+      datePublished: SITE_PUBLISHED,
       dateModified: SITE_UPDATED,
-      author: { "@type": "Organization", name: PUBLISHER },
+      /* Автор статей человек, а не компания. У компании нет
+         биографии, которую можно проверить, а у автора есть:
+         полка на Amazon с его книгами для детей. Издательство
+         осталось на своем месте, отдельной строкой ниже. */
+      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
       publisher: { "@id": `${SITE_URL}/#publisher` },
     },
     faqPage(c.faq)

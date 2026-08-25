@@ -2,25 +2,45 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { Header, Footer } from "@/components/Chrome";
 import { activeLangs, dictionaries } from "@/data/dictionaries";
+import { editions } from "@/data/book";
 import type { UiLang } from "@/data/dictionaries";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SHARE } from "@/lib/site";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: `${SITE_NAME}. Choosing a first coloring book by what your child can do`,
-    template: `%s | ${SITE_NAME}`,
-  },
-  /* Значок сайта и картинка для соцсетей еще не сделаны.
-     Пока их нет, здесь не должно быть ничего: ссылка на файл,
-     которого нет, дает ошибку при каждой загрузке страницы,
-     а чужой значок с другого сайта хуже, чем никакого. */
-  openGraph: {
-    siteName: SITE_NAME,
-    type: "website",
-  },
-  twitter: { card: "summary" },
-};
+/* Общие сведения о странице для мессенджеров и соцсетей. Задаются
+   здесь один раз и достаются всем страницам сразу: своя картинка на
+   каждом языке, чтобы ссылка на любую из семидесяти восьми страниц
+   разворачивалась в карточку, а не оставалась серой строкой.
+
+   Карточка выбрана широкая, а не мелкая квадратная: картинка сделана
+   ровно под нее. */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const l = (activeLangs.includes(lang as UiLang) ? lang : "en") as UiLang;
+  const image = {
+    url: SHARE.url(l),
+    width: SHARE.w,
+    height: SHARE.h,
+    alt: editions[l].title,
+  };
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: `${SITE_NAME}. Choosing a first coloring book by what your child can do`,
+      template: `%s | ${SITE_NAME}`,
+    },
+    openGraph: {
+      siteName: SITE_NAME,
+      type: "website",
+      locale: dictionaries[l].htmlLang,
+      images: [image],
+    },
+    twitter: { card: "summary_large_image", images: [image] },
+  };
+}
 
 export function generateStaticParams() {
   return activeLangs.map((lang) => ({ lang }));

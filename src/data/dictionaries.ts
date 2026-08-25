@@ -134,6 +134,14 @@ export type Dict = {
     about: string;
     catalog: string;
     rights: string;
+    /** Оговорка о том, чем этот сайт не является. Стоит в подвале, то
+        есть на каждой странице сразу: человек, пришедший из поиска
+        прямо на статью, до страницы прав может не дойти никогда.
+        Про деньги и документы здесь не лишнее: в разделе для программ
+        сайт объясняет, как открыть счет организации и как работает
+        освобождение от налога. */
+    disclaimer: string;
+    disclaimerLink: string;
   };
   common: {
     free: string;
@@ -307,6 +315,13 @@ export const dictionaries: Record<UiLang, Dict> = {
         "one coloring book for this age.",
       catalog: "Our full catalog",
       rights: "All drawings on this site are our own work.",
+      disclaimer:
+        "Everything on this site is general information, not advice about a particular child " +
+        "or a particular situation. It is not medical, legal or tax advice. Age ranges come " +
+        "from published developmental milestones and describe children in general; questions " +
+        "about your own child belong with your pediatrician, and questions about purchasing, " +
+        "invoices or tax with your own accountant or adviser.",
+      disclaimerLink: "Full terms",
     },
     common: {
       free: "Free",
@@ -496,6 +511,13 @@ export const dictionaries: Record<UiLang, Dict> = {
           "dibujo y publicamos materiales para niños pequeños.",
       catalog: "Nuestro catálogo completo",
       rights: "Todos los dibujos de este sitio han sido creados por nosotros.",
+      disclaimer:
+        "Todo lo que publicamos en este sitio es información general, no una recomendación " +
+          "sobre un niño concreto ni sobre una situación concreta. No constituye consejo " +
+          "médico, jurídico ni fiscal. Los rangos de edad proceden de fuentes publicadas y " +
+          "describen a los niños en general: si algo le preocupa sobre su hijo, consulte con " +
+          "su pediatra, y para cuestiones de compra, facturación o impuestos, con su asesor.",
+      disclaimerLink: "Condiciones completas",
     },
     common: {
       free: "Gratis",
@@ -674,6 +696,14 @@ export const dictionaries: Record<UiLang, Dict> = {
           "рисования и создаем раскраски для самых маленьких.",
       catalog: "Наш каталог",
       rights: "Все рисунки на этом сайте созданы нами.",
+      disclaimer:
+        "Все, что мы публикуем на этом сайте, носит справочный характер и не является " +
+          "рекомендацией по конкретному ребенку или конкретной ситуации. Это не медицинская, " +
+          "не юридическая и не налоговая консультация. Возрастные ориентиры взяты из " +
+          "опубликованных источников и описывают детей в целом: если вас что-то беспокоит в " +
+          "развитии вашего ребенка, обратитесь к педиатру, а по вопросам покупки, документов " +
+          "и налогов - к своему специалисту.",
+      disclaimerLink: "Подробные условия",
     },
     common: {
       free: "Бесплатно",

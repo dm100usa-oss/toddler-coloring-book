@@ -20,7 +20,17 @@ import {
   allNames,
 } from "@/data/drawings";
 import { homePath, sectionPath } from "@/lib/routes";
-import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER, AUTHOR, ADDRESS, PICKER_NAME } from "@/lib/site";
+import {
+  SITE_URL,
+  SHARE,
+  SOURCES,
+  SITE_PUBLISHED,
+  SITE_UPDATED,
+  PUBLISHER,
+  AUTHOR,
+  ADDRESS,
+  PICKER_NAME,
+} from "@/lib/site";
 import { jsonLd, organization, website, langAlternates } from "@/lib/schema";
 
 export async function generateMetadata({
@@ -43,10 +53,19 @@ export async function generateMetadata({
         ru: `${SITE_URL}${homePath("ru")}`,
       }),
     },
+    /* Картинка та же, что на остальных страницах сайта. Повторена
+       здесь намеренно: когда страница задает свои сведения для
+       соцсетей, они заменяют общие целиком, а не дополняют их, и без
+       этой строки у главной картинки не было бы вовсе.
+
+       Обложка книги стояла здесь раньше. Она вертикальная, и
+       мессенджер обрезал у нее название сверху и возраст снизу. */
     openGraph: {
       title: ed.title,
       description: ed.headline,
-      images: [{ url: `${SITE_URL}${ed.cover}`, width: ed.coverSize.w, height: ed.coverSize.h }],
+      images: [
+        { url: SHARE.url(l), width: SHARE.w, height: SHARE.h, alt: ed.title },
+      ],
     },
   };
 }
@@ -229,6 +248,35 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             },
           }
         : {}),
+      /* Независимая рецензия. Средняя оценка покупателей выше говорит
+         только о том, сколько человек нажали на звезды. Здесь другое:
+         подписанный отзыв на чужой площадке, который можно открыть и
+         сверить. Это единственный довод на странице, который исходит
+         не от нас, и до сих пор машина его не видела: для нее он был
+         обычным абзацем текста.
+
+         Рецензия стоит на всех трех языках. Книга одна и та же: те же
+         111 рисунков, та же толщина линий, то же расположение по
+         центру листа, а именно об этом рецензент и писал. Отличается
+         только слово под рисунком.
+
+         Дословно взято одно предложение, остальное пересказ своими
+         словами. Полный текст рецензии принадлежит площадке, и его
+         место по ссылке, а не у нас. */
+      review: {
+        "@type": "Review",
+        author: { "@type": "Person", name: BOOK.criticName },
+        publisher: { "@type": "Organization", name: BOOK.criticSource },
+        datePublished: BOOK.criticDate,
+        url: BOOK.criticUrl,
+        inLanguage: t.htmlLang,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: 5,
+          bestRating: 5,
+        },
+        reviewBody: ed.critic,
+      },
       ...(ed.asin && ed.price
         ? {
             offers: {
@@ -315,6 +363,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       name: ed.title,
       description: ed.headline,
       inLanguage: t.htmlLang,
+      /* Две даты, а не одна. Без даты публикации страница выглядит
+         так, будто ее только что сочинили, а с одной лишь датой
+         правки непонятно, сколько она уже живет. */
+      datePublished: SITE_PUBLISHED,
       dateModified: SITE_UPDATED,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       citation: SOURCES.map((s) => ({

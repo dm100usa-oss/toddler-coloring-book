@@ -157,6 +157,14 @@ export function Footer({ lang }: { lang: UiLang }) {
       <p>
         © {new Date().getFullYear()} {PUBLISHER}. {t.footer.rights}
       </p>
+      {/* Оговорка о том, чем сайт не является. Стоит здесь, а не только
+          на странице прав: человек приходит из поиска сразу на статью и
+          до страницы прав может не дойти ни разу. Набрана мельче
+          основного текста, но не спрятана. */}
+      <p className="footer__disclaimer">
+        {t.footer.disclaimer}{" "}
+        <Link href={sectionPath(lang, "terms")}>{t.footer.disclaimerLink}</Link>
+      </p>
       <p style={{ opacity: 0.7, fontSize: "var(--t-micro)" }}>{SITE_NAME}</p>
     </footer>
   );
