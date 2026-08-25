@@ -13,6 +13,23 @@ const nextConfig = {
       { source: "/es/libro-para-colorear/:path*", destination: "/es", permanent: true },
     ];
   },
+  /* Два указания браузеру, о которых просила проверка безопасности.
+     Первое запрещает гадать о типе файла: если сервер сказал, что это
+     картинка, браузер не станет пробовать выполнить ее как код.
+     Второе запрещает показывать наш сайт внутри чужого окна: так
+     чужой сайт не может подсунуть посетителю нашу страницу под своим
+     видом. На внешний вид и на скорость не влияет ни то, ни другое. */
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
