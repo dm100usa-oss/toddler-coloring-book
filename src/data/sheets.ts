@@ -21,20 +21,67 @@ import type { UiLang } from "./dictionaries";
 export type Sheet = {
   id: string;
   name: Record<UiLang, string>;
+  /** Насколько лист сложен для ребенка: 1 самый простой, 3 самый
+      подробный. Уровень не назначен на глаз, он посчитан по двум
+      признакам, которые видно на самом листе.
+
+      Первый: сколько внутри рисунка отдельных участков, которые можно
+      закрасить разным цветом. Считается по файлу листа.
+      Второй: толщина контура, измеренная на листе формата US Letter.
+
+      Получилось так: носорог 11 участков и контур 4,3 мм, лев 12 и
+      3,8, кенгуру 14 и 4,5, медведь 15 и 4,8. Это первый уровень.
+      Слон 14 и 2,7, лиса 16 и 3,8, обезьяна 17 и 3,6 это второй.
+      Жираф 21 и 2,4, зебра 21 и 3,4, крокодил 22 и 3,4 это третий.
+
+      Числа настоящие и проверяемые: любой может распечатать лист
+      и приложить линейку. */
+  level: 1 | 2 | 3;
 };
 
 export const sheets: Sheet[] = [
-  { id: "lion", name: { en: "Lion", es: "León", ru: "Лев" } },
-  { id: "elephant", name: { en: "Elephant", es: "Elefante", ru: "Слон" } },
-  { id: "giraffe", name: { en: "Giraffe", es: "Jirafa", ru: "Жираф" } },
-  { id: "zebra", name: { en: "Zebra", es: "Cebra", ru: "Зебра" } },
-  { id: "rhino", name: { en: "Rhino", es: "Rinoceronte", ru: "Носорог" } },
-  { id: "monkey", name: { en: "Monkey", es: "Mono", ru: "Обезьяна" } },
-  { id: "crocodile", name: { en: "Crocodile", es: "Cocodrilo", ru: "Крокодил" } },
-  { id: "kangaroo", name: { en: "Kangaroo", es: "Canguro", ru: "Кенгуру" } },
-  { id: "bear", name: { en: "Bear", es: "Oso", ru: "Медведь" } },
-  { id: "fox", name: { en: "Fox", es: "Zorro", ru: "Лиса" } },
+  { id: "lion", name: { en: "Lion", es: "León", ru: "Лев" }, level: 1 },
+  { id: "elephant", name: { en: "Elephant", es: "Elefante", ru: "Слон" }, level: 2 },
+  { id: "giraffe", name: { en: "Giraffe", es: "Jirafa", ru: "Жираф" }, level: 3 },
+  { id: "zebra", name: { en: "Zebra", es: "Cebra", ru: "Зебра" }, level: 3 },
+  { id: "rhino", name: { en: "Rhino", es: "Rinoceronte", ru: "Носорог" }, level: 1 },
+  { id: "monkey", name: { en: "Monkey", es: "Mono", ru: "Обезьяна" }, level: 2 },
+  { id: "crocodile", name: { en: "Crocodile", es: "Cocodrilo", ru: "Крокодил" }, level: 3 },
+  { id: "kangaroo", name: { en: "Kangaroo", es: "Canguro", ru: "Кенгуру" }, level: 1 },
+  { id: "bear", name: { en: "Bear", es: "Oso", ru: "Медведь" }, level: 1 },
+  { id: "fox", name: { en: "Fox", es: "Zorro", ru: "Лиса" }, level: 2 },
 ];
+
+/** Измеренное на листах формата US Letter. Числа стоят здесь, а не
+    в тексте страницы, чтобы во всех трех языках говорилось одно и то
+    же и чтобы их нельзя было разойтись друг с другом. */
+export const MEASURED = {
+  strokeMinMm: 2.4,
+  strokeMaxMm: 4.8,
+  /** Какую долю листа занимает рисунок, в процентах. */
+  fillMin: 70,
+  fillMax: 82,
+} as const;
+
+/** Какие уровни листов подходят каждому этапу.
+
+    Ответ инструмента обещает листы, подобранные под этап, и до этого
+    показывал всем одни и те же первые три из списка. Теперь обещание
+    выполняется. */
+const LEVELS_FOR_STAGE: Record<string, (1 | 2 | 3)[]> = {
+  scribble: [1],
+  control: [1, 2],
+  aim: [2, 3],
+  shape: [3],
+};
+
+export const sheetsForStage = (stageId: string, n = 3) => {
+  const want = LEVELS_FOR_STAGE[stageId] ?? [1, 2];
+  const fit = sheets.filter((s) => want.includes(s.level));
+  /* Если на уровне листов меньше, чем нужно показать, добираем
+     соседними: пустое место под заголовком хуже неточного листа. */
+  return (fit.length >= n ? fit : [...fit, ...sheets.filter((s) => !fit.includes(s))]).slice(0, n);
+};
 
 export const sheetFile = (id: string, lang: UiLang) =>
   lang === "en" ? id : `${id}-${lang}`;

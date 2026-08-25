@@ -1203,7 +1203,9 @@ ul.award-list li {
 }
 .result__disclaimer { font-size: var(--t-micro); color: var(--ink-2); margin: var(--gap-2) 0 0; }
 
-/* Три листа под ответом: распечатать и проверить сегодня же. */
+/* Три листа под ответом: распечатать и проверить сегодня же.
+   Стиль оставлен: этим же классом пользуются страницы этапов
+   и возрастов, где листы по-прежнему скачиваются. */
 .result__sheets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin: 0 0 var(--gap-2); }
 @media (max-width: 520px) { .result__sheets { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; } }
 .result__sheets img {
@@ -1211,6 +1213,45 @@ ul.award-list li {
   border: var(--edge); border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
 }
+
+/* Три примера подходящей страницы в ответе инструмента.
+
+   Рисунки квадратные, а не в пропорции листа: это примеры того, что
+   внутри, а не сами листы, и путать одно с другим не нужно. Подпись
+   под каждым обычным текстом: полая буква из книги в мелком размере
+   не читается. */
+.result__examples {
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem; margin: 0 0 var(--gap-2);
+}
+@media (max-width: 520px) { .result__examples { gap: 0.4rem; } }
+.result__examples li { margin: 0; text-align: center; }
+.result__examples img {
+  width: 100%; height: auto; background: #fff; aspect-ratio: 1 / 1;
+  border: var(--edge); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.result__examples span {
+  display: block; margin-top: 0.35rem;
+  font-size: var(--t-small); color: var(--ink-2);
+}
+
+/* Полоска фактов об инструменте. Стоит первой на странице, поэтому
+   набрана спокойно: это справка, а не витрина. На узком экране
+   пара распадается на две строки, вопрос над ответом. */
+.facts { margin: 0 0 0.8rem; }
+.facts__row {
+  display: grid; grid-template-columns: 14rem 1fr; gap: 0.2rem 1rem;
+  padding: 0.55rem 0; border-top: var(--edge);
+}
+.facts__row:last-child { border-bottom: var(--edge); }
+.facts dt { font-weight: 800; margin: 0; }
+.facts dd { margin: 0; }
+@media (max-width: 620px) {
+  .facts__row { grid-template-columns: 1fr; }
+}
+.facts__note { font-size: var(--t-small); color: var(--ink-2); margin: 0; }
 
 /* ==================== ИСТОЧНИКИ ==================== */
 
@@ -1725,3 +1766,28 @@ html[lang="ru"] .hero {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+
+/* Пронумерованные вопросы инструмента на странице методики.
+   Номер нужен: родитель проходит их по порядку, и порядок часть
+   объяснения. */
+.steps { counter-reset: step; list-style: none; padding: 0; margin: 0 0 var(--gap-2); }
+.steps li {
+  counter-increment: step; position: relative;
+  padding: 0.7rem 0 0.7rem 2.6rem; border-top: var(--edge);
+}
+.steps li:last-child { border-bottom: var(--edge); }
+.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 0.75rem;
+  width: 1.8rem; height: 1.8rem; border-radius: 50%;
+  background: var(--mint); color: #0c3f3b;
+  display: grid; place-items: center; font-weight: 800;
+  font-size: var(--t-small);
+}
+.steps h3 { margin: 0 0 0.2rem; }
+.steps p { margin: 0; color: var(--ink-2); }
+
+
+/* Дата правки под названием страницы. Мельче и приглушена: это
+   служебная строка, а не часть заголовка. */
+.pagehead__updated { font-size: var(--t-small); opacity: 0.75; margin: 0.4rem 0 0; }

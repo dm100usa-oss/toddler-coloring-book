@@ -23,7 +23,7 @@ import { programsCopy, programsLabels, audiences, specs } from "@/data/programs"
 import { proPages, proLabels } from "@/data/propages";
 import { CONTACT_EMAIL } from "@/lib/site";
 import Picker from "@/components/Picker";
-import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
+import { sectionFromSlug, sectionSlugs, sectionPath, itemPath, homePath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
 import {
   SITE_URL,
@@ -153,20 +153,47 @@ export default async function SectionPage({
                 })),
               },
               /* Инструмент описывается как приложение, а не как статья:
-                 это разные записи, и поисковик показывает их по-разному. */
+                 это разные записи, и поисковик показывает их по-разному.
+
+                 Имя здесь то же, что на главной, и запись та же самая:
+                 один и тот же адрес записи. Раньше на главной инструмент
+                 назывался своим именем, а на этой странице заголовком
+                 страницы, и машина видела два разных инструмента вместо
+                 одного.
+
+                 Список свойств добавлен не для полноты. Помощник решает,
+                 можно ли рекомендовать инструмент, по тем же признакам,
+                 что и человек: сколько стоит, что просят взамен, сколько
+                 занимает времени. Здесь это сказано машине напрямую,
+                 теми же словами, что человеку в полоске фактов выше. */
               ...(s === "tools" && isContentLang(l)
                 ? [
                     {
                       "@type": "WebApplication",
-                      name: copy.title,
+                      "@id": `${SITE_URL}${homePath(l)}#finder`,
+                      name: PICKER_NAME,
+                      alternateName: copy.title,
                       description: copy.lead,
                       url: `${SITE_URL}${sectionPath(l, "tools")}`,
                       applicationCategory: "EducationalApplication",
                       operatingSystem: "Any",
+                      browserRequirements: "Works in any modern browser",
                       inLanguage: t.htmlLang,
                       isAccessibleForFree: true,
                       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+                      featureList: toolLabels[l].facts.map((f) => `${f.k}: ${f.v}`),
+                      disclaimerText: toolLabels[l].factsNote,
+                      audience: [
+                        { "@type": "ParentAudience" },
+                        { "@type": "PeopleAudience", suggestedMinAge: 1, suggestedMaxAge: 3 },
+                      ],
                       publisher: { "@id": `${SITE_URL}/#publisher` },
+                      citation: SOURCES.map((src) => ({
+                        "@type": "CreativeWork",
+                        name: src.title,
+                        publisher: { "@type": "Organization", name: src.publisher },
+                        url: src.url,
+                      })),
                     },
                   ]
                 : []),
@@ -186,7 +213,33 @@ export default async function SectionPage({
       <div className="pagehead">
         <h1>{copy.title}</h1>
         <p>{copy.lead}</p>
+        {/* Видимая дата правки. В разметке она стояла и раньше, но
+            машина охотнее ссылается на страницу, где дата видна и
+            человеку тоже: это признак, что за материалом следят. */}
+        {s === "tools" && isContentLang(l) && (
+          <p className="pagehead__updated">
+            {toolLabels[l].updatedLabel} {formatDate(SITE_UPDATED, l)}
+          </p>
+        )}
       </div>
+
+      {/* Порядок блоков на странице инструмента отличается от прочих
+          разделов, и отличается намеренно.
+
+          Человек пришел сюда пользоваться инструментом, а не читать
+          про него. Поэтому сразу под названием идет короткая полоска
+          фактов, а сразу за ней сам инструмент. Раньше до него нужно
+          было прокрутить четыре абзаца и таблицу в пять столбцов, что
+          на телефоне заметно.
+
+          Машине тот же порядок нужен по другой причине. Она решает,
+          можно ли отправить сюда человека, по началу страницы. В самом
+          начале теперь стоит ответ: бесплатно, без регистрации, ничего
+          не сохраняется, тридцать секунд, и сайт честно говорит, когда
+          книга не нужна. Ниже лежит все остальное: объяснение, таблица
+          и разбор по возрастам. */}
+      {s === "tools" && isContentLang(l) && <ToolFacts lang={l} />}
+      {s === "tools" && isContentLang(l) && <ToolPicker lang={l} />}
 
       <section className="band">
         <div className="wrap">
@@ -203,7 +256,6 @@ export default async function SectionPage({
       {/* Проверка нужна разбору типов: эти блоки берут тексты этапов
           и статей, а они есть только на языках справочной части. */}
       {s === "tools" && isContentLang(l) && <AgeTable lang={l} />}
-      {s === "tools" && isContentLang(l) && <ToolPicker lang={l} />}
       {s === "ages" && isContentLang(l) && <AgeLabels lang={l} />}
       {s === "ages" && isContentLang(l) && <AgeLadder lang={l} />}
       {s === "printables" && <SheetGrid lang={l} />}
@@ -296,6 +348,70 @@ function AgeTable({ lang }: { lang: ContentLang }) {
               })}
             </tbody>
           </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+/* Дата правки словами, на языке страницы. Цифрами она читается
+   по-разному в разных странах, а название месяца однозначно. */
+function formatDate(iso: string, lang: ContentLang) {
+  const locale = lang === "ru" ? "ru-RU" : lang === "es" ? "es-ES" : "en-US";
+  return new Date(iso).toLocaleDateString(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/*  Факты об инструменте                                               */
+/* ------------------------------------------------------------------ */
+
+/* Короткая полоска под названием страницы. Шесть строк, в каждой
+   вопрос и ответ.
+
+   Это не украшение. И человек, и машина решают одно и то же в первые
+   секунды: стоит ли сюда вообще заходить. Родитель спрашивает себя, не
+   заставят ли его регистрироваться. Машина спрашивает, не отправит ли
+   она человека в воронку сбора адресов. Ответ на оба вопроса лежит
+   здесь, до всякого текста.
+
+   Последняя строка про то, что инструмент говорит нет, стоит не
+   случайно: источник, который отговаривает от собственной покупки,
+   и человеком, и машиной читается как надежный. */
+
+function ToolFacts({ lang }: { lang: ContentLang }) {
+  const x = toolLabels[lang];
+  return (
+    <section className="band">
+      <div className="wrap">
+        <div className="teach">
+          <h2 className="section">{x.factsTitle}</h2>
+          <dl className="facts">
+            {x.facts.map((f) => (
+              <div className="facts__row" key={f.k}>
+                <dt>{f.k}</dt>
+                <dd>{f.v}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="facts__note">{x.factsNote}</p>
+
+          {/* Измеренное на наших же листах. Стоит здесь, а не в тексте
+              ниже, потому что это единственные конкретные числа на
+              странице, и родителю они нужны в момент выбора, а не после
+              трех абзацев объяснений. */}
+          <h2 className="section" style={{ marginTop: "var(--gap-3)" }}>
+            {x.measuredTitle}
+          </h2>
+          {x.measured.map((p) => (
+            <p className="teach-p" key={p.slice(0, 40)}>
+              {p}
+            </p>
+          ))}
         </div>
       </div>
     </section>

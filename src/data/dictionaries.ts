@@ -81,6 +81,15 @@ export type Dict = {
     lookForTitle: string;
     tryTitle: string;
     tryLead: string;
+    /* Блок примеров в ответе инструмента. Раньше здесь стояли три
+       бесплатных листа кнопками для скачивания, причем всем показывались
+       одни и те же три. Теперь это примеры страниц из книги, подобранные
+       по этапу, а скачивание живет на своей странице, одной кнопкой ниже.
+
+       Так примеры берутся из всех 111 рисунков, а не из десяти простых
+       зверей, и разница между этапами наконец видна глазом. */
+    exTitle: string;
+    exLead: string;
     bookLine: string;
     disclaimer: string;
     q: {
@@ -227,6 +236,10 @@ export const dictionaries: Record<UiLang, Dict> = {
       lookForTitle: "What to look for in a coloring book",
       tryTitle: "Print these and try today",
       tryLead: "Pages chosen for this stage. Free, no sign up.",
+      exTitle: "What a suitable page looks like",
+      exLead:
+        "Three drawings from the book, chosen for this stage. Look at how much of the sheet the " +
+        "drawing takes up and how many separate areas there are inside it.",
       bookLine: "The book we publish for this stage",
       disclaimer:
         "This is general guidance based on published developmental milestones, not an assessment " +
@@ -418,6 +431,10 @@ export const dictionaries: Record<UiLang, Dict> = {
       lookForTitle: "Qué buscar al elegir un libro para colorear",
       tryTitle: "Imprima estos dibujos y pruébelos hoy",
       tryLead: "Dibujos seleccionados para esta etapa. Gratis y sin registro.",
+      exTitle: "Cómo es una página adecuada",
+      exLead:
+        "Tres dibujos del libro, elegidos para esta etapa. Fíjese en cuánta hoja ocupa el dibujo " +
+          "y en cuántas zonas separadas hay dentro de él.",
       bookLine: "El libro que publicamos para esta etapa",
       disclaimer:
         "Esta es una orientación general basada en hitos del desarrollo publicados, no una " +
@@ -607,6 +624,10 @@ export const dictionaries: Record<UiLang, Dict> = {
       lookForTitle: "На что обратить внимание при выборе раскраски",
       tryTitle: "Распечатайте и попробуйте сегодня",
       tryLead: "Листы, подобранные для этого этапа. Бесплатно и без регистрации.",
+      exTitle: "Как выглядит подходящая страница",
+      exLead:
+        "Три рисунка из книги, подобранные для этого этапа. Посмотрите, сколько листа занимает " +
+          "рисунок и сколько внутри него отдельных участков.",
       bookLine: "Наша книга для этого этапа",
       disclaimer:
         "Это общая информация, основанная на опубликованных нормах развития, а не оценка " +

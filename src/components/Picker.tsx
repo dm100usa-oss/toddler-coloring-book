@@ -6,7 +6,7 @@ import { dictionaries } from "@/data/dictionaries";
 import type { ContentLang } from "@/data/dictionaries";
 import { pickStage, stageById } from "@/data/stages";
 import type { Answers } from "@/data/stages";
-import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
+import { examplesForStage, drawingFile } from "@/data/drawings";
 import { editions, BOOK } from "@/data/book";
 import { homePath, sectionPath } from "@/lib/routes";
 
@@ -94,7 +94,14 @@ export default function Picker({
   /* Ответ */
   const stage = stageById(pickStage(answers as Answers));
   const ed = editions[lang];
-  const picks = sample(3);
+  /* Примеры страниц для этого этапа. Не файлы для скачивания:
+     скачивание живет на своей странице, одной кнопкой ниже.
+
+     Именно поэтому примеры можно брать из всех 111 рисунков книги,
+     а не из десяти бесплатных листов, которые все простые звери.
+     Уровень сложности каждого рисунка посчитан по числу участков
+     внутри и по толщине контура, см. drawings.ts. */
+  const picks = examplesForStage(stage.id, 3);
 
   return (
     <div className="picker">
@@ -123,27 +130,31 @@ export default function Picker({
         </ul>
       </div>
 
-      {/* Образцы страниц. Показываем только тем, кому книга подходит:
-          родителю, чей ребенок ее перерос, печатать образцы незачем. */}
+      {/* Примеры подходящих страниц. Показываем только тем, кому книга
+          подходит: родителю, чей ребенок ее перерос, они ни к чему.
+
+          Это картинки, а не ссылки. Родитель смотрит и сравнивает,
+          и одной кнопкой ниже уходит туда, где страницы скачиваются. */}
       {stage.bookFit !== "outgrown" && (
       <div className="result__block">
-        <HSub>{t.tryTitle}</HSub>
+        <HSub>{t.exTitle}</HSub>
         <p style={{ fontSize: "var(--t-small)", color: "var(--ink-2)", margin: "0 0 0.7rem" }}>
-          {t.tryLead}
+          {t.exLead}
         </p>
-        <div className="result__sheets">
-          {picks.map((s) => (
-            <a key={s.id} href={sheetPdf(s.id, lang, "letter")} download>
+        <ul className="result__examples">
+          {picks.map((d) => (
+            <li key={d.n}>
               <img
-                src={sheetPreview(s.id, lang)}
-                alt={dictionaries[lang].sec.sheetAlt(s.name[lang])}
-                width={642}
-                height={822}
+                src={drawingFile(d.n)}
+                alt={d.name[lang]}
+                width={420}
+                height={420}
                 loading="lazy"
               />
-            </a>
+              <span>{d.name[lang]}</span>
+            </li>
           ))}
-        </div>
+        </ul>
         <p style={{ margin: 0 }}>
           <Link className="btn btn--sun" href={sectionPath(lang, "printables")}>
             {dictionaries[lang].home.printablesCta}

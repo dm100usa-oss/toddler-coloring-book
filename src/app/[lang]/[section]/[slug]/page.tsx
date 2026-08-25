@@ -6,7 +6,7 @@ import type { UiLang, ContentLang } from "@/data/dictionaries";
 import { stages, stageBySlug, stageById } from "@/data/stages";
 import { guides, guideBySlug } from "@/data/guides";
 import type { Guide } from "@/data/guides";
-import { sample, sheetPreview, sheetPdf } from "@/data/sheets";
+import { sample, sheetsForStage, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
 import { basisCopy, basisSlug, toolLabels } from "@/data/tool";
 import { agePages, agePageBySlug, agePageLabels } from "@/data/agepages";
@@ -187,7 +187,8 @@ export default async function StagePage({
 
   const t = dictionaries[l];
   const ed = editions[l];
-  const picks = sample(4);
+  /* Листы этого этапа, а не первые четыре из списка. */
+  const picks = sheetsForStage(st.id, 4);
 
   /* Соседние этапы: предыдущий и следующий. Родитель, попавший не туда,
      должен выйти на нужную страницу в один шаг, а не через меню. */
@@ -658,9 +659,101 @@ function BasisPage({ lang }: { lang: ContentLang }) {
         </div>
       </section>
 
+      {/* Весь инструмент словами: четыре вопроса с вариантами и четыре
+          возможных ответа.
+
+          В разметке страницы инструмента виден только первый вопрос:
+          остальные и сам ответ появляются после нажатия. Значит для
+          поисковика и для нейросети инструмента там нет, есть кнопка.
+          Здесь он есть целиком, обычным текстом, и его можно
+          пересказать, не нажимая ничего. */}
+      <section className="band band--cream">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{b.howTitle}</h2>
+            <p className="teach-p">{b.howLead}</p>
+            <ol className="steps">
+              {b.questions.map((qq) => (
+                <li key={qq.q}>
+                  <h3>{qq.q}</h3>
+                  <p>{qq.options}</p>
+                </li>
+              ))}
+            </ol>
+
+            <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
+              {b.outcomesTitle}
+            </h2>
+            <ul className="labels">
+              {b.outcomes.map((o) => (
+                <li className="label-card" key={o.title}>
+                  <p className="label-card__stage">{o.title}</p>
+                  <p className="result__age" style={{ marginBottom: "0.4rem" }}>{o.age}</p>
+                  <p className="label-card__means">{o.text}</p>
+                </li>
+              ))}
+            </ul>
+
+            <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
+              {b.combineTitle}
+            </h2>
+            {b.combine.map((p) => (
+              <p className="teach-p" key={p.slice(0, 40)}>
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Два разобранных случая. Родитель узнает своего ребенка по
+          примеру быстрее, чем по определению, а нейросеть берет готовый
+          случай охотнее, чем описание правил.
+
+          Второй пример намеренно про отказ. */}
+      <section className="band">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{b.examplesTitle}</h2>
+            {b.examples.map((ex) => (
+              <div key={ex.title} style={{ marginBottom: "var(--gap-3)" }}>
+                <h3>{ex.title}</h3>
+                <p className="teach-p">{ex.given}</p>
+                <p className="teach-def">{ex.verdict}</p>
+                {ex.text.map((p) => (
+                  <p className="teach-p" key={p.slice(0, 40)}>
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Вопросы в форме "почему". Отвечают не на то, что инструмент
+          делает, а на то, почему ему можно верить. */}
+      <section className="band band--cream">
+        <div className="wrap">
+          <div className="teach">
+            <h2 className="section">{b.whyTitle}</h2>
+            <div className="faq">
+              {b.why.map((it) => (
+                <details key={it.q}>
+                  <summary>{it.q}</summary>
+                  {it.a.map((p) => (
+                    <p key={p.slice(0, 40)}>{p}</p>
+                  ))}
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Четыре признака и вес каждого. Вес назван словами, а не числом:
           число выглядело бы как точность, которой здесь нет. */}
-      <section className="band band--cream">
+      <section className="band band--mint">
         <div className="wrap">
           <h2 className="section">{b.signsTitle}</h2>
           <ul className="labels">
@@ -724,7 +817,8 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
   const x = agePageLabels[lang];
   const st = stageById(page.stage);
   const ed = editions[lang];
-  const picks = sample(4);
+  /* Листы того этапа, которому соответствует этот возраст. */
+  const picks = sheetsForStage(st.id, 4);
 
   /* Соседние возрасты. Родитель, попавший не туда, должен уйти на
      нужную страницу в один шаг, а не через меню. */
