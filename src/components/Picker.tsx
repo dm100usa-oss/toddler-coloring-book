@@ -23,7 +23,24 @@ import { homePath, sectionPath } from "@/lib/routes";
 const KEYS = ["age", "grip", "inside", "attention"] as const;
 type Key = (typeof KEYS)[number];
 
-export default function Picker({ lang }: { lang: ContentLang }) {
+/* Уровень заголовков внутри инструмента задается снаружи.
+
+   Инструмент стоит в двух местах, и глубина у них разная. На своей
+   странице он идет сразу под названием страницы, а на главной лежит
+   внутри руководства, то есть на ступеньку ниже. Уровни заголовков
+   должны идти подряд, без пропусков, иначе проверка доступности
+   ругается, а машина хуже понимает, что чему подчинено. Выглядят
+   заголовки одинаково в обоих случаях: оформление задано классом,
+   а не уровнем. */
+export default function Picker({
+  lang,
+  headingLevel = 3,
+}: {
+  lang: ContentLang;
+  headingLevel?: 3 | 4;
+}) {
+  const HQ = (headingLevel === 4 ? "h4" : "h3") as "h3" | "h4";
+  const HSub = (headingLevel === 4 ? "h5" : "h4") as "h4" | "h5";
   const t = dictionaries[lang].picker;
   const c = dictionaries[lang].common;
   const sec = dictionaries[lang].sec;
@@ -52,7 +69,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
           <i style={{ width: `${(step / KEYS.length) * 100}%` }} />
         </div>
         <p className="picker__step">{t.stepOf(step + 1, KEYS.length)}</p>
-        <h3 className="picker__q">{q.q}</h3>
+        <HQ className="picker__q">{q.q}</HQ>
         <div className="picker__options">
           {q.a.map((opt) => (
             <button
@@ -82,12 +99,12 @@ export default function Picker({ lang }: { lang: ContentLang }) {
   return (
     <div className="picker">
       <span className="result__age">{stage.ageLabel[lang]}</span>
-      <h3 className="result__title">
+      <HQ className="result__title">
         {t.resultTitle}: {stage.title[lang]}
-      </h3>
+      </HQ>
 
       <div className="result__block">
-        <h4>{t.canTitle}</h4>
+        <HSub>{t.canTitle}</HSub>
         <ul>
           {stage.can[lang].map((line) => (
             <li key={line}>{line}</li>
@@ -98,7 +115,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
       <p className="result__notyet">{stage.notYet[lang]}</p>
 
       <div className="result__block">
-        <h4>{t.lookForTitle}</h4>
+        <HSub>{t.lookForTitle}</HSub>
         <ul>
           {stage.lookFor[lang].map((line) => (
             <li key={line}>{line}</li>
@@ -110,7 +127,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
           родителю, чей ребенок ее перерос, печатать образцы незачем. */}
       {stage.bookFit !== "outgrown" && (
       <div className="result__block">
-        <h4>{t.tryTitle}</h4>
+        <HSub>{t.tryTitle}</HSub>
         <p style={{ fontSize: "var(--t-small)", color: "var(--ink-2)", margin: "0 0 0.7rem" }}>
           {t.tryLead}
         </p>
@@ -141,7 +158,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
           один раз сказали правду, возвращается. */}
       {stage.bookFit !== "outgrown" ? (
         <div className="result__block">
-          <h4>{t.bookLine}</h4>
+          <HSub>{t.bookLine}</HSub>
           <div className="pick">
             <Link className="pick__cover" href={homePath(lang)}>
               <img
@@ -194,7 +211,7 @@ export default function Picker({ lang }: { lang: ContentLang }) {
         </div>
       ) : (
         <div className="result__block">
-          <h4>{t.bookLine}</h4>
+          <HSub>{t.bookLine}</HSub>
           <p className="result__notyet" style={{ marginBottom: "0.9rem" }}>
             {sec.outgrown}
           </p>

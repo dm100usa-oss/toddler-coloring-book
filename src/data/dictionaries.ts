@@ -41,6 +41,17 @@ export type Dict = {
     terms: string;
   };
   home: {
+    /* Три надписи с баннера в шапке, настоящими буквами. На картинке
+       они нарисованы, и машина их не читает; здесь они есть текстом.
+       Порядок тот же, что на картинке: крупная строка, строка сверху,
+       строка снизу. Последняя разбита на вопросы. */
+    bannerTitle: string;
+    bannerSubtitle: string;
+    bannerQuestions: string[];
+    /* Заголовок, открывающий руководство. На экране его нет: он нужен,
+       чтобы машина читала страницу как руководство, внутри которого
+       книга стоит примером. */
+    guideTitle: string;
     /* Заголовок первого экрана. Он же главный ответ на вопрос,
        про что этот сайт. Короткий, без рекламных слов. */
     hero: string;
@@ -155,6 +166,15 @@ export const dictionaries: Record<UiLang, Dict> = {
         "A one year old scribbles across the page. A three year old starts staying inside the line. " +
         "The same book does not suit both. Answer four questions about your child and see what fits, " +
         "with free pages to print and try today.",
+      guideTitle: "Everything about first coloring books for toddlers ages 1-3",
+      bannerTitle: "First Coloring Books for Toddlers",
+      bannerSubtitle:
+        "A practical guide to first coloring books for toddlers ages 1-3",
+      bannerQuestions: [
+        "When should you introduce crayons and colored pencils?",
+        "Which coloring books work best for ages 1-3?",
+        "How do you turn those first marks into play, learning, and joy?",
+      ],
       pickerTitle: "Find the right first coloring book",
       pickerLead:
         "Four questions, about thirty seconds. Nothing is stored and nothing is sent anywhere.",
@@ -319,6 +339,15 @@ export const dictionaries: Record<UiLang, Dict> = {
           "colorear dentro del contorno. El mismo tipo de página no siempre sirve para ambos. " +
           "Responda cuatro preguntas sobre su hijo y descubra qué tipo de libro puede " +
           "convenirle ahora, con dibujos gratis para imprimir.",
+      guideTitle: "Todo sobre los primeros libros para colorear para bebés de 1 a 3 años",
+      bannerTitle: "El primer libro de colorear para bebés",
+      bannerSubtitle:
+        "Una guía práctica sobre los primeros libros para colorear para bebés de 1 a 3 años",
+      bannerQuestions: [
+        "¿Cuándo empezar con crayones y lápices de colores?",
+        "¿Qué libros para colorear elegir para niños de 1 a 3 años?",
+        "¿Cómo convertir sus primeros trazos en juego, aprendizaje y alegría?",
+      ],
       pickerTitle: "Encuentre el primer libro para colorear adecuado",
       pickerLead:
         "Cuatro preguntas, unos treinta segundos. No guardamos ni enviamos sus respuestas.",
@@ -497,6 +526,15 @@ export const dictionaries: Record<UiLang, Dict> = {
         "111 больших простых рисунков с толстыми линиями, по одному на странице. Животные, " +
           "морские обитатели, сказочные герои, транспорт, цветы и еда. Слово под каждым " +
           "рисунком тоже можно раскрасить, поэтому ребенок постепенно знакомится с буквами.",
+      guideTitle: "Все о первых раскрасках для малышей от 1 до 3 лет",
+      bannerTitle: "Первые раскраски для малыша",
+      bannerSubtitle:
+        "Все о первых раскрасках для малышей от 1 до 3 лет",
+      bannerQuestions: [
+        "Когда знакомить ребенка с мелками и карандашами?",
+        "Какие раскраски выбрать в 1-3 года?",
+        "Как превратить первые линии в игру, развитие и радость?",
+      ],
       pickerTitle: "Какая раскраска подойдет вашему ребенку",
       pickerLead: "Четыре вопроса, около тридцати секунд. Мы ничего не сохраняем и никуда не " +
                     "передаем.",

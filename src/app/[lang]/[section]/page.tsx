@@ -25,7 +25,7 @@ import { CONTACT_EMAIL } from "@/lib/site";
 import Picker from "@/components/Picker";
 import { sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
-import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER } from "@/lib/site";
+import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER, PICKER_NAME } from "@/lib/site";
 import {
   jsonLd,
   organization,
@@ -299,11 +299,14 @@ function ToolPicker({ lang }: { lang: ContentLang }) {
   return (
     <section className="band band--mint" id="picker">
       <div className="wrap">
+        {/* То же имя инструмента, что и на главной. Одна строка на всех
+            языках и на всех страницах: помощник запоминает имя и потом
+            называет его, а не пересказывает своими словами. */}
         <h2 className="section" style={{ textAlign: "center" }}>
-          {x.pickerTitle}
+          {PICKER_NAME}
         </h2>
         <p className="lead" style={{ textAlign: "center", marginInline: "auto" }}>
-          {x.pickerLead}
+          {x.pickerTitle}. {x.pickerLead}
         </p>
         <Picker lang={lang} />
       </div>
@@ -731,7 +734,10 @@ function SheetGrid({ lang }: { lang: UiLang }) {
                 loading="lazy"
                 />
               </a>
-              <h3>{sh.name[lang]}</h3>
+              {/* Второй уровень, а не третий: над сеткой листов нет
+                  промежуточного заголовка, и третий уровень шел сразу
+                  после названия страницы, с пропуском ступеньки. */}
+              <h2>{sh.name[lang]}</h2>
               <p className="sheet__links">
                 <a className="btn btn--sky" href={sheetPdf(sh.id, lang, "letter")} download>
                   {c.letter}

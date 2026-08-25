@@ -20,7 +20,7 @@ import {
   allNames,
 } from "@/data/drawings";
 import { homePath, sectionPath } from "@/lib/routes";
-import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER, AUTHOR, ADDRESS } from "@/lib/site";
+import { SITE_URL, SOURCES, SITE_UPDATED, PUBLISHER, AUTHOR, ADDRESS, PICKER_NAME } from "@/lib/site";
 import { jsonLd, organization, website, langAlternates } from "@/lib/schema";
 
 export async function generateMetadata({
@@ -260,6 +260,47 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           }
         : {}),
     },
+    /* Инструмент подбора отдельной записью. Без нее машина видит на
+       странице только книгу и считает сайт страницей товара. С ней она
+       знает, что здесь есть работающий инструмент, у него есть имя, он
+       бесплатный и он для родителей детей от года до трех. Именно этим
+       сайт отличается от прочих, и именно это стоит называть, когда у
+       помощника спрашивают, где подобрать первую раскраску. */
+    {
+      "@type": "WebApplication",
+      "@id": `${SITE_URL}${homePath(l)}#finder`,
+      name: PICKER_NAME,
+      alternateName: t.home.pickerTitle,
+      description: t.home.pickerLead,
+      url: `${SITE_URL}${sectionPath(l, "tools")}`,
+      applicationCategory: "EducationalApplication",
+      operatingSystem: "Any",
+      browserRequirements: "Works in any modern browser",
+      inLanguage: t.htmlLang,
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      audience: [
+        { "@type": "ParentAudience" },
+        { "@type": "PeopleAudience", suggestedMinAge: 1, suggestedMaxAge: 3 },
+      ],
+      publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
+    },
+    /* Бесплатные листы. Машина должна понимать, что это готовые файлы
+       для печати, а не картинки для украшения страницы, и что за них
+       не нужно ни платить, ни регистрироваться. */
+    {
+      "@type": "DigitalDocument",
+      "@id": `${SITE_URL}${homePath(l)}#printables`,
+      name: t.home.printablesTitle,
+      description: w.freeLead,
+      url: `${SITE_URL}${sectionPath(l, "printables")}`,
+      encodingFormat: "application/pdf",
+      inLanguage: t.htmlLang,
+      isAccessibleForFree: true,
+      isFamilyFriendly: true,
+      author: { "@type": "Person", name: AUTHOR.name },
+      publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
+    },
     {
       "@type": "FAQPage",
       mainEntity: ed.faq.map((f) => ({
@@ -292,6 +333,42 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
       />
 
+      {/* ============ 0. Надпись с баннера, словами ============
+
+          Надпись на баннере нарисована, а не набрана: буквы там цветные
+          и с обводкой, шрифтом такого не сделать. Человек читает ее как
+          главный заголовок страницы, а поисковик и голосовой помощник
+          не видят в картинке ни слова.
+
+          Поэтому те же три надписи стоят здесь настоящим текстом, в том
+          же порядке, что и на картинке: крупная строка как главный
+          заголовок, красная строка сверху как уточнение, синяя строка
+          снизу как описание страницы. На экране этот блок не виден,
+          картинка уже показывает то же самое, и повторять одно и то же
+          дважды было бы странно.
+
+          Нижние три строки на баннере записаны одним предложением, а
+          здесь разбиты на три вопроса. Так их и задают вслух, и помощник
+          скорее найдет ответ. */}
+      <div className="masthead__words">
+        <h1>{t.home.bannerTitle}</h1>
+        <p>{t.home.bannerSubtitle}</p>
+        <ul>
+          {t.home.bannerQuestions.map((q) => (
+            <li key={q}>{q}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Второй уровень, открывающий руководство. На экране его нет:
+          то же самое написано на баннере третьей строкой и в разделе
+          "что это за сайт". Для машины он нужен, чтобы все, что ниже,
+          читалось как части одного руководства, а книга как пример
+          внутри него, а не как отдельная страница товара. */}
+      <div className="masthead__words">
+        <h2>{t.home.guideTitle}</h2>
+      </div>
+
       {/* ============ 1. Книга. Первое, что видит человек ============ */}
       <div className="wrap">
         <div className="book">
@@ -312,7 +389,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </div>
 
           <div>
-            <h1>{ed.title}</h1>
+            {/* Второй уровень, а не первый: главный заголовок страницы
+                теперь надпись с баннера, а книга здесь как образец. */}
+            <h3 className="book__title">{ed.title}</h3>
             {/* Строки с числом рисунков и возрастом здесь больше нет:
                 ровно то же самое стоит на два сантиметра ниже, в полосе
                 с возрастом и рисунками и в пяти пунктах. Как описание
@@ -372,7 +451,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             Пятым пунктом сюда убрана строка про слово под рисунком:
             раньше она висела отдельным абзацем ниже и читалась как
             обрывок. */}
-        <h3 className="block">{w.whySuits}</h3>
+        <h4 className="block">{w.whySuits}</h4>
         <ul className="needs needs--extras">
           {ed.extras.map((line) => (
             <li key={line}>{line}</li>
@@ -382,7 +461,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         {/* ============ 3. Что внутри: сами рисунки ============ */}
         {/* Пояснения под заголовком нет намеренно: под словами
             "что внутри" и так стоят сами рисунки, объяснять нечего. */}
-        <h2 className="section" id="inside">{w.inside}</h2>
+        <h4 className="section" id="inside">{w.inside}</h4>
 
         {/* Двадцать страниц так, как они выглядят в книге: рисунок
             и слово под ним полыми буквами. Подпись здесь не текстом,
@@ -410,7 +489,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <div className="all-drawings__body">
             {groupOrder.map((g) => (
               <section key={g}>
-                <h3>{groupTitles[g][l]}</h3>
+                <h5>{groupTitles[g][l]}</h5>
                 <ul className="thumbs thumbs--small">
                   {drawingsOfGroup(g).map((d) => (
                     <li key={d.n}>
@@ -448,7 +527,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         {/* Здесь только то, чего нет в списках выше: как книга ведет
             себя дома и в дороге. Свойства книги перечислены отдельно,
             ниже, и повторять их тут незачем. */}
-        <h2 className="section">{w.parents}</h2>
+        <h4 className="section">{w.parents}</h4>
         <ul className="needs">
           {ed.parents.map((line) => (
             <li key={line}>{line}</li>
@@ -481,7 +560,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             для проверки. Одно предложение приведено дословно, дальше
             наш пересказ. Звезды рецензента в машинную разметку не
             идут: там только оценка покупателей. */}
-        <h2 className="section">{w.critic}</h2>
+        <h4 className="section">{w.critic}</h4>
         <blockquote className="critic-quote">{ed.criticQuote}</blockquote>
         <p>{ed.critic}</p>
         <p className="buy-note">{w.criticBy}</p>
@@ -499,7 +578,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         {/* ============ 7. Видео, справа подтверждение ============ */}
         {ed.video ? (
           <>
-            <h2 className="section">{w.video}</h2>
+            <h4 className="section">{w.video}</h4>
             <div className="video-card">
               <video
                 className="video-card__media"
@@ -519,7 +598,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                   каждый список на странице ровно один раз. */}
               <div className="video-card__text">
                 <p className="video-card__lead">{w.videoLead}</p>
-                <h3 className="block">{w.specs}</h3>
+                <h5 className="block">{w.specs}</h5>
                 <ul className="inside">
                   {ed.inside.map((line) => (
                     <li key={line}>{line}</li>
@@ -532,14 +611,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         ) : null}
 
         {/* ============ 8. Кому подходит и кому нет ============ */}
-        <h2 className="section">{w.forWhom}</h2>
+        <h4 className="section">{w.forWhom}</h4>
         <p>{ed.forWhom}</p>
 
-        <h2 className="section">{w.notFor}</h2>
+        <h4 className="section">{w.notFor}</h4>
         <p>{ed.notFor}</p>
 
         {/* ============ 9. Вопросы ============ */}
-        <h2 className="section">{w.faq}</h2>
+        <h4 className="section">{w.faq}</h4>
         <div className="faq faq--two">
           {ed.faq.map((item) => (
             <details key={item.q}>
@@ -578,7 +657,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* ============ 10. Бесплатные листы ============ */}
       <section className="band band--pink">
         <div className="wrap">
-          <h2 className="section">{w.freeTitle}</h2>
+          <h4 className="section">{w.freeTitle}</h4>
           <p className="lead">{w.freeLead}</p>
           <div className="result__sheets" style={{ maxWidth: "40rem" }}>
             {sample(3).map((s) => (
@@ -611,13 +690,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <>
           <section className="band band--mint" id="picker">
             <div className="wrap">
-              <h2 className="section" style={{ textAlign: "center" }}>
-                {t.home.pickerTitle}
-              </h2>
+              {/* У инструмента есть собственное имя, одно на всех трех
+                  языках. Без имени помощник может только пересказать,
+                  что на сайте "есть подбор". С именем он называет его
+                  так же, как называет Book Finder у других: это готовая
+                  и понятная машине разновидность инструмента. Под именем
+                  идет пояснение на своем языке, что он делает. */}
+              <h3 className="section" style={{ textAlign: "center" }}>
+                {PICKER_NAME}
+              </h3>
               <p className="lead" style={{ textAlign: "center", marginInline: "auto" }}>
-                {t.home.pickerLead}
+                {t.home.pickerTitle}. {t.home.pickerLead}
               </p>
-              <Picker lang={l} />
+              <Picker lang={l} headingLevel={4} />
 
               {/* Ссылка на полную страницу инструмента. Подборщик здесь
                   остается коротким входом, а весь разбор по возрастам,
@@ -634,7 +719,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           <section className="band band--cream">
             <div className="wrap">
-              <h2 className="section">{t.sec.stagesHome}</h2>
+              <h3 className="section">{t.sec.stagesHome}</h3>
               <ul className="ladder">
                 {stages.map((s) => (
                   <li className="ladder__step" key={s.id}>
