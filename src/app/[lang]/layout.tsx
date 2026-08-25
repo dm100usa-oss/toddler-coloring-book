@@ -39,6 +39,27 @@ export async function generateMetadata({
       images: [image],
     },
     twitter: { card: "summary_large_image", images: [image] },
+
+    /* Значок сайта.
+
+       Файлы лежали в public с самого начала, но подключены не были
+       нигде. Из-за этого во вкладке браузера значок иногда появлялся,
+       а иногда нет: браузер сам стучится по адресу /favicon.ico и
+       находит файл случайно. А на телефоне при добавлении сайта на
+       экран, в закладках и в выдаче поиска значка не было вовсе,
+       потому что для этого нужны явные строки.
+
+       Теперь подключены все три случая: вкладка браузера, экран
+       телефона Apple и экран телефона Android через манифест. */
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+        { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    },
+    manifest: "/site.webmanifest",
   };
 }
 
