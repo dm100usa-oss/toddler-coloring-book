@@ -19,7 +19,7 @@ import {
   drawingsOfGroup,
   allNames,
 } from "@/data/drawings";
-import { homePath, sectionPath } from "@/lib/routes";
+import { homePath, sectionPath, itemPath } from "@/lib/routes";
 import {
   SITE_URL,
   SHARE,
@@ -772,10 +772,21 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <section className="band band--cream">
             <div className="wrap">
               <h3 className="section">{t.sec.stagesHome}</h3>
+              {/* Названия этапов теперь ссылки на их страницы.
+
+                  Раньше это был просто текст, и главная не вела ни на
+                  одну страницу вглубь сайта: до этапов, статей и
+                  возрастов человек и машина добирались только через
+                  меню. Главная это самая сильная страница сайта, и
+                  вес, который она набирает, должен уходить дальше,
+                  а не останавливаться на ней. Внешне не меняется
+                  ничего, кроме того, что название стало нажимаемым. */}
               <ul className="ladder">
                 {stages.map((s) => (
                   <li className="ladder__step" key={s.id}>
-                    <p className="ladder__age">{s.title[l]}</p>
+                    <p className="ladder__age">
+                      <Link href={itemPath(l, "ages", s.slug[l])}>{s.title[l]}</Link>
+                    </p>
                     <p className="ladder__can">{s.ageLabel[l]}</p>
                     <p className="ladder__needs">{s.can[l][0]}</p>
                   </li>

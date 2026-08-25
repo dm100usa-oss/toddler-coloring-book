@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { activeLangs, contentLangs, dictionaries, isContentLang } from "@/data/dictionaries";
 import type { UiLang, ContentLang } from "@/data/dictionaries";
 import { stages, stageBySlug, stageById } from "@/data/stages";
-import { guides, guideBySlug } from "@/data/guides";
+import { guides, guideBySlug, guidesForStage } from "@/data/guides";
 import type { Guide } from "@/data/guides";
 import { sample, sheetsForStage, sheetPreview, sheetPdf } from "@/data/sheets";
 import { editions, BOOK } from "@/data/book";
@@ -195,6 +195,12 @@ export default async function StagePage({
   const i = stages.findIndex((s) => s.id === st.id);
   const neighbours = [stages[i - 1], stages[i + 1]].filter(Boolean);
 
+  /* Статьи, отвечающие на вопросы этого этапа, и возрастная страница,
+     на которую этот этап обычно приходится. До сих пор со страницы
+     этапа нельзя было попасть ни туда, ни туда, кроме как через меню. */
+  const reading = guidesForStage(st.id, 3);
+  const agePage = agePages.find((p) => p.stage === st.id);
+
   const title = t.sec.stageTitle(st.title[l], st.ageLabel[l]);
 
   const data = jsonLd(
@@ -364,7 +370,39 @@ export default async function StagePage({
         </section>
       )}
 
-      {/* Соседние этапы. */}
+      {/* Статьи этого этапа. Стоят после разбора самого этапа и до
+          соседних этапов: человек уже понял, где он, и следующий его
+          вопрос практический.
+
+          Ссылка идет не голой кнопкой, а вместе с первой фразой самой
+          статьи. Кнопка сообщает машине только свое название, а фраза
+          рядом объясняет, о чем страница на том конце. Для нейросети
+          это разница между "тут есть ссылка" и "тут есть ответ". */}
+      {reading.length > 0 && (
+        <section className="band">
+          <div className="wrap">
+            <div className="teach">
+              <h2 className="section">{t.sec.stageReading}</h2>
+              <p className="teach-p">{t.sec.stageReadingLead}</p>
+            </div>
+            <ul className="guide-next">
+              {reading.map((g) => (
+                <li key={g.id}>
+                  <Link href={itemPath(l, "guides", g.slug[l])}>
+                    <b>{g.title[l]}</b>
+                    <span>{g.lead[l].slice(0, 120)}...</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Соседние этапы, а рядом возраст с цифрой. Родитель, который
+          пришел сюда из поиска по навыку, часто ищет потом по возрасту,
+          и наоборот. Раньше эти два вида страниц ссылались друг на
+          друга только в одну сторону. */}
       <section className="band band--mint">
         <div className="wrap">
           <h2 className="section">
@@ -381,6 +419,40 @@ export default async function StagePage({
                 </Link>
               </li>
             ))}
+          </ul>
+
+          {agePage && (
+            <>
+              <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
+                {t.sec.ageForStage}
+              </h2>
+              <ul className="guides">
+                <li>
+                  <Link href={itemPath(l, "tools", agePage.slug[l])}>
+                    {agePage.copy[l].title}
+                  </Link>
+                  <span>{agePage.copy[l].lead}</span>
+                </li>
+              </ul>
+            </>
+          )}
+
+          {/* Откуда взялся сам этап.
+
+              Четыре этапа это и есть четыре ответа подборщика, но
+              страница, которая объясняет его правила, стояла в стороне:
+              на нее вела одна ссылка со всего сайта. Между тем именно
+              она отвечает на вопрос, который машина задает перед тем,
+              как что-то рекомендовать: на чем это основано. Теперь
+              каждый этап ведет на нее, и она стоит на дороге, а не
+              в углу. */}
+          <ul className="guides" style={{ marginTop: "var(--gap-3)" }}>
+            <li>
+              <Link href={itemPath(l, "tools", basisSlug[l])}>
+                {toolLabels[l].basisLink}
+              </Link>
+              <span>{toolLabels[l].basisLinkLead}</span>
+            </li>
           </ul>
         </div>
       </section>
@@ -408,7 +480,15 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
   const ed = editions[lang];
   const picks = sample(4);
   const stage = guide.stage ? stageById(guide.stage) : null;
-  const others = guides.filter((g) => g.id !== guide.id).slice(0, 3);
+  const ageForGuide = guide.stage ? agePages.find((p) => p.stage === guide.stage) : null;
+
+  /* Раньше здесь стояли первые три статьи списка, одни и те же на всех
+     семи страницах. Из-за этого три статьи собирали все внутренние
+     ссылки, а последние две не получали почти ни одной, и для поисковика
+     выглядели забытыми. Теперь список прокручивается от текущей статьи,
+     и каждая получает ссылки поровну. */
+  const gi = guides.findIndex((g) => g.id === guide.id);
+  const others = [...guides.slice(gi + 1), ...guides.slice(0, gi)].slice(0, 3);
 
   const data = jsonLd(
     organization(),
@@ -550,6 +630,26 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
                 </span>
               </li>
             </ul>
+
+            {/* Тот же вопрос, но заданный по-другому. Одни родители
+                ищут по навыку ребенка, другие по числу лет, и это два
+                разных запроса к поиску. Раньше статья отвечала только
+                первым. */}
+            {ageForGuide && (
+              <>
+                <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
+                  {t.sec.ageForStage}
+                </h2>
+                <ul className="guides">
+                  <li>
+                    <Link href={itemPath(lang, "tools", ageForGuide.slug[lang])}>
+                      {ageForGuide.copy[lang].title}
+                    </Link>
+                    <span>{ageForGuide.copy[lang].lead}</span>
+                  </li>
+                </ul>
+              </>
+            )}
           </div>
         </section>
       )}
@@ -684,14 +784,34 @@ function BasisPage({ lang }: { lang: ContentLang }) {
             <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
               {b.outcomesTitle}
             </h2>
+            {/* Четыре исхода идут в том же порядке, что и четыре этапа
+                в data/stages.ts, поэтому каждый исход можно связать
+                со своей страницей по месту в списке.
+
+                Раньше эта страница была тупиком: на нее вела одна
+                ссылка со всего сайта, а с нее только одна обратно на
+                инструмент. Теперь она стоит посреди дороги между
+                инструментом и четырьмя этапами, а это ровно то место,
+                где ее должна встретить машина, проверяющая, можно ли
+                инструменту верить. */}
             <ul className="labels">
-              {b.outcomes.map((o) => (
-                <li className="label-card" key={o.title}>
-                  <p className="label-card__stage">{o.title}</p>
-                  <p className="result__age" style={{ marginBottom: "0.4rem" }}>{o.age}</p>
-                  <p className="label-card__means">{o.text}</p>
-                </li>
-              ))}
+              {b.outcomes.map((o, oi) => {
+                const st = stages[oi];
+                return (
+                  <li className="label-card" key={o.title}>
+                    <p className="label-card__stage">{o.title}</p>
+                    <p className="result__age" style={{ marginBottom: "0.4rem" }}>{o.age}</p>
+                    <p className="label-card__means">{o.text}</p>
+                    {st && (
+                      <p style={{ margin: "0.6rem 0 0" }}>
+                        <Link href={itemPath(lang, "ages", st.slug[lang])}>
+                          {t.sec.outcomeLink}
+                        </Link>
+                      </p>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             <h2 className="section" style={{ marginTop: "var(--gap-4)" }}>
@@ -1003,8 +1123,8 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
         </div>
       </section>
 
-      {/* Соседние возрасты, этап и сам инструмент. Три выхода со
-          страницы, каждый в свою сторону. */}
+      {/* Соседние возрасты, этап, сам инструмент и его правила.
+          Четыре выхода со страницы, каждый в свою сторону. */}
       <section className="band band--mint">
         <div className="wrap">
           <h2 className="section">{x.otherAges}</h2>
@@ -1026,6 +1146,15 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
             <li>
               <Link href={sectionPath(lang, "tools")}>{t.nav.tools}</Link>
               <span>{x.toolLink}</span>
+            </li>
+            {/* Четвертый выход: правила, по которым подборщик работает.
+                Родитель сюда заходит редко, а вот проверяющая машина
+                смотрит именно на это. */}
+            <li>
+              <Link href={itemPath(lang, "tools", basisSlug[lang])}>
+                {toolLabels[lang].basisLink}
+              </Link>
+              <span>{toolLabels[lang].basisLinkLead}</span>
             </li>
           </ul>
         </div>

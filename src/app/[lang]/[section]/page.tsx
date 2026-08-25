@@ -16,7 +16,7 @@ import { faq, faqFlat } from "@/data/faq";
 import { guides } from "@/data/guides";
 import { stages, stageById } from "@/data/stages";
 import type { StageId } from "@/data/stages";
-import { sheets, sheetPreview, sheetPdf } from "@/data/sheets";
+import { sheets, sheetsForStage, sheetPreview, sheetPdf } from "@/data/sheets";
 import { toolCopy, toolLabels, ageRows, basisSlug } from "@/data/tool";
 import { agePages, agePageLabels } from "@/data/agepages";
 import { programsCopy, programsLabels, audiences, specs } from "@/data/programs";
@@ -259,6 +259,7 @@ export default async function SectionPage({
       {s === "ages" && isContentLang(l) && <AgeLabels lang={l} />}
       {s === "ages" && isContentLang(l) && <AgeLadder lang={l} />}
       {s === "printables" && <SheetGrid lang={l} />}
+      {s === "printables" && isContentLang(l) && <SheetsByStage lang={l} />}
       {s === "guides" && isContentLang(l) && <GuideList lang={l} />}
 
       {copy.faq && (
@@ -888,6 +889,50 @@ function SheetGrid({ lang }: { lang: UiLang }) {
             </figure>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Какой лист какому этапу                                            */
+/* ------------------------------------------------------------------ */
+
+/* Десять листов лежали ровной сеткой, и родителю приходилось решать
+   самому, с какого начать. Уровень сложности у каждого листа посчитан
+   давно: сколько внутри отдельных участков и какой толщины контур.
+   Здесь этот расчет наконец показан, и заодно решается вторая задача.
+
+   Страница бесплатных листов одна из самых посещаемых на сайте, и до
+   сих пор она никуда не вела: с нее нельзя было уйти ни на один этап.
+   Теперь с нее уходят четыре ссылки, и каждая объясняет словами, кому
+   она предназначена. */
+
+function SheetsByStage({ lang }: { lang: ContentLang }) {
+  const t = dictionaries[lang];
+  return (
+    <section className="band band--cream">
+      <div className="wrap">
+        <div className="teach">
+          <h2 className="section">{t.sec.sheetsByStage}</h2>
+          <p className="teach-p">{t.sec.sheetsByStageLead}</p>
+        </div>
+        <ul className="guides">
+          {stages.map((st) => (
+            <li key={st.id}>
+              <Link href={itemPath(lang, "ages", st.slug[lang])}>{st.title[lang]}</Link>
+              <span>
+                <b>{st.ageLabel[lang]}</b>
+                {". "}
+                {sheetsForStage(st.id, 4)
+                  .map((sh) => sh.name[lang])
+                  .join(", ")}
+                {". "}
+                {st.lookFor[lang][0]}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

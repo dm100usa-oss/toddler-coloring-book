@@ -126,6 +126,18 @@ export type Dict = {
     tryToday: string;
     whereFits: string;
     readNext: string;
+    /** Статьи, относящиеся к этому этапу. Заголовок и вводная фраза.
+        Фраза нужна не для красоты: из нее и человек, и машина
+        понимают, почему эти статьи стоят именно здесь. */
+    stageReading: string;
+    stageReadingLead: string;
+    /** Страница с цифрой возраста, на которую уводит статья и этап. */
+    ageForStage: string;
+    /** На странице бесплатных листов: какой лист какому этапу. */
+    sheetsByStage: string;
+    sheetsByStageLead: string;
+    /** На странице правил подбора: каждый исход ведет на свою страницу. */
+    outcomeLink: string;
     buyNote: string;
     bookOneLiner: string;
     outgrown: string;
@@ -303,6 +315,18 @@ export const dictionaries: Record<UiLang, Dict> = {
       tryToday: "Try it on a page today",
       whereFits: "Where this fits in development",
       readNext: "Read next",
+      stageReading: "Questions parents ask at this stage",
+      stageReadingLead:
+        "These guides answer the questions that come up most often while a child is at this " +
+        "stage: what to draw with, how long a child usually sits with one page, and what to do " +
+        "about the mess.",
+      ageForStage: "If you were looking for an age instead",
+      sheetsByStage: "Which sheet suits which stage",
+      sheetsByStageLead:
+        "The ten sheets are not equally simple. The number of separate areas inside the drawing " +
+        "and the thickness of the outline are measured on each one, and that is what decides the " +
+        "level. Pick by what your child is doing now, not by age alone.",
+      outcomeLink: "Full page about this stage",
       buyNote: "Sold and shipped by Amazon. We earn from the sale.",
       bookOneLiner:
         "We publish one coloring book for this age: 111 drawings, thick outlines, one per page, " +
@@ -502,6 +526,18 @@ export const dictionaries: Record<UiLang, Dict> = {
       tryToday: "Pruébelo hoy con una sola página",
       whereFits: "Cómo se relaciona esta etapa con el desarrollo del niño",
       readNext: "Siga leyendo",
+      stageReading: "Preguntas que surgen en esta etapa",
+      stageReadingLead:
+        "Estas guías responden a lo que más se pregunta mientras el niño está en esta etapa: " +
+        "con qué conviene dibujar, cuánto tiempo suele durar una página y qué hacer con la " +
+        "suciedad.",
+      ageForStage: "Si buscaba una edad concreta",
+      sheetsByStage: "Qué hoja corresponde a cada etapa",
+      sheetsByStageLead:
+        "Las diez hojas no son igual de sencillas. En cada una están medidos el número de zonas " +
+        "separadas dentro del dibujo y el grosor del contorno, y eso es lo que determina el " +
+        "nivel. Elija por lo que su hijo hace ahora, no solo por la edad.",
+      outcomeLink: "Página completa sobre esta etapa",
       buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
       bookOneLiner:
         "Publicamos un libro para colorear para esta edad: 111 dibujos con contornos " +
@@ -692,6 +728,17 @@ export const dictionaries: Record<UiLang, Dict> = {
       tryToday: "Попробуйте сегодня на одном листе",
       whereFits: "Как этот этап связан с развитием ребенка",
       readNext: "Читайте дальше",
+      stageReading: "Что чаще всего спрашивают на этом этапе",
+      stageReadingLead:
+        "Эти статьи отвечают на вопросы, которые возникают именно сейчас: чем рисовать, " +
+        "сколько ребенок обычно сидит над одной страницей и что делать с грязью вокруг стола.",
+      ageForStage: "Если вы искали по возрасту",
+      sheetsByStage: "Какой лист какому этапу подходит",
+      sheetsByStageLead:
+        "Десять листов не одинаково простые. На каждом посчитано, сколько внутри рисунка " +
+        "отдельных участков, и измерена толщина контура, от этого и зависит уровень. " +
+        "Выбирайте по тому, что ребенок делает сейчас, а не только по возрасту.",
+      outcomeLink: "Подробная страница об этом этапе",
       buyNote: "Файл для печати. Его можно распечатывать дома столько раз, сколько нужно.",
       bookOneLiner:
         "Мы выпускаем одну раскраску для этого возраста: 111 рисунков с толстым контуром, по " +
