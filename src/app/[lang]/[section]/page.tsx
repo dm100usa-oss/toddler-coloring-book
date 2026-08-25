@@ -775,6 +775,14 @@ function FaqElsewhere({ lang }: { lang: ContentLang }) {
   const t = dictionaries[lang];
 
   const rows: { q: string; href: string }[] = [
+    /* Вопросы самой страницы инструмента. Раньше их тут не было, и
+       ответ про выбор раскраски приходилось держать в двух местах.
+       Теперь он живет на странице инструмента, а сюда попадает
+       ссылкой, как и все остальное, что отвечено на своей странице. */
+    ...toolCopy[lang].faq.map((f) => ({
+      q: f.q,
+      href: sectionPath(lang, "tools"),
+    })),
     ...guides.flatMap((g) =>
       g.faq[lang].map((f) => ({
         q: f.q,

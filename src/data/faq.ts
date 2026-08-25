@@ -33,34 +33,6 @@ export type FaqGroup = {
 export const faq: Record<UiLang, FaqGroup[]> = {
   en: [
     {
-      id: "choose",
-      title: "Choosing a first coloring book",
-      items: [
-        {
-          q: "Which coloring book should I choose for a child aged 1 to 3?",
-          a: [
-            "A good first coloring book differs from an ordinary one in six ways, and all " +
-              "six are visible in the page photos before you buy.",
-            "The outline is thick. A thin line disappears under a wide stroke and the child " +
-              "cannot see the result of their work.",
-            "One drawing per page. Several objects on a sheet split the attention, and " +
-              "attention at this age lasts a few minutes.",
-            "The drawing is large and fills the sheet. The hand moves from the shoulder, so " +
-              "anything small is still out of reach.",
-            "No tiny areas inside the drawing. There should be one simple shape to fill, " +
-              "not ten petals.",
-            "Printed on one side. Otherwise a marker soaks through and ruins the next " +
-              "drawing.",
-            "A sheet of 8.5 by 11 inches or A4. A smaller format cramps the arm.",
-            "Our book is built on those six points: 111 drawings, one per page, thick " +
-              "outline, printed on one side, 8.5 by 11 inches. Under each drawing there is a " +
-              "word printed in large letters that a child colors just like the drawing. At " +
-              "the front of the book there is a page where a child writes their name.",
-          ],
-        },
-      ],
-    },
-    {
       id: "buying",
       title: "Before buying",
       items: [
@@ -555,35 +527,6 @@ export const faq: Record<UiLang, FaqGroup[]> = {
     },
   ],
   es: [
-    {
-      id: "choose",
-      title: "Elegir el primer libro para colorear",
-      items: [
-        {
-          q: "¿Qué libro para colorear elegir para un niño de 1 a 3 años?",
-          a: [
-            "Un buen primer libro para colorear se distingue de uno cualquiera por seis " +
-              "rasgos, y los seis se ven en las fotos de las páginas antes de comprarlo.",
-            "El contorno es grueso. Una línea fina desaparece bajo un trazo ancho y el niño " +
-              "no ve el resultado de su trabajo.",
-            "Un dibujo por página. Varios objetos en la misma hoja dispersan la atención, y " +
-              "a esta edad la atención dura pocos minutos.",
-            "El dibujo es grande y ocupa la hoja entera. La mano se mueve desde el hombro, " +
-              "así que lo pequeño todavía queda fuera de su alcance.",
-            "Dentro del dibujo no hay zonas diminutas. Hay que colorear una forma simple, " +
-              "no diez pétalos.",
-            "Impresión por una sola cara. De lo contrario el rotulador traspasa y estropea " +
-              "el dibujo siguiente.",
-            "Hoja de 21,6 x 27,9 cm o A4. Un formato menor limita el movimiento del brazo.",
-            "Nuestro libro está hecho siguiendo esos seis rasgos: 111 dibujos, uno por " +
-              "página, contorno grueso, impresión por una sola cara y hoja de 21,6 x 27,9 cm. " +
-              "Debajo de cada dibujo hay una palabra impresa en letras grandes que el niño " +
-              "colorea igual que el dibujo. Al principio del libro hay una página donde el " +
-              "niño escribe su nombre.",
-          ],
-        },
-      ],
-    },
     {
       id: "buying",
       title: "Antes de comprar",
@@ -1083,33 +1026,6 @@ export const faq: Record<UiLang, FaqGroup[]> = {
     },
   ],
   ru: [
-    {
-      id: "choose",
-      title: "Выбор первой раскраски",
-      items: [
-        {
-          q: "Какую раскраску выбрать ребенку от года до трех?",
-          a: [
-            "Хорошая первая раскраска отличается от обычной шестью признаками, и все шесть " +
-              "видно по фотографиям страниц прямо в магазине.",
-            "Контур толстый. Тонкая линия исчезает под широким штрихом, и ребенок не видит " +
-              "результата своей работы.",
-            "Один рисунок на странице. Несколько предметов на листе рассеивают внимание, а " +
-              "внимание в этом возрасте держится несколько минут.",
-            "Рисунок крупный, во весь лист. Рука ведет от плеча, мелкое ей пока недоступно.",
-            "Внутри рисунка нет мелких участков. Закрашивать надо одну простую форму, а не " +
-              "десять лепестков.",
-            "Печать с одной стороны. Иначе фломастер проступит на следующий рисунок.",
-            "Лист 8,5 на 11 дюймов или А4. Меньший формат стесняет размах руки.",
-            "Наша книга сделана по этим шести признакам: 111 рисунков, по одному на " +
-              "странице, толстый контур, печать с одной стороны, лист 8,5 на 11 дюймов. Под " +
-              "каждым рисунком стоит слово, напечатанное крупными буквами, которые ребенок " +
-              "раскрашивает так же, как сам рисунок. В начале книги страница, где ребенок " +
-              "пишет свое имя.",
-          ],
-        },
-      ],
-    },
     {
       id: "buying",
       title: "Перед покупкой",

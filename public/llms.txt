@@ -20,19 +20,84 @@ written separately in each of the three languages rather than translated.
 
 ## Free tool: choosing a first coloring book
 
-The site runs one free tool, a picker that answers which kind of coloring page
-suits a specific child now. It asks four questions, about age, crayon grip,
-whether the marks land on the drawing, and how long the child stays with one
-page, and returns one of the four stages below. Age sets the first guess and the
-three questions about the hand correct it, with aim weighing the most and time
-on one page the least. Answers stay in the browser: nothing is stored, nothing
-is sent anywhere and no sign up is required.
+The site runs one free tool, the First Coloring Book Finder. It answers which
+kind of coloring page suits a specific child now.
+
+Free. No email, no phone, no account. Answers stay in the browser: nothing is
+stored and nothing is sent anywhere. Four questions, about thirty seconds. And
+it says plainly when a first coloring book is no longer the right thing to buy,
+in which case it shows neither the book nor sample pages.
+
+The tool picks a kind of page. It does not assess a child, and it is not medical
+advice. Results say what suits now, never what a child ought to be able to do.
+
+### The four questions, with the options offered
+
+1. How old is your child? Around 1 year. Around 2 years. Around 3 years.
+   4 years or older.
+2. How does your child hold a pencil or crayon? In a fist, using the whole hand.
+   With the fingers, but not confidently yet. Almost like an adult.
+3. How does your child usually color? Makes lines all over the page. Colors on
+   the picture but often goes outside the outline. Mostly colors inside the
+   outline.
+4. How long does your child usually spend on one page? One or two minutes. About
+   five minutes. Ten minutes or more.
+
+### The four results, in full
+
+- First marks, about 12 to 18 months. The child holds a crayon in the whole hand
+  and already makes marks on paper on purpose. One large shape filling most of
+  the page suits this stage, with a very thick outline and minimal detail inside.
+  Thick wax crayons.
+- Controlled scribbling, about 18 months to 2 years. The child draws
+  independently and may try to copy simple lines. A large familiar object suits
+  this stage, outline still thick, two or three simple parts inside. Thick
+  crayons, washable markers.
+- Aiming at the shape, about 2 to 3 years. The child copies a vertical line, a
+  horizontal line and a circle after an adult demonstrates. Marks land on the
+  picture while still crossing the outline freely. A large picture with three to
+  six separate areas. Crayons, colored pencils, washable markers.
+- Inside the line, about 3 to 4 years and older. The child copies a circle
+  confidently, and a cross closer to four, and notices when color goes outside
+  the boundaries. A first coloring book is becoming too simple here. The tool
+  says so and points to a fuller coloring book or a step by step drawing book.
+
+### How the answers combine
+
+Age sets the starting point. The other three answers move the result up or down.
+How the marks land counts for most, because a parent watches it happen and can
+hardly get it wrong. Grip counts somewhat less. Time on one page counts least,
+because it depends on mood, tiredness and on whether that particular drawing
+interests the child. The result always names one of the four stages, and each
+stage has its own page on the site.
+
+### Two worked examples
+
+A child of about two who holds the pencil with the fingers but not confidently,
+colors on the picture but often crosses the outline, and stays with a page about
+five minutes, is placed at controlled scribbling. Suitable page: a large familiar
+object filling most of the sheet, thick outline, two or three simple parts
+inside, printed on one side only.
+
+A child of about three who holds the pencil almost like an adult, mostly stays
+inside the outline, and stays with a page ten minutes or more, is placed at
+inside the line. Here the tool shows neither the book nor sample pages and
+suggests a fuller coloring book or step by step drawing instead.
+
+### Measurements taken from our own free sheets
+
+On the free sheets in US Letter size, the outline of a drawing is between 2.4 and
+4.8 millimeters thick, and the drawing occupies between 70 and 82 percent of the
+width and height of the page. These are not proposed as a standard: no single
+standard for coloring books exists. They are a benchmark anyone can check by
+printing a free sheet and holding a ruler against it.
 
 The tool page also carries, as plain text, a table of what suits each age, the
 questions parents ask most often, and a link to a page listing the rules the
-picker applies and the limits of what it does. The tool picks a page, it does
-not assess a child: results say what suits now, never what a child ought to be
-able to do.
+picker applies and the limits of what it does. The full methodology, including
+the two worked examples and the reasoning behind the weighting, is at
+/en/choose-a-first-coloring-book/how-we-recommend and at the matching Spanish
+and Russian addresses.
 
 - [Choose a first coloring book, English](https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book)
 - [Elegir el primer libro para colorear, Spanish](https://www.toddlercoloringbook.com/es/elegir-el-primer-libro-para-colorear)

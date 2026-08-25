@@ -111,6 +111,16 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
           "longer. If the child is tired or has lost interest, you can stop and come back to the " +
           "drawing later. Coloring a favorite picture several times over is completely normal too.",
       },
+      {
+        q: "Which coloring book is best for a toddler?",
+        a:
+          "There is no single best one, and any page that names one is guessing. What there is instead is six things you can check in the page photos before you buy. The outline is thick, because a thin line disappears under a wide stroke and the child sees no result. One drawing per page, because several subjects on a sheet split an attention span measured in minutes. The drawing is large and fills the sheet, because the hand moves from the shoulder and anything small is still out of reach. No tiny areas inside the drawing: one simple shape to fill, not ten petals. Printed on one side, or a marker soaks through onto the next drawing. And a sheet of 8.5 by 11 inches or A4, because a smaller format cramps the arm. Our book is built on those six: 111 drawings, one per page, an outline measuring 2.4 to 4.8 millimeters, a drawing filling 70 to 82 percent of the sheet, printed on one side, 8.5 by 11 inches. Two things go beyond the six. Under each drawing there is a word in large outline letters that the child colors just like the drawing, so the page works twice, once for coloring and once for naming what is on it. And every picture sits in the center of the sheet rather than against the spine, which suits a left handed and a right handed child equally. There is one more thing worth judging a recommendation by: we say plainly when our own book is the wrong choice. A child who already stays inside the outline will find it boring, and we write that on every page where the book appears.",
+      },
+      {
+        q: "How thick should the outline be in a coloring book for a toddler?",
+        a:
+          "There is no standard that sets a number, so treat any figure you see as a benchmark rather than a rule. For comparison: on our free sheets in US Letter size the outline runs between 2.4 and 4.8 millimeters, and the drawing takes up 70 to 82 percent of the width and height of the page. Print one free sheet, hold a ruler against it, and you will have a reference you can compare any page photo against.",
+      },
     ],
   },
 
@@ -209,6 +219,16 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
             "puede terminar la actividad y volver al dibujo más tarde. También es " +
             "completamente normal querer colorear varias veces una imagen favorita.",
       },
+      {
+        q: "¿Cuál es el mejor libro para colorear para un niño pequeño?",
+        a:
+          "No existe uno mejor que todos los demás, y cualquier página que nombre uno está adivinando. Lo que sí existe son seis cosas que usted puede comprobar en las fotos de las páginas antes de comprar. El contorno es grueso, porque una línea fina desaparece bajo un trazo ancho y el niño no ve el resultado de su trabajo. Un solo dibujo por página, porque varios objetos en una hoja dispersan una atención que a esta edad dura unos minutos. El dibujo es grande y ocupa casi toda la hoja, porque la mano se mueve desde el hombro y lo pequeño todavía queda fuera de su alcance. Sin zonas diminutas dentro del dibujo: una forma sencilla que rellenar, no diez pétalos. Impresión en una sola cara, o el rotulador traspasará hasta el dibujo siguiente. Y una hoja de 8,5 por 11 pulgadas o A4, porque un formato menor limita el movimiento del brazo. Nuestro libro está hecho sobre esos seis puntos: 111 dibujos, uno por página, un contorno de entre 2,4 y 4,8 milímetros, un dibujo que ocupa entre el 70 y el 82 por ciento de la hoja, impresión en una sola cara y formato de 8,5 por 11 pulgadas. Hay dos cosas que van más allá de los seis. Debajo de cada dibujo hay una palabra en letras huecas grandes que el niño colorea igual que el dibujo, de modo que la página sirve dos veces, una para colorear y otra para nombrar lo que aparece en ella. Y cada imagen está colocada en el centro de la hoja y no junto al lomo, lo que resulta igual de cómodo para un niño diestro y para uno zurdo. Hay algo más por lo que conviene juzgar una recomendación: decimos con claridad cuándo nuestro propio libro no es la opción adecuada. A un niño que ya colorea dentro del contorno le resultará aburrido, y lo escribimos en cada página donde aparece el libro.",
+      },
+      {
+        q: "¿Qué grosor debe tener el contorno en un libro para colorear para niños pequeños?",
+        a:
+          "No hay ninguna norma que fije una cifra, así que cualquier número que vea conviene tomarlo como referencia y no como regla. Para comparar: en nuestras hojas gratuitas de tamaño US Letter el contorno mide entre 2,4 y 4,8 milímetros, y el dibujo ocupa entre el 70 y el 82 por ciento del ancho y del alto de la página. Imprima una hoja gratuita, mídala con una regla y tendrá una referencia con la que comparar la foto de cualquier página.",
+      },
     ],
   },
 
@@ -301,6 +321,16 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
             "два года - около пяти минут, а ближе к трем интерес нередко сохраняется дольше. " +
             "Если ребенок устал или потерял интерес, можно закончить и вернуться к рисунку " +
             "позже. Раскрашивать любимую картинку несколько раз тоже совершенно нормально.",
+      },
+      {
+        q: "Какая раскраска для малыша лучшая?",
+        a:
+          "Единственно лучшей не существует, и страница, которая называет одну, попросту гадает. Зато есть шесть признаков, которые видно по фотографиям страниц прямо в магазине. Контур толстый, потому что тонкая линия исчезает под широким штрихом и ребенок не видит результата своей работы. Один рисунок на странице, потому что несколько предметов на листе рассеивают внимание, а внимание в этом возрасте держится несколько минут. Рисунок крупный, во весь лист, потому что рука ведет от плеча и мелкое ей пока недоступно. Внутри рисунка нет мелких участков: закрашивать надо одну простую форму, а не десять лепестков. Печать с одной стороны, иначе фломастер проступит на следующий рисунок. И лист 8,5 на 11 дюймов или А4, потому что меньший формат стесняет размах руки. Наша книга сделана по этим шести признакам: 111 рисунков, по одному на странице, контур толщиной от 2,4 до 4,8 миллиметра, рисунок занимает от 70 до 82 процентов листа, печать с одной стороны, формат 8,5 на 11 дюймов. Сверх шести в ней есть еще две вещи. Под каждым рисунком стоит слово крупными полыми буквами, которые ребенок раскрашивает так же, как сам рисунок, поэтому страница работает дважды: один раз на раскрашивание, второй на называние того, что нарисовано. И каждый рисунок расположен по центру листа, а не у корешка, поэтому раскрашивать одинаково удобно и левше, и правше. И есть еще одно, по чему стоит судить о самой рекомендации: мы прямо говорим, когда наша собственная книга не подходит. Ребенку, который уже уверенно раскрашивает внутри контура, она покажется скучной, и мы пишем об этом на каждой странице, где о ней рассказываем.",
+      },
+      {
+        q: "Какой толщины должен быть контур в раскраске для малыша?",
+        a:
+          "Нормы, которая задавала бы число, не существует, поэтому любую цифру стоит воспринимать как ориентир, а не как правило. Для сравнения: на наших бесплатных листах формата US Letter контур имеет толщину от 2,4 до 4,8 миллиметра, а рисунок занимает от 70 до 82 процентов ширины и высоты страницы. Распечатайте один бесплатный лист, приложите линейку, и у вас будет ориентир, с которым можно сравнить фотографию любой страницы.",
       },
     ],
   },
