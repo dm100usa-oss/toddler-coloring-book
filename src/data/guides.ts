@@ -15,6 +15,9 @@ import type { StageId } from "./stages";
    Порядок в списке это порядок в меню. Первой стоит статья про возраст:
    это самый частый вопрос из всех. */
 
+/** Кусок статьи: либо абзац, либо подзаголовок. */
+export type GuideBlock = string | { h: string };
+
 export type Guide = {
   id: string;
   slug: Record<ContentLang, string>;
@@ -23,7 +26,16 @@ export type Guide = {
      Именно его забирает поисковик в выдачу и нейросеть в ответ,
      поэтому он должен быть законченным ответом, а не завлекалкой. */
   lead: Record<ContentLang, string>;
-  body: Record<ContentLang, string[]>;
+  /* Текст статьи. Обычная строка это абзац. Запись вида { h: "..." }
+     это подзаголовок внутри статьи.
+
+     Подзаголовки нужны не для красоты. Нейросеть забирает со страницы
+     не всю статью, а один кусок, и по заголовку она понимает, о чем
+     этот кусок. Без них длинная статья для машины сплошная стена.
+
+     Короткие статьи, где разделов нет, остаются просто списком
+     абзацев: старая запись продолжает работать. */
+  body: Record<ContentLang, GuideBlock[]>;
   faq: Record<ContentLang, { q: string; a: string }[]>;
   /* Этап, к которому статья ближе всего. Связывает статью
      со страницей этапа в обе стороны. */
@@ -497,11 +509,10 @@ export const guides: Guide[] = [
         "time rather than the open book, which removes the temptation to turn the page mid-drawing " +
         "and halves the surface area available for accidents.",
 
-        "One thing worth knowing before you shop: searching for mess free coloring will mostly turn " +
-        "up a different product, the kind with special pens that only develop on treated paper. " +
-        "Those work as advertised and are genuinely tidy, but the child colors with a pen that " +
-        "shows nothing anywhere else, which is a different activity from drawing on paper. Both " +
-        "have their place. They are not substitutes for each other.",
+        "One thing worth knowing before you shop: mess free sets, reusable wipe-clean books and " +
+        "water-reveal books each cut down on mess in their own way, and each gives a child a " +
+        "different experience at the table. A separate article on this site compares all four " +
+        "kinds and says where each one fits.",
       ],
       es: [
         "Conviene distinguir dos cosas. Una son las marcas de crayón o rotulador que acaban " +
@@ -531,11 +542,10 @@ export const guides: Guide[] = [
           "al niño una sola hoja en lugar del libro abierto para que le resulte más fácil " +
           "concentrarse en un dibujo.",
 
-        "También conviene distinguir los libros para colorear normales de los productos que " +
-          "se venden como actividades «sin manchas». Estos utilizan rotuladores especiales " +
-          "cuyo color solo aparece sobre un papel preparado para ellos. Son prácticos, " +
-          "especialmente para viajar, pero no sustituyen el dibujo normal con crayones o " +
-          "rotuladores sobre papel. Son simplemente dos tipos de actividad diferentes.",
+        "Conviene saber además que los productos «sin manchas», los libros reutilizables de " +
+          "superficie borrable y los libros que funcionan con agua reducen la suciedad cada uno " +
+          "a su manera, y cada uno ofrece al niño una experiencia distinta. En este sitio hay un " +
+          "artículo aparte que compara los cuatro tipos y explica cuándo conviene cada uno.",
       ],
       ru: [
         "Важно различать две вещи. Первая - реальные следы мелков или фломастеров на столе, " +
@@ -562,11 +572,10 @@ export const guides: Guide[] = [
           "линий, случайно вышедших за край. И давайте ребенку по одному листу вместо открытой " +
           "книги - так ему проще сосредоточиться на одном рисунке.",
 
-        "Стоит также отличать обычные раскраски от наборов, которые продаются как " +
-          "«раскрашивание без грязи». В таких наборах используются специальные фломастеры, " +
-          "цвет которых проявляется только на предназначенной для них бумаге. Это удобно, " +
-          "особенно в дороге, но такой набор не заменяет обычное рисование мелками или " +
-          "фломастерами на бумаге. Это просто два разных вида занятий.",
+        "Стоит знать и о том, что наборы «без грязи», многоразовые раскраски со стираемым " +
+          "покрытием и водные раскраски уменьшают беспорядок каждый по-своему и дают ребенку " +
+          "разный опыт. На сайте есть отдельная статья, где все четыре вида сравниваются между " +
+          "собой и сказано, когда какой уместен.",
       ],
     },
     faq: {
@@ -578,14 +587,6 @@ export const guides: Guide[] = [
             "walls, working gently so the paint is not rubbed. A magic eraser sponge handles what is " +
             "left but can dull a matte finish, so test a hidden patch first. Check the crayon " +
             "packaging: many brands publish removal instructions for their own product.",
-        },
-        {
-          q: "Are mess free coloring books the same thing as a regular coloring book?",
-          a:
-            "No. Mess free sets use special pens that only show up on their own treated paper, so " +
-            "nothing marks the table or the child. They are genuinely tidy and useful for travel, " +
-            "but the child is not drawing on ordinary paper and cannot use the same pen anywhere " +
-            "else. They work alongside a paper coloring book rather than replacing it.",
         },
         {
           q: "Should my child wear a smock?",
@@ -606,14 +607,6 @@ export const guides: Guide[] = [
               "Conviene consultar además las recomendaciones del fabricante de los crayones.",
         },
         {
-          q: "¿Los libros para colorear sin manchas son lo mismo que un libro normal?",
-          a:
-            "No. Los productos «sin manchas» utilizan rotuladores especiales cuyo color solo " +
-              "aparece sobre el papel preparado para ellos. Son prácticos y ayudan a evitar " +
-              "manchas en la mesa o la ropa, especialmente durante los viajes. Pero se trata " +
-              "de una actividad diferente y no sustituyen el dibujo normal sobre papel.",
-        },
-        {
           q: "¿Debe llevar babi mi hijo?",
           a:
             "Con crayones, normalmente no hace falta. Si el niño utiliza rotuladores o " +
@@ -630,14 +623,6 @@ export const guides: Guide[] = [
               "Меламиновая губка иногда помогает удалить оставшиеся следы, но может изменить " +
               "вид матовой поверхности, поэтому сначала проверьте ее на незаметном участке. " +
               "Также стоит посмотреть рекомендации производителя мелков на упаковке.",
-        },
-        {
-          q: "Раскраска без грязи это то же самое, что обычная раскраска?",
-          a:
-            "Нет. В таких наборах используются специальные фломастеры, которые проявляют " +
-              "цвет только на предназначенной для них бумаге. Это удобно и помогает избежать " +
-              "пятен на столе и одежде, особенно в дороге. Но это другой вид занятия, который " +
-              "не заменяет обычное рисование на бумаге.",
         },
         {
           q: "Нужен ли ребенку фартук?",
@@ -1019,6 +1004,392 @@ export const guides: Guide[] = [
               "от множества факторов и не сводится к одному виду занятий. Раскраски могут быть " +
               "полезной частью игры и обучения, но не являются специальной тренировкой " +
               "внимания.",
+        },
+      ],
+    },
+  },
+  /* ---------------------------------------------------------------- */
+  /* Сравнение видов раскрасок между собой. Родитель спрашивает "какую
+     взять", и до этой статьи страницы, отвечающей на это прямо, на
+     сайте не было. Сравнения нейросети разбирают охотнее всего:
+     из них удобно собирать ответ. */
+  {
+    id: "types",
+    slug: {
+      en: "types-of-coloring-books-for-toddlers",
+      es: "tipos-de-libros-para-colorear-para-ninos-pequenos",
+      ru: "vidy-raskrasok-dlya-malyshey",
+    },
+    title: {
+      en: "Types of coloring books for toddlers: traditional, reusable, water-reveal and mess-free",
+      es: "Tipos de libros para colorear para niños pequeños: tradicional, reutilizable, con agua y sin manchas",
+      ru: "Виды раскрасок для малышей: обычная, многоразовая, водная и без грязи",
+    },
+    lead: {
+      en: "For a child who is just beginning to draw, a traditional paper coloring book with thick outlines is usually the best place to start. It is inexpensive, it is okay if a page gets torn or ruined, and most importantly, the child can see a real mark made by their own hand. Reusable, water-reveal and mess-free coloring books have their own advantages: they reduce cleanup, save paper and can be convenient for travel. The best choice depends on what matters most to you at the moment.",
+      es: "Para un niño que apenas empieza a dibujar, lo mejor suele ser un libro para colorear tradicional, de papel, con contornos gruesos. Es económico, no pasa nada si alguna página se estropea y, lo más importante, el niño puede ver la huella real que deja con su propia mano. Los libros reutilizables, los que funcionan con agua y los que no manchan también tienen sus ventajas: requieren menos limpieza, permiten ahorrar papel y son cómodos para llevar de viaje. Por eso, la elección depende de lo que sea más importante para usted en cada momento.",
+      ru: "Для ребенка, который только начинает рисовать, лучше всего подходит обычная бумажная раскраска с толстым контуром. Она недорогая, ее не жалко испортить, а главное - ребенок видит настоящий след от своей руки. Многоразовые, водные и раскраски без грязи удобны по-своему: с ними меньше уборки, не нужно постоянно расходовать бумагу, их удобно брать в дорогу. Поэтому выбирать стоит в зависимости от того, что вам сейчас важнее.",
+    },
+    body: {
+      en: [
+        "When parents choose a coloring book for their toddler for the first time, they often find several very different products sitting next to one another on the same shelf. They may all be called coloring books, but they work differently and give children different experiences. Here is how the main types compare and when each one can be useful.",
+        { h: "Traditional paper coloring books" },
+        "These are regular paper pages with printed outlines that children color with crayons, colored pencils or markers.",
+        "What they offer. The child makes a real mark that stays on the page. For a toddler, this is one of the most important discoveries in early drawing: I moved my hand, and a line appeared on the paper. The page can be saved, displayed on the refrigerator, dated or kept in a folder. A few months later, you can look back and see how your child's lines and drawings have changed.",
+        "Limitations. The pages get used up. A toddler may tear or crumple a page, and that is completely normal at this age. Markers may also bleed through thin paper.",
+        "When they work best. From the beginning, often around twelve to eighteen months, when a child starts making intentional marks on paper. Traditional paper coloring books are the basic option. The other types are better viewed as additions rather than replacements.",
+        { h: "Reusable coloring books with wipe-clean pages" },
+        "These coloring books have laminated pages or pages made from a durable plastic-like material. Children draw with a dry-erase marker, wipe the page clean and use it again.",
+        "What they offer. The same page can be colored many times. This can be especially useful when a child loves one particular picture and wants to return to it again and again. Reusable books last a long time and are easy to take along.",
+        "Limitations. A smooth wipe-clean surface feels different from paper. The marker glides more easily, so the child does not experience the same resistance as with paper and a crayon or pencil. The finished picture also disappears when it is erased, so you cannot save it and look back later to see how the child's drawing has changed.",
+        "When they work best. As a supplement to traditional paper coloring. They can be especially convenient in the car, on an airplane or while waiting at a doctor's office.",
+        { h: "Water-reveal coloring books" },
+        "At first, the page may look almost blank. The child moves a brush or special water-filled pen across it, and colors appear. After the page dries, the colors fade and the page can be used again.",
+        "What they offer. This is one of the cleanest options, because plain water does not leave colorful marks on clothing or furniture. Young children often enjoy watching the picture appear. A chunky water pen may also be easier for a toddler to hold than a regular pencil.",
+        "Limitations. The child does not choose the colors independently. The colors are already built into the page and simply appear when they come into contact with water. For that reason, this activity is closer to revealing a prepared picture than traditional coloring. It gives less practice with choosing colors and filling in an outlined area.",
+        "When they work best. Water-reveal books can be introduced fairly early, around age one. They are a simple way for a child to discover the idea that when I move my hand, something happens on the page. They are also useful for travel or visits. A water-reveal book can be used before a traditional coloring book or alongside one.",
+        { h: "Mess-free coloring books" },
+        "These products use special markers that show color only on the paper designed to work with them. The markers do not normally produce visible color on ordinary tables, walls, hands or clothing.",
+        "What they offer. The main advantage is obvious: there is much less risk of ending up with marker on the table, clothing or walls. For parents of toddlers, that can make coloring much easier to manage.",
+        "Limitations. The markers work only with their special paper. When the pages are gone, you need replacement pages or another set. On a per-page basis, this option is often more expensive than an ordinary paper coloring book. The child is also using a material that behaves differently from regular crayons and markers, which leave marks on many surfaces.",
+        "When they work best. When avoiding stains and minimizing cleanup are especially important, at home, while traveling or during activities with a group of children.",
+        { h: "How to choose" },
+        "If your child is around one year old and just beginning to draw, choose a simple paper coloring book with very thick outlines and one large picture per page. A water-reveal book can be used alongside it.",
+        "For travel, reusable and water-reveal coloring books can be convenient, because they are easy to carry and help keep mess to a minimum.",
+        "If your child colors at home and you are constantly cleaning marks from different surfaces, a mess-free coloring book may be worth trying. But it is still useful to keep regular paper and traditional drawing materials available.",
+        "For a group of children, ordinary paper coloring pages are often the simplest and least expensive choice. Each child can have a separate page, and a torn or spoiled sheet is easy to replace.",
+        "There is also one general rule that matters more than the type of coloring book. For a toddler, four features are especially helpful: thick outlines, one large picture per page, a familiar object or character, and printing on only one side of the sheet. A beautiful reusable book filled with tiny details may be less suitable for a young child than a simple page with one big elephant.",
+      ],
+      es: [
+        "Cuando los padres eligen por primera vez un libro para colorear para su pequeño, se encuentran con varias opciones muy diferentes. En la tienda pueden estar unas junto a otras y llamarse todas libros para colorear, aunque funcionan de manera distinta y ofrecen experiencias diferentes al niño. Veamos en qué se diferencian y cuándo conviene utilizar cada una.",
+        { h: "Libro para colorear tradicional de papel" },
+        "Es una hoja de papel con un dibujo impreso que el niño colorea con crayones, lápices de colores o rotuladores.",
+        "Qué aporta. El niño deja una huella real que no desaparece. Para un pequeño, este es uno de los principales descubrimientos de sus primeras experiencias con el dibujo: mueve la mano y aparece una línea sobre el papel. La página se puede guardar, colocar en el refrigerador, marcar con la fecha o archivar en una carpeta. Después de unos meses será interesante observar cómo han cambiado las líneas y los dibujos del niño.",
+        "Limitaciones. Las páginas se gastan. El niño puede romper o arrugar alguna, y a esta edad es completamente normal. Además, los rotuladores pueden traspasar el papel si es demasiado fino.",
+        "Cuándo conviene. Desde el principio, aproximadamente entre los doce y los dieciocho meses, cuando el niño empieza a dejar marcas sobre el papel de manera intencionada. Este es el tipo básico de libro para colorear. Las demás opciones sirven más como complemento que como sustituto.",
+        { h: "Libro para colorear reutilizable con superficie borrable" },
+        "Las páginas están plastificadas o impresas sobre un material plástico resistente. El niño dibuja con un rotulador borrable en seco y después se puede limpiar la página con un paño para volver a utilizarla.",
+        "Qué aporta. La misma página se puede colorear muchas veces. Resulta especialmente útil cuando al niño le gusta una imagen determinada y quiere volver a ella una y otra vez. El libro dura mucho tiempo y es cómodo para llevar fuera de casa.",
+        "Limitaciones. La superficie lisa se comporta de manera diferente al papel. El rotulador se desliza con mayor facilidad, por lo que el niño no siente la misma resistencia que ofrecen el papel y un crayón o un lápiz. Además, el dibujo termina borrándose: no se puede guardar para observar más adelante cómo ha cambiado el dibujo del niño.",
+        "Cuándo conviene. Como complemento de un libro tradicional de papel. Es especialmente práctico en el automóvil, en el avión o, por ejemplo, mientras se espera en la consulta del médico.",
+        { h: "Libro para colorear con agua" },
+        "Al principio, la página parece casi vacía. El niño pasa sobre ella un pincel o un rotulador especial lleno de agua y la imagen empieza a mostrar sus colores. Después de un tiempo, la página se seca y vuelve a quedar casi vacía.",
+        "Qué aporta. Es una de las opciones más limpias: el agua no deja manchas de color en la ropa ni en los muebles. A los niños suele gustarles el efecto de ver cómo aparece la imagen. Además, un rotulador grueso de agua suele ser más fácil de sujetar para un pequeño que un lápiz convencional.",
+        "Limitaciones. El niño no elige los colores por sí mismo: ya están incorporados en la página y simplemente aparecen al entrar en contacto con el agua. Por eso, se parece más a un juego en el que se revela una imagen preparada de antemano que al coloreado tradicional. La práctica específica de colorear es menor.",
+        "Cuándo conviene. Se puede ofrecer bastante pronto, aproximadamente desde el año de edad. Es una buena forma de descubrir por primera vez que al mover la mano algo aparece en la página, y también resulta práctico para viajes o visitas. Puede utilizarse antes de un libro tradicional de papel o junto con él.",
+        { h: "Libro para colorear sin manchas" },
+        "Utiliza rotuladores especiales cuyo color aparece únicamente sobre el papel diseñado para ellos. En una mesa normal, las paredes, las manos o la ropa, el color de estos rotuladores no aparece.",
+        "Qué aporta. Su principal ventaja es evidente: reduce considerablemente el riesgo de terminar con la mesa, la ropa o las paredes pintadas. Para los padres de niños pequeños puede ser una solución muy cómoda.",
+        "Limitaciones. Los rotuladores solo funcionan con el papel especial. Cuando se terminan las páginas, es necesario comprar otro juego o páginas adicionales. Calculado por página, este sistema suele resultar más caro que un libro tradicional de papel. Además, el niño se acostumbra a utilizar un material que no deja marcas en otras superficies, mientras que los lápices y rotuladores convencionales se comportan de otra manera.",
+        "Cuándo conviene. Cuando es especialmente importante evitar manchas y reducir la limpieza. Por ejemplo, en casa, durante un viaje o en actividades con un grupo de niños.",
+        { h: "Cómo elegir" },
+        "Si el niño tiene alrededor de un año y apenas empieza a dibujar, elija un libro sencillo de papel con contornos muy gruesos y un solo dibujo grande por página. También puede utilizar junto a él un libro para colorear con agua.",
+        "Si va de viaje, los libros reutilizables o los que funcionan con agua son opciones cómodas: ocupan poco espacio y ayudan a evitar manchas.",
+        "Si el niño dibuja en casa y usted tiene que limpiar constantemente diferentes superficies, puede probar un libro para colorear sin manchas. Sin embargo, también conviene mantener el papel tradicional entre los materiales que utiliza habitualmente.",
+        "Si necesita libros para colorear para un grupo de niños, las hojas de papel tradicionales suelen ser la opción más sencilla y económica: cada niño puede recibir su propia página y una hoja estropeada se sustituye fácilmente.",
+        "Y hay una regla general que es más importante que el tipo de libro. Para un niño pequeño son especialmente importantes cuatro cosas: un contorno grueso, un solo dibujo grande por página, un objeto o personaje reconocible y la impresión en una sola cara de la hoja. Un bonito libro reutilizable lleno de pequeños detalles puede resultar menos adecuado para un niño pequeño que una sencilla hoja con un elefante grande.",
+      ],
+      ru: [
+        "Родитель, который впервые выбирает раскраску для малыша, сталкивается с несколькими совершенно разными вариантами. В магазине они могут лежать рядом и называться раскрасками, хотя устроены по-разному и дают ребенку разный опыт. Разберемся, чем они отличаются и когда какой вариант лучше использовать.",
+        { h: "Обычная бумажная раскраска" },
+        "Это лист бумаги с напечатанным контуром, который ребенок раскрашивает мелками, карандашами или фломастерами.",
+        "Что это дает. Ребенок оставляет настоящий след, который не исчезает. Для малыша это одно из главных открытий первых занятий рисованием: он провел рукой - и на бумаге появилась линия. Страницу можно сохранить, повесить на холодильник, подписать датой или убрать в папку. Через несколько месяцев будет интересно посмотреть, как изменились линии и рисунки ребенка.",
+        "Ограничения. Такие раскраски расходуются. Ребенок может порвать или смять страницу, и в этом возрасте это совершенно нормально. А фломастеры могут просвечивать или проходить сквозь тонкую бумагу.",
+        "Когда уместно. С самого начала, примерно с двенадцати-восемнадцати месяцев, когда ребенок начинает осознанно оставлять следы на бумаге. Это основной вид раскраски. Остальные варианты скорее дополняют его, чем заменяют.",
+        { h: "Многоразовая раскраска со стираемым покрытием" },
+        "Страницы такой раскраски заламинированы или напечатаны на плотном пластике. Ребенок рисует маркером сухого стирания, затем рисунок можно стереть тряпочкой и начать заново.",
+        "Что это дает. Одну и ту же страницу можно раскрашивать много раз. Это особенно удобно, если ребенку нравится определенная картинка и он хочет возвращаться к ней снова и снова. Раскраска долго не заканчивается, ее удобно брать с собой.",
+        "Ограничения. Скользкая поверхность отличается от обычной бумаги. Маркер движется по ней легче, поэтому ребенок не чувствует того же сопротивления, которое дают бумага и мелок или карандаш. Кроме того, рисунок потом стирается - его нельзя сохранить и через некоторое время посмотреть, как изменились рисунки ребенка.",
+        "Когда уместно. Как дополнение к обычной бумажной раскраске. Особенно удобно использовать ее в машине, самолете или, например, во время ожидания у врача.",
+        { h: "Водная раскраска" },
+        "Страница сначала выглядит почти пустой. Ребенок проводит по ней кисточкой или специальным маркером, наполненным обычной водой, и изображение становится цветным. Через некоторое время страница высыхает и снова становится почти пустой.",
+        "Что это дает. Это один из самых чистых вариантов: вода не оставляет цветных следов на одежде и мебели. Детям обычно нравится сам эффект появления картинки. Кроме того, толстый водный маркер малышу часто легче держать, чем обычный карандаш.",
+        "Ограничения. Ребенок не выбирает цвета самостоятельно - они уже заложены в странице и просто проявляются при контакте с водой. Поэтому это скорее игра с появлением готового изображения, чем обычное раскрашивание. Навык раскрашивания здесь тренируется меньше.",
+        "Когда уместно. Такой вариант можно предлагать довольно рано, примерно с года. Он хорошо подходит для первого знакомства с принципом «двигаю рукой - на странице что-то появляется», а также для дороги или гостей. Водная раскраска может использоваться перед обычной бумажной или вместе с ней.",
+        { h: "Раскраска без грязи" },
+        "Для нее используются специальные маркеры, которые проявляют цвет только на предназначенной для них бумаге. На обычном столе, обоях, руках или одежде цвет от такого маркера не появляется.",
+        "Что это дает. Главное преимущество понятно сразу: значительно меньше риск получить разрисованный стол, одежду или стены. Для родителей маленьких детей это действительно удобно.",
+        "Ограничения. Маркеры работают только со специальной бумагой. Когда страницы заканчиваются, приходится покупать новый набор или дополнительные листы. В пересчете на одну страницу такой вариант обычно обходится дороже обычной бумажной раскраски. Кроме того, ребенок привыкает к материалу, который не оставляет следов на окружающих поверхностях, тогда как обычные карандаши и фломастеры ведут себя иначе.",
+        "Когда уместно. Когда особенно важно избежать пятен и лишней уборки. Например, дома, в дороге или при занятиях с группой детей.",
+        { h: "Как выбирать" },
+        "Если ребенку около года и он только начинает рисовать, выбирайте простую бумажную раскраску с очень толстым контуром и одним крупным рисунком на странице. Рядом можно использовать и водную раскраску.",
+        "Если вы собираетесь в дорогу, удобны многоразовые или водные раскраски: они занимают мало места и помогают избежать пятен.",
+        "Если ребенок рисует дома, а вам постоянно приходится отмывать поверхности, можно попробовать раскраски без грязи. Но обычную бумагу тоже стоит оставить для регулярных занятий.",
+        "Если вы выбираете раскраски для группы детей, обычные бумажные листы часто оказываются самым простым и недорогим вариантом: каждому ребенку можно дать отдельную страницу, а испорченный лист легко заменить.",
+        "И есть общее правило, которое важнее самого вида раскраски. Для малыша особенно важны четыре вещи: толстый контур, один крупный рисунок на странице, узнаваемый предмет или персонаж и печать только с одной стороны листа. Красивая многоразовая книжка с множеством мелких деталей может оказаться менее удобной для малыша, чем простой лист с большим слоном.",
+      ],
+    },
+    faq: {
+      en: [
+        {
+          q: "What type of coloring book is best for a one year old?",
+          a: "Start with a traditional paper coloring book that has one large picture covering most of the page and a thick outline. A water-reveal coloring book can also be useful at this age because it creates very little mess, although the child does not choose the colors independently: they appear when the page gets wet. The two types can easily be used together at home.",
+        },
+        {
+          q: "Is a reusable coloring book better because it never runs out?",
+          a: "Not necessarily. It simply has different advantages. It lasts a long time, creates little mess and is convenient for travel. But the finished picture is erased, and the smooth surface feels different from regular paper. For early drawing experiences, paper remains valuable, while a reusable coloring book works well as an additional option.",
+        },
+        {
+          q: "Do water-reveal coloring books really count as drawing?",
+          a: "They are somewhere in between. The child moves water across the page, and the colors built into the paper appear automatically. The child cannot choose those colors independently. It is an engaging way to discover that moving a hand can change what appears on a page, but traditional coloring gives a child a different experience.",
+        },
+        {
+          q: "Is a mess-free coloring book worth buying if my child draws on the walls?",
+          a: "It can definitely reduce unwanted marks while the child is using the special markers and paper. However, a mess-free system does not by itself teach a child where drawing is and is not allowed. It is still useful to gradually introduce regular paper and traditional drawing materials.",
+        },
+        {
+          q: "Can I make a reusable coloring page myself?",
+          a: "Yes. Put a regular printed coloring page inside a clear plastic sheet protector and draw over it with a dry-erase marker. It is a simple, inexpensive way to turn almost any coloring page, including the free printable pages on this site, into a reusable activity.",
+        },
+      ],
+      es: [
+        {
+          q: "¿Con qué tipo de libro para colorear es mejor empezar al año de edad?",
+          a: "Con uno tradicional de papel, en el que un dibujo grande ocupe casi toda la página y esté rodeado por un contorno grueso. También puede utilizarse un libro para colorear con agua: casi no mancha, aunque el niño no elige los colores por sí mismo, ya que aparecen al entrar en contacto con el agua. Ambos tipos pueden utilizarse juntos en casa.",
+        },
+        {
+          q: "¿Es mejor un libro reutilizable que uno tradicional porque no se acaba?",
+          a: "No necesariamente. Simplemente tiene otras ventajas: dura mucho tiempo, casi no mancha y resulta cómodo para los viajes. Sin embargo, el dibujo se borra y la superficie lisa es diferente al papel tradicional. Por eso, para las primeras experiencias con el dibujo, el papel sigue siendo importante y el libro reutilizable funciona bien como complemento.",
+        },
+        {
+          q: "¿Los libros para colorear con agua realmente cuentan como dibujo?",
+          a: "Son más bien una opción intermedia. El niño pasa agua sobre la página y los colores incorporados en el papel aparecen automáticamente. No puede elegirlos por sí mismo. Es una forma interesante de descubrir cómo el movimiento de la mano modifica una imagen en la página, pero el coloreado tradicional ofrece al niño una experiencia diferente.",
+        },
+        {
+          q: "¿Vale la pena comprar un libro para colorear sin manchas si el niño pinta las paredes?",
+          a: "Realmente ayuda a evitar manchas mientras el niño utiliza los rotuladores y el papel especiales. Sin embargo, este tipo de libro no enseña por sí solo dónde se puede dibujar y dónde no. Por eso, también conviene introducir poco a poco el papel y los materiales de dibujo tradicionales.",
+        },
+        {
+          q: "¿Puedo hacer yo mismo un libro para colorear reutilizable?",
+          a: "Sí. Se puede colocar una página impresa normal dentro de una funda de plástico transparente y dibujar sobre ella con un rotulador borrable en seco. Es una forma sencilla y económica de convertir prácticamente cualquier hoja, incluidas las páginas gratuitas de este sitio, en una página reutilizable.",
+        },
+      ],
+      ru: [
+        {
+          q: "С какой раскраски лучше начинать в год?",
+          a: "С обычной бумажной, где один крупный рисунок занимает почти всю страницу и обведен толстой линией. Для начала подойдет и водная раскраска: она почти не пачкает, хотя ребенок не выбирает цвета самостоятельно - они проявляются при контакте с водой. Эти два вида раскрасок вполне можно использовать дома вместе.",
+        },
+        {
+          q: "Многоразовая раскраска лучше обычной, раз она не заканчивается?",
+          a: "Не обязательно. У нее просто другие преимущества: она долго служит, почти не пачкает и удобна в дороге. Но рисунок стирается, а гладкая поверхность отличается от обычной бумаги. Поэтому для первых занятий бумажная раскраска остается важной, а многоразовую удобно использовать как дополнение.",
+        },
+        {
+          q: "Водные раскраски вообще считаются рисованием?",
+          a: "Это скорее промежуточный вариант. Ребенок проводит по странице водой, а заложенные в бумаге цвета проявляются сами. Выбирать цвета самостоятельно он не может. Это интересное первое знакомство с тем, как движение руки меняет изображение на странице, но обычное раскрашивание дает ребенку другой опыт.",
+        },
+        {
+          q: "Стоит ли покупать раскраску без грязи, если ребенок рисует на стенах?",
+          a: "Она действительно помогает избежать пятен, пока ребенок пользуется специальными маркерами и бумагой. Но сама по себе такая раскраска не объясняет ребенку, где можно рисовать, а где нельзя. Поэтому обычную бумагу и обычные материалы для рисования тоже стоит постепенно вводить.",
+        },
+        {
+          q: "Можно ли сделать многоразовую раскраску самому?",
+          a: "Да. Обычную распечатанную страницу можно вложить в прозрачный файл и рисовать поверх него маркером сухого стирания. Это простой и недорогой способ превратить практически любой лист, в том числе бесплатные страницы с этого сайта, в многоразовый.",
+        },
+      ],
+    },
+  },
+  /* ---------------------------------------------------------------- */
+  /* Что означают надписи на упаковке. Здесь только объяснение
+     маркировки и ссылки на первоисточники, без оценки товаров и без
+     медицинских утверждений.
+
+     Отдельно про размер мелка. Распространенное объяснение, будто
+     детские мелки делают толстыми из-за запрета на мелкие детали,
+     неверно: письменные принадлежности выведены из-под этого запрета
+     прямо, в 16 CFR 1501.3. В статье это сказано вслух, потому что
+     ошибку повторяют многие. */
+  {
+    id: "labels",
+    slug: {
+      en: "what-crayon-labels-mean",
+      es: "que-significan-las-indicaciones-de-una-caja-de-crayones",
+      ru: "chto-napisano-na-upakovke-melkov",
+    },
+    title: {
+      en: "What the labels on a box of crayons actually mean",
+      es: "Qué significan las indicaciones de una caja de crayones",
+      ru: "Что написано на упаковке мелков и что это значит",
+    },
+    lead: {
+      en: "In the United States, art materials are subject to federal labeling requirements, and the statement Conforms to ASTM D-4236 is commonly found on their packaging. It tells you that the product has been evaluated and labeled under the applicable requirements, but by itself it does not make one box of crayons better than another. The voluntary AP Seal from ACMI adds information: it identifies art materials evaluated through ACMI's certification program that meet its criteria. The CL Seal is used for products that require cautionary labeling and is not used on children's art materials.",
+      es: "En Estados Unidos los materiales de arte están sujetos a requisitos federales de etiquetado, y por eso la indicación Conforms to ASTM D-4236 aparece en la mayoría de los envases. Significa que el producto ha sido evaluado y etiquetado conforme a esos requisitos, pero por sí sola no permite distinguir un producto de otro. El sello AP de ACMI es voluntario y aporta información adicional: identifica materiales evaluados dentro del programa de certificación de ACMI que cumplen sus criterios. El sello CL se utiliza en productos que requieren etiquetado de precaución y no se utiliza en materiales infantiles.",
+      ru: "В США к товарам для творчества применяются федеральные требования к оценке и маркировке, поэтому надпись Conforms to ASTM D-4236 встречается почти на любой упаковке. Она говорит, что товар оценили и подписали по этим требованиям, но сама по себе не делает один набор мелков лучше другого. Печать AP от ACMI добровольная и дает дополнительную информацию: товар прошел оценку в программе ACMI и отвечает ее критериям. Печать CL ставится на товары, которым нужны предупреждения, и на детских товарах не используется.",
+    },
+    body: {
+      en: [
+        "A parent standing in a store may see several statements, symbols and seals on a box of crayons. At first glance, it can be difficult to tell which ones matter. Some markings are connected to federal requirements, while others come from voluntary certification programs. Here is what the most common ones actually mean.",
+        "A quick note before we begin: this article describes United States rules and labeling. It explains what the labels mean, and it does not evaluate the safety of any particular product or provide medical advice. Always follow the manufacturer's age recommendations, instructions and warnings. Questions about your child's health are best discussed with a pediatrician or another qualified healthcare professional.",
+        { h: "Conforms to ASTM D-4236: what it means" },
+        "This is one of the most common statements found on art material packaging, and it is easy to misunderstand.",
+        "The Labeling of Hazardous Art Materials Act, or LHAMA, was enacted in 1988 and amended the Federal Hazardous Substances Act. Its requirements are reflected in 16 CFR 1500.14. Art materials offered for sale to consumers in the United States must undergo a toxicological assessment for potential chronic health hazards, and that assessment must be reviewed at least every five years. Art materials must also carry an appropriate statement of conformance, such as Conforms to ASTM D-4236, whenever practicable.",
+        "The important point is that this statement is not a special award or a premium safety seal. It is part of the regulatory framework for art materials. If a product presents hazards that require warnings, those warnings must appear in the labeling. So when you are comparing two boxes of crayons, the ASTM D-4236 statement alone does not tell you that one is a better choice than the other.",
+        "Source: United States Consumer Product Safety Commission, Art Materials guidance.",
+        { h: "The AP Seal: a voluntary certification" },
+        "ACMI, the Art and Creative Materials Institute, is a nonprofit organization rather than a government agency. Its certification program is voluntary, which means an ACMI seal tells you something beyond the basic fact that a product is sold as an art material in the United States.",
+        "AP stands for Approved Product. According to ACMI, the AP Seal identifies art materials evaluated in its certification program by a board-certified toxicologist and found to contain no materials in sufficient quantities to be toxic or injurious to humans, including children, or to cause acute or chronic health problems as defined by the applicable standards. ACMI specifically recommends looking for the AP Seal when choosing creative materials for younger children.",
+        { h: "What the CL Seal means" },
+        "CL stands for Cautionary Labeling. The CL Seal identifies art materials that require cautionary labeling for known health risks and that carry information about their proper use. ACMI states that the CL Seal does not appear on children's art materials and that products carrying it should not be given to children in sixth grade or younger. So for a toddler, a product with the CL Seal is not the right choice.",
+        "Source: Art and Creative Materials Institute, Materials Safety guidance.",
+        { h: "What about the word non-toxic?" },
+        "The words non-toxic on a package are not the same thing as the ACMI AP Seal. The AP Seal represents certification through a specific ACMI program and a toxicological evaluation under that program, while a stand-alone non-toxic claim on packaging is simply a statement by the manufacturer.",
+        "That does not mean a manufacturer using the term non-toxic is making a misleading claim. It simply means that a general statement on a package and a specific third-party certification seal are not the same thing.",
+        { h: "Crayon size and choking hazards" },
+        "Size matters when you are choosing art materials for a toddler, but there is a detail in the United States rules that is worth knowing, because it is often described incorrectly.",
+        "Federal small parts rules use a special test cylinder to identify objects that may present a choking, aspiration or ingestion hazard for children under three. The cylinder is approximately 2.25 inches long and 1.25 inches wide. However, writing materials such as crayons, chalk, pencils and pens are specifically exempt from the small parts ban, and that exemption is listed in 16 CFR 1501.3. Paper articles and paint sets appear on the same list of exemptions.",
+        "So it would not be correct to say that crayons for toddlers are made thick because thinner ones are prohibited under that rule. Thick crayons are easier for a small hand to hold and leave a broad, visible mark, and that is reason enough to choose them.",
+        "For parents, the practical advice is simpler: choose crayons that the manufacturer intends for your child's age, look at whether the size and shape suit small hands, follow the warnings and instructions on the package, and stay nearby while your child is drawing.",
+        "Source: United States Code of Federal Regulations, 16 CFR Part 1501.",
+        { h: "Lead in paint and surface coatings" },
+        "Lead in paint and similar surface coatings is regulated separately in the United States. Under 16 CFR Part 1303, paint and similar surface coatings subject to the rule may not contain lead in excess of 0.009 percent, or 90 parts per million. Parents do not need to test for lead themselves in a store: these requirements apply to the products and coatings covered by the regulation.",
+        "Source: United States Consumer Product Safety Commission.",
+        { h: "Age recommendations on the package" },
+        "The age recommendation on a box is useful, because it tells you the age group the manufacturer intends the product for.",
+        "But two boxes labeled for the same age can still be quite different. The crayons may differ in thickness, length, shape or ease of use. So it helps to look at the product itself as well as at the number on the package, and to read the manufacturer's instructions and warnings.",
+        { h: "What to check in the store in thirty seconds" },
+        "Look for the AP Seal. Its absence does not by itself mean a product is unsafe, but the seal tells you the product went through ACMI certification and a toxicological evaluation.",
+        "If you see a CL Seal, that product is not intended for a toddler. ACMI does not use the CL Seal on children's art materials.",
+        "Check the manufacturer's age recommendation and read any warnings or special instructions.",
+        "Look at the size and shape of the crayons and consider whether they suit your child's stage of development.",
+        "And there is one thing no label or certification can replace: at this age a child colors with an adult nearby.",
+      ],
+      es: [
+        "Los padres llegan a una tienda y encuentran en una caja de crayones varias indicaciones, símbolos y sellos. A simple vista es difícil saber cuáles son realmente importantes. Algunas marcas son obligatorias por ley y, por eso, aparecen en prácticamente todos los productos. Otras proceden de programas de certificación voluntarios. Veamos qué significa cada una.",
+        "Antes de empezar, una aclaración: a continuación hablamos de las normas de Estados Unidos. Explicamos el significado de las diferentes indicaciones y certificaciones, pero no evaluamos la seguridad de productos concretos ni ofrecemos recomendaciones médicas. Conviene seguir siempre las recomendaciones de edad, las instrucciones y las advertencias del fabricante. Las cuestiones relacionadas con la salud del niño es mejor consultarlas con un pediatra u otro profesional sanitario.",
+        { h: "Conforms to ASTM D-4236: qué significa" },
+        "Es una de las frases más frecuentes en los envases de materiales de arte y manualidades, y su significado suele interpretarse de forma incorrecta.",
+        "En 1988 se aprobó en Estados Unidos la ley sobre el etiquetado de materiales de arte potencialmente peligrosos, conocida como LHAMA, que modificó la ley federal sobre sustancias peligrosas. Los requisitos correspondientes se reflejan en 16 CFR 1500.14. Los materiales de arte que se venden a los consumidores en Estados Unidos deben someterse a una evaluación toxicológica sobre posibles efectos crónicos para la salud, y esa evaluación debe revisarse al menos una vez cada cinco años. Además, el producto debe incluir una declaración de conformidad, como Conforms to ASTM D-4236, siempre que resulte posible.",
+        "Lo importante es que esta frase no es un premio ni un sello especial de seguridad: forma parte del marco normativo de los materiales de arte. Si un producto presenta riesgos que requieren advertencias, esas advertencias deben aparecer en el etiquetado. Por eso, al comparar dos cajas de crayones, la declaración de conformidad con ASTM D-4236 por sí sola no indica que una sea mejor opción que la otra.",
+        "Fuente: Comisión de Seguridad de Productos del Consumidor de Estados Unidos, sección sobre materiales de arte.",
+        { h: "El sello AP: una certificación voluntaria" },
+        "ACMI, el Art and Creative Materials Institute, es una organización sin fines de lucro y no un organismo gubernamental. La participación en su programa de certificación es voluntaria, de modo que un sello de ACMI aporta información que va más allá del simple hecho de que el producto se venda como material de arte en Estados Unidos.",
+        "AP significa Approved Product, producto aprobado. Según ACMI, el sello AP identifica materiales de arte evaluados dentro de su programa de certificación por un toxicólogo colegiado, que no contienen materiales en cantidades suficientes para resultar tóxicos o dañinos para las personas, incluidos los niños, ni para causar problemas de salud agudos o crónicos según las normas aplicables. ACMI recomienda expresamente buscar el sello AP al elegir materiales creativos para los niños más pequeños.",
+        { h: "Qué significa el sello CL" },
+        "CL significa Cautionary Labeling, etiquetado de precaución. Este sello identifica materiales de arte que requieren advertencias por riesgos conocidos para la salud y que incluyen información sobre su uso correcto. ACMI indica que el sello CL no aparece en materiales infantiles y que los productos que lo llevan no deben entregarse a niños de sexto grado o menores. Por lo tanto, para un niño pequeño un producto con el sello CL no es la opción adecuada.",
+        "Fuente: Art and Creative Materials Institute, sección sobre seguridad de los materiales.",
+        { h: "¿Y la palabra non-toxic?" },
+        "La indicación non-toxic en un envase no es lo mismo que el sello AP de ACMI. Detrás del sello AP hay una certificación dentro de un programa concreto y una evaluación toxicológica realizada en ese programa, mientras que una mención aislada de non-toxic en el envase es simplemente una afirmación del fabricante.",
+        "Esto no significa que un fabricante que utilice la expresión non-toxic esté engañando al consumidor. Solo significa que una declaración general en el envase y el sello de un programa independiente de certificación no son lo mismo.",
+        { h: "El tamaño del crayón y el riesgo de asfixia" },
+        "El tamaño importa al elegir materiales para un niño pequeño, pero hay un detalle de la normativa estadounidense que conviene conocer, porque a menudo se explica de forma incorrecta.",
+        "Las normas federales sobre piezas pequeñas utilizan un cilindro especial de prueba para identificar objetos que pueden suponer un riesgo de asfixia, aspiración o ingestión para menores de tres años. El cilindro mide aproximadamente 2,25 pulgadas de largo y 1,25 pulgadas de ancho. Sin embargo, los materiales de escritura, como crayones, tizas, lápices y bolígrafos, están expresamente excluidos de esa prohibición, y la exclusión figura en 16 CFR 1501.3. En la misma lista de exclusiones aparecen los artículos de papel y los juegos de pinturas.",
+        "Por eso no sería correcto decir que los crayones para niños pequeños son gruesos porque los más finos estén prohibidos por esa norma. Un crayón grueso es más fácil de sujetar para una mano pequeña y deja una marca ancha y visible, y eso ya es razón suficiente para elegirlo.",
+        "Para los padres, el consejo práctico es más sencillo: elija crayones que el fabricante destine a la edad de su hijo, fíjese en si el tamaño y la forma resultan cómodos para una mano pequeña, siga las advertencias e instrucciones del envase y permanezca cerca mientras el niño dibuja.",
+        "Fuente: Código de Reglamentos Federales de Estados Unidos, 16 CFR Parte 1501.",
+        { h: "Plomo en pinturas y recubrimientos" },
+        "En Estados Unidos, el contenido de plomo en las pinturas y en determinados recubrimientos superficiales está regulado por separado. De acuerdo con 16 CFR Parte 1303, las pinturas y recubrimientos sujetos a la norma no pueden contener plomo por encima del 0,009 por ciento, equivalente a 90 partes por millón. El comprador no necesita comprobar personalmente este valor en la tienda: los requisitos se aplican a los productos y recubrimientos cubiertos por la regulación.",
+        "Fuente: Comisión de Seguridad de Productos del Consumidor de Estados Unidos.",
+        { h: "La edad indicada en el envase" },
+        "La indicación de edad es útil, porque señala para qué grupo de edad ha diseñado el fabricante el producto.",
+        "Sin embargo, dos cajas con la misma edad indicada pueden ser bastante diferentes: los crayones pueden variar en grosor, longitud, forma o facilidad de uso. Por eso conviene mirar el producto en sí, además de la cifra impresa, y leer las instrucciones y advertencias del fabricante.",
+        { h: "Qué comprobar en la tienda en treinta segundos" },
+        "Busque el sello AP. Su ausencia no significa por sí sola que el producto sea peligroso, pero su presencia indica que el producto pasó por la certificación de ACMI y por una evaluación toxicológica.",
+        "Si ve el sello CL, ese producto no está destinado a un niño pequeño. ACMI no utiliza el sello CL en materiales infantiles.",
+        "Consulte la recomendación de edad del fabricante y lea las advertencias o instrucciones especiales.",
+        "Fíjese en el tamaño y la forma de los crayones y valore si resultan adecuados para la etapa en la que está su hijo.",
+        "Y hay algo que ningún sello puede sustituir: a esta edad el niño colorea con un adulto cerca.",
+      ],
+      ru: [
+        "Родитель приходит в магазин и видит на коробке мелков несколько надписей, значков и печатей. По внешнему виду трудно понять, какие из них действительно важны. Одни маркировки связаны с федеральными требованиями и поэтому встречаются практически повсеместно, другие производитель получает добровольно. Разберемся, что именно они означают.",
+        "Сразу оговоримся: ниже речь идет об американских правилах. Мы объясняем значение маркировки, а не оцениваем безопасность конкретных товаров и не даем медицинских рекомендаций. Для каждого товара стоит следовать возрастным рекомендациям, инструкциям и предупреждениям изготовителя, а вопросы, связанные со здоровьем ребенка, обсуждать с педиатром или другим специалистом.",
+        { h: "Conforms to ASTM D-4236: что это значит" },
+        "Это одна из самых распространенных надписей на упаковках товаров для творчества, и ее значение часто понимают неправильно.",
+        "В 1988 году в США был принят закон о маркировке опасных материалов для творчества, известный как LHAMA. Соответствующие требования отражены в 16 CFR 1500.14. Товары для творчества, которые продаются в США, должны проходить токсикологическую оценку на предмет возможного длительного воздействия на здоровье, и такая оценка должна повторяться не реже одного раза в пять лет. Кроме того, на товаре должна стоять надпись о соответствии, например Conforms to ASTM D-4236, там, где это практически возможно.",
+        "Важно понимать, что эта надпись не награда и не особый знак безопасности, а часть общих требований к товарам для творчества. Если у товара есть риски, требующие предупреждений, эти предупреждения должны быть в маркировке. Поэтому при сравнении двух наборов мелков сама по себе надпись о соответствии ASTM D-4236 не говорит, что один из них лучше другого.",
+        "Источник: Комиссия по безопасности потребительских товаров США, раздел о материалах для творчества.",
+        { h: "Печать AP: добровольная сертификация" },
+        "ACMI, Институт материалов для искусства и творчества, это некоммерческая организация, а не государственное ведомство. Участие в его программе сертификации добровольное, поэтому печать ACMI говорит больше, чем сам факт, что товар продается в США как материал для творчества.",
+        "AP расшифровывается как Approved Product, одобренный продукт. По описанию ACMI, эта печать обозначает материалы, которые прошли оценку в программе организации у сертифицированного токсиколога и не содержат веществ в количествах, способных быть токсичными или вредными для людей, включая детей, либо вызывать острые или хронические проблемы со здоровьем в понимании применимых стандартов. ACMI прямо рекомендует искать печать AP при выборе материалов для детей младшего возраста.",
+        { h: "Что означает печать CL" },
+        "CL расшифровывается как Cautionary Labeling, предупреждающая маркировка. Такая печать обозначает материалы, которым нужны предупреждения об известных рисках и указания по правильному использованию. ACMI указывает, что печать CL не ставится на детские материалы и что товары с ней не следует давать детям шестого класса и младше. Поэтому для малыша товар с печатью CL не подойдет.",
+        "Источник: Институт материалов для искусства и творчества, раздел о безопасности материалов.",
+        { h: "А что означает слово non-toxic" },
+        "Надпись non-toxic на упаковке и печать AP от ACMI это не одно и то же. За печатью AP стоит сертификация в конкретной программе и проведенная в ней токсикологическая оценка, а отдельно написанное слово non-toxic это утверждение самого производителя.",
+        "Это не значит, что производитель, использующий слово non-toxic, вводит покупателя в заблуждение. Просто общая надпись на упаковке и знак независимой программы сертификации говорят о разном.",
+        { h: "Размер мелка и опасность удушья" },
+        "Размер действительно важен при выборе материалов для малыша, но в американских правилах тут есть тонкость, о которой стоит знать, потому что ее часто пересказывают неверно.",
+        "Федеральные правила о мелких деталях используют специальный испытательный цилиндр, чтобы выявлять предметы, опасные для детей младше трех лет с точки зрения удушья, вдыхания и проглатывания. Цилиндр примерно 2,25 дюйма в длину и 1,25 дюйма в ширину. При этом письменные принадлежности, в том числе мелки, мел, карандаши и ручки, прямо выведены из-под этого запрета, и это исключение записано в 16 CFR 1501.3. В том же списке исключений стоят изделия из бумаги и наборы красок.",
+        "Поэтому было бы неверно объяснять толщину детских мелков тем, что тонкие запрещены этим правилом. Толстый мелок удобнее держать маленькой руке и оставляет широкий заметный след, и этого вполне достаточно, чтобы его выбрать.",
+        "Практический вывод для родителя проще: выбирайте мелки, которые изготовитель предназначил для возраста вашего ребенка, смотрите, удобны ли они маленькой руке, следуйте предупреждениям и указаниям на упаковке и будьте рядом, пока ребенок рисует.",
+        "Источник: свод федеральных правил США, 16 CFR, часть 1501.",
+        { h: "Свинец в красках и покрытиях" },
+        "Содержание свинца в красках и некоторых поверхностных покрытиях в США регулируется отдельно. По 16 CFR, часть 1303, в красках и покрытиях, подпадающих под это правило, свинца не может быть больше 0,009 процента, то есть больше 90 частей на миллион. Покупателю не нужно самостоятельно проверять этот показатель в магазине: требования действуют для продукции, на которую распространяется регулирование.",
+        "Источник: Комиссия по безопасности потребительских товаров США.",
+        { h: "Возраст на упаковке" },
+        "Возрастная маркировка полезна: она показывает, для какой возрастной группы производитель предназначил товар.",
+        "Но два набора с одинаковой возрастной пометкой могут заметно отличаться: мелки бывают разной толщины, длины и формы и по-разному удобны в руке. Поэтому стоит смотреть не только на цифру на коробке, но и на сам товар, а также читать инструкции и предупреждения изготовителя.",
+        { h: "Что посмотреть в магазине за тридцать секунд" },
+        "Найдите печать AP. Ее отсутствие само по себе не означает, что товар опасен, но с ней вы знаете, что товар прошел сертификацию ACMI и токсикологическую оценку.",
+        "Если на упаковке есть печать CL, этот товар не предназначен для малыша: ACMI не ставит эту печать на детские материалы.",
+        "Посмотрите возрастную рекомендацию изготовителя и прочитайте предупреждения и особые указания.",
+        "Обратите внимание на размер и форму мелка и подумайте, подходят ли они вашему ребенку сейчас.",
+        "И есть то, чего не заменит ни одна маркировка: в этом возрасте ребенок рисует рядом со взрослым.",
+      ],
+    },
+    faq: {
+      en: [
+        {
+          q: "Does Conforms to ASTM D-4236 mean the crayons are safe?",
+          a: "It means the art material has been evaluated and labeled under the requirements associated with ASTM D-4236 and United States art material regulations. The statement alone is not a special safety award and is not a way to rank two boxes of crayons. Products that require hazard warnings must carry the appropriate labeling separately.",
+        },
+        {
+          q: "What is the difference between the AP and CL Seals?",
+          a: "AP stands for Approved Product, and ACMI uses that seal for products that meet the criteria of its toxicological certification program. CL stands for Cautionary Labeling and is used on products that require cautionary information about known health risks and proper use. ACMI does not use the CL Seal on children's art materials.",
+        },
+        {
+          q: "Why are crayons for toddlers often so thick?",
+          a: "Thicker crayons are easier for small hands to grasp and make broad, visible marks. Their thickness should not be explained as a requirement of the federal small parts ban, because writing materials such as crayons are specifically exempt from that ban under 16 CFR 1501.3. When choosing crayons, follow the manufacturer's age recommendation and consider the size and shape that suit your child.",
+        },
+        {
+          q: "Who decides what age is printed on a box of crayons?",
+          a: "The manufacturer identifies the age group the product is intended for. That information matters, but products carrying the same age recommendation can still differ considerably in thickness, length and shape. It helps to look at the product's design and size as well as its instructions and warnings.",
+        },
+        {
+          q: "What should I do if my child puts a crayon in their mouth?",
+          a: "Choose art materials that the manufacturer identifies as appropriate for your child's age, pay attention to their size, and stay nearby while your child is drawing. If your child swallows something or you are concerned about an exposure or their condition, seek appropriate medical advice.",
+        },
+      ],
+      es: [
+        {
+          q: "¿La indicación Conforms to ASTM D-4236 significa que los crayones son seguros?",
+          a: "Significa que el material ha sido evaluado y etiquetado conforme a los requisitos asociados a ASTM D-4236 y a la normativa estadounidense sobre materiales de arte. La indicación por sí sola no es un premio especial de seguridad ni sirve para comparar dos cajas de crayones. Si un producto requiere advertencias sobre riesgos, estas deben aparecer por separado en el etiquetado.",
+        },
+        {
+          q: "¿Cuál es la diferencia entre el sello AP y el sello CL?",
+          a: "AP significa Approved Product y ACMI lo utiliza en productos que cumplen los criterios de su programa de certificación toxicológica. CL significa Cautionary Labeling y se utiliza en productos que requieren advertencias sobre riesgos conocidos e información sobre su uso correcto. ACMI no utiliza el sello CL en materiales infantiles.",
+        },
+        {
+          q: "¿Por qué los crayones para niños pequeños son tan gruesos?",
+          a: "Los crayones gruesos son más fáciles de sujetar para una mano pequeña y dejan una marca ancha y visible. Su grosor no debe explicarse como una exigencia de la prohibición federal sobre piezas pequeñas, porque los materiales de escritura como los crayones están expresamente excluidos de esa prohibición en 16 CFR 1501.3. Al elegirlos, siga la recomendación de edad del fabricante y valore el tamaño y la forma que le convienen a su hijo.",
+        },
+        {
+          q: "¿Alguien verifica la edad indicada en el envase?",
+          a: "El fabricante indica para qué grupo de edad está pensado el producto. Esa información importa, pero dos productos con la misma recomendación pueden ser bastante distintos en grosor, longitud y forma. Conviene fijarse también en el diseño y el tamaño del producto y leer sus instrucciones y advertencias.",
+        },
+        {
+          q: "¿Qué hago si mi hijo se lleva el crayón a la boca?",
+          a: "Elija materiales que el fabricante considere adecuados para la edad de su hijo, fíjese en su tamaño y permanezca cerca mientras el niño dibuja. Si el niño ha tragado algo o le preocupa su estado, busque atención médica.",
+        },
+      ],
+      ru: [
+        {
+          q: "Надпись Conforms to ASTM D-4236 означает, что мелки безопасны?",
+          a: "Она означает, что товар оценили и подписали по требованиям, связанным со стандартом ASTM D-4236 и американскими правилами для материалов для творчества. Сама по себе эта надпись не является особым знаком безопасности и не позволяет сравнить два набора мелков между собой. Если товару нужны предупреждения о рисках, они указываются в маркировке отдельно.",
+        },
+        {
+          q: "Чем печать AP отличается от печати CL?",
+          a: "AP означает Approved Product, и ACMI ставит эту печать на товары, отвечающие критериям ее программы токсикологической сертификации. CL означает Cautionary Labeling и ставится на товары, которым нужны предупреждения об известных рисках и указания по правильному использованию. На детских материалах печать CL не используется.",
+        },
+        {
+          q: "Почему мелки для малышей делают такими толстыми?",
+          a: "Толстый мелок удобнее держать маленькой руке и оставляет широкий заметный след. А вот объяснять его толщину федеральным запретом на мелкие детали было бы неверно: письменные принадлежности, в том числе мелки, прямо выведены из-под этого запрета в 16 CFR 1501.3. При выборе стоит опираться на возрастные рекомендации изготовителя и на то, удобен ли мелок вашему ребенку.",
+        },
+        {
+          q: "Возраст на упаковке кто-то проверяет?",
+          a: "Изготовитель указывает, для какой возрастной группы предназначен товар. Эта информация важна, но два набора с одинаковой пометкой могут заметно отличаться по толщине, длине и форме мелков. Поэтому стоит смотреть и на сам товар, и на его инструкции и предупреждения.",
+        },
+        {
+          q: "Что делать, если ребенок тянет мелок в рот?",
+          a: "Выбирайте материалы, которые изготовитель считает подходящими для возраста вашего ребенка, обращайте внимание на их размер и будьте рядом, пока ребенок рисует. Если ребенок что-то проглотил или вас беспокоит его состояние, обратитесь за медицинской помощью.",
         },
       ],
     },

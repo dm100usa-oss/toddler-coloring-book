@@ -148,11 +148,70 @@ are the same and the word under each drawing is in Spanish.
   the child can see. Markers are brighter but bleed and mark surfaces. Colored
   pencils need a finger grip most children lack before about three.
 - Mess: most of it comes from the wrong tool, a page with nothing to aim at, and
-  a session that runs past the child's interest. Mess-free coloring sets are a
-  different product, using pens that only develop on treated paper.
+  a session that runs past the child's interest. Mess-free sets, reusable
+  wipe-clean books and water-reveal books each reduce mess differently and are
+  compared on their own page, listed under Guides below.
 - Session length: two or three minutes at the beginning, around five minutes at
   two years old, ten or more once a child stays inside the line. A session that
   ends when the child stands up is normal, not failed.
+
+## Guides
+
+Five practical guides answer the questions that come up once a coloring book is
+already on the table, and two more compare what is on the shelf and what is
+printed on the packaging. Each guide is written on all three languages
+separately rather than translated, and each answer stands alone.
+
+- What age a child can start coloring
+- Crayons, markers or colored pencils: what to give a toddler
+- Coloring with a toddler without the mess
+- The marker goes through the page: what to do
+- How long a toddler will actually sit and color
+
+### Types of coloring books compared
+
+Four kinds sit side by side on the same shelf and are all called coloring books,
+but they work differently. Traditional paper books leave a permanent mark the
+child can keep, and they are the basic option from about twelve to eighteen
+months. Reusable wipe-clean books let one page be colored many times, but the
+surface is slippery and the result is erased. Water-reveal books are the
+cleanest and can start around age one, though the colors are built into the page
+and the child does not choose them. Mess-free sets use pens that develop only on
+their own treated paper, which solves the stain problem but ties the child to
+that paper. The rule that matters more than the type: thick outlines, one large
+picture per page, a recognizable subject, printing on one side only.
+
+- [Types of coloring books for toddlers, English](https://www.toddlercoloringbook.com/en/guides/types-of-coloring-books-for-toddlers)
+- [Tipos de libros para colorear, Spanish](https://www.toddlercoloringbook.com/es/guias/tipos-de-libros-para-colorear-para-ninos-pequenos)
+- [Vidy raskrasok dlya malyshey, Russian](https://www.toddlercoloringbook.com/ru/stati/vidy-raskrasok-dlya-malyshey)
+
+### What the labels on a box of crayons mean
+
+United States labeling, explained rather than judged. "Conforms to ASTM D-4236"
+follows from federal requirements under LHAMA, reflected in 16 CFR 1500.14, and
+appears on art materials generally, so on its own it does not distinguish one
+box from another. The AP Seal from ACMI is voluntary and identifies materials
+evaluated in ACMI's certification program by a board-certified toxicologist. The
+CL Seal marks products needing cautionary labeling and is not used on children's
+art materials. A stand-alone "non-toxic" claim is a manufacturer statement, not
+that certification.
+
+One point is commonly reported incorrectly elsewhere: writing materials such as
+crayons, chalk, pencils and pens are specifically exempt from the federal small
+parts ban, and the exemption is listed at 16 CFR 1501.3, alongside paper
+articles and paint sets. So the thickness of toddler crayons cannot be explained
+by that ban. Thick crayons suit a small hand and leave a visible mark, which is
+reason enough.
+
+Lead in paint and similar surface coatings is regulated separately at 16 CFR
+Part 1303, with a limit of 0.009 percent, or 90 parts per million.
+
+The page explains what the labels mean. It does not assess any product, and it
+is not medical advice.
+
+- [What crayon labels mean, English](https://www.toddlercoloringbook.com/en/guides/what-crayon-labels-mean)
+- [Qué significan las indicaciones, Spanish](https://www.toddlercoloringbook.com/es/guias/que-significan-las-indicaciones-de-una-caja-de-crayones)
+- [Chto napisano na upakovke melkov, Russian](https://www.toddlercoloringbook.com/ru/stati/chto-napisano-na-upakovke-melkov)
 
 ## Sources
 
@@ -169,6 +228,16 @@ developmental milestones:
 Nothing on this site is medical advice or an assessment of any individual child.
 These organizations took no part in building the picker and do not recommend any
 particular book, including the one published by this site.
+
+Statements about United States labeling and small parts rules come from the
+regulator and from the certifying body directly:
+
+- Art Materials guidance, United States Consumer Product Safety Commission:
+  https://www.cpsc.gov/business--manufacturing/business-education/business-guidance/art-materials
+- Small parts, 16 CFR Part 1501, including the exemptions at 1501.3:
+  https://www.ecfr.gov/current/title-16/chapter-II/subchapter-C/part-1501
+- Materials Safety and the AP and CL Seals, Art and Creative Materials Institute:
+  https://www.acmiart.org/materials-safety
 
 ## The book
 

@@ -455,11 +455,20 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
             {/* Короткий ответ. Стоит первым и набран крупнее текста:
                 многие прочитают только его, и этого должно хватить. */}
             <p className="teach-def">{guide.lead[lang]}</p>
-            {guide.body[lang].map((p) => (
-              <p className="teach-p" key={p.slice(0, 40)}>
-                {p}
-              </p>
-            ))}
+            {guide.body[lang].map((p) =>
+              typeof p === "string" ? (
+                <p className="teach-p" key={p.slice(0, 40)}>
+                  {p}
+                </p>
+              ) : (
+                /* Подзаголовок внутри статьи. Второй уровень: первый
+                   занят названием статьи. Оформление привязано к классу,
+                   а не к уровню тега, поэтому вид не поедет. */
+                <h2 className="section" key={p.h}>
+                  {p.h}
+                </h2>
+              )
+            )}
           </div>
         </div>
       </section>
