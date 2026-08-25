@@ -43,14 +43,6 @@ export default async function LangLayout({
      набираются Nunito, а рукописная строка шрифтом Caveat. */
   return (
     <html lang={dictionaries[l].htmlLang}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Caveat:wght@600&family=Caveat+Brush&family=Nunito:wght@400;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>
         <Header lang={l} />
         <main>{children}</main>

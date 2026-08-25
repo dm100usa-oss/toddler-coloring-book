@@ -1,3 +1,14 @@
+/* Шрифты лежат внутри сайта, а не тянутся со стороннего сервера.
+   Раньше браузер сначала ходил на сервер Google за списком шрифтов,
+   потом еще раз за самими файлами, и все это время страница стояла
+   пустой. Шрифты те же самые, изменилось только откуда они приезжают.
+   Лишнего не скачивается: у каждого набора букв свой файл, и браузер
+   берет только тот, который нужен для языка страницы. */
+@import "@fontsource-variable/baloo-2/wght.css";
+@import "@fontsource-variable/nunito/wght.css";
+@import "@fontsource-variable/caveat/wght.css";
+@import "@fontsource/caveat-brush/400.css";
+
 /* Toddler Coloring Book
    Оформление той же семьи, что и Magic of Discoveries: та же палитра,
    те же шрифты, те же тени и кнопки. Родитель, попавший с одного сайта
@@ -71,9 +82,9 @@
   --bevel: inset 0 2px 0 rgba(255, 255, 255, 0.55);
   --maxw: 1200px;
 
-  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-display: "Baloo 2 Variable", "Baloo 2", system-ui, sans-serif;
   --font-script: "Caveat Brush", cursive;
-  --font-body: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Nunito Variable", "Nunito", ui-sans-serif, system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -1430,8 +1441,8 @@ ul.award-list li {
    рассыпался бы на системный шрифт, и страница выглядела бы чужой.
    Nunito и Caveat кириллицу знают и держат ту же округлую манеру. */
 html[lang="ru"] {
-  --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
-  --font-script: "Caveat", cursive;
+  --font-display: "Nunito Variable", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat Variable", "Caveat", cursive;
 }
 html[lang="ru"] h1,
 html[lang="ru"] h2,
