@@ -798,6 +798,24 @@ counterparts. Nothing on this site sits behind a form, a login or a paywall.
 - [Раскраска для программ домашних визитов](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm/raskraska-dlya-domashnih-vizitov)
 - [Одна книга для всей группы: родительские группы и библиотеки](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm/raskraska-dlya-roditelskih-grupp-i-bibliotek)
 - [Раскраски для ясельных групп и домашних детских садов](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm/raskraski-dlya-yasley-i-domashnih-detskih-grupp)
+## Single book pages for four European markets
+
+Both paperback editions are sold on Amazon in Germany, France, the
+Netherlands and Poland, but the Amazon listings there are in English and
+in Spanish only. These eight pages describe the same two books in the
+buyer's own language. They are not translations of the rest of the site
+and they are not part of its three-language system: each one stands
+alone and covers exactly one edition.
+
+- [Erste Wörter auf Englisch](https://www.toddlercoloringbook.com/de/malbuch-erste-woerter-englisch) (German, English edition)
+- [Erste Wörter auf Spanisch](https://www.toddlercoloringbook.com/de/malbuch-erste-woerter-spanisch) (German, Spanish edition)
+- [Premiers mots en anglais](https://www.toddlercoloringbook.com/fr/coloriage-premiers-mots-anglais) (French, English edition)
+- [Premiers mots en espagnol](https://www.toddlercoloringbook.com/fr/coloriage-premiers-mots-espagnol) (French, Spanish edition)
+- [Eerste woorden in het Engels](https://www.toddlercoloringbook.com/nl/kleurboek-eerste-woorden-engels) (Dutch, English edition)
+- [Eerste woorden in het Spaans](https://www.toddlercoloringbook.com/nl/kleurboek-eerste-woorden-spaans) (Dutch, Spanish edition)
+- [Pierwsze słowa po angielsku](https://www.toddlercoloringbook.com/pl/kolorowanka-pierwsze-slowa-angielski) (Polish, English edition)
+- [Pierwsze słowa po hiszpańsku](https://www.toddlercoloringbook.com/pl/kolorowanka-pierwsze-slowa-hiszpanski) (Polish, Spanish edition)
+
 ## Related
 
 Full catalog of the publisher: [Magic of Discoveries](https://www.magicofdiscoveries.com)

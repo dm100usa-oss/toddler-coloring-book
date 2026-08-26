@@ -5,6 +5,7 @@ import { guides } from "@/data/guides";
 import { basisSlug } from "@/data/tool";
 import { agePages } from "@/data/agepages";
 import { proPages } from "@/data/propages";
+import { euroPages } from "@/data/euro";
 import { SITE_URL, SITE_UPDATED } from "@/lib/site";
 import { homePath, sectionPath, sectionSlugs, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -66,5 +67,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
     }
   }
+
+  /* Восемь страниц для европейских рынков. Без них поисковик не найдет
+     эти адреса вовсе: изнутри сайта на них никто не ссылается, они
+     живут отдельным крылом и связаны только попарно между собой. */
+  for (const p of euroPages) {
+    out.push({ url: SITE_URL + p.path, lastModified, priority: 0.8 });
+  }
+
   return out;
 }
