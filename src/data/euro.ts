@@ -197,12 +197,12 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Ce qu'en a dit une critique indépendante",
     faq: "Questions fréquentes",
     buyAmazon: "Acheter sur Amazon.fr",
-    buyFree: "10 pages à imprimer gratuitement",
+    buyFree: "Imprimer 10 pages gratuitement",
     priceLabel: "broché sur Amazon.fr",
     buyNote: "Vendu et expédié par Amazon.",
     freeTitle: "Dix pages du livre, à imprimer gratuitement",
     freeLead:
-      "Ce sont de vraies pages du livre, avec le même mot sous le dessin. Imprimez-en une, donnez un crayon à votre enfant, et en cinq minutes vous saurez si ce type de livre lui convient. Sans inscription et sans adresse e-mail.",
+      "Ce sont de vraies pages du livre : sous chaque dessin figure le même mot que dans le livre. Imprimez-en une, donnez un crayon à votre enfant, et en cinq minutes vous saurez si ce livre lui convient. Sans inscription et sans adresse e-mail.",
     freeDownload: "Télécharger",
     freeFormat: "Format A4, à imprimer chez vous.",
     freeAlt: (name: string) => `${name} : page à colorier tirée du livre`,
@@ -221,7 +221,8 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticSource: "Lire la critique complète",
     footerAbout:
       "Publié par Magic of Discoveries LLC, maison d'édition jeunesse à Miami, en Floride.",
-    footerLink: "Tout sur les premiers livres de coloriage pour les 1 à 3 ans",
+    footerLink:
+      "Tout sur les premiers livres de coloriage pour les enfants de 1 à 3 ans",
     footerLinkNote: "en anglais",
   },
   nl: {
@@ -527,147 +528,191 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
   },
 
   /* -------------------------- ФРАНЦУЗСКИЙ --------------------------- */
+  /* Тексты сняты с общей русской основы владельца, утверждены им
+     и выправлены его правками от 26 августа 2026 года.
+
+     Во Франции у книжки, где под картинкой стоит слово, есть свое
+     привычное название: imagier. Так эти книги называют французские
+     издательства и магазины, и так их ищут родители. Поэтому верхняя
+     строка страницы звучит как livre de coloriage et imagier. */
   fr: {
     en: {
       title: "Premiers mots en anglais",
       subtitle: "Livre de coloriage pour enfants de 1 à 3 ans",
       head: {
-        top: "Livre de coloriage pour enfants de 1 à 3 ans",
+        top: "Livre de coloriage et imagier pour enfants de 1 à 3 ans",
         title: "Premiers mots en anglais",
         bottom:
           "111 grands dessins aux contours épais. Sous chaque image, un mot en anglais.",
       },
       lead: [
-        "Des coloriages simples avec des mots clairs en anglais.",
-        "Pas de textes longs, pas de grammaire, pas de barrière de la langue. À l'intérieur, uniquement de grands dessins, des contours épais pour les tout-petits et un seul mot bien net sous chaque image.",
-        "Convient aussi bien à un premier contact avec la langue qu'à un enfant qui l'entend tous les jours à la maison. Votre enfant peut colorier des images familières seul ou avec ses parents et passer ainsi un moment agréable et amusant.",
+        "Des images simples à colorier avec des mots clairs en anglais.",
+        "Ni longs textes, ni grammaire, ni barrière de la langue. Le livre ne contient que de grands dessins aux contours épais, adaptés aux tout-petits, avec un seul mot bien lisible sous chaque image.",
+        "Convient aussi bien à un premier contact avec la langue qu'aux enfants qui l'entendent tous les jours à la maison. Votre enfant peut colorier des images familières seul ou avec ses parents et passer un moment amusant et intéressant.",
+        /* Абзац про десять бесплатных страниц обязателен на каждой
+           из восьми страниц. Решение владельца. */
+        "Dix pages du livre peuvent être imprimées gratuitement, avant même l'achat. Ni inscription, ni adresse e-mail, rien à remplir. Et si votre enfant aime, vous pourrez acheter le livre entier et continuer ensemble à découvrir de nouveaux mots, à colorier et à profiter de ces moments.",
       ],
       forWhom:
-        "Pour les enfants de 1 à 3 ans. L'enfant voit l'image et le mot en dessous. Il colorie l'un et l'autre. Il n'a pas besoin de savoir lire.",
+        "Pour les enfants de 1 à 3 ans et un peu plus grands, aussi bien pour un premier contact avec les mots anglais que pour les familles où l'enfant entend deux langues. Ici, il n'y a rien à apprendre spécialement : l'enfant colorie des images familières, les regarde et découvre peu à peu les mots écrits sous les dessins. Les parents peuvent prononcer ces mots à voix haute, regarder les images et les colorier avec l'enfant, sans leçons, sans règles et sans exercices difficiles.",
       inside: [
-        "111 dessins, réalisés à la main par des illustrateurs professionnels",
-        "Contours épais et grandes formes : même si votre enfant dépasse encore souvent, il colorie sans difficulté",
-        "Un dessin par page, impression sur une seule face : le feutre n'abîme pas le dessin suivant",
-        "Le mot sous chaque dessin se colorie aussi",
-        "Chaque dessin est placé au centre de la feuille : pratique pour un gaucher comme pour un droitier",
-        "Animaux, animaux marins, personnages de contes, véhicules, fleurs et nourriture",
-        "Au début du livre, une page où l'enfant écrit son prénom",
-        "114 pages, format 21,6 x 27,9 cm",
+        "111 mots simples en anglais, un seul mot sous chaque image",
+        "De grands dessins aux contours épais, faciles à reconnaître pour un enfant",
+        "Le mot sous le dessin est imprimé en grandes lettres creuses, qui se colorient aussi",
+        "Un dessin par page, le verso reste vierge",
+        "Les dessins sont placés au centre de la page : pratique pour les droitiers comme pour les gauchers",
+        "Des thèmes familiers : animaux, nourriture, véhicules, nature, personnages de contes et bien d'autres",
+        "Au début du livre, une page pour écrire le prénom de l'enfant",
+        "114 pages au grand format 21,6 × 27,9 cm",
       ],
       parents: [
-        "L'enfant termine son dessin tout seul et tourne la page pour le suivant",
-        "Les grandes images simples se colorient presque sans effort, et l'enfant prend confiance en son geste",
-        "Un seul livre suffit pour un long trajet, une attente ou un jour de pluie",
-        "Le livre est léger, on l'emporte facilement avec soi",
+        "L'enfant termine lui-même son dessin et tourne la page pour le suivant",
+        "Les grandes images simples se colorient facilement, même pour un jeune enfant",
+        "Le livre est parfait pour un long trajet, une salle d'attente ou un jour de pluie à la maison",
+        "Le livre est léger et s'emporte facilement",
         "Les enfants le feuillettent même sans crayons et demandent le nom de chaque animal",
         "On l'achète pour le plus jeune de la famille, quand les aînés ont déjà besoin de coloriages plus difficiles",
       ],
-      rating: "L'édition en anglais est notée 5,0 sur 5 sur Amazon.",
-      critic:
-        "Readers' Favorite a attribué cinq étoiles au livre et a souligné le contour épais et arrondi ainsi que le dessin placé au centre de la page.",
+      rating: "Note de 5,0 sur 5 sur Amazon.",
+      criticTitle: "Critique indépendante",
+      critic: "5 étoiles sur 5, Readers' Favorite",
+      criticBy: "Maalin Ogaja, octobre 2024",
+      criticWhy:
+        "Souligné en particulier : le contour épais et arrondi, le dessin placé au centre de la page et le mot sous l'image, qui se colorie aussi.",
+      whyTitle: "Pourquoi ce livre convient à un premier contact avec la langue",
+      why: [
+        "Le contact avec la langue n'a pas besoin d'être une leçon. L'enfant regarde des images familières et les colorie, et l'adulte peut simplement nommer ce qui est dessiné.",
+        "Vous n'avez pas besoin de bien connaître la langue vous-même. Sous chaque image, il n'y a qu'un seul mot simple. Il est facile à lire, à prononcer à voix haute et à répéter ensemble avec l'enfant.",
+        "L'image aide à comprendre le mot. L'enfant voit un objet familier et, en même temps, le mot écrit en dessous. Il rencontre ainsi les mots anglais dans un contexte compréhensible pour lui.",
+        "Seul ou avec ses parents, l'enfant peut simplement colorier les images. Les parents peuvent aussi les regarder avec lui, nommer les objets et répéter les nouveaux mots ensemble.",
+        "Le livre accompagne l'enfant de 1 à 3 ans et un peu au-delà. Au début, l'enfant colorie simplement les grandes images et entend le nom des objets. Plus tard, il peut répéter les mots et essayer de colorier aussi les lettres creuses.",
+      ],
       faq: [
         {
           q: "Un an, n'est-ce pas trop tôt ?",
-          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux plus jeunes. À un an, l'enfant gribouille par-dessus le dessin ; à trois ans, il commence à rester à l'intérieur du contour. Un seul livre suffit pour ces trois années.",
+          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux plus jeunes. À un an, l'enfant gribouille peut-être encore par-dessus l'image, tandis qu'à trois ans, il essaie déjà de colorier à l'intérieur du contour. Le livre peut donc être utilisé à différentes étapes entre 1 et 3 ans.",
         },
         {
-          q: "Mon enfant ne connaît pas cette langue, est-ce que ce sera difficile ?",
-          a: "Non. Il colorie l'image, et le mot en dessous, il le voit simplement à côté. Aucun exercice et aucune lecture.",
+          q: "Mon enfant ne connaît pas encore cette langue. Le livre ne sera-t-il pas trop difficile ?",
+          a: "Non. L'enfant colorie simplement l'image et voit le mot écrit en dessous. Il n'y a aucun exercice et l'enfant n'a pas besoin de savoir lire.",
         },
         {
           q: "Quelle est la différence entre les deux éditions ?",
           a: "Uniquement la langue du mot sous le dessin. Les dessins, le papier, le format et l'ordre des pages sont identiques.",
         },
         {
-          q: "Le feutre traverse le papier, que faire ?",
-          a: "Glissez une feuille supplémentaire sous la page. Le livre est imprimé sur une seule face, la trace reste donc sur le verso vierge et non sur le dessin suivant.",
+          q: "Que faire si le feutre traverse le papier ?",
+          a: "Glissez une feuille supplémentaire sous la page. Le livre est imprimé sur une seule face : la trace reste donc sur le verso vierge et non sur le dessin suivant.",
         },
       ],
       pair: "Le même livre avec les mots en espagnol sous les dessins :",
       pairCta: "Premiers mots en espagnol",
-      metaTitle: "Premiers mots en anglais - Coloriage 1 à 3 ans",
+      metaTitle:
+        "Premiers mots en anglais - Livre de coloriage pour enfants de 1 à 3 ans",
       metaDescription:
-        "111 grands dessins aux contours épais, un par page, avec sous chaque image un mot en anglais qui se colorie aussi. Pour les enfants de 1 à 3 ans.",
-      altCover: "Couverture du livre de coloriage avec les mots en anglais, avec un lion",
+        "111 grands dessins aux contours épais, un par page, avec en dessous un mot en anglais qui se colorie aussi. Pour les enfants de 1 à 3 ans.",
+      altCover:
+        "Couverture du livre de coloriage avec les mots en anglais et un lion",
       altBannerLead:
-        "First Coloring Book For Toddlers de Ricardo Demi, couverture avec un lion, de 1 à 3 ans",
+        "111 images à colorier et 111 mots en anglais, avec à côté la couverture du livre de coloriage avec le lion",
       altArt: [
         "Simple : une tortue au contour épais, un seul motif sur la page",
         "Grand : une vache qui remplit presque toute la feuille, coloriée par un jeune enfant",
         "Familier : une voiture rouge souriante, un des objets du quotidien du livre",
       ],
-      altGift: "Un cadeau pour les petits débutants : un donut et des crayons de couleur",
+      altGift:
+        "Le cadeau idéal pour les futurs artistes : un donut et des crayons de couleur",
     },
     es: {
       title: "Premiers mots en espagnol",
       subtitle: "Livre de coloriage pour enfants de 1 à 3 ans",
       head: {
-        top: "Livre de coloriage pour enfants de 1 à 3 ans",
+        top: "Livre de coloriage et imagier pour enfants de 1 à 3 ans",
         title: "Premiers mots en espagnol",
         bottom:
           "111 grands dessins aux contours épais. Sous chaque image, un mot en espagnol.",
       },
       lead: [
-        "Des coloriages simples avec des mots clairs en espagnol.",
-        "Pas de textes longs, pas de grammaire, pas de barrière de la langue. À l'intérieur, uniquement de grands dessins, des contours épais pour les tout-petits et un seul mot bien net sous chaque image.",
-        "Convient aussi bien à un premier contact avec la langue qu'à un enfant qui l'entend tous les jours à la maison. Votre enfant peut colorier des images familières seul ou avec ses parents et passer ainsi un moment agréable et amusant.",
+        "Des images simples à colorier avec des mots clairs en espagnol.",
+        "Ni longs textes, ni grammaire, ni barrière de la langue. Le livre ne contient que de grands dessins aux contours épais, adaptés aux tout-petits, avec un seul mot bien lisible sous chaque image.",
+        "Convient aussi bien à un premier contact avec la langue qu'aux enfants qui l'entendent tous les jours à la maison. Votre enfant peut colorier des images familières seul ou avec ses parents et passer un moment amusant et intéressant.",
+        "Dix pages du livre peuvent être imprimées gratuitement, avant même l'achat. Ni inscription, ni adresse e-mail, rien à remplir. Et si votre enfant aime, vous pourrez acheter le livre entier et continuer ensemble à découvrir de nouveaux mots, à colorier et à profiter de ces moments.",
       ],
       forWhom:
-        "Pour les enfants de 1 à 3 ans. L'enfant voit l'image et le mot en dessous. Il colorie l'un et l'autre. Il n'a pas besoin de savoir lire.",
+        "Pour les enfants de 1 à 3 ans et un peu plus grands, aussi bien pour un premier contact avec les mots espagnols que pour les familles où l'enfant entend deux langues. Ici, il n'y a rien à apprendre spécialement : l'enfant colorie des images familières, les regarde et découvre peu à peu les mots écrits sous les dessins. Les parents peuvent prononcer ces mots à voix haute, regarder les images et les colorier avec l'enfant, sans leçons, sans règles et sans exercices difficiles.",
       inside: [
-        "111 dessins, réalisés à la main par des illustrateurs professionnels",
-        "Contours épais et grandes formes : même si votre enfant dépasse encore souvent, il colorie sans difficulté",
-        "Un dessin par page, impression sur une seule face : le feutre n'abîme pas le dessin suivant",
-        "Le mot sous chaque dessin se colorie aussi",
-        "Chaque dessin est placé au centre de la feuille : pratique pour un gaucher comme pour un droitier",
-        "Animaux, animaux marins, personnages de contes, véhicules, fleurs et nourriture",
-        "Au début du livre, une page où l'enfant écrit son prénom",
-        "114 pages, format 21,6 x 27,9 cm",
+        "111 mots simples en espagnol, un seul mot sous chaque image",
+        "De grands dessins aux contours épais, faciles à reconnaître pour un enfant",
+        "Le mot sous le dessin est imprimé en grandes lettres creuses, qui se colorient aussi",
+        "Un dessin par page, le verso reste vierge",
+        "Les dessins sont placés au centre de la page : pratique pour les droitiers comme pour les gauchers",
+        "Des thèmes familiers : animaux, nourriture, véhicules, nature, personnages de contes et bien d'autres",
+        "Au début du livre, une page pour écrire le prénom de l'enfant",
+        "114 pages au grand format 21,6 × 27,9 cm",
       ],
       parents: [
-        "L'enfant termine son dessin tout seul et tourne la page pour le suivant",
-        "Les grandes images simples se colorient presque sans effort, et l'enfant prend confiance en son geste",
-        "Un seul livre suffit pour un long trajet, une attente ou un jour de pluie",
-        "Le livre est léger, on l'emporte facilement avec soi",
+        "L'enfant termine lui-même son dessin et tourne la page pour le suivant",
+        "Les grandes images simples se colorient facilement, même pour un jeune enfant",
+        "Le livre est parfait pour un long trajet, une salle d'attente ou un jour de pluie à la maison",
+        "Le livre est léger et s'emporte facilement",
         "Les enfants le feuillettent même sans crayons et demandent le nom de chaque animal",
         "On l'achète pour le plus jeune de la famille, quand les aînés ont déjà besoin de coloriages plus difficiles",
       ],
+      /* У испанского издания к оценке добавлена вторая фраза: рисунки
+         в обеих книгах одни и те же, и оценка 4,9 рядом с 5,0 не должна
+         читаться как разница в качестве рисунков. */
       rating:
-        "L'édition en espagnol est notée 4,9 sur 5 sur Amazon. Les dessins sont les mêmes dans les deux éditions.",
-      critic:
-        "Readers' Favorite a attribué cinq étoiles au livre et a souligné le contour épais et arrondi ainsi que le dessin placé au centre de la page.",
+        "Note de 4,9 sur 5 sur Amazon. Les dessins sont les mêmes dans les deux éditions.",
+      criticTitle: "Critique indépendante",
+      critic: "5 étoiles sur 5, Readers' Favorite",
+      criticBy: "Maalin Ogaja, octobre 2024",
+      criticWhy:
+        "Souligné en particulier : le contour épais et arrondi, le dessin placé au centre de la page et le mot sous l'image, qui se colorie aussi.",
+      whyTitle: "Pourquoi ce livre convient à un premier contact avec la langue",
+      why: [
+        "Le contact avec la langue n'a pas besoin d'être une leçon. L'enfant regarde des images familières et les colorie, et l'adulte peut simplement nommer ce qui est dessiné.",
+        "Vous n'avez pas besoin de bien connaître la langue vous-même. Sous chaque image, il n'y a qu'un seul mot simple. Il est facile à lire, à prononcer à voix haute et à répéter ensemble avec l'enfant.",
+        "L'image aide à comprendre le mot. L'enfant voit un objet familier et, en même temps, le mot écrit en dessous. Il rencontre ainsi les mots espagnols dans un contexte compréhensible pour lui.",
+        "Seul ou avec ses parents, l'enfant peut simplement colorier les images. Les parents peuvent aussi les regarder avec lui, nommer les objets et répéter les nouveaux mots ensemble.",
+        "Le livre accompagne l'enfant de 1 à 3 ans et un peu au-delà. Au début, l'enfant colorie simplement les grandes images et entend le nom des objets. Plus tard, il peut répéter les mots et essayer de colorier aussi les lettres creuses.",
+      ],
       faq: [
         {
           q: "Un an, n'est-ce pas trop tôt ?",
-          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux plus jeunes. À un an, l'enfant gribouille par-dessus le dessin ; à trois ans, il commence à rester à l'intérieur du contour. Un seul livre suffit pour ces trois années.",
+          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux plus jeunes. À un an, l'enfant gribouille peut-être encore par-dessus l'image, tandis qu'à trois ans, il essaie déjà de colorier à l'intérieur du contour. Le livre peut donc être utilisé à différentes étapes entre 1 et 3 ans.",
         },
         {
-          q: "Mon enfant ne connaît pas cette langue, est-ce que ce sera difficile ?",
-          a: "Non. Il colorie l'image, et le mot en dessous, il le voit simplement à côté. Aucun exercice et aucune lecture.",
+          q: "Mon enfant ne connaît pas encore cette langue. Le livre ne sera-t-il pas trop difficile ?",
+          a: "Non. L'enfant colorie simplement l'image et voit le mot écrit en dessous. Il n'y a aucun exercice et l'enfant n'a pas besoin de savoir lire.",
         },
         {
           q: "Quelle est la différence entre les deux éditions ?",
           a: "Uniquement la langue du mot sous le dessin. Les dessins, le papier, le format et l'ordre des pages sont identiques.",
         },
         {
-          q: "Le feutre traverse le papier, que faire ?",
-          a: "Glissez une feuille supplémentaire sous la page. Le livre est imprimé sur une seule face, la trace reste donc sur le verso vierge et non sur le dessin suivant.",
+          q: "Que faire si le feutre traverse le papier ?",
+          a: "Glissez une feuille supplémentaire sous la page. Le livre est imprimé sur une seule face : la trace reste donc sur le verso vierge et non sur le dessin suivant.",
         },
       ],
       pair: "Le même livre avec les mots en anglais sous les dessins :",
       pairCta: "Premiers mots en anglais",
-      metaTitle: "Premiers mots en espagnol - Coloriage 1 à 3 ans",
+      metaTitle:
+        "Premiers mots en espagnol - Livre de coloriage pour enfants de 1 à 3 ans",
       metaDescription:
-        "111 grands dessins aux contours épais, un par page, avec sous chaque image un mot en espagnol qui se colorie aussi. Pour les enfants de 1 à 3 ans.",
-      altCover: "Couverture du livre de coloriage avec les mots en espagnol, avec un lion",
+        "111 grands dessins aux contours épais, un par page, avec en dessous un mot en espagnol qui se colorie aussi. Pour les enfants de 1 à 3 ans.",
+      altCover:
+        "Couverture du livre de coloriage avec les mots en espagnol et un lion",
+      /* Надпись на широкой полосе у испанской книги в две строки,
+         как и у английской: так нарисовал художник. */
       altBannerLead:
-        "El Primer Libro de Colorear para Bebés de Ricardo Demi, couverture avec un lion, de 1 à 3 ans",
+        "111 images à colorier et 111 mots en espagnol, avec à côté la couverture du livre de coloriage avec le lion",
       altArt: [
         "Simple : une tortue au contour épais, un seul motif sur la page",
         "Grand : une vache qui remplit presque toute la feuille, coloriée par un jeune enfant",
         "Familier : une voiture rouge souriante, un des objets du quotidien du livre",
       ],
-      altGift: "Un cadeau pour les petits débutants : un donut et des crayons de couleur",
+      altGift:
+        "Le cadeau idéal pour les futurs artistes : un donut et des crayons de couleur",
     },
   },
 
@@ -1040,6 +1085,111 @@ export const euroPageOwn: Partial<
     }
   >
 > = {
+  /* Франция, книга с английскими словами. Картинки свои, надписи
+     на них французские, а слова на листах и под мотивами английские:
+     так напечатано в самой книге, и покупатель должен узнать ее,
+     когда попадет на Amazon.fr. */
+  "fr-en": {
+    price: "env. 6 €",
+    headTop: ["Livre de coloriage et imagier pour enfants", "de 1 à 3 ans"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/fr-en-header.webp",
+        w: 1600,
+        h: 556,
+        wide: true,
+        alt: "111 images à colorier et 111 mots en anglais, avec à côté la couverture du livre de coloriage avec le lion",
+      },
+      {
+        src: "/art/fr-en-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Page coloriée tirée du livre : un lion avec le mot anglais Lion en dessous",
+      },
+      {
+        src: "/art/fr-en-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Page coloriée tirée du livre : un renard avec le mot anglais Fox en dessous",
+      },
+      {
+        src: "/art/fr-en-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Page coloriée tirée du livre : une vache avec le mot anglais Cow en dessous",
+      },
+      {
+        src: "/art/fr-en-motifs.webp",
+        w: 1400,
+        h: 864,
+        wide: true,
+        alt: "Des images à colorier mignonnes et simples : dix dessins du livre, sous chacun un mot en anglais",
+      },
+      {
+        src: "/art/fr-en-gift.webp",
+        w: 1600,
+        h: 638,
+        wide: true,
+        alt: "Le cadeau idéal pour les futurs artistes : un donut et des crayons de couleur",
+      },
+    ],
+  },
+  /* Франция, книга с испанскими словами. Надписи на баннерах
+     французские, слова на листах и под мотивами испанские: так
+     напечатано в самой книге. */
+  "fr-es": {
+    price: "env. 6 €",
+    headTop: ["Livre de coloriage et imagier pour enfants", "de 1 à 3 ans"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/fr-es-header.webp",
+        w: 1600,
+        h: 530,
+        wide: true,
+        alt: "111 images à colorier et 111 mots en espagnol, avec à côté la couverture du livre de coloriage avec le lion",
+      },
+      {
+        src: "/art/fr-es-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Page coloriée tirée du livre : un lion avec le mot espagnol León en dessous",
+      },
+      {
+        src: "/art/fr-es-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Page coloriée tirée du livre : un renard avec le mot espagnol Zorro en dessous",
+      },
+      {
+        src: "/art/fr-es-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Page coloriée tirée du livre : une vache avec le mot espagnol Vaca en dessous",
+      },
+      {
+        src: "/art/fr-es-motifs.webp",
+        w: 1400,
+        h: 865,
+        wide: true,
+        alt: "Des images à colorier mignonnes et simples : dix dessins du livre, sous chacun un mot en espagnol",
+      },
+      {
+        src: "/art/fr-es-gift.webp",
+        w: 1600,
+        h: 550,
+        wide: true,
+        alt: "Le cadeau idéal pour les futurs artistes : un donut et des crayons de couleur",
+      },
+    ],
+  },
   "de-en": {
     /* Цена приблизительная, и это намеренно. Задается она в долларах
        на Amazon.com, а каждый магазин пересчитывает ее сам: свой налог
