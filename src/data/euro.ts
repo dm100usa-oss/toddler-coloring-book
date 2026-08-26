@@ -321,6 +321,15 @@ export const euroSlug: Record<EuroLang, Record<EditionLang, string>> = {
 export const euroPath = (lang: EuroLang, ed: EditionLang) =>
   `/${lang}/${euroSlug[lang][ed]}`;
 
+/* Название страны по-русски. Нужно только для строки в русском
+   подвале, по которой владелец открывает эти восемь страниц. */
+export const euroCountry: Record<EuroLang, string> = {
+  de: "Германия",
+  fr: "Франция",
+  nl: "Голландия",
+  pl: "Польша",
+};
+
 /* ==================================================================
    Тексты страниц
 

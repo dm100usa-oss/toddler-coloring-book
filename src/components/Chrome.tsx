@@ -2,6 +2,7 @@ import Link from "next/link";
 import { dictionaries, activeLangs, navFor } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
 import { homePath, sectionPath } from "@/lib/routes";
+import { euroLangs, euroPath, euroCountry } from "@/data/euro";
 import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
 
 /* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
@@ -177,6 +178,45 @@ export function Footer({ lang }: { lang: UiLang }) {
         {t.footer.disclaimer}{" "}
         <Link href={sectionPath(lang, "terms")}>{t.footer.disclaimerLink}</Link>
       </p>
+      {/* Восемь страниц для европейских рынков. Строка стоит только
+          в русском подвале, и это не случайность.
+
+          Владелец работает на русской версии, и ему эти страницы нужно
+          открывать. Русских покупателей у книг нет, поэтому строка
+          никому не мешает.
+
+          В английском и испанском подвале ее нет намеренно. У сайта
+          три равнозначные версии одного и того же содержания, они
+          прямо помечены как переводы друг друга. Если бы восемь новых
+          страниц встали в этот ряд, поисковик достроил бы его и решил,
+          что языков стало семь, а оригинал английский. Тогда каждая
+          из восьми читалась бы как перевод, а не как самостоятельная
+          немецкая, французская, голландская или польская страница.
+
+          Русский подвал в этот ряд их не заводит: справочник о первых
+          раскрасках и страница одной книги это разные материалы,
+          совпадать нечему, и версией друг друга их не посчитают. */}
+      {lang === "ru" ? (
+        <p style={{ fontSize: "var(--t-micro)", opacity: 0.8 }}>
+          <span data-nosnippet>
+            Страницы для Европы:{" "}
+            {euroLangs.map((l, i) => (
+              <span key={l}>
+                {i > 0 ? " · " : ""}
+                {euroCountry[l]}{" "}
+                <a href={euroPath(l, "en")} rel="nofollow">
+                  англ
+                </a>
+                {" / "}
+                <a href={euroPath(l, "es")} rel="nofollow">
+                  исп
+                </a>
+              </span>
+            ))}
+          </span>
+        </p>
+      ) : null}
+
       <p style={{ opacity: 0.7, fontSize: "var(--t-micro)" }}>{SITE_NAME}</p>
     </footer>
   );
