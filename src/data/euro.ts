@@ -444,7 +444,7 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
       title: "Erste Wörter auf Spanisch",
       subtitle: "Malbuch für Kinder von 1 bis 3 Jahren",
       head: {
-        top: "Malbuch für Kinder von 1 bis 3 Jahren",
+        top: "Malbuch und Bildwörterbuch für Kinder von 1 bis 3 Jahren",
         title: "Erste Wörter auf Spanisch",
         bottom:
           "111 große Zeichnungen mit dicken Konturen. Unter jedem Bild ein spanisches Wort.",
@@ -452,19 +452,20 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
       lead: [
         "Einfache Malbilder mit klaren Wörtern auf Spanisch.",
         "Keine langen Texte, keine Grammatik, keine Sprachbarriere. Im Buch gibt es nur große Zeichnungen, dicke Konturen für die Kleinsten und ein einziges deutliches Wort unter jedem Bild.",
-        "Geeignet sowohl für den ersten Kontakt mit der Sprache als auch für ein Kind, das sie zu Hause jeden Tag hört. Ihr Kind kann vertraute Bilder allein oder zusammen mit den Eltern ausmalen und dabei eine fröhliche und interessante Zeit verbringen.",
+        "Geeignet sowohl für den ersten Kontakt mit der Sprache als auch für Kinder, die sie zu Hause jeden Tag hören. Ihr Kind kann vertraute Bilder allein oder zusammen mit den Eltern ausmalen und dabei eine fröhliche und interessante Zeit verbringen.",
+        "Zehn Seiten aus dem Buch können Sie kostenlos ausdrucken, schon vor dem Kauf. Keine Anmeldung, keine E-Mail-Adresse, nichts auszufüllen. Und wenn es Ihrem Kind gefällt, können Sie das ganze Buch kaufen und gemeinsam weiter neue Wörter entdecken, ausmalen und Freude daran haben.",
       ],
       forWhom:
-        "Für Kinder von einem bis drei Jahren. Das Kind sieht das Bild und das Wort darunter. Es malt beides aus. Lesen muss es dafür nicht.",
+        "Für Kinder von 1 bis 3 Jahren und etwas darüber hinaus. Für den ersten Kontakt mit spanischen Wörtern ebenso wie für Familien, in denen ein Kind zwei Sprachen hört. Hier muss nichts eigens gelernt werden: Das Kind malt vertraute Bilder aus, schaut sie sich an und lernt nach und nach die Wörter kennen, die unter den Zeichnungen stehen. Eltern können diese Wörter laut aussprechen und gemeinsam mit dem Kind die Bilder anschauen und ausmalen - ohne Unterricht, ohne Regeln und ohne schwierige Aufgaben.",
       inside: [
-        "111 Zeichnungen, von professionellen Illustratoren von Hand gezeichnet",
-        "Dicke Konturen und große Formen: Auch wenn Ihr Kind noch oft über den Rand malt, kommt es damit gut zurecht",
-        "Eine Zeichnung pro Seite, einseitig bedruckt: Der Filzstift verdirbt nicht das nächste Bild",
-        "Das Wort unter jeder Zeichnung lässt sich ebenfalls ausmalen",
-        "Jede Zeichnung ist in der Mitte der Seite platziert: praktisch für Links- und Rechtshänder",
-        "Tiere, Meerestiere, Märchenfiguren, Fahrzeuge, Blumen und Essen",
-        "Am Anfang des Buches eine Seite, auf der das Kind seinen Namen schreibt",
-        "114 Seiten, Format 21,6 x 27,9 cm",
+        "111 einfache Wörter auf Spanisch, ein Wort unter jedem Bild",
+        "Große, für Kinder gut erkennbare Zeichnungen mit dicken Konturen",
+        "Das Wort unter der Zeichnung ist in großen Konturbuchstaben gedruckt und lässt sich ebenfalls ausmalen",
+        "Eine Zeichnung pro Seite, die Rückseite bleibt leer",
+        "Die Zeichnungen sind in der Mitte der Seite platziert - praktisch für Links- und Rechtshänder",
+        "Vertraute Themen: Tiere, Essen, Fahrzeuge, Natur, Märchenfiguren und mehr",
+        "Am Anfang des Buches eine eigene Namensseite für das Kind",
+        "114 Seiten im großen Format 21,6 × 27,9 cm",
       ],
       parents: [
         "Das Kind malt ein Bild von selbst zu Ende und blättert zum nächsten weiter",
@@ -475,33 +476,45 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
         "Man kauft es für das jüngste Kind in der Familie, wenn die älteren schon schwierigere Malbücher brauchen",
       ],
       rating:
-        "Die spanische Ausgabe hat bei Amazon 4,9 von 5. Die Zeichnungen sind in beiden Ausgaben dieselben.",
-      critic:
-        "Readers' Favorite hat dem Buch fünf Sterne gegeben und dabei die dicke, abgerundete Kontur und die Platzierung der Zeichnung in der Mitte der Seite hervorgehoben.",
+        "Bewertung 4,9 von 5 bei Amazon. Die Zeichnungen sind in beiden Ausgaben dieselben.",
+      criticTitle: "Unabhängige Rezension",
+      critic: "5 von 5 Sternen, Readers' Favorite",
+      criticBy: "Maalin Ogaja, Oktober 2024",
+      criticWhy:
+        "Besonders hervorgehoben: die dicken, abgerundeten Konturen, die Platzierung der Zeichnungen in der Mitte der Seite und das Wort unter dem Bild, das sich ebenfalls ausmalen lässt.",
+      whyTitle:
+        "Warum sich dieses Buch für den ersten Kontakt mit der Sprache eignet",
+      why: [
+        "Der Kontakt mit der Sprache muss kein Unterricht sein. Das Kind schaut sich vertraute Bilder an und malt sie aus, und ein Erwachsener kann die abgebildeten Dinge einfach beim Namen nennen.",
+        "Sie müssen die Sprache selbst nicht gut können. Unter jedem Bild steht nur ein einziges einfaches Wort. Es lässt sich leicht lesen, dem Kind laut vorsprechen und gemeinsam wiederholen.",
+        "Das Bild hilft, das Wort zu verstehen. Das Kind sieht einen vertrauten Gegenstand und gleichzeitig das Wort, das darunter steht. So begegnet es spanischen Wörtern in einem für das Kind verständlichen Zusammenhang.",
+        "Allein oder gemeinsam, beides geht. Das Kind kann die Bilder einfach ausmalen, und Eltern können sie mit ihm zusammen anschauen, die Dinge benennen und neue Wörter wiederholen.",
+        "Das Buch begleitet das Kind von 1 bis 3 Jahren und auch etwas darüber hinaus. Am Anfang malt ein Kind einfach die großen Bilder aus und hört die Namen der Dinge. Später kann es die Wörter nachsprechen und versuchen, auch die Konturbuchstaben auszumalen.",
+      ],
       faq: [
         {
           q: "Ist ein Jahr nicht zu früh?",
-          a: "Nein. Die Zeichnungen sind bewusst einfach für die Jüngsten gemacht. Ein einjähriges Kind kritzelt über das Bild, ein dreijähriges beginnt, innerhalb der Kontur zu bleiben. Ein Buch reicht für alle drei Jahre.",
+          a: "Nein. Die Zeichnungen sind bewusst einfach für die Jüngsten gemacht. Ein einjähriges Kind kritzelt vielleicht noch über das Bild, während ein dreijähriges Kind schon versucht, innerhalb der Konturen auszumalen. Das Buch kann in verschiedenen Phasen zwischen 1 und 3 Jahren genutzt werden.",
         },
         {
-          q: "Mein Kind kann diese Sprache nicht, wird es zu schwer?",
-          a: "Nein. Es malt das Bild aus, und das Wort darunter sieht es einfach daneben. Keine Aufgaben und kein Lesen.",
+          q: "Mein Kind kennt diese Sprache noch nicht. Ist das Buch dann zu schwierig?",
+          a: "Nein. Das Kind malt einfach das Bild aus und sieht dabei das Wort darunter. Es gibt keine Aufgaben und das Kind muss nicht lesen können.",
         },
         {
           q: "Worin unterscheiden sich die beiden Ausgaben?",
           a: "Nur in der Sprache des Wortes unter der Zeichnung. Zeichnungen, Papier, Format und Reihenfolge der Seiten sind gleich.",
         },
         {
-          q: "Der Filzstift geht durch das Papier, was tun?",
+          q: "Der Filzstift drückt durch das Papier, was tun?",
           a: "Legen Sie ein zusätzliches Blatt unter die Seite. Das Buch ist nur einseitig bedruckt, deshalb bleibt der Abdruck auf der leeren Rückseite und nicht auf dem nächsten Bild.",
         },
       ],
       pair: "Dasselbe Buch mit englischen Wörtern unter den Zeichnungen:",
       pairCta: "Erste Wörter auf Englisch",
-      metaTitle: "Erste Wörter auf Spanisch - Malbuch für Kinder 1-3 Jahre",
+      metaTitle: "Erste Wörter auf Spanisch - Malbuch für Kinder von 1 bis 3 Jahren",
       metaDescription:
         "111 große Zeichnungen mit dicken Konturen, eine pro Seite, mit einem spanischen Wort darunter, das sich ebenfalls ausmalen lässt. Für Kinder von 1 bis 3 Jahren.",
-      altCover: "Cover des Malbuchs mit spanischen Wörtern, mit einem Löwen",
+      altCover: "Cover des Malbuchs mit spanischen Wörtern und einem Löwen",
       altBannerLead:
         "El Primer Libro de Colorear para Bebés von Ricardo Demi, Cover mit einem Löwen, für 1 bis 3 Jahre",
       altArt: [
@@ -1081,6 +1094,55 @@ export const euroPageOwn: Partial<
         src: "/art/de-en-gift.webp",
         w: 1600,
         h: 622,
+        wide: true,
+        alt: "Das perfekte Geschenk für angehende Künstler: ein Donut und Buntstifte",
+      },
+    ],
+  },
+  "de-es": {
+    price: "ca. 6 €",
+    headTop: ["Malbuch und Bildwörterbuch für Kinder", "von 1 bis 3 Jahren"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/de-es-header.webp",
+        w: 1600,
+        h: 530,
+        wide: true,
+        alt: "Das erste Malbuch auf Spanisch für Kinder von 1 bis 3 Jahren, daneben das Cover mit dem Löwen",
+      },
+      {
+        src: "/art/de-es-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ausgemalte Seite aus dem Buch: ein Löwe und darunter das spanische Wort León",
+      },
+      {
+        src: "/art/de-es-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ausgemalte Seite aus dem Buch: ein Fuchs und darunter das spanische Wort Zorro",
+      },
+      {
+        src: "/art/de-es-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ausgemalte Seite aus dem Buch: eine Kuh und darunter das spanische Wort Vaca",
+      },
+      {
+        src: "/art/de-es-motifs.webp",
+        w: 1400,
+        h: 866,
+        wide: true,
+        alt: "Niedliche und einfache Malbilder: zehn Zeichnungen aus dem Buch, unter jedem Bild ein spanisches Wort",
+      },
+      {
+        src: "/art/de-es-gift.webp",
+        w: 1600,
+        h: 541,
         wide: true,
         alt: "Das perfekte Geschenk für angehende Künstler: ein Donut und Buntstifte",
       },
