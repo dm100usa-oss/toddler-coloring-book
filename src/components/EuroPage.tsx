@@ -9,6 +9,8 @@ import {
   euroBook,
   euroPath,
   euroPrice,
+  euroPageOwn,
+  pageKey,
   euroAmazonUrl,
   BOOK_SIZE_CM,
   type EuroLang,
@@ -77,12 +79,24 @@ function fmtDate(iso: string, locale: string) {
 function Buy({ lang, ed }: { lang: EuroLang; ed: EditionLang }) {
   const u = euroUi[lang];
   const b = euroBook(ed);
+  const own = euroPageOwn[pageKey(lang, ed)];
   return (
     <p className="buys">
       <span className="top-price">
-        <span className="top-price__value">{euroPrice[lang]}</span>
+        <span className="top-price__value">{own?.price ?? euroPrice[lang]}</span>
         <span className="top-price__label">{u.priceLabel}</span>
       </span>
+      {/* Сначала бесплатная кнопка, потом покупка. Тот же порядок,
+          что и в тексте наверху страницы: сперва попробовать дома,
+          потом купить книгу целиком.
+
+          Бесплатная кнопка ведет не наружу, а вниз по этой же странице,
+          к десяти листам из книги. Раньше здесь стоял адрес страницы
+          с файлом на Wix: она английская и в долларах, и человек
+          попадал не туда, куда шел. */}
+      <a className="btn btn--sky" href="#gratis">
+        {u.buyFree}
+      </a>
       <a
         className="btn btn--pink"
         href={euroAmazonUrl(lang, b.asin)}
@@ -90,13 +104,6 @@ function Buy({ lang, ed }: { lang: EuroLang; ed: EditionLang }) {
         target="_blank"
       >
         {u.buyAmazon}
-      </a>
-      {/* Вторая кнопка ведет не наружу, а вниз по этой же странице,
-          к десяти листам из книги. Раньше здесь стоял адрес страницы
-          с файлом на Wix: она английская и в долларах, и человек
-          попадал не туда, куда шел. */}
-      <a className="btn btn--sky" href="#gratis">
-        {u.buyFree}
       </a>
     </p>
   );
@@ -114,6 +121,10 @@ export default function EuroPage({
   const art = euroArt[ed];
   const b = euroBook(ed);
   const other: EditionLang = ed === "en" ? "es" : "en";
+  /* Своя полоса картинок с надписями на языке страницы. Есть пока
+     только у немецкой страницы про английскую книгу, остальные семь
+     берут общий набор. */
+  const own = euroPageOwn[pageKey(lang, ed)];
   const url = `${SITE_URL}${euroPath(lang, ed)}`;
 
   const schema = {
@@ -208,15 +219,24 @@ export default function EuroPage({
           </div>
 
           <div>
-            <h2 className="book__title">{c.title}</h2>
-            <p className="subtitle">{c.subtitle}</p>
+            {/* Название и подзаголовок здесь больше не повторяются:
+                те же две строки человек только что прочитал в шапке,
+                и на телефоне они уходили целым экраном впустую.
+                Три главных факта тоже ушли отсюда вниз, в общий
+                список "что в книге", и стоят там первыми.
 
-            {/* Три главных факта сразу, до всякого текста. */}
-            <ul className="quick-facts">
-              {c.inside.slice(0, 3).map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
+                Остальные семь страниц пока устроены по-старому. */}
+            {own ? null : (
+              <>
+                <h2 className="book__title">{c.title}</h2>
+                <p className="subtitle">{c.subtitle}</p>
+                <ul className="quick-facts">
+                  {c.inside.slice(0, 3).map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </>
+            )}
 
             {c.lead.map((part) => (
               <p className="why-text" key={part.slice(0, 24)}>
@@ -239,46 +259,93 @@ export default function EuroPage({
               </li>
               <li>
                 <span className="key-specs__label">{u.labelSize}</span>
-                <span className="key-specs__value">{BOOK_SIZE_CM}</span>
+                <span className="key-specs__value">{own?.size ?? BOOK_SIZE_CM}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="book-body">
-          {/* Полоса с баннером книги и тремя рисунками. Надписи на них
-              английские или испанские, и это правда: так называется
-              сама книга, и покупатель должен узнать ее на Amazon. */}
-          <div className="showcase">
-            <img
-              className="theme-banner"
-              src={art.bannerLead}
-              alt={c.altBannerLead}
-              width={1941}
-              height={601}
-              loading="lazy"
-            />
-            <div className="artwork">
-              {art.art.map((file, i) => (
+          {/* Полоса картинок книги.
+
+              У страниц, где своих картинок нет, стоит общий набор:
+              баннер книги, три квадратных рисунка и баннер с подарком.
+              Надписи на них английские или испанские, и это правда:
+              так называется сама книга, и покупатель должен узнать ее,
+              когда попадет на Amazon.
+
+              У немецкой страницы про английскую книгу набор свой,
+              из шести картинок с немецкими надписями: широкая полоса,
+              три раскрашенных листа из книги в ряд, полоса с десятью
+              мотивами и полоса про подарок. */}
+          {own ? (
+            <div className="showcase">
+              <img
+                className="theme-banner"
+                src={own.strip[0].src}
+                alt={own.strip[0].alt}
+                width={own.strip[0].w}
+                height={own.strip[0].h}
+                loading="lazy"
+              />
+              <div className="artwork artwork--tall">
+                {own.strip
+                  .filter((im) => !im.wide)
+                  .map((im) => (
+                    <img
+                      key={im.src}
+                      src={im.src}
+                      alt={im.alt}
+                      width={im.w}
+                      height={im.h}
+                      loading="lazy"
+                    />
+                  ))}
+              </div>
+              {own.strip.slice(4).map((im) => (
                 <img
-                  key={file}
-                  src={file}
-                  alt={c.altArt[i]}
-                  width={601}
-                  height={601}
+                  key={im.src}
+                  className="theme-banner"
+                  src={im.src}
+                  alt={im.alt}
+                  width={im.w}
+                  height={im.h}
                   loading="lazy"
                 />
               ))}
             </div>
-            <img
-              className="theme-banner"
-              src={art.gift}
-              alt={c.altGift}
-              width={1941}
-              height={601}
-              loading="lazy"
-            />
-          </div>
+          ) : (
+            <div className="showcase">
+              <img
+                className="theme-banner"
+                src={art.bannerLead}
+                alt={c.altBannerLead}
+                width={1941}
+                height={601}
+                loading="lazy"
+              />
+              <div className="artwork">
+                {art.art.map((file, i) => (
+                  <img
+                    key={file}
+                    src={file}
+                    alt={c.altArt[i]}
+                    width={601}
+                    height={601}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+              <img
+                className="theme-banner"
+                src={art.gift}
+                alt={c.altGift}
+                width={1941}
+                height={601}
+                loading="lazy"
+              />
+            </div>
+          )}
 
           {/* ============ Покупка, первое из двух мест ============ */}
           <div className="buy-block">
@@ -293,7 +360,7 @@ export default function EuroPage({
           {/* ============ Что внутри ============ */}
           <h2 className="section">{u.inside}</h2>
           <ul className="inside">
-            {c.inside.slice(3).map((line) => (
+            {(own ? c.inside : c.inside.slice(3)).map((line) => (
               <li key={line}>{line}</li>
             ))}
           </ul>
@@ -308,12 +375,31 @@ export default function EuroPage({
             ))}
           </ul>
 
+          {/* ============ Почему для первого знакомства с языком ============ */}
+          {/* Пять коротких доводов. Стоят открытыми, а не под кнопкой:
+              это и есть ответ на главный вопрос родителя, ради которого
+              он книгу и берет. */}
+          {c.whyTitle && c.why ? (
+            <>
+              <h2 className="section">{c.whyTitle}</h2>
+              {c.why.map((part) => (
+                <p key={part.slice(0, 24)}>{part}</p>
+              ))}
+            </>
+          ) : null}
+
           {/* ============ Оценки ============ */}
           <h2 className="section">{u.ratingTitle}</h2>
           <p>{c.rating}</p>
 
-          <h2 className="section">{u.criticTitle}</h2>
+          {/* ============ Независимая рецензия ============ */}
+          {/* Сначала сама оценка, потом одной строкой за что она
+              поставлена, потом кнопка на первоисточник и подпись
+              рецензентки с датой. Подписанная рецензия весит больше
+              безымянной и для человека, и для поисковика. */}
+          <h2 className="section">{c.criticTitle ?? u.criticTitle}</h2>
           <p>{c.critic}</p>
+          {c.criticWhy ? <p>{c.criticWhy}</p> : null}
           <p className="btn-row">
             <a
               className="btn btn--ghost"
@@ -324,6 +410,7 @@ export default function EuroPage({
               {u.criticSource}
             </a>
           </p>
+          {c.criticBy ? <p className="buy-note">{c.criticBy}</p> : null}
 
           {/* ============ Покупка, второе из двух мест ============ */}
           {/* Человек уже посмотрел книгу внутри и прочитал, что о ней
@@ -343,7 +430,7 @@ export default function EuroPage({
               <dt>{u.labelPages}</dt>
               <dd>{b.pages}</dd>
               <dt>{u.labelSize}</dt>
-              <dd>{BOOK_SIZE_CM}</dd>
+              <dd>{own?.size ?? BOOK_SIZE_CM}</dd>
               <dt>{u.labelPublished}</dt>
               <dd>{fmtDate(b.published, u.locale)}</dd>
               <dt>ISBN</dt>
