@@ -58,7 +58,7 @@ export const euroAmazonUrl = (lang: EuroLang, asin: string) =>
 export const euroPrice: Record<EuroLang, string> = {
   de: "ca. 6 €",
   fr: "5,99 €",
-  nl: "ca. € 6,50",
+  nl: "€ 6",
   pl: "ok. 30 zł",
 };
 
@@ -72,7 +72,10 @@ export const euroRating: Record<EditionLang, string> = {
 
 /* Размер книги в сантиметрах с запятой: так пишут число во всех
    четырех странах. В дюймах его здесь не бывает. */
-export const BOOK_SIZE_CM = "21,6 x 27,9 cm";
+/* Знак умножения, а не буква x: так пишут размер во всех четырех
+   странах. Немецкие и французские страницы держат свой размер сами,
+   этот остается у голландских и польских. */
+export const BOOK_SIZE_CM = "21,6 × 27,9 cm";
 
 /* Три строки, которые стоят наверху страницы. Настоящий текст,
    а не картинка: это самая крупная надпись страницы, и по ней
@@ -240,12 +243,12 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Wat een onafhankelijke recensent schreef",
     faq: "Veelgestelde vragen",
     buyAmazon: "Kopen op Amazon.nl",
-    buyFree: "10 pagina's gratis printen",
+    buyFree: "Print 10 pagina's gratis",
     priceLabel: "paperback op Amazon.nl",
     buyNote: "Verkocht en verzonden door Amazon.",
     freeTitle: "Tien pagina's uit het boek, gratis om te printen",
     freeLead:
-      "Dit zijn echte pagina's uit het boek, met hetzelfde woord onder de tekening. Print er één uit, geef uw kind een potlood, en na vijf minuten weet u of zo'n boek bij uw kind past. Zonder registratie en zonder e-mailadres.",
+      "Dit zijn echte pagina's uit het boek: onder elke tekening staat hetzelfde woord als in het boek. Print er één uit, geef uw kind een potlood, en na vijf minuten weet u of dit boek bij uw kind past. Zonder registratie en zonder e-mailadres.",
     freeDownload: "Downloaden",
     freeFormat: "Formaat A4, om thuis te printen.",
     freeAlt: (name: string) => `${name}: kleurplaat uit het boek`,
@@ -722,147 +725,188 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
   },
 
   /* --------------------------- ГОЛЛАНДСКИЙ -------------------------- */
+  /* Тексты сняты с общей русской основы владельца и выправлены его
+     правками от 26 августа 2026 года.
+
+     В Голландии у книжки, где под картинкой стоит слово, есть свое
+     привычное название: beeldwoordenboek, картинный словарь. Оно
+     обычное, по нему ищут, поэтому верхняя строка страницы звучит
+     как Kleurboek en beeldwoordenboek. */
   nl: {
     en: {
       title: "Eerste woorden in het Engels",
       subtitle: "Kleurboek voor kinderen van 1 tot 3 jaar",
       head: {
-        top: "Kleurboek voor kinderen van 1 tot 3 jaar",
+        top: "Kleurboek en beeldwoordenboek voor kinderen van 1 tot 3 jaar",
         title: "Eerste woorden in het Engels",
         bottom:
-          "111 grote tekeningen met dikke contouren. Onder elke afbeelding een Engels woord.",
+          "111 grote tekeningen met dikke lijnen. Onder elke afbeelding een Engels woord.",
       },
       lead: [
         "Eenvoudige kleurplaten met duidelijke woorden in het Engels.",
-        "Geen lange teksten, geen grammatica, geen taalbarrière. Binnenin staan alleen grote tekeningen, dikke contouren voor de allerkleinsten en één duidelijk woord onder elke afbeelding.",
-        "Geschikt voor een eerste kennismaking met de taal, maar ook voor een kind dat de taal thuis elke dag hoort. Uw kind kan vertrouwde plaatjes zelf inkleuren of samen met de ouders en zo op een leuke en boeiende manier bezig zijn.",
+        "Geen lange teksten, geen grammatica, geen taalbarrière. Het boek bevat alleen grote tekeningen met dikke lijnen, geschikt voor de allerkleinsten, met één goed leesbaar woord onder elke afbeelding.",
+        "Geschikt voor een eerste kennismaking met de taal en voor kinderen die deze taal thuis elke dag horen. Uw kind kan vertrouwde afbeeldingen alleen of samen met de ouders inkleuren en daar op een leuke en interessante manier tijd mee doorbrengen.",
+        /* Абзац про десять бесплатных страниц обязателен на каждой
+           из восьми страниц. Решение владельца. */
+        "Tien pagina's uit het boek kunt u gratis printen, nog voor de aankoop. Geen registratie, geen e-mailadres, niets in te vullen. En als uw kind het leuk vindt, kunt u het hele boek kopen en samen verder nieuwe woorden ontdekken, kleuren en van die momenten genieten.",
       ],
       forWhom:
-        "Voor kinderen van één tot drie jaar. Het kind ziet de tekening en het woord eronder. Het kleurt allebei in. Lezen is daarvoor niet nodig.",
+        "Voor kinderen van 1 tot 3 jaar en iets ouder, zowel voor een eerste kennismaking met Engelse woorden als voor gezinnen waarin een kind twee talen hoort. Er hoeft hier niets speciaals geleerd te worden: het kind kleurt vertrouwde afbeeldingen in, bekijkt ze en maakt zo geleidelijk kennis met de woorden die onder de tekeningen staan. Ouders kunnen deze woorden hardop uitspreken, de afbeeldingen samen met het kind bekijken en inkleuren, zonder lessen, zonder regels en zonder moeilijke oefeningen.",
       inside: [
-        "111 tekeningen, met de hand gemaakt door professionele illustratoren",
-        "Dikke contouren en grote vormen: ook als uw kind nog vaak buiten de lijnen kleurt, gaat het inkleuren gemakkelijk",
-        "Eén tekening per pagina, enkelzijdig gedrukt: de stift drukt niet door op de volgende tekening",
-        "Het woord onder elke tekening kan ook worden ingekleurd",
-        "Elke tekening staat midden op het blad: handig voor zowel links- als rechtshandige kinderen",
-        "Dieren, zeedieren, sprookjesfiguren, voertuigen, bloemen en eten",
-        "Voorin het boek een pagina waar het kind zijn naam schrijft",
-        "114 pagina's, formaat 21,6 x 27,9 cm",
+        "111 eenvoudige woorden in het Engels, één woord onder elke afbeelding",
+        "Grote tekeningen met dikke lijnen, goed herkenbaar voor een kind",
+        "Het woord onder de tekening is gedrukt in grote open letters, die ook ingekleurd kunnen worden",
+        "Eén tekening per pagina, de achterkant blijft leeg",
+        "De tekeningen staan midden op de pagina: handig voor rechts- en linkshandigen",
+        "Vertrouwde thema's: dieren, eten, voertuigen, natuur, sprookjesfiguren en meer",
+        "Voorin het boek een pagina voor de naam van het kind",
+        "114 pagina's op groot formaat 21,6 × 27,9 cm",
       ],
       parents: [
-        "Het kind maakt een tekening zelf af en bladert door naar de volgende",
-        "De grote, eenvoudige plaatjes zijn bijna moeiteloos in te kleuren, en het kind krijgt steeds meer vertrouwen in zijn eigen bewegingen",
-        "Eén boek is genoeg voor een lange rit, voor de wachtkamer en voor een regendag",
+        "Het kind maakt zijn tekening zelf af en bladert door naar de volgende",
+        "De grote, eenvoudige afbeeldingen zijn ook voor een jong kind makkelijk in te kleuren",
+        "Het boek is ideaal voor een lange reis, een wachtkamer of een regenachtige dag thuis",
         "Het boek is licht en gemakkelijk mee te nemen",
-        "Kinderen bladeren erin zelfs zonder potloden en vragen hoe elk dier heet",
-        "Het wordt gekocht voor de jongste in het gezin, wanneer de oudere kinderen al moeilijkere kleurboeken nodig hebben",
+        "Kinderen bladeren erin, zelfs zonder potloden, en vragen hoe elk dier heet",
+        "Het wordt gekocht voor het jongste kind in het gezin, wanneer de oudere kinderen al moeilijkere kleurboeken nodig hebben",
       ],
-      rating: "De Engelse editie heeft op Amazon 5,0 van de 5.",
-      critic:
-        "Readers' Favorite gaf het boek vijf sterren en noemde daarbij de dikke, afgeronde contour en de plaatsing van de tekening midden op de pagina.",
+      rating: "5,0 van de 5 sterren op Amazon.",
+      criticTitle: "Onafhankelijke recensie",
+      critic: "5 van de 5 sterren, Readers' Favorite",
+      criticBy: "Maalin Ogaja, oktober 2024",
+      criticWhy:
+        "Vooral genoemd worden de dikke, afgeronde lijnen, de tekening midden op de pagina en het woord onder de afbeelding, dat ook ingekleurd kan worden.",
+      whyTitle:
+        "Waarom dit boek geschikt is voor een eerste kennismaking met de taal",
+      why: [
+        "Kennismaken met een taal hoeft geen les te zijn. Het kind bekijkt vertrouwde afbeeldingen en kleurt ze in, en een volwassene kan gewoon benoemen wat erop staat.",
+        "U hoeft de taal zelf niet goed te kennen. Onder elke afbeelding staat maar één eenvoudig woord. Het is makkelijk te lezen, hardop uit te spreken en samen met het kind te herhalen.",
+        "De afbeelding helpt om het woord te begrijpen. Het kind ziet een vertrouwd voorwerp en tegelijk het woord dat eronder staat. Zo komt het Engelse woorden tegen in een context die voor het kind begrijpelijk is.",
+        "Alleen of samen met de ouders: het kind kan de afbeeldingen gewoon inkleuren. Ouders kunnen ze ook samen met het kind bekijken, de voorwerpen benoemen en nieuwe woorden herhalen.",
+        "Het boek is geschikt voor kinderen van 1 tot 3 jaar en iets ouder. In het begin kleurt het kind gewoon de grote afbeeldingen in en hoort het de namen van de voorwerpen. Later kan het de woorden nazeggen en proberen ook de open letters in te kleuren.",
+      ],
       faq: [
         {
           q: "Is één jaar niet te vroeg?",
-          a: "Nee. De tekeningen zijn met opzet eenvoudig gemaakt voor de allerjongsten. Een kind van één krabbelt over de tekening heen, een kind van drie begint binnen de contour te blijven. Eén boek is genoeg voor alle drie de jaren.",
+          a: "Nee. De tekeningen zijn bewust eenvoudig gemaakt en geschikt voor de allerkleinsten. Een kind van één krabbelt misschien nog over de afbeelding heen, terwijl een kind van drie al binnen de lijnen probeert te kleuren. Het boek kan daardoor in verschillende fasen tussen 1 en 3 jaar gebruikt worden.",
         },
         {
-          q: "Mijn kind kent deze taal niet, wordt het dan te moeilijk?",
-          a: "Nee. Het kleurt de tekening in, en het woord eronder ziet het gewoon ernaast staan. Geen opdrachten en geen lezen.",
+          q: "Mijn kind kent deze taal nog niet. Wordt het boek dan niet te moeilijk?",
+          a: "Nee. Het kind kleurt gewoon de afbeelding in en ziet daarbij het woord eronder. Er zijn geen oefeningen en het kind hoeft niet te kunnen lezen.",
         },
         {
           q: "Wat is het verschil tussen de twee edities?",
           a: "Alleen de taal van het woord onder de tekening. De tekeningen, het papier, het formaat en de volgorde van de pagina's zijn hetzelfde.",
         },
         {
-          q: "De stift gaat door het papier heen, wat nu?",
-          a: "Leg een extra vel onder de pagina. Het boek is enkelzijdig gedrukt, dus de vlek blijft op de lege achterkant en niet op de volgende tekening.",
+          q: "Wat kunt u doen als de stift door het papier heen komt?",
+          a: "Leg een extra vel onder de pagina. Het boek is enkelzijdig bedrukt, dus de afdruk blijft op de lege achterkant en niet op de volgende tekening.",
         },
       ],
       pair: "Hetzelfde boek met Spaanse woorden onder de tekeningen:",
       pairCta: "Eerste woorden in het Spaans",
-      metaTitle: "Eerste woorden Engels - Kleurboek voor kinderen 1-3 jaar",
+      metaTitle:
+        "Eerste woorden in het Engels - Kleurboek voor kinderen van 1 tot 3 jaar",
       metaDescription:
-        "111 grote tekeningen met dikke contouren, één per pagina, met daaronder een Engels woord dat ook ingekleurd kan worden. Voor kinderen van 1 tot 3 jaar.",
-      altCover: "Omslag van het kleurboek met Engelse woorden, met een leeuw",
+        "111 grote tekeningen met dikke lijnen, één per pagina, met daaronder een Engels woord dat ook ingekleurd kan worden. Voor kinderen van 1 tot 3 jaar.",
+      altCover: "Cover van het kleurboek met de Engelse woorden en een leeuw",
       altBannerLead:
-        "First Coloring Book For Toddlers van Ricardo Demi, omslag met een leeuw, van 1 tot 3 jaar",
+        "111 kleurplaten en 111 woorden in het Engels, daarnaast de cover van het kleurboek met de leeuw",
       altArt: [
-        "Eenvoudig: een schildpad met dikke contour, één motief op de pagina",
-        "Groot: een koe die bijna het hele blad vult, ingekleurd door een klein kind",
-        "Vertrouwd: een lachende rode auto, een van de alledaagse dingen in het boek",
+        "Eenvoudig: een schildpad met een dikke lijn, één motief op de pagina",
+        "Groot: een koe die bijna de hele pagina vult, ingekleurd door een jong kind",
+        "Vertrouwd: een lachende rode auto, een van de alledaagse dingen uit het boek",
       ],
-      altGift: "Een cadeau voor kleine beginners: een donut en kleurpotloden",
+      altGift:
+        "Het ideale cadeau voor toekomstige kunstenaars: een donut en kleurpotloden",
     },
     es: {
       title: "Eerste woorden in het Spaans",
       subtitle: "Kleurboek voor kinderen van 1 tot 3 jaar",
       head: {
-        top: "Kleurboek voor kinderen van 1 tot 3 jaar",
+        top: "Kleurboek en beeldwoordenboek voor kinderen van 1 tot 3 jaar",
         title: "Eerste woorden in het Spaans",
         bottom:
-          "111 grote tekeningen met dikke contouren. Onder elke afbeelding een Spaans woord.",
+          "111 grote tekeningen met dikke lijnen. Onder elke afbeelding een Spaans woord.",
       },
       lead: [
         "Eenvoudige kleurplaten met duidelijke woorden in het Spaans.",
-        "Geen lange teksten, geen grammatica, geen taalbarrière. Binnenin staan alleen grote tekeningen, dikke contouren voor de allerkleinsten en één duidelijk woord onder elke afbeelding.",
-        "Geschikt voor een eerste kennismaking met de taal, maar ook voor een kind dat de taal thuis elke dag hoort. Uw kind kan vertrouwde plaatjes zelf inkleuren of samen met de ouders en zo op een leuke en boeiende manier bezig zijn.",
+        "Geen lange teksten, geen grammatica, geen taalbarrière. Het boek bevat alleen grote tekeningen met dikke lijnen, geschikt voor de allerkleinsten, met één goed leesbaar woord onder elke afbeelding.",
+        "Geschikt voor een eerste kennismaking met de taal en voor kinderen die deze taal thuis elke dag horen. Uw kind kan vertrouwde afbeeldingen alleen of samen met de ouders inkleuren en daar op een leuke en interessante manier tijd mee doorbrengen.",
+        "Tien pagina's uit het boek kunt u gratis printen, nog voor de aankoop. Geen registratie, geen e-mailadres, niets in te vullen. En als uw kind het leuk vindt, kunt u het hele boek kopen en samen verder nieuwe woorden ontdekken, kleuren en van die momenten genieten.",
       ],
       forWhom:
-        "Voor kinderen van één tot drie jaar. Het kind ziet de tekening en het woord eronder. Het kleurt allebei in. Lezen is daarvoor niet nodig.",
+        "Voor kinderen van 1 tot 3 jaar en iets ouder, zowel voor een eerste kennismaking met Spaanse woorden als voor gezinnen waarin een kind twee talen hoort. Er hoeft hier niets speciaals geleerd te worden: het kind kleurt vertrouwde afbeeldingen in, bekijkt ze en maakt zo geleidelijk kennis met de woorden die onder de tekeningen staan. Ouders kunnen deze woorden hardop uitspreken, de afbeeldingen samen met het kind bekijken en inkleuren, zonder lessen, zonder regels en zonder moeilijke oefeningen.",
       inside: [
-        "111 tekeningen, met de hand gemaakt door professionele illustratoren",
-        "Dikke contouren en grote vormen: ook als uw kind nog vaak buiten de lijnen kleurt, gaat het inkleuren gemakkelijk",
-        "Eén tekening per pagina, enkelzijdig gedrukt: de stift drukt niet door op de volgende tekening",
-        "Het woord onder elke tekening kan ook worden ingekleurd",
-        "Elke tekening staat midden op het blad: handig voor zowel links- als rechtshandige kinderen",
-        "Dieren, zeedieren, sprookjesfiguren, voertuigen, bloemen en eten",
-        "Voorin het boek een pagina waar het kind zijn naam schrijft",
-        "114 pagina's, formaat 21,6 x 27,9 cm",
+        "111 eenvoudige woorden in het Spaans, één woord onder elke afbeelding",
+        "Grote tekeningen met dikke lijnen, goed herkenbaar voor een kind",
+        "Het woord onder de tekening is gedrukt in grote open letters, die ook ingekleurd kunnen worden",
+        "Eén tekening per pagina, de achterkant blijft leeg",
+        "De tekeningen staan midden op de pagina: handig voor rechts- en linkshandigen",
+        "Vertrouwde thema's: dieren, eten, voertuigen, natuur, sprookjesfiguren en meer",
+        "Voorin het boek een pagina voor de naam van het kind",
+        "114 pagina's op groot formaat 21,6 × 27,9 cm",
       ],
       parents: [
-        "Het kind maakt een tekening zelf af en bladert door naar de volgende",
-        "De grote, eenvoudige plaatjes zijn bijna moeiteloos in te kleuren, en het kind krijgt steeds meer vertrouwen in zijn eigen bewegingen",
-        "Eén boek is genoeg voor een lange rit, voor de wachtkamer en voor een regendag",
+        "Het kind maakt zijn tekening zelf af en bladert door naar de volgende",
+        "De grote, eenvoudige afbeeldingen zijn ook voor een jong kind makkelijk in te kleuren",
+        "Het boek is ideaal voor een lange reis, een wachtkamer of een regenachtige dag thuis",
         "Het boek is licht en gemakkelijk mee te nemen",
-        "Kinderen bladeren erin zelfs zonder potloden en vragen hoe elk dier heet",
-        "Het wordt gekocht voor de jongste in het gezin, wanneer de oudere kinderen al moeilijkere kleurboeken nodig hebben",
+        "Kinderen bladeren erin, zelfs zonder potloden, en vragen hoe elk dier heet",
+        "Het wordt gekocht voor het jongste kind in het gezin, wanneer de oudere kinderen al moeilijkere kleurboeken nodig hebben",
       ],
+      /* У испанского издания к оценке добавлена вторая фраза: рисунки
+         в обеих книгах одни и те же. */
       rating:
-        "De Spaanse editie heeft op Amazon 4,9 van de 5. De tekeningen zijn in beide edities dezelfde.",
-      critic:
-        "Readers' Favorite gaf het boek vijf sterren en noemde daarbij de dikke, afgeronde contour en de plaatsing van de tekening midden op de pagina.",
+        "4,9 van de 5 sterren op Amazon. De tekeningen zijn in beide edities dezelfde.",
+      criticTitle: "Onafhankelijke recensie",
+      critic: "5 van de 5 sterren, Readers' Favorite",
+      criticBy: "Maalin Ogaja, oktober 2024",
+      criticWhy:
+        "Vooral genoemd worden de dikke, afgeronde lijnen, de tekening midden op de pagina en het woord onder de afbeelding, dat ook ingekleurd kan worden.",
+      whyTitle:
+        "Waarom dit boek geschikt is voor een eerste kennismaking met de taal",
+      why: [
+        "Kennismaken met een taal hoeft geen les te zijn. Het kind bekijkt vertrouwde afbeeldingen en kleurt ze in, en een volwassene kan gewoon benoemen wat erop staat.",
+        "U hoeft de taal zelf niet goed te kennen. Onder elke afbeelding staat maar één eenvoudig woord. Het is makkelijk te lezen, hardop uit te spreken en samen met het kind te herhalen.",
+        "De afbeelding helpt om het woord te begrijpen. Het kind ziet een vertrouwd voorwerp en tegelijk het woord dat eronder staat. Zo komt het Spaanse woorden tegen in een context die voor het kind begrijpelijk is.",
+        "Alleen of samen met de ouders: het kind kan de afbeeldingen gewoon inkleuren. Ouders kunnen ze ook samen met het kind bekijken, de voorwerpen benoemen en nieuwe woorden herhalen.",
+        "Het boek is geschikt voor kinderen van 1 tot 3 jaar en iets ouder. In het begin kleurt het kind gewoon de grote afbeeldingen in en hoort het de namen van de voorwerpen. Later kan het de woorden nazeggen en proberen ook de open letters in te kleuren.",
+      ],
       faq: [
         {
           q: "Is één jaar niet te vroeg?",
-          a: "Nee. De tekeningen zijn met opzet eenvoudig gemaakt voor de allerjongsten. Een kind van één krabbelt over de tekening heen, een kind van drie begint binnen de contour te blijven. Eén boek is genoeg voor alle drie de jaren.",
+          a: "Nee. De tekeningen zijn bewust eenvoudig gemaakt en geschikt voor de allerkleinsten. Een kind van één krabbelt misschien nog over de afbeelding heen, terwijl een kind van drie al binnen de lijnen probeert te kleuren. Het boek kan daardoor in verschillende fasen tussen 1 en 3 jaar gebruikt worden.",
         },
         {
-          q: "Mijn kind kent deze taal niet, wordt het dan te moeilijk?",
-          a: "Nee. Het kleurt de tekening in, en het woord eronder ziet het gewoon ernaast staan. Geen opdrachten en geen lezen.",
+          q: "Mijn kind kent deze taal nog niet. Wordt het boek dan niet te moeilijk?",
+          a: "Nee. Het kind kleurt gewoon de afbeelding in en ziet daarbij het woord eronder. Er zijn geen oefeningen en het kind hoeft niet te kunnen lezen.",
         },
         {
           q: "Wat is het verschil tussen de twee edities?",
           a: "Alleen de taal van het woord onder de tekening. De tekeningen, het papier, het formaat en de volgorde van de pagina's zijn hetzelfde.",
         },
         {
-          q: "De stift gaat door het papier heen, wat nu?",
-          a: "Leg een extra vel onder de pagina. Het boek is enkelzijdig gedrukt, dus de vlek blijft op de lege achterkant en niet op de volgende tekening.",
+          q: "Wat kunt u doen als de stift door het papier heen komt?",
+          a: "Leg een extra vel onder de pagina. Het boek is enkelzijdig bedrukt, dus de afdruk blijft op de lege achterkant en niet op de volgende tekening.",
         },
       ],
       pair: "Hetzelfde boek met Engelse woorden onder de tekeningen:",
       pairCta: "Eerste woorden in het Engels",
-      metaTitle: "Eerste woorden Spaans - Kleurboek voor kinderen 1-3 jaar",
+      metaTitle:
+        "Eerste woorden in het Spaans - Kleurboek voor kinderen van 1 tot 3 jaar",
       metaDescription:
-        "111 grote tekeningen met dikke contouren, één per pagina, met daaronder een Spaans woord dat ook ingekleurd kan worden. Voor kinderen van 1 tot 3 jaar.",
-      altCover: "Omslag van het kleurboek met Spaanse woorden, met een leeuw",
+        "111 grote tekeningen met dikke lijnen, één per pagina, met daaronder een Spaans woord dat ook ingekleurd kan worden. Voor kinderen van 1 tot 3 jaar.",
+      altCover: "Cover van het kleurboek met de Spaanse woorden en een leeuw",
       altBannerLead:
-        "El Primer Libro de Colorear para Bebés van Ricardo Demi, omslag met een leeuw, van 1 tot 3 jaar",
+        "111 kleurplaten en 111 woorden in het Spaans, daarnaast de cover van het kleurboek met de leeuw",
       altArt: [
-        "Eenvoudig: een schildpad met dikke contour, één motief op de pagina",
-        "Groot: een koe die bijna het hele blad vult, ingekleurd door een klein kind",
-        "Vertrouwd: een lachende rode auto, een van de alledaagse dingen in het boek",
+        "Eenvoudig: een schildpad met een dikke lijn, één motief op de pagina",
+        "Groot: een koe die bijna de hele pagina vult, ingekleurd door een jong kind",
+        "Vertrouwd: een lachende rode auto, een van de alledaagse dingen uit het boek",
       ],
-      altGift: "Een cadeau voor kleine beginners: een donut en kleurpotloden",
+      altGift:
+        "Het ideale cadeau voor toekomstige kunstenaars: een donut en kleurpotloden",
     },
   },
 
@@ -892,7 +936,7 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
         "Każdy rysunek jest na środku kartki: wygodnie zarówno dla dzieci leworęcznych, jak i praworęcznych",
         "Zwierzęta, zwierzęta morskie, postacie z bajek, pojazdy, kwiaty i jedzenie",
         "Na początku książki strona, na której dziecko pisze swoje imię",
-        "114 stron, format 21,6 x 27,9 cm",
+        "114 stron, format 21,6 × 27,9 cm",
       ],
       parents: [
         "Dziecko samo kończy rysunek i przewraca kartkę po następny",
@@ -962,7 +1006,7 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
         "Każdy rysunek jest na środku kartki: wygodnie zarówno dla dzieci leworęcznych, jak i praworęcznych",
         "Zwierzęta, zwierzęta morskie, postacie z bajek, pojazdy, kwiaty i jedzenie",
         "Na początku książki strona, na której dziecko pisze swoje imię",
-        "114 stron, format 21,6 x 27,9 cm",
+        "114 stron, format 21,6 × 27,9 cm",
       ],
       parents: [
         "Dziecko samo kończy rysunek i przewraca kartkę po następny",
@@ -1192,6 +1236,109 @@ export const euroPageOwn: Partial<
         h: 550,
         wide: true,
         alt: "Le cadeau idéal pour les futurs artistes : un donut et des crayons de couleur",
+      },
+    ],
+  },
+  /* Голландия, книга с английскими словами. Надписи на баннерах
+     голландские, слова на листах и под мотивами английские: так
+     напечатано в самой книге. */
+  "nl-en": {
+    price: "€ 6",
+    headTop: ["Kleurboek en beeldwoordenboek voor kinderen", "van 1 tot 3 jaar"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/nl-en-header.webp",
+        w: 1600,
+        h: 555,
+        wide: true,
+        alt: "111 kleurplaten en 111 woorden in het Engels, daarnaast de cover van het kleurboek met de leeuw",
+      },
+      {
+        src: "/art/nl-en-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ingekleurde pagina uit het boek: een leeuw met daaronder het Engelse woord Lion",
+      },
+      {
+        src: "/art/nl-en-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ingekleurde pagina uit het boek: een vos met daaronder het Engelse woord Fox",
+      },
+      {
+        src: "/art/nl-en-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ingekleurde pagina uit het boek: een koe met daaronder het Engelse woord Cow",
+      },
+      {
+        src: "/art/nl-en-motifs.webp",
+        w: 1400,
+        h: 866,
+        wide: true,
+        alt: "Leuke en eenvoudige kleurplaten: tien tekeningen uit het boek, onder elke tekening een Engels woord",
+      },
+      {
+        src: "/art/nl-en-gift.webp",
+        w: 1600,
+        h: 624,
+        wide: true,
+        alt: "Het ideale cadeau voor toekomstige kunstenaars: een donut en kleurpotloden",
+      },
+    ],
+  },
+  /* Голландия, книга с испанскими словами. Надписи на баннерах
+     голландские, слова на листах и под мотивами испанские. */
+  "nl-es": {
+    price: "€ 6",
+    headTop: ["Kleurboek en beeldwoordenboek voor kinderen", "van 1 tot 3 jaar"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/nl-es-header.webp",
+        w: 1600,
+        h: 531,
+        wide: true,
+        alt: "111 kleurplaten en 111 woorden in het Spaans, daarnaast de cover van het kleurboek met de leeuw",
+      },
+      {
+        src: "/art/nl-es-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ingekleurde pagina uit het boek: een leeuw met daaronder het Spaanse woord León",
+      },
+      {
+        src: "/art/nl-es-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ingekleurde pagina uit het boek: een vos met daaronder het Spaanse woord Zorro",
+      },
+      {
+        src: "/art/nl-es-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Ingekleurde pagina uit het boek: een koe met daaronder het Spaanse woord Vaca",
+      },
+      {
+        src: "/art/nl-es-motifs.webp",
+        w: 1400,
+        h: 866,
+        wide: true,
+        alt: "Leuke en eenvoudige kleurplaten: tien tekeningen uit het boek, onder elke tekening een Spaans woord",
+      },
+      {
+        src: "/art/nl-es-gift.webp",
+        w: 1600,
+        h: 541,
+        wide: true,
+        alt: "Het ideale cadeau voor toekomstige kunstenaars: een donut en kleurpotloden",
       },
     ],
   },
