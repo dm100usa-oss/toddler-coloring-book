@@ -59,7 +59,7 @@ export const euroPrice: Record<EuroLang, string> = {
   de: "ca. 6 €",
   fr: "5,99 €",
   nl: "€ 6",
-  pl: "ok. 30 zł",
+  pl: "30 zł",
 };
 
 /* Оценка на европейских карточках. Само число одно и то же во всех
@@ -280,15 +280,15 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Co napisała niezależna recenzentka",
     faq: "Najczęstsze pytania",
     buyAmazon: "Kup na Amazon.pl",
-    buyFree: "10 stron do wydruku za darmo",
+    buyFree: "Wydrukuj 10 stron za darmo",
     priceLabel: "oprawa miękka na Amazon.pl",
     buyNote: "Sprzedaż i wysyłka przez Amazon.",
     freeTitle: "Dziesięć stron z książki, do wydruku za darmo",
     freeLead:
-      "To prawdziwe strony z książki, z tym samym słowem pod rysunkiem. Wydrukuj jedną, daj dziecku kredkę, a po pięciu minutach będziesz wiedzieć, czy taka książka mu odpowiada. Bez rejestracji i bez podawania adresu e-mail.",
+      "To prawdziwe strony z książki: pod każdym rysunkiem jest to samo słowo co w książce. Wydrukuj jedną, daj dziecku kredkę, a po pięciu minutach będziesz wiedzieć, czy taka książka jest odpowiednia dla twojego dziecka. Bez rejestracji i bez adresu e-mail.",
     freeDownload: "Pobierz",
     freeFormat: "Format A4, do wydruku w domu.",
-    freeAlt: (name: string) => `${name}: kolorowanka ze strony książki`,
+    freeAlt: (name: string) => `${name}: strona do kolorowania z książki`,
     animals: {
       lion: "Lew", elephant: "Słoń", giraffe: "Żyrafa", zebra: "Zebra",
       rhino: "Nosorożec", monkey: "Małpa", crocodile: "Krokodyl",
@@ -911,147 +911,183 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
   },
 
   /* ---------------------------- ПОЛЬСКИЙ ---------------------------- */
+  /* Тексты сняты с общей русской основы владельца и выправлены его
+     правками от 26 августа 2026 года.
+
+     В Польше у книжки, где под картинкой стоит слово, есть свое
+     привычное название: słownik obrazkowy, картинный словарь.
+     Поэтому верхняя строка звучит как Kolorowanka i słownik obrazkowy. */
   pl: {
     en: {
       title: "Pierwsze słowa po angielsku",
       subtitle: "Kolorowanka dla dzieci od 1 do 3 lat",
       head: {
-        top: "Kolorowanka dla dzieci od 1 do 3 lat",
+        top: "Kolorowanka i słownik obrazkowy dla dzieci w wieku od 1 do 3 lat",
         title: "Pierwsze słowa po angielsku",
         bottom:
-          "111 dużych rysunków z grubym konturem. Pod każdym obrazkiem słowo po angielsku.",
+          "111 dużych rysunków z grubym konturem. Pod każdym obrazkiem angielskie słowo.",
       },
       lead: [
-        "Proste kolorowanki z wyraźnymi słowami po angielsku.",
-        "Bez długich tekstów, bez gramatyki, bez bariery językowej. W środku są tylko duże rysunki, grube kontury dla najmłodszych i jedno wyraźne słowo pod każdym obrazkiem.",
-        "Sprawdzi się zarówno przy pierwszym kontakcie z językiem, jak i w przypadku dziecka, które słyszy go w domu codziennie. Dziecko może kolorować znajome obrazki samo albo razem z rodzicami, spędzając czas wesoło i ciekawie.",
+        "Proste obrazki do kolorowania z wyraźnymi słowami po angielsku.",
+        "Bez długich tekstów, bez gramatyki, bez bariery językowej. W książce są tylko duże rysunki z grubym konturem, odpowiednie dla najmłodszych, i jedno wyraźne słowo pod każdym obrazkiem.",
+        "Nadaje się zarówno na pierwsze zetknięcie z językiem, jak i dla dzieci, które słyszą go codziennie w domu. Dziecko może kolorować znajome obrazki samo albo razem z rodzicami i spędzać ten czas wesoło i ciekawie.",
+        /* Абзац про десять бесплатных страниц обязателен на каждой
+           из восьми страниц. Решение владельца. */
+        "Dziesięć stron z książki można wydrukować za darmo, jeszcze przed zakupem. Bez rejestracji, bez adresu e-mail, nie trzeba niczego wypełniać. A jeśli dziecku się spodoba, można kupić całą książkę i dalej wspólnie poznawać nowe słowa, kolorować i cieszyć się wspólnie spędzonym czasem.",
       ],
       forWhom:
-        "Dla dzieci od roku do trzech lat. Dziecko widzi obrazek i słowo pod nim. Koloruje jedno i drugie. Nie musi do tego umieć czytać.",
+        "Dla dzieci w wieku od 1 do 3 lat i trochę starszych, zarówno na pierwsze zetknięcie z angielskimi słowami, jak i dla rodzin, w których dziecko słyszy dwa języki. Nie trzeba się tu niczego specjalnie uczyć: dziecko koloruje znajome obrazki, ogląda je i stopniowo poznaje słowa napisane pod rysunkami. Rodzice mogą wymawiać te słowa na głos oraz razem z dzieckiem oglądać i kolorować obrazki, bez lekcji, bez reguł i bez trudnych zadań.",
       inside: [
-        "111 rysunków, wykonanych ręcznie przez zawodowych ilustratorów",
-        "Gruby kontur i duże kształty: nawet jeśli dziecko wciąż często wychodzi poza kontur, nadal łatwo mu się koloruje",
-        "Jeden rysunek na stronie, druk tylko po jednej stronie: flamaster nie zniszczy następnego rysunku",
-        "Słowo pod każdym rysunkiem też można pokolorować",
-        "Każdy rysunek jest na środku kartki: wygodnie zarówno dla dzieci leworęcznych, jak i praworęcznych",
-        "Zwierzęta, zwierzęta morskie, postacie z bajek, pojazdy, kwiaty i jedzenie",
-        "Na początku książki strona, na której dziecko pisze swoje imię",
-        "114 stron, format 21,6 × 27,9 cm",
+        "111 prostych słów po angielsku, jedno słowo pod każdym obrazkiem",
+        "Duże, czytelne dla dziecka rysunki z grubym konturem",
+        "Słowo pod rysunkiem jest wydrukowane dużymi konturowymi literami, które też można pokolorować",
+        "Jeden rysunek na stronie, druga strona pozostaje pusta",
+        "Rysunki są umieszczone na środku strony: wygodne zarówno dla praworęcznych, jak i leworęcznych",
+        "Znajome tematy: zwierzęta, jedzenie, pojazdy, przyroda, postacie z bajek i inne",
+        "Na początku książki strona na imię dziecka",
+        "114 stron w dużym formacie 21,6 × 27,9 cm",
       ],
       parents: [
-        "Dziecko samo kończy rysunek i przewraca kartkę po następny",
-        "Duże, proste obrazki można kolorować niemal bez wysiłku, a dziecko nabiera pewności ręki",
-        "Jedna książka wystarcza na długą podróż, na czekanie w kolejce i na deszczowy dzień",
+        "Dziecko samo kończy swój rysunek i przewraca stronę, żeby przejść do następnego",
+        "Duże, proste obrazki łatwo pokoloruje nawet małe dziecko",
+        "Książka jest idealna na długą podróż, do poczekalni albo na deszczowy dzień w domu",
         "Książka jest lekka i łatwo ją zabrać ze sobą",
         "Dzieci przeglądają ją nawet bez kredek i pytają, jak nazywa się każde zwierzę",
-        "Kupuje się ją dla najmłodszego w rodzinie, kiedy starsze potrzebują już trudniejszych kolorowanek",
+        "Kupuje się ją dla najmłodszego dziecka w rodzinie, kiedy starsze potrzebują już trudniejszych kolorowanek",
       ],
-      rating: "Wydanie angielskie ma na Amazonie ocenę 5,0 na 5.",
-      critic:
-        "Readers' Favorite przyznał książce pięć gwiazdek i zwrócił uwagę na gruby, zaokrąglony kontur oraz umieszczenie rysunku na środku strony.",
+      rating: "Ocena 5,0 na 5 w serwisie Amazon.",
+      criticTitle: "Niezależna recenzja",
+      critic: "5 na 5 gwiazdek, Readers' Favorite",
+      criticBy: "Maalin Ogaja, październik 2024",
+      criticWhy:
+        "Szczególnie wyróżniono: gruby, zaokrąglony kontur, rysunek umieszczony na środku strony oraz słowo pod obrazkiem, które też można pokolorować.",
+      whyTitle: "Dlaczego ta książka nadaje się na pierwsze zetknięcie z językiem",
+      why: [
+        "Zetknięcie z językiem nie musi być lekcją. Dziecko ogląda znajome obrazki i koloruje je, a dorosły może po prostu nazywać to, co jest na nich narysowane.",
+        "Nie trzeba samemu dobrze znać języka. Pod każdym obrazkiem jest tylko jedno proste słowo. Łatwo je przeczytać, wymówić na głos i powtórzyć razem z dzieckiem.",
+        "Obrazek pomaga zrozumieć słowo. Dziecko widzi znajomy przedmiot i jednocześnie słowo napisane pod nim. Tak spotyka angielskie słowa w zrozumiałym dla siebie kontekście.",
+        "Samo albo razem z rodzicami: dziecko może po prostu kolorować obrazki. Rodzice mogą też oglądać je razem z dzieckiem, nazywać przedmioty i powtarzać nowe słowa.",
+        "Książka nadaje się dla dzieci od 1 do 3 lat i trochę starszych. Na początku dziecko po prostu koloruje duże obrazki i słyszy nazwy przedmiotów. Później może powtarzać słowa i próbować kolorować także konturowe litery.",
+      ],
       faq: [
         {
           q: "Czy rok to nie za wcześnie?",
-          a: "Nie. Rysunki są celowo zrobione proste, z myślą o najmłodszych. Roczne dziecko będzie bazgrać po rysunku, trzyletnie zacznie trafiać w kontur. Jedna książka wystarcza na wszystkie trzy lata.",
+          a: "Nie. Rysunki są celowo proste i dostosowane do najmłodszych. Roczne dziecko być może jeszcze bazgrze po obrazku, a trzyletnie stara się już kolorować wewnątrz konturu. Dzięki temu z książki można korzystać na różnych etapach między 1. a 3. rokiem życia.",
         },
         {
-          q: "Dziecko nie zna tego języka, czy nie będzie mu trudno?",
-          a: "Nie będzie. Koloruje obrazek, a słowo pod nim po prostu widzi obok. Żadnych zadań i żadnego czytania.",
+          q: "Moje dziecko nie zna jeszcze tego języka. Czy książka nie będzie za trudna?",
+          a: "Nie. Dziecko po prostu koloruje obrazek i widzi przy tym słowo pod nim. Nie ma tu żadnych zadań i dziecko nie musi umieć czytać.",
         },
         {
-          q: "Czym różnią się dwa wydania?",
+          q: "Czym różnią się te dwa wydania?",
           a: "Tylko językiem słowa pod rysunkiem. Rysunki, papier, format i kolejność stron są takie same.",
         },
         {
-          q: "Flamaster przebija papier, co robić?",
-          a: "Podłóż pod stronę zapasową kartkę. W książce druk jest tylko po jednej stronie, więc ślad zostanie na pustym odwrocie, a nie na następnym rysunku.",
+          q: "Co zrobić, jeśli flamaster przebija przez papier?",
+          a: "Podłóż pod stronę dodatkową kartkę. Książka jest zadrukowana tylko z jednej strony, więc ślad zostanie na pustej stronie odwrotnej, a nie na następnym rysunku.",
         },
       ],
-      pair: "Ta sama książka ze słowami po hiszpańsku pod rysunkami:",
+      pair: "Ta sama książka z hiszpańskimi słowami pod rysunkami:",
       pairCta: "Pierwsze słowa po hiszpańsku",
-      metaTitle: "Pierwsze słowa po angielsku - Kolorowanka 1-3 lata",
+      metaTitle:
+        "Pierwsze słowa po angielsku - Kolorowanka dla dzieci od 1 do 3 lat",
       metaDescription:
-        "111 dużych rysunków z grubym konturem, jeden na stronie, a pod każdym słowo po angielsku, które też można pokolorować. Dla dzieci od 1 do 3 lat.",
-      altCover: "Okładka kolorowanki ze słowami po angielsku, z lwem",
+        "111 dużych rysunków z grubym konturem, po jednym na stronie, z angielskim słowem pod spodem, które też można pokolorować. Dla dzieci od 1 do 3 lat.",
+      altCover: "Okładka kolorowanki z angielskimi słowami i lwem",
       altBannerLead:
-        "First Coloring Book For Toddlers autorstwa Ricardo Demi, okładka z lwem, od 1 do 3 lat",
+        "111 obrazków do kolorowania i 111 słów po angielsku, obok okładka kolorowanki z lwem",
       altArt: [
         "Prosto: żółw z grubym konturem, jeden motyw na stronie",
         "Duże: krowa zajmująca niemal całą kartkę, pokolorowana przez małe dziecko",
         "Znajomo: uśmiechnięty czerwony samochód, jeden z codziennych przedmiotów w książce",
       ],
-      altGift: "Prezent dla małych początkujących: pączek i kredki",
+      altGift: "Idealny prezent dla przyszłych artystów: pączek i kredki",
     },
     es: {
       title: "Pierwsze słowa po hiszpańsku",
       subtitle: "Kolorowanka dla dzieci od 1 do 3 lat",
       head: {
-        top: "Kolorowanka dla dzieci od 1 do 3 lat",
+        top: "Kolorowanka i słownik obrazkowy dla dzieci w wieku od 1 do 3 lat",
         title: "Pierwsze słowa po hiszpańsku",
         bottom:
-          "111 dużych rysunków z grubym konturem. Pod każdym obrazkiem słowo po hiszpańsku.",
+          "111 dużych rysunków z grubym konturem. Pod każdym obrazkiem hiszpańskie słowo.",
       },
       lead: [
-        "Proste kolorowanki z wyraźnymi słowami po hiszpańsku.",
-        "Bez długich tekstów, bez gramatyki, bez bariery językowej. W środku są tylko duże rysunki, grube kontury dla najmłodszych i jedno wyraźne słowo pod każdym obrazkiem.",
-        "Sprawdzi się zarówno przy pierwszym kontakcie z językiem, jak i w przypadku dziecka, które słyszy go w domu codziennie. Dziecko może kolorować znajome obrazki samo albo razem z rodzicami, spędzając czas wesoło i ciekawie.",
+        "Proste obrazki do kolorowania z wyraźnymi słowami po hiszpańsku.",
+        "Bez długich tekstów, bez gramatyki, bez bariery językowej. W książce są tylko duże rysunki z grubym konturem, odpowiednie dla najmłodszych, i jedno wyraźne słowo pod każdym obrazkiem.",
+        "Nadaje się zarówno na pierwsze zetknięcie z językiem, jak i dla dzieci, które słyszą go codziennie w domu. Dziecko może kolorować znajome obrazki samo albo razem z rodzicami i spędzać ten czas wesoło i ciekawie.",
+        "Dziesięć stron z książki można wydrukować za darmo, jeszcze przed zakupem. Bez rejestracji, bez adresu e-mail, nie trzeba niczego wypełniać. A jeśli dziecku się spodoba, można kupić całą książkę i dalej wspólnie poznawać nowe słowa, kolorować i cieszyć się wspólnie spędzonym czasem.",
       ],
       forWhom:
-        "Dla dzieci od roku do trzech lat. Dziecko widzi obrazek i słowo pod nim. Koloruje jedno i drugie. Nie musi do tego umieć czytać.",
+        "Dla dzieci w wieku od 1 do 3 lat i trochę starszych, zarówno na pierwsze zetknięcie z hiszpańskimi słowami, jak i dla rodzin, w których dziecko słyszy dwa języki. Nie trzeba się tu niczego specjalnie uczyć: dziecko koloruje znajome obrazki, ogląda je i stopniowo poznaje słowa napisane pod rysunkami. Rodzice mogą wymawiać te słowa na głos oraz razem z dzieckiem oglądać i kolorować obrazki, bez lekcji, bez reguł i bez trudnych zadań.",
       inside: [
-        "111 rysunków, wykonanych ręcznie przez zawodowych ilustratorów",
-        "Gruby kontur i duże kształty: nawet jeśli dziecko wciąż często wychodzi poza kontur, nadal łatwo mu się koloruje",
-        "Jeden rysunek na stronie, druk tylko po jednej stronie: flamaster nie zniszczy następnego rysunku",
-        "Słowo pod każdym rysunkiem też można pokolorować",
-        "Każdy rysunek jest na środku kartki: wygodnie zarówno dla dzieci leworęcznych, jak i praworęcznych",
-        "Zwierzęta, zwierzęta morskie, postacie z bajek, pojazdy, kwiaty i jedzenie",
-        "Na początku książki strona, na której dziecko pisze swoje imię",
-        "114 stron, format 21,6 × 27,9 cm",
+        "111 prostych słów po hiszpańsku, jedno słowo pod każdym obrazkiem",
+        "Duże, czytelne dla dziecka rysunki z grubym konturem",
+        "Słowo pod rysunkiem jest wydrukowane dużymi konturowymi literami, które też można pokolorować",
+        "Jeden rysunek na stronie, druga strona pozostaje pusta",
+        "Rysunki są umieszczone na środku strony: wygodne zarówno dla praworęcznych, jak i leworęcznych",
+        "Znajome tematy: zwierzęta, jedzenie, pojazdy, przyroda, postacie z bajek i inne",
+        "Na początku książki strona na imię dziecka",
+        "114 stron w dużym formacie 21,6 × 27,9 cm",
       ],
       parents: [
-        "Dziecko samo kończy rysunek i przewraca kartkę po następny",
-        "Duże, proste obrazki można kolorować niemal bez wysiłku, a dziecko nabiera pewności ręki",
-        "Jedna książka wystarcza na długą podróż, na czekanie w kolejce i na deszczowy dzień",
+        "Dziecko samo kończy swój rysunek i przewraca stronę, żeby przejść do następnego",
+        "Duże, proste obrazki łatwo pokoloruje nawet małe dziecko",
+        "Książka jest idealna na długą podróż, do poczekalni albo na deszczowy dzień w domu",
         "Książka jest lekka i łatwo ją zabrać ze sobą",
         "Dzieci przeglądają ją nawet bez kredek i pytają, jak nazywa się każde zwierzę",
-        "Kupuje się ją dla najmłodszego w rodzinie, kiedy starsze potrzebują już trudniejszych kolorowanek",
+        "Kupuje się ją dla najmłodszego dziecka w rodzinie, kiedy starsze potrzebują już trudniejszych kolorowanek",
       ],
+      /* У испанского издания к оценке добавлена вторая фраза: рисунки
+         в обеих книгах одни и те же. */
       rating:
-        "Wydanie hiszpańskie ma na Amazonie ocenę 4,9 na 5. Rysunki w obu wydaniach są te same.",
-      critic:
-        "Readers' Favorite przyznał książce pięć gwiazdek i zwrócił uwagę na gruby, zaokrąglony kontur oraz umieszczenie rysunku na środku strony.",
+        "Ocena 4,9 na 5 w serwisie Amazon. Rysunki w obu wydaniach są takie same.",
+      criticTitle: "Niezależna recenzja",
+      critic: "5 na 5 gwiazdek, Readers' Favorite",
+      criticBy: "Maalin Ogaja, październik 2024",
+      criticWhy:
+        "Szczególnie wyróżniono: gruby, zaokrąglony kontur, rysunek umieszczony na środku strony oraz słowo pod obrazkiem, które też można pokolorować.",
+      whyTitle: "Dlaczego ta książka nadaje się na pierwsze zetknięcie z językiem",
+      why: [
+        "Zetknięcie z językiem nie musi być lekcją. Dziecko ogląda znajome obrazki i koloruje je, a dorosły może po prostu nazywać to, co jest na nich narysowane.",
+        "Nie trzeba samemu dobrze znać języka. Pod każdym obrazkiem jest tylko jedno proste słowo. Łatwo je przeczytać, wymówić na głos i powtórzyć razem z dzieckiem.",
+        "Obrazek pomaga zrozumieć słowo. Dziecko widzi znajomy przedmiot i jednocześnie słowo napisane pod nim. Tak spotyka hiszpańskie słowa w zrozumiałym dla siebie kontekście.",
+        "Samo albo razem z rodzicami: dziecko może po prostu kolorować obrazki. Rodzice mogą też oglądać je razem z dzieckiem, nazywać przedmioty i powtarzać nowe słowa.",
+        "Książka nadaje się dla dzieci od 1 do 3 lat i trochę starszych. Na początku dziecko po prostu koloruje duże obrazki i słyszy nazwy przedmiotów. Później może powtarzać słowa i próbować kolorować także konturowe litery.",
+      ],
       faq: [
         {
           q: "Czy rok to nie za wcześnie?",
-          a: "Nie. Rysunki są celowo zrobione proste, z myślą o najmłodszych. Roczne dziecko będzie bazgrać po rysunku, trzyletnie zacznie trafiać w kontur. Jedna książka wystarcza na wszystkie trzy lata.",
+          a: "Nie. Rysunki są celowo proste i dostosowane do najmłodszych. Roczne dziecko być może jeszcze bazgrze po obrazku, a trzyletnie stara się już kolorować wewnątrz konturu. Dzięki temu z książki można korzystać na różnych etapach między 1. a 3. rokiem życia.",
         },
         {
-          q: "Dziecko nie zna tego języka, czy nie będzie mu trudno?",
-          a: "Nie będzie. Koloruje obrazek, a słowo pod nim po prostu widzi obok. Żadnych zadań i żadnego czytania.",
+          q: "Moje dziecko nie zna jeszcze tego języka. Czy książka nie będzie za trudna?",
+          a: "Nie. Dziecko po prostu koloruje obrazek i widzi przy tym słowo pod nim. Nie ma tu żadnych zadań i dziecko nie musi umieć czytać.",
         },
         {
-          q: "Czym różnią się dwa wydania?",
+          q: "Czym różnią się te dwa wydania?",
           a: "Tylko językiem słowa pod rysunkiem. Rysunki, papier, format i kolejność stron są takie same.",
         },
         {
-          q: "Flamaster przebija papier, co robić?",
-          a: "Podłóż pod stronę zapasową kartkę. W książce druk jest tylko po jednej stronie, więc ślad zostanie na pustym odwrocie, a nie na następnym rysunku.",
+          q: "Co zrobić, jeśli flamaster przebija przez papier?",
+          a: "Podłóż pod stronę dodatkową kartkę. Książka jest zadrukowana tylko z jednej strony, więc ślad zostanie na pustej stronie odwrotnej, a nie na następnym rysunku.",
         },
       ],
-      pair: "Ta sama książka ze słowami po angielsku pod rysunkami:",
+      pair: "Ta sama książka z angielskimi słowami pod rysunkami:",
       pairCta: "Pierwsze słowa po angielsku",
-      metaTitle: "Pierwsze słowa po hiszpańsku - Kolorowanka 1-3 lata",
+      metaTitle:
+        "Pierwsze słowa po hiszpańsku - Kolorowanka dla dzieci od 1 do 3 lat",
       metaDescription:
-        "111 dużych rysunków z grubym konturem, jeden na stronie, a pod każdym słowo po hiszpańsku, które też można pokolorować. Dla dzieci od 1 do 3 lat.",
-      altCover: "Okładka kolorowanki ze słowami po hiszpańsku, z lwem",
+        "111 dużych rysunków z grubym konturem, po jednym na stronie, z hiszpańskim słowem pod spodem, które też można pokolorować. Dla dzieci od 1 do 3 lat.",
+      altCover: "Okładka kolorowanki z hiszpańskimi słowami i lwem",
       altBannerLead:
-        "El Primer Libro de Colorear para Bebés autorstwa Ricardo Demi, okładka z lwem, od 1 do 3 lat",
+        "111 obrazków do kolorowania i 111 słów po hiszpańsku, obok okładka kolorowanki z lwem",
       altArt: [
         "Prosto: żółw z grubym konturem, jeden motyw na stronie",
         "Duże: krowa zajmująca niemal całą kartkę, pokolorowana przez małe dziecko",
         "Znajomo: uśmiechnięty czerwony samochód, jeden z codziennych przedmiotów w książce",
       ],
-      altGift: "Prezent dla małych początkujących: pączek i kredki",
+      altGift: "Idealny prezent dla przyszłych artystów: pączek i kredki",
     },
   },
 };
@@ -1339,6 +1375,108 @@ export const euroPageOwn: Partial<
         h: 541,
         wide: true,
         alt: "Het ideale cadeau voor toekomstige kunstenaars: een donut en kleurpotloden",
+      },
+    ],
+  },
+  /* Польша, книга с английскими словами. Надписи на баннерах
+     польские, слова на листах и под мотивами английские. */
+  "pl-en": {
+    price: "30 zł",
+    headTop: ["Kolorowanka i słownik obrazkowy dla dzieci", "w wieku od 1 do 3 lat"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/pl-en-header.webp",
+        w: 1600,
+        h: 556,
+        wide: true,
+        alt: "111 obrazków do kolorowania i 111 słów po angielsku, obok okładka kolorowanki z lwem",
+      },
+      {
+        src: "/art/pl-en-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pokolorowana strona z książki: lew, a pod nim angielskie słowo Lion",
+      },
+      {
+        src: "/art/pl-en-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pokolorowana strona z książki: lis, a pod nim angielskie słowo Fox",
+      },
+      {
+        src: "/art/pl-en-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pokolorowana strona z książki: krowa, a pod nią angielskie słowo Cow",
+      },
+      {
+        src: "/art/pl-en-motifs.webp",
+        w: 1400,
+        h: 866,
+        wide: true,
+        alt: "Urocze i proste obrazki do kolorowania: dziesięć rysunków z książki, pod każdym angielskie słowo",
+      },
+      {
+        src: "/art/pl-en-gift.webp",
+        w: 1600,
+        h: 622,
+        wide: true,
+        alt: "Idealny prezent dla przyszłych artystów: pączek i kredki",
+      },
+    ],
+  },
+  /* Польша, книга с испанскими словами. Надписи на баннерах польские,
+     слова на листах и под мотивами испанские. */
+  "pl-es": {
+    price: "30 zł",
+    headTop: ["Kolorowanka i słownik obrazkowy dla dzieci", "w wieku od 1 do 3 lat"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/pl-es-header.webp",
+        w: 1600,
+        h: 533,
+        wide: true,
+        alt: "111 obrazków do kolorowania i 111 słów po hiszpańsku, obok okładka kolorowanki z lwem",
+      },
+      {
+        src: "/art/pl-es-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pokolorowana strona z książki: lew, a pod nim hiszpańskie słowo León",
+      },
+      {
+        src: "/art/pl-es-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pokolorowana strona z książki: lis, a pod nim hiszpańskie słowo Zorro",
+      },
+      {
+        src: "/art/pl-es-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pokolorowana strona z książki: krowa, a pod nią hiszpańskie słowo Vaca",
+      },
+      {
+        src: "/art/pl-es-motifs.webp",
+        w: 1400,
+        h: 866,
+        wide: true,
+        alt: "Urocze i proste obrazki do kolorowania: dziesięć rysunków z książki, pod każdym hiszpańskie słowo",
+      },
+      {
+        src: "/art/pl-es-gift.webp",
+        w: 1600,
+        h: 540,
+        wide: true,
+        alt: "Idealny prezent dla przyszłych artystów: pączek i kredki",
       },
     ],
   },
