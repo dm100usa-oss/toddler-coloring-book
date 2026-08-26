@@ -214,7 +214,7 @@ export default function EuroPage({
 
       {/* ============ Книга ============ */}
       <div className="wrap">
-        <div className="book">
+        <div className={own ? "book book--own" : "book"}>
           <div className="book__cover">
             <div className="inner">
               <img
@@ -425,6 +425,9 @@ export default function EuroPage({
               безымянной и для человека, и для поисковика. */}
           <h2 className="section">{c.criticTitle ?? u.criticTitle}</h2>
           <p>{c.critic}</p>
+          {/* Подпись стоит сразу под оценкой, а не в самом низу блока:
+              там она читалась как случайная строка неизвестно о чем. */}
+          {c.criticBy ? <p className="critic-by">{c.criticBy}</p> : null}
           {c.criticWhy ? <p>{c.criticWhy}</p> : null}
           <p className="btn-row">
             <a
@@ -436,7 +439,6 @@ export default function EuroPage({
               {u.criticSource}
             </a>
           </p>
-          {c.criticBy ? <p className="buy-note">{c.criticBy}</p> : null}
 
           {/* ============ Покупка, второе из двух мест ============ */}
           {/* Человек уже посмотрел книгу внутри и прочитал, что о ней
