@@ -1013,11 +1013,24 @@ export type StripItem = {
 export const pageKey = (lang: EuroLang, ed: EditionLang) => `${lang}-${ed}`;
 
 export const euroPageOwn: Partial<
-  Record<string, { price: string; size?: string; strip: StripItem[] }>
+  Record<
+    string,
+    {
+      price: string;
+      size?: string;
+      /** Верхняя строка, разрезанная на два куска. Нужна затем, чтобы
+          на узком экране перенос случился в задуманном месте, после
+          слова Kinder, а не где придется. На широком экране оба куска
+          стоят в одну строку. */
+      headTop?: [string, string];
+      strip: StripItem[];
+    }
+  >
 > = {
   "de-en": {
     /* Точная цена с карточки amazon.de. */
     price: "6 €",
+    headTop: ["Malbuch und Bildwörterbuch für Kinder", "von 1 bis 3 Jahren"],
     /* Немцы пишут размер через знак умножения, а не через букву x.
        Общий BOOK_SIZE_CM трогать нельзя: он стоит на всех восьми
        страницах сразу, в том числе на французской и польской. */

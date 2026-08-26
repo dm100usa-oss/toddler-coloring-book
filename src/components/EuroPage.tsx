@@ -197,8 +197,17 @@ export default function EuroPage({
           приходится держать те же слова отдельным скрытым блоком.
           Тут надпись сразу настоящая, и она же главный признак того,
           что страница немецкая, французская, голландская или польская. */}
-      <header className="euro-head">
-        <p className="euro-head__top">{c.head.top}</p>
+      <header className={own ? "euro-head euro-head--wide" : "euro-head"}>
+        <p className="euro-head__top">
+          {own?.headTop ? (
+            <>
+              <span>{own.headTop[0]}</span>{" "}
+              <span>{own.headTop[1]}</span>
+            </>
+          ) : (
+            c.head.top
+          )}
+        </p>
         <h1 className="euro-head__title">{c.head.title}</h1>
         <p className="euro-head__bottom">{c.head.bottom}</p>
       </header>
@@ -238,11 +247,28 @@ export default function EuroPage({
               </>
             )}
 
-            {c.lead.map((part) => (
-              <p className="why-text" key={part.slice(0, 24)}>
-                {part}
-              </p>
-            ))}
+            {own ? (
+              <>
+                {/* Первая строка это не абзац, а название книги своими
+                    словами. Ставим ее заголовком: у блока под обложкой
+                    иначе нет никакой шапки вовсе. */}
+                <h2 className="book__title book__title--lead">{c.lead[0]}</h2>
+                {/* Остальные абзацы с мятными кружками, теми же, что
+                    в списке "что говорят родители". Текст выключен
+                    по обе стороны. */}
+                <ul className="lead-points">
+                  {c.lead.slice(1).map((part) => (
+                    <li key={part.slice(0, 24)}>{part}</li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              c.lead.map((part) => (
+                <p className="why-text" key={part.slice(0, 24)}>
+                  {part}
+                </p>
+              ))
+            )}
 
             <ul className="key-specs">
               <li>
@@ -265,7 +291,7 @@ export default function EuroPage({
           </div>
         </div>
 
-        <div className="book-body">
+        <div className={own ? "book-body book-body--own" : "book-body"}>
           {/* Полоса картинок книги.
 
               У страниц, где своих картинок нет, стоит общий набор:

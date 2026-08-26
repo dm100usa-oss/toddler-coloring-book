@@ -1842,7 +1842,112 @@ html[lang="ru"] .hero {
    и на узком экране ломает ряд на два столбца. Здесь ряд остается
    из трех на любом экране: три листа подряд читаются как разворот
    книги, а два плюс один как обрывок. */
-.artwork--tall { grid-template-columns: repeat(3, 1fr); }
+/* Ряд держит три листа на любом экране, включая телефон. Общее
+   правило для квадратных картинок на узком экране разбивает ряд
+   на два столбца, и третий лист уезжает на вторую строку один.
+   Здесь оно перебито намеренно: три листа подряд читаются как
+   разворот книги, а два плюс один как обрывок. */
+.showcase .artwork.artwork--tall,
+.artwork.artwork--tall { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 520px) {
-  .artwork--tall { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+  .showcase .artwork.artwork--tall,
+  .artwork.artwork--tall { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+}
+
+/* ============ НЕМЕЦКАЯ СТРАНИЦА ПРО АНГЛИЙСКУЮ КНИГУ ============
+
+   Все правила ниже действуют только там, где у страницы свой набор
+   картинок. Остальные семь европейских страниц их не видят. */
+
+/* Верхняя строка над названием. Раньше она ломалась на две в любом
+   окне и в самом неудачном месте. Теперь строка разрезана на два
+   куска: на широком экране они стоят рядом одной строкой, на узком
+   перенос случается между ними, после слова Kinder. */
+.euro-head--wide .euro-head__top {
+  max-width: 60ch;
+  font-size: var(--t-lead);
+  line-height: 1.35;
+}
+.euro-head--wide .euro-head__top span { display: inline-block; }
+
+/* Название книги своими словами, стоит сразу под обложкой вместо
+   первого абзаца. */
+.book__title--lead { margin-bottom: var(--gap-2); }
+
+/* Абзацы под обложкой с мятными кружками. Тот же кружок, что
+   в списке "что говорят родители", только без разделительных линий:
+   здесь идет связный текст, а не перечень. */
+.lead-points { list-style: none; margin: 0 0 var(--gap-2); padding: 0; }
+.lead-points li {
+  position: relative;
+  padding: 0 0 0 2.1rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
+  text-align: justify;
+  hyphens: auto;
+}
+.lead-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.12rem;
+  top: 0.5em;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #8fe0d8 0%, var(--mint) 58%, #4fbfb5 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 2px rgba(51, 32, 44, 0.16),
+    0 3px 6px rgba(51, 32, 44, 0.11);
+}
+
+/* Текст выключен по обе стороны, как в книге. Перенос по слогам
+   включен намеренно: без него в немецком, где слова длинные,
+   между словами возникали бы дыры. */
+.book-body--own > p,
+.book-body--own .faq p { text-align: justify; hyphens: auto; }
+
+/* Список "что в книге": те же мятные кружки вместо розовых точек. */
+.book-body--own ul.inside { list-style: none; padding-left: 0; }
+.book-body--own ul.inside li {
+  position: relative;
+  padding-left: 2.1rem;
+  margin-bottom: 0.62rem;
+  line-height: 1.5;
+}
+.book-body--own ul.inside li::before {
+  content: "";
+  position: absolute;
+  left: 0.12rem;
+  top: 0.5em;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #8fe0d8 0%, var(--mint) 58%, #4fbfb5 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 2px rgba(51, 32, 44, 0.16),
+    0 3px 6px rgba(51, 32, 44, 0.11);
+}
+
+/* Список "что говорят родители" начинался линией вплотную под
+   заголовком. Отодвигаем его вниз, чтобы линия не липла к строке. */
+.book-body--own .needs { margin-top: var(--gap-3); }
+
+/* Строка про вторую книгу внизу страницы. У нее не было своих правил
+   вовсе: кнопка вставала вплотную к тексту, а на широком экране
+   наезжала на него. Теперь текст и кнопка разведены, кнопка не
+   сжимается и на узком экране встает под текстом. */
+.teach-other {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.1rem;
+  margin: var(--gap-4) 0 0;
+}
+.teach-other > span { flex: 1 1 16rem; }
+.teach-other .btn { flex: 0 0 auto; }
+@media (max-width: 620px) {
+  .teach-other { display: block; }
+  .teach-other .btn { display: inline-block; margin-top: 0.9rem; }
 }
