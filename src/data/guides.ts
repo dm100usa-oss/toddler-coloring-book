@@ -22,6 +22,10 @@ export type Guide = {
   id: string;
   slug: Record<ContentLang, string>;
   title: Record<ContentLang, string>;
+  /* Строка для выдачи поиска. Ставится только там, где заголовок
+     длинный и в выдаче обрезался. Пусто - берется обычный заголовок.
+     На саму страницу это поле не влияет. */
+  metaTitle?: Record<ContentLang, string>;
   /* Короткий ответ на вопрос статьи. Стоит сразу под заголовком.
      Именно его забирает поисковик в выдачу и нейросеть в ответ,
      поэтому он должен быть законченным ответом, а не завлекалкой. */
@@ -271,6 +275,11 @@ export const guides: Guide[] = [
       en: "Crayons, markers or colored pencils: what to give a toddler",
       es: "Crayones, rotuladores o lápices: qué darle a un niño pequeño",
       ru: "Чем рисовать малышу: восковые мелки, фломастеры или цветные карандаши",
+    },
+    metaTitle: {
+      en: "Crayons, markers or pencils: what to give a toddler",
+      es: "Crayones, rotuladores o lápices para un niño pequeño",
+      ru: "Чем рисовать малышу: мелки, фломастеры или карандаши",
     },
     lead: {
       en:
@@ -831,6 +840,11 @@ export const guides: Guide[] = [
       es: "¿Cuánto tiempo suele colorear un niño pequeño?",
       ru: "Сколько времени маленький ребенок обычно занимается раскраской?",
     },
+    metaTitle: {
+      en: "How long will a toddler sit and color?",
+      es: "¿Cuánto tiempo suele colorear un niño pequeño?",
+      ru: "Сколько времени ребенок может раскрашивать",
+    },
     lead: {
       en:
         "Two or three minutes may be enough at the very beginning. At around two the interest in one " +
@@ -1024,6 +1038,11 @@ export const guides: Guide[] = [
       en: "Types of coloring books for toddlers: traditional, reusable, water-reveal and mess-free",
       es: "Tipos de libros para colorear para niños pequeños: tradicional, reutilizable, con agua y sin manchas",
       ru: "Виды раскрасок для малышей: обычная, многоразовая, водная и без грязи",
+    },
+    metaTitle: {
+      en: "Types of coloring books for toddlers",
+      es: "Tipos de libros para colorear para niños pequeños",
+      ru: "Виды раскрасок для малышей: какие бывают",
     },
     lead: {
       en: "For a child who is just beginning to draw, a traditional paper coloring book with thick outlines is usually the best place to start. It is inexpensive, it is okay if a page gets torn or ruined, and most importantly, the child can see a real mark made by their own hand. Reusable, water-reveal and mess-free coloring books have their own advantages: they reduce cleanup, save paper and can be convenient for travel. The best choice depends on what matters most to you at the moment.",

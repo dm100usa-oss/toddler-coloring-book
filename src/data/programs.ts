@@ -22,6 +22,13 @@ import type { ContentLang } from "./dictionaries";
 
 export type ProgramsCopy = {
   title: string;
+  /* Короткая строка для выдачи. Заголовок на экране остается длинным,
+     он объясняет человеку, о чем страница. В выдаче Google обрезает
+     строку примерно на шестидесяти знаках и иногда режет начало, из-за
+     чего в списке оставался хвост без главного слова. Здесь лежит
+     короткий вариант, где главное стоит первым. Если поля нет, берется
+     обычный заголовок. */
+  metaTitle?: string;
   lead: string;
   body: string[];
   faq: { q: string; a: string }[];
@@ -30,6 +37,7 @@ export type ProgramsCopy = {
 export const programsCopy: Record<ContentLang, ProgramsCopy> = {
   en: {
     title: "Coloring books for toddler programs: daycare, home visiting, early intervention and libraries",
+      metaTitle: "Coloring books for daycare and early childhood programs",
     lead:
       "What is in the book, what you may print for a group, and how to get more than a few copies. " +
       "Written for people who work with children aged one to three.",
@@ -195,6 +203,7 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
 
   ru: {
     title: "Раскраски для детских программ: ясли, домашние визиты, раннее вмешательство и библиотеки",
+      metaTitle: "Раскраски для яслей и программ раннего развития",
     lead:
       "Что входит в книгу, какие страницы можно бесплатно печатать для группы и как заказать " +
         "большое количество экземпляров. Информация для специалистов, работающих с детьми от " +

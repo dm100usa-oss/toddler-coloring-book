@@ -22,6 +22,10 @@ import type { StageId } from "./stages";
 
 export type AgePageCopy = {
   title: string;
+  /* Строка для выдачи поиска. Ставится только там, где заголовок
+     длинный и в выдаче обрезался. Пусто - берется обычный заголовок.
+     На саму страницу это поле не влияет. */
+  metaTitle?: string;
   lead: string;
   body: string[];
   doTitle: string;

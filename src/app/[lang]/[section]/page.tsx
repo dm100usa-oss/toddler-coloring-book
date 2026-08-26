@@ -91,7 +91,9 @@ export async function generateMetadata({
   if (!copy) return {};
 
   return {
-    title: copy.title,
+    /* metaTitle стоит только там, где заголовок длинный. Везде
+       остальном берется обычный заголовок страницы. */
+    title: copy.metaTitle ?? copy.title,
     description: copy.lead,
     alternates: {
       canonical: `${SITE_URL}${sectionPath(l, s)}`,

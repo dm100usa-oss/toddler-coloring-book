@@ -24,6 +24,10 @@ import type { ContentLang } from "./dictionaries";
 
 export type ProPageCopy = {
   title: string;
+  /* Строка для выдачи поиска. Ставится только там, где заголовок
+     длинный и в выдаче обрезался. Пусто - берется обычный заголовок.
+     На саму страницу это поле не влияет. */
+  metaTitle?: string;
   lead: string;
   body: string[];
   fitTitle: string;
@@ -49,6 +53,7 @@ export const proPages: ProPage[] = [
     copy: {
       en: {
         title: "A Spanish coloring book for speech therapy and early intervention with toddlers",
+      metaTitle: "A Spanish coloring book for speech therapy and early intervention",
         lead:
           "111 drawings, one per page, the word printed underneath in Spanish. Sold on Amazon in " +
           "English and Spanish, and available in quantity for a caseload.",
@@ -179,6 +184,7 @@ export const proPages: ProPage[] = [
 
       ru: {
         title: "Раскраска на испанском языке для логопедов и программ раннего вмешательства",
+      metaTitle: "Испанская раскраска для логопедов и раннего развития",
         lead:
           "111 рисунков, по одному на странице, с названием на испанском языке под каждым " +
             "рисунком. Книга продается на Amazon на испанском и английском языках, можно " +

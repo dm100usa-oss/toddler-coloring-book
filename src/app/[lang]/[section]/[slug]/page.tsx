@@ -70,7 +70,7 @@ export async function generateMetadata({
     const g = guideBySlug(l, slug);
     if (!g) return {};
     return {
-      title: g.title[l],
+      title: g.metaTitle?.[l] ?? g.title[l],
       description: g.lead[l],
       alternates: {
         canonical: `${SITE_URL}${itemPath(l, "guides", g.slug[l])}`,
@@ -88,7 +88,7 @@ export async function generateMetadata({
     if (!pp) return {};
     const c = pp.copy[l];
     return {
-      title: c.title,
+      title: c.metaTitle ?? c.title,
       description: c.lead,
       alternates: {
         canonical: `${SITE_URL}${itemPath(l, "programs", pp.slug[l])}`,
@@ -106,7 +106,7 @@ export async function generateMetadata({
     if (ap) {
       const c = ap.copy[l];
       return {
-        title: c.title,
+        title: c.metaTitle ?? c.title,
         description: c.lead,
         alternates: {
           canonical: `${SITE_URL}${itemPath(l, "tools", ap.slug[l])}`,
@@ -138,7 +138,8 @@ export async function generateMetadata({
   const st = stageBySlug(l, slug);
   if (!st) return {};
 
-  const title = dictionaries[l].sec.stageTitle(st.title[l], st.ageLabel[l]);
+  /* Для выдачи короткая строка, на самой странице заголовок прежний. */
+  const title = dictionaries[l].sec.stageMetaTitle(st.title[l], st.ageLabel[l]);
 
   return {
     title,

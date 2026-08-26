@@ -30,7 +30,16 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     title: {
       default: `${SITE_NAME}. Choosing a first coloring book by what your child can do`,
-      template: `%s | ${SITE_NAME}`,
+      /* Раньше здесь стоял шаблон, приписывавший название сайта
+         в конец строки каждой страницы. Двадцать четыре знака из
+         шестидесяти уходили на одно и то же слово, и у длинных
+         заголовков из-за этого обрезалось начало, а в выдаче
+         оставался хвост без главного слова. Название сайта Google
+         и так показывает отдельной строкой над заголовком, поэтому
+         повторять его в самой строке не нужно. Теперь страница
+         отдает ровно то, что мы для нее написали. */
+      absolute: "",
+      template: "%s",
     },
     openGraph: {
       siteName: SITE_NAME,
