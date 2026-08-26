@@ -507,7 +507,9 @@ ul.inside li::marker { color: var(--pink-hot); }
   display: grid; gap: 0.75rem; margin: 0 0 var(--gap-3);
   grid-template-columns: repeat(3, 1fr);
 }
-@media (max-width: 520px) { .artwork { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .artwork:not(.artwork--tall) { grid-template-columns: repeat(2, 1fr); }
+}
 .artwork img {
   width: 100%; height: auto; border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
@@ -1388,10 +1390,14 @@ ul.award-list li {
 }
 
 /* На телефоне из трех квадратов остаются два: втроем в ряд они
-   становятся марками, а в два ряда третий висит один. */
+   становятся марками, а в два ряда третий висит один.
+
+   Оговорка про ряд из трех вертикальных листов: там третий лист
+   нужен, и правило его не касается. Лист высокий и узкий, втроем
+   они ложатся в ряд ровно, а без третьего ряд выглядит обрезанным. */
 @media (max-width: 640px) {
-  .artwork { grid-template-columns: repeat(2, 1fr); }
-  .artwork img:nth-child(3) { display: none; }
+  .artwork:not(.artwork--tall) { grid-template-columns: repeat(2, 1fr); }
+  .artwork:not(.artwork--tall) img:nth-child(3) { display: none; }
 }
 
 /* Рядом с видео этот же список стоит на цветной подложке и в тесноте,
