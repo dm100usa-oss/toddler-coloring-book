@@ -901,7 +901,11 @@ ul.award-list li {
   width: 100%; height: auto; display: block; background: #fff;
   border: var(--edge); border-radius: var(--radius-sm);
 }
-.sheet h2 {
+/* Название листа. Оформление привязано к обоим уровням: на странице
+   бесплатных листов лист стоит третьим уровнем под общим заголовком
+   сетки, а внутри статей и этапов - тоже третьим. Вид одинаковый. */
+.sheet h2,
+.sheet h3 {
   font-family: var(--font-display); font-size: var(--t-h3); font-weight: 800;
   color: var(--ink); margin: 0.7rem 0 0.5rem;
 }

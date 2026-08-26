@@ -133,6 +133,12 @@ export type Dict = {
     stageReadingLead: string;
     /** Страница с цифрой возраста, на которую уводит статья и этап. */
     ageForStage: string;
+    /** Заголовок над списком статей в разделе статей. Без него список
+        висел вообще без заголовка, и для машины раздел выглядел пустым. */
+    guidesList: string;
+    /** Заголовок над сеткой из десяти листов. Нужен, чтобы названия
+        листов ушли уровнем ниже и не спорили по важности с разделами. */
+    sheetsList: string;
     /** На странице бесплатных листов: какой лист какому этапу. */
     sheetsByStage: string;
     sheetsByStageLead: string;
@@ -321,6 +327,8 @@ export const dictionaries: Record<UiLang, Dict> = {
         "stage: what to draw with, how long a child usually sits with one page, and what to do " +
         "about the mess.",
       ageForStage: "If you were looking for an age instead",
+      guidesList: "All the guides",
+      sheetsList: "The ten sheets, free to download",
       sheetsByStage: "Which sheet suits which stage",
       sheetsByStageLead:
         "The ten sheets are not equally simple. The number of separate areas inside the drawing " +
@@ -532,6 +540,8 @@ export const dictionaries: Record<UiLang, Dict> = {
         "con qué conviene dibujar, cuánto tiempo suele durar una página y qué hacer con la " +
         "suciedad.",
       ageForStage: "Si buscaba una edad concreta",
+      guidesList: "Todas las guías",
+      sheetsList: "Las diez hojas, gratis para descargar",
       sheetsByStage: "Qué hoja corresponde a cada etapa",
       sheetsByStageLead:
         "Las diez hojas no son igual de sencillas. En cada una están medidos el número de zonas " +
@@ -733,6 +743,8 @@ export const dictionaries: Record<UiLang, Dict> = {
         "Эти статьи отвечают на вопросы, которые возникают именно сейчас: чем рисовать, " +
         "сколько ребенок обычно сидит над одной страницей и что делать с грязью вокруг стола.",
       ageForStage: "Если вы искали по возрасту",
+      guidesList: "Все статьи раздела",
+      sheetsList: "Десять листов, скачать бесплатно",
       sheetsByStage: "Какой лист какому этапу подходит",
       sheetsByStageLead:
         "Десять листов не одинаково простые. На каждом посчитано, сколько внутри рисунка " +

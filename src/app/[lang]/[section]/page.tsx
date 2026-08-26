@@ -840,6 +840,11 @@ function GuideList({ lang }: { lang: ContentLang }) {
   return (
     <section className="band band--mint">
       <div className="wrap">
+        {/* Список статей стоял вообще без заголовка. Для машины раздел
+            выглядел почти пустым: название страницы, вводный текст и
+            сразу ссылка на источники. Заголовок над списком дает
+            понять, что дальше идет перечень статей раздела. */}
+        <h2 className="section">{dictionaries[lang].sec.guidesList}</h2>
         <ul className="guides">
           {guides.map((g) => (
             <li key={g.id}>
@@ -862,6 +867,12 @@ function SheetGrid({ lang }: { lang: UiLang }) {
   return (
     <section className="band">
       <div className="wrap">
+        {/* Заголовок над сеткой. Без него десять названий листов стояли
+            вторым уровнем, то есть по важности вровень с разделами
+            страницы: для машины "Лев" весил столько же, сколько
+            "Вопросы родителей". Теперь над сеткой стоит один общий
+            заголовок, а названия листов ушли на ступеньку ниже. */}
+        <h2 className="section">{dictionaries[lang].sec.sheetsList}</h2>
         <div className="sheets">
           {sheets.map((sh) => (
             <figure className="sheet" key={sh.id}>
@@ -874,10 +885,7 @@ function SheetGrid({ lang }: { lang: UiLang }) {
                 loading="lazy"
                 />
               </a>
-              {/* Второй уровень, а не третий: над сеткой листов нет
-                  промежуточного заголовка, и третий уровень шел сразу
-                  после названия страницы, с пропуском ступеньки. */}
-              <h2>{sh.name[lang]}</h2>
+              <h3>{sh.name[lang]}</h3>
               <p className="sheet__links">
                 <a className="btn btn--sky" href={sheetPdf(sh.id, lang, "letter")} download>
                   {c.letter}

@@ -300,7 +300,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               description: ed.video.description,
               thumbnailUrl: `${SITE_URL}${ed.video.poster}`,
               contentUrl: `${SITE_URL}${ed.video.src}`,
-              uploadDate: ed.published,
+              /* Полная отметка времени, а не одна дата. Google
+                 присылает предупреждение на короткую запись вида
+                 2024-04-22: для видео он требует и время, и часовой
+                 пояс. Пояс издательства, Майами. Для человека на
+                 странице не меняется ничего, это часть разметки. */
+              uploadDate: `${ed.published}T09:00:00-04:00`,
               duration: `PT${ed.video.seconds}S`,
               inLanguage: t.htmlLang,
               isFamilyFriendly: true,
