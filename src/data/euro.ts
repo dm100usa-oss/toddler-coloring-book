@@ -588,20 +588,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Ist ein Jahr nicht zu früh?",
-          a: "Nein. Die Zeichnungen sind bewusst einfach für die Jüngsten gemacht. Ein einjähriges Kind kritzelt vielleicht noch über das Bild, während ein dreijähriges Kind schon versucht, innerhalb der Konturen auszumalen. Das Buch kann in verschiedenen Phasen zwischen 1 und 3 Jahren genutzt werden.",
+          q: "Ist ein Malbuch für ein einjähriges Kind nicht zu früh?",
+          a: "Nein. Die Zeichnungen sind bewusst einfach gehalten, für die Kleinsten. Ein einjähriges Kind kritzelt vielleicht noch über das Bild, ein dreijähriges versucht schon, innerhalb der Konturen zu malen. Deshalb lässt sich das Buch in verschiedenen Phasen zwischen 1 und 3 Jahren verwenden.",
         },
         {
-          q: "Mein Kind kennt diese Sprache noch nicht. Ist das Buch dann zu schwierig?",
-          a: "Nein. Das Kind malt einfach das Bild aus und sieht dabei das Wort darunter. Es gibt keine Aufgaben und das Kind muss nicht lesen können.",
+          q: "Mein Kind kann noch kein Englisch. Wird das Buch zu schwierig sein?",
+          a: "Nein. Das Kind malt einfach ein vertrautes Bild aus und sieht das englische Wort darunter. Es gibt hier keine Aufgaben, keine Regeln und keine Tests, und lesen muss das Kind auch nicht können.",
         },
         {
-          q: "Worin unterscheiden sich die beiden Ausgaben?",
-          a: "Nur in der Sprache des Wortes unter der Zeichnung. Zeichnungen, Papier, Format und Reihenfolge der Seiten sind gleich.",
+          q: "Müssen die Eltern selbst gut Englisch können?",
+          a: "Nein. Unter jeder Zeichnung steht nur ein einziges einfaches englisches Wort. Eltern können den abgebildeten Gegenstand benennen, das Wort vorlesen oder einfach zusammen mit dem Kind das Bild ausmalen.",
         },
         {
-          q: "Der Filzstift drückt durch das Papier, was tun?",
-          a: "Legen Sie ein zusätzliches Blatt unter die Seite. Das Buch ist nur einseitig bedruckt, deshalb bleibt der Abdruck auf der leeren Rückseite und nicht auf dem nächsten Bild.",
+          q: "Welche englischen Wörter stehen im Buch?",
+          a: "Das Buch enthält 111 Wörter aus vertrauten Themenbereichen: Tiere, Essen, Fahrzeuge, Natur, Märchenfiguren und mehr. Unter jeder Zeichnung steht ein Wort auf Englisch.",
+        },
+        {
+          q: "Gibt es im Buch eine Lautschrift oder Hinweise zur Aussprache der englischen Wörter?",
+          a: "Nein. Unter jedem Bild steht nur das englische Wort selbst, in großen Konturbuchstaben, die sich ebenfalls ausmalen lassen. Eine Lautschrift oder Aussprachehilfen enthält das Buch nicht. Wer sich bei der Aussprache unsicher ist, kann sie in einer Übersetzer-App auf dem Handy anhören.",
+        },
+        {
+          q: "Worin unterscheiden sich die Ausgaben mit englischen und spanischen Wörtern?",
+          a: "Nur in der Sprache des Wortes unter der Zeichnung: In der einen Ausgabe stehen die Wörter auf Englisch, in der anderen auf Spanisch. Zeichnungen, Papier, Format und Reihenfolge der Seiten sind gleich.",
+        },
+        {
+          q: "Ist es normal, wenn das Kind über die Konturen hinausmalt?",
+          a: "Ja. Das Buch enthält große, einfache Zeichnungen mit dicken Konturen. Mit einem Jahr kritzelt ein Kind vielleicht noch über das Bild, später malt es häufiger innerhalb der Konturen. Genau ausmalen muss es nicht.",
+        },
+        {
+          q: "Womit malt man die Bilder in diesem Buch am besten aus?",
+          a: "Buntstifte, Wachsmalstifte und Filzstifte eignen sich alle. Wenn ein Filzstift durchdrückt, kann man ein zusätzliches Blatt unter die Seite legen. Die Rückseite jeder Zeichnung bleibt leer.",
+        },
+        {
+          q: "Wie lange kann ein Kind dieses Malbuch nutzen?",
+          a: "Das Buch enthält 111 Zeichnungen, eine pro Seite. Wie lange es genutzt wird, hängt vom Kind ab: Manche malen jeweils ein Bild aus, andere mehrere hintereinander.",
+        },
+        {
+          q: "Kann man das Buch vor dem Kauf ausprobieren?",
+          a: "Ja. Zehn echte Seiten aus dem Buch lassen sich kostenlos herunterladen und zu Hause ausdrucken. Eine Anmeldung oder eine E-Mail-Adresse ist nicht nötig.",
         },
       ],
       pair: "Dasselbe Buch mit spanischen Wörtern unter den Zeichnungen:",
@@ -672,20 +696,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Ist ein Jahr nicht zu früh?",
-          a: "Nein. Die Zeichnungen sind bewusst einfach für die Jüngsten gemacht. Ein einjähriges Kind kritzelt vielleicht noch über das Bild, während ein dreijähriges Kind schon versucht, innerhalb der Konturen auszumalen. Das Buch kann in verschiedenen Phasen zwischen 1 und 3 Jahren genutzt werden.",
+          q: "Ist ein Malbuch für ein einjähriges Kind nicht zu früh?",
+          a: "Nein. Die Zeichnungen sind bewusst einfach gehalten, für die Kleinsten. Ein einjähriges Kind kritzelt vielleicht noch über das Bild, ein dreijähriges versucht schon, innerhalb der Konturen zu malen. Deshalb lässt sich das Buch in verschiedenen Phasen zwischen 1 und 3 Jahren verwenden.",
         },
         {
-          q: "Mein Kind kennt diese Sprache noch nicht. Ist das Buch dann zu schwierig?",
-          a: "Nein. Das Kind malt einfach das Bild aus und sieht dabei das Wort darunter. Es gibt keine Aufgaben und das Kind muss nicht lesen können.",
+          q: "Mein Kind kann noch kein Spanisch. Wird das Buch zu schwierig sein?",
+          a: "Nein. Das Kind malt einfach ein vertrautes Bild aus und sieht das spanische Wort darunter. Es gibt hier keine Aufgaben, keine Regeln und keine Tests, und lesen muss das Kind auch nicht können.",
         },
         {
-          q: "Worin unterscheiden sich die beiden Ausgaben?",
-          a: "Nur in der Sprache des Wortes unter der Zeichnung. Zeichnungen, Papier, Format und Reihenfolge der Seiten sind gleich.",
+          q: "Müssen die Eltern selbst gut Spanisch können?",
+          a: "Nein. Unter jeder Zeichnung steht nur ein einziges einfaches spanisches Wort. Eltern können den abgebildeten Gegenstand benennen, das Wort vorlesen oder einfach zusammen mit dem Kind das Bild ausmalen.",
         },
         {
-          q: "Der Filzstift drückt durch das Papier, was tun?",
-          a: "Legen Sie ein zusätzliches Blatt unter die Seite. Das Buch ist nur einseitig bedruckt, deshalb bleibt der Abdruck auf der leeren Rückseite und nicht auf dem nächsten Bild.",
+          q: "Welche spanischen Wörter stehen im Buch?",
+          a: "Das Buch enthält 111 Wörter aus vertrauten Themenbereichen: Tiere, Essen, Fahrzeuge, Natur, Märchenfiguren und mehr. Unter jeder Zeichnung steht ein Wort auf Spanisch.",
+        },
+        {
+          q: "Gibt es im Buch eine Lautschrift oder Hinweise zur Aussprache der spanischen Wörter?",
+          a: "Nein. Unter jedem Bild steht nur das spanische Wort selbst, in großen Konturbuchstaben, die sich ebenfalls ausmalen lassen. Eine Lautschrift oder Aussprachehilfen enthält das Buch nicht. Wer sich bei der Aussprache unsicher ist, kann sie in einer Übersetzer-App auf dem Handy anhören.",
+        },
+        {
+          q: "Worin unterscheiden sich die Ausgaben mit englischen und spanischen Wörtern?",
+          a: "Nur in der Sprache des Wortes unter der Zeichnung: In der einen Ausgabe stehen die Wörter auf Englisch, in der anderen auf Spanisch. Zeichnungen, Papier, Format und Reihenfolge der Seiten sind gleich.",
+        },
+        {
+          q: "Ist es normal, wenn das Kind über die Konturen hinausmalt?",
+          a: "Ja. Das Buch enthält große, einfache Zeichnungen mit dicken Konturen. Mit einem Jahr kritzelt ein Kind vielleicht noch über das Bild, später malt es häufiger innerhalb der Konturen. Genau ausmalen muss es nicht.",
+        },
+        {
+          q: "Womit malt man die Bilder in diesem Buch am besten aus?",
+          a: "Buntstifte, Wachsmalstifte und Filzstifte eignen sich alle. Wenn ein Filzstift durchdrückt, kann man ein zusätzliches Blatt unter die Seite legen. Die Rückseite jeder Zeichnung bleibt leer.",
+        },
+        {
+          q: "Wie lange kann ein Kind dieses Malbuch nutzen?",
+          a: "Das Buch enthält 111 Zeichnungen, eine pro Seite. Wie lange es genutzt wird, hängt vom Kind ab: Manche malen jeweils ein Bild aus, andere mehrere hintereinander.",
+        },
+        {
+          q: "Kann man das Buch vor dem Kauf ausprobieren?",
+          a: "Ja. Zehn echte Seiten aus dem Buch lassen sich kostenlos herunterladen und zu Hause ausdrucken. Eine Anmeldung oder eine E-Mail-Adresse ist nicht nötig.",
         },
       ],
       pair: "Dasselbe Buch mit englischen Wörtern unter den Zeichnungen:",
@@ -767,20 +815,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Un an, n'est-ce pas trop tôt ?",
-          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux plus jeunes. À un an, l'enfant gribouille peut-être encore par-dessus l'image, tandis qu'à trois ans, il essaie déjà de colorier à l'intérieur du contour. Le livre peut donc être utilisé à différentes étapes entre 1 et 3 ans.",
+          q: "Un livre de coloriage dès 1 an, n'est-ce pas trop tôt ?",
+          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux tout-petits. À un an, l'enfant gribouille peut-être encore par-dessus l'image, tandis qu'à trois ans il essaie déjà de colorier à l'intérieur du contour. Le livre peut donc être utilisé à différentes étapes entre 1 et 3 ans.",
         },
         {
-          q: "Mon enfant ne connaît pas encore cette langue. Le livre ne sera-t-il pas trop difficile ?",
-          a: "Non. L'enfant colorie simplement l'image et voit le mot écrit en dessous. Il n'y a aucun exercice et l'enfant n'a pas besoin de savoir lire.",
+          q: "Mon enfant ne connaît pas encore l'anglais. Le livre ne sera-t-il pas trop difficile ?",
+          a: "Non. L'enfant colorie simplement une image qu'il connaît et voit le mot anglais écrit en dessous. Il n'y a ici ni exercices, ni règles, ni tests, et l'enfant n'a pas besoin de savoir lire.",
         },
         {
-          q: "Quelle est la différence entre les deux éditions ?",
-          a: "Uniquement la langue du mot sous le dessin. Les dessins, le papier, le format et l'ordre des pages sont identiques.",
+          q: "Les parents doivent-ils eux-mêmes bien connaître l'anglais ?",
+          a: "Non. Sous chaque dessin figure un seul mot anglais très simple. Les parents peuvent nommer l'objet représenté, lire le mot à voix haute ou simplement colorier l'image avec l'enfant.",
         },
         {
-          q: "Que faire si le feutre traverse le papier ?",
-          a: "Glissez une feuille supplémentaire sous la page. Le livre est imprimé sur une seule face : la trace reste donc sur le verso vierge et non sur le dessin suivant.",
+          q: "Quels mots anglais trouve-t-on dans le livre ?",
+          a: "Le livre contient 111 mots sur des thèmes familiers : animaux, nourriture, véhicules, nature, personnages de contes et bien d'autres. Sous chaque dessin figure un mot en anglais.",
+        },
+        {
+          q: "Le livre contient-il une transcription phonétique ou des indications de prononciation des mots anglais ?",
+          a: "Non. Sous chaque image figure uniquement le mot anglais lui-même, en grandes lettres creuses qui se colorient également. Le livre ne contient ni transcription phonétique ni aide à la prononciation. En cas de doute sur la prononciation, on peut l'écouter dans une application de traduction sur son téléphone.",
+        },
+        {
+          q: "Quelle est la différence entre l'édition avec des mots anglais et celle avec des mots espagnols ?",
+          a: "Uniquement la langue du mot sous le dessin : dans une édition, les mots sont en anglais, dans l'autre, en espagnol. Les dessins, le papier, le format et l'ordre des pages sont identiques.",
+        },
+        {
+          q: "Est-ce normal que l'enfant dépasse les contours en coloriant ?",
+          a: "Oui. Le livre contient de grands dessins simples aux contours épais. À un an, l'enfant gribouille peut-être encore par-dessus l'image, et plus tard il colorie plus souvent à l'intérieur des contours. Il n'a pas besoin de colorier avec précision.",
+        },
+        {
+          q: "Avec quoi vaut-il mieux colorier les images de ce livre ?",
+          a: "Les crayons de couleur, les craies grasses et les feutres conviennent tous. Si un feutre traverse le papier, il suffit de glisser une feuille supplémentaire sous la page. Le verso de chaque dessin reste vierge.",
+        },
+        {
+          q: "Combien de temps un enfant peut-il utiliser ce livre de coloriage ?",
+          a: "Le livre contient 111 dessins, un par page. La durée dépend de l'enfant : certains colorient un dessin à la fois, d'autres plusieurs à la suite.",
+        },
+        {
+          q: "Peut-on essayer le livre avant de l'acheter ?",
+          a: "Oui. Dix vraies pages du livre peuvent être téléchargées gratuitement et imprimées à la maison. Aucune inscription ni adresse e-mail n'est nécessaire.",
         },
       ],
       pair: "Le même livre avec les mots en espagnol sous les dessins :",
@@ -856,20 +928,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Un an, n'est-ce pas trop tôt ?",
-          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux plus jeunes. À un an, l'enfant gribouille peut-être encore par-dessus l'image, tandis qu'à trois ans, il essaie déjà de colorier à l'intérieur du contour. Le livre peut donc être utilisé à différentes étapes entre 1 et 3 ans.",
+          q: "Un livre de coloriage dès 1 an, n'est-ce pas trop tôt ?",
+          a: "Non. Les dessins ont été volontairement conçus pour être simples et adaptés aux tout-petits. À un an, l'enfant gribouille peut-être encore par-dessus l'image, tandis qu'à trois ans il essaie déjà de colorier à l'intérieur du contour. Le livre peut donc être utilisé à différentes étapes entre 1 et 3 ans.",
         },
         {
-          q: "Mon enfant ne connaît pas encore cette langue. Le livre ne sera-t-il pas trop difficile ?",
-          a: "Non. L'enfant colorie simplement l'image et voit le mot écrit en dessous. Il n'y a aucun exercice et l'enfant n'a pas besoin de savoir lire.",
+          q: "Mon enfant ne connaît pas encore l'espagnol. Le livre ne sera-t-il pas trop difficile ?",
+          a: "Non. L'enfant colorie simplement une image qu'il connaît et voit le mot espagnol écrit en dessous. Il n'y a ici ni exercices, ni règles, ni tests, et l'enfant n'a pas besoin de savoir lire.",
         },
         {
-          q: "Quelle est la différence entre les deux éditions ?",
-          a: "Uniquement la langue du mot sous le dessin. Les dessins, le papier, le format et l'ordre des pages sont identiques.",
+          q: "Les parents doivent-ils eux-mêmes bien connaître l'espagnol ?",
+          a: "Non. Sous chaque dessin figure un seul mot espagnol très simple. Les parents peuvent nommer l'objet représenté, lire le mot à voix haute ou simplement colorier l'image avec l'enfant.",
         },
         {
-          q: "Que faire si le feutre traverse le papier ?",
-          a: "Glissez une feuille supplémentaire sous la page. Le livre est imprimé sur une seule face : la trace reste donc sur le verso vierge et non sur le dessin suivant.",
+          q: "Quels mots espagnols trouve-t-on dans le livre ?",
+          a: "Le livre contient 111 mots sur des thèmes familiers : animaux, nourriture, véhicules, nature, personnages de contes et bien d'autres. Sous chaque dessin figure un mot en espagnol.",
+        },
+        {
+          q: "Le livre contient-il une transcription phonétique ou des indications de prononciation des mots espagnols ?",
+          a: "Non. Sous chaque image figure uniquement le mot espagnol lui-même, en grandes lettres creuses qui se colorient également. Le livre ne contient ni transcription phonétique ni aide à la prononciation. En cas de doute sur la prononciation, on peut l'écouter dans une application de traduction sur son téléphone.",
+        },
+        {
+          q: "Quelle est la différence entre l'édition avec des mots anglais et celle avec des mots espagnols ?",
+          a: "Uniquement la langue du mot sous le dessin : dans une édition, les mots sont en anglais, dans l'autre, en espagnol. Les dessins, le papier, le format et l'ordre des pages sont identiques.",
+        },
+        {
+          q: "Est-ce normal que l'enfant dépasse les contours en coloriant ?",
+          a: "Oui. Le livre contient de grands dessins simples aux contours épais. À un an, l'enfant gribouille peut-être encore par-dessus l'image, et plus tard il colorie plus souvent à l'intérieur des contours. Il n'a pas besoin de colorier avec précision.",
+        },
+        {
+          q: "Avec quoi vaut-il mieux colorier les images de ce livre ?",
+          a: "Les crayons de couleur, les craies grasses et les feutres conviennent tous. Si un feutre traverse le papier, il suffit de glisser une feuille supplémentaire sous la page. Le verso de chaque dessin reste vierge.",
+        },
+        {
+          q: "Combien de temps un enfant peut-il utiliser ce livre de coloriage ?",
+          a: "Le livre contient 111 dessins, un par page. La durée dépend de l'enfant : certains colorient un dessin à la fois, d'autres plusieurs à la suite.",
+        },
+        {
+          q: "Peut-on essayer le livre avant de l'acheter ?",
+          a: "Oui. Dix vraies pages du livre peuvent être téléchargées gratuitement et imprimées à la maison. Aucune inscription ni adresse e-mail n'est nécessaire.",
         },
       ],
       pair: "Le même livre avec les mots en anglais sous les dessins :",
@@ -957,20 +1053,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Is één jaar niet te vroeg?",
-          a: "Nee. De tekeningen zijn bewust eenvoudig gemaakt en geschikt voor de allerkleinsten. Een kind van één krabbelt misschien nog over de afbeelding heen, terwijl een kind van drie al binnen de lijnen probeert te kleuren. Het boek kan daardoor in verschillende fasen tussen 1 en 3 jaar gebruikt worden.",
+          q: "Is een kind van één jaar niet te jong voor een kleurboek?",
+          a: "Nee. De tekeningen zijn bewust eenvoudig gemaakt en geschikt voor de allerkleinsten. Een kind van één krabbelt misschien nog over de afbeelding heen, terwijl een kind van drie al binnen de lijnen probeert te kleuren. Daardoor kan het boek in verschillende fasen tussen 1 en 3 jaar worden gebruikt.",
         },
         {
-          q: "Mijn kind kent deze taal nog niet. Wordt het boek dan niet te moeilijk?",
-          a: "Nee. Het kind kleurt gewoon de afbeelding in en ziet daarbij het woord eronder. Er zijn geen oefeningen en het kind hoeft niet te kunnen lezen.",
+          q: "Mijn kind kent nog geen Engels. Wordt het boek dan niet te moeilijk?",
+          a: "Nee. Het kind kleurt gewoon een vertrouwde afbeelding in en ziet het Engelse woord eronder staan. Er zijn hier geen oefeningen, geen regels en geen toetsen, en het kind hoeft niet te kunnen lezen.",
         },
         {
-          q: "Wat is het verschil tussen de twee edities?",
-          a: "Alleen de taal van het woord onder de tekening. De tekeningen, het papier, het formaat en de volgorde van de pagina's zijn hetzelfde.",
+          q: "Moeten ouders zelf goed Engels kunnen?",
+          a: "Nee. Onder elke tekening staat maar één eenvoudig Engels woord. Ouders kunnen het afgebeelde voorwerp benoemen, het woord hardop voorlezen of gewoon samen met het kind de afbeelding inkleuren.",
         },
         {
-          q: "Wat kunt u doen als de stift door het papier heen komt?",
-          a: "Leg een extra vel onder de pagina. Het boek is enkelzijdig bedrukt, dus de afdruk blijft op de lege achterkant en niet op de volgende tekening.",
+          q: "Welke Engelse woorden staan er in het boek?",
+          a: "Het boek bevat 111 woorden over vertrouwde onderwerpen: dieren, eten, voertuigen, natuur, sprookjesfiguren en meer. Onder elke tekening staat één woord in het Engels.",
+        },
+        {
+          q: "Staat er in het boek een fonetische weergave of hulp bij de uitspraak van de Engelse woorden?",
+          a: "Nee. Onder elke afbeelding staat alleen het Engelse woord zelf, in grote open letters die ook ingekleurd kunnen worden. Het boek bevat geen fonetische weergave of uitspraakhulp. Bij twijfel over de uitspraak kunt u die beluisteren in een vertaalapp op uw telefoon.",
+        },
+        {
+          q: "Wat is het verschil tussen de editie met Engelse en die met Spaanse woorden?",
+          a: "Alleen de taal van het woord onder de tekening: in de ene editie staan de woorden in het Engels, in de andere in het Spaans. De tekeningen, het papier, het formaat en de volgorde van de pagina's zijn hetzelfde.",
+        },
+        {
+          q: "Is het normaal als het kind bij het kleuren buiten de lijnen gaat?",
+          a: "Ja. Het boek bevat grote, eenvoudige tekeningen met dikke lijnen. Op éénjarige leeftijd krabbelt een kind misschien nog over de afbeelding heen, later kleurt het vaker binnen de lijnen. Het hoeft niet precies binnen de lijnen te kleuren.",
+        },
+        {
+          q: "Waarmee kunt u de afbeeldingen in dit boek het beste inkleuren?",
+          a: "Kleurpotloden, waskrijt en viltstiften zijn allemaal geschikt. Als een viltstift doordrukt, kunt u een extra vel onder de pagina leggen. De achterkant van elke tekening blijft leeg.",
+        },
+        {
+          q: "Hoe lang kan een kind met dit kleurboek vooruit?",
+          a: "Het boek bevat 111 tekeningen, één per pagina. Hoe lang het meegaat, hangt van het kind af: de een kleurt één tekening per keer, de ander meerdere achter elkaar.",
+        },
+        {
+          q: "Kunt u het boek uitproberen voordat u het koopt?",
+          a: "Ja. Tien echte pagina's uit het boek kunt u gratis downloaden en thuis printen. Registratie of een e-mailadres is niet nodig.",
         },
       ],
       pair: "Hetzelfde boek met Spaanse woorden onder de tekeningen:",
@@ -1045,20 +1165,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Is één jaar niet te vroeg?",
-          a: "Nee. De tekeningen zijn bewust eenvoudig gemaakt en geschikt voor de allerkleinsten. Een kind van één krabbelt misschien nog over de afbeelding heen, terwijl een kind van drie al binnen de lijnen probeert te kleuren. Het boek kan daardoor in verschillende fasen tussen 1 en 3 jaar gebruikt worden.",
+          q: "Is een kind van één jaar niet te jong voor een kleurboek?",
+          a: "Nee. De tekeningen zijn bewust eenvoudig gemaakt en geschikt voor de allerkleinsten. Een kind van één krabbelt misschien nog over de afbeelding heen, terwijl een kind van drie al binnen de lijnen probeert te kleuren. Daardoor kan het boek in verschillende fasen tussen 1 en 3 jaar worden gebruikt.",
         },
         {
-          q: "Mijn kind kent deze taal nog niet. Wordt het boek dan niet te moeilijk?",
-          a: "Nee. Het kind kleurt gewoon de afbeelding in en ziet daarbij het woord eronder. Er zijn geen oefeningen en het kind hoeft niet te kunnen lezen.",
+          q: "Mijn kind kent nog geen Spaans. Wordt het boek dan niet te moeilijk?",
+          a: "Nee. Het kind kleurt gewoon een vertrouwde afbeelding in en ziet het Spaanse woord eronder staan. Er zijn hier geen oefeningen, geen regels en geen toetsen, en het kind hoeft niet te kunnen lezen.",
         },
         {
-          q: "Wat is het verschil tussen de twee edities?",
-          a: "Alleen de taal van het woord onder de tekening. De tekeningen, het papier, het formaat en de volgorde van de pagina's zijn hetzelfde.",
+          q: "Moeten ouders zelf goed Spaans kunnen?",
+          a: "Nee. Onder elke tekening staat maar één eenvoudig Spaans woord. Ouders kunnen het afgebeelde voorwerp benoemen, het woord hardop voorlezen of gewoon samen met het kind de afbeelding inkleuren.",
         },
         {
-          q: "Wat kunt u doen als de stift door het papier heen komt?",
-          a: "Leg een extra vel onder de pagina. Het boek is enkelzijdig bedrukt, dus de afdruk blijft op de lege achterkant en niet op de volgende tekening.",
+          q: "Welke Spaanse woorden staan er in het boek?",
+          a: "Het boek bevat 111 woorden over vertrouwde onderwerpen: dieren, eten, voertuigen, natuur, sprookjesfiguren en meer. Onder elke tekening staat één woord in het Spaans.",
+        },
+        {
+          q: "Staat er in het boek een fonetische weergave of hulp bij de uitspraak van de Spaanse woorden?",
+          a: "Nee. Onder elke afbeelding staat alleen het Spaanse woord zelf, in grote open letters die ook ingekleurd kunnen worden. Het boek bevat geen fonetische weergave of uitspraakhulp. Bij twijfel over de uitspraak kunt u die beluisteren in een vertaalapp op uw telefoon.",
+        },
+        {
+          q: "Wat is het verschil tussen de editie met Engelse en die met Spaanse woorden?",
+          a: "Alleen de taal van het woord onder de tekening: in de ene editie staan de woorden in het Engels, in de andere in het Spaans. De tekeningen, het papier, het formaat en de volgorde van de pagina's zijn hetzelfde.",
+        },
+        {
+          q: "Is het normaal als het kind bij het kleuren buiten de lijnen gaat?",
+          a: "Ja. Het boek bevat grote, eenvoudige tekeningen met dikke lijnen. Op éénjarige leeftijd krabbelt een kind misschien nog over de afbeelding heen, later kleurt het vaker binnen de lijnen. Het hoeft niet precies binnen de lijnen te kleuren.",
+        },
+        {
+          q: "Waarmee kunt u de afbeeldingen in dit boek het beste inkleuren?",
+          a: "Kleurpotloden, waskrijt en viltstiften zijn allemaal geschikt. Als een viltstift doordrukt, kunt u een extra vel onder de pagina leggen. De achterkant van elke tekening blijft leeg.",
+        },
+        {
+          q: "Hoe lang kan een kind met dit kleurboek vooruit?",
+          a: "Het boek bevat 111 tekeningen, één per pagina. Hoe lang het meegaat, hangt van het kind af: de een kleurt één tekening per keer, de ander meerdere achter elkaar.",
+        },
+        {
+          q: "Kunt u het boek uitproberen voordat u het koopt?",
+          a: "Ja. Tien echte pagina's uit het boek kunt u gratis downloaden en thuis printen. Registratie of een e-mailadres is niet nodig.",
         },
       ],
       pair: "Hetzelfde boek met Engelse woorden onder de tekeningen:",
@@ -1141,20 +1285,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Czy rok to nie za wcześnie?",
+          q: "Czy roczne dziecko nie jest za małe na kolorowankę?",
           a: "Nie. Rysunki są celowo proste i dostosowane do najmłodszych. Roczne dziecko być może jeszcze bazgrze po obrazku, a trzyletnie stara się już kolorować wewnątrz konturu. Dzięki temu z książki można korzystać na różnych etapach między 1. a 3. rokiem życia.",
         },
         {
-          q: "Moje dziecko nie zna jeszcze tego języka. Czy książka nie będzie za trudna?",
-          a: "Nie. Dziecko po prostu koloruje obrazek i widzi przy tym słowo pod nim. Nie ma tu żadnych zadań i dziecko nie musi umieć czytać.",
+          q: "Moje dziecko nie zna jeszcze angielskiego. Czy książka nie będzie za trudna?",
+          a: "Nie. Dziecko po prostu koloruje znajomy obrazek i widzi pod nim angielskie słowo. Nie ma tu zadań, reguł ani testów, a dziecko nie musi umieć czytać.",
         },
         {
-          q: "Czym różnią się te dwa wydania?",
-          a: "Tylko językiem słowa pod rysunkiem. Rysunki, papier, format i kolejność stron są takie same.",
+          q: "Czy rodzice sami muszą dobrze znać angielski?",
+          a: "Nie. Pod każdym rysunkiem jest tylko jedno proste angielskie słowo. Rodzice mogą nazwać przedstawiony przedmiot, przeczytać słowo na głos albo po prostu kolorować obrazek razem z dzieckiem.",
         },
         {
-          q: "Co zrobić, jeśli flamaster przebija przez papier?",
-          a: "Podłóż pod stronę dodatkową kartkę. Książka jest zadrukowana tylko z jednej strony, więc ślad zostanie na pustej stronie odwrotnej, a nie na następnym rysunku.",
+          q: "Jakie angielskie słowa są w książce?",
+          a: "Książka zawiera 111 słów związanych z tematami znanymi dziecku: zwierzęta, jedzenie, pojazdy, przyroda, postacie z bajek i inne. Pod każdym rysunkiem znajduje się jedno słowo po angielsku.",
+        },
+        {
+          q: "Czy w książce jest transkrypcja albo wskazówki dotyczące wymowy angielskich słów?",
+          a: "Nie. Pod każdym obrazkiem znajduje się wyłącznie samo angielskie słowo, wydrukowane dużymi konturowymi literami, które też można pokolorować. Książka nie zawiera transkrypcji ani wskazówek dotyczących wymowy. W razie wątpliwości można posłuchać wymowy w aplikacji do tłumaczenia na telefonie.",
+        },
+        {
+          q: "Czym różnią się wydania ze słowami angielskimi i hiszpańskimi?",
+          a: "Tylko językiem słowa pod rysunkiem: w jednym wydaniu słowa są po angielsku, w drugim po hiszpańsku. Rysunki, papier, format i kolejność stron są takie same.",
+        },
+        {
+          q: "Czy to normalne, że dziecko koloruje poza konturem?",
+          a: "Tak. W książce są duże, proste rysunki z grubym konturem. Roczne dziecko być może jeszcze bazgrze po obrazku, a później częściej koloruje wewnątrz konturu. Nie musi dokładnie trzymać się konturu.",
+        },
+        {
+          q: "Czym najlepiej kolorować obrazki w tej książce?",
+          a: "Nadają się kredki ołówkowe, kredki świecowe i flamastry. Jeśli flamaster przebija przez papier, pod stronę można podłożyć dodatkową kartkę. Odwrotna strona każdego rysunku pozostaje pusta.",
+        },
+        {
+          q: "Na jak długo dziecku wystarczy ta kolorowanka?",
+          a: "Książka zawiera 111 rysunków, po jednym na stronie. Na jak długo wystarczy, zależy od dziecka: jedno koloruje jeden rysunek naraz, inne kilka z rzędu.",
+        },
+        {
+          q: "Czy można wypróbować książkę przed zakupem?",
+          a: "Tak. Dziesięć prawdziwych stron z książki można pobrać za darmo i wydrukować w domu. Nie trzeba się rejestrować ani podawać adresu e-mail.",
         },
       ],
       pair: "Ta sama książka z hiszpańskimi słowami pod rysunkami:",
@@ -1227,20 +1395,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Czy rok to nie za wcześnie?",
+          q: "Czy roczne dziecko nie jest za małe na kolorowankę?",
           a: "Nie. Rysunki są celowo proste i dostosowane do najmłodszych. Roczne dziecko być może jeszcze bazgrze po obrazku, a trzyletnie stara się już kolorować wewnątrz konturu. Dzięki temu z książki można korzystać na różnych etapach między 1. a 3. rokiem życia.",
         },
         {
-          q: "Moje dziecko nie zna jeszcze tego języka. Czy książka nie będzie za trudna?",
-          a: "Nie. Dziecko po prostu koloruje obrazek i widzi przy tym słowo pod nim. Nie ma tu żadnych zadań i dziecko nie musi umieć czytać.",
+          q: "Moje dziecko nie zna jeszcze hiszpańskiego. Czy książka nie będzie za trudna?",
+          a: "Nie. Dziecko po prostu koloruje znajomy obrazek i widzi pod nim hiszpańskie słowo. Nie ma tu zadań, reguł ani testów, a dziecko nie musi umieć czytać.",
         },
         {
-          q: "Czym różnią się te dwa wydania?",
-          a: "Tylko językiem słowa pod rysunkiem. Rysunki, papier, format i kolejność stron są takie same.",
+          q: "Czy rodzice sami muszą dobrze znać hiszpański?",
+          a: "Nie. Pod każdym rysunkiem jest tylko jedno proste hiszpańskie słowo. Rodzice mogą nazwać przedstawiony przedmiot, przeczytać słowo na głos albo po prostu kolorować obrazek razem z dzieckiem.",
         },
         {
-          q: "Co zrobić, jeśli flamaster przebija przez papier?",
-          a: "Podłóż pod stronę dodatkową kartkę. Książka jest zadrukowana tylko z jednej strony, więc ślad zostanie na pustej stronie odwrotnej, a nie na następnym rysunku.",
+          q: "Jakie hiszpańskie słowa są w książce?",
+          a: "Książka zawiera 111 słów związanych z tematami znanymi dziecku: zwierzęta, jedzenie, pojazdy, przyroda, postacie z bajek i inne. Pod każdym rysunkiem znajduje się jedno słowo po hiszpańsku.",
+        },
+        {
+          q: "Czy w książce jest transkrypcja albo wskazówki dotyczące wymowy hiszpańskich słów?",
+          a: "Nie. Pod każdym obrazkiem znajduje się wyłącznie samo hiszpańskie słowo, wydrukowane dużymi konturowymi literami, które też można pokolorować. Książka nie zawiera transkrypcji ani wskazówek dotyczących wymowy. W razie wątpliwości można posłuchać wymowy w aplikacji do tłumaczenia na telefonie.",
+        },
+        {
+          q: "Czym różnią się wydania ze słowami angielskimi i hiszpańskimi?",
+          a: "Tylko językiem słowa pod rysunkiem: w jednym wydaniu słowa są po angielsku, w drugim po hiszpańsku. Rysunki, papier, format i kolejność stron są takie same.",
+        },
+        {
+          q: "Czy to normalne, że dziecko koloruje poza konturem?",
+          a: "Tak. W książce są duże, proste rysunki z grubym konturem. Roczne dziecko być może jeszcze bazgrze po obrazku, a później częściej koloruje wewnątrz konturu. Nie musi dokładnie trzymać się konturu.",
+        },
+        {
+          q: "Czym najlepiej kolorować obrazki w tej książce?",
+          a: "Nadają się kredki ołówkowe, kredki świecowe i flamastry. Jeśli flamaster przebija przez papier, pod stronę można podłożyć dodatkową kartkę. Odwrotna strona każdego rysunku pozostaje pusta.",
+        },
+        {
+          q: "Na jak długo dziecku wystarczy ta kolorowanka?",
+          a: "Książka zawiera 111 rysunków, po jednym na stronie. Na jak długo wystarczy, zależy od dziecka: jedno koloruje jeden rysunek naraz, inne kilka z rzędu.",
+        },
+        {
+          q: "Czy można wypróbować książkę przed zakupem?",
+          a: "Tak. Dziesięć prawdziwych stron z książki można pobrać za darmo i wydrukować w domu. Nie trzeba się rejestrować ani podawać adresu e-mail.",
         },
       ],
       pair: "Ta sama książka z angielskimi słowami pod rysunkami:",
@@ -1321,20 +1513,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "¿Un año no es demasiado pronto?",
+          q: "¿No es demasiado pronto para que un niño de un año use un libro de colorear?",
           a: "No. Los dibujos se han diseñado deliberadamente para ser sencillos y adecuados para los más pequeños. Un niño de un año quizá todavía garabatee por encima de la imagen, mientras que uno de tres ya intenta colorear dentro del contorno. Por eso el libro se puede usar en distintas etapas entre 1 y 3 años.",
         },
         {
-          q: "Mi hijo todavía no conoce este idioma. ¿No le resultará difícil el libro?",
-          a: "No. El niño simplemente colorea la imagen y ve la palabra escrita debajo. No hay ejercicios y el niño no necesita saber leer.",
+          q: "Mi hijo todavía no conoce el inglés. ¿No le resultará difícil el libro?",
+          a: "No. El niño simplemente colorea una imagen que conoce y ve la palabra en inglés escrita debajo. Aquí no hay ejercicios, ni reglas, ni exámenes, y el niño no necesita saber leer.",
         },
         {
-          q: "¿Qué diferencia hay entre las dos ediciones?",
-          a: "Solo el idioma de la palabra bajo el dibujo. Los dibujos, el papel, el formato y el orden de las páginas son idénticos.",
+          q: "¿Los padres tienen que saber bien inglés?",
+          a: "No. Debajo de cada dibujo hay una sola palabra sencilla en inglés. Los padres pueden nombrar el objeto representado, leer la palabra en voz alta o simplemente colorear la imagen con el niño.",
         },
         {
-          q: "¿Qué hago si el rotulador traspasa el papel?",
-          a: "Pon una hoja adicional debajo de la página. El libro está impreso por una sola cara, así que la marca queda en el reverso en blanco y no en el dibujo siguiente.",
+          q: "¿Qué palabras en inglés aparecen en el libro?",
+          a: "El libro contiene 111 palabras relacionadas con temas familiares para el niño: animales, comida, vehículos, naturaleza, personajes de cuento y muchos más. Debajo de cada dibujo aparece una palabra en inglés.",
+        },
+        {
+          q: "¿El libro incluye transcripción fonética o indicaciones de pronunciación de las palabras en inglés?",
+          a: "No. Debajo de cada imagen aparece únicamente la palabra en inglés, impresa en letras huecas grandes que también se pueden colorear. El libro no incluye transcripción fonética ni ayuda con la pronunciación. Si tienes dudas sobre la pronunciación, puedes escuchar la palabra en una aplicación de traducción en el móvil.",
+        },
+        {
+          q: "¿Qué diferencia hay entre la edición con palabras en inglés y la que tiene palabras en español?",
+          a: "Solo el idioma de la palabra bajo el dibujo: en una edición las palabras están en inglés y en la otra en español. Los dibujos, el papel, el formato y el orden de las páginas son idénticos.",
+        },
+        {
+          q: "¿Es normal que el niño se salga del contorno al colorear?",
+          a: "Sí. El libro tiene dibujos grandes y sencillos con contorno grueso. Al año, el niño quizá todavía garabatee por encima de la imagen, y más adelante colorea con más frecuencia dentro del contorno. No hace falta que coloree con precisión.",
+        },
+        {
+          q: "¿Con qué es mejor colorear los dibujos de este libro?",
+          a: "Se pueden usar lápices de colores, ceras y rotuladores. Si un rotulador traspasa el papel, se puede poner una hoja adicional debajo de la página. El reverso de cada dibujo queda en blanco.",
+        },
+        {
+          q: "¿Cuánto tiempo le puede durar este libro a un niño?",
+          a: "El libro contiene 111 dibujos, uno por página. Cuánto tiempo le dure depende del niño: unos colorean un dibujo cada vez y otros varios seguidos.",
+        },
+        {
+          q: "¿Se puede probar el libro antes de comprarlo?",
+          a: "Sí. Diez páginas reales del libro se pueden descargar gratis e imprimir en casa. No hace falta registrarse ni dar una dirección de correo electrónico.",
         },
       ],
       metaTitle:
@@ -1417,20 +1633,44 @@ export const euroCopy: Record<
       ],
       faq: [
         {
-          q: "Is one year old too early?",
+          q: "Is one year old too early for a coloring book?",
           a: "No. The drawings were deliberately designed to be simple and suitable for young children. A one-year-old may still scribble across the picture, while a three-year-old may already try to color inside the outline. The book can therefore be used at different stages between ages 1 and 3.",
         },
         {
-          q: "My child does not know this language yet. Will the book be too hard?",
-          a: "No. The child simply colors the picture and sees the word printed underneath. There are no exercises, and the child does not need to know how to read.",
+          q: "My child isn't familiar with Spanish yet. Will the book be too hard?",
+          a: "No. The child simply colors a familiar picture and sees the Spanish word printed underneath. There are no exercises, no rules and no tests here, and the child does not need to know how to read.",
         },
         {
-          q: "What is the difference between the two editions?",
-          a: "Only the language of the word under each drawing. The drawings, paper, format, and page order are identical.",
+          q: "Do parents need to know Spanish well themselves?",
+          a: "No. There is only one simple Spanish word under each drawing. Parents can name the object shown, read the word out loud, or simply color the picture together with the child.",
         },
         {
-          q: "What if a marker bleeds through the paper?",
-          a: "Slip an extra sheet under the page. The book is printed on one side only, so the mark stays on the blank back of the page and not on the next drawing.",
+          q: "What Spanish words are in the book?",
+          a: "The book contains 111 words on familiar themes: animals, food, vehicles, nature, fairy-tale characters and more. One Spanish word is printed under each drawing.",
+        },
+        {
+          q: "Does the book include phonetic spelling or pronunciation help for the Spanish words?",
+          a: "No. Only the Spanish word itself appears under each picture, printed in large hollow letters that can be colored in as well. The book contains no phonetic spelling and no pronunciation guide. If you are unsure how a word sounds, you can listen to it in a translation app on your phone.",
+        },
+        {
+          q: "What is the difference between the edition with Spanish words and the one with English words?",
+          a: "Only the language of the word under the drawing: in one edition the words are in Spanish, in the other in English. The drawings, the paper, the format and the page order are identical.",
+        },
+        {
+          q: "Is it normal for a child to color outside the lines?",
+          a: "Yes. The book has large, simple drawings with thick outlines. At one year old, a child may still scribble across the picture, while later they may color inside the lines more often. Coloring precisely is not the point.",
+        },
+        {
+          q: "What can my child use to color the pictures in this book?",
+          a: "Colored pencils, wax crayons, and markers all work. If a marker bleeds through the paper, slip an extra sheet under the page. The back of every drawing stays blank.",
+        },
+        {
+          q: "How long will this coloring book last a child?",
+          a: "The book contains 111 drawings, one per page. How long it lasts depends on the child: some color one drawing at a time, others several in a row.",
+        },
+        {
+          q: "Can you try the book before buying it?",
+          a: "Yes. Ten real pages from the book can be downloaded for free and printed at home. No sign-up or email address is required.",
         },
       ],
       metaTitle:
