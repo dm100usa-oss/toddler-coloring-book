@@ -3,7 +3,7 @@ import Link from "next/link";
 import { sheets, sheetPreview, sheetPdf, sheetsPdfAll } from "@/data/sheets";
 import { euroUi, euroPath, type EuroLang, type EditionLang } from "@/data/euro";
 import { freeCopyOf, freePath } from "@/data/free";
-import { SITE_URL, PUBLISHER, ADDRESS } from "@/lib/site";
+import { SITE_URL, PUBLISHER, ADDRESS, EURO_SHARE } from "@/lib/site";
 import { nb } from "@/lib/nobreak";
 
 /* Страница бесплатной печати. Одна из восьми.
@@ -55,13 +55,15 @@ export function freeMetadata(lang: EuroLang, ed: EditionLang): Metadata {
       title: c.metaTitle,
       description: c.metaDescription,
       url,
-      /* Первый лист вместо обложки. Страница про печать, и в ленте
-         мессенджера должна разворачиваться раскраска, а не книга. */
+      /* Широкая картинка для мессенджеров: обложка книги с надписью
+         про слова. Первый лист сюда не годится, он вертикальный
+         и черно-белый, в ленте выглядит как пустой прямоугольник.
+         Формат JPG обязателен: WebP WhatsApp не читает. */
       images: [
         {
-          url: `${SITE_URL}${sheetPreview(sheets[0].id, ed)}`,
-          width: 642,
-          height: 822,
+          url: EURO_SHARE.url(ed),
+          width: EURO_SHARE.w,
+          height: EURO_SHARE.h,
           alt: u.freeAlt(u.animals[sheets[0].id] ?? sheets[0].name.en),
         },
       ],

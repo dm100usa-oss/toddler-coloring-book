@@ -17,7 +17,7 @@ import {
   type EuroLang,
   type EditionLang,
 } from "@/data/euro";
-import { SITE_URL, PUBLISHER, ADDRESS, AUTHOR, CATALOG_URL } from "@/lib/site";
+import { SITE_URL, PUBLISHER, ADDRESS, AUTHOR, CATALOG_URL, EURO_SHARE } from "@/lib/site";
 import { hasFreePage, freeCopyOf, freePath } from "@/data/free";
 import { nb } from "@/lib/nobreak";
 
@@ -58,11 +58,15 @@ export function euroMetadata(lang: EuroLang, ed: EditionLang): Metadata {
       title: c.metaTitle,
       description: c.metaDescription,
       url,
+      /* Широкая картинка для мессенджеров, не обложка. Обложка
+         вертикальная и в формате WebP: WhatsApp такую не показывает
+         вовсе, ссылка приходит голой строкой. На самой странице
+         обложка остается прежней. */
       images: [
         {
-          url: `${SITE_URL}${euroArt[ed].cover}`,
-          width: euroArt[ed].coverSize.w,
-          height: euroArt[ed].coverSize.h,
+          url: EURO_SHARE.url(ed),
+          width: EURO_SHARE.w,
+          height: EURO_SHARE.h,
           alt: c.altCover,
         },
       ],
