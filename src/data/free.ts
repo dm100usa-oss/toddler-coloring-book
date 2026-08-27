@@ -91,6 +91,10 @@ export const freeSlug: Record<string, Record<EditionLang, string>> = {
     en: "kolorowanki-do-druku-za-darmo-angielski",
     es: "kolorowanki-do-druku-za-darmo-hiszpanski",
   },
+  it: {
+    en: "disegni-da-colorare-gratis-da-stampare-inglese",
+    es: "disegni-da-colorare-gratis-da-stampare-spagnolo",
+  },
 };
 
 export const freePath = (lang: EuroLang, ed: EditionLang) =>
@@ -337,6 +341,62 @@ const nl = (ed: EditionLang): FreeCopy => {
 };
 
 /* ==================================================================
+   Италия
+
+   Текст утвержден: смысл владельцем по-русски, итальянские слова
+   сторонним проверяющим.
+   ================================================================== */
+
+const it = (ed: EditionLang): FreeCopy => {
+  const book = ed === "en" ? "Prime parole in inglese" : "Prime parole in spagnolo";
+  const word = ed === "en" ? "inglese" : "spagnolo";
+  const wordPl = ed === "en" ? "inglesi" : "spagnole";
+
+  return {
+    head: {
+      top: `10 pagine del libro «${book}» per bambini da 1 a 3 anni`,
+      title: "Disegni da colorare gratis da stampare per bambini",
+      bottom: `Grandi disegni semplici con contorni spessi e una parola in ${word} sotto ogni immagine`,
+    },
+    lead: [
+      `Qui potete stampare gratuitamente dieci pagine tratte direttamente dal libro «${book}». Sotto ogni disegno c'è una parola in ${word}, stampata in grandi lettere a contorno, così il bambino può colorare sia l'immagine sia la parola stessa. Tutte e dieci le pagine sono disponibili subito, senza registrazione e senza indirizzo e-mail.`,
+      "Stampate una pagina, date una matita al bambino e osservate come reagisce. Non c'è nulla da compilare: né registrazione né indirizzo e-mail. Le pagine si aprono e si scaricano subito.",
+      "I disegni sono semplici e grandi. Un bambino di un anno può ancora limitarsi a scarabocchiare sopra l'immagine, mentre uno di tre anni cerca già di non uscire dai contorni. Entrambi i modi di colorare sono normali: a questa età conta soprattutto l'interesse per la matita e per il colorare.",
+    ],
+    bookLink: "Scopri il libro",
+    sheetsTitle: "10 disegni da colorare gratis da stampare",
+    sheetCaption: (name) => `Disegno da colorare «${name}»: scarica e stampa gratis`,
+    downloadAll: "Scarica tutti e 10 i disegni",
+    formatNote: "Formato A4, da stampare a casa. Ogni disegno su un foglio separato, stampato su un solo lato.",
+    faq: [
+      {
+        q: "Bisogna pagare qualcosa o registrarsi?",
+        a: "No. Le pagine sono gratuite, si scaricano subito e non serve alcun indirizzo e-mail.",
+      },
+      {
+        q: "Si possono stampare per un gruppo di bambini?",
+        a: "Sì. Le pagine gratuite si possono stampare per uso privato a casa e anche per attività con i bambini in un gruppo o in una classe. Non è consentito rivendere o distribuire i file.",
+      },
+      {
+        q: "Su che tipo di carta conviene stampare?",
+        a: "Va bene la normale carta da stampante. Se il bambino colora con i pennarelli, meglio usare una carta un po' più spessa oppure mettere un secondo foglio sotto.",
+      },
+      {
+        q: "Sono tutte le pagine del libro?",
+        a: "No. Il libro contiene 111 disegni, qui ne trovate dieci.",
+      },
+    ],
+    bottomTitle: "Volete altre pagine come queste?",
+    bottomText: `Queste dieci pagine sono tratte dal libro «${book}». Il libro completo contiene 111 disegni semplici e sotto ognuno c'è una parola in ${word}.`,
+    metaTitle: "Disegni da colorare gratis da stampare per bambini da 1 anno in su",
+    metaDescription: `10 disegni da colorare gratis tratti dal libro «${book}»: grandi disegni con contorni spessi e parole ${wordPl}. Formato A4, si scaricano subito, senza registrazione.`,
+    fromBook:
+      "Questi dieci disegni si trovano anche su una pagina dedicata, dove potete scaricarli tutti in un unico file.",
+    fromBookCta: "Disegni da colorare gratis da stampare",
+  };
+};
+
+/* ==================================================================
    Готовые языки
 
    Страна попадает сюда только после того, как ее текст проверили
@@ -349,6 +409,7 @@ export const freeCopy: Partial<Record<EuroLang, (ed: EditionLang) => FreeCopy>> 
   fr,
   nl,
   pl,
+  it,
 };
 
 /** Страны, у которых страницы бесплатной печати уже готовы. */
