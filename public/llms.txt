@@ -806,6 +806,9 @@ in Spanish only. These pages describe the same two books in the
 buyer's own language. They are not translations of the rest of the site
 and they are not part of its three-language system: each one stands
 alone and covers exactly one edition.
+- [Prime parole in inglese](https://www.toddlercoloringbook.com/it/libro-da-colorare-prime-parole-inglese) (Italian, English words)
+- [Prime parole in spagnolo](https://www.toddlercoloringbook.com/it/libro-da-colorare-prime-parole-spagnolo) (Italian, Spanish words)
+
 
 - [Erste Wörter auf Englisch](https://www.toddlercoloringbook.com/de/malbuch-erste-woerter-englisch) (German, English edition)
 - [Erste Wörter auf Spanisch](https://www.toddlercoloringbook.com/de/malbuch-erste-woerter-spanisch) (German, Spanish edition)

@@ -32,12 +32,12 @@ import { editions } from "./book";
    книга испанцу не нужна. В Канаде наоборот. Поэтому страна тут есть,
    а страниц у нее одна, и адрес у нее по названию страны: папки es
    и en заняты языками самого сайта. */
-export type EuroLang = "de" | "fr" | "nl" | "pl" | "espana" | "canada";
+export type EuroLang = "de" | "fr" | "nl" | "pl" | "it" | "espana" | "canada";
 export type EditionLang = "en" | "es";
 
 /* Только те страны, у которых по две страницы. Испания и Канада
    в этот список не входят, они добавлены отдельно в euroExtraPages. */
-export const euroLangs: EuroLang[] = ["de", "fr", "nl", "pl"];
+export const euroLangs: EuroLang[] = ["de", "fr", "nl", "pl", "it"];
 export const editionLangs: EditionLang[] = ["en", "es"];
 
 /* Магазин Amazon своей страны. Адрес карточки во всех странах
@@ -47,6 +47,7 @@ export const amazonHost: Record<EuroLang, string> = {
   fr: "www.amazon.fr",
   nl: "www.amazon.nl",
   pl: "www.amazon.pl",
+  it: "www.amazon.it",
   espana: "www.amazon.es",
   canada: "www.amazon.ca",
 };
@@ -89,6 +90,9 @@ export const euroPriceExact: Partial<
   fr: { amount: "5.99", currency: "EUR" },
   nl: { amount: "6.41", currency: "EUR" },
   pl: { amount: "30.44", currency: "PLN" },
+  /* Италия: обе книги 5,99 евро, сверено с карточками amazon.it
+     27 августа 2026 года, налог включен. */
+  it: { amount: "5.99", currency: "EUR" },
   espana: { amount: "5.99", currency: "EUR" },
   canada: { amount: "9.99", currency: "CAD" },
 };
@@ -98,6 +102,7 @@ export const euroPrice: Record<EuroLang, string> = {
   fr: "5,99 €",
   nl: "€ 6,41",
   pl: "30,44 zł",
+  it: "5,99 €",
   /* Испания: сверено с карточкой на amazon.es 26 августа 2026 года,
      5,99 евро, налог включен. */
   espana: "5,99 €",
@@ -370,6 +375,44 @@ export const euroUi: Record<EuroLang, EuroUi> = {
 
      Ссылка в подвале ведет на испанский раздел сайта, а не
      на английский, поэтому приписка про язык пустая. */
+  it: {
+    htmlLang: "it",
+    locale: "it-IT",
+    inside: "Cosa c'è dentro il libro",
+    forWhom: "A chi è rivolto questo libro",
+    parents: "Cosa dicono i genitori",
+    ratingTitle: "Valutazioni",
+    criticTitle: "Recensione indipendente",
+    faq: "Domande frequenti",
+    buyAmazon: "Acquista su Amazon.it",
+    buyFree: "Stampa 10 pagine gratis",
+    priceLabel: "copertina flessibile su Amazon.it",
+    buyNote: "Venduto e spedito da Amazon.",
+    freeTitle: "Dieci pagine del libro, gratis da stampare",
+    freeLead:
+      "Sono pagine tratte direttamente dal libro: su ciascuna, sotto il disegno, c'è una parola, proprio come nel libro. Stampate una pagina, date una matita al bambino e dopo cinque minuti capirete se il libro è adatto a lui. Senza registrazione e senza indirizzo e-mail.",
+    freeDownload: "Scarica",
+    freeFormat: "Formato A4, da stampare a casa.",
+    freeAlt: (name: string) => `${name}: pagina da colorare tratta dal libro`,
+    animals: {
+      lion: "Leone", elephant: "Elefante", giraffe: "Giraffa", zebra: "Zebra",
+      rhino: "Rinoceronte", monkey: "Scimmia", crocodile: "Coccodrillo",
+      kangaroo: "Canguro", bear: "Orso", fox: "Volpe",
+    },
+    labelAge: "Età",
+    labelDrawings: "Disegni",
+    labelPages: "Pagine",
+    labelSize: "Formato",
+    labelPublished: "Data di pubblicazione",
+    labelAuthor: "Autore",
+    labelPublisher: "Editore",
+    criticSource: "Leggi la recensione completa",
+    footerAbout:
+      "Pubblicato da Magic of Discoveries LLC, casa editrice per bambini di Miami, Florida.",
+    footerLink:
+      "Tutto sui primi libri da colorare per bambini da 1 a 3 anni",
+    footerLinkNote: "in inglese",
+  },
   espana: {
     htmlLang: "es",
     locale: "es-ES",
@@ -493,6 +536,10 @@ export const euroSlug: Record<EuroLang, Record<EditionLang, string>> = {
     en: "libro-de-colorear-primeras-palabras-en-ingles",
     es: "libro-de-colorear-primeras-palabras-en-espanol",
   },
+  it: {
+    en: "libro-da-colorare-prime-parole-inglese",
+    es: "libro-da-colorare-prime-parole-spagnolo",
+  },
   /* У Канады работает только испанская строка: там ждут человека,
      которому нужен именно испанский. */
   canada: {
@@ -511,6 +558,7 @@ export const euroCountry: Record<EuroLang, string> = {
   fr: "Франция",
   nl: "Голландия",
   pl: "Польша",
+  it: "Италия",
   espana: "Испания",
   canada: "Канада",
 };
@@ -1453,6 +1501,232 @@ export const euroCopy: Record<
     },
   },
 
+  /* ==================================================================
+     Италия
+
+     Текст утвержден: смысл владельцем по-русски, итальянские слова
+     сторонним проверяющим. Цена и оценки сверены с карточками
+     amazon.it 27 августа 2026 года: обе книги 5,99 евро, книга
+     с английскими словами 5,0 из 5, с испанскими 4,9 из 5.
+
+     Своих картинок с итальянскими надписями у страны пока нет,
+     поэтому берутся общие из euroArt, с английскими и испанскими
+     надписями. Так же начинали Германия и Франция.
+     ================================================================== */
+  it: {
+    en: {
+      title: "Prime parole in inglese",
+      subtitle: "Libro da colorare per bambini da 1 a 3 anni",
+      head: {
+        top: "Libro da colorare e dizionario illustrato per bambini da 1 a 3 anni",
+        title: "Prime parole in inglese",
+        bottom:
+          "111 grandi disegni con contorni spessi. Sotto ogni immagine una parola in inglese.",
+      },
+      lead: [
+        "Immagini semplici da colorare con parole chiare in inglese.",
+        "Niente testi lunghi, niente grammatica, nessuna barriera linguistica. Nel libro ci sono solo grandi disegni, contorni spessi pensati per i più piccoli e una sola parola ben leggibile sotto ogni immagine.",
+        "È adatto sia a un primo approccio alla lingua sia ai bambini che la sentono a casa ogni giorno. Il bambino può colorare immagini familiari da solo o insieme ai genitori, trascorrendo il tempo in modo piacevole e divertente.",
+        "Dieci pagine del libro si possono stampare gratuitamente, prima dell'acquisto. Nessuna registrazione, nessun indirizzo e-mail, niente da compilare. E se al bambino piace, potrete acquistare il libro completo e continuare insieme a scoprire nuove parole, colorare e divertirvi.",
+      ],
+      forWhom:
+        "Per bambini da 1 a 3 anni e anche un po' più grandi, sia per un primo approccio alle parole inglesi sia per le famiglie in cui il bambino sente due lingue. Non c'è nulla da studiare appositamente: il bambino colora immagini familiari, le osserva e scopre gradualmente le parole scritte sotto i disegni. I genitori possono pronunciare queste parole ad alta voce e guardare e colorare le immagini insieme al bambino, senza lezioni, regole o compiti difficili.",
+      inside: [
+        "111 parole semplici in inglese, una parola sotto ogni immagine",
+        "Disegni grandi e facili da riconoscere per i bambini, con contorni spessi",
+        "La parola sotto il disegno è stampata in grandi lettere a contorno, anch'esse da colorare",
+        "Un disegno per pagina, il retro della pagina resta bianco",
+        "I disegni sono centrati sulla pagina, una disposizione comoda sia per destrimani sia per mancini",
+        "Temi familiari ai bambini: animali, cibo, mezzi di trasporto, natura, personaggi delle fiabe e altro ancora",
+        "All'inizio del libro c'è una pagina personalizzabile con il nome del bambino",
+        "114 pagine, grande formato 21,6 × 27,9 cm",
+      ],
+      parents: [
+        "Il bambino finisce da solo di colorare un'immagine e passa alla successiva",
+        "Le immagini grandi e semplici sono facili da colorare anche per i bambini più piccoli",
+        "Il libro è comodo da portare in viaggio, in sala d'attesa dal medico o da tenere a casa per una giornata di pioggia",
+        "Il libro è leggero e comodo da portare con sé",
+        "I bambini lo sfogliano anche senza matite e chiedono come si chiama ogni animale",
+        "Viene acquistato per il più piccolo della famiglia, quando i bambini più grandi hanno già bisogno di libri da colorare più complessi",
+      ],
+      rating: "Valutazione 5,0 su 5 su Amazon.",
+      criticTitle: "Recensione indipendente",
+      critic: "5 stelle su 5, Readers' Favorite",
+      criticWhy:
+        "Sono stati evidenziati in particolare i contorni spessi e arrotondati, la posizione del disegno al centro della pagina e la parola sotto l'immagine, anch'essa da colorare.",
+      criticBy: "Maalin Ogaja, ottobre 2024",
+      whyTitle: "Perché questo libro è adatto a un primo approccio alla lingua",
+      why: [
+        "Non serve trasformare il primo approccio alla lingua in una lezione. Il bambino osserva immagini familiari e le colora, mentre un adulto può semplicemente nominare gli oggetti raffigurati.",
+        "Non serve conoscere bene la lingua. Sotto ogni immagine c'è una sola parola semplice. È facile leggerla, pronunciarla ad alta voce per il bambino e ripeterla insieme.",
+        "L'immagine aiuta a capire il significato della parola. Il bambino vede un oggetto familiare e, allo stesso tempo, la parola scritta sotto. In questo modo incontra le parole inglesi in un contesto facile da comprendere.",
+        "Si può usare il libro da soli o insieme. Il bambino può semplicemente colorare le immagini, mentre i genitori possono guardarle insieme a lui, nominare gli oggetti e ripetere le nuove parole.",
+        "Il libro è adatto alle diverse fasi dai 1 ai 3 anni e anche un po' oltre. All'inizio il bambino colora semplicemente i grandi disegni e ascolta i nomi degli oggetti. Più avanti può ripetere le parole e provare a colorare anche le lettere a contorno.",
+      ],
+      faq: [
+        {
+          q: "Non è troppo presto dare un libro da colorare a un bambino di un anno?",
+          a: "No. I disegni sono volutamente semplici e pensati per i più piccoli. A un anno il bambino può limitarsi a scarabocchiare sull'immagine, mentre a tre anni cerca già di colorare dentro i contorni. Per questo il libro può essere utilizzato nelle diverse fasi dai 1 ai 3 anni.",
+        },
+        {
+          q: "Se il bambino non conosce ancora l'inglese, gli sarà difficile usare il libro?",
+          a: "No. Il bambino colora semplicemente un'immagine familiare e vede la parola inglese scritta sotto. Non ci sono esercizi, regole o test e il bambino non deve saper leggere.",
+        },
+        {
+          q: "I genitori devono conoscere bene l'inglese?",
+          a: "No. Sotto ogni disegno è stampata una sola parola semplice in inglese. Il genitore può nominare l'oggetto raffigurato, leggere la parola ad alta voce oppure semplicemente colorare l'immagine insieme al bambino.",
+        },
+        {
+          q: "Quali parole inglesi ci sono nel libro?",
+          a: "Il libro contiene 111 parole su temi familiari ai bambini: animali, cibo, mezzi di trasporto, natura, personaggi delle fiabe e altro ancora. Sotto ogni disegno è stampata una parola in inglese.",
+        },
+        {
+          q: "Nel libro ci sono la trascrizione fonetica o indicazioni sulla pronuncia delle parole inglesi?",
+          a: "No. Sotto ogni immagine è stampata soltanto la parola inglese, in grandi lettere a contorno che si possono colorare. Il libro non contiene trascrizioni né indicazioni sulla pronuncia. Se non si conosce la pronuncia, la si può ascoltare con un traduttore sul telefono.",
+        },
+        {
+          q: "Qual è la differenza tra l'edizione con le parole inglesi e quella con le parole spagnole?",
+          a: "Solo la lingua della parola sotto il disegno: in un'edizione le parole sono in inglese, nell'altra in spagnolo. I disegni, la carta, il formato e l'ordine delle pagine sono identici.",
+        },
+        {
+          q: "È normale se il bambino esce dai contorni mentre colora?",
+          a: "Sì. Il libro contiene disegni grandi e semplici con contorni spessi. A un anno il bambino può limitarsi a scarabocchiare sull'immagine, mentre più avanti comincia più spesso a colorare dentro i contorni. Non è necessario colorare il disegno con precisione.",
+        },
+        {
+          q: "Con che cosa è meglio colorare le immagini di questo libro?",
+          a: "Vanno bene matite colorate, pastelli a cera e pennarelli. Se un pennarello trapassa la carta, si può mettere un foglio in più sotto la pagina. Il retro di ogni disegno resta bianco.",
+        },
+        {
+          q: "Per quanto tempo il bambino potrà usare questo libro da colorare?",
+          a: "Il libro contiene 111 disegni, uno per pagina. Quanto a lungo verrà utilizzato dipende dal bambino: c'è chi colora un disegno alla volta e chi ne colora diversi di seguito.",
+        },
+        {
+          q: "Si può provare il libro prima di acquistarlo?",
+          a: "Sì. Si possono scaricare gratuitamente e stampare 10 pagine tratte direttamente dal libro. Non servono registrazione né indirizzo e-mail.",
+        },
+      ],
+      pair: "Lo stesso libro con le parole in spagnolo sotto i disegni:",
+      pairCta: "Prime parole in spagnolo",
+      metaTitle: "Prime parole in inglese - Libro da colorare per bambini da 1 a 3 anni",
+      metaDescription:
+        "111 grandi disegni con contorni spessi, uno per pagina, con una parola in inglese sotto il disegno, anch'essa da colorare. Per bambini da 1 a 3 anni.",
+      altCover: "Copertina del libro da colorare con parole in inglese e un leone",
+      altBannerLead:
+        "111 immagini da colorare e 111 parole in inglese, accanto alla copertina del libro da colorare con il leone",
+      altArt: [
+        "Pagina colorata del libro: un leone con sotto la parola inglese Lion",
+        "Pagina colorata del libro: una volpe con sotto la parola inglese Fox",
+        "Pagina colorata del libro: una mucca con sotto la parola inglese Cow",
+      ],
+      altGift: "Il regalo perfetto per i futuri artisti: una ciambella e matite colorate",
+    },
+    es: {
+      title: "Prime parole in spagnolo",
+      subtitle: "Libro da colorare per bambini da 1 a 3 anni",
+      head: {
+        top: "Libro da colorare e dizionario illustrato per bambini da 1 a 3 anni",
+        title: "Prime parole in spagnolo",
+        bottom:
+          "111 grandi disegni con contorni spessi. Sotto ogni immagine una parola in spagnolo.",
+      },
+      lead: [
+        "Immagini semplici da colorare con parole chiare in spagnolo.",
+        "Niente testi lunghi, niente grammatica, nessuna barriera linguistica. Nel libro ci sono solo grandi disegni, contorni spessi pensati per i più piccoli e una sola parola ben leggibile sotto ogni immagine.",
+        "È adatto sia a un primo approccio alla lingua sia ai bambini che la sentono a casa ogni giorno. Il bambino può colorare immagini familiari da solo o insieme ai genitori, trascorrendo il tempo in modo piacevole e divertente.",
+        "Dieci pagine del libro si possono stampare gratuitamente, prima dell'acquisto. Nessuna registrazione, nessun indirizzo e-mail, niente da compilare. E se al bambino piace, potrete acquistare il libro completo e continuare insieme a scoprire nuove parole, colorare e divertirvi.",
+      ],
+      forWhom:
+        "Per bambini da 1 a 3 anni e anche un po' più grandi, sia per un primo approccio alle parole spagnole sia per le famiglie in cui il bambino sente due lingue. Non c'è nulla da studiare appositamente: il bambino colora immagini familiari, le osserva e scopre gradualmente le parole scritte sotto i disegni. I genitori possono pronunciare queste parole ad alta voce e guardare e colorare le immagini insieme al bambino, senza lezioni, regole o compiti difficili.",
+      inside: [
+        "111 parole semplici in spagnolo, una parola sotto ogni immagine",
+        "Disegni grandi e facili da riconoscere per i bambini, con contorni spessi",
+        "La parola sotto il disegno è stampata in grandi lettere a contorno, anch'esse da colorare",
+        "Un disegno per pagina, il retro della pagina resta bianco",
+        "I disegni sono centrati sulla pagina, una disposizione comoda sia per destrimani sia per mancini",
+        "Temi familiari ai bambini: animali, cibo, mezzi di trasporto, natura, personaggi delle fiabe e altro ancora",
+        "All'inizio del libro c'è una pagina personalizzabile con il nome del bambino",
+        "114 pagine, grande formato 21,6 × 27,9 cm",
+      ],
+      parents: [
+        "Il bambino finisce da solo di colorare un'immagine e passa alla successiva",
+        "Le immagini grandi e semplici sono facili da colorare anche per i bambini più piccoli",
+        "Il libro è comodo da portare in viaggio, in sala d'attesa dal medico o da tenere a casa per una giornata di pioggia",
+        "Il libro è leggero e comodo da portare con sé",
+        "I bambini lo sfogliano anche senza matite e chiedono come si chiama ogni animale",
+        "Viene acquistato per il più piccolo della famiglia, quando i bambini più grandi hanno già bisogno di libri da colorare più complessi",
+      ],
+      rating: "Valutazione 4,9 su 5 su Amazon. I disegni sono identici in entrambe le edizioni.",
+      criticTitle: "Recensione indipendente",
+      critic: "5 stelle su 5, Readers' Favorite",
+      criticWhy:
+        "Sono stati evidenziati in particolare i contorni spessi e arrotondati, la posizione del disegno al centro della pagina e la parola sotto l'immagine, anch'essa da colorare.",
+      criticBy: "Maalin Ogaja, ottobre 2024",
+      whyTitle: "Perché questo libro è adatto a un primo approccio alla lingua",
+      why: [
+        "Non serve trasformare il primo approccio alla lingua in una lezione. Il bambino osserva immagini familiari e le colora, mentre un adulto può semplicemente nominare gli oggetti raffigurati.",
+        "Non serve conoscere bene la lingua. Sotto ogni immagine c'è una sola parola semplice. È facile leggerla, pronunciarla ad alta voce per il bambino e ripeterla insieme.",
+        "L'immagine aiuta a capire il significato della parola. Il bambino vede un oggetto familiare e, allo stesso tempo, la parola scritta sotto. In questo modo incontra le parole spagnole in un contesto facile da comprendere.",
+        "Si può usare il libro da soli o insieme. Il bambino può semplicemente colorare le immagini, mentre i genitori possono guardarle insieme a lui, nominare gli oggetti e ripetere le nuove parole.",
+        "Il libro è adatto alle diverse fasi dai 1 ai 3 anni e anche un po' oltre. All'inizio il bambino colora semplicemente i grandi disegni e ascolta i nomi degli oggetti. Più avanti può ripetere le parole e provare a colorare anche le lettere a contorno.",
+      ],
+      faq: [
+        {
+          q: "Non è troppo presto dare un libro da colorare a un bambino di un anno?",
+          a: "No. I disegni sono volutamente semplici e pensati per i più piccoli. A un anno il bambino può limitarsi a scarabocchiare sull'immagine, mentre a tre anni cerca già di colorare dentro i contorni. Per questo il libro può essere utilizzato nelle diverse fasi dai 1 ai 3 anni.",
+        },
+        {
+          q: "Se il bambino non conosce ancora l'spagnolo, gli sarà difficile usare il libro?",
+          a: "No. Il bambino colora semplicemente un'immagine familiare e vede la parola spagnolo scritta sotto. Non ci sono esercizi, regole o test e il bambino non deve saper leggere.",
+        },
+        {
+          q: "I genitori devono conoscere bene l'spagnolo?",
+          a: "No. Sotto ogni disegno è stampata una sola parola semplice in spagnolo. Il genitore può nominare l'oggetto raffigurato, leggere la parola ad alta voce oppure semplicemente colorare l'immagine insieme al bambino.",
+        },
+        {
+          q: "Quali parole spagnole ci sono nel libro?",
+          a: "Il libro contiene 111 parole su temi familiari ai bambini: animali, cibo, mezzi di trasporto, natura, personaggi delle fiabe e altro ancora. Sotto ogni disegno è stampata una parola in spagnolo.",
+        },
+        {
+          q: "Nel libro ci sono la trascrizione fonetica o indicazioni sulla pronuncia delle parole spagnole?",
+          a: "No. Sotto ogni immagine è stampata soltanto la parola spagnolo, in grandi lettere a contorno che si possono colorare. Il libro non contiene trascrizioni né indicazioni sulla pronuncia. Se non si conosce la pronuncia, la si può ascoltare con un traduttore sul telefono.",
+        },
+        {
+          q: "Qual è la differenza tra l'edizione con le parole inglesi e quella con le parole spagnole?",
+          a: "Solo la lingua della parola sotto il disegno: in un'edizione le parole sono in inglese, nell'altra in spagnolo. I disegni, la carta, il formato e l'ordine delle pagine sono identici.",
+        },
+        {
+          q: "È normale se il bambino esce dai contorni mentre colora?",
+          a: "Sì. Il libro contiene disegni grandi e semplici con contorni spessi. A un anno il bambino può limitarsi a scarabocchiare sull'immagine, mentre più avanti comincia più spesso a colorare dentro i contorni. Non è necessario colorare il disegno con precisione.",
+        },
+        {
+          q: "Con che cosa è meglio colorare le immagini di questo libro?",
+          a: "Vanno bene matite colorate, pastelli a cera e pennarelli. Se un pennarello trapassa la carta, si può mettere un foglio in più sotto la pagina. Il retro di ogni disegno resta bianco.",
+        },
+        {
+          q: "Per quanto tempo il bambino potrà usare questo libro da colorare?",
+          a: "Il libro contiene 111 disegni, uno per pagina. Quanto a lungo verrà utilizzato dipende dal bambino: c'è chi colora un disegno alla volta e chi ne colora diversi di seguito.",
+        },
+        {
+          q: "Si può provare il libro prima di acquistarlo?",
+          a: "Sì. Si possono scaricare gratuitamente e stampare 10 pagine tratte direttamente dal libro. Non servono registrazione né indirizzo e-mail.",
+        },
+      ],
+      pair: "Lo stesso libro con le parole in inglese sotto i disegni:",
+      pairCta: "Prime parole in inglese",
+      metaTitle: "Prime parole in spagnolo - Libro da colorare per bambini da 1 a 3 anni",
+      metaDescription:
+        "111 grandi disegni con contorni spessi, uno per pagina, con una parola in spagnolo sotto il disegno, anch'essa da colorare. Per bambini da 1 a 3 anni.",
+      altCover: "Copertina del libro da colorare con parole in spagnolo e un leone",
+      altBannerLead:
+        "111 immagini da colorare e 111 parole in spagnolo, accanto alla copertina del libro da colorare con il leone",
+      altArt: [
+        "Pagina colorata del libro: un leone con sotto la parola spagnolo León",
+        "Pagina colorata del libro: una volpe con sotto la parola spagnolo Zorro",
+        "Pagina colorata del libro: una mucca con sotto la parola spagnolo Vaca",
+      ],
+      altGift: "Il regalo perfetto per i futuri artisti: una ciambella e matite colorate",
+    },
+  },
   /* ----------------------------- ИСПАНИЯ ----------------------------- */
   /* Одна страница: книга с английскими словами, магазин amazon.es.
 
@@ -1780,6 +2054,110 @@ export const euroPageOwn: Partial<
      на них французские, а слова на листах и под мотивами английские:
      так напечатано в самой книге, и покупатель должен узнать ее,
      когда попадет на Amazon.fr. */
+  /* Италия, книга с английскими словами. Свои шесть картинок
+     с итальянскими надписями. Слова на самих листах английские:
+     так напечатано в книге, и покупатель должен узнать ее, когда
+     попадет на Amazon.it.
+ */
+  "it-en": {
+    price: "5,99 €",
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/it-en-header.webp",
+        w: 1600,
+        h: 556,
+        wide: true,
+        alt: "111 immagini da colorare e 111 parole in inglese, accanto alla copertina del libro da colorare con il leone",
+      },
+      {
+        src: "/art/it-en-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pagina colorata del libro: un leone con sotto la parola inglese Lion",
+      },
+      {
+        src: "/art/it-en-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pagina colorata del libro: una volpe con sotto la parola inglese Fox",
+      },
+      {
+        src: "/art/it-en-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pagina colorata del libro: una mucca con sotto la parola inglese Cow",
+      },
+      {
+        src: "/art/it-en-motifs.webp",
+        w: 1400,
+        h: 864,
+        wide: true,
+        alt: "Immagini carine e semplici da colorare: dieci disegni del libro, ciascuno con una parola in inglese",
+      },
+      {
+        src: "/art/it-en-gift.webp",
+        w: 1600,
+        h: 638,
+        wide: true,
+        alt: "Il regalo perfetto per i futuri artisti: una ciambella e matite colorate",
+      },
+    ],
+  },
+  /* Италия, книга с испанскими словами. Свой набор картинок:
+     надписи на баннерах итальянские, обложка испанского издания,
+     а слова на самих листах испанские, как напечатано в книге. */
+  "it-es": {
+    price: "5,99 €",
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/it-es-header.webp",
+        w: 1600,
+        h: 556,
+        wide: true,
+        alt: "111 immagini da colorare e 111 parole in spagnolo, accanto alla copertina del libro da colorare con il leone",
+      },
+      {
+        src: "/art/it-es-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pagina colorata del libro: un leone con sotto la parola spagnola León",
+      },
+      {
+        src: "/art/it-es-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pagina colorata del libro: una volpe con sotto la parola spagnola Zorro",
+      },
+      {
+        src: "/art/it-es-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Pagina colorata del libro: una mucca con sotto la parola spagnola Vaca",
+      },
+      {
+        src: "/art/it-es-motifs.webp",
+        w: 1400,
+        h: 864,
+        wide: true,
+        alt: "Immagini carine e semplici da colorare: dieci disegni del libro, ciascuno con una parola in spagnolo",
+      },
+      {
+        src: "/art/it-es-gift.webp",
+        w: 1600,
+        h: 638,
+        wide: true,
+        alt: "Il regalo perfetto per i futuri artisti: una ciambella e matite colorate",
+      },
+    ],
+  },
   "fr-en": {
     price: "5,99 €",
     headTop: ["Livre de coloriage et imagier pour enfants", "de 1 à 3 ans"],
