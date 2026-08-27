@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AllDrawings from "@/components/AllDrawings";
 import Picker from "@/components/Picker";
 import { toolLabels } from "@/data/tool";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
@@ -540,31 +541,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </ul>
 
         {/* Все 111 по темам. Свернуто, чтобы не оглушать человека,
-            но лежит на той же странице и читается машиной. */}
-        <details className="all-drawings">
-          <summary>{w.seeAll}</summary>
-          <div className="all-drawings__body">
-            {groupOrder.map((g) => (
-              <section key={g}>
-                <h5>{groupTitles[g][l]}</h5>
-                <ul className="thumbs thumbs--small">
-                  {drawingsOfGroup(g).map((d) => (
-                    <li key={d.n}>
-                      <img
-                        src={drawingFile(d.n)}
-                        alt={d.name[l]}
-                        width={420}
-                        height={420}
-                        loading="lazy"
-                      />
-                      <span>{d.name[l]}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
-        </details>
+            но лежит на той же странице и читается машиной.
+
+            Названия всех рисунков стоят в коде всегда, а сами картинки
+            подставляются только после того, как человек раскрыл блок.
+            Раньше страница тянула все 111 картинок сразу, и на медленном
+            интернете открывалась долго. Для поиска ничего не изменилось:
+            он читает названия, а не картинки. */}
+        <AllDrawings lang={l} label={w.seeAll} />
 
         {/* ============ 4. Покупка. Первое из двух мест ============ */}
         {/* Кнопки стоят здесь, а не выше: человек уже посмотрел
