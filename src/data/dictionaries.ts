@@ -308,7 +308,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       faqElsewhereLead:
         "These come up just as often, but each belongs on a page of its own, next to the " +
         "rest of that subject. Repeating them here would only split the answer in two.",
-      faqAll: "All questions about the book and about coloring",
+      faqAll: "See all questions",
       coverAgeTitle: "What the age on the cover actually means",
       coverAgeLead:
         "There is no standard behind these numbers and no body that checks them. The publisher " +
@@ -520,7 +520,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       faqElsewhereLead:
         "Se preguntan con la misma frecuencia, pero cada una pertenece a su propia página, " +
         "junto al resto de ese tema. Repetirlas aquí solo partiría la respuesta en dos.",
-      faqAll: "Todas las preguntas sobre el libro y sobre colorear",
+      faqAll: "Ver todas las preguntas",
       coverAgeTitle: "Qué significa realmente la edad indicada en la portada",
       coverAgeLead:
         "No existe un estándar único que determine las edades indicadas en la portada de un " +
@@ -726,7 +726,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       faqElsewhereLead:
         "Эти вопросы задают не реже, но каждому место на своей странице, рядом с остальным " +
         "по той же теме. Повторить их здесь значило бы разделить ответ надвое.",
-      faqAll: "Все вопросы о книге и о раскрашивании",
+      faqAll: "Смотреть все вопросы",
       coverAgeTitle: "Что на самом деле означает возраст на обложке",
       coverAgeLead:
         "Возраст на обложке не определяется единым стандартом. Его указывает издатель, " +
