@@ -6,6 +6,7 @@ import { basisSlug } from "@/data/tool";
 import { agePages } from "@/data/agepages";
 import { proPages } from "@/data/propages";
 import { euroPages } from "@/data/euro";
+import { freePages } from "@/data/free";
 import { SITE_URL, SITE_UPDATED } from "@/lib/site";
 import { homePath, sectionPath, sectionSlugs, itemPath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -72,6 +73,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
      эти адреса вовсе: изнутри сайта на них никто не ссылается, они
      живут отдельным крылом и связаны только попарно между собой. */
   for (const p of euroPages) {
+    out.push({ url: SITE_URL + p.path, lastModified, priority: 0.8 });
+  }
+
+  /* Восемь страниц бесплатной печати. Стоят наравне с торговыми:
+     именно на них приходит человек с запросом "распечатать раскраски
+     бесплатно", и запрос этот набирают чаще, чем ищут книгу. */
+  for (const p of freePages) {
     out.push({ url: SITE_URL + p.path, lastModified, priority: 0.8 });
   }
 

@@ -3,6 +3,7 @@ import { dictionaries, activeLangs, navFor } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
 import { homePath, sectionPath } from "@/lib/routes";
 import { euroLangs, euroPath, euroCountry } from "@/data/euro";
+import { freeLangs, freePath } from "@/data/free";
 import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
 
 /* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
@@ -221,6 +222,30 @@ export function Footer({ lang }: { lang: UiLang }) {
             <a href={euroPath("canada", "es")} rel="nofollow">
               исп
             </a>
+          </span>
+        </p>
+      ) : null}
+
+      {/* Строка для владельца: восемь страниц бесплатной печати.
+          Отдельно от торговых, потому что это другой материал
+          и другой запрос: человек ищет не книгу, а листы для печати. */}
+      {lang === "ru" ? (
+        <p style={{ fontSize: "var(--t-micro)", opacity: 0.8 }}>
+          <span data-nosnippet>
+            Бесплатная печать:{" "}
+            {freeLangs.map((l, i) => (
+              <span key={l}>
+                {i > 0 ? " · " : ""}
+                {euroCountry[l]}{" "}
+                <a href={freePath(l, "en")} rel="nofollow">
+                  англ
+                </a>
+                {" / "}
+                <a href={freePath(l, "es")} rel="nofollow">
+                  исп
+                </a>
+              </span>
+            ))}
           </span>
         </p>
       ) : null}
