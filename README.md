@@ -1,61 +1,55 @@
-Toddler Coloring Book. Страницы для зарубежных рынков.
+# Toddler Coloring Book
 
-Восемь европейских, по две на страну:
-/de/malbuch-erste-woerter-englisch          немецкая, английские слова
-/de/malbuch-erste-woerter-spanisch          немецкая, испанские слова
-/fr/coloriage-premiers-mots-anglais         французская, английские слова
-/fr/coloriage-premiers-mots-espagnol        французская, испанские слова
-/nl/kleurboek-eerste-woorden-engels         голландская, английские слова
-/nl/kleurboek-eerste-woorden-spaans         голландская, испанские слова
-/pl/kolorowanka-pierwsze-slowa-angielski    польская, английские слова
-/pl/kolorowanka-pierwsze-slowa-hiszpanski   польская, испанские слова
+Source for [toddlercoloringbook.com](https://www.toddlercoloringbook.com), a
+reference site about first coloring books for children ages 1 to 3.
 
-Две новые:
-/espana/libro-de-colorear-primeras-palabras-en-ingles   Испания, английские слова
-/canada/coloring-book-first-words-in-spanish            Канада, испанские слова
+The site answers the questions parents actually ask before and after they hand
+a small child a crayon: whether one year old is too young, why a toddler
+colors straight over the picture, what to do when a marker bleeds through the
+page, which drawings suit which stage. It is published by Magic of Discoveries
+LLC, a children's book publisher in Miami, Florida.
 
-Про испанскую страницу. У Испании страница одна: книга с испанскими
-словами испанцу не нужна, поэтому блока про вторую книгу на ней нет.
-Папка называется espana, а не es, потому что папка es занята испанским
-языком самого сайта.
+Ten pages from one of the publisher's coloring books can be printed from the
+site for free, in US Letter and A4, with no sign-up and no email address.
 
-Страница написана на языке Испании, а не на том испанском, что стоит
-на сайте: там обращение на "вы" и слово crayón для Америки, здесь
-обращение на "ты" и слова pinturas, rotulador. Заголовок блока
-с бесплатными листами тоже другой. Все это разводит новую страницу
-с испанским разделом сайта, чтобы в поиске они не спорили.
+## What is here
 
-Ссылка в подвале ведет на испанский раздел сайта, а не на английский,
-поэтому приписки про язык там нет.
+- Guides, stage pages and age pages about early coloring
+- A FAQ in three languages
+- Free printable sheets
+- Pages for daycares, home visiting programs and speech therapy practices
+- Market pages for buyers outside the United States
 
-Цена 5,99 евро, сверено с карточкой на amazon.es 26 августа 2026 года.
+The site itself is published in English, Spanish and Russian. The market pages
+stand apart from that three-language system: each one is written for a single
+country in the language spoken there, and links to that country's Amazon store.
 
-Что поменялось в общем коде, чтобы это стало возможно:
-- у страны может быть одна страница вместо двух (euroSinglePages)
-- блок про вторую книгу рисуется, только если она есть
-- у страны может быть свой адрес ссылки в подвале (footerLinkHref)
-Восемь европейских страниц от этих правок не изменились.
+| Path | Country | Language |
+| --- | --- | --- |
+| `/de/malbuch-erste-woerter-englisch` | Germany | German |
+| `/de/malbuch-erste-woerter-spanisch` | Germany | German |
+| `/fr/coloriage-premiers-mots-anglais` | France | French |
+| `/fr/coloriage-premiers-mots-espagnol` | France | French |
+| `/nl/kleurboek-eerste-woorden-engels` | Netherlands | Dutch |
+| `/nl/kleurboek-eerste-woorden-spaans` | Netherlands | Dutch |
+| `/pl/kolorowanka-pierwsze-slowa-angielski` | Poland | Polish |
+| `/pl/kolorowanka-pierwsze-slowa-hiszpanski` | Poland | Polish |
+| `/espana/libro-de-colorear-primeras-palabras-en-ingles` | Spain | Spanish |
+| `/canada/coloring-book-first-words-in-spanish` | Canada | English |
 
-Про канадскую страницу. Страница одна и на английском: там ждут
-человека, который ищет испанские слова для ребенка и набирает запрос
-по-английски. Папка называется canada, а не en, потому что папка en
-занята английским языком самого сайта.
+## Stack
 
-Отличий от остальных два, оба по решению владельца:
-- цена $9.99 CAD, с буквами валюты: в стране ходят два доллара
-- бесплатные листы выдаются в формате Letter, а не A4: канадские
-  домашние принтеры заряжены именно такой бумагой (euroUi.sheetSize)
+Next.js with the App Router, TypeScript, deployed on Vercel. Pages are static.
+Content lives in `src/data`, shared layout in `src/components`, images and
+printable PDFs in `public`.
 
-Заголовок блока с листами на канадской странице отличается от
-английской страницы сайта нарочно, чтобы Google не счел их повтором.
+```
+npm install
+npm run dev     # local development
+npm run build   # production build
+```
 
-Картинки испанской страницы лежат в public/art с именами es-en-*.webp.
-Три листа со львом, лисой и коровой те же самые, что на французской,
-голландской и польской английских страницах.
+## License
 
-Картинки канадской страницы лежат в public/art с именами ca-es-*.webp.
-Три листа со львом, лисой и коровой те же самые, что на французской,
-голландской и польской испанских страницах.
-
-Все десять страниц готовы полностью: свои тексты, свое оформление,
-свои шесть картинок.
+Site code may be read for reference. Text, illustrations and printable sheets
+are the property of Magic of Discoveries LLC and are not licensed for reuse.
