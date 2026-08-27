@@ -148,7 +148,7 @@ export default function FreePage({
           в мелкой строке стоит ссылкой: это первое из трех мест,
           откуда человек может уйти к книге, и единственное, которое
           он видит, не прокрутив ни строки. */}
-      <header className="euro-head">
+      <header className="euro-head free-head">
         <p className="euro-head__top">
           <Link href={bookUrl}>{c.head.top}</Link>
         </p>
