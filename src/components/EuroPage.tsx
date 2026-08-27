@@ -12,6 +12,7 @@ import {
   euroPageOwn,
   pageKey,
   euroAmazonUrl,
+  euroPriceExact,
   BOOK_SIZE_CM,
   type EuroLang,
   type EditionLang,
@@ -170,6 +171,19 @@ export default function EuroPage({
             : undefined,
           euroAmazonUrl(lang, b.asin),
         ].filter(Boolean),
+        /* Цена только там, где число сверено с карточкой магазина.
+           Смотри пояснение у euroPriceExact. */
+        offers: euroPriceExact[lang]
+          ? {
+              "@type": "Offer",
+              price: euroPriceExact[lang]!.amount,
+              priceCurrency: euroPriceExact[lang]!.currency,
+              availability: "https://schema.org/InStock",
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@type": "Organization", name: "Amazon" },
+              url: euroAmazonUrl(lang, b.asin),
+            }
+          : undefined,
       },
       {
         "@type": "FAQPage",

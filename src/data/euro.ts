@@ -65,11 +65,39 @@ export const euroAmazonUrl = (lang: EuroLang, asin: string) =>
    26 августа 2026 года: там стоит 5,99 евро, налог уже включен,
    и по его решению на французских страницах стоит точная цена,
    а не округленная. Если магазин цену поменяет, поменять и здесь. */
+/* Точная цена числом, для машинной записи о книге.
+
+   Числа взяты с карточек магазинов, сверено 26 августа 2026 года:
+   Франция 5,99 EUR, Голландия 6,41 EUR, Польша 30,44 PLN,
+   Испания 5,99 EUR, Канада 9,99 CAD.
+
+   Германия 5,99 EUR по данным владельца: в KDP для Германии задана
+   та же цена, что для Франции и Испании. Саму карточку amazon.de
+   проверить не удалось, она открывалась с американским адресом
+   доставки и показывала цену в долларах.
+
+   Округленное число в машинную запись ставить нельзя:
+   Google требует, чтобы цена в разметке совпадала с ценой у продавца.
+   Лучше не указывать вовсе, чем указать неверно.
+
+   Если магазин цену поменяет, поменять и здесь. Иначе разметка
+   начнет врать, а это хуже, чем ее отсутствие. */
+export const euroPriceExact: Partial<
+  Record<EuroLang, { amount: string; currency: string }>
+> = {
+  de: { amount: "5.99", currency: "EUR" },
+  fr: { amount: "5.99", currency: "EUR" },
+  nl: { amount: "6.41", currency: "EUR" },
+  pl: { amount: "30.44", currency: "PLN" },
+  espana: { amount: "5.99", currency: "EUR" },
+  canada: { amount: "9.99", currency: "CAD" },
+};
+
 export const euroPrice: Record<EuroLang, string> = {
-  de: "ca. 6 €",
+  de: "5,99 €",
   fr: "5,99 €",
-  nl: "€ 6",
-  pl: "30 zł",
+  nl: "€ 6,41",
+  pl: "30,44 zł",
   /* Испания: сверено с карточкой на amazon.es 26 августа 2026 года,
      5,99 евро, налог включен. */
   espana: "5,99 €",
@@ -1617,7 +1645,7 @@ export const euroPageOwn: Partial<
      голландские, слова на листах и под мотивами английские: так
      напечатано в самой книге. */
   "nl-en": {
-    price: "€ 6",
+    price: "€ 6,41",
     headTop: ["Kleurboek en beeldwoordenboek voor kinderen", "van 1 tot 3 jaar"],
     size: "21,6 × 27,9 cm",
     strip: [
@@ -1668,7 +1696,7 @@ export const euroPageOwn: Partial<
   /* Голландия, книга с испанскими словами. Надписи на баннерах
      голландские, слова на листах и под мотивами испанские. */
   "nl-es": {
-    price: "€ 6",
+    price: "€ 6,41",
     headTop: ["Kleurboek en beeldwoordenboek voor kinderen", "van 1 tot 3 jaar"],
     size: "21,6 × 27,9 cm",
     strip: [
@@ -1719,7 +1747,7 @@ export const euroPageOwn: Partial<
   /* Польша, книга с английскими словами. Надписи на баннерах
      польские, слова на листах и под мотивами английские. */
   "pl-en": {
-    price: "30 zł",
+    price: "30,44 zł",
     headTop: ["Kolorowanka i słownik obrazkowy dla dzieci", "w wieku od 1 do 3 lat"],
     size: "21,6 × 27,9 cm",
     strip: [
@@ -1770,7 +1798,7 @@ export const euroPageOwn: Partial<
   /* Польша, книга с испанскими словами. Надписи на баннерах польские,
      слова на листах и под мотивами испанские. */
   "pl-es": {
-    price: "30 zł",
+    price: "30,44 zł",
     headTop: ["Kolorowanka i słownik obrazkowy dla dzieci", "w wieku od 1 do 3 lat"],
     size: "21,6 × 27,9 cm",
     strip: [
@@ -1933,7 +1961,7 @@ export const euroPageOwn: Partial<
        В кабинете KDP на август 2026 стоит 5,99 евро без налога, немец
        платит 6,41 евро с налогом. Округленное число остается правдой
        и при том, и при другом. */
-    price: "ca. 6 €",
+    price: "5,99 €",
     headTop: ["Malbuch und Bildwörterbuch für Kinder", "von 1 bis 3 Jahren"],
     /* Немцы пишут размер через знак умножения, а не через букву x.
        Общий BOOK_SIZE_CM трогать нельзя: он стоит на всех восьми
@@ -1985,7 +2013,7 @@ export const euroPageOwn: Partial<
     ],
   },
   "de-es": {
-    price: "ca. 6 €",
+    price: "5,99 €",
     headTop: ["Malbuch und Bildwörterbuch für Kinder", "von 1 bis 3 Jahren"],
     size: "21,6 × 27,9 cm",
     strip: [
