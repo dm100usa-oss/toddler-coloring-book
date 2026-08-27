@@ -213,6 +213,14 @@ export function Footer({ lang }: { lang: UiLang }) {
                 </a>
               </span>
             ))}
+            {" · Испания "}
+            <a href={euroPath("espana", "en")} rel="nofollow">
+              англ
+            </a>
+            {" · Канада "}
+            <a href={euroPath("canada", "es")} rel="nofollow">
+              исп
+            </a>
           </span>
         </p>
       ) : null}

@@ -26,9 +26,17 @@ import { editions } from "./book";
    переводчик.
    ================================================================== */
 
-export type EuroLang = "de" | "fr" | "nl" | "pl";
+/* Испания и Канада стоят в этом же списке, но живут немного иначе.
+   В четырех европейских странах у нас по две страницы, английская
+   книга и испанская. В Испании нужна только английская: испанская
+   книга испанцу не нужна. В Канаде наоборот. Поэтому страна тут есть,
+   а страниц у нее одна, и адрес у нее по названию страны: папки es
+   и en заняты языками самого сайта. */
+export type EuroLang = "de" | "fr" | "nl" | "pl" | "espana" | "canada";
 export type EditionLang = "en" | "es";
 
+/* Только те страны, у которых по две страницы. Испания и Канада
+   в этот список не входят, они добавлены отдельно в euroExtraPages. */
 export const euroLangs: EuroLang[] = ["de", "fr", "nl", "pl"];
 export const editionLangs: EditionLang[] = ["en", "es"];
 
@@ -39,6 +47,8 @@ export const amazonHost: Record<EuroLang, string> = {
   fr: "www.amazon.fr",
   nl: "www.amazon.nl",
   pl: "www.amazon.pl",
+  espana: "www.amazon.es",
+  canada: "www.amazon.ca",
 };
 
 export const euroAmazonUrl = (lang: EuroLang, asin: string) =>
@@ -60,6 +70,13 @@ export const euroPrice: Record<EuroLang, string> = {
   fr: "5,99 €",
   nl: "€ 6",
   pl: "30 zł",
+  /* Испания: сверено с карточкой на amazon.es 26 августа 2026 года,
+     5,99 евро, налог включен. */
+  espana: "5,99 €",
+  /* Канада: сверено с карточкой на amazon.ca 26 августа 2026 года.
+     Буквы валюты обязательны: в стране ходят два доллара, канадский
+     и американский, и без пометки число читается двояко. */
+  canada: "$9.99 CAD",
 };
 
 /* Оценка на европейских карточках. Само число одно и то же во всех
@@ -106,9 +123,10 @@ export type EuroCopy = {
   whyTitle?: string;
   why?: string[];
   faq: { q: string; a: string }[];
-  /** Строка со ссылкой на такую же страницу про вторую книгу. */
-  pair: string;
-  pairCta: string;
+  /** Строка со ссылкой на такую же страницу про вторую книгу.
+     У страны с одной страницей этих двух строк нет, и блок не рисуется. */
+  pair?: string;
+  pairCta?: string;
   /** Что для поиска: заголовок вкладки и описание под ссылкой. */
   metaTitle: string;
   metaDescription: string;
@@ -150,7 +168,16 @@ export type EuroUi = {
   criticSource: string;
   footerAbout: string;
   footerLink: string;
+  /* Приписка "на английском" рядом со ссылкой в подвале. У Испании
+     ссылка ведет на испанский раздел сайта, приписка там не нужна
+     и остается пустой. */
   footerLinkNote: string;
+  /* Куда ведет ссылка в подвале. По умолчанию английский раздел сайта. */
+  footerLinkHref?: string;
+  /* Размер бумаги для бесплатных листов. По умолчанию A4: так печатают
+     почти во всем мире. В Канаде домашние принтеры заряжены бумагой
+     Letter, и лист A4 там выйдет с лишними полями. */
+  sheetSize?: "letter" | "a4";
 };
 
 /* ==================================================================
@@ -307,6 +334,104 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     footerLink: "Wszystko o pierwszych kolorowankach dla dzieci od 1 do 3 lat",
     footerLinkNote: "po angielsku",
   },
+  /* Испания. Язык страницы испанский, но не тот испанский, что стоит
+     на самом сайте: сайт написан для Америки, обращение на "вы"
+     и слово crayón. Здесь Испания, обращение на "ты" и слова, которые
+     привычны там: pinturas, rotulador. Это заодно разводит страницу
+     с испанским разделом сайта, чтобы они не спорили в поиске.
+
+     Ссылка в подвале ведет на испанский раздел сайта, а не
+     на английский, поэтому приписка про язык пустая. */
+  espana: {
+    htmlLang: "es",
+    locale: "es-ES",
+    inside: "Qué hay en el libro",
+    forWhom: "Para quién es este libro",
+    parents: "Qué dicen los padres",
+    ratingTitle: "Valoraciones",
+    criticTitle: "Reseña independiente",
+    faq: "Preguntas frecuentes",
+    buyAmazon: "Comprar en Amazon.es",
+    buyFree: "Imprime 10 páginas gratis",
+    priceLabel: "tapa blanda en Amazon.es",
+    buyNote: "Venta y envío por Amazon.",
+    freeTitle: "Diez páginas del libro para imprimir gratis",
+    freeLead:
+      "Son páginas reales del libro: debajo de cada dibujo está la misma palabra que en el libro. Imprime una, dale un lápiz de color a tu hijo y en cinco minutos sabrás si este libro le va bien. Sin registro y sin correo electrónico.",
+    freeDownload: "Descargar",
+    freeFormat: "Formato A4, para imprimir en casa.",
+    freeAlt: (name: string) => `${name}: página para colorear del libro`,
+    animals: {
+      lion: "León", elephant: "Elefante", giraffe: "Jirafa", zebra: "Cebra",
+      rhino: "Rinoceronte", monkey: "Mono", crocodile: "Cocodrilo",
+      kangaroo: "Canguro", bear: "Oso", fox: "Zorro",
+    },
+    labelAge: "Edad",
+    labelDrawings: "Dibujos",
+    labelPages: "Páginas",
+    labelSize: "Formato",
+    labelPublished: "Fecha de publicación",
+    labelAuthor: "Autor",
+    labelPublisher: "Editorial",
+    criticSource: "Leer la reseña completa",
+    footerAbout:
+      "Publicado por Magic of Discoveries LLC, editorial de libros infantiles de Miami, Florida.",
+    footerLink:
+      "Todo sobre los primeros libros de colorear para niños de 1 a 3 años",
+    footerLinkNote: "",
+    footerLinkHref: "/es",
+  },
+
+  /* Канада. Язык страницы английский: человека, который ищет
+     испанские слова для ребенка, мы ждем именно с английским
+     запросом. Магазин amazon.ca.
+
+     Листы выдаются в формате Letter, а не A4: в Канаде домашние
+     принтеры заряжены именно такой бумагой.
+
+     Заголовок блока с листами отличается от английской страницы
+     сайта нарочно: там "Ten pages from the book, free to print",
+     и два одинаковых заголовка на одном домене Google счел бы
+     за повтор. */
+  canada: {
+    htmlLang: "en",
+    locale: "en-CA",
+    inside: "What's inside the book",
+    forWhom: "Who this book is for",
+    parents: "What parents say",
+    ratingTitle: "Ratings",
+    criticTitle: "Independent review",
+    faq: "Frequently asked questions",
+    buyAmazon: "Buy on Amazon.ca",
+    buyFree: "Print 10 pages for free",
+    priceLabel: "paperback on Amazon.ca",
+    buyNote: "Sold and shipped by Amazon.",
+    freeTitle: "Ten sheets from the book, free to print",
+    freeLead:
+      "These are actual pages from the book, with the same word under each drawing as in the book. Print one, give your child a colored pencil, and in five minutes you'll know whether this kind of book is a good fit for your child. No sign-up and no email address.",
+    freeDownload: "Download",
+    freeFormat: "Letter format, for printing at home.",
+    freeAlt: (name: string) => `${name}: coloring page from the book`,
+    animals: {
+      lion: "Lion", elephant: "Elephant", giraffe: "Giraffe", zebra: "Zebra",
+      rhino: "Rhino", monkey: "Monkey", crocodile: "Crocodile",
+      kangaroo: "Kangaroo", bear: "Bear", fox: "Fox",
+    },
+    labelAge: "Age",
+    labelDrawings: "Drawings",
+    labelPages: "Pages",
+    labelSize: "Format",
+    labelPublished: "Published",
+    labelAuthor: "Author",
+    labelPublisher: "Publisher",
+    criticSource: "Read the full review",
+    footerAbout:
+      "Published by Magic of Discoveries LLC, a children's book publisher in Miami, Florida.",
+    footerLink: "Everything about first coloring books for children ages 1 to 3",
+    footerLinkNote: "",
+    footerLinkHref: "/en",
+    sheetSize: "letter",
+  },
 };
 
 /* ==================================================================
@@ -334,6 +459,18 @@ export const euroSlug: Record<EuroLang, Record<EditionLang, string>> = {
     en: "kolorowanka-pierwsze-slowa-angielski",
     es: "kolorowanka-pierwsze-slowa-hiszpanski",
   },
+  /* У Испании работает только английская строка. Испанская стоит
+     для порядка и никуда не ведет: такой страницы нет. */
+  espana: {
+    en: "libro-de-colorear-primeras-palabras-en-ingles",
+    es: "libro-de-colorear-primeras-palabras-en-espanol",
+  },
+  /* У Канады работает только испанская строка: там ждут человека,
+     которому нужен именно испанский. */
+  canada: {
+    en: "coloring-book-first-words-in-english",
+    es: "coloring-book-first-words-in-spanish",
+  },
 };
 
 export const euroPath = (lang: EuroLang, ed: EditionLang) =>
@@ -346,6 +483,8 @@ export const euroCountry: Record<EuroLang, string> = {
   fr: "Франция",
   nl: "Голландия",
   pl: "Польша",
+  espana: "Испания",
+  canada: "Канада",
 };
 
 /* ==================================================================
@@ -360,7 +499,10 @@ export const euroCountry: Record<EuroLang, string> = {
    печать с одной стороны, ребенок доводит рисунок до конца сам.
    ================================================================== */
 
-export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
+export const euroCopy: Record<
+  EuroLang,
+  Partial<Record<EditionLang, EuroCopy>>
+> = {
   /* ---------------------------- НЕМЕЦКИЙ ---------------------------- */
   de: {
     en: {
@@ -1090,6 +1232,194 @@ export const euroCopy: Record<EuroLang, Record<EditionLang, EuroCopy>> = {
       altGift: "Idealny prezent dla przyszłych artystów: pączek i kredki",
     },
   },
+
+  /* ----------------------------- ИСПАНИЯ ----------------------------- */
+  /* Одна страница: книга с английскими словами, магазин amazon.es.
+
+     Она про другое, чем испанский раздел сайта. Там справочник о первых
+     раскрасках, здесь первые слова чужого языка. Разный заголовок,
+     разный адрес, разный первый абзац, поэтому в поиске они
+     не спорят друг с другом. Блока про вторую книгу здесь нет:
+     книга с испанскими словами испанцу не нужна. */
+  espana: {
+    en: {
+      title: "Primeras palabras en inglés",
+      subtitle: "Libro de colorear para niños de 1 a 3 años",
+      head: {
+        top: "Libro de colorear y diccionario ilustrado para niños de 1 a 3 años",
+        title: "Primeras palabras en inglés",
+        bottom:
+          "111 dibujos grandes con contorno grueso. Debajo de cada imagen, una palabra en inglés.",
+      },
+      lead: [
+        "Dibujos sencillos para colorear con palabras claras en inglés.",
+        "Sin textos largos, sin gramática, sin barrera del idioma. En el libro solo hay dibujos grandes con contorno grueso, pensados para los más pequeños, y una sola palabra bien legible debajo de cada imagen.",
+        "Sirve tanto para el primer contacto con el inglés como para niños que ya lo oyen cada día en casa. Tu hijo puede colorear imágenes conocidas solo o contigo y pasar un rato divertido e interesante.",
+        "Diez páginas del libro se pueden imprimir gratis, incluso antes de comprarlo. Sin registro, sin correo electrónico, sin rellenar nada. Y si a tu hijo le gusta, puedes comprar el libro entero y seguir descubriendo juntos nuevas palabras, colorear y disfrutar de ese rato.",
+      ],
+      forWhom:
+        "Para niños de 1 a 3 años y algo mayores, tanto para el primer contacto con las palabras en inglés como para familias en las que el niño oye dos idiomas. Aquí no hay que aprender nada de forma especial: el niño colorea imágenes conocidas, las mira y va conociendo poco a poco las palabras escritas debajo de los dibujos. Los padres pueden pronunciar esas palabras en voz alta, mirar las imágenes y colorearlas junto con el niño, sin clases, sin reglas y sin ejercicios difíciles.",
+      inside: [
+        "111 palabras sencillas en inglés, una sola palabra debajo de cada imagen",
+        "Dibujos grandes con contorno grueso, fáciles de reconocer para un niño",
+        "La palabra bajo el dibujo está impresa en letras huecas grandes, que también se pueden colorear",
+        "Un dibujo por página, el reverso queda en blanco",
+        "Los dibujos están centrados en la página: una disposición cómoda tanto para diestros como para zurdos",
+        "Temas conocidos: animales, comida, vehículos, naturaleza, personajes de cuento y muchos más",
+        "Al principio del libro, una página para escribir el nombre del niño",
+        "114 páginas en formato grande de 21,6 × 27,9 cm",
+      ],
+      parents: [
+        "El niño termina su dibujo por sí mismo y pasa la página para seguir con el siguiente",
+        "Las imágenes grandes y sencillas son fáciles de colorear, incluso para un niño pequeño",
+        "El libro es ideal para un viaje largo, una sala de espera o un día de lluvia en casa",
+        "El libro es ligero y fácil de llevar",
+        "Los niños lo hojean incluso sin lápices de colores y preguntan cómo se llama cada animal",
+        "Se compra para el más pequeño de la familia, cuando los mayores ya necesitan libros de colorear más difíciles",
+      ],
+      rating: "Valoración de 5,0 sobre 5 estrellas en Amazon.",
+      criticTitle: "Reseña independiente",
+      critic: "5 de 5 estrellas, Readers' Favorite",
+      criticBy: "Maalin Ogaja, octubre de 2024",
+      criticWhy:
+        "Se destacan especialmente el contorno grueso y redondeado, el dibujo centrado en la página y la palabra bajo la imagen, que también se puede colorear.",
+      whyTitle: "Por qué este libro sirve para el primer contacto con el idioma",
+      why: [
+        "El contacto con un idioma no tiene por qué ser una clase. El niño mira imágenes conocidas y las colorea, y un adulto puede simplemente nombrar lo que aparece en ellas.",
+        "No hace falta que tú mismo conozcas bien el idioma. Debajo de cada imagen hay una sola palabra sencilla. Es fácil de leer, de pronunciar en voz alta y de repetir junto al niño.",
+        "La imagen ayuda a entender la palabra. El niño ve un objeto conocido y, al mismo tiempo, la palabra escrita debajo. Así entra en contacto con palabras en inglés en un contexto que puede entender.",
+        "Solo o con sus padres: el niño puede limitarse a colorear las imágenes. Los padres también pueden mirarlas con él, nombrar los objetos y repetir juntos las palabras nuevas.",
+        "El libro es adecuado para niños de 1 a 3 años y algo mayores. Al principio, el niño simplemente colorea las imágenes grandes y oye el nombre de las cosas. Más adelante puede repetir las palabras e intentar colorear también las letras huecas.",
+      ],
+      faq: [
+        {
+          q: "¿Un año no es demasiado pronto?",
+          a: "No. Los dibujos se han diseñado deliberadamente para ser sencillos y adecuados para los más pequeños. Un niño de un año quizá todavía garabatee por encima de la imagen, mientras que uno de tres ya intenta colorear dentro del contorno. Por eso el libro se puede usar en distintas etapas entre 1 y 3 años.",
+        },
+        {
+          q: "Mi hijo todavía no conoce este idioma. ¿No le resultará difícil el libro?",
+          a: "No. El niño simplemente colorea la imagen y ve la palabra escrita debajo. No hay ejercicios y el niño no necesita saber leer.",
+        },
+        {
+          q: "¿Qué diferencia hay entre las dos ediciones?",
+          a: "Solo el idioma de la palabra bajo el dibujo. Los dibujos, el papel, el formato y el orden de las páginas son idénticos.",
+        },
+        {
+          q: "¿Qué hago si el rotulador traspasa el papel?",
+          a: "Pon una hoja adicional debajo de la página. El libro está impreso por una sola cara, así que la marca queda en el reverso en blanco y no en el dibujo siguiente.",
+        },
+      ],
+      metaTitle:
+        "Primeras palabras en inglés - Libro de colorear para niños de 1 a 3 años",
+      metaDescription:
+        "111 dibujos grandes con contorno grueso, uno por página, con una palabra en inglés debajo que también se puede colorear. Para niños de 1 a 3 años.",
+      altCover:
+        "Portada del libro de colorear con las palabras en inglés y un león",
+      altBannerLead:
+        "111 imágenes para colorear y 111 palabras en inglés, junto a la portada del libro con el león",
+      altArt: [
+        "Sencillo: una tortuga de contorno grueso, un solo motivo en la página",
+        "Grande: una vaca que ocupa casi toda la hoja, coloreada por un niño pequeño",
+        "Conocido: un coche rojo sonriente, uno de los objetos cotidianos del libro",
+      ],
+      altGift:
+        "El regalo ideal para futuros artistas: un dónut y lápices de colores",
+    },
+  },
+
+  /* ------------------------------ КАНАДА ----------------------------- */
+  /* Одна страница: книга с испанскими словами, магазин amazon.ca.
+
+     Страница на английском: мы ждем человека, который ищет испанские
+     слова для ребенка и набирает запрос по-английски. Это может быть
+     и семья, где испанский слышат дома, и родитель, который хочет
+     познакомить ребенка с языком.
+
+     Блока про вторую книгу здесь нет: отправлять такого человека
+     к английской книге незачем. */
+  canada: {
+    es: {
+      title: "First words in Spanish",
+      subtitle: "Coloring book for children ages 1 to 3",
+      head: {
+        top: "Coloring book and picture dictionary for children ages 1 to 3",
+        title: "First words in Spanish",
+        bottom:
+          "111 large drawings with thick outlines. One Spanish word under every picture.",
+      },
+      lead: [
+        "Simple pictures to color, with clear words in Spanish.",
+        "No long texts, no grammar, no language barrier. The book contains only large drawings with thick outlines, designed for young children, with one clearly printed word under each picture.",
+        "Works both as a first introduction to Spanish and for children who already hear the language at home. Your child can color familiar pictures alone or with you and enjoy spending time together.",
+        "Ten pages from the book can be printed for free, even before you buy it. No sign-up, no email address, nothing to fill in. And if your child enjoys them, you can buy the whole book and keep discovering new words together, coloring and enjoying the time you spend together.",
+      ],
+      forWhom:
+        "For children ages 1 to 3 and a little older, both as a first introduction to Spanish words and for families where a child hears two languages. There is nothing here that needs to be formally studied: the child colors familiar pictures, looks at them, and gradually becomes familiar with the words printed under the drawings. Parents can say the words out loud, look at the pictures with the child, and color them together, with no lessons, no rules, and no difficult exercises.",
+      inside: [
+        "111 simple words in Spanish, one word under every picture",
+        "Large drawings with thick outlines, easy for a child to recognize",
+        "The word under the drawing is printed in large hollow letters that can be colored in too",
+        "One drawing per page, the back of the page stays blank",
+        "The drawings are centered on the page, making them comfortable for both right-handed and left-handed children.",
+        "Familiar themes: animals, food, vehicles, nature, fairy-tale characters and more",
+        "A page at the front of the book for the child's name",
+        "114 pages in a large 8.5 × 11 in (21.6 × 27.9 cm) format",
+      ],
+      parents: [
+        "The child finishes a drawing on their own and turns the page to start the next one",
+        "The large, simple pictures are easy to color, even for a young child",
+        "The book is perfect for a long drive, a waiting room or a rainy day at home",
+        "The book is lightweight and easy to take along",
+        "Children page through it even without pencils and ask what each animal is called",
+        "Parents often buy it for the youngest child in the family when the older children are ready for more challenging coloring books.",
+      ],
+      rating: "Rated 4.9 out of 5 stars on Amazon.",
+      criticTitle: "Independent review",
+      critic: "5 out of 5 stars, Readers' Favorite",
+      criticBy: "Maalin Ogaja, October 2024",
+      criticWhy:
+        "Highlighted in particular: the thick, rounded outline, the drawing centered on the page, and the word under the picture, which can also be colored in.",
+      whyTitle: "Why this book works as a first introduction to the language",
+      why: [
+        "A first introduction to a language does not have to be a lesson. The child looks at familiar pictures and colors them, while an adult can simply name what is shown in each picture.",
+        "You do not need to know the language well yourself. There is only one simple word under each picture. It is easy to read, say out loud, and repeat together with your child.",
+        "The picture helps make the word understandable. The child sees a familiar object and, at the same time, the word printed underneath it. This way, the child encounters Spanish words in a context they can understand.",
+        "Alone or with a parent, the child can simply color the pictures. Parents can also look at the pictures with the child, name the objects, and repeat the new words together.",
+        "The book is suitable for children ages 1 to 3 and a little older. At first, the child simply colors the large pictures and hears the names of the objects. Later, they can repeat the words and try coloring the hollow letters too.",
+      ],
+      faq: [
+        {
+          q: "Is one year old too early?",
+          a: "No. The drawings were deliberately designed to be simple and suitable for young children. A one-year-old may still scribble across the picture, while a three-year-old may already try to color inside the outline. The book can therefore be used at different stages between ages 1 and 3.",
+        },
+        {
+          q: "My child does not know this language yet. Will the book be too hard?",
+          a: "No. The child simply colors the picture and sees the word printed underneath. There are no exercises, and the child does not need to know how to read.",
+        },
+        {
+          q: "What is the difference between the two editions?",
+          a: "Only the language of the word under each drawing. The drawings, paper, format, and page order are identical.",
+        },
+        {
+          q: "What if a marker bleeds through the paper?",
+          a: "Slip an extra sheet under the page. The book is printed on one side only, so the mark stays on the blank back of the page and not on the next drawing.",
+        },
+      ],
+      metaTitle:
+        "First words in Spanish - Coloring book for children ages 1 to 3",
+      metaDescription:
+        "111 large drawings with thick outlines, one per page, with a Spanish word underneath that can be colored in too. For children ages 1 to 3.",
+      altCover: "Cover of the coloring book with the Spanish words and a lion",
+      altBannerLead:
+        "111 pictures to color and 111 words in Spanish, next to the cover of the coloring book with the lion",
+      altArt: [
+        "Simple: a turtle with a thick outline, one motif on the page",
+        "Large: a cow filling almost the whole sheet, colored by a young child",
+        "Familiar: a smiling red car, one of the everyday objects in the book",
+      ],
+      altGift: "The perfect gift for future artists: a donut and colored pencils",
+    },
+  },
 };
 
 /* ==================================================================
@@ -1154,6 +1484,14 @@ export type StripItem = {
 };
 
 export const pageKey = (lang: EuroLang, ed: EditionLang) => `${lang}-${ed}`;
+
+/* Текст страницы. У страны с одной страницей второй нет вовсе,
+   поэтому просить ее это ошибка сборки, а не пустая страница. */
+export const euroCopyOf = (lang: EuroLang, ed: EditionLang): EuroCopy => {
+  const c = euroCopy[lang][ed];
+  if (!c) throw new Error(`Нет текста страницы ${lang}-${ed}`);
+  return c;
+};
 
 export const euroPageOwn: Partial<
   Record<
@@ -1480,6 +1818,113 @@ export const euroPageOwn: Partial<
       },
     ],
   },
+  /* Испания, книга с английскими словами. Надписи на баннерах
+     испанские, слова на листах и под мотивами английские.
+     Три листа со львом, лисой и коровой те же самые, что стоят
+     на французской, голландской и польской английских страницах:
+     они английские везде. */
+  /* Канада, книга с испанскими словами. Надписи на баннерах
+     английские, слова на листах и под мотивами испанские.
+     Три листа со львом, лисой и коровой те же самые, что стоят
+     на французской, голландской и польской испанских страницах. */
+  "canada-es": {
+    price: "$9.99 CAD",
+    headTop: ["Coloring book and picture dictionary", "for children ages 1 to 3"],
+    size: "8.5 × 11 in (21.6 × 27.9 cm)",
+    strip: [
+      {
+        src: "/art/ca-es-header.webp",
+        w: 1600,
+        h: 532,
+        wide: true,
+        alt: "111 pictures to color and 111 words in Spanish, next to the cover of the coloring book with the lion",
+      },
+      {
+        src: "/art/ca-es-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Colored page from the book: a lion with the Spanish word León underneath",
+      },
+      {
+        src: "/art/ca-es-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Colored page from the book: a fox with the Spanish word Zorro underneath",
+      },
+      {
+        src: "/art/ca-es-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Colored page from the book: a cow with the Spanish word Vaca underneath",
+      },
+      {
+        src: "/art/ca-es-motifs.webp",
+        w: 1400,
+        h: 866,
+        wide: true,
+        alt: "Cute and simple pictures to color: ten drawings from the book, each with a Spanish word underneath",
+      },
+      {
+        src: "/art/ca-es-gift.webp",
+        w: 1600,
+        h: 541,
+        wide: true,
+        alt: "The perfect gift for future artists: a donut and colored pencils",
+      },
+    ],
+  },
+  "espana-en": {
+    price: "5,99 €",
+    headTop: ["Libro de colorear y diccionario ilustrado", "para niños de 1 a 3 años"],
+    size: "21,6 × 27,9 cm",
+    strip: [
+      {
+        src: "/art/es-en-header.webp",
+        w: 1600,
+        h: 555,
+        wide: true,
+        alt: "111 imágenes para colorear y 111 palabras en inglés, junto a la portada del libro con el león",
+      },
+      {
+        src: "/art/es-en-lion.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Página coloreada del libro: un león y debajo la palabra inglesa Lion",
+      },
+      {
+        src: "/art/es-en-fox.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Página coloreada del libro: un zorro y debajo la palabra inglesa Fox",
+      },
+      {
+        src: "/art/es-en-cow.webp",
+        w: 700,
+        h: 991,
+        wide: false,
+        alt: "Página coloreada del libro: una vaca y debajo la palabra inglesa Cow",
+      },
+      {
+        src: "/art/es-en-motifs.webp",
+        w: 1400,
+        h: 865,
+        wide: true,
+        alt: "Dibujos bonitos y sencillos para colorear: diez imágenes del libro, cada una con una palabra en inglés",
+      },
+      {
+        src: "/art/es-en-gift.webp",
+        w: 1600,
+        h: 540,
+        wide: true,
+        alt: "El regalo ideal para futuros artistas: un dónut y lápices de colores",
+      },
+    ],
+  },
   "de-en": {
     /* Цена приблизительная, и это намеренно. Задается она в долларах
        на Amazon.com, а каждый магазин пересчитывает ее сам: свой налог
@@ -1607,7 +2052,17 @@ export const euroBook = (ed: EditionLang) => ({
   size: BOOK_SIZE_CM,
 });
 
-/** Все восемь страниц одним списком: для карты сайта и сборки. */
-export const euroPages = euroLangs.flatMap((lang) =>
-  editionLangs.map((ed) => ({ lang, ed, path: euroPath(lang, ed) }))
-);
+/* Страны, у которых страница одна. Испания: только английская книга,
+   испанцу испанские слова не нужны. Канада: только испанская книга. */
+export const euroSinglePages: { lang: EuroLang; ed: EditionLang }[] = [
+  { lang: "espana", ed: "en" },
+  { lang: "canada", ed: "es" },
+];
+
+/** Все страницы этого крыла одним списком: для карты сайта и сборки. */
+export const euroPages = [
+  ...euroLangs.flatMap((lang) =>
+    editionLangs.map((ed) => ({ lang, ed }))
+  ),
+  ...euroSinglePages,
+].map(({ lang, ed }) => ({ lang, ed, path: euroPath(lang, ed) }));

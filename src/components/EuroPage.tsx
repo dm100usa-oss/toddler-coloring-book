@@ -4,7 +4,7 @@ import { editions } from "@/data/book";
 import { sheets, sheetPreview, sheetPdf } from "@/data/sheets";
 import {
   euroUi,
-  euroCopy,
+  euroCopyOf,
   euroArt,
   euroBook,
   euroPath,
@@ -38,7 +38,7 @@ import { SITE_URL, PUBLISHER, ADDRESS, AUTHOR, CATALOG_URL } from "@/lib/site";
    страница без заголовка хуже страницы без картинки. */
 
 export function euroMetadata(lang: EuroLang, ed: EditionLang): Metadata {
-  const c = euroCopy[lang][ed];
+  const c = euroCopyOf(lang, ed);
   const u = euroUi[lang];
   const url = `${SITE_URL}${euroPath(lang, ed)}`;
   return {
@@ -117,7 +117,7 @@ export default function EuroPage({
   ed: EditionLang;
 }) {
   const u = euroUi[lang];
-  const c = euroCopy[lang][ed];
+  const c = euroCopyOf(lang, ed);
   const art = euroArt[ed];
   const b = euroBook(ed);
   const other: EditionLang = ed === "en" ? "es" : "en";
@@ -505,7 +505,7 @@ export default function EuroPage({
           <div className="sheets">
             {sheets.map((sh) => {
               const name = u.animals[sh.id] ?? sh.name.en;
-              const file = sheetPdf(sh.id, ed, "a4");
+              const file = sheetPdf(sh.id, ed, u.sheetSize ?? "a4");
               return (
                 <figure className="sheet" key={sh.id}>
                   <a className="sheet__link" href={file} download>
@@ -531,12 +531,14 @@ export default function EuroPage({
           {/* ============ Вторая книга ============ */}
           {/* Строкой, а не карточкой: карточка спорила бы с той книгой,
               ради которой человек пришел. */}
-          <p className="teach-other" style={{ marginTop: "var(--gap-4)" }}>
-            <span>{c.pair}</span>
-            <Link className="btn btn--mint" href={euroPath(lang, other)}>
-              {c.pairCta}
-            </Link>
-          </p>
+          {c.pair && c.pairCta ? (
+            <p className="teach-other" style={{ marginTop: "var(--gap-4)" }}>
+              <span>{c.pair}</span>
+              <Link className="btn btn--mint" href={euroPath(lang, other)}>
+                {c.pairCta}
+              </Link>
+            </p>
+          ) : null}
         </div>
       </div>
 
@@ -546,10 +548,15 @@ export default function EuroPage({
           <span data-nosnippet>{u.footerAbout}</span>
         </p>
         <p>
-          <a href={`${SITE_URL}/en`} rel="noopener">
+          <a href={`${SITE_URL}${u.footerLinkHref ?? "/en"}`} rel="noopener">
             {u.footerLink}
-          </a>{" "}
-          <span style={{ opacity: 0.75 }}>({u.footerLinkNote})</span>
+          </a>
+          {u.footerLinkNote ? (
+            <>
+              {" "}
+              <span style={{ opacity: 0.75 }}>({u.footerLinkNote})</span>
+            </>
+          ) : null}
         </p>
         <p>
           © {new Date().getFullYear()} {PUBLISHER}
