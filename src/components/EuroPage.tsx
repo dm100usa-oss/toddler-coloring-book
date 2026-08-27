@@ -19,6 +19,7 @@ import {
 } from "@/data/euro";
 import { SITE_URL, PUBLISHER, ADDRESS, AUTHOR, CATALOG_URL } from "@/lib/site";
 import { hasFreePage, freeCopyOf, freePath } from "@/data/free";
+import { nb } from "@/lib/nobreak";
 
 /* Одна страница из восьми. Устроена так же, как страница книги
    в каталоге издательства: обложка слева, три главных факта, текст,
@@ -253,10 +254,10 @@ export default function EuroPage({
             {own ? null : (
               <>
                 <h2 className="book__title">{c.title}</h2>
-                <p className="subtitle">{c.subtitle}</p>
+                <p className="subtitle">{nb(c.subtitle)}</p>
                 <ul className="quick-facts">
                   {c.inside.slice(0, 3).map((line) => (
-                    <li key={line}>{line}</li>
+                    <li key={line}>{nb(line)}</li>
                   ))}
                 </ul>
               </>
@@ -273,7 +274,7 @@ export default function EuroPage({
                     по обе стороны. */}
                 <ul className="lead-points">
                   {c.lead.slice(1).map((part) => (
-                    <li key={part.slice(0, 24)}>{part}</li>
+                    <li key={part.slice(0, 24)}>{nb(part)}</li>
                   ))}
                 </ul>
               </>
@@ -391,18 +392,18 @@ export default function EuroPage({
           {/* ============ Покупка, первое из двух мест ============ */}
           <div className="buy-block">
             <Buy lang={lang} ed={ed} />
-            <p className="buy-note">{u.buyNote}</p>
+            <p className="buy-note">{nb(u.buyNote)}</p>
           </div>
 
           {/* ============ Для кого ============ */}
           <h2 className="section">{u.forWhom}</h2>
-          <p>{c.forWhom}</p>
+          <p>{nb(c.forWhom)}</p>
 
           {/* ============ Что внутри ============ */}
           <h2 className="section">{u.inside}</h2>
           <ul className="inside">
             {(own ? c.inside : c.inside.slice(3)).map((line) => (
-              <li key={line}>{line}</li>
+              <li key={line}>{nb(line)}</li>
             ))}
           </ul>
 
@@ -412,7 +413,7 @@ export default function EuroPage({
           <h2 className="section">{u.parents}</h2>
           <ul className="needs">
             {c.parents.map((line) => (
-              <li key={line}>{line}</li>
+              <li key={line}>{nb(line)}</li>
             ))}
           </ul>
 
@@ -424,14 +425,14 @@ export default function EuroPage({
             <>
               <h2 className="section">{c.whyTitle}</h2>
               {c.why.map((part) => (
-                <p key={part.slice(0, 24)}>{part}</p>
+                <p key={part.slice(0, 24)}>{nb(part)}</p>
               ))}
             </>
           ) : null}
 
           {/* ============ Оценки ============ */}
           <h2 className="section">{u.ratingTitle}</h2>
-          <p>{c.rating}</p>
+          <p>{nb(c.rating)}</p>
 
           {/* ============ Независимая рецензия ============ */}
           {/* Сначала сама оценка, потом одной строкой за что она
@@ -439,11 +440,11 @@ export default function EuroPage({
               рецензентки с датой. Подписанная рецензия весит больше
               безымянной и для человека, и для поисковика. */}
           <h2 className="section">{c.criticTitle ?? u.criticTitle}</h2>
-          <p>{c.critic}</p>
+          <p>{nb(c.critic)}</p>
           {/* Подпись стоит сразу под оценкой, а не в самом низу блока:
               там она читалась как случайная строка неизвестно о чем. */}
           {c.criticBy ? <p className="critic-by">{c.criticBy}</p> : null}
-          {c.criticWhy ? <p>{c.criticWhy}</p> : null}
+          {c.criticWhy ? <p>{nb(c.criticWhy)}</p> : null}
           <p className="btn-row">
             <a
               className="btn btn--ghost"
@@ -460,7 +461,7 @@ export default function EuroPage({
               говорят. Это и есть минута, когда решение принимается. */}
           <div className="buy-block">
             <Buy lang={lang} ed={ed} />
-            <p className="buy-note">{u.buyNote}</p>
+            <p className="buy-note">{nb(u.buyNote)}</p>
           </div>
 
           {/* ============ Данные книги ============ */}
@@ -494,8 +495,8 @@ export default function EuroPage({
           <div className="faq">
             {c.faq.map((f) => (
               <details key={f.q}>
-                <summary>{f.q}</summary>
-                <p>{f.a}</p>
+                <summary>{nb(f.q)}</summary>
+                <p>{nb(f.a)}</p>
               </details>
             ))}
           </div>
@@ -541,7 +542,7 @@ export default function EuroPage({
               );
             })}
           </div>
-          <p className="buy-note">{u.freeFormat}</p>
+          <p className="buy-note">{nb(u.freeFormat)}</p>
 
           {/* ============ Дорога на страницу бесплатной печати ============ */}
           {/* Человек только что досмотрел десять листов, и это
@@ -557,7 +558,7 @@ export default function EuroPage({
               блок не рисуется вовсе. */}
           {hasFreePage(lang) ? (
             <p className="teach-other">
-              <span>{freeCopyOf(lang, ed).fromBook}</span>
+              <span>{nb(freeCopyOf(lang, ed).fromBook)}</span>
               <Link className="btn btn--mint" href={freePath(lang, ed)}>
                 {freeCopyOf(lang, ed).fromBookCta}
               </Link>

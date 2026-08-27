@@ -4,6 +4,7 @@ import { sheets, sheetPreview, sheetPdf, sheetsPdfAll } from "@/data/sheets";
 import { euroUi, euroPath, type EuroLang, type EditionLang } from "@/data/euro";
 import { freeCopyOf, freePath } from "@/data/free";
 import { SITE_URL, PUBLISHER, ADDRESS } from "@/lib/site";
+import { nb } from "@/lib/nobreak";
 
 /* Страница бесплатной печати. Одна из восьми.
 
@@ -161,7 +162,7 @@ export default function FreePage({
           {/* ============ Три абзаца ============ */}
           {c.lead.map((part, i) => (
             <p className="why-text" key={part.slice(0, 24)}>
-              {part}
+              {nb(part)}
               {/* Ссылка на книгу внутри первого абзаца, отдельной
                   строкой после него: внутри текста она бы уводила
                   человека прямо с первых слов. */}
@@ -197,7 +198,7 @@ export default function FreePage({
                       картинки: по ней лист находит обычный поиск,
                       а не только поиск картинок. */}
                   <figcaption className="sheet__cap">
-                    {c.sheetCaption(name)}
+                    {nb(c.sheetCaption(name))}
                   </figcaption>
                   <p className="sheet__links">
                     <a className="btn btn--sky" href={file} download>
@@ -215,15 +216,15 @@ export default function FreePage({
               {c.downloadAll}
             </a>
           </p>
-          <p className="buy-note">{c.formatNote}</p>
+          <p className="buy-note">{nb(c.formatNote)}</p>
 
           {/* ============ Вопросы ============ */}
           <h2 className="section">{u.faq}</h2>
           <div className="faq">
             {c.faq.map((f) => (
               <details key={f.q}>
-                <summary>{f.q}</summary>
-                <p>{f.a}</p>
+                <summary>{nb(f.q)}</summary>
+                <p>{nb(f.a)}</p>
               </details>
             ))}
           </div>
@@ -235,7 +236,7 @@ export default function FreePage({
               вопрос, а не перебивает его. */}
           <div className="free-book">
             <h2 className="section">{c.bottomTitle}</h2>
-            <p>{c.bottomText}</p>
+            <p>{nb(c.bottomText)}</p>
             <p className="btn-row">
               <Link className="btn btn--pink" href={bookUrl}>
                 {c.bookLink}
