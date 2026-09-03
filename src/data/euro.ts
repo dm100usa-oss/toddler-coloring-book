@@ -181,6 +181,21 @@ export type EuroUi = {
   faq: string;
   buyAmazon: string;
   buyFree: string;
+  /* Покупка файла для печати. Раньше на этих страницах кнопки файла
+     не было: она вела в старый магазин на Wix, английский и в долларах,
+     и человек попадал не туда, куда шел. Теперь магазин свой, Stripe
+     сам показывает покупателю его валюту и считает налог его страны,
+     поэтому кнопка вернулась.
+
+     Бумажную книгу в Европе ждут несколько дней, а иногда ее нет
+     в наличии вовсе. Файл приходит через минуту. */
+  buyPdf: string;
+  pdfPickSize: string;
+  buyPdfLetter: string;
+  buyPdfA4: string;
+  pdfLetterHint: string;
+  pdfA4Hint: string;
+  pdfNote: string;
   priceLabel: string;
   buyNote: string;
   /** Блок с десятью листами из книги. */
@@ -228,6 +243,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Was eine unabhängige Rezensentin schrieb",
     faq: "Häufige Fragen",
     buyAmazon: "Bei Amazon.de kaufen",
+    buyPdf: "Druckdatei kaufen",
+    pdfPickSize: "Auf welchem Papierformat drucken Sie?",
+    buyPdfLetter: "Letter, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Übliches Papier in den USA und Kanada",
+    pdfA4Hint: "Übliches Papier in Deutschland und Europa",
+    pdfNote:
+      "Sie bezahlen hier, und der Link kommt direkt nach dem Kauf per E-Mail. Zu Hause so oft ausdrucken, wie Sie möchten.",
     buyFree: "10 Seiten kostenlos ausdrucken",
     priceLabel: "Taschenbuch bei Amazon.de",
     buyNote: "Verkauf und Versand durch Amazon.",
@@ -265,6 +288,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Ce qu'en a dit une critique indépendante",
     faq: "Questions fréquentes",
     buyAmazon: "Acheter sur Amazon.fr",
+    buyPdf: "Acheter le fichier à imprimer",
+    pdfPickSize: "Sur quel format de papier imprimez-vous ?",
+    buyPdfLetter: "Letter, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Papier courant aux États-Unis et au Canada",
+    pdfA4Hint: "Papier courant en France et en Europe",
+    pdfNote:
+      "Le paiement se fait ici et le lien arrive par e-mail juste après l'achat. À imprimer chez vous autant de fois que vous voulez.",
     buyFree: "Imprimer 10 pages gratuitement",
     priceLabel: "broché sur Amazon.fr",
     buyNote: "Vendu et expédié par Amazon.",
@@ -303,6 +334,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Wat een onafhankelijke recensent schreef",
     faq: "Veelgestelde vragen",
     buyAmazon: "Kopen op Amazon.nl",
+    buyPdf: "Printbestand kopen",
+    pdfPickSize: "Op welk papierformaat print u?",
+    buyPdfLetter: "Letter, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Gebruikelijk papier in de VS en Canada",
+    pdfA4Hint: "Gebruikelijk papier in Nederland en Europa",
+    pdfNote:
+      "U betaalt hier en de link komt meteen na de aankoop per e-mail. Thuis zo vaak printen als u wilt.",
     buyFree: "Print 10 pagina's gratis",
     priceLabel: "paperback op Amazon.nl",
     buyNote: "Verkocht en verzonden door Amazon.",
@@ -340,6 +379,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Co napisała niezależna recenzentka",
     faq: "Najczęstsze pytania",
     buyAmazon: "Kup na Amazon.pl",
+    buyPdf: "Kup plik do druku",
+    pdfPickSize: "Na jakim formacie papieru drukujesz?",
+    buyPdfLetter: "Letter, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Zwykły papier w USA i Kanadzie",
+    pdfA4Hint: "Zwykły papier w Polsce i Europie",
+    pdfNote:
+      "Płacisz tutaj, a link przychodzi e-mailem zaraz po zakupie. Drukuj w domu tyle razy, ile potrzebujesz.",
     buyFree: "Wydrukuj 10 stron za darmo",
     priceLabel: "oprawa miękka na Amazon.pl",
     buyNote: "Sprzedaż i wysyłka przez Amazon.",
@@ -385,6 +432,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Recensione indipendente",
     faq: "Domande frequenti",
     buyAmazon: "Acquista su Amazon.it",
+    buyPdf: "Acquista il file da stampare",
+    pdfPickSize: "Su quale formato di carta stampi?",
+    buyPdfLetter: "Letter, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Carta abituale negli Stati Uniti e in Canada",
+    pdfA4Hint: "Carta abituale in Italia e in Europa",
+    pdfNote:
+      "Il pagamento avviene qui e il link arriva per e-mail subito dopo l'acquisto. Da stampare a casa tutte le volte che vuoi.",
     buyFree: "Stampa 10 pagine gratis",
     priceLabel: "copertina flessibile su Amazon.it",
     buyNote: "Venduto e spedito da Amazon.",
@@ -423,6 +478,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Reseña independiente",
     faq: "Preguntas frecuentes",
     buyAmazon: "Comprar en Amazon.es",
+    buyPdf: "Comprar el archivo para imprimir",
+    pdfPickSize: "¿En qué tamaño de papel imprime?",
+    buyPdfLetter: "Carta, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Papel habitual en Estados Unidos y Canadá",
+    pdfA4Hint: "Papel habitual en España y Europa",
+    pdfNote:
+      "El pago se hace aquí y el enlace llega por correo justo después de la compra. Se puede imprimir en casa tantas veces como haga falta.",
     buyFree: "Imprime 10 páginas gratis",
     priceLabel: "tapa blanda en Amazon.es",
     buyNote: "Venta y envío por Amazon.",
@@ -474,6 +537,14 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     criticTitle: "Independent review",
     faq: "Frequently asked questions",
     buyAmazon: "Buy on Amazon.ca",
+    buyPdf: "Get the printable file",
+    pdfPickSize: "Which paper size do you print on?",
+    buyPdfLetter: "Letter, 8.5 x 11 in",
+    buyPdfA4: "A4",
+    pdfLetterHint: "Standard paper in Canada and the US",
+    pdfA4Hint: "Standard paper in Europe and most other countries",
+    pdfNote:
+      "You pay here, and the link arrives by email right after checkout. Print it at home as many times as you need.",
     buyFree: "Print 10 pages for free",
     priceLabel: "paperback on Amazon.ca",
     buyNote: "Sold and shipped by Amazon.",

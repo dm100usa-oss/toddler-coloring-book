@@ -19,6 +19,8 @@ import {
 } from "@/data/euro";
 import { SITE_URL, PUBLISHER, ADDRESS, AUTHOR, CATALOG_URL, EURO_SHARE } from "@/lib/site";
 import { hasFreePage, freeCopyOf, freePath } from "@/data/free";
+import { BuyPdf } from "@/components/BuyPdf";
+import { hasPdf } from "@/lib/pdfShop";
 import { nb } from "@/lib/nobreak";
 
 /* Одна страница из восьми. Устроена так же, как страница книги
@@ -98,9 +100,7 @@ function Buy({ lang, ed }: { lang: EuroLang; ed: EditionLang }) {
           потом купить книгу целиком.
 
           Бесплатная кнопка ведет не наружу, а вниз по этой же странице,
-          к десяти листам из книги. Раньше здесь стоял адрес страницы
-          с файлом на Wix: она английская и в долларах, и человек
-          попадал не туда, куда шел. */}
+          к десяти листам из книги. */}
       <a className="btn btn--sky" href="#gratis">
         {u.buyFree}
       </a>
@@ -112,6 +112,31 @@ function Buy({ lang, ed }: { lang: EuroLang; ed: EditionLang }) {
       >
         {u.buyAmazon}
       </a>
+      {/* Файл для печати. Бумажную книгу в этих странах ждут несколько
+          дней, а иногда ее нет в наличии вовсе, файл приходит через
+          минуту. Раньше кнопки здесь не было: она вела в старый магазин
+          на Wix, английский и в долларах. Теперь магазин свой, и Stripe
+          сам показывает покупателю его валюту и налог его страны.
+
+          Язык оплаты и письма берется по изданию, а не по стране:
+          у немца, купившего английскую книгу, и книга английская,
+          и письмо к ней должно быть английским. */}
+      {hasPdf(editions[ed].pdfId) ? (
+        <BuyPdf
+          lang={ed}
+          book={editions[ed].pdfId!}
+          back={euroPath(lang, ed)}
+          labels={{
+            buyPdf: u.buyPdf,
+            pdfPickSize: u.pdfPickSize,
+            buyPdfLetter: u.buyPdfLetter,
+            buyPdfA4: u.buyPdfA4,
+            pdfLetterHint: u.pdfLetterHint,
+            pdfA4Hint: u.pdfA4Hint,
+            pdfNote: u.pdfNote,
+          }}
+        />
+      ) : null}
     </p>
   );
 }

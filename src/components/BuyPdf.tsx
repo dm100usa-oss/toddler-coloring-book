@@ -19,18 +19,38 @@ import { PDF_PRICE_LABEL, pdfFormats } from "@/lib/pdfShop";
    Цена и название товара берутся на нашей стороне, в обработчике
    оплаты. Из браузера приходит только номер книги, размер листа, язык
    и адрес возврата: цене, присланной снаружи, доверять нельзя. */
+/** Надписи на кнопке. Страницы для стран не входят в языковую систему
+    сайта и держат свои слова у себя, поэтому текст сюда можно передать
+    отдельно. Если ничего не передали, берем из общего словаря. */
+export type PdfLabels = {
+  buyPdf: string;
+  pdfPickSize: string;
+  buyPdfLetter: string;
+  buyPdfA4: string;
+  pdfLetterHint: string;
+  pdfA4Hint: string;
+  pdfNote: string;
+};
+
 export function BuyPdf({
   lang,
   book,
   back,
+  labels,
 }: {
+  /** Язык, на котором открывается страница оплаты и уходит письмо.
+      У страниц для стран это язык издания: покупатель немецкой
+      страницы про английскую книгу получает английское письмо, потому
+      что и книга у него английская. */
   lang: UiLang;
   /** Номер книги в магазине. */
   book: string;
   /** Куда вернуть человека, если он передумал платить. */
   back: string;
+  /** Слова на языке страницы. Без них берутся из общего словаря. */
+  labels?: PdfLabels;
 }) {
-  const t = dictionaries[lang].sec;
+  const t = labels ?? dictionaries[lang].sec;
 
   return (
     <details className="buy-pdf">
