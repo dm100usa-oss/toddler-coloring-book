@@ -348,8 +348,8 @@ export const dictionaries: Record<UiLang, Dict> = {
       outcomeLink: "Full page about this stage",
       buyNote: "Sold and shipped by Amazon. We earn from the sale.",
       bookOneLiner:
-        "We publish one coloring book for this age: 111 drawings, thick outlines, one per page, " +
-        "printed on one side.",
+        "We publish one coloring book for this age: 111 drawings, thick outlines, one on every " +
+        "page.",
       outgrown:
         "Our own book is made for an earlier stage than this, so we are not going to suggest it. " +
         "What suits your child now is a book with more to fill inside one drawing, or a step by " +
@@ -448,8 +448,6 @@ export const dictionaries: Record<UiLang, Dict> = {
           "precisión de movimientos que el niño todavía no tiene.",
         "El dibujo debe ser reconocible. A los niños pequeños les resulta más interesante " +
           "colorear animales, objetos y otras imágenes que ya conocen y pueden nombrar.",
-        "Impresión por una sola cara. La tinta de un rotulador puede traspasar el papel " +
-          "corriente y estropear el dibujo del reverso.",
       ],
       printablesTitle: "Dibujos gratis para imprimir",
       printablesLead:
@@ -568,7 +566,7 @@ export const dictionaries: Record<UiLang, Dict> = {
       buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
       bookOneLiner:
         "Publicamos un libro para colorear para esta edad: 111 dibujos con contornos " +
-          "gruesos, uno por página e impresos por una sola cara.",
+          "gruesos, uno en cada página.",
       outgrown:
         "Nuestro libro está pensado para una etapa anterior, así que aquí no se lo " +
           "recomendamos. En este momento, al niño probablemente le convenga más un libro con " +
@@ -664,8 +662,6 @@ export const dictionaries: Record<UiLang, Dict> = {
           "раскрашивать: она требует точности движений, которой у малыша пока нет.",
         "Рисунок должен быть узнаваемым. Малышу интереснее раскрашивать животных, предметы и " +
           "другие образы, которые он уже знает и может назвать.",
-        "Печать только с одной стороны. Фломастер может пройти сквозь бумагу и испортить " +
-          "рисунок на обороте.",
       ],
       printablesTitle: "Бесплатные листы для печати",
       printablesLead:
@@ -777,8 +773,8 @@ export const dictionaries: Record<UiLang, Dict> = {
       outcomeLink: "Подробная страница об этом этапе",
       buyNote: "Файл для печати. Его можно распечатывать дома столько раз, сколько нужно.",
       bookOneLiner:
-        "Мы выпускаем одну раскраску для этого возраста: 111 рисунков с толстым контуром, по " +
-          "одному на странице, печать только с одной стороны.",
+        "Мы выпускаем одну раскраску для этого возраста: 111 рисунков с толстым контуром, " +
+          "по одному на каждой странице.",
       outgrown:
         "Наша книга рассчитана на более ранний этап, поэтому здесь мы ее не предлагаем. " +
           "Сейчас ребенку лучше подойдет раскраска с более детальными рисунками или книга с " +

@@ -174,7 +174,7 @@ export const editions: Record<UiLang, Edition> = {
     needs: [
       "Big, simple pictures, drawn by hand",
       "Thick outlines a child can actually see",
-      "One drawing per page, printed on one side only",
+      "One drawing on every page",
       "111 different drawings on familiar, interesting subjects",
       "A child colors and learns new words at the same time",
       "Ten drawings from the book can be printed right now, free and without signing up",
@@ -190,7 +190,7 @@ export const editions: Record<UiLang, Edition> = {
       "111 drawings, all hand drawn by professional illustrators",
       "Thick outlines and large shapes, so a child who is still learning to aim can see a clear " +
       "result",
-      "One drawing per page, printed on one side, so a marker cannot show through onto the next one",
+      "One drawing on every page, so nothing competes for a child's attention",
       "The word under each picture can be colored too, which brings first words and letters into " +
       "the coloring",
       "Every picture sits in the center of the page, comfortable for a left or a right handed child",
@@ -244,9 +244,9 @@ export const editions: Record<UiLang, Edition> = {
         q: "How thick is the paper?",
         a:
           "It is standard book paper, printed by Amazon, and some parents have wished for something " +
-          "heavier. The book is built around that: each drawing sits on its own page with a blank back, " +
-          "so a marker that soaks through marks an empty sheet rather than a second picture. A spare " +
-          "sheet underneath takes care of most of it.",
+          "heavier. Both sides of the sheet carry a drawing, so marker ink that soaks through will " +
+          "show on the drawing behind it. Crayons and colored pencils do not do this, and they are " +
+          "the better choice for this age anyway.",
       },
       {
         q: "Crayons, markers or colored pencils?",
@@ -287,7 +287,7 @@ export const editions: Record<UiLang, Edition> = {
       description:
         "An unedited flip through of the paperback, filmed on a table. The clip shows the front " +
         "cover, the back cover, the title page, and page after page of the book: one large drawing " +
-        "per sheet, printed on one side, with the word for it in outline letters underneath, among " +
+        "on every page, with the word for it in outline letters underneath, among " +
         "them broccoli, a lotus, a sunflower, a beach hat, a kite and a helicopter. It ends on the " +
         "page at the front where a child writes their name. Forty six seconds, no sound.",
     },
@@ -321,12 +321,12 @@ export const editions: Record<UiLang, Edition> = {
     note:
       "111 dibujos y 111 primeras palabras que el niño aprende mientras colorea.",
     needs: [
-      "Dibujos grandes y simples, hechos a mano",
-      "Contornos gruesos y bien definidos",
-      "Un dibujo por página, impreso por una sola cara",
-      "111 dibujos distintos sobre temas conocidos e interesantes",
-      "El niño colorea y, al mismo tiempo, descubre y aprende palabras nuevas",
-      "Diez dibujos del libro se pueden imprimir ahora mismo, gratis y sin registro",
+      "Dibujos grandes y sencillos, hechos a mano",
+      "Contornos gruesos y bien definidos, fáciles de seguir para el niño",
+      "Un dibujo en cada página",
+      "111 dibujos diferentes sobre temas conocidos e interesantes para los niños",
+      "Mientras colorea, el niño descubre nuevas palabras y poco a poco las aprende",
+      "Diez dibujos del libro se pueden imprimir ahora mismo, gratis y sin registrarse",
     ],
     extras: [
       "Ayuda a desarrollar la motricidad fina, la creatividad y la atención",
@@ -341,8 +341,7 @@ export const editions: Record<UiLang, Edition> = {
       "111 dibujos, todos hechos a mano por ilustradores profesionales",
       "Líneas gruesas y formas grandes: aunque el niño todavía se salga con frecuencia del " +
         "contorno, le resultará cómodo colorear",
-      "Un dibujo por página e impresión por una sola cara, para que el rotulador no estropee " +
-        "el dibujo siguiente",
+      "Un dibujo en cada página, para que nada distraiga la atención del niño",
       "La palabra debajo de cada dibujo también se puede colorear, para que el niño empiece " +
         "a familiarizarse con las letras y las palabras",
       "Cada dibujo está centrado en la página, para que resulte cómodo tanto a niños zurdos " +
@@ -402,10 +401,9 @@ export const editions: Record<UiLang, Edition> = {
         q: "¿Qué grosor tiene el papel?",
         a:
           "Es papel de libro corriente, impreso por Amazon, y algunos padres preferirían que " +
-            "fuera más grueso. Por eso, cada dibujo está impreso en una sola cara y el reverso " +
-            "queda en blanco: si el rotulador traspasa el papel, manchará una página vacía y " +
-            "no el dibujo siguiente. Colocar una hoja suelta debajo ofrece una protección " +
-            "adicional.",
+            "fuera más grueso. Las dos caras de la hoja llevan un dibujo, así que la tinta de " +
+            "un rotulador que traspase el papel se verá en el dibujo de detrás. Las ceras y los " +
+            "lápices de colores no hacen eso, y a esta edad son la mejor opción.",
       },
       {
         q: "¿Crayones, rotuladores o lápices de colores?",
@@ -449,7 +447,7 @@ export const editions: Record<UiLang, Edition> = {
       h: 1024,
       description:
         "Un recorrido sin cortes por la edición en español. Se ve la portada y después una página " +
-        "tras otra: un dibujo grande por hoja, impreso por una sola cara, con la palabra en español " +
+        "tras otra: un dibujo grande en cada página, con la palabra en español " +
         "debajo en letras huecas, entre ellos el loro, el tulipán, la torta, el bádminton, las " +
         "gafas, el grifo, el trol, el cangrejo, el pulpo, el perro, la ardilla, el zorro y la " +
         "gallina. Diecinueve segundos, sin sonido.",
@@ -484,11 +482,12 @@ export const editions: Record<UiLang, Edition> = {
       "111 рисунков и 111 первых слов, которые ребенок узнает во время раскрашивания.",
     needs: [
       "Крупные простые рисунки, нарисованные от руки",
-      "Толстый контур",
-      "Один рисунок на странице, печать только с одной стороны",
+      "Толстые и четкие контуры, которые хорошо видны ребенку",
+      "По одному рисунку на каждой странице",
       "111 разных рисунков на знакомые и интересные детям темы",
-      "Ребенок не только раскрашивает, но и узнает и запоминает новые слова",
-      "Десять рисунков из книги можно распечатать прямо сейчас, бесплатно и без регистрации",
+      "Во время раскрашивания ребенок знакомится с новыми словами и постепенно их " +
+        "запоминает",
+      "Десять рисунков из книги можно распечатать прямо сейчас - бесплатно и без регистрации",
     ],
     extras: [
       "Помогает развивать мелкую моторику, творческие способности и внимание",
@@ -502,8 +501,7 @@ export const editions: Record<UiLang, Edition> = {
       "111 рисунков, все нарисованы от руки",
       "Толстый контур и крупные формы: даже если ребенок пока часто выходит за границы " +
         "рисунка, ему все равно удобно раскрашивать",
-      "Один рисунок на странице, оборот листа чистый: фломастер не испортит следующий " +
-        "рисунок",
+      "Один рисунок на каждой странице, ничто не отвлекает внимание ребенка",
       "Под каждым рисунком - его название полыми буквами, его тоже можно раскрасить",
       "Каждый рисунок расположен по центру листа, поэтому раскрашивать удобно и левше, и правше",
       "Животные, морские жители, сказочные герои, транспорт, цветы и еда",
@@ -616,9 +614,8 @@ export const editions: Record<UiLang, Edition> = {
       h: 1080,
       description:
         "Книга снята без монтажа, просто на столе. В ролике показаны обложка, оборот, " +
-          "титульная страница и все страницы по порядку: один крупный рисунок на листе, печать " +
-          "только с одной стороны, под рисунком - его название полыми буквами, которое тоже " +
-          "можно раскрасить. Среди " +
+          "титульная страница и все страницы по порядку: на каждой странице один крупный " +
+          "рисунок, под ним - его название полыми буквами, которое тоже можно раскрасить. Среди " +
           "рисунков есть брокколи, лотос, подсолнух, пляжная шляпа, воздушный змей и вертолет. " +
           "В конце находится страница, где ребенок может написать свое имя. Ролик длится 46 " +
           "секунд, без звука. Показано английское издание, но рисунки во всех изданиях " +

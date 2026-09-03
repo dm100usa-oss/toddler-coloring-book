@@ -141,8 +141,7 @@ export const agePages: AgePage[] = [
             "visible, una sola forma grande que ocupe casi toda la hoja, pocos detalles " +
             "pequeños y un papel suficientemente resistente. Es mejor elegir imágenes " +
             "familiares que puedan nombrarse en voz alta, como una pelota, un gato o una " +
-            "manzana. La impresión por una sola cara también resulta práctica, sobre todo si " +
-            "el niño utiliza rotuladores.",
+            "manzana.",
           "Alrededor del año, el interés por una página puede durar solo uno o dos minutos, " +
             "y es completamente normal. Nombre lo que aparece en el dibujo, deje que el niño " +
             "elija un crayón y permita que dibuje a su manera. No es necesario esperar a que " +
@@ -215,8 +214,7 @@ export const agePages: AgePage[] = [
           "При выборе страницы обратите внимание на несколько вещей: очень заметный контур, " +
             "одна крупная форма почти во весь лист, минимум мелких деталей и достаточно " +
             "плотная бумага. Лучше выбирать знакомые ребенку изображения, которые можно " +
-            "назвать вслух: мяч, кошку, яблоко. Печать только с одной стороны удобнее, " +
-            "особенно если ребенок пользуется фломастерами.",
+            "назвать вслух: мяч, кошку, яблоко.",
           "В год интерес к одной странице может длиться всего минуту-две, и это совершенно " +
             "нормально. Назовите то, что нарисовано, предложите ребенку выбрать мелок и " +
             "позвольте ему рисовать так, как получается. Не нужно ждать, пока вся картинка " +
@@ -331,9 +329,8 @@ export const agePages: AgePage[] = [
             q: "Are washable markers a good idea at two?",
             a:
               "They work well at this age, since the child now aims at the drawing, and washable " +
-              "ones save the table and the clothes. The one thing to check is that the page is " +
-              "printed on one side only, because a marker goes through ordinary paper and would " +
-              "otherwise ruin the next drawing.",
+              "ones save the table and the clothes. Worth knowing: marker ink goes through " +
+              "ordinary paper, while crayons and colored pencils do not.",
           },
           {
             q: "My child colors the same page over and over. Should I stop that?",
@@ -402,9 +399,9 @@ export const agePages: AgePage[] = [
             a:
               "Sí, se pueden utilizar rotuladores lavables si al niño le resulta cómodo " +
                 "dibujar con ellos. Dejan un trazo intenso y visible y suelen limpiarse con " +
-                "facilidad de las manos y de muchas superficies. Es preferible elegir páginas " +
-                "impresas por una sola cara, porque la tinta puede traspasar el papel " +
-                "corriente.",
+                "facilidad de las manos y de muchas superficies. Conviene saber que la tinta " +
+                "puede traspasar el papel corriente, mientras que las ceras y los lápices de " +
+                "colores no lo hacen.",
           },
           {
             q: "Mi hijo colorea la misma hoja una y otra vez. ¿Debo cortarlo?",
@@ -472,8 +469,8 @@ export const agePages: AgePage[] = [
             a:
               "Смываемые фломастеры можно использовать, если ребенку удобно ими рисовать. " +
                 "Они дают яркий заметный след и легко смываются с рук и многих поверхностей. " +
-                "Лучше выбирать страницы с печатью только с одной стороны, потому что чернила " +
-                "могут пройти сквозь обычную бумагу.",
+                "Стоит помнить, что чернила могут пройти сквозь обычную бумагу, а восковые " +
+                "мелки и карандаши насквозь не проходят.",
           },
           {
             q: "Ребенок раскрашивает одну и ту же страницу много раз. Стоит ли это прекращать?",

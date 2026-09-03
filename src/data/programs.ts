@@ -47,10 +47,9 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
         "library story time, parent groups and church nurseries. What all of that work has in " +
         "common is a group of children at different levels and very little time to prepare, which " +
         "changes what makes a page usable.",
-      "Three features of a page matter particularly for group sessions. A thick, clearly visible " +
-      "outline suits children who still hold the crayon in the whole hand. One large drawing per " +
-      "page helps to keep attention from being pulled away by extra detail. And printing on one " +
-      "side only protects the next drawing if marker ink goes through the paper.",
+      "Two features of a page matter particularly for group sessions. A thick, clearly visible " +
+      "outline suits children who still hold the crayon in the whole hand. And one large drawing " +
+      "per page helps to keep attention from being pulled away by extra detail.",
       "The word printed under each drawing is there for the adult as much as for the child. It " +
         "gives you something to say and something to point at, and it turns a coloring page into a " +
         "short exchange about what is on it. In a Spanish speaking setting the word is in Spanish, " +
@@ -132,8 +131,7 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
       "Para las actividades en grupo hay tres características especialmente importantes. Un " +
         "contorno grueso y fácil de ver resulta adecuado para niños que todavía sujetan el " +
         "crayón con toda la mano. Un solo dibujo grande por página evita sobrecargar la " +
-        "atención con demasiados elementos. Y la impresión por una sola cara protege el dibujo " +
-        "siguiente si la tinta del rotulador traspasa el papel.",
+        "atención con demasiados elementos.",
       "La palabra debajo de cada dibujo también puede ser útil para el adulto: permite " +
         "nombrar la imagen y empezar una breve conversación con el niño sobre lo que aparece " +
         "en la página. En la edición española, todas las palabras están impresas en español, " +
@@ -216,9 +214,7 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
         "материал подходил детям с разным уровнем навыков и не требовал долгой подготовки.",
       "Для групповых занятий особенно важны три особенности страницы. Толстый и хорошо " +
         "заметный контур подходит детям, которые еще держат мелок всей ладонью. Один крупный " +
-        "рисунок на странице помогает не перегружать внимание лишними деталями. А печать " +
-        "только с одной стороны защищает следующий рисунок, если чернила фломастера проходят " +
-        "сквозь бумагу.",
+        "рисунок на странице помогает не перегружать внимание лишними деталями.",
       "Слово под каждым рисунком полезно и взрослому: оно помогает назвать изображение и " +
         "начать короткий разговор с ребенком о том, что нарисовано. В испанском издании слова " +
         "напечатаны по-испански, поэтому его удобно использовать с испаноязычными детьми и " +
@@ -316,22 +312,16 @@ export const audiences: Audience[] = [
       en:
         "In a group, children may be at different points in the development of drawing skills. Large, " +
         "simple drawings suit both those who still make sweeping marks across the sheet and those who " +
-        "are already trying to aim at the drawing. Single sided printing is especially convenient in " +
-        "a group: if marker ink goes through the paper, it lands on a blank back rather than on the " +
-        "next drawing.",
+        "are already trying to aim at the drawing.",
       es:
         "En un grupo, los niños pueden encontrarse en distintas etapas del desarrollo de sus " +
           "habilidades de dibujo. Los dibujos grandes y sencillos sirven tanto a quienes " +
           "todavía hacen trazos amplios por toda la hoja como a quienes ya intentan colorear " +
-          "el propio dibujo. La impresión por una sola cara resulta especialmente práctica: si " +
-          "la tinta del rotulador traspasa el papel, llegará al reverso en blanco y no al " +
-          "dibujo siguiente.",
+          "el propio dibujo.",
       ru:
         "В группе дети могут находиться на разных этапах развития навыков рисования. Крупные " +
           "и простые рисунки подходят и тем, кто пока рисует размашистые линии по всему листу, " +
-          "и тем, кто уже старается попадать по рисунку. Печать только с одной стороны " +
-          "особенно удобна в группе: если чернила фломастера пройдут сквозь бумагу, они " +
-          "попадут на пустой оборот, а не на следующий рисунок.",
+          "и тем, кто уже старается попадать по рисунку.",
     },
   },
   {
@@ -450,7 +440,6 @@ export const specs: Record<ContentLang, string[]> = {
     "111 drawings, all different, hand drawn",
     "Thick outlines, no small detail",
     "One drawing per page",
-    "Printed on one side only",
     "The word under each drawing, in outline letters that can be colored too",
     "8.5 by 11 inches, separate English and Spanish editions",
   ],
@@ -458,7 +447,6 @@ export const specs: Record<ContentLang, string[]> = {
     "111 dibujos diferentes, hechos a mano",
     "Contornos gruesos y pocos detalles pequeños",
     "Un dibujo por página",
-    "Impreso por una sola cara",
     "La palabra debajo de cada dibujo, en letras huecas que también se colorean",
     "Formato de 8,5 × 11 pulgadas, con ediciones independientes en español e inglés",
   ],
@@ -466,7 +454,6 @@ export const specs: Record<ContentLang, string[]> = {
     "111 разных рисунков, нарисованных вручную",
     "Толстый контур и минимум мелких деталей",
     "Один рисунок на странице",
-    "Печать с одной стороны",
     "Название под каждым рисунком полыми буквами, его тоже можно раскрасить",
     "Формат 8.5 × 11 дюймов, отдельные издания на английском и испанском языках",
   ],

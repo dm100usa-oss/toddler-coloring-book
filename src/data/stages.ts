@@ -221,15 +221,12 @@ export const stages: Stage[] = [
         "Un solo dibujo por página, sin elementos innecesarios alrededor que puedan distraer",
         "Una palabra debajo del dibujo, para que el niño pueda colorear mientras se " +
           "familiariza con su nombre",
-        "Impresión por una sola cara: la tinta de un rotulador puede traspasar el papel " +
-          "corriente",
       ],
       ru: [
         "Контур по-прежнему должен быть толстым, но рисунок уже может состоять из двух-трех " +
           "частей",
         "Один рисунок на странице, без лишних деталей вокруг, которые могут отвлекать внимание",
         "Слово под рисунком, чтобы ребенок одновременно раскрашивал и знакомился с названием",
-        "Печать только с одной стороны: фломастер может пройти сквозь обычную бумагу",
       ],
     },
     atTable: {

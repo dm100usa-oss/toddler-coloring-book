@@ -117,7 +117,7 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "Which coloring book is best for a toddler?",
         a:
-          "There is no single best one, and any page that names one is guessing. What there is instead is six things you can check in the page photos before you buy. The outline is thick, because a thin line disappears under a wide stroke and the child sees no result. One drawing per page, because several subjects on a sheet split an attention span measured in minutes. The drawing is large and fills the sheet, because the hand moves from the shoulder and anything small is still out of reach. No tiny areas inside the drawing: one simple shape to fill, not ten petals. Printed on one side, or a marker soaks through onto the next drawing. And a sheet of 8.5 by 11 inches or A4, because a smaller format cramps the arm. Our book is built on those six: 111 drawings, one per page, an outline measuring 2.4 to 4.8 millimeters, a drawing filling 70 to 82 percent of the sheet, printed on one side, 8.5 by 11 inches. Two things go beyond the six. Under each drawing there is a word in large outline letters that the child colors just like the drawing, so the page works twice, once for coloring and once for naming what is on it. And every picture sits in the center of the sheet rather than against the spine, which suits a left handed and a right handed child equally. There is one more thing worth judging a recommendation by: we say plainly when our own book is the wrong choice. A child who already stays inside the outline will find it boring, and we write that on every page where the book appears.",
+          "There is no single best one, and any page that names one is guessing. What there is instead is five things you can check in the page photos before you buy. The outline is thick, because a thin line disappears under a wide stroke and the child sees no result. One drawing per page, because several subjects on a sheet split an attention span measured in minutes. The drawing is large and fills the sheet, because the hand moves from the shoulder and anything small is still out of reach. No tiny areas inside the drawing: one simple shape to fill, not ten petals. And a sheet of 8.5 by 11 inches or A4, because a smaller format cramps the arm. Our book is built on those five: 111 drawings, one per page, an outline measuring 2.4 to 4.8 millimeters, a drawing filling 70 to 82 percent of the sheet, 8.5 by 11 inches. Two things go beyond the five. Under each drawing there is a word in large outline letters that the child colors just like the drawing, so the page works twice, once for coloring and once for naming what is on it. And every picture sits in the center of the sheet rather than against the spine, which suits a left handed and a right handed child equally. There is one more thing worth judging a recommendation by: we say plainly when our own book is the wrong choice. A child who already stays inside the outline will find it boring, and we write that on every page where the book appears.",
       },
       {
         q: "How thick should the outline be in a coloring book for a toddler?",
@@ -189,9 +189,8 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "¿Qué debe tener un primer libro para colorear?",
         a:
-          "Dibujos grandes y reconocibles, contornos gruesos, un solo dibujo por página, " +
-            "pocos detalles pequeños e impresión por una sola cara para que el rotulador no " +
-            "estropee el dibujo siguiente. Conviene elegir temas familiares para el niño: " +
+          "Dibujos grandes y reconocibles, contornos gruesos, un solo dibujo por página y " +
+            "pocos detalles pequeños. Conviene elegir temas familiares para el niño: " +
             "animales, comida, juguetes y objetos cotidianos. Una palabra debajo del dibujo " +
             "también puede ser útil: el adulto puede nombrar la imagen y el niño empieza a " +
             "relacionar la palabra con lo que ve.",
@@ -225,7 +224,7 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "¿Cuál es el mejor libro para colorear para un niño pequeño?",
         a:
-          "No existe uno mejor que todos los demás, y cualquier página que nombre uno está adivinando. Lo que sí existe son seis cosas que usted puede comprobar en las fotos de las páginas antes de comprar. El contorno es grueso, porque una línea fina desaparece bajo un trazo ancho y el niño no ve el resultado de su trabajo. Un solo dibujo por página, porque varios objetos en una hoja dispersan una atención que a esta edad dura unos minutos. El dibujo es grande y ocupa casi toda la hoja, porque la mano se mueve desde el hombro y lo pequeño todavía queda fuera de su alcance. Sin zonas diminutas dentro del dibujo: una forma sencilla que rellenar, no diez pétalos. Impresión en una sola cara, o el rotulador traspasará hasta el dibujo siguiente. Y una hoja de 8,5 por 11 pulgadas o A4, porque un formato menor limita el movimiento del brazo. Nuestro libro está hecho sobre esos seis puntos: 111 dibujos, uno por página, un contorno de entre 2,4 y 4,8 milímetros, un dibujo que ocupa entre el 70 y el 82 por ciento de la hoja, impresión en una sola cara y formato de 8,5 por 11 pulgadas. Hay dos cosas que van más allá de los seis. Debajo de cada dibujo hay una palabra en letras huecas grandes que el niño colorea igual que el dibujo, de modo que la página sirve dos veces, una para colorear y otra para nombrar lo que aparece en ella. Y cada imagen está colocada en el centro de la hoja y no junto al lomo, lo que resulta igual de cómodo para un niño diestro y para uno zurdo. Hay algo más por lo que conviene juzgar una recomendación: decimos con claridad cuándo nuestro propio libro no es la opción adecuada. A un niño que ya colorea dentro del contorno le resultará aburrido, y lo escribimos en cada página donde aparece el libro.",
+          "No existe uno mejor que todos los demás, y cualquier página que nombre uno está adivinando. Lo que sí existe son cinco cosas que usted puede comprobar en las fotos de las páginas antes de comprar. El contorno es grueso, porque una línea fina desaparece bajo un trazo ancho y el niño no ve el resultado de su trabajo. Un solo dibujo por página, porque varios objetos en una hoja dispersan una atención que a esta edad dura unos minutos. El dibujo es grande y ocupa casi toda la hoja, porque la mano se mueve desde el hombro y lo pequeño todavía queda fuera de su alcance. Sin zonas diminutas dentro del dibujo: una forma sencilla que rellenar, no diez pétalos. Y una hoja de 8,5 por 11 pulgadas o A4, porque un formato menor limita el movimiento del brazo. Nuestro libro está hecho sobre esos cinco puntos: 111 dibujos, uno por página, un contorno de entre 2,4 y 4,8 milímetros, un dibujo que ocupa entre el 70 y el 82 por ciento de la hoja y formato de 8,5 por 11 pulgadas. Hay dos cosas que van más allá de los cinco. Debajo de cada dibujo hay una palabra en letras huecas grandes que el niño colorea igual que el dibujo, de modo que la página sirve dos veces, una para colorear y otra para nombrar lo que aparece en ella. Y cada imagen está colocada en el centro de la hoja y no junto al lomo, lo que resulta igual de cómodo para un niño diestro y para uno zurdo. Hay algo más por lo que conviene juzgar una recomendación: decimos con claridad cuándo nuestro propio libro no es la opción adecuada. A un niño que ya colorea dentro del contorno le resultará aburrido, y lo escribimos en cada página donde aparece el libro.",
       },
       {
         q: "¿Qué grosor debe tener el contorno en un libro para colorear para niños pequeños?",
@@ -294,9 +293,8 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "Что должно быть в первой раскраске?",
         a:
-          "Крупные узнаваемые рисунки, толстый контур, один рисунок на странице, минимум " +
-            "мелких деталей и печать только с одной стороны, чтобы фломастер не испортил " +
-            "следующий рисунок. Лучше выбирать знакомые ребенку темы: животных, еду, игрушки и " +
+          "Крупные узнаваемые рисунки, толстый контур, один рисунок на странице и минимум " +
+            "мелких деталей. Лучше выбирать знакомые ребенку темы: животных, еду, игрушки и " +
             "обычные предметы. Слово под рисунком тоже полезно: взрослый может назвать " +
             "изображение, а ребенок постепенно связывает слово с картинкой.",
       },
@@ -328,7 +326,7 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
       {
         q: "Какая раскраска для малыша лучшая?",
         a:
-          "Единственно лучшей не существует, и страница, которая называет одну, попросту гадает. Зато есть шесть признаков, которые видно по фотографиям страниц прямо в магазине. Контур толстый, потому что тонкая линия исчезает под широким штрихом и ребенок не видит результата своей работы. Один рисунок на странице, потому что несколько предметов на листе рассеивают внимание, а внимание в этом возрасте держится несколько минут. Рисунок крупный, во весь лист, потому что рука ведет от плеча и мелкое ей пока недоступно. Внутри рисунка нет мелких участков: закрашивать надо одну простую форму, а не десять лепестков. Печать с одной стороны, иначе фломастер проступит на следующий рисунок. И лист 8,5 на 11 дюймов или А4, потому что меньший формат стесняет размах руки. Наша книга сделана по этим шести признакам: 111 рисунков, по одному на странице, контур толщиной от 2,4 до 4,8 миллиметра, рисунок занимает от 70 до 82 процентов листа, печать с одной стороны, формат 8,5 на 11 дюймов. Сверх шести в ней есть еще две вещи. Под каждым рисунком стоит слово крупными полыми буквами, которые ребенок раскрашивает так же, как сам рисунок, поэтому страница работает дважды: один раз на раскрашивание, второй на называние того, что нарисовано. И каждый рисунок расположен по центру листа, а не у корешка, поэтому раскрашивать одинаково удобно и левше, и правше. И есть еще одно, по чему стоит судить о самой рекомендации: мы прямо говорим, когда наша собственная книга не подходит. Ребенку, который уже уверенно раскрашивает внутри контура, она покажется скучной, и мы пишем об этом на каждой странице, где о ней рассказываем.",
+          "Единственно лучшей не существует, и страница, которая называет одну, попросту гадает. Зато есть пять признаков, которые видно по фотографиям страниц прямо в магазине. Контур толстый, потому что тонкая линия исчезает под широким штрихом и ребенок не видит результата своей работы. Один рисунок на странице, потому что несколько предметов на листе рассеивают внимание, а внимание в этом возрасте держится несколько минут. Рисунок крупный, во весь лист, потому что рука ведет от плеча и мелкое ей пока недоступно. Внутри рисунка нет мелких участков: закрашивать надо одну простую форму, а не десять лепестков. И лист 8,5 на 11 дюймов или А4, потому что меньший формат стесняет размах руки. Наша книга сделана по этим пяти признакам: 111 рисунков, по одному на странице, контур толщиной от 2,4 до 4,8 миллиметра, рисунок занимает от 70 до 82 процентов листа, формат 8,5 на 11 дюймов. Сверх пяти в ней есть еще две вещи. Под каждым рисунком стоит слово крупными полыми буквами, которые ребенок раскрашивает так же, как сам рисунок, поэтому страница работает дважды: один раз на раскрашивание, второй на называние того, что нарисовано. И каждый рисунок расположен по центру листа, а не у корешка, поэтому раскрашивать одинаково удобно и левше, и правше. И есть еще одно, по чему стоит судить о самой рекомендации: мы прямо говорим, когда наша собственная книга не подходит. Ребенку, который уже уверенно раскрашивает внутри контура, она покажется скучной, и мы пишем об этом на каждой странице, где о ней рассказываем.",
       },
       {
         q: "Какой толщины должен быть контур в раскраске для малыша?",
@@ -799,7 +797,7 @@ export const basisCopy: Record<ContentLang, BasisCopy> = {
         given: "The child is around two years old. The child holds a pencil with the fingers but is not confident yet, colors on the picture but often goes outside the outline, and usually spends about five minutes on one page.",
         verdict: "Controlled scribbling, approximately 18 months to 2 years",
         text: [
-          "At this stage, a large, familiar object that fills most of the page works well, with a thick outline, two or three simple parts inside, and printing on only one side of the page. Thick crayons and washable markers are good choices.",
+          "At this stage, a large, familiar object that fills most of the page works well, with a thick outline and two or three simple parts inside. Thick crayons and washable markers are good choices.",
           "Going outside the outline is not considered a mistake at this stage. The child is already trying to direct the marks toward the picture, but precise hand control is still developing.",
         ],
       },
@@ -966,7 +964,7 @@ export const basisCopy: Record<ContentLang, BasisCopy> = {
         given: "El niño tiene alrededor de dos años. Sostiene el lápiz con los dedos, pero todavía con poca seguridad. Colorea sobre el dibujo, aunque se sale con frecuencia del contorno. Suele dedicar unos cinco minutos a una página.",
         verdict: "Garabatos más controlados, aproximadamente de 18 meses a 2 años",
         text: [
-          "En esta etapa es adecuado un objeto grande y reconocible que ocupe casi toda la página, con un contorno grueso, dos o tres partes sencillas en el interior e impresión en una sola cara. Para dibujar son prácticos los crayones gruesos y los rotuladores lavables.",
+          "En esta etapa es adecuado un objeto grande y reconocible que ocupe casi toda la página, con un contorno grueso y dos o tres partes sencillas en el interior. Para dibujar son prácticos los crayones gruesos y los rotuladores lavables.",
           "Salirse del contorno no se considera un error en esta etapa. El niño ya intenta dirigir los trazos hacia el dibujo, pero la precisión de los movimientos de la mano todavía se está desarrollando.",
         ],
       },
@@ -1130,7 +1128,7 @@ export const basisCopy: Record<ContentLang, BasisCopy> = {
         given: "Ребенку около двух лет. Он держит карандаш пальцами, но пока неуверенно. Попадает по рисунку, но часто выходит за контур. Над одной страницей обычно проводит около пяти минут.",
         verdict: "Осознанные каракули, примерно от 18 месяцев до 2 лет",
         text: [
-          "На этом этапе подойдет крупный узнаваемый предмет почти во весь лист, толстый контур, две-три простые части внутри и печать только с одной стороны страницы. Для рисования удобны толстые мелки и смываемые фломастеры.",
+          "На этом этапе подойдет крупный узнаваемый предмет почти во весь лист, толстый контур и две-три простые части внутри. Для рисования удобны толстые мелки и смываемые фломастеры.",
           "Выход за контур здесь не считается ошибкой. Ребенок уже старается направить линию на рисунок, но точность движения руки еще развивается.",
         ],
       },

@@ -176,8 +176,8 @@ export const agesCopy: Record<ContentLang, SectionCopy> = {
 
       "The practical advice is simple: judge a book by its pages as well as by the age on the " +
       "cover. For a first coloring book what matters is a thick outline, one large drawing per " +
-      "page, pictures the child knows, and printing on one side only. All of that can be seen by " +
-      "simply looking inside the book.",
+      "page, and pictures the child knows. All of that can be seen by simply looking inside " +
+      "the book.",
     ],
     faq: [
       {
@@ -260,9 +260,8 @@ export const agesCopy: Record<ContentLang, SectionCopy> = {
 
       "El consejo práctico es sencillo: no se fije únicamente en la edad de la portada, sino " +
         "también en las páginas. Para un primer libro para colorear son importantes un " +
-        "contorno grueso, un solo dibujo grande por página, imágenes familiares para el niño e " +
-        "impresión por una sola cara. Todo esto puede comprobarse simplemente mirando el " +
-        "interior del libro.",
+        "contorno grueso, un solo dibujo grande por página e imágenes familiares para el niño. " +
+        "Todo esto puede comprobarse simplemente mirando el interior del libro.",
     ],
     faq: [
       {
@@ -348,8 +347,8 @@ export const agesCopy: Record<ContentLang, SectionCopy> = {
 
       "Практический совет простой: оценивайте не только возраст на обложке, но и сами " +
         "страницы. Для первой раскраски важны толстый контур, один крупный рисунок на " +
-        "странице, знакомые ребенку изображения и печать только с одной стороны. Все это можно " +
-        "увидеть, просто заглянув внутрь книги.",
+        "странице и знакомые ребенку изображения. Все это можно увидеть, просто заглянув " +
+        "внутрь книги.",
     ],
     faq: [
       {

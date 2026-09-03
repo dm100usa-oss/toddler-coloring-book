@@ -661,36 +661,31 @@ export const guides: Guide[] = [
     lead: {
       en:
         "Ordinary paper in coloring books often lets marker ink through. The simplest solution is to " +
-        "slip an extra sheet of paper or card under the page. It is more convenient still when a book " +
-        "is printed on one side only: the ink may then mark a blank back rather than spoiling the " +
-        "next drawing.",
+        "hand the child wax crayons or colored pencils instead: they sit on the surface and never " +
+        "come through. If markers stay, a spare sheet under the page catches what soaks through and " +
+        "keeps the table clean.",
       es:
         "El papel corriente de muchos libros para colorear puede dejar pasar la tinta de los " +
-          "rotuladores. La solución más sencilla es colocar una hoja adicional o un cartón " +
-          "debajo de la página. También resulta muy práctico que el libro esté impreso por una " +
-          "sola cara: así, si la tinta traspasa el papel, dejará una marca en el reverso en " +
-          "blanco y no estropeará el dibujo siguiente.",
+          "rotuladores. La solución más sencilla es dar al niño ceras o lápices de colores: no " +
+          "traspasan el papel. Si se siguen usando rotuladores, una hoja adicional debajo de la " +
+          "página recoge la tinta que pasa y mantiene limpia la mesa.",
       ru:
         "Обычная бумага в раскрасках часто пропускает чернила фломастера. Самое простое " +
-          "решение - подложить под страницу дополнительный лист бумаги или картона. Еще " +
-          "удобнее, если книга напечатана только с одной стороны: тогда чернила могут оставить " +
-          "след на пустом обороте, но не испортят следующий рисунок.",
+          "решение - дать ребенку восковые мелки или цветные карандаши: они ложатся на " +
+          "поверхность и насквозь не проходят. Если фломастеры остаются, подложите под страницу " +
+          "дополнительный лист: он соберет чернила и защитит стол.",
     },
     body: {
       en: [
         "Marker ink often goes through the paper in children's coloring books, and that does not " +
         "necessarily mean the book is badly printed. Paper heavy enough to hold the ink is thicker " +
         "and more expensive, and it adds noticeably to the weight and the price of a book. That is " +
-        "why many children's coloring books use ordinary paper and solve the problem with single " +
-        "sided printing or a spare sheet under the page.",
+        "why many children's coloring books use ordinary paper, and why the problem is solved with " +
+        "the tool the child draws with rather than with the book.",
 
         "The simplest solution takes a few seconds: put a clean sheet of paper or thin card under the " +
         "page the child is coloring. Whatever soaks through lands on it. It is worth doing straight " +
         "away when markers come out, rather than after the next drawing has been spoiled.",
-
-        "When choosing a book, look at whether it is printed on one side only. If the back of every " +
-        "drawing is blank, marker ink that goes through the paper will not spoil the next picture. " +
-        "That is particularly convenient for children who like coloring with markers.",
 
         "You can also change the tool. Wax crayons and colored pencils do not soak through the paper, " +
         "which makes them more convenient than markers on thin paper. If it does not matter to the " +
@@ -704,23 +699,17 @@ export const guides: Guide[] = [
         "La tinta de los rotuladores puede traspasar el papel de muchos libros infantiles " +
           "para colorear, y eso no significa necesariamente que el libro esté mal impreso. " +
           "Para impedirlo por completo se necesita un papel más grueso, que aumenta el coste y " +
-          "el peso del libro. Por eso, muchos libros utilizan papel corriente y solucionan el " +
-          "problema mediante impresión por una sola cara o colocando una hoja adicional " +
-          "debajo.",
+          "el peso del libro. Por eso, muchos libros utilizan papel corriente, y el problema se " +
+          "resuelve con el material con el que dibuja el niño, no con el libro.",
 
         "La solución más sencilla lleva solo unos segundos: coloque una hoja de papel o un " +
           "cartón fino debajo de la página que está coloreando el niño. La tinta que traspase " +
           "quedará en esa hoja. Conviene hacerlo desde el principio cuando se utilizan " +
           "rotuladores, en lugar de esperar a que se estropee el dibujo siguiente.",
 
-        "Al elegir un libro, fíjese en si está impreso por una sola cara. Si el reverso de " +
-          "cada dibujo está en blanco, la tinta que traspase el papel no estropeará la " +
-          "ilustración siguiente. Es especialmente práctico para los niños a los que les gusta " +
-          "colorear con rotuladores.",
-
         "Otra opción es cambiar de material. Los crayones y los lápices de colores no " +
           "traspasan el papel como la tinta de los rotuladores. Si al niño no le importa " +
-          "utilizar otro material, es la forma más sencilla de evitar marcas en el reverso.",
+          "utilizar otro material, es la forma más sencilla de evitar marcas en el papel.",
 
         "No intente secar la página con un secador o una plancha ni eliminar la tinta con " +
           "disolventes. Estas medidas no solucionan las marcas que ya han traspasado el papel " +
@@ -731,21 +720,17 @@ export const guides: Guide[] = [
           "обязательно означает, что книга напечатана плохо. Чтобы полностью удерживать " +
           "чернила, нужна более плотная и дорогая бумага, которая заметно увеличивает " +
           "стоимость и вес книги. Поэтому многие детские раскраски печатают на обычной бумаге, " +
-          "а проблему решают односторонней печатью или дополнительным листом под страницей.",
+          "а решать вопрос проще не книгой, а тем, чем ребенок рисует.",
 
         "Самый простой способ занимает несколько секунд: положите под страницу, которую " +
           "раскрашивает ребенок, чистый лист бумаги или тонкий картон. Чернила, прошедшие " +
           "насквозь, останутся на нем. Лучше делать это сразу при использовании фломастеров, а " +
           "не после того, как будет испорчен следующий рисунок.",
 
-        "При выборе книги обратите внимание на одностороннюю печать. Если оборот каждого " +
-          "рисунка пустой, чернила фломастера, прошедшие сквозь бумагу, не испортят следующую " +
-          "картинку. Это особенно удобно для детей, которые любят раскрашивать фломастерами.",
-
         "Можно также выбрать другой инструмент. Восковые мелки и цветные карандаши не " +
           "пропитывают бумагу насквозь, поэтому для тонкой бумаги они удобнее фломастеров. " +
           "Если ребенку не принципиально рисовать именно фломастерами, это самый простой " +
-          "способ избежать следов на обороте.",
+          "способ обойтись без следов на бумаге.",
 
         "Не стоит пытаться сушить страницу феном, проглаживать ее утюгом или удалять чернила " +
           "растворителем. Это не устранит следы, прошедшие сквозь бумагу, зато может повредить " +
@@ -758,8 +743,8 @@ export const guides: Guide[] = [
           q: "Which coloring books do not bleed through?",
           a:
             "It depends mainly on the weight of the paper. The ordinary paper used in many children's " +
-            "coloring books can let marker ink through. It is more useful to look for single sided " +
-            "printing: the mark then lands on a blank back rather than spoiling the next drawing.",
+            "coloring books can let marker ink through, and heavier paper makes a book thicker and " +
+            "dearer. Crayons and colored pencils do not come through at all, whatever the paper.",
         },
         {
           q: "Will a coloring book bleed with crayons?",
@@ -782,9 +767,8 @@ export const guides: Guide[] = [
           a:
             "Depende principalmente del grosor del papel. El papel corriente de muchos " +
               "libros infantiles para colorear puede dejar pasar la tinta de los rotuladores. " +
-              "Por eso, suele ser más útil fijarse en si el libro está impreso por una sola " +
-              "cara: así, la tinta quedará en un reverso en blanco y no estropeará el dibujo " +
-              "siguiente.",
+              "Un papel más grueso encarece el libro. Las ceras y los lápices de colores no " +
+              "traspasan el papel, sea cual sea el libro.",
         },
         {
           q: "¿Traspasa un libro para colorear con crayones?",
@@ -805,9 +789,9 @@ export const guides: Guide[] = [
           q: "Какие раскраски не пропускают фломастер?",
           a:
             "Это зависит прежде всего от плотности бумаги. Обычная бумага многих детских " +
-              "раскрасок может пропускать чернила фломастера. Поэтому полезнее обращать " +
-              "внимание на одностороннюю печать: тогда след останется на пустом обороте и не " +
-              "испортит следующий рисунок.",
+              "раскрасок может пропускать чернила фломастера, а более плотная бумага делает " +
+              "книгу дороже. Восковые мелки и цветные карандаши не проходят насквозь ни на " +
+              "какой бумаге.",
         },
         {
           q: "Проходят ли насквозь восковые мелки?",
@@ -1077,7 +1061,7 @@ export const guides: Guide[] = [
         "For travel, reusable and water-reveal coloring books can be convenient, because they are easy to carry and help keep mess to a minimum.",
         "If your child colors at home and you are constantly cleaning marks from different surfaces, a mess-free coloring book may be worth trying. But it is still useful to keep regular paper and traditional drawing materials available.",
         "For a group of children, ordinary paper coloring pages are often the simplest and least expensive choice. Each child can have a separate page, and a torn or spoiled sheet is easy to replace.",
-        "There is also one general rule that matters more than the type of coloring book. For a toddler, four features are especially helpful: thick outlines, one large picture per page, a familiar object or character, and printing on only one side of the sheet. A beautiful reusable book filled with tiny details may be less suitable for a young child than a simple page with one big elephant.",
+        "There is also one general rule that matters more than the type of coloring book. For a toddler, three features are especially helpful: thick outlines, one large picture per page, and a familiar object or character. A beautiful reusable book filled with tiny details may be less suitable for a young child than a simple page with one big elephant.",
       ],
       es: [
         "Cuando los padres eligen por primera vez un libro para colorear para su pequeño, se encuentran con varias opciones muy diferentes. En la tienda pueden estar unas junto a otras y llamarse todas libros para colorear, aunque funcionan de manera distinta y ofrecen experiencias diferentes al niño. Veamos en qué se diferencian y cuándo conviene utilizar cada una.",
@@ -1106,7 +1090,7 @@ export const guides: Guide[] = [
         "Si va de viaje, los libros reutilizables o los que funcionan con agua son opciones cómodas: ocupan poco espacio y ayudan a evitar manchas.",
         "Si el niño dibuja en casa y usted tiene que limpiar constantemente diferentes superficies, puede probar un libro para colorear sin manchas. Sin embargo, también conviene mantener el papel tradicional entre los materiales que utiliza habitualmente.",
         "Si necesita libros para colorear para un grupo de niños, las hojas de papel tradicionales suelen ser la opción más sencilla y económica: cada niño puede recibir su propia página y una hoja estropeada se sustituye fácilmente.",
-        "Y hay una regla general que es más importante que el tipo de libro. Para un niño pequeño son especialmente importantes cuatro cosas: un contorno grueso, un solo dibujo grande por página, un objeto o personaje reconocible y la impresión en una sola cara de la hoja. Un bonito libro reutilizable lleno de pequeños detalles puede resultar menos adecuado para un niño pequeño que una sencilla hoja con un elefante grande.",
+        "Y hay una regla general que es más importante que el tipo de libro. Para un niño pequeño son especialmente importantes tres cosas: un contorno grueso, un solo dibujo grande por página y un objeto o personaje reconocible. Un bonito libro reutilizable lleno de pequeños detalles puede resultar menos adecuado para un niño pequeño que una sencilla hoja con un elefante grande.",
       ],
       ru: [
         "Родитель, который впервые выбирает раскраску для малыша, сталкивается с несколькими совершенно разными вариантами. В магазине они могут лежать рядом и называться раскрасками, хотя устроены по-разному и дают ребенку разный опыт. Разберемся, чем они отличаются и когда какой вариант лучше использовать.",
@@ -1135,7 +1119,7 @@ export const guides: Guide[] = [
         "Если вы собираетесь в дорогу, удобны многоразовые или водные раскраски: они занимают мало места и помогают избежать пятен.",
         "Если ребенок рисует дома, а вам постоянно приходится отмывать поверхности, можно попробовать раскраски без грязи. Но обычную бумагу тоже стоит оставить для регулярных занятий.",
         "Если вы выбираете раскраски для группы детей, обычные бумажные листы часто оказываются самым простым и недорогим вариантом: каждому ребенку можно дать отдельную страницу, а испорченный лист легко заменить.",
-        "И есть общее правило, которое важнее самого вида раскраски. Для малыша особенно важны четыре вещи: толстый контур, один крупный рисунок на странице, узнаваемый предмет или персонаж и печать только с одной стороны листа. Красивая многоразовая книжка с множеством мелких деталей может оказаться менее удобной для малыша, чем простой лист с большим слоном.",
+        "И есть общее правило, которое важнее самого вида раскраски. Для малыша особенно важны три вещи: толстый контур, один крупный рисунок на странице и узнаваемый предмет или персонаж. Красивая многоразовая книжка с множеством мелких деталей может оказаться менее удобной для малыша, чем простой лист с большим слоном.",
       ],
     },
     faq: {

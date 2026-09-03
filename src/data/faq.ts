@@ -621,9 +621,9 @@ export const faq: Record<UiLang, FaqGroup[]> = {
         {
           q: "Mi hijo es zurdo. ¿Le sirve el libro?",
           a: [
-            "Sí. Cada dibujo está centrado en la página, no pegado al lomo, y la impresión " +
-              "es por una sola cara. Nada estorba a la mano izquierda y el lomo no presiona " +
-              "la muñeca. No hace falta una edición aparte para niños zurdos.",
+            "Sí. Cada dibujo está centrado en la página, no pegado al lomo. Nada estorba a " +
+              "la mano izquierda y el lomo no presiona la muñeca. No hace falta una edición " +
+              "aparte para niños zurdos.",
           ],
         },
         {
@@ -631,8 +631,7 @@ export const faq: Record<UiLang, FaqGroup[]> = {
           a: [
             "A esta edad romper papel es normal: el niño está averiguando qué hace ese " +
               "material. Lo más práctico es recortar la página de antemano y dársela suelta. " +
-              "Así lo que se rompe es un dibujo y no el libro entero. La impresión por una " +
-              "sola cara permite recortar cualquier página sin perder el dibujo del reverso.",
+              "Así lo que se rompe es un dibujo y no el libro entero.",
           ],
         },
         {
@@ -735,8 +734,7 @@ export const faq: Record<UiLang, FaqGroup[]> = {
           a: [
             "Mucha gente las recorta, les pone la fecha y las guarda en una carpeta. Al " +
               "cabo de medio año se ve cómo ha cambiado el trazo, y resulta más interesante " +
-              "de lo que parece. La impresión por una sola cara permite recortar la página " +
-              "sin perder el dibujo del reverso.",
+              "de lo que parece.",
           ],
         },
         {
@@ -1128,8 +1126,7 @@ export const faq: Record<UiLang, FaqGroup[]> = {
           a: [
             "В этом возрасте рвать бумагу нормально: ребенок изучает, что она умеет. Проще " +
               "всего заранее вырезать страницу из книги и дать лист отдельно. Так порванным " +
-              "окажется один рисунок, а не вся книга. Печать с одной стороны позволяет " +
-              "вырезать любую страницу, не теряя рисунок на обороте.",
+              "окажется один рисунок, а не вся книга.",
           ],
         },
         {
@@ -1228,8 +1225,7 @@ export const faq: Record<UiLang, FaqGroup[]> = {
           q: "Что делать с готовыми страницами?",
           a: [
             "Многие вырезают, ставят дату и складывают в папку. Через полгода видно, как " +
-              "изменился штрих, и это интереснее, чем кажется. Печать с одной стороны " +
-              "позволяет вырезать страницу, не теряя рисунок на обороте.",
+              "изменился штрих, и это интереснее, чем кажется.",
           ],
         },
         {

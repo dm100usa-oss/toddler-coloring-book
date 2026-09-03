@@ -643,7 +643,7 @@ export const euroCountry: Record<EuroLang, string> = {
    Ни одного утверждения о пользе для развития здесь нет и быть не
    должно: ни про моторику, ни про интеллект, ни про двуязычие.
    Только проверяемое: толщина контура, один рисунок на странице,
-   печать с одной стороны, ребенок доводит рисунок до конца сам.
+   ребенок доводит рисунок до конца сам.
    ================================================================== */
 
 export const euroCopy: Record<
@@ -673,7 +673,7 @@ export const euroCopy: Record<
         "111 einfache Wörter auf Englisch, ein Wort unter jedem Bild",
         "Große, für Kinder gut erkennbare Zeichnungen mit dicken Konturen",
         "Das Wort unter der Zeichnung ist in großen Konturbuchstaben gedruckt und lässt sich ebenfalls ausmalen",
-        "Eine Zeichnung pro Seite, die Rückseite bleibt leer",
+        "Eine Zeichnung auf jeder Seite",
         "Die Zeichnungen sind in der Mitte der Seite platziert - praktisch für Links- und Rechtshänder",
         "Vertraute Themen: Tiere, Essen, Fahrzeuge, Natur, Märchenfiguren und mehr",
         "Am Anfang des Buches eine eigene Namensseite für das Kind",
@@ -736,7 +736,7 @@ export const euroCopy: Record<
         },
         {
           q: "Womit malt man die Bilder in diesem Buch am besten aus?",
-          a: "Buntstifte, Wachsmalstifte und Filzstifte eignen sich alle. Wenn ein Filzstift durchdrückt, kann man ein zusätzliches Blatt unter die Seite legen. Die Rückseite jeder Zeichnung bleibt leer.",
+          a: "Buntstifte und Wachsmalstifte sind die beste Wahl: Sie drücken nicht durch das Papier. Filzstifte geben kräftigere Farben, ihre Tinte kann aber durchschlagen.",
         },
         {
           q: "Wie lange kann ein Kind dieses Malbuch nutzen?",
@@ -783,7 +783,7 @@ export const euroCopy: Record<
         "111 einfache Wörter auf Spanisch, ein Wort unter jedem Bild",
         "Große, für Kinder gut erkennbare Zeichnungen mit dicken Konturen",
         "Das Wort unter der Zeichnung ist in großen Konturbuchstaben gedruckt und lässt sich ebenfalls ausmalen",
-        "Eine Zeichnung pro Seite, die Rückseite bleibt leer",
+        "Eine Zeichnung auf jeder Seite",
         "Die Zeichnungen sind in der Mitte der Seite platziert - praktisch für Links- und Rechtshänder",
         "Vertraute Themen: Tiere, Essen, Fahrzeuge, Natur, Märchenfiguren und mehr",
         "Am Anfang des Buches eine eigene Namensseite für das Kind",
@@ -844,7 +844,7 @@ export const euroCopy: Record<
         },
         {
           q: "Womit malt man die Bilder in diesem Buch am besten aus?",
-          a: "Buntstifte, Wachsmalstifte und Filzstifte eignen sich alle. Wenn ein Filzstift durchdrückt, kann man ein zusätzliches Blatt unter die Seite legen. Die Rückseite jeder Zeichnung bleibt leer.",
+          a: "Buntstifte und Wachsmalstifte sind die beste Wahl: Sie drücken nicht durch das Papier. Filzstifte geben kräftigere Farben, ihre Tinte kann aber durchschlagen.",
         },
         {
           q: "Wie lange kann ein Kind dieses Malbuch nutzen?",
@@ -904,7 +904,7 @@ export const euroCopy: Record<
         "111 mots simples en anglais, un seul mot sous chaque image",
         "De grands dessins aux contours épais, faciles à reconnaître pour un enfant",
         "Le mot sous le dessin est imprimé en grandes lettres creuses, qui se colorient aussi",
-        "Un dessin par page, le verso reste vierge",
+        "Un dessin sur chaque page",
         "Les dessins sont placés au centre de la page : pratique pour les droitiers comme pour les gauchers",
         "Des thèmes familiers : animaux, nourriture, véhicules, nature, personnages de contes et bien d'autres",
         "Au début du livre, une page pour écrire le prénom de l'enfant",
@@ -963,7 +963,7 @@ export const euroCopy: Record<
         },
         {
           q: "Avec quoi vaut-il mieux colorier les images de ce livre ?",
-          a: "Les crayons de couleur, les craies grasses et les feutres conviennent tous. Si un feutre traverse le papier, il suffit de glisser une feuille supplémentaire sous la page. Le verso de chaque dessin reste vierge.",
+          a: "Les crayons de couleur et les craies grasses sont le meilleur choix : ils ne traversent pas le papier. Les feutres donnent des couleurs plus vives, mais leur encre peut traverser la feuille.",
         },
         {
           q: "Combien de temps un enfant peut-il utiliser ce livre de coloriage ?",
@@ -1013,7 +1013,7 @@ export const euroCopy: Record<
         "111 mots simples en espagnol, un seul mot sous chaque image",
         "De grands dessins aux contours épais, faciles à reconnaître pour un enfant",
         "Le mot sous le dessin est imprimé en grandes lettres creuses, qui se colorient aussi",
-        "Un dessin par page, le verso reste vierge",
+        "Un dessin sur chaque page",
         "Les dessins sont placés au centre de la page : pratique pour les droitiers comme pour les gauchers",
         "Des thèmes familiers : animaux, nourriture, véhicules, nature, personnages de contes et bien d'autres",
         "Au début du livre, une page pour écrire le prénom de l'enfant",
@@ -1076,7 +1076,7 @@ export const euroCopy: Record<
         },
         {
           q: "Avec quoi vaut-il mieux colorier les images de ce livre ?",
-          a: "Les crayons de couleur, les craies grasses et les feutres conviennent tous. Si un feutre traverse le papier, il suffit de glisser une feuille supplémentaire sous la page. Le verso de chaque dessin reste vierge.",
+          a: "Les crayons de couleur et les craies grasses sont le meilleur choix : ils ne traversent pas le papier. Les feutres donnent des couleurs plus vives, mais leur encre peut traverser la feuille.",
         },
         {
           q: "Combien de temps un enfant peut-il utiliser ce livre de coloriage ?",
@@ -1141,7 +1141,7 @@ export const euroCopy: Record<
         "111 eenvoudige woorden in het Engels, één woord onder elke afbeelding",
         "Grote tekeningen met dikke lijnen, goed herkenbaar voor een kind",
         "Het woord onder de tekening is gedrukt in grote open letters, die ook ingekleurd kunnen worden",
-        "Eén tekening per pagina, de achterkant blijft leeg",
+        "Eén tekening op elke pagina",
         "De tekeningen staan midden op de pagina: handig voor rechts- en linkshandigen",
         "Vertrouwde thema's: dieren, eten, voertuigen, natuur, sprookjesfiguren en meer",
         "Voorin het boek een pagina voor de naam van het kind",
@@ -1201,7 +1201,7 @@ export const euroCopy: Record<
         },
         {
           q: "Waarmee kunt u de afbeeldingen in dit boek het beste inkleuren?",
-          a: "Kleurpotloden, waskrijt en viltstiften zijn allemaal geschikt. Als een viltstift doordrukt, kunt u een extra vel onder de pagina leggen. De achterkant van elke tekening blijft leeg.",
+          a: "Kleurpotloden en waskrijt zijn de beste keuze: die drukken niet door het papier heen. Viltstiften geven fellere kleuren, maar de inkt kan doordrukken.",
         },
         {
           q: "Hoe lang kan een kind met dit kleurboek vooruit?",
@@ -1250,7 +1250,7 @@ export const euroCopy: Record<
         "111 eenvoudige woorden in het Spaans, één woord onder elke afbeelding",
         "Grote tekeningen met dikke lijnen, goed herkenbaar voor een kind",
         "Het woord onder de tekening is gedrukt in grote open letters, die ook ingekleurd kunnen worden",
-        "Eén tekening per pagina, de achterkant blijft leeg",
+        "Eén tekening op elke pagina",
         "De tekeningen staan midden op de pagina: handig voor rechts- en linkshandigen",
         "Vertrouwde thema's: dieren, eten, voertuigen, natuur, sprookjesfiguren en meer",
         "Voorin het boek een pagina voor de naam van het kind",
@@ -1313,7 +1313,7 @@ export const euroCopy: Record<
         },
         {
           q: "Waarmee kunt u de afbeeldingen in dit boek het beste inkleuren?",
-          a: "Kleurpotloden, waskrijt en viltstiften zijn allemaal geschikt. Als een viltstift doordrukt, kunt u een extra vel onder de pagina leggen. De achterkant van elke tekening blijft leeg.",
+          a: "Kleurpotloden en waskrijt zijn de beste keuze: die drukken niet door het papier heen. Viltstiften geven fellere kleuren, maar de inkt kan doordrukken.",
         },
         {
           q: "Hoe lang kan een kind met dit kleurboek vooruit?",
@@ -1606,7 +1606,7 @@ export const euroCopy: Record<
         "111 parole semplici in inglese, una parola sotto ogni immagine",
         "Disegni grandi e facili da riconoscere per i bambini, con contorni spessi",
         "La parola sotto il disegno è stampata in grandi lettere a contorno, anch'esse da colorare",
-        "Un disegno per pagina, il retro della pagina resta bianco",
+        "Un disegno su ogni pagina",
         "I disegni sono centrati sulla pagina, una disposizione comoda sia per destrimani sia per mancini",
         "Temi familiari ai bambini: animali, cibo, mezzi di trasporto, natura, personaggi delle fiabe e altro ancora",
         "All'inizio del libro c'è una pagina personalizzabile con il nome del bambino",
@@ -1665,7 +1665,7 @@ export const euroCopy: Record<
         },
         {
           q: "Con che cosa è meglio colorare le immagini di questo libro?",
-          a: "Vanno bene matite colorate, pastelli a cera e pennarelli. Se un pennarello trapassa la carta, si può mettere un foglio in più sotto la pagina. Il retro di ogni disegno resta bianco.",
+          a: "Matite colorate e pastelli a cera sono la scelta migliore: non trapassano la carta. I pennarelli danno colori più vivaci, ma il loro inchiostro può passare dall'altra parte.",
         },
         {
           q: "Per quanto tempo il bambino potrà usare questo libro da colorare?",
@@ -1712,7 +1712,7 @@ export const euroCopy: Record<
         "111 parole semplici in spagnolo, una parola sotto ogni immagine",
         "Disegni grandi e facili da riconoscere per i bambini, con contorni spessi",
         "La parola sotto il disegno è stampata in grandi lettere a contorno, anch'esse da colorare",
-        "Un disegno per pagina, il retro della pagina resta bianco",
+        "Un disegno su ogni pagina",
         "I disegni sono centrati sulla pagina, una disposizione comoda sia per destrimani sia per mancini",
         "Temi familiari ai bambini: animali, cibo, mezzi di trasporto, natura, personaggi delle fiabe e altro ancora",
         "All'inizio del libro c'è una pagina personalizzabile con il nome del bambino",
@@ -1771,7 +1771,7 @@ export const euroCopy: Record<
         },
         {
           q: "Con che cosa è meglio colorare le immagini di questo libro?",
-          a: "Vanno bene matite colorate, pastelli a cera e pennarelli. Se un pennarello trapassa la carta, si può mettere un foglio in più sotto la pagina. Il retro di ogni disegno resta bianco.",
+          a: "Matite colorate e pastelli a cera sono la scelta migliore: non trapassano la carta. I pennarelli danno colori più vivaci, ma il loro inchiostro può passare dall'altra parte.",
         },
         {
           q: "Per quanto tempo il bambino potrà usare questo libro da colorare?",
@@ -1828,7 +1828,7 @@ export const euroCopy: Record<
         "111 palabras sencillas en inglés, una sola palabra debajo de cada imagen",
         "Dibujos grandes con contorno grueso, fáciles de reconocer para un niño",
         "La palabra bajo el dibujo está impresa en letras huecas grandes, que también se pueden colorear",
-        "Un dibujo por página, el reverso queda en blanco",
+        "Un dibujo en cada página",
         "Los dibujos están centrados en la página: una disposición cómoda tanto para diestros como para zurdos",
         "Temas conocidos: animales, comida, vehículos, naturaleza, personajes de cuento y muchos más",
         "Al principio del libro, una página para escribir el nombre del niño",
@@ -1887,7 +1887,7 @@ export const euroCopy: Record<
         },
         {
           q: "¿Con qué es mejor colorear los dibujos de este libro?",
-          a: "Se pueden usar lápices de colores, ceras y rotuladores. Si un rotulador traspasa el papel, se puede poner una hoja adicional debajo de la página. El reverso de cada dibujo queda en blanco.",
+          a: "Los lápices de colores y las ceras son la mejor opción: no traspasan el papel. Los rotuladores dan colores más vivos, pero su tinta puede pasar al otro lado.",
         },
         {
           q: "¿Cuánto tiempo le puede durar este libro a un niño?",

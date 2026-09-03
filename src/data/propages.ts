@@ -77,7 +77,6 @@ export const proPages: ProPage[] = [
           "The word in Spanish in the Spanish edition, in English in the English edition",
           "Thick outlines, suited to early coloring and to dot markers",
           "111 different subjects, no repeats",
-          "Printed on one side only, so a marker does not come through onto the next page",
           "8.5 by 11 inches, 114 pages",
         ],
         faq: [
@@ -145,7 +144,6 @@ export const proPages: ProPage[] = [
           "Contornos gruesos, adecuados para las primeras etapas del coloreado y para " +
             "rotuladores de puntos",
           "111 motivos distintos, sin repeticiones",
-          "Impresión por una sola cara, para que el rotulador no estropee el dibujo siguiente",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
         faq: [
@@ -210,7 +208,6 @@ export const proPages: ProPage[] = [
           "Толстый контур, удобный для первых попыток раскрашивания и работы точечными " +
             "маркерами",
           "111 разных предметов, без повторов",
-          "Печать только с одной стороны: фломастер не испортит следующий рисунок",
           "Формат 8.5 на 11 дюймов, 114 страниц",
         ],
         faq: [
@@ -280,7 +277,7 @@ export const proPages: ProPage[] = [
           "The family's own language, in a book of its own rather than a translation",
           "111 drawings, one per page, no preparation and no supplies needed",
           "The word under each drawing, in outline letters that can be colored",
-          "Thick outlines, large drawings, printed on one side only",
+          "Thick outlines and large drawings",
           "Small and light enough to carry a stack of them in a bag",
           "8.5 by 11 inches, 114 pages",
         ],
@@ -302,9 +299,9 @@ export const proPages: ProPage[] = [
           {
             q: "Does the family need anything besides the book?",
             a:
-              "A crayon or a pencil. The pages are printed on one side, so a marker that soaks " +
-              "through marks a blank back rather than the next drawing. Nothing has to be cut out, " +
-              "printed or prepared in advance.",
+              "A crayon or a pencil. Crayons and colored pencils do not soak through the paper, " +
+              "which makes them the safer choice here. Nothing has to be cut out, printed or " +
+              "prepared in advance.",
           },
           {
             q: "Is there a Russian edition?",
@@ -340,7 +337,7 @@ export const proPages: ProPage[] = [
           "Ediciones independientes en español e inglés",
           "111 dibujos, uno por página, sin preparación previa ni materiales especiales",
           "La palabra debajo de cada dibujo, en letras huecas que se colorean",
-          "Contornos gruesos, dibujos grandes, impresión por una sola cara",
+          "Contornos gruesos y dibujos grandes",
           "El libro es fácil de llevar a las visitas al hogar",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
@@ -363,10 +360,9 @@ export const proPages: ProPage[] = [
           {
             q: "¿La familia necesita algo además del libro?",
             a:
-              "Solo hace falta un crayón, un lápiz o un rotulador. Las páginas están " +
-                "impresas por una sola cara, por lo que, si la tinta traspasa el papel, " +
-                "llegará al reverso en blanco y no al dibujo siguiente. No es necesario " +
-                "recortar, imprimir ni preparar nada de antemano.",
+              "Solo hace falta un crayón o un lápiz de colores. No traspasan el papel, por " +
+                "lo que son la opción más segura aquí. No es necesario recortar, imprimir ni " +
+                "preparar nada de antemano.",
           },
           {
             q: "¿Existe una edición en ruso?",
@@ -402,7 +398,7 @@ export const proPages: ProPage[] = [
           "111 рисунков, по одному на странице, без предварительной подготовки и специальных " +
             "материалов",
           "Название под каждым рисунком полыми буквами, его можно раскрасить",
-          "Толстый контур, крупные рисунки, печать с одной стороны",
+          "Толстый контур и крупные рисунки",
           "Книгу удобно брать с собой на домашние визиты",
           "Формат 8.5 на 11 дюймов, 114 страниц",
         ],
@@ -425,9 +421,8 @@ export const proPages: ProPage[] = [
           {
             q: "Нужно ли семье что-то кроме книги?",
             a:
-              "Только мелок, карандаш или фломастер. Страницы напечатаны с одной стороны, " +
-                "поэтому чернила фломастера, прошедшие сквозь бумагу, попадут на пустой " +
-                "оборот, а не на следующий рисунок. Ничего не нужно вырезать, распечатывать " +
+              "Только мелок или цветной карандаш. Они не проходят сквозь бумагу, поэтому " +
+                "здесь это самый надежный выбор. Ничего не нужно вырезать, распечатывать " +
                 "или готовить заранее.",
           },
           {
@@ -474,7 +469,7 @@ export const proPages: ProPage[] = [
           "One large drawing per page, suited to children at different levels",
           "111 different drawings, no repeats",
           "Separate English and Spanish editions, each with its own words",
-          "Thick outlines and large drawings, printed on one side only",
+          "Thick outlines and large drawings",
           "8.5 by 11 inches, 114 pages",
         ],
         faq: [
@@ -536,7 +531,7 @@ export const proPages: ProPage[] = [
           "111 dibujos diferentes, sin repeticiones",
           "Ediciones independientes en español e inglés, con las palabras en el idioma " +
             "correspondiente",
-          "Contornos gruesos y dibujos grandes, impresión por una sola cara",
+          "Contornos gruesos y dibujos grandes",
           "8,5 por 11 pulgadas, 114 páginas",
         ],
         faq: [
@@ -600,7 +595,7 @@ export const proPages: ProPage[] = [
           "Один крупный рисунок на странице, подходящий детям с разным уровнем навыков",
           "111 разных рисунков без повторов",
           "Отдельные английское и испанское издания со словами на соответствующем языке",
-          "Толстый контур и крупные рисунки, печать с одной стороны",
+          "Толстый контур и крупные рисунки",
           "Формат 8.5 на 11 дюймов, 114 страниц",
         ],
         faq: [
@@ -651,18 +646,15 @@ export const proPages: ProPage[] = [
       en: {
         title: "Coloring books for a toddler room: daycare and family child care",
         lead:
-          "One book per child or one for the shelf, in English or Spanish. 111 drawings, printed " +
-          "on one side, ordered in any quantity on Amazon.",
+          "One book per child or one for the shelf, in English or Spanish. 111 drawings, " +
+          "ordered in any quantity on Amazon.",
         body: [
           "In a toddler room, children are often at different points in the development of drawing " +
           "skills. That is why every drawing in the book is large, simple and alone on the page. A " +
           "child who still makes sweeping marks can work freely on such a page, while a child with " +
           "steadier hand control tries to color separate areas.",
-          "Printing on one side matters more in a room than anywhere else. A marker goes through " +
-            "ordinary paper, and on a double sided page it ruins the drawing underneath. Here it " +
-            "marks a blank back instead. The word printed under each drawing is in outline letters " +
-            "and can be colored, and in the Spanish edition it is a Spanish word rather than a " +
-            "translated one.",
+          "The word printed under each drawing is in outline letters and can be colored, and in " +
+            "the Spanish edition it is a Spanish word rather than a translated one.",
           "The paperback is on Amazon in both languages, and any quantity can be ordered, whether " +
             "that is one copy for the shelf or one for every child. For a set covering several " +
             "rooms, write to us and say how many children it is for. Ten pages are free to print " +
@@ -672,7 +664,7 @@ export const proPages: ProPage[] = [
         fitTitle: "What is in the book",
         fit: [
           "Large, simple drawings for children at different levels in one room",
-          "One drawing per page, printed on one side only",
+          "One drawing on every page",
           "111 different drawings, no repeats",
           "The word under each drawing, Spanish in the Spanish edition",
           "Thick, clearly visible outlines",
@@ -696,9 +688,9 @@ export const proPages: ProPage[] = [
           {
             q: "Will a marker come through the page?",
             a:
-              "Marker ink can go through ordinary paper. Since the book is printed on one side only, it " +
-              "lands on a blank back rather than spoiling the next drawing. An extra sheet of paper or card " +
-              "under the page will also protect the surface underneath.",
+              "Marker ink can go through ordinary paper, and both sides of the sheet carry a " +
+              "drawing. Crayons and colored pencils do not soak through at all, which is why they " +
+              "work better in a room full of children.",
           },
           {
             q: "Is it too easy for the older children in a mixed room?",
@@ -714,18 +706,15 @@ export const proPages: ProPage[] = [
         title: "Libros para colorear para guarderías y centros de cuidado infantil",
         lead:
           "Un ejemplar para cada niño o uno para el grupo, en español o en inglés. 111 " +
-            "dibujos, impresión por una sola cara y la posibilidad de pedir en Amazon la " +
-            "cantidad de ejemplares que necesite.",
+            "dibujos y la posibilidad de pedir en Amazon la cantidad de ejemplares que " +
+            "necesite.",
         body: [
           "En un grupo de niños pequeños puede haber distintos niveles de habilidad. Por " +
             "eso, cada dibujo del libro es grande, sencillo y ocupa una página independiente. " +
             "El niño que todavía hace trazos amplios puede trabajar libremente sobre ella, " +
             "mientras que quien ya controla mejor la mano puede intentar colorear las " +
             "distintas zonas.",
-          "La impresión por una sola cara resulta especialmente práctica en actividades de " +
-            "grupo. La tinta de un rotulador puede traspasar el papel corriente, pero en este " +
-            "libro llegará al reverso en blanco y no estropeará el dibujo siguiente. La " +
-            "palabra debajo de cada imagen está impresa con letras de contorno y también se " +
+          "La palabra debajo de cada imagen está impresa con letras de contorno y también se " +
             "puede colorear. En la edición española, todas las palabras están en español.",
           "La edición impresa está disponible en Amazon en ambos idiomas. Puede pedir un " +
             "ejemplar para el grupo o uno para cada niño. Si necesita un pedido grande para " +
@@ -737,7 +726,7 @@ export const proPages: ProPage[] = [
         fit: [
           "Dibujos grandes y sencillos para niños con distintos niveles de habilidad dentro " +
             "de un mismo grupo",
-          "Un dibujo por página, impresión por una sola cara",
+          "Un dibujo en cada página",
           "111 dibujos diferentes, sin repeticiones",
           "Una palabra debajo de cada dibujo, en español en la edición española",
           "Contornos gruesos y fáciles de ver",
@@ -762,10 +751,9 @@ export const proPages: ProPage[] = [
           {
             q: "¿El rotulador traspasa la página?",
             a:
-              "La tinta de los rotuladores puede traspasar el papel corriente. Como el libro " +
-                "está impreso por una sola cara, llegará al reverso en blanco y no estropeará " +
-                "el dibujo siguiente. Colocar una hoja de papel o un cartón debajo de la " +
-                "página también ayuda a proteger la superficie.",
+              "La tinta de los rotuladores puede traspasar el papel corriente, y las dos caras " +
+                "de la hoja llevan un dibujo. Las ceras y los lápices de colores no traspasan " +
+                "el papel, por eso funcionan mejor en un grupo.",
           },
           {
             q: "¿Resulta demasiado fácil para los mayores de una sala mezclada?",
@@ -782,18 +770,16 @@ export const proPages: ProPage[] = [
         title: "Раскраски для ясельных групп и домашних детских садов",
         lead:
           "По книге для каждого ребенка или один экземпляр для группы, на английском или " +
-            "испанском языке. 111 рисунков, печать только с одной стороны, нужное количество " +
-            "экземпляров можно заказать на Amazon.",
+            "испанском языке. 111 рисунков, нужное количество экземпляров можно заказать " +
+            "на Amazon.",
         body: [
           "В группе малышей дети часто находятся на разных этапах развития навыков " +
             "рисования. Поэтому каждый рисунок в книге крупный, простой и занимает отдельную " +
             "страницу. Ребенок, который пока рисует размашистые линии, может свободно работать " +
             "с такой страницей, а тот, кто уже лучше управляет рукой, старается раскрашивать " +
             "отдельные участки.",
-          "Печать только с одной стороны особенно удобна для групповых занятий. Чернила " +
-            "фломастера могут пройти сквозь обычную бумагу, но в этой книге они попадут на " +
-            "пустой оборот и не испортят следующий рисунок. Слово под изображением напечатано " +
-            "полыми буквами и тоже раскрашивается. В испанском издании все слова написаны " +
+          "Слово под изображением напечатано полыми буквами и тоже раскрашивается. " +
+            "В испанском издании все слова написаны " +
             "по-испански.",
           "Бумажная книга продается на Amazon на обоих языках, и можно заказать как один " +
             "экземпляр для группы, так и по книге для каждого ребенка. Если вам нужен крупный " +
@@ -804,7 +790,7 @@ export const proPages: ProPage[] = [
         fitTitle: "Что в книге",
         fit: [
           "Крупные простые рисунки для детей с разным уровнем навыков в одной группе",
-          "Один рисунок на странице, печать с одной стороны",
+          "Один рисунок на каждой странице",
           "111 разных рисунков без повторов",
           "Слово под каждым рисунком, в испанском издании - на испанском языке",
           "Толстый и хорошо заметный контур",
@@ -829,10 +815,9 @@ export const proPages: ProPage[] = [
           {
             q: "Проходит ли фломастер страницу насквозь?",
             a:
-              "Чернила фломастера могут проходить сквозь обычную бумагу. Поскольку книга " +
-                "напечатана только с одной стороны, они попадут на пустой оборот и не испортят " +
-                "следующий рисунок. Дополнительный лист бумаги или картона под страницей " +
-                "защитит и поверхность под книгой.",
+              "Чернила фломастера могут проходить сквозь обычную бумагу, а рисунок есть на " +
+                "обеих сторонах листа. Восковые мелки и цветные карандаши насквозь не " +
+                "проходят, поэтому для группы они удобнее.",
           },
           {
             q: "Не слишком ли это легко для старших в смешанной группе?",
