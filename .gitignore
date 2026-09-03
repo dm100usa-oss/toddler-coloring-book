@@ -1,0 +1,9 @@
+node_modules
+.next
+tsconfig.tsbuildinfo
+.DS_Store
+.env*.local
+
+# Купленные файлы. Раскладываются заново при каждой сборке скриптом
+# scripts/prepare-pdfs.mjs, в хранилище кода им делать нечего.
+public/dl
