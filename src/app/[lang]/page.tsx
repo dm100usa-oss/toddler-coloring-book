@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import AllDrawings from "@/components/AllDrawings";
 import Picker from "@/components/Picker";
+import { BuyPdf } from "@/components/BuyPdf";
+import { hasPdf } from "@/lib/pdfShop";
 import { toolLabels } from "@/data/tool";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
@@ -278,18 +280,27 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         },
         reviewBody: ed.critic,
       },
-      ...(ed.asin && ed.price
+      ...(ed.price && (ed.asin || hasPdf(ed.pdfId))
         ? {
             offers: {
               "@type": "Offer",
               price: ed.price.replace("$", ""),
               priceCurrency: "USD",
-              url: BOOK.amazonUrl(ed.asin),
+              /* Продавец назван явно. У бумажных изданий официальная
+                 страница книги одна, и она на Amazon: в других магазинах
+                 книга появляется через распространителей Amazon.
+                 У русского издания бумаги нет, файл для печати продает
+                 само издательство в своем магазине. */
+              ...(ed.asin
+                ? {
+                    url: BOOK.amazonUrl(ed.asin),
+                    seller: { "@type": "Organization", name: "Amazon" },
+                  }
+                : {
+                    url: SITE_URL + homePath(l),
+                    seller: { "@type": "Organization", name: PUBLISHER },
+                  }),
               availability: "https://schema.org/InStock",
-              /* Продавец назван явно: официальная страница книги одна,
-                 и она на Amazon. В других магазинах книга появляется
-                 через распространителей Amazon. */
-              seller: { "@type": "Organization", name: "Amazon" },
             },
           }
         : {}),
@@ -558,9 +569,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <Buy lang={l} />
           <p className="buy-note">
             {ed.asin ? w.buyNote : ""}
-            {ed.asin && ed.pdfUrl ? " " : ""}
-            {ed.pdfUrl ? t.sec.pdfNote : ""}
-            {!ed.asin && !ed.pdfUrl ? w.buyNote : ""}
+            {!ed.asin && !hasPdf(ed.pdfId) ? w.buyNote : ""}
           </p>
         </div>
 
@@ -839,16 +848,17 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
    товара, а не два способа купить одно и то же, поэтому выбор
    остается за человеком и ни одна из кнопок не прячется.
 
-   У русского издания нет ни того, ни другого: бумажного нет вовсе,
-   а страница с файлом еще не готова. Там стоит серая надпись, которую
-   нельзя нажать. Ссылка в пустоту хуже ее отсутствия: и человек,
-   и поисковик считают ее поломкой. */
+   У русского издания бумаги нет вовсе: Amazon не печатает по-русски.
+   Там одна кнопка, на файл для печати в магазине издательства.
+   Серая ненажимаемая надпись осталась в коде на случай, если у книги
+   не окажется ни бумаги, ни файла: ссылка в пустоту хуже ее
+   отсутствия, и человек, и поисковик считают ее поломкой. */
 function Buy({ lang }: { lang: UiLang }) {
   const ed = editions[lang];
   const t = dictionaries[lang];
   const w = words[lang];
 
-  if (!ed.asin && !ed.pdfUrl) {
+  if (!ed.asin && !hasPdf(ed.pdfId)) {
     return (
       <p className="buys">
         <span className="btn btn--soon" aria-disabled="true">
@@ -876,10 +886,8 @@ function Buy({ lang }: { lang: UiLang }) {
           {t.common.amazon}
         </a>
       ) : null}
-      {ed.pdfUrl ? (
-        <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
-          {t.sec.buyPdf}
-        </a>
+      {hasPdf(ed.pdfId) ? (
+        <BuyPdf lang={lang} book={ed.pdfId!} back={homePath(lang)} />
       ) : null}
     </p>
   );

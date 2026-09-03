@@ -149,6 +149,13 @@ export type Dict = {
     outgrown: string;
     soon: string;
     buyPdf: string;
+    /** Строка над выбором размера листа. */
+    pdfPickSize: string;
+    /** Названия двух размеров листа и подсказка, кому какой. */
+    buyPdfLetter: string;
+    buyPdfA4: string;
+    pdfLetterHint: string;
+    pdfA4Hint: string;
     /** Стоит рядом с подписью про Amazon, когда на странице обе
         кнопки. Без нее человек видит вторую кнопку и не понимает,
         чем она отличается от первой. */
@@ -349,9 +356,14 @@ export const dictionaries: Record<UiLang, Dict> = {
         "step drawing book.",
       soon: "Printable file, coming soon",
       buyPdf: "Get the printable file",
+      pdfPickSize: "Which paper size do you print on?",
+      buyPdfLetter: "Letter, 8.5 x 11 in",
+      buyPdfA4: "A4",
+      pdfLetterHint: "Standard paper in the US and Canada",
+      pdfA4Hint: "Standard paper in Europe and most other countries",
       pdfNote:
-        "The printable file opens in our own shop and arrives by email after checkout. Print it " +
-        "at home as many times as you need.",
+        "You pay here, and the link arrives by email right after checkout. Print it at home as " +
+        "many times as you need.",
       stageTitle: (title, age) => `${title}: coloring at ${age}`,
       stageMetaTitle: (title, age) => `${title}: ${age.replace(/^about /, "")}`,
       sheetAlt: (name) => `Free printable coloring page: ${name}`,
@@ -564,9 +576,14 @@ export const dictionaries: Record<UiLang, Dict> = {
           "sí mismo.",
       soon: "Archivo para imprimir, próximamente",
       buyPdf: "Conseguir el archivo para imprimir",
+      pdfPickSize: "¿En qué tamaño de papel imprime?",
+      buyPdfLetter: "Carta, 8.5 x 11 in",
+      buyPdfA4: "A4",
+      pdfLetterHint: "Papel habitual en Estados Unidos y Canadá",
+      pdfA4Hint: "Papel habitual en Europa y en la mayoría de los países",
       pdfNote:
-        "El archivo para imprimir se abre en nuestra propia tienda y llega por correo tras la " +
-        "compra. Se puede imprimir en casa tantas veces como haga falta.",
+        "El pago se hace aquí y el enlace llega por correo justo después de la compra. Se puede " +
+        "imprimir en casa tantas veces como haga falta.",
       stageTitle: (title, age) => `${title}: colorear a ${age}`,
       stageMetaTitle: (title, age) => `${title}: ${age.replace(/^aproximadamente de /, "")}`,
       sheetAlt: (name) => `Dibujo para colorear gratis: ${name}`,
@@ -614,9 +631,10 @@ export const dictionaries: Record<UiLang, Dict> = {
     home: {
       hero: "Первая книга-раскраска для малышей от 1 до 3 лет",
       lead:
-        "111 больших простых рисунков с толстыми линиями, по одному на странице. Животные, " +
-          "морские обитатели, сказочные герои, транспорт, цветы и еда. Слово под каждым " +
-          "рисунком тоже можно раскрасить, поэтому ребенок постепенно знакомится с буквами.",
+        "111 крупных рисунков толстой линией, по одному на странице. Животные, морские " +
+          "жители, сказочные герои, транспорт, цветы и еда. Под каждым рисунком - его " +
+          "название полыми буквами, его тоже можно раскрасить, поэтому ребенок постепенно " +
+          "знакомится с буквами.",
       guideTitle: "Все о первых раскрасках для малышей от 1 до 3 лет",
       bannerTitle: "Первые раскраски для малыша",
       bannerSubtitle:
@@ -767,9 +785,14 @@ export const dictionaries: Record<UiLang, Dict> = {
           "пошаговым рисованием, где он сможет создавать рисунок сам.",
       soon: "Файл для печати, скоро появится",
       buyPdf: "Купить файл для печати",
+      pdfPickSize: "На какой бумаге вы печатаете?",
+      buyPdfLetter: "Letter, 8.5 x 11 дюйма",
+      buyPdfA4: "A4",
+      pdfLetterHint: "Обычная бумага в США и Канаде",
+      pdfA4Hint: "Обычная бумага в Европе и большинстве стран",
       pdfNote:
-        "Файл для печати открывается в нашем собственном магазине и приходит на почту после " +
-        "оплаты. Печатать его дома можно столько раз, сколько нужно.",
+        "Оплата проходит здесь, ссылка на файл приходит на почту сразу после оплаты. Печатать " +
+        "его дома можно столько раз, сколько нужно.",
       stageTitle: (title, age) => `${title}: раскрашивание ${age}`,
       stageMetaTitle: (title, age) => `${title}: ${age.replace(/^примерно /, "")}`,
       sheetAlt: (name) => `Бесплатная раскраска для печати: ${name}`,

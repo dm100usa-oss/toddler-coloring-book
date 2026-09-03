@@ -3,6 +3,13 @@ import type { UiLang } from "@/data/dictionaries";
 export const SITE_URL = "https://www.toddlercoloringbook.com";
 export const SITE_NAME = "Toddler Coloring Book";
 export const PUBLISHER = "Magic of Discoveries LLC";
+
+/** Имя издательства так, как его читает человек: без LLC. Стоит
+    отправителем в письмах о покупке. Оба наших сайта подписывают письма
+    одинаково: покупатель, купивший книгу здесь или в каталоге, видит
+    в списке писем одно и то же имя, и оно совпадает с почтовым адресом
+    и с подписью внутри письма. */
+export const BRAND = "Magic of Discoveries";
 export const CONTACT_EMAIL = "magicofdiscoveries@gmail.com";
 
 /** Когда сайт опубликован и когда правился в последний раз.
@@ -66,6 +73,12 @@ export const EURO_SHARE = {
 } as const;
 
 export const CATALOG_URL = "https://www.magicofdiscoveries.com";
+
+/** Адрес каталога на языке посетителя. Корень каталога открывается
+    по-английски, и русский читатель, нажав ссылку в подвале, попадал
+    на английскую страницу и уходил. Каталог устроен так же, как этот
+    сайт: язык стоит первой частью адреса. */
+export const catalogUrl = (lang: "en" | "es" | "ru") => `${CATALOG_URL}/${lang}`;
 
 export const AUTHOR = {
   name: "Ricardo Demi",

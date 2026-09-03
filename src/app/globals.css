@@ -2215,3 +2215,79 @@ html[lang="ru"] .hero {
     width: 21rem;
   }
 }
+
+
+/* ==================== ПОКУПКА ФАЙЛА ДЛЯ ПЕЧАТИ ==================== */
+
+/* Кнопка одна, и цена на ней одна: два размера листа это не два товара,
+   а один и тот же файл под разную бумагу. Размер выбирается после
+   нажатия, внутри раскрывшегося блока.
+
+   Раскрытие сделано на обычной разметке, без скриптов: работает всегда,
+   в том числе внутри подборщика. */
+.buy-pdf > summary {
+  width: 100%;
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+}
+.buy-pdf > summary::-webkit-details-marker { display: none; }
+.buy-pdf__pick {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+  padding: 0.95rem 1.05rem 1.1rem;
+  border: var(--edge);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.buy-pdf__lead {
+  margin: 0;
+  font-size: var(--t-small);
+  font-weight: 700;
+  color: var(--ink-2);
+}
+/* Выбор размера листа. Цвет тот же голубой, что и у кнопки покупки:
+   это ее продолжение, а не другое действие. Розовый здесь читался бы
+   как предупреждение, и нажимать было бы боязно. */
+.buy-pdf__size {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  color: #0d5d80;
+  border-color: rgba(13, 93, 128, 0.45);
+  --press-bg: #eaf6fb;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.buy-pdf__size:hover { border-color: #0d5d80; }
+.buy-pdf__name {
+  display: block;
+  font-size: 1.08em;
+  font-weight: 800;
+}
+/* Строка с подсказкой: тот же голубой, только мельче и тише. */
+.buy-pdf__hint {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: var(--t-small);
+  font-weight: 500;
+  opacity: 0.88;
+}
+/* Что покупатель получает. Внутри блока покупки, тихим текстом:
+   снаружи это читалось бы как примечание и к кнопке Amazon тоже. */
+.buy-pdf__note {
+  margin: 0.1rem 0 0;
+  font-size: var(--t-small);
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+/* Страница после оплаты. Ничего лишнего: ссылка на файл и что дальше. */
+.thanks { max-width: 34rem; padding-top: var(--gap-3); padding-bottom: var(--gap-1); }
+.thanks .buys { max-width: 22rem; margin-top: var(--gap-3); }
+.thanks .note { font-size: var(--t-small); color: var(--ink-2); margin: 0.5rem 0; }

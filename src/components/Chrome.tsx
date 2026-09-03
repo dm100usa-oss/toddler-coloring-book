@@ -4,7 +4,7 @@ import type { UiLang } from "@/data/dictionaries";
 import { homePath, sectionPath } from "@/lib/routes";
 import { euroLangs, euroPath, euroCountry } from "@/data/euro";
 import { freeLangs, freePath } from "@/data/free";
-import { SITE_NAME, PUBLISHER, CATALOG_URL, CONTACT_EMAIL } from "@/lib/site";
+import { SITE_NAME, PUBLISHER, catalogUrl, CONTACT_EMAIL } from "@/lib/site";
 
 /* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
    число рисунков и перечень тем сразу, одной картинкой. Свой баннер
@@ -157,7 +157,7 @@ export function Footer({ lang }: { lang: UiLang }) {
         <span data-nosnippet>{t.footer.about}</span>
       </p>
       <p>
-        <a href={CATALOG_URL} rel="noopener">{t.footer.catalog}</a>
+        <a href={catalogUrl(lang)} rel="noopener">{t.footer.catalog}</a>
         {" · "}
         {/* Вопросы, права и приватность стоят в подвале, а не в меню.
             Страницы нужные, но не те, ради которых человек пришел, а

@@ -9,6 +9,8 @@ import type { Answers } from "@/data/stages";
 import { examplesForStage, drawingFile } from "@/data/drawings";
 import { editions, BOOK } from "@/data/book";
 import { homePath, sectionPath } from "@/lib/routes";
+import { BuyPdf } from "@/components/BuyPdf";
+import { hasPdf } from "@/lib/pdfShop";
 
 /* Подборщик первой раскраски.
 
@@ -201,12 +203,10 @@ export default function Picker({
                     {ed.price ? ` · ${ed.price}` : ""}
                   </a>
                 ) : null}
-                {ed.pdfUrl ? (
-                  <a className="btn btn--sky" href={ed.pdfUrl} rel="noopener" target="_blank">
-                    {sec.buyPdf}
-                  </a>
+                {hasPdf(ed.pdfId) ? (
+                  <BuyPdf lang={lang} book={ed.pdfId!} back={homePath(lang)} />
                 ) : null}
-                {!ed.asin && !ed.pdfUrl ? (
+                {!ed.asin && !hasPdf(ed.pdfId) ? (
                   <span className="btn btn--soon" aria-disabled="true">
                     {sec.soon}
                   </span>
@@ -214,8 +214,6 @@ export default function Picker({
               </p>
               <p className="buy-note" style={{ marginBottom: 0 }}>
                 {ed.asin ? sec.buyNote : ""}
-                {ed.asin && ed.pdfUrl ? " " : ""}
-                {ed.pdfUrl ? sec.pdfNote : ""}
               </p>
             </div>
           </div>
