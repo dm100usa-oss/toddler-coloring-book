@@ -91,10 +91,11 @@ function Buy({ lang, ed }: { lang: EuroLang; ed: EditionLang }) {
   const own = euroPageOwn[pageKey(lang, ed)];
   return (
     <p className="buys">
-      <span className="top-price">
-        <span className="top-price__value">{own?.price ?? euroPrice[lang]}</span>
-        <span className="top-price__label">{u.priceLabel}</span>
-      </span>
+      {/* Цена бумажной книги стоит внутри кнопки, как и у файла:
+          обе кнопки читаются одинаково, одна про бумагу, вторая
+          про файл. Цена точная, та же, что стоит на карточке магазина
+          этой страны. Если магазин ее поменяет, поменять и здесь,
+          в euroPrice. */}
       {/* Сначала бесплатная кнопка, потом покупка. Тот же порядок,
           что и в тексте наверху страницы: сперва попробовать дома,
           потом купить книгу целиком.
@@ -110,7 +111,7 @@ function Buy({ lang, ed }: { lang: EuroLang; ed: EditionLang }) {
         rel="nofollow sponsored noopener"
         target="_blank"
       >
-        {u.buyAmazon}
+        {u.buyAmazon} · {own?.price ?? euroPrice[lang]}
       </a>
       {/* Файл для печати. Бумажную книгу в этих странах ждут несколько
           дней, а иногда ее нет в наличии вовсе, файл приходит через

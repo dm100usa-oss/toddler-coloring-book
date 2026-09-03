@@ -103,7 +103,6 @@ editions are there and anyone can read the originals.",
     notFor: "When this book is the wrong choice",
     faq: "Questions parents ask",
     buyNote: "Sold and shipped by Amazon. We earn from the sale.",
-    priceFrom: "paperback on Amazon",
     freeTitle: "Try ten pages first, free",
     freeLead:
       "Ten drawings straight out of the book, in two paper sizes. Print one, hand your child a " +
@@ -138,7 +137,6 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
     notFor: "Cuándo este libro no es la opción",
     faq: "Preguntas que hacen los padres",
     buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
-    priceFrom: "tapa blanda en Amazon",
     freeTitle: "Pruebe primero diez páginas gratis",
     freeLead:
       "Diez dibujos sacados directamente del libro, en dos tamaños de papel. Imprima uno, " +
@@ -176,7 +174,6 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
     notFor: "Когда эта книга не подойдет",
     faq: "Что спрашивают родители",
     buyNote: "Файл для печати. Его можно распечатывать дома столько раз, сколько нужно.",
-    priceFrom: "файл для печати",
     freeTitle: "Сначала попробуйте десять страниц бесплатно",
     freeLead:
       "Десять рисунков прямо из книги в двух форматах бумаги. Распечатайте один из них, " +
@@ -870,12 +867,11 @@ function Buy({ lang }: { lang: UiLang }) {
 
   return (
     <p className="buys">
-      {ed.price ? (
-        <span className="top-price">
-          <span className="top-price__value">{ed.price}</span>
-          <span className="top-price__label">{w.priceFrom}</span>
-        </span>
-      ) : null}
+      {/* Цена стоит внутри кнопки, а не отдельной строкой над ней.
+          Так обе кнопки читаются одинаково: одна про бумажную книгу
+          за одну цену, вторая про файл за другую. Раньше цена бумаги
+          висела сбоку, и две кнопки выглядели как разные вещи, хотя
+          это два способа купить одну и ту же книгу. */}
       {ed.asin ? (
         <a
           className="btn btn--pink"
@@ -884,6 +880,7 @@ function Buy({ lang }: { lang: UiLang }) {
           target="_blank"
         >
           {t.common.amazon}
+          {ed.price ? ` · ${ed.price}` : ""}
         </a>
       ) : null}
       {hasPdf(ed.pdfId) ? (
