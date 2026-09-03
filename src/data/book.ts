@@ -150,7 +150,8 @@ export const editions: Record<UiLang, Edition> = {
     title: "First Coloring Book for Toddlers Ages 1-3",
     subtitle: "111 big, simple drawings, one per page",
     headline:
-      "111 big, simple drawings with thick outlines, one per page, for children aged 1 to 3.",
+      "An example of a first coloring book for ages 1 to 3: big, simple drawings with thick " +
+        "outlines, one per page.",
     asin: "1963328272",
     pdfId: "first-coloring-book-111-en",
     isbn: "978-1-963328-27-1",
@@ -163,13 +164,13 @@ export const editions: Record<UiLang, Edition> = {
     rating: { value: 5.0, count: 19 },
     slug: "first-coloring-book-toddlers-ages-1-3",
     lead:
-      "111 big, simple pictures, hand drawn with thick lines, no small detail, one drawing per " +
-      "page. Animals, fairy-tale characters, flowers, foods and everyday objects keep every page " +
-      "new. The word under each picture can be colored too, so first words and letters come along " +
-      "with the coloring.",
+      "A first coloring book works best with big, simple drawings and thick outlines, with no " +
+        "small detail and nothing extra on the page. One picture per page makes it easier for " +
+        "a child to stay with it and color on their own. This book is built on that principle: " +
+        "111 hand drawn pictures, each filling almost the whole sheet. Under every picture " +
+        "sits its name in hollow letters, which can be colored too.",
     note:
-      "The word under each picture can be colored too, so first words and letters come along " +
-      "with the coloring.",
+      "111 drawings and 111 first words a child picks up while coloring.",
     needs: [
       "Big, simple pictures, drawn by hand",
       "Thick outlines a child can actually see",
@@ -297,8 +298,8 @@ export const editions: Record<UiLang, Edition> = {
     title: "El Primer Libro de Colorear para Bebés de 1 a 3 Años",
     subtitle: "111 dibujos grandes y simples, uno por página",
     headline:
-      "111 dibujos grandes y simples con líneas gruesas, uno por página, para bebés de 1 a 3 " +
-        "años.",
+      "Un ejemplo de primer libro para colorear de 1 a 3 años: dibujos grandes y simples con " +
+        "líneas gruesas, uno por página.",
     asin: "1963328205",
     pdfId: "first-coloring-book-111-es",
     isbn: "978-1-963328-20-2",
@@ -311,14 +312,14 @@ export const editions: Record<UiLang, Edition> = {
     rating: { value: 4.9, count: 26 },
     slug: "primer-libro-para-colorear-bebes-1-3-anos",
     lead:
-      "111 dibujos grandes y simples, hechos a mano con líneas gruesas, sin detalles " +
-        "pequeños y con un solo dibujo por página. Animales, personajes de cuentos, flores, " +
-        "comida y objetos cotidianos: en cada página hay algo nuevo para colorear. La palabra " +
-        "debajo de cada dibujo también se puede colorear, para que el niño empiece a " +
-        "familiarizarse con las palabras y las letras.",
+      "Para un primer libro para colorear conviene que los dibujos sean grandes y simples, con " +
+        "líneas gruesas, sin detalles pequeños ni elementos de más. En la página debe haber un " +
+        "solo dibujo, para que al niño le resulte más fácil concentrarse en él y colorear " +
+        "solo. Este libro está hecho con ese criterio: 111 dibujos hechos a mano, cada uno " +
+        "ocupa casi toda la hoja. Debajo de cada dibujo está su nombre en letras huecas, que " +
+        "también se pueden colorear.",
     note:
-      "La palabra debajo de cada dibujo también se puede colorear, para que el niño empiece " +
-        "a familiarizarse con las palabras y las letras.",
+      "111 dibujos y 111 primeras palabras que el niño aprende mientras colorea.",
     needs: [
       "Dibujos grandes y simples, hechos a mano",
       "Contornos gruesos y bien definidos",
@@ -460,8 +461,8 @@ export const editions: Record<UiLang, Edition> = {
     title: "Первая книга-раскраска для малышей от 1 до 3 лет",
     subtitle: "111 крупных рисунков толстой линией, по одному на странице",
     headline:
-      "111 крупных рисунков толстой линией, по одному на странице. Для детей от " +
-        "1 до 3 лет.",
+      "Пример первой раскраски для детей от 1 до 3 лет: крупные простые рисунки " +
+        "с толстыми контурами, по одному на странице.",
     /* Русского бумажного издания нет: Amazon не печатает по-русски.
        Поэтому у русского издания только файл для печати и никакой
        кнопки Amazon. */
@@ -473,14 +474,14 @@ export const editions: Record<UiLang, Edition> = {
     coverSize: { w: 900, h: 1165 },
     slug: "pervaya-kniga-raskraska-1-3-goda",
     lead:
-      "111 простых и крупных рисунков, нарисованных от руки толстой линией, без мелких " +
-        "деталей, по одному на странице. Животные, морские жители, сказочные герои, " +
-        "транспорт, цветы и еда - на каждой странице новый рисунок. Под каждым рисунком - " +
-        "его название полыми буквами, его тоже можно раскрасить, поэтому ребенок постепенно " +
-        "знакомится не только с картинками, но и с буквами.",
+      "Для первой раскраски лучше всего подходят крупные и простые рисунки с толстыми " +
+        "контурами, без мелких деталей и лишних элементов. На странице должно быть только " +
+        "одно изображение, чтобы ребенку было легче сосредоточиться на нем и раскрашивать " +
+        "самостоятельно. Именно по такому принципу сделана эта книга: в ней 111 нарисованных " +
+        "от руки рисунков, каждый занимает почти весь лист. Под рисунками стоят их названия, " +
+        "набранные полыми буквами, которые тоже можно раскрасить.",
     note:
-      "Под каждым рисунком - его название полыми буквами, его тоже можно раскрасить, поэтому " +
-        "ребенок постепенно знакомится не только с картинками, но и с буквами.",
+      "111 рисунков и 111 первых слов, которые ребенок узнает во время раскрашивания.",
     needs: [
       "Крупные простые рисунки, нарисованные от руки",
       "Толстый контур",
