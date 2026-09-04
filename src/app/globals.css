@@ -2542,3 +2542,29 @@ html[lang="ru"] .hero {
   box-shadow: 0 0 0 1px rgba(51, 32, 44, 0.15);
 }
 .markets b .flag { margin-right: 0.45rem; vertical-align: -0.2rem; }
+
+/* ==================== СТРАНИЦЫ КНИГИ НА СТРАНОВЫХ СТРАНИЦАХ ==================== */
+
+/* Двенадцать страниц книги под обложкой, до кнопки покупки.
+   Число столбцов задано прямо, а не подбирается шириной: двенадцать
+   делится на два, четыре и шесть без остатка, поэтому последний ряд
+   полон на телефоне, на планшете и на компьютере. */
+.thumbs--euro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 560px) {
+  .thumbs--euro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1092px) {
+  .thumbs--euro { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* Ролик о книге. Вертикальный, поэтому ширину держим: во всю полосу
+   он занял бы два экрана в высоту. */
+.euro-video {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  margin: var(--gap-2) 0 var(--gap-4);
+  border-radius: var(--radius);
+  background: var(--ink);
+}

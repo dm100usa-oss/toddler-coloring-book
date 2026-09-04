@@ -214,6 +214,21 @@ export type EuroUi = {
   labelAuthor: string;
   labelPublisher: string;
   criticSource: string;
+  /** Заголовок над рисунками из книги. Стоят они сразу под обложкой,
+      до кнопки покупки: человек должен увидеть страницу книги раньше,
+      чем его позовут платить. */
+  pagesTitle: string;
+  /** Видео о книге: снято родителем дома, без монтажа. */
+  videoTitle: string;
+  videoLead: string;
+  /** Когда книга не подойдет. Честный отказ стоит после последней
+      кнопки: он не мешает тому, кто уже решил, и удерживает того,
+      кому книга не подходит, от покупки, о которой он пожалеет. */
+  whenNotTitle: string;
+  whenNot: string;
+  /** Строка про подборщик раскрасок на основном сайте. */
+  pickerLine: string;
+  pickerCta: string;
   footerAbout: string;
   footerLink: string;
   /* Приписка "на английском" рядом со ссылкой в подвале. У Испании
@@ -238,7 +253,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "de-DE",
     inside: "Was im Buch steckt",
     forWhom: "Für wen das Buch ist",
-    parents: "Was Eltern sagen",
+    parents: "Was Eltern in ihren Rezensionen über das Buch sagen",
     ratingTitle: "Bewertungen",
     criticTitle: "Was eine unabhängige Rezensentin schrieb",
     faq: "Häufige Fragen",
@@ -273,6 +288,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Autor",
     labelPublisher: "Verlag",
     criticSource: "Die vollständige Rezension lesen",
+    pagesTitle: "Seiten aus dem Buch",
+    videoTitle: "Video über das Buch",
+    videoLead:
+      "Zu Hause aufgenommen von einem Elternteil, der das Buch gekauft hat, ohne Schnitt. " +
+      "Sie sehen den Umschlag, die Rückseite und alle Seiten der Reihe nach und können die " +
+      "Linienstärke und die Größe der Zeichnungen selbst beurteilen.",
+    whenNotTitle: "Wann das Buch nicht passt",
+    whenNot:
+      "Wenn Ihr Kind schon mühelos innerhalb der Linien ausmalt und eine Seite in wenigen " +
+      "Minuten fertig hat, wird ihm dieses Buch zu einfach sein. Dann passt ein Malbuch mit " +
+      "mehr Details besser, oder ein Buch, in dem das Kind selbst zeichnen lernt.",
+    pickerLine:
+      "Sie sind sich nicht sicher, welches Malbuch zu Ihrem Kind passt? Auf unserer Website " +
+      "gibt es dafür einen kostenlosen Test: vier Fragen, etwa dreißig Sekunden.",
+    pickerCta: "Zum Test",
     footerAbout:
       "Herausgegeben von Magic of Discoveries LLC, einem Kinderbuchverlag in Miami, Florida.",
     footerLink: "Alles über die ersten Malbücher für Kinder von 1 bis 3 Jahren",
@@ -283,7 +313,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "fr-FR",
     inside: "Ce qu'il y a dans le livre",
     forWhom: "Pour qui est ce livre",
-    parents: "Ce que disent les parents",
+    parents: "Ce que disent les parents dans leurs avis sur le livre",
     ratingTitle: "Évaluations",
     criticTitle: "Ce qu'en a dit une critique indépendante",
     faq: "Questions fréquentes",
@@ -318,6 +348,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Auteur",
     labelPublisher: "Maison d'édition",
     criticSource: "Lire la critique complète",
+    pagesTitle: "Pages du livre",
+    videoLead:
+      "Filmé à la maison par un parent qui a acheté le livre, sans montage. Vous voyez la " +
+      "couverture, le dos et toutes les pages dans l'ordre, et vous pouvez juger vous-même " +
+      "de l'épaisseur des traits et de la taille des dessins.",
+    videoTitle: "Vidéo sur le livre",
+    whenNotTitle: "Quand ce livre ne convient pas",
+    whenNot:
+      "Si votre enfant colorie déjà sans effort à l'intérieur des traits et termine une page " +
+      "en quelques minutes, ce livre lui paraîtra trop simple. Mieux vaut alors un coloriage " +
+      "avec plus de détails, ou un livre où l'enfant apprend à dessiner lui-même.",
+    pickerLine:
+      "Vous ne savez pas quel coloriage convient à votre enfant ? Notre site propose un test " +
+      "gratuit : quatre questions, environ trente secondes.",
+    pickerCta: "Faire le test",
     footerAbout:
       "Publié par Magic of Discoveries LLC, maison d'édition jeunesse à Miami, en Floride.",
     footerLink:
@@ -329,7 +374,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "nl-NL",
     inside: "Wat er in het boek zit",
     forWhom: "Voor wie dit boek is",
-    parents: "Wat ouders zeggen",
+    parents: "Wat ouders in hun recensies over het boek zeggen",
     ratingTitle: "Beoordelingen",
     criticTitle: "Wat een onafhankelijke recensent schreef",
     faq: "Veelgestelde vragen",
@@ -364,6 +409,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Auteur",
     labelPublisher: "Uitgeverij",
     criticSource: "De hele recensie lezen",
+    pagesTitle: "Bladzijden uit het boek",
+    videoTitle: "Video over het boek",
+    videoLead:
+      "Thuis gefilmd door een ouder die het boek gekocht heeft, zonder montage. U ziet de " +
+      "omslag, de achterkant en alle bladzijden op volgorde, en u kunt zelf de lijndikte en " +
+      "de grootte van de tekeningen beoordelen.",
+    whenNotTitle: "Wanneer dit boek niet past",
+    whenNot:
+      "Als uw kind al moeiteloos binnen de lijnen kleurt en een bladzijde in een paar minuten " +
+      "af heeft, zal dit boek te makkelijk zijn. Dan past een kleurboek met meer details beter, " +
+      "of een boek waarin het kind zelf leert tekenen.",
+    pickerLine:
+      "Weet u niet welk kleurboek bij uw kind past? Op onze website staat daarvoor een gratis " +
+      "test: vier vragen, ongeveer dertig seconden.",
+    pickerCta: "Naar de test",
     footerAbout:
       "Uitgegeven door Magic of Discoveries LLC, een kinderboekenuitgeverij in Miami, Florida.",
     footerLink: "Alles over de eerste kleurboeken voor kinderen van 1 tot 3 jaar",
@@ -374,7 +434,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "pl-PL",
     inside: "Co jest w książce",
     forWhom: "Dla kogo jest ta książka",
-    parents: "Co mówią rodzice",
+    parents: "Co rodzice mówią w recenzjach o książce",
     ratingTitle: "Oceny",
     criticTitle: "Co napisała niezależna recenzentka",
     faq: "Najczęstsze pytania",
@@ -409,6 +469,20 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Autor",
     labelPublisher: "Wydawnictwo",
     criticSource: "Przeczytaj całą recenzję",
+    pagesTitle: "Strony z książki",
+    videoTitle: "Film o książce",
+    videoLead:
+      "Nagrane w domu przez rodzica, który kupił książkę, bez montażu. Widać okładkę, tył " +
+      "i wszystkie strony po kolei, więc można samemu ocenić grubość konturu i wielkość rysunków.",
+    whenNotTitle: "Kiedy ta książka nie będzie odpowiednia",
+    whenNot:
+      "Jeśli dziecko bez trudu koloruje wewnątrz konturu i kończy stronę w kilka minut, ta " +
+      "książka wyda mu się zbyt łatwa. Lepsza będzie kolorowanka z większą liczbą szczegółów " +
+      "albo książka, w której dziecko samo uczy się rysować.",
+    pickerLine:
+      "Nie wiesz, która kolorowanka będzie odpowiednia dla twojego dziecka? Na naszej stronie " +
+      "jest do tego darmowy test: cztery pytania, około trzydziestu sekund.",
+    pickerCta: "Przejdź do testu",
     footerAbout:
       "Wydane przez Magic of Discoveries LLC, wydawnictwo książek dla dzieci z Miami na Florydzie.",
     footerLink: "Wszystko o pierwszych kolorowankach dla dzieci od 1 do 3 lat",
@@ -427,9 +501,9 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "it-IT",
     inside: "Cosa c'è dentro il libro",
     forWhom: "A chi è rivolto questo libro",
-    parents: "Cosa dicono i genitori",
+    parents: "Cosa dicono i genitori nelle recensioni sul libro",
     ratingTitle: "Valutazioni",
-    criticTitle: "Recensione indipendente",
+    criticTitle: "Che cosa ha detto del libro una recensora indipendente",
     faq: "Domande frequenti",
     buyAmazon: "Acquista il libro cartaceo su Amazon.it",
     buyPdf: "Acquista il file da stampare",
@@ -462,6 +536,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Autore",
     labelPublisher: "Editore",
     criticSource: "Leggi la recensione completa",
+    pagesTitle: "Pagine del libro",
+    videoTitle: "Video sul libro",
+    videoLead:
+      "Girato in casa da un genitore che ha comprato il libro, senza montaggio. Si vedono la " +
+      "copertina, il retro e tutte le pagine in ordine, e si può valutare da soli lo spessore " +
+      "del contorno e la grandezza dei disegni.",
+    whenNotTitle: "Quando questo libro non è adatto",
+    whenNot:
+      "Se il bambino colora già senza fatica dentro il contorno e finisce una pagina in pochi " +
+      "minuti, questo libro gli sembrerà troppo facile. Meglio allora un album con più " +
+      "dettagli, oppure un libro in cui il bambino impara a disegnare da solo.",
+    pickerLine:
+      "Non sa quale album da colorare sia adatto a suo figlio? Sul nostro sito c'è un test " +
+      "gratuito: quattro domande, circa trenta secondi.",
+    pickerCta: "Vai al test",
     footerAbout:
       "Pubblicato da Magic of Discoveries LLC, casa editrice per bambini di Miami, Florida.",
     footerLink:
@@ -473,9 +562,9 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "es-ES",
     inside: "Qué hay en el libro",
     forWhom: "Para quién es este libro",
-    parents: "Qué dicen los padres",
+    parents: "Qué dicen los padres en sus reseñas sobre el libro",
     ratingTitle: "Valoraciones",
-    criticTitle: "Reseña independiente",
+    criticTitle: "Lo que dijo una reseñadora independiente sobre el libro",
     faq: "Preguntas frecuentes",
     buyAmazon: "Comprar el libro impreso en Amazon.es",
     buyPdf: "Comprar el archivo para imprimir",
@@ -508,6 +597,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Autor",
     labelPublisher: "Editorial",
     criticSource: "Leer la reseña completa",
+    pagesTitle: "Páginas del libro",
+    videoTitle: "Vídeo sobre el libro",
+    videoLead:
+      "Grabado en casa por un padre que compró el libro, sin edición. Se ven la portada, la " +
+      "contraportada y todas las páginas en orden, y usted mismo puede juzgar el grosor del " +
+      "contorno y el tamaño de los dibujos.",
+    whenNotTitle: "Cuándo este libro no conviene",
+    whenNot:
+      "Si su hijo ya colorea sin esfuerzo dentro del contorno y termina una página en unos " +
+      "minutos, este libro le parecerá demasiado fácil. Entonces conviene más un libro con " +
+      "dibujos más detallados, o uno en el que el niño aprenda a dibujar por su cuenta.",
+    pickerLine:
+      "¿No sabe qué libro para colorear le conviene a su hijo? En nuestro sitio hay una prueba " +
+      "gratuita: cuatro preguntas, unos treinta segundos.",
+    pickerCta: "Hacer la prueba",
     footerAbout:
       "Publicado por Magic of Discoveries LLC, editorial de libros infantiles de Miami, Florida.",
     footerLink:
@@ -532,9 +636,9 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     locale: "en-CA",
     inside: "What's inside the book",
     forWhom: "Who this book is for",
-    parents: "What parents say",
+    parents: "What parents say in their reviews of the book",
     ratingTitle: "Ratings",
-    criticTitle: "Independent review",
+    criticTitle: "What an independent reviewer said about the book",
     faq: "Frequently asked questions",
     buyAmazon: "Buy the paperback on Amazon.ca",
     buyPdf: "Get the printable file",
@@ -567,6 +671,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
     labelAuthor: "Author",
     labelPublisher: "Publisher",
     criticSource: "Read the full review",
+    pagesTitle: "Pages from the book",
+    videoTitle: "Video about the book",
+    videoLead:
+      "Filmed at home by a parent who bought the book, with no editing. You see the cover, " +
+      "the back and every page in order, so you can judge the outline thickness and the size " +
+      "of the drawings yourself.",
+    whenNotTitle: "When this book is not the right fit",
+    whenNot:
+      "If your child already colors inside the lines without effort and finishes a page in a " +
+      "few minutes, this book will feel too easy. A coloring book with more detail will suit " +
+      "better, or one where the child learns to draw for themselves.",
+    pickerLine:
+      "Not sure which coloring book suits your child? Our site has a free four-question tool " +
+      "for that. It takes about thirty seconds.",
+    pickerCta: "Take the test",
     footerAbout:
       "Published by Magic of Discoveries LLC, a children's book publisher in Miami, Florida.",
     footerLink: "Everything about first coloring books for children ages 1 to 3",
@@ -691,7 +810,7 @@ export const euroCopy: Record<
       /* Пять звезд и одной строкой за что. Пересказа рецензии здесь
          больше нет: кому нужно подробно, нажимает кнопку и читает
          ее целиком на сайте Readers' Favorite. */
-      criticTitle: "Unabhängige Rezension",
+      criticTitle: "Was eine unabhängige Rezensentin über das Buch schrieb",
       critic: "5 von 5 Sternen, Readers' Favorite",
       criticWhy:
         "Besonders hervorgehoben: die dicken, abgerundeten Konturen, die Platzierung der Zeichnungen in der Mitte der Seite und das Wort unter dem Bild, das sich ebenfalls ausmalen lässt.",
@@ -799,7 +918,7 @@ export const euroCopy: Record<
       ],
       rating:
         "Bewertung 4,9 von 5 bei Amazon. Die Zeichnungen sind in beiden Ausgaben dieselben.",
-      criticTitle: "Unabhängige Rezension",
+      criticTitle: "Was eine unabhängige Rezensentin über das Buch schrieb",
       critic: "5 von 5 Sternen, Readers' Favorite",
       criticBy: "Maalin Ogaja, Oktober 2024",
       criticWhy:
@@ -919,7 +1038,7 @@ export const euroCopy: Record<
         "On l'achète pour le plus jeune de la famille, quand les aînés ont déjà besoin de coloriages plus difficiles",
       ],
       rating: "Note de 5,0 sur 5 sur Amazon.",
-      criticTitle: "Critique indépendante",
+      criticTitle: "Ce qu'une critique indépendante a dit du livre",
       critic: "5 étoiles sur 5, Readers' Favorite",
       criticBy: "Maalin Ogaja, octobre 2024",
       criticWhy:
@@ -1032,7 +1151,7 @@ export const euroCopy: Record<
          читаться как разница в качестве рисунков. */
       rating:
         "Note de 4,9 sur 5 sur Amazon. Les dessins sont les mêmes dans les deux éditions.",
-      criticTitle: "Critique indépendante",
+      criticTitle: "Ce qu'une critique indépendante a dit du livre",
       critic: "5 étoiles sur 5, Readers' Favorite",
       criticBy: "Maalin Ogaja, octobre 2024",
       criticWhy:
@@ -1156,7 +1275,7 @@ export const euroCopy: Record<
         "Het wordt gekocht voor het jongste kind in het gezin, wanneer de oudere kinderen al moeilijkere kleurboeken nodig hebben",
       ],
       rating: "5,0 van de 5 sterren op Amazon.",
-      criticTitle: "Onafhankelijke recensie",
+      criticTitle: "Wat een onafhankelijke recensent over het boek schreef",
       critic: "5 van de 5 sterren, Readers' Favorite",
       criticBy: "Maalin Ogaja, oktober 2024",
       criticWhy:
@@ -1268,7 +1387,7 @@ export const euroCopy: Record<
          в обеих книгах одни и те же. */
       rating:
         "4,9 van de 5 sterren op Amazon. De tekeningen zijn in beide edities dezelfde.",
-      criticTitle: "Onafhankelijke recensie",
+      criticTitle: "Wat een onafhankelijke recensent over het boek schreef",
       critic: "5 van de 5 sterren, Readers' Favorite",
       criticBy: "Maalin Ogaja, oktober 2024",
       criticWhy:
@@ -1389,7 +1508,7 @@ export const euroCopy: Record<
         "Kupuje się ją dla najmłodszego dziecka w rodzinie, kiedy starsze potrzebują już trudniejszych kolorowanek",
       ],
       rating: "Ocena 5,0 na 5 w serwisie Amazon.",
-      criticTitle: "Niezależna recenzja",
+      criticTitle: "Co niezależna recenzentka napisała o książce",
       critic: "5 na 5 gwiazdek, Readers' Favorite",
       criticBy: "Maalin Ogaja, październik 2024",
       criticWhy:
@@ -1499,7 +1618,7 @@ export const euroCopy: Record<
          в обеих книгах одни и те же. */
       rating:
         "Ocena 4,9 na 5 w serwisie Amazon. Rysunki w obu wydaniach są takie same.",
-      criticTitle: "Niezależna recenzja",
+      criticTitle: "Co niezależna recenzentka napisała o książce",
       critic: "5 na 5 gwiazdek, Readers' Favorite",
       criticBy: "Maalin Ogaja, październik 2024",
       criticWhy:
@@ -1621,7 +1740,7 @@ export const euroCopy: Record<
         "Viene acquistato per il più piccolo della famiglia, quando i bambini più grandi hanno già bisogno di libri da colorare più complessi",
       ],
       rating: "Valutazione 5,0 su 5 su Amazon.",
-      criticTitle: "Recensione indipendente",
+      criticTitle: "Che cosa ha detto del libro una recensora indipendente",
       critic: "5 stelle su 5, Readers' Favorite",
       criticWhy:
         "Sono stati evidenziati in particolare i contorni spessi e arrotondati, la posizione del disegno al centro della pagina e la parola sotto l'immagine, anch'essa da colorare.",
@@ -1727,7 +1846,7 @@ export const euroCopy: Record<
         "Viene acquistato per il più piccolo della famiglia, quando i bambini più grandi hanno già bisogno di libri da colorare più complessi",
       ],
       rating: "Valutazione 4,9 su 5 su Amazon. I disegni sono identici in entrambe le edizioni.",
-      criticTitle: "Recensione indipendente",
+      criticTitle: "Che cosa ha detto del libro una recensora indipendente",
       critic: "5 stelle su 5, Readers' Favorite",
       criticWhy:
         "Sono stati evidenziati in particolare i contorni spessi e arrotondati, la posizione del disegno al centro della pagina e la parola sotto l'immagine, anch'essa da colorare.",
@@ -1843,7 +1962,7 @@ export const euroCopy: Record<
         "Se compra para el más pequeño de la familia, cuando los mayores ya necesitan libros de colorear más difíciles",
       ],
       rating: "Valoración de 5,0 sobre 5 estrellas en Amazon.",
-      criticTitle: "Reseña independiente",
+      criticTitle: "Lo que dijo una reseñadora independiente sobre el libro",
       critic: "5 de 5 estrellas, Readers' Favorite",
       criticBy: "Maalin Ogaja, octubre de 2024",
       criticWhy:
@@ -1963,7 +2082,7 @@ export const euroCopy: Record<
         "Parents often buy it for the youngest child in the family when the older children are ready for more challenging coloring books.",
       ],
       rating: "Rated 4.9 out of 5 stars on Amazon.",
-      criticTitle: "Independent review",
+      criticTitle: "What an independent reviewer said about the book",
       critic: "5 out of 5 stars, Readers' Favorite",
       criticBy: "Maalin Ogaja, October 2024",
       criticWhy:
