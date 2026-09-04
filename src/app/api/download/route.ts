@@ -32,13 +32,20 @@ export const maxDuration = 60;
    мало, чтобы такую ссылку имело смысл кому-то пересылать. */
 const PASS_TTL_MS = 15 * 60 * 1000;
 
+/* Отказ пишем на всех трех языках сайта. Какой язык у покупателя,
+   мы в этот момент не знаем: в ссылке его нет, а спрашивать поздно.
+   Русский здесь обязателен: русское издание продается на этом же сайте,
+   и через месяц его покупатель уперся бы в текст на чужих языках. */
 const REFUSAL =
   "This download link is no longer active. Links work for 30 days and up to " +
   `${DOWNLOAD_LIMIT} downloads.\n` +
   "Write to magicofdiscoveries@gmail.com and we will send you a new one.\n\n" +
   "Este enlace de descarga ya no está activo. Los enlaces duran 30 días y " +
   `hasta ${DOWNLOAD_LIMIT} descargas.\n` +
-  "Escriba a magicofdiscoveries@gmail.com y le enviaremos uno nuevo.\n";
+  "Escriba a magicofdiscoveries@gmail.com y le enviaremos uno nuevo.\n\n" +
+  "Эта ссылка на скачивание больше не работает. Ссылка действует 30 дней, " +
+  `скачать по ней можно до ${DOWNLOAD_LIMIT} раз.\n` +
+  "Напишите на magicofdiscoveries@gmail.com, и мы вышлем новую.\n";
 
 const refuse = () =>
   new NextResponse(REFUSAL, {
