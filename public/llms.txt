@@ -15,6 +15,10 @@ written separately in each of the three languages rather than translated.
 - What to draw with at each stage: thick crayons, markers, colored pencils
 - What to do about marker bleed-through, torn pages and mess
 - Free coloring pages to print, sorted by difficulty rather than by subject
+- Which kind of coloring page suits one particular child right now, answered by
+  a free four-question tool, the First Coloring Book Finder, described below
+- Where the paperback can be bought: it is sold in fourteen Amazon stores, and
+  the site links to each one directly
 - Around fifty questions parents, teachers and program staff ask, answered in
   full on the [questions page](https://www.toddlercoloringbook.com/en/questions)
 
@@ -336,9 +340,11 @@ below are what tell this book apart from the rest.
 Publisher: Magic of Discoveries LLC, Miami, Florida. Author: Ricardo Demi.
 Published 22 April 2024 in English and 29 April 2024 in Spanish.
 
-The official page for the paperback is on Amazon. The paperback is sold on
-Amazon in nine countries: United States, Canada, United Kingdom, Germany,
-France, Spain, Italy, Japan, Australia. Amazon prints on demand from the
+The official page for the paperback is on Amazon. The paperback is sold in
+fourteen Amazon stores: United States, United Kingdom, Germany, France, Spain,
+Italy, Netherlands, Poland, Sweden, Belgium, Ireland, Japan, Canada and
+Australia. Both editions, English and Spanish, are sold in all fourteen. The
+site lists every one of them with a direct link. Amazon prints on demand from the
 printing site nearest the buyer, so an order placed on a European Amazon is
 filled from Europe. The book also appears in other shops and in library
 catalogues, because Amazon's publishing service passes it on through its own
@@ -798,17 +804,17 @@ counterparts. Nothing on this site sits behind a form, a login or a paywall.
 - [Раскраска для программ домашних визитов](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm/raskraska-dlya-domashnih-vizitov)
 - [Одна книга для всей группы: родительские группы и библиотеки](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm/raskraska-dlya-roditelskih-grupp-i-bibliotek)
 - [Раскраски для ясельных групп и домашних детских садов](https://www.toddlercoloringbook.com/ru/raskraski-dlya-detskih-programm/raskraski-dlya-yasley-i-domashnih-detskih-grupp)
-## Single book pages for four European markets
+## Single book pages for seven markets
 
-Both paperback editions are sold on Amazon in Germany, France, the
-Netherlands and Poland, but the Amazon listings there are in English and
-in Spanish only. These pages describe the same two books in the
+The paperback is sold in fourteen Amazon stores, but the Amazon listings are in
+English and in Spanish only. For seven of those markets this site has its own
+page, written in the language of that country: Germany, France, the Netherlands,
+Poland, Italy, Spain and Canada. These pages describe the same two books in the
 buyer's own language. They are not translations of the rest of the site
 and they are not part of its three-language system: each one stands
-alone and covers exactly one edition.
-- [Prime parole in inglese](https://www.toddlercoloringbook.com/it/libro-da-colorare-prime-parole-inglese) (Italian, English words)
-- [Prime parole in spagnolo](https://www.toddlercoloringbook.com/it/libro-da-colorare-prime-parole-spagnolo) (Italian, Spanish words)
-
+alone and covers exactly one edition. Spain has only the English-words edition
+and Canada only the Spanish-words edition, because that is what a buyer there
+is looking for.
 
 - [Erste Wörter auf Englisch](https://www.toddlercoloringbook.com/de/malbuch-erste-woerter-englisch) (German, English edition)
 - [Erste Wörter auf Spanisch](https://www.toddlercoloringbook.com/de/malbuch-erste-woerter-spanisch) (German, Spanish edition)
@@ -818,6 +824,8 @@ alone and covers exactly one edition.
 - [Eerste woorden in het Spaans](https://www.toddlercoloringbook.com/nl/kleurboek-eerste-woorden-spaans) (Dutch, Spanish edition)
 - [Pierwsze słowa po angielsku](https://www.toddlercoloringbook.com/pl/kolorowanka-pierwsze-slowa-angielski) (Polish, English edition)
 - [Pierwsze słowa po hiszpańsku](https://www.toddlercoloringbook.com/pl/kolorowanka-pierwsze-slowa-hiszpanski) (Polish, Spanish edition)
+- [Prime parole in inglese](https://www.toddlercoloringbook.com/it/libro-da-colorare-prime-parole-inglese) (Italian, English edition)
+- [Prime parole in spagnolo](https://www.toddlercoloringbook.com/it/libro-da-colorare-prime-parole-spagnolo) (Italian, Spanish edition)
 - [Primeras palabras en inglés](https://www.toddlercoloringbook.com/espana/libro-de-colorear-primeras-palabras-en-ingles) (Spanish, for Spain, English edition)
 - [First words in Spanish](https://www.toddlercoloringbook.com/canada/coloring-book-first-words-in-spanish) (English, for Canada, Spanish edition)
 
