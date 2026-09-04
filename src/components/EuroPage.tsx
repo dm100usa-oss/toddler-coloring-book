@@ -21,13 +21,28 @@ import {
   euroAmazonUrl,
   euroPriceExact,
   BOOK_SIZE_CM,
+  euroAlternates,
   type EuroLang,
   type EditionLang,
 } from "@/data/euro";
-import { SITE_URL, PUBLISHER, ADDRESS, AUTHOR, CATALOG_URL, EURO_SHARE } from "@/lib/site";
+import {
+  SITE_URL,
+  PUBLISHER,
+  ADDRESS,
+  AUTHOR,
+  CATALOG_URL,
+  EURO_SHARE,
+  SITE_PUBLISHED,
+  SITE_UPDATED,
+} from "@/lib/site";
+
+/** Первоисточник независимой рецензии. */
+const CRITIC_URL =
+  "https://readersfavorite.com/book-review/first-coloring-book-for-toddlers-ages-1-3";
 import { hasFreePage, freeCopyOf, freePath } from "@/data/free";
 import { BuyPdf } from "@/components/BuyPdf";
-import { hasPdf } from "@/lib/pdfShop";
+import { hasPdf, PDF_PRICE_CENTS } from "@/lib/pdfShop";
+import { allNames } from "@/data/drawings";
 import { nb } from "@/lib/nobreak";
 
 /* Одна страница из восьми. Устроена так же, как страница книги
@@ -56,11 +71,27 @@ export function euroMetadata(lang: EuroLang, ed: EditionLang): Metadata {
   return {
     title: c.metaTitle,
     description: c.metaDescription,
-    /* Своя единственная основная версия. Связывать эту страницу
-       с другими языками нечем: равнозначного перевода у нее нет.
-       Немецкая страница про английскую книгу и немецкая про
-       испанскую это два разных материала, а не перевод друг друга. */
-    alternates: { canonical: url },
+    /* Своя основная версия у каждой страницы своя, и это главное:
+       без нее поисковик начал бы выбирать между страницами одну,
+       а нам нужно, чтобы каждая жила в своей стране.
+
+       Поверх этого стоят языковые версии. Связываем только страницы
+       про одно и то же издание: шесть страниц про книгу с английскими
+       словами в одну группу, шесть про книгу с испанскими в другую.
+       Это настоящие переводы друг друга: одна книга, одно предложение,
+       шесть языков.
+
+       Немецкая про английскую книгу и немецкая про испанскую в одну
+       группу не идут: это два разных товара, а не перевод.
+
+       С основным трехъязычным сайтом не смешиваем вовсе. Там свои
+       три версии одного справочника, и если бы страновые страницы
+       встали в тот же ряд, поисковик решил бы, что у сайта семь
+       языков, а немецкая страница это перевод английской.
+
+       Языка по умолчанию в группе нет намеренно: ни одна из шести
+       не главнее прочих, каждая для своей страны. */
+    alternates: { canonical: url, languages: euroAlternates(ed) },
     openGraph: {
       type: "article",
       locale: u.locale,
@@ -180,8 +211,36 @@ export default function EuroPage({
         /* Язык самой страницы, а не книги. Это два разных языка,
            и разделять их важно: страница немецкая, книга английская. */
         inLanguage: u.htmlLang,
+        /* Две даты. Без даты публикации страница выглядит так, будто
+           ее только что сочинили, а с одной лишь датой правки
+           непонятно, сколько она уже живет. */
+        datePublished: SITE_PUBLISHED,
+        dateModified: SITE_UPDATED,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         publisher: { "@id": `${SITE_URL}/#publisher` },
+        primaryImageOfPage: `${SITE_URL}${art.cover}`,
+      },
+      /* Путь по разделам. В выдаче поисковик может показать его вместо
+         голого адреса. Ступени две: корень страны и сама страница.
+         Корень страны отдельной витрины не имеет и перебрасывает на
+         эту же страницу, но как ступень пути он существует и понятен
+         человеку. */
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: u.htmlLang.toUpperCase(),
+            item: `${SITE_URL}/${lang}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: c.head.title,
+            item: url,
+          },
+        ],
       },
       {
         "@type": "Organization",
@@ -208,25 +267,100 @@ export default function EuroPage({
         typicalAgeRange: b.ages,
         image: `${SITE_URL}${art.cover}`,
         description: c.lead.join(" "),
+        /* Полный состав книги для машины: все 111 предметов отдельными
+           записями. Нейросеть читает список мгновенно и по нему
+           рекомендует книгу тому, кто спросил про конкретное животное
+           или предмет. Названия на языке издания: в английской книге
+           под рисунками английские слова, и искать будут их. */
+        about: allNames(ed).map((name) => ({ "@type": "Thing", name })),
+        /* Рецензия стороннего издания с ссылкой на первоисточник.
+           Оценку не ставим: чужие оценки в разметке Google запрещает.
+           На странице рецензия есть давно, машине она не была видна. */
+        subjectOf: {
+          "@type": "Review",
+          reviewBody: c.critic,
+          author: { "@type": "Person", name: "Pikasho Deka" },
+          publisher: { "@type": "Organization", name: "Readers' Favorite" },
+          url: CRITIC_URL,
+        },
         sameAs: [
           editions[ed].wikidata
             ? `https://www.wikidata.org/wiki/${editions[ed].wikidata}`
             : undefined,
           euroAmazonUrl(lang, b.asin),
         ].filter(Boolean),
-        /* Цена только там, где число сверено с карточкой магазина.
-           Смотри пояснение у euroPriceExact. */
-        offers: euroPriceExact[lang]
-          ? {
-              "@type": "Offer",
-              price: euroPriceExact[lang]!.amount,
-              priceCurrency: euroPriceExact[lang]!.currency,
-              availability: "https://schema.org/InStock",
-              itemCondition: "https://schema.org/NewCondition",
-              seller: { "@type": "Organization", name: "Amazon" },
-              url: euroAmazonUrl(lang, b.asin),
-            }
-          : undefined,
+        /* Два предложения на одну книгу, а не одно.
+
+           Бумажная книга продается на Amazon этой страны, в валюте
+           этой страны. Цена стоит только там, где число сверено с
+           карточкой магазина, смотри пояснение у euroPriceExact.
+
+           Файл для печати продает само издательство, здесь же на
+           странице, за 4.99 доллара. Раньше его в разметке не было
+           вовсе: машина видела одну бумажную цену и на вопрос
+           "сколько стоит файл" ответить не могла, хотя кнопка стоит
+           прямо на странице. Продавец и адрес у него свои, и путать
+           их с Amazon нельзя. */
+        offers: [
+          euroPriceExact[lang]
+            ? {
+                "@type": "Offer",
+                price: euroPriceExact[lang]!.amount,
+                priceCurrency: euroPriceExact[lang]!.currency,
+                availability: "https://schema.org/InStock",
+                itemCondition: "https://schema.org/NewCondition",
+                seller: { "@type": "Organization", name: "Amazon" },
+                url: euroAmazonUrl(lang, b.asin),
+              }
+            : undefined,
+          hasPdf(editions[ed].pdfId)
+            ? {
+                "@type": "Offer",
+                price: (PDF_PRICE_CENTS / 100).toFixed(2),
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                seller: { "@type": "Organization", name: PUBLISHER },
+                url,
+              }
+            : undefined,
+        ].filter(Boolean),
+      },
+      /* Ролик о книге. Стоит на странице давно как картинка, но
+         машине не был виден вовсе, а это отдельный вид результатов
+         поиска, где соперников почти нет. Длительность записана
+         в том виде, какого требует справочник: PT46S значит
+         сорок шесть секунд. */
+      ...(video
+        ? [
+            {
+              "@type": "VideoObject",
+              name: `${editions[ed].title}. ${u.videoTitle}`,
+              description: video.description,
+              thumbnailUrl: `${SITE_URL}${video.poster}`,
+              contentUrl: `${SITE_URL}${video.src}`,
+              uploadDate: SITE_PUBLISHED,
+              duration: `PT${video.seconds}S`,
+              inLanguage: u.htmlLang,
+              publisher: { "@type": "Organization", name: PUBLISHER },
+            },
+          ]
+        : []),
+      /* Десять листов из книги. Машина должна понимать, что это
+         готовые файлы для печати, а не картинки для украшения
+         страницы, и что за них не нужно ни платить, ни оставлять
+         почту. На главной сайта это объявлено давно, здесь не было. */
+      {
+        "@type": "DigitalDocument",
+        "@id": `${url}#gratis`,
+        name: u.freeTitle,
+        description: u.freeLead,
+        url: `${url}#gratis`,
+        encodingFormat: "application/pdf",
+        inLanguage: ed,
+        isAccessibleForFree: true,
+        isFamilyFriendly: true,
+        author: { "@type": "Person", name: AUTHOR.name },
+        publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
       },
       {
         "@type": "FAQPage",
@@ -507,7 +641,7 @@ export default function EuroPage({
           <p className="btn-row">
             <a
               className="btn btn--ghost"
-              href="https://readersfavorite.com/book-review/first-coloring-book-for-toddlers-ages-1-3"
+              href={CRITIC_URL}
               rel="nofollow noopener"
               target="_blank"
             >
