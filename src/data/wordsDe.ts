@@ -1,0 +1,138 @@
+/* ---------------------------------------------------------------------------
+   Названия всех 111 рисунков по-немецки.
+
+   Зачем. Немецкая страница обещает первые английские или испанские слова,
+   но самих слов на ней не было ни одного: родитель видел обещание, а не
+   список. Теперь он видит все 111 пар и решает сам, нужны ли ему такие
+   слова.
+
+   Пара строится на лету: немецкое слово отсюда и слово издания из
+   data/drawings.ts. Одна и та же таблица работает и для страницы про
+   английскую книгу, и для страницы про испанскую.
+
+   Слова взяты в той форме, в какой их говорят ребенку, а не в словарной:
+   Hase, а не Kaninchen, Häschen. Артикль не пишем: под рисунком в книге
+   стоит одно слово, и подпись здесь должна совпадать с тем, что ребенок
+   увидит на странице.
+--------------------------------------------------------------------------- */
+
+export const wordsDe: Record<number, string> = {
+  1: "Löwe",
+  2: "Elefant",
+  3: "Zebra",
+  4: "Papagei",
+  5: "Krokodil",
+  6: "Affe",
+  7: "Känguru",
+  8: "Nashorn",
+  9: "Flamingo",
+  10: "Lemur",
+  11: "Kolibri",
+  12: "Giraffe",
+  13: "Koala",
+  14: "Frosch",
+  15: "Alpaka",
+  16: "Hase",
+  17: "Eule",
+  18: "Igel",
+  19: "Ziege",
+  20: "Fledermaus",
+  21: "Waschbär",
+  22: "Bär",
+  23: "Fuchs",
+  24: "Huhn",
+  25: "Chamäleon",
+  26: "Kuh",
+  27: "Biber",
+  28: "Adler",
+  29: "Hamster",
+  30: "Katze",
+  31: "Hund",
+  32: "Eichhörnchen",
+  33: "Ente",
+  34: "Hirsch",
+  35: "Maus",
+  36: "Biene",
+  37: "Libelle",
+  38: "Schnecke",
+  39: "Schmetterling",
+
+  40: "Hai",
+  41: "Delfin",
+  42: "Wal",
+  43: "Krabbe",
+  44: "Krake",
+  45: "Qualle",
+  46: "Meeresschildkröte",
+  47: "Kaiserfisch",
+  48: "Seepferdchen",
+  49: "Robbe",
+  50: "Clownfisch",
+  51: "Muschel",
+  52: "Axolotl",
+  53: "Kugelfisch",
+  54: "Garnele",
+  55: "Manta",
+
+  56: "Meerjungfrau",
+  57: "Einhorn",
+  58: "Drache",
+  59: "Krone",
+  60: "Zwerg",
+  61: "Greif",
+  62: "Troll",
+  63: "Fee",
+  64: "Zauberkessel",
+  65: "Zaubererhut",
+  66: "Zaubertrank",
+
+  67: "Auto",
+  68: "Hubschrauber",
+  69: "Flugzeug",
+  70: "Heißluftballon",
+  71: "Schiff",
+  72: "U-Boot",
+  73: "Rakete",
+  74: "Roller",
+
+  75: "Skateboard",
+  76: "Drachen",
+  77: "Federball",
+  78: "Football",
+  79: "Kamera",
+  80: "Trommel",
+  81: "Wasserball",
+
+  82: "Sonnenbrille",
+  83: "Sonnenschirm",
+  84: "Sonnenhut",
+  85: "Globus",
+  86: "Geschenk",
+  87: "Controller",
+
+  88: "Ahornblatt",
+  89: "Rose",
+  90: "Pilz",
+  91: "Klee",
+  92: "Sonnenblume",
+  93: "Tannenzapfen",
+  94: "Kaktus",
+  95: "Maiglöckchen",
+  96: "Lotusblume",
+  97: "Tulpe",
+
+  98: "Kuchen",
+  99: "Eis",
+  100: "Wassermelone",
+  101: "Karotte",
+  102: "Brokkoli",
+  103: "Orange",
+  104: "Kirsche",
+  105: "Avocado",
+  106: "Erdbeere",
+  107: "Birne",
+  108: "Ananas",
+  109: "Zitrone",
+  110: "Kürbis",
+  111: "Donut",
+};

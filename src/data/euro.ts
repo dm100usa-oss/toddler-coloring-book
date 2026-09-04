@@ -264,6 +264,20 @@ export type EuroUi = {
   /** Строка про подборщик раскрасок на основном сайте. */
   pickerLine: string;
   pickerCta: string;
+  /** Список всех 111 слов книги: заголовок, пояснение и названия
+      восьми тем на языке страницы. */
+  wordsTitle: string;
+  wordsLead: string;
+  groups: {
+    land: string;
+    water: string;
+    fantasy: string;
+    vehicles: string;
+    sports: string;
+    things: string;
+    nature: string;
+    food: string;
+  };
   footerAbout: string;
   footerLink: string;
   /* Приписка "на английском" рядом со ссылкой в подвале. У Испании
@@ -338,6 +352,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "Sie sind sich nicht sicher, welches Malbuch zu Ihrem Kind passt? Auf unserer Website " +
       "gibt es dafür einen kostenlosen Test: vier Fragen, etwa dreißig Sekunden.",
     pickerCta: "Zum Test",
+    wordsTitle: "Alle 111 Wörter aus dem Buch",
+    wordsLead:
+      "Unter jeder Zeichnung steht ein Wort in großen hohlen Buchstaben, das das Kind " +
+      "genauso ausmalt wie das Bild. Hier stehen alle 111, nach Themen geordnet, damit Sie " +
+      "vor dem Kauf sehen, welche Wörter Ihr Kind kennenlernt.",
+    groups: {
+      land: "Tiere an Land",
+      water: "Tiere im Meer",
+      fantasy: "Märchenfiguren",
+      vehicles: "Fahrzeuge",
+      sports: "Sport und Spiel",
+      things: "Dinge des Alltags",
+      nature: "Blumen und Natur",
+      food: "Essen",
+    },
     footerAbout:
       "Herausgegeben von Magic of Discoveries LLC, einem Kinderbuchverlag in Miami, Florida.",
     footerLink: "Alles über die ersten Malbücher für Kinder von 1 bis 3 Jahren",
@@ -398,6 +427,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "Vous ne savez pas quel coloriage convient à votre enfant ? Notre site propose un test " +
       "gratuit : quatre questions, environ trente secondes.",
     pickerCta: "Faire le test",
+    wordsTitle: "Les 111 mots du livre",
+    wordsLead:
+      "Sous chaque dessin figure un mot en grandes lettres creuses, que l'enfant colorie " +
+      "comme le dessin lui-même. Les voici tous les 111, classés par thème, pour que vous " +
+      "voyiez avant l'achat quels mots votre enfant va découvrir.",
+    groups: {
+      land: "Animaux de la terre",
+      water: "Animaux de la mer",
+      fantasy: "Personnages de contes",
+      vehicles: "Véhicules",
+      sports: "Sport et jeux",
+      things: "Objets du quotidien",
+      nature: "Fleurs et nature",
+      food: "Nourriture",
+    },
     footerAbout:
       "Publié par Magic of Discoveries LLC, maison d'édition jeunesse à Miami, en Floride.",
     footerLink:
@@ -459,6 +503,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "Weet u niet welk kleurboek bij uw kind past? Op onze website staat daarvoor een gratis " +
       "test: vier vragen, ongeveer dertig seconden.",
     pickerCta: "Naar de test",
+    wordsTitle: "Alle 111 woorden uit het boek",
+    wordsLead:
+      "Onder elke tekening staat een woord in grote holle letters, dat het kind net zo " +
+      "inkleurt als de tekening zelf. Hier staan ze alle 111, op thema geordend, zodat u " +
+      "voor de aankoop ziet welke woorden uw kind leert kennen.",
+    groups: {
+      land: "Dieren op het land",
+      water: "Dieren in de zee",
+      fantasy: "Sprookjesfiguren",
+      vehicles: "Voertuigen",
+      sports: "Sport en spel",
+      things: "Dagelijkse dingen",
+      nature: "Bloemen en natuur",
+      food: "Eten",
+    },
     footerAbout:
       "Uitgegeven door Magic of Discoveries LLC, een kinderboekenuitgeverij in Miami, Florida.",
     footerLink: "Alles over de eerste kleurboeken voor kinderen van 1 tot 3 jaar",
@@ -518,6 +577,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "Nie wiesz, która kolorowanka będzie odpowiednia dla twojego dziecka? Na naszej stronie " +
       "jest do tego darmowy test: cztery pytania, około trzydziestu sekund.",
     pickerCta: "Przejdź do testu",
+    wordsTitle: "Wszystkie 111 słów z książki",
+    wordsLead:
+      "Pod każdym rysunkiem jest słowo napisane dużymi pustymi literami, które dziecko " +
+      "koloruje tak samo jak rysunek. Oto wszystkie 111, uporządkowane tematami, żebyś " +
+      "przed zakupem zobaczył, jakie słowa pozna twoje dziecko.",
+    groups: {
+      land: "Zwierzęta lądowe",
+      water: "Zwierzęta morskie",
+      fantasy: "Postacie z bajek",
+      vehicles: "Pojazdy",
+      sports: "Sport i zabawa",
+      things: "Przedmioty codzienne",
+      nature: "Kwiaty i przyroda",
+      food: "Jedzenie",
+    },
     footerAbout:
       "Wydane przez Magic of Discoveries LLC, wydawnictwo książek dla dzieci z Miami na Florydzie.",
     footerLink: "Wszystko o pierwszych kolorowankach dla dzieci od 1 do 3 lat",
@@ -586,6 +660,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "Non sa quale album da colorare sia adatto a suo figlio? Sul nostro sito c'è un test " +
       "gratuito: quattro domande, circa trenta secondi.",
     pickerCta: "Vai al test",
+    wordsTitle: "Tutte le 111 parole del libro",
+    wordsLead:
+      "Sotto ogni disegno c'è una parola scritta in grandi lettere vuote, che il bambino " +
+      "colora proprio come il disegno. Eccole tutte e 111, ordinate per tema, così prima " +
+      "di comprare vede quali parole imparerà suo figlio.",
+    groups: {
+      land: "Animali di terra",
+      water: "Animali di mare",
+      fantasy: "Personaggi delle fiabe",
+      vehicles: "Veicoli",
+      sports: "Sport e gioco",
+      things: "Oggetti di ogni giorno",
+      nature: "Fiori e natura",
+      food: "Cibo",
+    },
     footerAbout:
       "Pubblicato da Magic of Discoveries LLC, casa editrice per bambini di Miami, Florida.",
     footerLink:
@@ -647,6 +736,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "¿No sabe qué libro para colorear le conviene a su hijo? En nuestro sitio hay una prueba " +
       "gratuita: cuatro preguntas, unos treinta segundos.",
     pickerCta: "Hacer la prueba",
+    wordsTitle: "Las 111 palabras del libro",
+    wordsLead:
+      "Debajo de cada dibujo hay una palabra en letras huecas grandes, que el niño colorea " +
+      "igual que el dibujo. Aquí están las 111, ordenadas por tema, para que vea antes de " +
+      "comprar qué palabras va a conocer su hijo.",
+    groups: {
+      land: "Animales de tierra",
+      water: "Animales del mar",
+      fantasy: "Personajes de cuentos",
+      vehicles: "Vehículos",
+      sports: "Deporte y juego",
+      things: "Objetos de todos los días",
+      nature: "Flores y naturaleza",
+      food: "Comida",
+    },
     footerAbout:
       "Publicado por Magic of Discoveries LLC, editorial de libros infantiles de Miami, Florida.",
     footerLink:
@@ -721,6 +825,21 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "Not sure which coloring book suits your child? Our site has a free four-question tool " +
       "for that. It takes about thirty seconds.",
     pickerCta: "Take the test",
+    wordsTitle: "All 111 words in the book",
+    wordsLead:
+      "Under every drawing there is a word in large hollow letters that the child colors " +
+      "just like the picture. Here are all 111, grouped by subject, so you can see before " +
+      "you buy which words your child will meet.",
+    groups: {
+      land: "Land animals",
+      water: "Sea animals",
+      fantasy: "Fairy-tale characters",
+      vehicles: "Vehicles",
+      sports: "Sports and play",
+      things: "Everyday things",
+      nature: "Flowers and nature",
+      food: "Food",
+    },
     footerAbout:
       "Published by Magic of Discoveries LLC, a children's book publisher in Miami, Florida.",
     footerLink: "Everything about first coloring books for children ages 1 to 3",

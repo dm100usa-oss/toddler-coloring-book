@@ -42,7 +42,8 @@ const CRITIC_URL =
 import { hasFreePage, freeCopyOf, freePath } from "@/data/free";
 import { BuyPdf } from "@/components/BuyPdf";
 import { hasPdf, PDF_PRICE_CENTS } from "@/lib/pdfShop";
-import { allNames } from "@/data/drawings";
+import { allNames, groupOrder } from "@/data/drawings";
+import { wordPairs } from "@/data/euroWords";
 import { nb } from "@/lib/nobreak";
 
 /* Одна страница из восьми. Устроена так же, как страница книги
@@ -197,6 +198,8 @@ export default function EuroPage({
   /* Ролик того издания, о котором страница: в английском под рисунками
      английские слова, в испанском испанские. Снят родителем дома. */
   const video = editions[ed].video;
+  /* Все 111 слов парами: слово страны и слово книги. */
+  const pairs = wordPairs(lang, ed);
   const url = `${SITE_URL}${euroPath(lang, ed)}`;
 
   const schema = {
@@ -734,6 +737,43 @@ export default function EuroPage({
               </details>
             ))}
           </div>
+
+          {/* ============ Все 111 слов книги ============ */}
+          {/* Слово на языке страны и слово из книги, парами, по восьми
+              темам. Раньше страница обещала первые английские слова,
+              но ни одного не показывала: родитель видел обещание,
+              а не список.
+
+              Это же и самое цитируемое, что на странице есть. Готовой
+              таблицы "Löwe - Lion" в интернете почти нет, а спрашивают
+              такое постоянно.
+
+              У Франции, Голландии, Польши и Италии словаря пока нет,
+              и там блок не рисуется вовсе: пустая таблица хуже, чем
+              никакой. */}
+          {pairs.length ? (
+            <>
+              <h2 className="section">{u.wordsTitle}</h2>
+              <p>{nb(u.wordsLead)}</p>
+              {groupOrder.map((g) => {
+                const rows = pairs.filter((w) => w.group === g);
+                if (!rows.length) return null;
+                return (
+                  <div key={g} className="wordlist">
+                    <h3 className="block">{u.groups[g]}</h3>
+                    <ul>
+                      {rows.map((w) => (
+                        <li key={w.n}>
+                          <b>{w.local}</b>
+                          <span>{w.book}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </>
+          ) : null}
 
           {/* ============ Десять листов из книги ============ */}
           {/* Вся страница выше это слова: контур толстый, рисунок

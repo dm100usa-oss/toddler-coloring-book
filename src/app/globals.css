@@ -2568,3 +2568,30 @@ html[lang="ru"] .hero {
   border-radius: var(--radius);
   background: var(--ink);
 }
+
+/* ==================== СПИСОК СЛОВ КНИГИ ==================== */
+
+/* Все 111 слов парами: слово на языке страны и слово из книги.
+   Столбцами, а не строкой: глаз идет сверху вниз по своему языку
+   и находит нужное слово быстрее, чем читая строку за строкой. */
+.wordlist ul {
+  list-style: none;
+  margin: var(--gap-2) 0 var(--gap-3);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.35rem var(--gap-4);
+}
+.wordlist li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap-2);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(51, 32, 44, 0.1);
+  font-size: var(--t-small);
+  line-height: 1.4;
+}
+/* Слово на языке читателя темнее: он ищет глазами именно его,
+   а слово из книги читает вторым. */
+.wordlist b { color: var(--ink); font-weight: 700; }
+.wordlist span { color: var(--ink-2); text-align: right; }
