@@ -268,6 +268,8 @@ export type EuroUi = {
       восьми тем на языке страницы. */
   wordsTitle: string;
   wordsLead: string;
+  /** Кнопка под обрезанным списком на телефоне. */
+  wordsMore: string;
   groups: {
     land: string;
     water: string;
@@ -353,6 +355,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "gibt es dafür einen kostenlosen Test: vier Fragen, etwa dreißig Sekunden.",
     pickerCta: "Zum Test",
     wordsTitle: "Alle 111 Wörter aus dem Buch",
+    wordsMore: "Alle 111 Wörter zeigen",
     wordsLead:
       "Unter jeder Zeichnung steht ein Wort in großen hohlen Buchstaben, das das Kind " +
       "genauso ausmalt wie das Bild. Hier stehen alle 111, nach Themen geordnet, damit Sie " +
@@ -428,6 +431,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "gratuit : quatre questions, environ trente secondes.",
     pickerCta: "Faire le test",
     wordsTitle: "Les 111 mots du livre",
+    wordsMore: "Voir les 111 mots",
     wordsLead:
       "Sous chaque dessin figure un mot en grandes lettres creuses, que l'enfant colorie " +
       "comme le dessin lui-même. Les voici tous les 111, classés par thème, pour que vous " +
@@ -504,6 +508,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "test: vier vragen, ongeveer dertig seconden.",
     pickerCta: "Naar de test",
     wordsTitle: "Alle 111 woorden uit het boek",
+    wordsMore: "Alle 111 woorden tonen",
     wordsLead:
       "Onder elke tekening staat een woord in grote holle letters, dat het kind net zo " +
       "inkleurt als de tekening zelf. Hier staan ze alle 111, op thema geordend, zodat u " +
@@ -578,6 +583,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "jest do tego darmowy test: cztery pytania, około trzydziestu sekund.",
     pickerCta: "Przejdź do testu",
     wordsTitle: "Wszystkie 111 słów z książki",
+    wordsMore: "Pokaż wszystkie 111 słów",
     wordsLead:
       "Pod każdym rysunkiem jest słowo napisane dużymi pustymi literami, które dziecko " +
       "koloruje tak samo jak rysunek. Oto wszystkie 111, uporządkowane tematami, żebyś " +
@@ -661,6 +667,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "gratuito: quattro domande, circa trenta secondi.",
     pickerCta: "Vai al test",
     wordsTitle: "Tutte le 111 parole del libro",
+    wordsMore: "Mostra tutte le 111 parole",
     wordsLead:
       "Sotto ogni disegno c'è una parola scritta in grandi lettere vuote, che il bambino " +
       "colora proprio come il disegno. Eccole tutte e 111, ordinate per tema, così prima " +
@@ -737,6 +744,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "gratuita: cuatro preguntas, unos treinta segundos.",
     pickerCta: "Hacer la prueba",
     wordsTitle: "Las 111 palabras del libro",
+    wordsMore: "Ver las 111 palabras",
     wordsLead:
       "Debajo de cada dibujo hay una palabra en letras huecas grandes, que el niño colorea " +
       "igual que el dibujo. Aquí están las 111, ordenadas por tema, para que vea antes de " +
@@ -826,6 +834,7 @@ export const euroUi: Record<EuroLang, EuroUi> = {
       "for that. It takes about thirty seconds.",
     pickerCta: "Take the test",
     wordsTitle: "All 111 words in the book",
+    wordsMore: "Show all 111 words",
     wordsLead:
       "Under every drawing there is a word in large hollow letters that the child colors " +
       "just like the picture. Here are all 111, grouped by subject, so you can see before " +

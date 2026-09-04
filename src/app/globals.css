@@ -2595,3 +2595,40 @@ html[lang="ru"] .hero {
    а слово из книги читает вторым. */
 .wordlist b { color: var(--ink); font-weight: 700; }
 .wordlist span { color: var(--ink-2); text-align: right; }
+
+/* Шторка над списком слов. Только на телефоне и вертикальном планшете.
+
+   Список не прячется, а обрезается по высоте: слова остаются в коде
+   и видимыми, просто не помещаются в окно. Свернутый блок поисковик
+   читает, но часть нейросетевых сборщиков такие блоки не раскрывает,
+   а обрезку по высоте видят все. */
+.wordlist-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.wordlist-more { display: none; }
+
+@media (max-width: 899px) {
+  .wordlist-box {
+    max-height: 22rem;
+    overflow: hidden;
+    /* Нижние строки тают, и по этому краю видно, что список длиннее.
+       Обрыв по ровной линии читался бы как конец списка. */
+    mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+  }
+  .wordlist-toggle:checked ~ .wordlist-box {
+    max-height: none;
+    mask-image: none;
+  }
+  .wordlist-more {
+    display: inline-block;
+    margin: var(--gap-2) 0 var(--gap-3);
+    padding: 0.6rem 1.1rem;
+    border: var(--edge);
+    border-radius: 999px;
+    background: var(--paper);
+    font-size: var(--t-small);
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  /* Раскрыли, и кнопка больше не нужна. */
+  .wordlist-toggle:checked ~ .wordlist-more { display: none; }
+}
