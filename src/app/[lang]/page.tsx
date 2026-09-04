@@ -78,8 +78,16 @@ export async function generateMetadata({
 const words = {
   en: {
     ages: "Ages",
-    coverNote: "An example of a first coloring book for toddlers",
-    whySuits: "What else makes a good coloring book for toddlers",
+    /* Заголовок над книгой. Объясняет, откуда на справочном сайте
+       взялась одна конкретная книга. Раньше эту работу делала подпись
+       под обложкой, но она начиналась со слова "пример" и отрицала
+       то, что стоит рядом: цену и кнопку покупки. */
+    bookIntro: "A coloring book made especially for toddlers",
+    /* Тихая строчка под первой кнопкой покупки. */
+    tryFree: "You can print ten pages free first",
+    /* Подводка к последней кнопке, сразу после бесплатных листов. */
+    afterFree: "If the pages suited your child, the whole book has 111 of them.",
+    whySuits: "What makes a good coloring book for toddlers different from an ordinary one",
     drawings: "Drawings",
     pages: "Pages",
     size: "Size",
@@ -112,8 +120,10 @@ editions are there and anyone can read the originals.",
   },
   es: {
     ages: "Edad",
-    coverNote: "Un ejemplo de primer libro para colorear para bebés",
-    whySuits: "Qué más distingue a un buen libro para colorear para bebés",
+    bookIntro: "Un libro para colorear creado especialmente para bebés",
+    tryFree: "Antes puede imprimir diez páginas gratis",
+    afterFree: "Si estas páginas le sirvieron a su hijo, el libro entero tiene 111.",
+    whySuits: "En qué se diferencia un buen libro para colorear para bebés de uno corriente",
     drawings: "Dibujos",
     pages: "Páginas",
     size: "Tamaño",
@@ -147,8 +157,10 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
   },
   ru: {
     ages: "Возраст",
-    coverNote: "Пример первой раскраски для малышей",
-    whySuits: "Чем еще отличается хорошая раскраска для малышей",
+    bookIntro: "Книга, созданная специально для малышей",
+    tryFree: "Сначала можно распечатать десять страниц бесплатно",
+    afterFree: "Если эти страницы ребенку подошли, в книге их 111.",
+    whySuits: "Чем хорошая раскраска для малышей отличается от обычной",
     drawings: "Рисунков",
     pages: "Страниц",
     size: "Размер",
@@ -437,6 +449,17 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       </div>
 
       {/* ============ 1. Книга. Первое, что видит человек ============ */}
+      {/* Заголовок-переход. Без него человек, прочитавший наверху, что
+          сайт про первые раскраски вообще, упирался в обложку одной
+          книги без объяснения, откуда она взялась. Раньше эту работу
+          делала подпись под обложкой со словом "пример", но она же
+          и мешала: рядом стоит цена, а слово говорило обратное. */}
+      {w.bookIntro ? (
+        <div className="wrap">
+          <h2 className="section book-intro">{w.bookIntro}</h2>
+        </div>
+      ) : null}
+
       <div className="wrap">
         <div className="book">
           <div className="book__cover">
@@ -449,10 +472,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 fetchPriority="high"
               />
             </div>
-            {/* Подпись к обложке. Объясняет, почему на сайте о первых
-                раскрасках вообще стоит одна конкретная книга: она здесь
-                как образец, а не как реклама. */}
-            <p className="book__cover-note">{w.coverNote}</p>
+            {/* Подписи под обложкой больше нет. Она начиналась со слова
+                "пример" и отрицала то, что стоит рядом: цену и кнопку
+                покупки. Ту же работу делает заголовок над книгой,
+                и делает не отрицая, что книгу продают. */}
           </div>
 
           <div>
@@ -511,19 +534,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           ))}
         </div>
 
-        {/* Заголовок начинается со слова "еще" намеренно: сразу над
-            списком стоят три картинки с надписями simple, big, cute,
-            то есть признаки хорошей раскраски уже названы, и список
-            продолжает ту же мысль.
-            Пятым пунктом сюда убрана строка про слово под рисунком:
-            раньше она висела отдельным абзацем ниже и читалась как
-            обрывок. */}
-        <h4 className="block">{w.whySuits}</h4>
-        <ul className="needs needs--extras">
-          {ed.extras.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-        </ul>
+        {/* Список того, чем хорошая раскраска отличается от обычной,
+            стоял здесь, между баннерами и рисунками, и разрывал их.
+            Теперь он ниже, перед вопросами родителей: там он читается
+            как справка, а не как третий список подряд. */}
 
         {/* ============ 3. Что внутри: сами рисунки ============ */}
         {/* Пояснения под заголовком нет намеренно: под словами
@@ -559,7 +573,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             он читает названия, а не картинки. */}
         <AllDrawings lang={l} label={w.seeAll} />
 
-        {/* ============ 4. Покупка. Первое из двух мест ============ */}
+        {/* ============ 4. Покупка. Первое из трех мест ============ */}
         {/* Кнопки стоят здесь, а не выше: человек уже посмотрел
             двадцать страниц и при желании раскрыл все сто одиннадцать.
             Это и есть та минута, когда решение принимается. */}
@@ -568,6 +582,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <p className="buy-note">
             {ed.asin ? w.buyNote : ""}
             {!ed.asin && !hasPdf(ed.pdfId) ? w.buyNote : ""}
+          </p>
+          {/* Тихая строчка про бесплатную пробу. Намеренно без кнопки
+              и без картинок: сами листы лежат внизу страницы, и там
+              у них полноценный блок.
+
+              Здесь она нужна тому, кто сомневается: он получает выход,
+              не уходя со страницы. А тот, кто уже готов заплатить, ее
+              не заметит. Если бы бесплатное стояло тут наравне с
+              кнопкой, оно забирало бы и готового покупателя: между
+              "четыре доллара" и "даром прямо сейчас" человек выбирает
+              второе, даже когда был готов купить. */}
+          <p className="buy-try">
+            <a href="#free">{w.tryFree}</a>
           </p>
         </div>
 
@@ -665,7 +692,20 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <h4 className="section">{w.notFor}</h4>
         <p>{ed.notFor}</p>
 
-        {/* ============ 9. Вопросы ============ */}
+        {/* ============ 9. Чем хорошая раскраска отличается ============ */}
+        {/* Переехал сюда из-под баннеров. Человек уже увидел книгу,
+            рисунки, отзывы и состав, и решил, подходит она ему или нет.
+            Здесь список работает как справка: почему книга сделана
+            именно так. Заголовок больше не начинается со слова "еще":
+            оно отсылало к надписям на баннерах, а до них теперь далеко. */}
+        <h4 className="section">{w.whySuits}</h4>
+        <ul className="needs needs--extras">
+          {ed.extras.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+
+        {/* ============ 10. Вопросы ============ */}
         <h4 className="section">{w.faq}</h4>
         <div className="faq faq--two">
           {ed.faq.map((item) => (
@@ -702,8 +742,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         ) : null}
       </div>
 
-      {/* ============ 10. Бесплатные листы ============ */}
-      <section className="band band--pink">
+      {/* ============ 11. Бесплатные листы ============ */}
+      {/* У блока есть метка free: на нее ведет тихая строчка из-под
+          первой кнопки покупки. */}
+      <section className="band band--pink" id="free">
         <div className="wrap">
           <h4 className="section">{w.freeTitle}</h4>
           <p className="lead">{w.freeLead}</p>
@@ -733,7 +775,22 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 11. Справочная часть ============ */}
+      {/* ============ 12. Покупка. Третье и последнее место ============ */}
+      {/* Стоит сразу после бесплатных листов и именно поэтому.
+          Человек распечатал десять страниц, дал ребенку карандаш
+          и увидел, что раскраска подошла. Это и есть та минута,
+          когда берут всю книгу. Раньше следом шел подборщик, человек
+          уходил в справочную часть, и купить там было уже негде. */}
+      <section className="band">
+        <div className="wrap">
+          <div className="buy-block buy-block--after-free">
+            <p className="buy-after-free">{w.afterFree}</p>
+            <Buy lang={l} />
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 13. Справочная часть ============ */}
       {isContentLang(l) ? (
         <>
           <section className="band band--mint" id="picker">
@@ -798,7 +855,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </>
       ) : null}
 
-      {/* ============ 12. Что это за сайт ============ */}
+      {/* ============ 14. Что это за сайт ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.whatTitle}</h2>
@@ -817,7 +874,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 13. Источники ============ */}
+      {/* ============ 15. Источники ============ */}
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.sourcesTitle}</h2>
@@ -837,7 +894,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 14. Книга в других странах ============ */}
+      {/* ============ 16. Книга в других странах ============ */}
       {/* Стоит последней и намеренно. Человек, пришедший за книгой,
           сначала должен увидеть саму книгу. Этот блок для того, кто
           дочитал и понял, что живет не там, где написан сайт. */}
