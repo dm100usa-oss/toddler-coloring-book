@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import AllDrawings from "@/components/AllDrawings";
 import Picker from "@/components/Picker";
 import { BuyPdf } from "@/components/BuyPdf";
-import { MarketsBook, MarketsStores } from "@/components/Markets";
+import { MarketsBook } from "@/components/Markets";
 import { hasPdf } from "@/lib/pdfShop";
 import { toolLabels } from "@/data/tool";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
@@ -898,17 +898,16 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 16. Где продается бумажная книга ============ */}
-      {/* Четырнадцать магазинов Amazon. Человек, впервые увидевший
-          книгу, не знает, издание перед ним или чья-то самоделка.
-          Четырнадцать магазинов, в каждый из которых можно нажать
-          и проверить, отвечают на это без единого хвалебного слова. */}
-      <MarketsStores lang={l} />
-
-      {/* ============ 17. Книга в других странах ============ */}
+      {/* ============ 16. Книга в других странах ============ */}
       {/* Стоит последней и намеренно. Человек, пришедший за книгой,
           сначала должен увидеть саму книгу. Этот блок для того, кто
-          дочитал и понял, что живет не там, где написан сайт. */}
+          дочитал и понял, что живет не там, где написан сайт.
+
+          Четырнадцать стран здесь работают и вторым делом: человек,
+          впервые увидевший книгу, не знает, издание перед ним или
+          чья-то самоделка. Четырнадцать магазинов, в каждый из
+          которых можно нажать и проверить, отвечают на это без
+          единого хвалебного слова. */}
       <MarketsBook lang={l} />
     </>
   );

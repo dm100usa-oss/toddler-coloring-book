@@ -206,11 +206,6 @@ export type Dict = {
      страницах, иначе два файла окажутся связаны в кольцо. */
   markets: {
     bookTitle: string;
-    /** Блок "где продается бумажная книга": заголовок, пояснение
-        и оговорка для русской страницы, где бумаги своей нет. */
-    storesTitle: string;
-    storesLead: string;
-    storesNote: string;
     freeTitle: string;
     note: string;
     /** Чем две страницы одной страны отличаются: слова под рисунками. */
@@ -460,12 +455,9 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     markets: {
       bookTitle: "The book in other countries",
-      storesTitle: "Where the paperback is sold",
-      storesLead:
-        "The same book, the same 111 drawings. Amazon prints and ships it in fourteen countries.",
-      storesNote: "",
       freeTitle: "Free coloring pages in other countries",
-      note: "Each page is written in the language of its country.",
+      note:
+        "The book is sold in fourteen countries. Seven of them have their own page, written in the language of that country.",
       wordsEn: "English words",
       wordsEs: "Spanish words",
       country: {
@@ -724,12 +716,9 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     markets: {
       bookTitle: "El libro en otros países",
-      storesTitle: "Dónde se vende el libro impreso",
-      storesLead:
-        "El mismo libro, los mismos 111 dibujos. Amazon lo imprime y lo envía en catorce países.",
-      storesNote: "",
       freeTitle: "Dibujos para colorear gratis en otros países",
-      note: "Cada página está escrita en el idioma de su país.",
+      note:
+        "El libro se vende en catorce países. Siete de ellos tienen su propia página, escrita en el idioma de ese país.",
       wordsEn: "palabras en inglés",
       wordsEs: "palabras en español",
       country: {
@@ -978,13 +967,9 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     markets: {
       bookTitle: "Книга в других странах",
-      storesTitle: "Где продается бумажная книга",
-      storesLead:
-        "Та же самая книга, те же 111 рисунков. Amazon печатает и доставляет ее в четырнадцати странах.",
-      storesNote:
-        "По-русски бумажного издания нет: Amazon не печатает по-русски. Ссылки ведут на английское издание.",
       freeTitle: "Бесплатные раскраски в других странах",
-      note: "Каждая страница написана на языке своей страны.",
+      note:
+        "Книга продается в четырнадцати странах. У семи из них есть своя страница, написанная на языке этой страны.",
       wordsEn: "английские слова",
       wordsEs: "испанские слова",
       country: {

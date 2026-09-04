@@ -2434,6 +2434,13 @@ html[lang="ru"] .hero {
    столбцов. Одной колонкой список занимал левую треть полосы,
    а справа было пусто. Название страны сверху, ссылки под ним:
    так строка не тянется вбок и глаз идет по столбцу. */
+/* Две строки внутри карточки. Первая ведет на наши страницы, вторая
+   в магазин Amazon этой страны. Вторая мельче и приглушена: она нужна
+   тому, кто уже решил купить, а не тому, кто читает. */
+.markets__pages { display: block; }
+.markets__store { display: block; margin-top: 0.25rem; font-size: var(--t-micro); }
+.markets__store a { color: var(--ink-2); }
+
 @media (min-width: 700px) {
   .markets {
     display: grid;
@@ -2525,30 +2532,6 @@ html[lang="ru"] .hero {
   max-width: 34rem;
   margin-inline: auto;
   text-align: center;
-}
-
-/* ==================== ГДЕ ПРОДАЕТСЯ БУМАЖНАЯ КНИГА ==================== */
-
-/* Четырнадцать магазинов Amazon. Плитками, а не списком: это не текст
-   для чтения, а набор входов, и человек ищет глазами свою страну. */
-.stores {
-  list-style: none; margin: var(--gap-2) 0 0; padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: var(--gap-2);
-}
-.stores a {
-  display: flex; align-items: center; gap: 0.55rem;
-  padding: 0.6rem 0.8rem;
-  background: var(--paper);
-  border: var(--edge); border-radius: var(--radius-sm);
-  font-size: var(--t-small); font-weight: 700;
-  color: var(--ink);
-}
-.stores a:hover { border-color: var(--pink-hot); }
-.stores__note {
-  margin: var(--gap-3) 0 0;
-  font-size: var(--t-small); color: var(--ink-2); max-width: 74ch;
 }
 
 /* Флаг страны. Тонкая рамка нужна флагам со светлым краем: без нее
