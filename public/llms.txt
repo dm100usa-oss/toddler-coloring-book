@@ -11,7 +11,7 @@ written separately in each of the three languages rather than translated.
 - At what age a child can start using a coloring book, and what to expect at each age
 - Why a coloring book for a one year old must be built differently from one for a four year old
 - How to tell which stage a specific child is at, from what their hand actually does
-- What to look for in a first coloring book: line thickness, drawing size, one subject per page, single-sided printing
+- What to look for in a first coloring book: line thickness, drawing size, one subject per page
 - What to draw with at each stage: thick crayons, markers, colored pencils
 - What to do about marker bleed-through, torn pages and mess
 - Free coloring pages to print, sorted by difficulty rather than by subject
@@ -81,7 +81,7 @@ A child of about two who holds the pencil with the fingers but not confidently,
 colors on the picture but often crosses the outline, and stays with a page about
 five minutes, is placed at controlled scribbling. Suitable page: a large familiar
 object filling most of the sheet, thick outline, two or three simple parts
-inside, printed on one side only.
+inside.
 
 A child of about three who holds the pencil almost like an adult, mostly stays
 inside the outline, and stays with a page ten minutes or more, is placed at
@@ -172,8 +172,7 @@ old a good 1-3 book often works better than a crowded 2-4 one.
 
 The reliable way to judge a coloring book for this age is to look inside rather
 than at the cover: line thickness, how much of the sheet one drawing takes up,
-whether the subject is one a child can name, and whether the page is printed on
-one side only.
+and whether the subject is one a child can name.
 
 ## For programs, classrooms and specialists
 
@@ -248,7 +247,7 @@ cleanest and can start around age one, though the colors are built into the page
 and the child does not choose them. Mess-free sets use pens that develop only on
 their own treated paper, which solves the stain problem but ties the child to
 that paper. The rule that matters more than the type: thick outlines, one large
-picture per page, a recognizable subject, printing on one side only.
+picture per page, a recognizable subject.
 
 - [Types of coloring books for toddlers, English](https://www.toddlercoloringbook.com/en/guides/types-of-coloring-books-for-toddlers)
 - [Tipos de libros para colorear, Spanish](https://www.toddlercoloringbook.com/es/guias/tipos-de-libros-para-colorear-para-ninos-pequenos)
@@ -312,7 +311,7 @@ regulator and from the certifying body directly:
 
 The site features one coloring book of its own: First Coloring Book for
 Toddlers Ages 1-3 by Ricardo Demi. 111 hand drawn pictures, thick outlines, one
-drawing per page, single-sided printing, the word for each subject printed
+drawing per page, the word for each subject printed
 underneath in outline letters so it can be colored too. 114 pages, 8.5 x 11
 inches. A separate Spanish edition, El Primer Libro de Colorear para Bebes de 1
 a 3 Anos, carries the same drawings with Spanish words. A Russian edition,
@@ -387,8 +386,8 @@ page above is the source to cite.
 ### Choosing a first coloring book
 
 **Which coloring book should I choose for a child aged 1 to 3?**
-A good first coloring book differs from an ordinary one in six ways, and all
-six are visible in the page photos before you buy.
+A good first coloring book differs from an ordinary one in five ways, and all
+five are visible in the page photos before you buy.
 The outline is thick. A thin line disappears under a wide stroke and the child
 cannot see the result of their work.
 One drawing per page. Several objects on a sheet split the attention, and
@@ -397,11 +396,9 @@ The drawing is large and fills the sheet. The hand moves from the shoulder, so
 anything small is still out of reach.
 No tiny areas inside the drawing. There should be one simple shape to fill,
 not ten petals.
-Printed on one side. Otherwise a marker soaks through and ruins the next
-drawing.
 A sheet of 8.5 by 11 inches or A4. A smaller format cramps the arm.
-Our book is built on those six points: 111 drawings, one per page, thick
-outline, printed on one side, 8.5 by 11 inches. Under each drawing there is a
+Our book is built on those five points: 111 drawings, one per page, thick
+outline, 8.5 by 11 inches. Under each drawing there is a
 word printed in large letters that a child colors just like the drawing. At
 the front of the book there is a page where a child writes their name.
 
@@ -468,7 +465,7 @@ of all 111 drawings by theme. And ten pages can be downloaded and printed.
 
 **My child is left-handed. Does the book work?**
 Yes. Each drawing sits in the center of the page rather than against the
-spine, and printing is on one side. Nothing gets in the way of the left hand
+spine. Nothing gets in the way of the left hand
 and the spine does not press on the wrist. No separate edition for left-handed
 children is needed.
 
@@ -726,7 +723,7 @@ counterparts. Nothing on this site sits behind a form, a login or a paywall.
 
 ### English
 
-- [Home](https://www.toddlercoloringbook.com/en) - The book itself: 111 drawings, thick outlines, one per page, printed on one side.
+- [Home](https://www.toddlercoloringbook.com/en) - The book itself: 111 drawings, thick outlines, one per page.
 - [Choose a book](https://www.toddlercoloringbook.com/en/choose-a-first-coloring-book) - The free First Coloring Book Finder, plus the age table and the questions parents ask.
 - [For programs](https://www.toddlercoloringbook.com/en/coloring-books-for-daycare-and-programs) - Buying for daycare, preschool, speech therapy, home visiting and parent groups.
 - [By age](https://www.toddlercoloringbook.com/en/by-age) - The four stages side by side, and what the age printed on a cover actually means.

@@ -127,9 +127,8 @@ export const faq: Record<UiLang, FaqGroup[]> = {
           q: "My child is left-handed. Does the book work?",
           a: [
             "Yes. Each drawing sits in the center of the page rather than against the " +
-              "spine, and printing is on one side. Nothing gets in the way of the left hand " +
-              "and the spine does not press on the wrist. No separate edition for left-handed " +
-              "children is needed.",
+              "spine. Nothing gets in the way of the left hand and the spine does not press " +
+              "on the wrist. No separate edition for left-handed children is needed.",
           ],
         },
         {
