@@ -780,8 +780,11 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           уходил в справочную часть, и купить там было уже негде. */}
       <section className="band band--tight">
         <div className="wrap">
+          {/* Строка вынесена из блока покупки: внутри него она была
+              ограничена шириной кнопки и ломалась на две короткие
+              строки посреди пустой полосы. */}
+          <p className="section buy-after-free">{w.afterFree}</p>
           <div className="buy-block buy-block--after-free">
-            <p className="buy-after-free">{w.afterFree}</p>
             <Buy lang={l} />
           </div>
         </div>
