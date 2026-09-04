@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import AllDrawings from "@/components/AllDrawings";
 import Picker from "@/components/Picker";
 import { BuyPdf } from "@/components/BuyPdf";
-import { MarketsBook } from "@/components/Markets";
+import { MarketsBook, MarketsStores } from "@/components/Markets";
 import { hasPdf } from "@/lib/pdfShop";
 import { toolLabels } from "@/data/tool";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
@@ -828,7 +828,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {/* Пояснение под заголовком. Раньше блок начинался прямо
                   с четырех столбцов, и человек не понимал, что перед
                   ним и зачем оно тут. Места справа было пусто. */}
-              <p className="lead">{t.sec.stagesHomeLead}</p>
+              <p className="lead lead--wide">{t.sec.stagesHomeLead}</p>
               {/* Названия этапов теперь ссылки на их страницы.
 
                   Раньше это был просто текст, и главная не вела ни на
@@ -882,7 +882,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="band">
         <div className="wrap">
           <h2 className="section">{t.home.sourcesTitle}</h2>
-          <p className="lead">{t.home.sourcesLead}</p>
+          <p className="lead lead--wide">{t.home.sourcesLead}</p>
           <ul className="sources">
             {SOURCES.map((s) => (
               <li key={s.id}>
@@ -898,7 +898,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      {/* ============ 16. Книга в других странах ============ */}
+      {/* ============ 16. Где продается бумажная книга ============ */}
+      {/* Четырнадцать магазинов Amazon. Человек, впервые увидевший
+          книгу, не знает, издание перед ним или чья-то самоделка.
+          Четырнадцать магазинов, в каждый из которых можно нажать
+          и проверить, отвечают на это без единого хвалебного слова. */}
+      <MarketsStores lang={l} />
+
+      {/* ============ 17. Книга в других странах ============ */}
       {/* Стоит последней и намеренно. Человек, пришедший за книгой,
           сначала должен увидеть саму книгу. Этот блок для того, кто
           дочитал и понял, что живет не там, где написан сайт. */}

@@ -206,6 +206,11 @@ export type Dict = {
      страницах, иначе два файла окажутся связаны в кольцо. */
   markets: {
     bookTitle: string;
+    /** Блок "где продается бумажная книга": заголовок, пояснение
+        и оговорка для русской страницы, где бумаги своей нет. */
+    storesTitle: string;
+    storesLead: string;
+    storesNote: string;
     freeTitle: string;
     note: string;
     /** Чем две страницы одной страны отличаются: слова под рисунками. */
@@ -219,6 +224,24 @@ export type Dict = {
       it: string;
       espana: string;
       canada: string;
+    };
+    /** Четырнадцать магазинов Amazon, где продается бумажная книга.
+        Список взят из KDP и проверен в личном кабинете издательства. */
+    store: {
+      us: string;
+      uk: string;
+      de: string;
+      fr: string;
+      es: string;
+      it: string;
+      nl: string;
+      pl: string;
+      se: string;
+      be: string;
+      ie: string;
+      jp: string;
+      ca: string;
+      au: string;
     };
   };
 };
@@ -437,6 +460,10 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     markets: {
       bookTitle: "The book in other countries",
+      storesTitle: "Where the paperback is sold",
+      storesLead:
+        "The same book, the same 111 drawings. Amazon prints and ships it in fourteen countries.",
+      storesNote: "",
       freeTitle: "Free coloring pages in other countries",
       note: "Each page is written in the language of its country.",
       wordsEn: "English words",
@@ -449,6 +476,22 @@ export const dictionaries: Record<UiLang, Dict> = {
         it: "Italy",
         espana: "Spain",
         canada: "Canada",
+      },
+      store: {
+        us: "United States",
+        uk: "United Kingdom",
+        de: "Germany",
+        fr: "France",
+        es: "Spain",
+        it: "Italy",
+        nl: "Netherlands",
+        pl: "Poland",
+        se: "Sweden",
+        be: "Belgium",
+        ie: "Ireland",
+        jp: "Japan",
+        ca: "Canada",
+        au: "Australia",
       },
     },
   },
@@ -681,6 +724,10 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     markets: {
       bookTitle: "El libro en otros países",
+      storesTitle: "Dónde se vende el libro impreso",
+      storesLead:
+        "El mismo libro, los mismos 111 dibujos. Amazon lo imprime y lo envía en catorce países.",
+      storesNote: "",
       freeTitle: "Dibujos para colorear gratis en otros países",
       note: "Cada página está escrita en el idioma de su país.",
       wordsEn: "palabras en inglés",
@@ -693,6 +740,22 @@ export const dictionaries: Record<UiLang, Dict> = {
         it: "Italia",
         espana: "España",
         canada: "Canadá",
+      },
+      store: {
+        us: "Estados Unidos",
+        uk: "Reino Unido",
+        de: "Alemania",
+        fr: "Francia",
+        es: "España",
+        it: "Italia",
+        nl: "Países Bajos",
+        pl: "Polonia",
+        se: "Suecia",
+        be: "Bélgica",
+        ie: "Irlanda",
+        jp: "Japón",
+        ca: "Canadá",
+        au: "Australia",
       },
     },
   },
@@ -915,6 +978,11 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     markets: {
       bookTitle: "Книга в других странах",
+      storesTitle: "Где продается бумажная книга",
+      storesLead:
+        "Та же самая книга, те же 111 рисунков. Amazon печатает и доставляет ее в четырнадцати странах.",
+      storesNote:
+        "По-русски бумажного издания нет: Amazon не печатает по-русски. Ссылки ведут на английское издание.",
       freeTitle: "Бесплатные раскраски в других странах",
       note: "Каждая страница написана на языке своей страны.",
       wordsEn: "английские слова",
@@ -927,6 +995,22 @@ export const dictionaries: Record<UiLang, Dict> = {
         it: "Италия",
         espana: "Испания",
         canada: "Канада",
+      },
+      store: {
+        us: "США",
+        uk: "Великобритания",
+        de: "Германия",
+        fr: "Франция",
+        es: "Испания",
+        it: "Италия",
+        nl: "Голландия",
+        pl: "Польша",
+        se: "Швеция",
+        be: "Бельгия",
+        ie: "Ирландия",
+        jp: "Япония",
+        ca: "Канада",
+        au: "Австралия",
       },
     },
   },

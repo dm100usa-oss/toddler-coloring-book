@@ -2,6 +2,7 @@ import Link from "next/link";
 import { euroLangs, euroPath, euroSinglePages } from "@/data/euro";
 import { freeLangs, freePath } from "@/data/free";
 import { dictionaries } from "@/data/dictionaries";
+import { editions } from "@/data/book";
 import type { UiLang } from "@/data/dictionaries";
 
 /* ---------------------------------------------------------------------------
@@ -26,6 +27,56 @@ import type { UiLang } from "@/data/dictionaries";
    где человек решает про книгу, и на странице бесплатной печати.
    На всех восьмидесяти страницах справочника он был бы мусором.
 --------------------------------------------------------------------------- */
+
+/* Флаги стран. Взяты из открытого набора flag-icons, лицензия MIT,
+   лежат картинками в public/flags. Значками системы их рисовать нельзя:
+   на Windows вместо флага показываются две серые буквы, а Windows
+   у доброй половины читателей.
+
+   Флаг здесь украшение, а не смысл: рядом всегда стоит название
+   страны словами, поэтому подпись к картинке пустая и голосовой
+   читалке она не мешает. */
+function Flag({ code }: { code: string }) {
+  return (
+    <img
+      className="flag"
+      src={`/flags/${code}.svg`}
+      alt=""
+      width={24}
+      height={18}
+      loading="lazy"
+    />
+  );
+}
+
+/** Флаг страны для блока страновых страниц. */
+const marketFlag: Record<string, string> = {
+  de: "de",
+  fr: "fr",
+  nl: "nl",
+  pl: "pl",
+  it: "it",
+  espana: "es",
+  canada: "ca",
+};
+
+/** Флаг страны для блока магазинов. Великобритания в наборе gb. */
+const storeFlag: Record<string, string> = {
+  us: "us",
+  uk: "gb",
+  de: "de",
+  fr: "fr",
+  es: "es",
+  it: "it",
+  nl: "nl",
+  pl: "pl",
+  se: "se",
+  be: "be",
+  ie: "ie",
+  jp: "jp",
+  ca: "ca",
+  au: "au",
+};
 
 /** Одна строка блока: страна и одна или две ссылки. */
 type Row = {
@@ -86,7 +137,10 @@ function MarketsBlock({
         <ul className="markets">
           {rows.map((row) => (
             <li key={row.key}>
-              <b>{row.country}</b>
+              <b>
+                <Flag code={marketFlag[row.key]} />
+                {row.country}
+              </b>
               <span>
                 {row.links.map((a, i) => (
                   <span key={a.href}>
@@ -102,6 +156,77 @@ function MarketsBlock({
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Где продается бумажная книга.
+
+   Четырнадцать магазинов Amazon. Список не выдуман: он взят со страницы
+   помощи KDP и сверен с личным кабинетом издательства, где у обеих
+   бумажных книг стоят права на весь мир.
+
+   Зачем это на странице. Человек, впервые увидевший книгу, не знает,
+   издание перед ним или чья-то самоделка. Четырнадцать магазинов, в
+   каждый из которых можно нажать и проверить, отвечают на этот вопрос
+   без единого хвалебного слова.
+
+   У русского издания бумаги нет вовсе: Amazon не печатает по-русски.
+   На русской странице блок остается, потому что книга та же самая и те
+   же 111 рисунков, но об этом сказано прямо, отдельной строкой, и
+   ссылки ведут на английское издание.
+--------------------------------------------------------------------------- */
+
+/** Адрес магазина Amazon в каждой стране. */
+const storeHost: Record<string, string> = {
+  us: "www.amazon.com",
+  uk: "www.amazon.co.uk",
+  de: "www.amazon.de",
+  fr: "www.amazon.fr",
+  es: "www.amazon.es",
+  it: "www.amazon.it",
+  nl: "www.amazon.nl",
+  pl: "www.amazon.pl",
+  se: "www.amazon.se",
+  be: "www.amazon.com.be",
+  ie: "www.amazon.ie",
+  jp: "www.amazon.co.jp",
+  ca: "www.amazon.ca",
+  au: "www.amazon.com.au",
+};
+
+export function MarketsStores({ lang }: { lang: UiLang }) {
+  const m = dictionaries[lang].markets;
+
+  /* Своя бумажная книга есть у английского и испанского изданий.
+     У русского нет, и тогда ведем на английское. */
+  const asin = editions[lang].asin ?? editions.en.asin;
+  if (!asin) return null;
+
+  const keys = Object.keys(m.store) as (keyof typeof m.store)[];
+
+  return (
+    <section className="band">
+      <div className="wrap">
+        <h2 className="section">{m.storesTitle}</h2>
+        <p className="lead lead--wide">{m.storesLead}</p>
+        <ul className="stores">
+          {keys.map((k) => (
+            <li key={k}>
+              <a
+                href={`https://${storeHost[k]}/dp/${asin}`}
+                rel="nofollow sponsored noopener"
+                target="_blank"
+              >
+                <Flag code={storeFlag[k]} />
+                {m.store[k]}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {m.storesNote ? <p className="stores__note">{m.storesNote}</p> : null}
       </div>
     </section>
   );
