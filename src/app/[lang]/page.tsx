@@ -83,8 +83,6 @@ const words = {
        под обложкой, но она начиналась со слова "пример" и отрицала
        то, что стоит рядом: цену и кнопку покупки. */
     bookIntro: "A coloring book made especially for toddlers",
-    /* Тихая строчка под первой кнопкой покупки. */
-    tryFree: "You can print ten pages free first",
     /* Подводка к последней кнопке, сразу после бесплатных листов. */
     afterFree: "If the pages suited your child, the whole book has 111 of them.",
     whySuits: "What makes a good coloring book for toddlers different from an ordinary one",
@@ -93,9 +91,9 @@ const words = {
     size: "Size",
     inside: "What is inside",
     seeAll: "See all 111 drawings",
-    parents: "What parents notice",
+    parents: "What parents notice in their reviews of the book",
     parentsCta: "Read the reviews on Amazon",
-    critic: "What an independent reviewer said",
+    critic: "What an independent reviewer said about the book",
     criticCta: "Read the full review",
     criticBy: "Maalin Ogaja, reviewer for Readers' Favorite, October 2024",
     parentsRating: (v: number, n: number) => `${v} out of 5 on Amazon, ${n} ratings`,
@@ -121,7 +119,6 @@ editions are there and anyone can read the originals.",
   es: {
     ages: "Edad",
     bookIntro: "Un libro para colorear creado especialmente para bebés",
-    tryFree: "Antes puede imprimir diez páginas gratis",
     afterFree: "Si estas páginas le sirvieron a su hijo, el libro entero tiene 111.",
     whySuits: "En qué se diferencia un buen libro para colorear para bebés de uno corriente",
     drawings: "Dibujos",
@@ -129,9 +126,9 @@ editions are there and anyone can read the originals.",
     size: "Tamaño",
     inside: "Qué hay dentro",
     seeAll: "Ver los 111 dibujos",
-    parents: "Lo que notan los padres",
+    parents: "Lo que notan los padres en sus reseñas del libro",
     parentsCta: "Leer las reseñas en Amazon",
-    critic: "Lo que dijo una reseñadora independiente",
+    critic: "Lo que dijo una reseñadora independiente sobre el libro",
     criticCta: "Leer la reseña completa",
     criticBy: "Maalin Ogaja, reseñadora de Readers' Favorite, octubre de 2024",
     parentsRating: (v: number, n: number) => `${v} sobre 5 en Amazon, ${n} valoraciones`,
@@ -158,7 +155,6 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
   ru: {
     ages: "Возраст",
     bookIntro: "Книга, созданная специально для малышей",
-    tryFree: "Сначала можно распечатать десять страниц бесплатно",
     afterFree: "Если эти страницы ребенку подошли, в книге их 111.",
     whySuits: "Чем хорошая раскраска для малышей отличается от обычной",
     drawings: "Рисунков",
@@ -166,9 +162,9 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
     size: "Размер",
     inside: "Что внутри",
     seeAll: "Посмотреть все 111 рисунков",
-    parents: "Что отмечают родители",
+    parents: "Что отмечают родители в отзывах о книге",
     parentsCta: "Читать отзывы на Amazon",
-    critic: "Что сказал независимый рецензент",
+    critic: "Что сказал независимый рецензент о книге",
     criticCta: "Читать рецензию целиком",
     criticBy: "Маалин Огая, рецензент Readers' Favorite, октябрь 2024",
     parentsRating: (v: number, n: number) => `${v} из 5 на Amazon, ${n} оценок`,
@@ -453,14 +449,15 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           сайт про первые раскраски вообще, упирался в обложку одной
           книги без объяснения, откуда она взялась. Раньше эту работу
           делала подпись под обложкой со словом "пример", но она же
-          и мешала: рядом стоит цена, а слово говорило обратное. */}
-      {w.bookIntro ? (
-        <div className="wrap">
-          <h2 className="section book-intro">{w.bookIntro}</h2>
-        </div>
-      ) : null}
+          и мешала: рядом стоит цена, а слово говорило обратное.
 
+          Заголовок и книга лежат в одной обертке намеренно: между ними
+          не должно быть полосы пустоты, они читаются как одно целое. */}
       <div className="wrap">
+        {w.bookIntro ? (
+          <h2 className="section book-intro">{w.bookIntro}</h2>
+        ) : null}
+
         <div className="book">
           <div className="book__cover">
             <div className="inner">
@@ -583,19 +580,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             {ed.asin ? w.buyNote : ""}
             {!ed.asin && !hasPdf(ed.pdfId) ? w.buyNote : ""}
           </p>
-          {/* Тихая строчка про бесплатную пробу. Намеренно без кнопки
-              и без картинок: сами листы лежат внизу страницы, и там
-              у них полноценный блок.
-
-              Здесь она нужна тому, кто сомневается: он получает выход,
-              не уходя со страницы. А тот, кто уже готов заплатить, ее
-              не заметит. Если бы бесплатное стояло тут наравне с
-              кнопкой, оно забирало бы и готового покупателя: между
-              "четыре доллара" и "даром прямо сейчас" человек выбирает
-              второе, даже когда был готов купить. */}
-          <p className="buy-try">
-            <a href="#free">{w.tryFree}</a>
-          </p>
+          {/* Строчки про бесплатную пробу здесь нет намеренно. Она тут
+              стояла и размывала кнопку: рядом с ценой любое упоминание
+              бесплатного перетягивает на себя даже готового покупателя.
+              Сами листы лежат ниже, отдельным блоком, и там им место. */}
         </div>
 
         {/* ============ 5. Что отмечают родители ============ */}
@@ -743,8 +731,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       </div>
 
       {/* ============ 11. Бесплатные листы ============ */}
-      {/* У блока есть метка free: на нее ведет тихая строчка из-под
-          первой кнопки покупки. */}
+      {/* Стоят после вопросов, а не рядом с кнопкой покупки. Это
+          запасной путь для того, кто дочитал и так и не решился
+          заплатить: вместо потерянного посетителя мы даем попробовать.
+          Рядом с ценой этот же блок отбирал бы и готового покупателя. */}
       <section className="band band--pink" id="free">
         <div className="wrap">
           <h4 className="section">{w.freeTitle}</h4>
