@@ -2291,3 +2291,27 @@ html[lang="ru"] .hero {
 .thanks { max-width: 34rem; padding-top: var(--gap-3); padding-bottom: var(--gap-1); }
 .thanks .buys { max-width: 22rem; margin-top: var(--gap-3); }
 .thanks .note { font-size: var(--t-small); color: var(--ink-2); margin: 0.5rem 0; }
+
+/* ==================== СТРАНИЦЫ ДРУГИХ СТРАН ==================== */
+
+/* Список стран внизу главной и внизу раздела печати. Строка на страну:
+   название страны и одна или две ссылки, чем эти страницы отличаются.
+
+   Оформлен списком, а не карточками: карточки спорили бы с книгой,
+   ради которой человек пришел. Это указатель на выходе, а не витрина. */
+.markets { list-style: none; margin: var(--gap-2) 0 0; padding: 0; max-width: 74ch; }
+.markets li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  margin-bottom: 0.6rem;
+  font-size: var(--t-small);
+  line-height: 1.5;
+}
+/* Название страны фиксированной ширины, чтобы ссылки встали столбиком
+   и строки читались взглядом сверху вниз, а не вразнобой. */
+.markets b { flex: 0 0 9rem; color: var(--ink); font-weight: 800; }
+.markets span { color: var(--ink-2); }
+@media (max-width: 30rem) {
+  .markets b { flex: 1 1 100%; }
+}

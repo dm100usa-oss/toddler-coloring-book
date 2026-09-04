@@ -12,6 +12,7 @@ import {
   termsCopy,
   faqCopy,
 } from "@/data/pages";
+import { MarketsFree } from "@/components/Markets";
 import { faq, faqFlat } from "@/data/faq";
 import { guides } from "@/data/guides";
 import { stages, stageById } from "@/data/stages";
@@ -291,6 +292,11 @@ export default async function SectionPage({
       {s === "tools" && isContentLang(l) && <AgePageList lang={l} />}
       {s === "tools" && isContentLang(l) && <BasisLink lang={l} />}
       {s === "programs" && isContentLang(l) && <ProgramsContact lang={l} />}
+
+      {/* Бесплатные листы других стран. Только в разделе печати:
+          человек уже пришел за листами, и ему может быть нужен свой
+          язык. В остальных разделах блока нет. */}
+      {s === "printables" && <MarketsFree lang={l} />}
 
       {s !== "about" && s !== "terms" && <Sources lang={l} />}
     </>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import AllDrawings from "@/components/AllDrawings";
 import Picker from "@/components/Picker";
 import { BuyPdf } from "@/components/BuyPdf";
+import { MarketsBook } from "@/components/Markets";
 import { hasPdf } from "@/lib/pdfShop";
 import { toolLabels } from "@/data/tool";
 import { activeLangs, dictionaries, isContentLang } from "@/data/dictionaries";
@@ -835,6 +836,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </ul>
         </div>
       </section>
+
+      {/* ============ 14. Книга в других странах ============ */}
+      {/* Стоит последней и намеренно. Человек, пришедший за книгой,
+          сначала должен увидеть саму книгу. Этот блок для того, кто
+          дочитал и понял, что живет не там, где написан сайт. */}
+      <MarketsBook lang={l} />
     </>
   );
 }

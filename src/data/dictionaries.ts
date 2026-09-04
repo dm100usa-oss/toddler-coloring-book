@@ -189,6 +189,32 @@ export type Dict = {
     amazon: string;
     updated: string;
   };
+  /* Подписи блока со страницами других стран.
+
+     Страна названа на языке читателя, а сама страница написана на
+     языке своей страны. Об этом сказано отдельной строкой: человек
+     должен понимать, куда его ведут, до того как нажмет.
+
+     Ключи стран те же, что в data/euro.ts. Перечислены здесь заново,
+     а не взяты оттуда: словарь ничего не должен знать о торговых
+     страницах, иначе два файла окажутся связаны в кольцо. */
+  markets: {
+    bookTitle: string;
+    freeTitle: string;
+    note: string;
+    /** Чем две страницы одной страны отличаются: слова под рисунками. */
+    wordsEn: string;
+    wordsEs: string;
+    country: {
+      de: string;
+      fr: string;
+      nl: string;
+      pl: string;
+      it: string;
+      espana: string;
+      canada: string;
+    };
+  };
 };
 
 export const dictionaries: Record<UiLang, Dict> = {
@@ -392,6 +418,22 @@ export const dictionaries: Record<UiLang, Dict> = {
       a4: "A4",
       amazon: "Buy the paperback on Amazon",
       updated: "Updated",
+    },
+    markets: {
+      bookTitle: "The book in other countries",
+      freeTitle: "Free coloring pages in other countries",
+      note: "Each page is written in the language of its country.",
+      wordsEn: "English words",
+      wordsEs: "Spanish words",
+      country: {
+        de: "Germany",
+        fr: "France",
+        nl: "Netherlands",
+        pl: "Poland",
+        it: "Italy",
+        espana: "Spain",
+        canada: "Canada",
+      },
     },
   },
 
@@ -611,6 +653,22 @@ export const dictionaries: Record<UiLang, Dict> = {
       amazon: "Comprar el libro impreso en Amazon",
       updated: "Actualizado",
     },
+    markets: {
+      bookTitle: "El libro en otros países",
+      freeTitle: "Dibujos para colorear gratis en otros países",
+      note: "Cada página está escrita en el idioma de su país.",
+      wordsEn: "palabras en inglés",
+      wordsEs: "palabras en español",
+      country: {
+        de: "Alemania",
+        fr: "Francia",
+        nl: "Países Bajos",
+        pl: "Polonia",
+        it: "Italia",
+        espana: "España",
+        canada: "Canadá",
+      },
+    },
   },
   ru: {
     htmlLang: "ru",
@@ -818,6 +876,22 @@ export const dictionaries: Record<UiLang, Dict> = {
       a4: "A4",
       amazon: "Купить бумажную книгу на Amazon",
       updated: "Обновлено",
+    },
+    markets: {
+      bookTitle: "Книга в других странах",
+      freeTitle: "Бесплатные раскраски в других странах",
+      note: "Каждая страница написана на языке своей страны.",
+      wordsEn: "английские слова",
+      wordsEs: "испанские слова",
+      country: {
+        de: "Германия",
+        fr: "Франция",
+        nl: "Голландия",
+        pl: "Польша",
+        it: "Италия",
+        espana: "Испания",
+        canada: "Канада",
+      },
     },
   },
 };
