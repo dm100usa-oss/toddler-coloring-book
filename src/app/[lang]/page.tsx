@@ -825,6 +825,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <section className="band band--cream">
             <div className="wrap">
               <h3 className="section">{t.sec.stagesHome}</h3>
+              {/* Пояснение под заголовком. Раньше блок начинался прямо
+                  с четырех столбцов, и человек не понимал, что перед
+                  ним и зачем оно тут. Места справа было пусто. */}
+              <p className="lead">{t.sec.stagesHomeLead}</p>
               {/* Названия этапов теперь ссылки на их страницы.
 
                   Раньше это был просто текст, и главная не вела ни на

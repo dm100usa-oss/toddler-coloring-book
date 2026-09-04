@@ -118,6 +118,8 @@ export type Dict = {
     watchOut: string;
     stagesInOrder: string;
     stagesHome: string;
+    /** Пояснение под заголовком блока этапов на главной. */
+    stagesHomeLead: string;
     lookForPage: string;
     /** Заголовок раздела про то, как проходит занятие за столом. */
     atTable: string;
@@ -180,6 +182,10 @@ export type Dict = {
         освобождение от налога. */
     disclaimer: string;
     disclaimerLink: string;
+    /** Короткая оговорка для подвала. Полная лежит на странице прав:
+        в подвале шесть строк мелким шрифтом перетягивали на себя всю
+        нижнюю часть страницы и никем не читались. */
+    disclaimerShort: string;
   };
   common: {
     free: string;
@@ -350,7 +356,15 @@ export const dictionaries: Record<UiLang, Dict> = {
       agesLabel: (n) => `Ages ${n}`,
       watchOut: "Watch out",
       stagesInOrder: "The four stages, in order",
-      stagesHome: "The four stages of first drawing",
+      stagesHome:
+        "Four stages a child goes through before learning to color confidently",
+      stagesHomeLead:
+        "A child does not start coloring right away. At first they simply leave random lines and " +
+        "scribbles on the paper. Little by little the movements come under control: the child " +
+        "learns to draw lines and copy simple shapes. Then they aim the crayon more and more " +
+        "accurately, and only after that do they begin to color more confidently inside the " +
+        "outline. The ages here are only a guide, not a strict boundary: every child develops " +
+        "at their own pace.",
       lookForPage: "What to look for in a page",
       atTable: "How it actually goes at the table",
       stagePages: "Pages for this stage, free to print",
@@ -410,6 +424,8 @@ export const dictionaries: Record<UiLang, Dict> = {
         "about your own child belong with your pediatrician, and questions about purchasing, " +
         "invoices or tax with your own accountant or adviser.",
       disclaimerLink: "Full terms",
+      disclaimerShort:
+        "Everything on this site is for general information. It is not medical, legal or tax advice.",
     },
     common: {
       free: "Free",
@@ -583,7 +599,15 @@ export const dictionaries: Record<UiLang, Dict> = {
       agesLabel: (n) => `De ${n} años`,
       watchOut: "Ojo",
       stagesInOrder: "Las cuatro etapas, en orden",
-      stagesHome: "Las cuatro etapas del primer dibujo",
+      stagesHome:
+        "Cuatro etapas por las que pasa un niño antes de aprender a colorear con seguridad",
+      stagesHomeLead:
+        "Un niño no empieza a colorear de golpe. Al principio solo deja en el papel líneas " +
+        "sueltas y garabatos. Poco a poco los movimientos se vuelven más controlados: el niño " +
+        "aprende a trazar líneas y a repetir formas simples. Después dirige el lápiz cada vez " +
+        "con más precisión y solo entonces empieza a colorear con más seguridad dentro del " +
+        "contorno. La edad aquí es solo una orientación, no un límite estricto: cada niño se " +
+        "desarrolla a su propio ritmo.",
       lookForPage: "En qué fijarse en una página",
       atTable: "Cómo transcurre en realidad la sesión",
       stagePages: "Hojas para esta etapa, gratis",
@@ -644,6 +668,8 @@ export const dictionaries: Record<UiLang, Dict> = {
           "describen a los niños en general: si algo le preocupa sobre su hijo, consulte con " +
           "su pediatra, y para cuestiones de compra, facturación o impuestos, con su asesor.",
       disclaimerLink: "Condiciones completas",
+      disclaimerShort:
+        "Todo lo publicado en este sitio tiene carácter informativo. No es asesoramiento médico, legal ni fiscal.",
     },
     common: {
       free: "Gratis",
@@ -808,7 +834,15 @@ export const dictionaries: Record<UiLang, Dict> = {
       agesLabel: (n) => `Возраст ${n}`,
       watchOut: "Осторожно",
       stagesInOrder: "Четыре этапа по порядку",
-      stagesHome: "Четыре этапа первого рисования",
+      stagesHome:
+        "Четыре этапа, которые проходит ребенок, прежде чем научится уверенно раскрашивать",
+      stagesHomeLead:
+        "Ребенок не начинает раскрашивать сразу. Сначала он просто оставляет на бумаге случайные " +
+        "линии и каракули. Постепенно движения становятся более управляемыми: ребенок учится " +
+        "проводить линии и повторять простые формы. Затем он все точнее направляет карандаш " +
+        "по бумаге и только после этого начинает увереннее раскрашивать внутри контура. " +
+        "Возраст здесь лишь ориентир, а не строгая граница: каждый ребенок развивается " +
+        "в своем темпе.",
       lookForPage: "На что обратить внимание на странице",
       atTable: "Как это проходит за столом на самом деле",
       stagePages: "Страницы для этого этапа, бесплатно",
@@ -868,6 +902,8 @@ export const dictionaries: Record<UiLang, Dict> = {
           "развитии вашего ребенка, обратитесь к педиатру, а по вопросам покупки, документов " +
           "и налогов - к своему специалисту.",
       disclaimerLink: "Подробные условия",
+      disclaimerShort:
+        "Все на сайте носит справочный характер. Это не медицинская, не юридическая и не налоговая консультация.",
     },
     common: {
       free: "Бесплатно",

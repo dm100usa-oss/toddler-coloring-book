@@ -449,23 +449,54 @@ ul.inside li::marker { color: var(--pink-hot); }
 
 /* ==================== ПОДВАЛ ==================== */
 
+/* Подвал. Три колонки на планшете и компьютере, одна на телефоне.
+   Все по левому краю: раньше подвал был выровнен по центру, и длинные
+   абзацы читались тяжело. */
 .footer {
   background: var(--mint); color: #0c3f3b; margin-top: var(--gap-5);
-  padding: var(--gap-3) 1rem; text-align: center; font-size: var(--t-small);
+  padding: var(--gap-4) clamp(1rem, 4vw, 2rem);
+  text-align: center; font-size: var(--t-small);
 }
+/* По левому краю выровнены только колонки основного сайта. У страновых
+   страниц подвал свой, простой и по центру, и он остается как был. */
+.footer__cols, .footer__disclaimer { text-align: left; }
 .footer a { color: #0c3f3b; font-weight: 800; }
 .footer p { margin: 0 0 0.4rem; }
-/* Строка о том, кто мы и для кого сайт. Стоит на каждой странице.
-   Уже основного текста и чуть приглушена: это опора, а не главное. */
-.footer__about {
-  max-width: 74ch; margin: 0 auto 1rem; opacity: 0.82; line-height: 1.55;
+
+.footer__cols {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--gap-3);
+}
+@media (min-width: 760px) {
+  .footer__cols {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--gap-4);
+  }
 }
 
-/* Оговорка о том, чем сайт не является. Мельче остального подвала и
-   приглушена сильнее: читать ее подряд никто не станет, но найти ее
-   должно быть можно с любой страницы, не уходя с нее. */
+/* Кто мы. Приглушено: это опора, а не главное. */
+/* Ограничение по ширине нужно страновым страницам: там колонок нет,
+   и без него строка растянулась бы во всю ширину экрана. Внутри
+   колонки оно не срабатывает, колонка и так уже. */
+.footer__about {
+  max-width: 74ch; margin: 0 auto 0.6rem; opacity: 0.82; line-height: 1.55;
+}
+.footer__cols .footer__about { margin-left: 0; }
+.footer__copy { margin: 0; opacity: 0.72; font-size: var(--t-micro); }
+
+/* Ссылки столбиком, а не строкой через точку: столбик легче задеть
+   пальцем и он не ломается на две строки в середине слова. */
+.footer__links { display: grid; gap: 0.45rem; align-content: start; }
+
+/* Оговорка одной строкой во всю ширину, под колонками, за тонкой
+   чертой. Полный текст на странице прав. */
 .footer__disclaimer {
-  max-width: 74ch; margin: 0.9rem auto 0.6rem;
+  max-width: var(--maxw);
+  margin: var(--gap-3) auto 0;
+  padding-top: var(--gap-2);
+  border-top: 1px solid rgba(12, 63, 59, 0.18);
   font-size: var(--t-micro); opacity: 0.72; line-height: 1.5;
 }
 
@@ -1317,6 +1348,19 @@ ul.award-list li {
    часть страницы: именно она отличает нас от тысячи сайтов,
    где про возраст ребенка написано наугад. */
 .sources { list-style: none; margin: var(--gap-2) 0 0; padding: 0; max-width: 74ch; }
+/* На планшете и компьютере источники ложатся в два столбца.
+   Одной колонкой они занимали половину полосы, а справа оставалось
+   пустое поле. Четыре источника в два ряда читаются как список,
+   а не как хвост страницы. */
+@media (min-width: 900px) {
+  .sources {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--gap-4);
+    max-width: none;
+  }
+  .sources li { margin-bottom: 0.9rem; }
+}
 .sources li { margin-bottom: 0.7rem; font-size: var(--t-small); line-height: 1.5; }
 .sources b { display: block; color: var(--ink); font-weight: 800; }
 .sources span { color: var(--ink-2); }
@@ -2373,21 +2417,33 @@ html[lang="ru"] .hero {
 
    Оформлен списком, а не карточками: карточки спорили бы с книгой,
    ради которой человек пришел. Это указатель на выходе, а не витрина. */
-.markets { list-style: none; margin: var(--gap-2) 0 0; padding: 0; max-width: 74ch; }
+.markets { list-style: none; margin: var(--gap-2) 0 0; padding: 0; }
 .markets li {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 0.7rem;
   margin-bottom: 0.6rem;
   font-size: var(--t-small);
   line-height: 1.5;
 }
-/* Название страны фиксированной ширины, чтобы ссылки встали столбиком
-   и строки читались взглядом сверху вниз, а не вразнобой. */
-.markets b { flex: 0 0 9rem; color: var(--ink); font-weight: 800; }
+.markets b { display: block; color: var(--ink); font-weight: 800; }
 .markets span { color: var(--ink-2); }
-@media (max-width: 30rem) {
-  .markets b { flex: 1 1 100%; }
+
+/* На планшете и компьютере страны стоят карточками в несколько
+   столбцов. Одной колонкой список занимал левую треть полосы,
+   а справа было пусто. Название страны сверху, ссылки под ним:
+   так строка не тянется вбок и глаз идет по столбцу. */
+@media (min-width: 700px) {
+  .markets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: var(--gap-2);
+  }
+  .markets li {
+    margin: 0;
+    padding: 0.7rem 0.9rem;
+    background: #fff;
+    border: var(--edge);
+    border-radius: var(--radius-sm);
+  }
+  .markets b { margin-bottom: 0.2rem; }
 }
 
 /* Заголовок-переход над книгой. Отделяет справочную шапку сайта от

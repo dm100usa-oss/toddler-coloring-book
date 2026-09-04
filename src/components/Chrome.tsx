@@ -2,9 +2,7 @@ import Link from "next/link";
 import { dictionaries, activeLangs, navFor } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
 import { homePath, sectionPath } from "@/lib/routes";
-import { euroLangs, euroPath, euroCountry } from "@/data/euro";
-import { freeLangs, freePath } from "@/data/free";
-import { SITE_NAME, PUBLISHER, catalogUrl, CONTACT_EMAIL } from "@/lib/site";
+import { PUBLISHER, catalogUrl, CONTACT_EMAIL } from "@/lib/site";
 
 /* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
    число рисунков и перечень тем сразу, одной картинкой. Свой баннер
@@ -139,118 +137,57 @@ export function Header({ lang }: { lang: UiLang }) {
 
 export function Footer({ lang }: { lang: UiLang }) {
   const t = dictionaries[lang];
+
+  /* Подвал в три колонки: кто мы, куда пойти, как написать.
+
+     Раньше здесь стояла стопка из пяти абзацев по центру, и самым
+     длинным была оговорка в шесть строк мелким шрифтом. Центрированный
+     длинный абзац читать тяжело: глаз каждый раз ищет начало строки.
+     Полная оговорка теперь лежит на странице прав, где ей и место,
+     а здесь короткая строка и ссылка на нее.
+
+     Служебных строк со странами больше нет. Те же ссылки стоят выше,
+     в блоке "Книга в других странах", и там они видны человеку, а не
+     спрятаны мелким шрифтом в самом низу. */
   return (
     <footer className="footer">
-      {/* Строка о том, кто мы. Стоит на каждой странице: и человек,
-          и нейросеть должны на любой странице понимать, чей это сайт.
+      <div className="footer__cols">
+        {/* Кто мы. Пометка data-nosnippet не убирает текст со страницы
+            и не мешает его читать: она запрещает Google брать именно
+            этот кусок в описание под ссылкой в выдаче. Понадобилась
+            потому, что у русских страниц Google подставлял под каждой
+            ссылкой одну и ту же строку про издательство вместо
+            собственного описания страницы. Тег span выбран не
+            случайно: пометка действует только на div, span и section. */}
+        <div className="footer__col">
+          <p className="footer__about">
+            <span data-nosnippet>{t.footer.about}</span>
+          </p>
+          <p className="footer__copy">
+            © {new Date().getFullYear()} {PUBLISHER}. {t.footer.rights}
+          </p>
+        </div>
 
-          Обернута в span с пометкой data-nosnippet. Она не убирает текст
-          со страницы и не мешает его читать: она запрещает Google брать
-          именно этот кусок в описание под ссылкой в выдаче. Понадобилось
-          потому, что у русских страниц Google подставлял под каждой
-          ссылкой одну и ту же строку про издательство вместо собственного
-          описания страницы, и шесть разных страниц выглядели одинаково.
-          Пометка ставится в готовой разметке, а не дописывается потом:
-          добавленную позже Google распознает ненадежно. Тег span выбран
-          не случайно, пометка действует только на div, span и section. */}
-      <p className="footer__about">
-        <span data-nosnippet>{t.footer.about}</span>
-      </p>
-      <p>
-        <a href={catalogUrl(lang)} rel="noopener">{t.footer.catalog}</a>
-        {" · "}
-        {/* Вопросы, права и приватность стоят в подвале, а не в меню.
-            Страницы нужные, но не те, ради которых человек пришел, а
-            в шапке на телефоне и без них уже две строки. */}
-        <Link href={sectionPath(lang, "faq")}>{t.nav.faq}</Link>
-        {" · "}
-        <Link href={sectionPath(lang, "terms")}>{t.nav.terms}</Link>
-        {" · "}
-        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-      </p>
-      <p>
-        © {new Date().getFullYear()} {PUBLISHER}. {t.footer.rights}
-      </p>
-      {/* Оговорка о том, чем сайт не является. Стоит здесь, а не только
-          на странице прав: человек приходит из поиска сразу на статью и
-          до страницы прав может не дойти ни разу. Набрана мельче
-          основного текста, но не спрятана. */}
+        {/* Куда пойти. Вопросы, права и каталог стоят в подвале, а не
+            в меню: страницы нужные, но не те, ради которых человек
+            пришел, а в шапке на телефоне и без них уже две строки. */}
+        <nav className="footer__col footer__links">
+          <a href={catalogUrl(lang)} rel="noopener">{t.footer.catalog}</a>
+          <Link href={sectionPath(lang, "faq")}>{t.nav.faq}</Link>
+          <Link href={sectionPath(lang, "terms")}>{t.nav.terms}</Link>
+        </nav>
+
+        {/* Как написать. */}
+        <div className="footer__col">
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </div>
+      </div>
+
+      {/* Оговорка одной строкой. Полный текст на странице прав. */}
       <p className="footer__disclaimer">
-        {t.footer.disclaimer}{" "}
+        {t.footer.disclaimerShort}{" "}
         <Link href={sectionPath(lang, "terms")}>{t.footer.disclaimerLink}</Link>
       </p>
-      {/* Восемь страниц для европейских рынков. Строка стоит только
-          в русском подвале, и это не случайность.
-
-          Владелец работает на русской версии, и ему эти страницы нужно
-          открывать. Русских покупателей у книг нет, поэтому строка
-          никому не мешает.
-
-          В английском и испанском подвале ее нет: там ту же работу
-          делает видимый блок внизу главной страницы, и делает лучше.
-
-          Пометка "не ходи по этой ссылке" раньше стояла у каждого
-          адреса. Ставилась она из опасения, что поисковик достроит
-          ряд языковых версий и сочтет немецкую страницу переводом
-          английской. Опасение было не по адресу: версией друг друга
-          страницы объявляет отдельная служебная запись, а не ссылка.
-          Записи этой у нас нет ни на одной из страновых страниц,
-          у каждой из них стоит своя собственная основная версия.
-          Пометка снята, ссылки работают. */}
-      {lang === "ru" ? (
-        <p style={{ fontSize: "var(--t-micro)", opacity: 0.8 }}>
-          <span data-nosnippet>
-            Страницы для Европы:{" "}
-            {euroLangs.map((l, i) => (
-              <span key={l}>
-                {i > 0 ? " · " : ""}
-                {euroCountry[l]}{" "}
-                <a href={euroPath(l, "en")}>
-                  англ
-                </a>
-                {" / "}
-                <a href={euroPath(l, "es")}>
-                  исп
-                </a>
-              </span>
-            ))}
-            {" · Испания "}
-            <a href={euroPath("espana", "en")}>
-              англ
-            </a>
-            {" · Канада "}
-            <a href={euroPath("canada", "es")}>
-              исп
-            </a>
-          </span>
-        </p>
-      ) : null}
-
-      {/* Строка для владельца: восемь страниц бесплатной печати.
-          Отдельно от торговых, потому что это другой материал
-          и другой запрос: человек ищет не книгу, а листы для печати. */}
-      {lang === "ru" ? (
-        <p style={{ fontSize: "var(--t-micro)", opacity: 0.8 }}>
-          <span data-nosnippet>
-            Бесплатная печать:{" "}
-            {freeLangs.map((l, i) => (
-              <span key={l}>
-                {i > 0 ? " · " : ""}
-                {euroCountry[l]}{" "}
-                <a href={freePath(l, "en")}>
-                  англ
-                </a>
-                {" / "}
-                <a href={freePath(l, "es")}>
-                  исп
-                </a>
-              </span>
-            ))}
-          </span>
-        </p>
-      ) : null}
-
-      <p style={{ opacity: 0.7, fontSize: "var(--t-micro)" }}>{SITE_NAME}</p>
     </footer>
   );
 }
