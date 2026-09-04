@@ -229,6 +229,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       "@type": "Book",
       "@id": `${SITE_URL}${homePath(l)}#book`,
       name: ed.title,
+      /* Второе название. Родители ищут одну и ту же книгу разными
+         словами: toddlers и kids, bebés и niños, малышей и детей.
+         На обложке напечатано одно, и оно стоит в name. Второе имя
+         говорит машине, что это та же книга, а не другая, и человек
+         его на странице не видит. */
+      alternateName: ed.altTitle,
       bookFormat: ed.asin
         ? "https://schema.org/Paperback"
         : "https://schema.org/EBook",

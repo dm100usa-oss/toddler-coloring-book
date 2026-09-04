@@ -186,6 +186,9 @@ export default function EuroPage({
       {
         "@type": "Book",
         name: editions[ed].title,
+        /* Второе название книги. То же издание, но словом, которым
+           его чаще ищут. Подробнее в src/data/book.ts. */
+        alternateName: editions[ed].altTitle,
         author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
         publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
         /* Язык книги: слова под рисунками. */

@@ -17,6 +17,14 @@ export type Edition = {
   lang: UiLang;
   title: string;
   subtitle: string;
+  /** Второе название книги. То же издание, но словом, которым его
+      чаще ищут: родители пишут в поиске и "toddlers", и "kids",
+      и "bebés", и "niños", и "малышей", и "детей".
+
+      На обложке напечатано одно название, и оно остается в title
+      нетронутым. Это второе имя живет только в разметке: машина
+      понимает, что речь об одной книге, а человек его не видит. */
+  altTitle: string;
   /** Одна законченная фраза под названием. Она отвечает на вопрос
       целиком, поэтому нейросеть может процитировать ее как есть,
       ничего не дописывая от себя. */
@@ -148,9 +156,10 @@ export const editions: Record<UiLang, Edition> = {
   en: {
     lang: "en",
     title: "First Coloring Book for Toddlers Ages 1-3",
+    altTitle: "First Coloring Book for Kids Ages 1-3",
     subtitle: "111 big, simple drawings, one per page",
     headline:
-      "An example of a first coloring book for ages 1 to 3: big, simple drawings with thick " +
+      "A first coloring book for kids ages 1 to 3: big, simple drawings with thick " +
         "outlines, one per page.",
     asin: "1963328272",
     pdfId: "first-coloring-book-111-en",
@@ -296,9 +305,10 @@ export const editions: Record<UiLang, Edition> = {
   es: {
     lang: "es",
     title: "El Primer Libro de Colorear para Bebés de 1 a 3 Años",
+    altTitle: "Primer Libro de Colorear para Niños de 1 a 3 Años",
     subtitle: "111 dibujos grandes y simples, uno por página",
     headline:
-      "Un ejemplo de primer libro para colorear de 1 a 3 años: dibujos grandes y simples con " +
+      "Primer libro para colorear para niños de 1 a 3 años: dibujos grandes y simples con " +
         "líneas gruesas, uno por página.",
     asin: "1963328205",
     pdfId: "first-coloring-book-111-es",
@@ -457,9 +467,10 @@ export const editions: Record<UiLang, Edition> = {
   ru: {
     lang: "ru",
     title: "Первая книга-раскраска для малышей от 1 до 3 лет",
+    altTitle: "Первая книга-раскраска для детей от 1 до 3 лет",
     subtitle: "111 крупных рисунков толстой линией, по одному на странице",
     headline:
-      "Пример первой раскраски для детей от 1 до 3 лет: крупные простые рисунки " +
+      "Первая раскраска для детей от 1 до 3 лет: крупные простые рисунки " +
         "с толстыми контурами, по одному на странице.",
     /* Русского бумажного издания нет: Amazon не печатает по-русски.
        Поэтому у русского издания только файл для печати и никакой
