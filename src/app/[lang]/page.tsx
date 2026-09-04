@@ -101,7 +101,7 @@ const words = {
       "Written by us from the reviews left on Amazon, in our own words. Both paperback \
 editions are there and anyone can read the originals.",
     specs: "What is in the book",
-    video: "A look inside the book",
+    video: "Video about the book",
     videoLead:
       "Filmed by one of the parents who bought the book, on a table at home, with no editing. " +
       "Cover, back cover, and page after page, so you can see the line thickness and how much " +
@@ -110,7 +110,7 @@ editions are there and anyone can read the originals.",
     notFor: "When this book is the wrong choice",
     faq: "Questions parents ask",
     buyNote: "Sold and shipped by Amazon. We earn from the sale.",
-    freeTitle: "Try ten pages first, free",
+    freeTitle: "Try ten pages free",
     freeLead:
       "Ten drawings straight out of the book, in two paper sizes. Print one, hand your child a " +
       "crayon, and you will know within five minutes whether this kind of page suits them.",
@@ -136,7 +136,7 @@ editions are there and anyone can read the originals.",
       "Redactado por nosotros a partir de las reseñas dejadas en Amazon, con nuestras \
 palabras. Las dos ediciones en papel están allí y cualquiera puede leer los originales.",
     specs: "Qué hay en el libro",
-    video: "El libro por dentro",
+    video: "Video sobre el libro",
     videoLead:
       "Grabado por una de las madres que compró el libro, sobre una mesa de su casa y sin " +
         "cortes. Verá la portada, la contraportada y todas las páginas en orden, para que " +
@@ -145,7 +145,7 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
     notFor: "Cuándo este libro no es la opción",
     faq: "Preguntas que hacen los padres",
     buyNote: "Vendido y enviado por Amazon. Nosotros ganamos con la venta.",
-    freeTitle: "Pruebe primero diez páginas gratis",
+    freeTitle: "Pruebe diez páginas gratis",
     freeLead:
       "Diez dibujos sacados directamente del libro, en dos tamaños de papel. Imprima uno, " +
         "dele un crayón a su hijo y en unos minutos sabrá si este tipo de página es adecuado " +
@@ -172,7 +172,7 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
       "Написано нами по отзывам, оставленным на Amazon, своими словами. Отзывы относятся \
 к бумажным изданиям на английском и испанском: рисунки во всех изданиях одни и те же.",
     specs: "Что в книге",
-    video: "Книга внутри",
+    video: "Видео о книге",
     videoLead:
       "Снято одним из родителей, купивших книгу, дома на столе и без монтажа. Вы увидите " +
         "обложку, оборот и все страницы " +
@@ -183,7 +183,7 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
     notFor: "Когда эта книга не подойдет",
     faq: "Что спрашивают родители",
     buyNote: "Файл для печати. Его можно распечатывать дома столько раз, сколько нужно.",
-    freeTitle: "Сначала попробуйте десять страниц бесплатно",
+    freeTitle: "Попробуйте десять страниц бесплатно",
     freeLead:
       "Десять рисунков прямо из книги в двух форматах бумаги. Распечатайте один из них, " +
         "дайте ребенку карандаш, и уже через несколько минут вы поймете, подходит ли ему такая " +
@@ -738,9 +738,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="band band--pink" id="free">
         <div className="wrap">
           <h4 className="section">{w.freeTitle}</h4>
-          <p className="lead">{w.freeLead}</p>
-          <div className="result__sheets" style={{ maxWidth: "40rem" }}>
-            {sample(3).map((s) => (
+          {/* Пояснение шире обычного: у класса lead строка ограничена
+              58 знаками, и на компьютере абзац стоял прижатым к левому
+              краю, а справа оставалось пустое поле в половину полосы. */}
+          <p className="lead free-sheets__lead">{w.freeLead}</p>
+          {/* Шесть листов, а не три. На телефоне видны первые три,
+              как было: шесть в ряд там вышли бы с ноготь. */}
+          <div className="result__sheets free-sheets">
+            {sample(6).map((s) => (
               <img
                 key={s.id}
                 src={sheetPreview(s.id, l)}
@@ -757,7 +762,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               />
             ))}
           </div>
-          <p>
+          {/* Кнопка по центру и той же ширины, что кнопки покупки:
+              одинаковые по весу действия должны выглядеть одинаково. */}
+          <p className="free-sheets__cta">
             <Link className="btn btn--sun" href={sectionPath(l, "printables")}>
               {t.home.printablesCta}
             </Link>
@@ -771,7 +778,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           и увидел, что раскраска подошла. Это и есть та минута,
           когда берут всю книгу. Раньше следом шел подборщик, человек
           уходил в справочную часть, и купить там было уже негде. */}
-      <section className="band">
+      <section className="band band--tight">
         <div className="wrap">
           <div className="buy-block buy-block--after-free">
             <p className="buy-after-free">{w.afterFree}</p>
