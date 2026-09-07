@@ -214,7 +214,6 @@ export const stages: Stage[] = [
         "Thick outlines still, but the shape can have two or three parts now",
         "One drawing per page, and nothing else on the sheet competing for attention",
         "A word printed under the drawing, so naming comes along with coloring",
-        "Single-sided pages, because a marker at this age goes straight through",
       ],
       es: [
         "El contorno debe seguir siendo grueso, pero el dibujo ya puede tener dos o tres partes",

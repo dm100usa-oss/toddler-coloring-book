@@ -86,9 +86,11 @@ export const toolCopy: Record<ContentLang, ToolCopy> = {
         q: "What should a first coloring book have?",
         a:
           "Large recognizable drawings, thick outlines, one drawing per page, very little fine " +
-          "detail, single sided printing so a marker does not ruin the next page, and subjects a " +
+          "detail, and subjects a " +
           "child can already name out loud. A word printed under the drawing helps, because naming " +
-          "the picture is half the reason a toddler stays at the table.",
+          "the picture is half the reason a toddler stays at the table. Plan on crayons or colored " +
+          "pencils: nearly every book at this price prints on both sides of the sheet, and marker " +
+          "ink soaks through.",
       },
       {
         q: "Which crayons work best for toddlers?",

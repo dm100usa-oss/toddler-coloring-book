@@ -71,8 +71,8 @@ export const agePages: AgePage[] = [
           "What to look for on the page: an outline about as thick as the crayon itself, one shape " +
             "filling the sheet, sturdy paper because the pressure at this age is heavy enough to " +
             "tear a thin one, and a subject the child can already name out loud, like a ball, a cat " +
-            "or an apple. Single sided printing matters too, since a marker goes straight through " +
-            "ordinary paper and ruins the drawing on the other side.",
+            "or an apple. Crayons and colored pencils suit these books better than markers, since " +
+            "the sheet is usually printed on both sides and marker ink soaks through.",
           "A session at one year old lasts a minute or two, and that is a normal length rather than " +
             "a short one. Say out loud what is on the page, let the child pick the crayon " +
             "themselves, and leave the marks alone. The right moment to stop is when the child gets " +

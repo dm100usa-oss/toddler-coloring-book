@@ -287,7 +287,7 @@ export const dictionaries: Record<UiLang, Dict> = {
         "One drawing per page. Two or three subjects on a sheet split the attention of a child who can hold it for a few minutes at most.",
         "The drawing has to fill the sheet. A small picture in the middle of a large page asks for accuracy the hand cannot deliver yet.",
         "The subject has to be recognizable. A toddler colors what they can name, and naming it is half the reason they stay at the table.",
-        "Single-sided printing. A marker goes through ordinary book paper, and on a double-sided page it ruins the next drawing.",
+        "Crayons and colored pencils rather than markers. Nearly every coloring book at this price prints a drawing on both sides of the sheet, this one included, and marker ink soaks through and spoils the picture behind.",
       ],
       printablesTitle: "Free pages to print",
       printablesLead:
