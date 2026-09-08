@@ -550,8 +550,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="artwork">
           {BOOK.artwork.map((a) => (
             <img
-              key={a.file}
-              src={a.file}
+              key={a.file[l]}
+              src={a.file[l]}
               alt={a.alt[l]}
               width={601}
               height={601}
