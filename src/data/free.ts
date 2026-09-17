@@ -147,7 +147,7 @@ const de = (ed: EditionLang): FreeCopy => {
       },
       {
         q: "Auf welchem Papier soll ich drucken?",
-        a: "Normales Druckerpapier genügt. Malt Ihr Kind mit Filzstiften, nehmen Sie besser etwas dickeres Papier oder legen Sie ein zweites Blatt darunter.",
+        a: "Normales Druckerpapier genügt.",
       },
       {
         q: "Sind das alle Seiten aus dem Buch?",
@@ -205,7 +205,7 @@ const fr = (ed: EditionLang): FreeCopy => {
       },
       {
         q: "Sur quel papier imprimer ?",
-        a: "Du papier d'imprimante ordinaire suffit. Si votre enfant dessine au feutre, prenez plutôt un papier un peu plus épais ou glissez une seconde feuille dessous.",
+        a: "Du papier d'imprimante ordinaire suffit.",
       },
       {
         q: "S'agit-il de toutes les pages du livre ?",
@@ -265,7 +265,7 @@ const pl = (ed: EditionLang): FreeCopy => {
       },
       {
         q: "Na jakim papierze drukować?",
-        a: "Wystarczy zwykły papier do drukarki. Jeśli dziecko maluje flamastrami, lepiej wziąć nieco grubszy papier albo podłożyć drugą kartkę.",
+        a: "Wystarczy zwykły papier do drukarki.",
       },
       {
         q: "Czy to wszystkie strony z książki?",
@@ -324,7 +324,7 @@ const nl = (ed: EditionLang): FreeCopy => {
       },
       {
         q: "Op wat voor papier moet ik printen?",
-        a: "Gewoon printerpapier volstaat. Kleurt uw kind met viltstiften, neem dan liever iets dikker papier of leg er een tweede vel onder.",
+        a: "Gewoon printerpapier volstaat.",
       },
       {
         q: "Zijn dit alle pagina's uit het boek?",
@@ -380,7 +380,7 @@ const it = (ed: EditionLang): FreeCopy => {
       },
       {
         q: "Su che tipo di carta conviene stampare?",
-        a: "Va bene la normale carta da stampante. Se il bambino colora con i pennarelli, meglio usare una carta un po' più spessa oppure mettere un secondo foglio sotto.",
+        a: "Va bene la normale carta da stampante.",
       },
       {
         q: "Sono tutte le pagine del libro?",
