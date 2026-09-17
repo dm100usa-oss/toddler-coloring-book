@@ -1113,6 +1113,13 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
               <p className="buy-note" style={{ marginBottom: 0 }}>
                 {ed.asin ? t.sec.buyNote : ""}
               </p>
+              {ed.catalogUrl && x.bookLine.includes("{link}") ? (
+                <p style={{ margin: "0.9rem 0 0" }}>
+                  {x.bookLine.split("{link}")[0]}
+                  <a href={ed.catalogUrl}>{page.bookAnchor[lang]}</a>
+                  {x.bookLine.split("{link}")[1]}
+                </p>
+              ) : null}
             </div>
           </div>
         </div>

@@ -426,8 +426,7 @@ export const printablesCopy: Record<UiLang, SectionCopy> = {
       "to be no, the printing cost you a sheet of paper rather than the price of a book.",
 
       "Every page comes in two paper sizes. US Letter for the United States and Canada, A4 for " +
-      "Europe, Latin America and most of the rest of the world. Print single sided: a marker goes " +
-      "through ordinary paper, and on a double sided sheet it ruins whatever is on the back.",
+      "Europe, Latin America and most of the rest of the world.",
 
       "These drawings are our own work. You may print them at home, in a classroom, in a daycare or " +
       "in a library, as many copies as you need. You may not sell them or gather them into a " +
@@ -479,9 +478,7 @@ export const printablesCopy: Record<UiLang, SectionCopy> = {
         "interesa. Si la página no le conviene, lo sabrá antes de comprar el libro.",
 
       "Cada página está disponible en dos formatos: US Letter para Estados Unidos y Canadá, " +
-        "y A4 para Europa, América Latina y la mayoría de los demás países. Conviene imprimir " +
-        "por una sola cara, especialmente si el niño utiliza rotuladores, ya que la tinta " +
-        "puede traspasar el papel corriente.",
+        "y A4 para Europa, América Latina y la mayoría de los demás países.",
 
       "Todos estos dibujos han sido creados por nosotros. Puede imprimirlos gratuitamente " +
         "para actividades en casa, en un aula, una guardería o una biblioteca, en tantas " +
@@ -536,8 +533,7 @@ export const printablesCopy: Record<UiLang, SectionCopy> = {
         "страница не подойдет, вы узнаете об этом заранее.",
 
       "Каждая страница доступна в двух форматах: US Letter для США и Канады и A4 для России, " +
-        "Европы и большинства других стран. Лучше печатать только с одной стороны, особенно " +
-        "если ребенок пользуется фломастерами: чернила могут пройти сквозь обычную бумагу.",
+        "Европы и большинства других стран.",
 
       "Все эти рисунки созданы нами. Вы можете бесплатно печатать их для занятий дома, в " +
         "детском саду, школе или библиотеке в любом необходимом количестве. Нельзя продавать " +
@@ -590,7 +586,7 @@ export const aboutCopy: Record<UiLang, SectionCopy> = {
       "children, in English and in Spanish. One of those books is a coloring book for ages one to " +
       "three, and this site exists because of the questions parents kept asking us about it. Not " +
       "questions about the book: questions about their child. Is my one year old too young. Why " +
-      "does she color right over the picture. What do I do when the marker goes through the page.",
+      "does she color right over the picture. Which crayons should I buy first.",
 
       "Answering those properly takes more room than a product description allows, and the answers " +
       "are useful whether or not anyone buys anything from us. So they live here, on their own site, " +
@@ -618,8 +614,8 @@ export const aboutCopy: Record<UiLang, SectionCopy> = {
         "para niños en inglés y español. Uno de nuestros libros es un primer libro para " +
         "colorear para niños de uno a tres años. Este sitio nació a partir de preguntas que " +
         "los padres nos hacían con frecuencia: si un niño de un año es demasiado pequeño para " +
-        "empezar a colorear, por qué dibuja por encima de la imagen o qué hacer cuando la " +
-        "tinta del rotulador traspasa el papel.",
+        "empezar a colorear, por qué dibuja por encima de la imagen o con qué conviene " +
+        "empezar a colorear.",
 
       "Estas preguntas requieren más espacio del que permite la descripción de un libro, y " +
         "las respuestas pueden ser útiles independientemente de que alguien compre nuestro " +
@@ -649,8 +645,8 @@ export const aboutCopy: Record<UiLang, SectionCopy> = {
       "Мы издаем раскраски, книги с пошаговым рисованием и иллюстрированные книги для детей " +
         "на английском и испанском языках. Одна из наших книг - первая раскраска для малышей " +
         "от года до трех лет. Этот сайт появился благодаря вопросам родителей: не рано ли " +
-        "давать раскраску в год, почему ребенок рисует поверх картинки, что делать, если " +
-        "фломастер проходит сквозь бумагу.",
+        "давать раскраску в год, почему ребенок рисует поверх картинки, чем лучше начинать " +
+        "раскрашивать.",
 
       "На такие вопросы трудно подробно ответить в описании книги, а информация может быть " +
         "полезна независимо от того, собираетесь вы покупать нашу раскраску или нет. Поэтому " +
@@ -678,7 +674,7 @@ export const guidesCopy: Record<ContentLang, SectionCopy> = {
     title: "Guides for parents: the practical side of coloring with a toddler",
     lead:
       "The questions that come up once the book is already on the table. What to draw with, what " +
-      "to do about the mess, why the marker goes through the page, and how long a small child will " +
+      "to do about the mess, and how long a small child will " +
       "actually sit there. Short answers first, the reasoning underneath.",
     body: [
       "None of these are questions about coloring books. They are questions about a specific child " +
@@ -691,7 +687,7 @@ export const guidesCopy: Record<ContentLang, SectionCopy> = {
     title: "Guías para padres: consejos prácticos para colorear con niños pequeños",
     lead:
       "Preguntas que suelen surgir cuando el libro ya está sobre la mesa: qué materiales " +
-        "utilizar, cómo reducir el desorden, qué hacer si el rotulador traspasa el papel y " +
+        "utilizar, cómo reducir el desorden y " +
         "cuánto tiempo suele dedicar un niño pequeño a una página. En cada guía encontrará " +
         "primero una respuesta breve y después una explicación más detallada.",
     body: [
@@ -705,7 +701,7 @@ export const guidesCopy: Record<ContentLang, SectionCopy> = {
       metaTitle: "Статьи для родителей о раскрашивании с малышом",
     lead:
       "Вопросы, которые возникают, когда раскраска уже лежит на столе: чем лучше рисовать, " +
-        "как уменьшить беспорядок, что делать, если фломастер проходит сквозь бумагу, и " +
+        "как уменьшить беспорядок и " +
         "сколько времени маленький ребенок обычно занимается одной страницей. В каждой статье " +
         "сначала дан короткий ответ, а затем подробное объяснение.",
     body: [

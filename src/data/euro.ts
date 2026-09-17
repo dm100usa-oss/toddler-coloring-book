@@ -1018,7 +1018,7 @@ export const euroCopy: Record<
         },
         {
           q: "Womit malt man die Bilder in diesem Buch am besten aus?",
-          a: "Buntstifte und Wachsmalstifte sind die beste Wahl: Sie drücken nicht durch das Papier. Filzstifte geben kräftigere Farben, ihre Tinte kann aber durchschlagen.",
+          a: "Buntstifte und dicke Wachsmalstifte sind für den Anfang die beste Wahl: Sie liegen gut in kleinen Händen und hinterlassen schon bei leichtem Druck eine sichtbare Spur. Filzstifte geben kräftigere Farben.",
         },
         {
           q: "Wie lange kann ein Kind dieses Malbuch nutzen?",
@@ -1126,7 +1126,7 @@ export const euroCopy: Record<
         },
         {
           q: "Womit malt man die Bilder in diesem Buch am besten aus?",
-          a: "Buntstifte und Wachsmalstifte sind die beste Wahl: Sie drücken nicht durch das Papier. Filzstifte geben kräftigere Farben, ihre Tinte kann aber durchschlagen.",
+          a: "Buntstifte und dicke Wachsmalstifte sind für den Anfang die beste Wahl: Sie liegen gut in kleinen Händen und hinterlassen schon bei leichtem Druck eine sichtbare Spur. Filzstifte geben kräftigere Farben.",
         },
         {
           q: "Wie lange kann ein Kind dieses Malbuch nutzen?",
@@ -1245,7 +1245,7 @@ export const euroCopy: Record<
         },
         {
           q: "Avec quoi vaut-il mieux colorier les images de ce livre ?",
-          a: "Les crayons de couleur et les craies grasses sont le meilleur choix : ils ne traversent pas le papier. Les feutres donnent des couleurs plus vives, mais leur encre peut traverser la feuille.",
+          a: "Les crayons de couleur et les grosses craies grasses sont le meilleur choix pour commencer : ils tiennent bien dans une petite main et laissent une trace visible sans appuyer fort. Les feutres donnent des couleurs plus vives.",
         },
         {
           q: "Combien de temps un enfant peut-il utiliser ce livre de coloriage ?",
@@ -1358,7 +1358,7 @@ export const euroCopy: Record<
         },
         {
           q: "Avec quoi vaut-il mieux colorier les images de ce livre ?",
-          a: "Les crayons de couleur et les craies grasses sont le meilleur choix : ils ne traversent pas le papier. Les feutres donnent des couleurs plus vives, mais leur encre peut traverser la feuille.",
+          a: "Les crayons de couleur et les grosses craies grasses sont le meilleur choix pour commencer : ils tiennent bien dans une petite main et laissent une trace visible sans appuyer fort. Les feutres donnent des couleurs plus vives.",
         },
         {
           q: "Combien de temps un enfant peut-il utiliser ce livre de coloriage ?",
@@ -1483,7 +1483,7 @@ export const euroCopy: Record<
         },
         {
           q: "Waarmee kunt u de afbeeldingen in dit boek het beste inkleuren?",
-          a: "Kleurpotloden en waskrijt zijn de beste keuze: die drukken niet door het papier heen. Viltstiften geven fellere kleuren, maar de inkt kan doordrukken.",
+          a: "Kleurpotloden en dik waskrijt zijn de beste keuze om mee te beginnen: ze liggen goed in een kleine hand en laten zonder hard drukken een duidelijk spoor achter. Viltstiften geven fellere kleuren.",
         },
         {
           q: "Hoe lang kan een kind met dit kleurboek vooruit?",
@@ -1595,7 +1595,7 @@ export const euroCopy: Record<
         },
         {
           q: "Waarmee kunt u de afbeeldingen in dit boek het beste inkleuren?",
-          a: "Kleurpotloden en waskrijt zijn de beste keuze: die drukken niet door het papier heen. Viltstiften geven fellere kleuren, maar de inkt kan doordrukken.",
+          a: "Kleurpotloden en dik waskrijt zijn de beste keuze om mee te beginnen: ze liggen goed in een kleine hand en laten zonder hard drukken een duidelijk spoor achter. Viltstiften geven fellere kleuren.",
         },
         {
           q: "Hoe lang kan een kind met dit kleurboek vooruit?",
@@ -1715,7 +1715,7 @@ export const euroCopy: Record<
         },
         {
           q: "Czym najlepiej kolorować obrazki w tej książce?",
-          a: "Nadają się kredki ołówkowe, kredki świecowe i flamastry. Jeśli flamaster przebija przez papier, pod stronę można podłożyć dodatkową kartkę. Odwrotna strona każdego rysunku pozostaje pusta.",
+          a: "Nadają się kredki ołówkowe, kredki świecowe i flamastry.",
         },
         {
           q: "Na jak długo dziecku wystarczy ta kolorowanka?",
@@ -1825,7 +1825,7 @@ export const euroCopy: Record<
         },
         {
           q: "Czym najlepiej kolorować obrazki w tej książce?",
-          a: "Nadają się kredki ołówkowe, kredki świecowe i flamastry. Jeśli flamaster przebija przez papier, pod stronę można podłożyć dodatkową kartkę. Odwrotna strona każdego rysunku pozostaje pusta.",
+          a: "Nadają się kredki ołówkowe, kredki świecowe i flamastry.",
         },
         {
           q: "Na jak długo dziecku wystarczy ta kolorowanka?",
@@ -1947,7 +1947,7 @@ export const euroCopy: Record<
         },
         {
           q: "Con che cosa è meglio colorare le immagini di questo libro?",
-          a: "Matite colorate e pastelli a cera sono la scelta migliore: non trapassano la carta. I pennarelli danno colori più vivaci, ma il loro inchiostro può passare dall'altra parte.",
+          a: "Matite colorate e pastelli a cera grossi sono la scelta migliore per iniziare: si tengono bene in una mano piccola e lasciano un segno visibile senza premere forte. I pennarelli danno colori più vivaci.",
         },
         {
           q: "Per quanto tempo il bambino potrà usare questo libro da colorare?",
@@ -2053,7 +2053,7 @@ export const euroCopy: Record<
         },
         {
           q: "Con che cosa è meglio colorare le immagini di questo libro?",
-          a: "Matite colorate e pastelli a cera sono la scelta migliore: non trapassano la carta. I pennarelli danno colori più vivaci, ma il loro inchiostro può passare dall'altra parte.",
+          a: "Matite colorate e pastelli a cera grossi sono la scelta migliore per iniziare: si tengono bene in una mano piccola e lasciano un segno visibile senza premere forte. I pennarelli danno colori più vivaci.",
         },
         {
           q: "Per quanto tempo il bambino potrà usare questo libro da colorare?",
@@ -2169,7 +2169,7 @@ export const euroCopy: Record<
         },
         {
           q: "¿Con qué es mejor colorear los dibujos de este libro?",
-          a: "Los lápices de colores y las ceras son la mejor opción: no traspasan el papel. Los rotuladores dan colores más vivos, pero su tinta puede pasar al otro lado.",
+          a: "Los lápices de colores y las ceras gruesas son la mejor opción para empezar: se sujetan bien con una mano pequeña y dejan un trazo visible sin apretar. Los rotuladores dan colores más vivos.",
         },
         {
           q: "¿Cuánto tiempo le puede durar este libro a un niño?",
@@ -2289,7 +2289,7 @@ export const euroCopy: Record<
         },
         {
           q: "What can my child use to color the pictures in this book?",
-          a: "Colored pencils, wax crayons, and markers all work. If a marker bleeds through the paper, slip an extra sheet under the page. The back of every drawing stays blank.",
+          a: "Colored pencils, wax crayons, and markers all work.",
         },
         {
           q: "How long will this coloring book last a child?",

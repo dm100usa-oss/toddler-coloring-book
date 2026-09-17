@@ -5,7 +5,7 @@ import type { StageId } from "./stages";
 
    Темы выбраны не наугад. Каждая взята из того, что родители на самом
    деле набирают в поиске: чем рисовать малышу, как обойтись без грязи,
-   что делать, когда фломастер проходит насквозь, можно ли давать
+   можно ли давать
    раскраску годовалому, сколько ребенок вообще выдерживает за столом.
 
    Правило письма то же, что и везде на сайте: каждый абзац закончен
@@ -284,17 +284,17 @@ export const guides: Guide[] = [
     lead: {
       en:
         "Thick wax crayons are the best place to start. They leave a visible mark without much " +
-        "pressure and do not soak through the paper. Washable markers can come later, and colored " +
+        "pressure and are easy to hold. Washable markers can come later, and colored " +
         "pencils later still, as the movements of the hand become more precise.",
       es:
         "Para empezar, suelen ser más adecuados los crayones gruesos, especialmente durante " +
           "las primeras etapas del dibujo. Dejan un trazo visible sin necesidad de presionar " +
-          "mucho, son fáciles de sujetar con una mano pequeña y no traspasan el papel. Más " +
+          "mucho y son fáciles de sujetar con una mano pequeña. Más " +
           "adelante se pueden probar rotuladores lavables y, después, lápices de colores, a " +
           "medida que los movimientos de la mano se vuelven más precisos.",
       ru:
         "Для начала лучше всего подходят толстые восковые мелки. Они легко оставляют " +
-          "заметный след, не требуют сильного нажима и не пропитывают бумагу насквозь. Позже " +
+          "заметный след, не требуют сильного нажима и удобно лежат в руке. Позже " +
           "можно попробовать смываемые фломастеры, а затем и цветные карандаши - по мере того " +
           "как движения руки становятся точнее.",
     },
@@ -306,13 +306,12 @@ export const guides: Guide[] = [
 
         "Thick wax crayons suit first sessions for several reasons. They leave a visible mark with " +
         "almost no pressure, they are comfortable to hold in the whole hand, they have no sharp point " +
-        "to catch the paper, and they do not soak through the sheet. Together that makes them a " +
+        "to catch the paper. Together that makes them a " +
         "convenient first tool for drawing.",
 
         "Markers give the brightest result and children love them for exactly that reason. The cost " +
-        "is that they go straight through ordinary paper, so a double sided page loses the drawing " +
-        "on the back, and they mark the table, clothes and skin far more readily than crayons. " +
-        "Washable markers solve most of that. A spare sheet under the page solves the rest.",
+        "is that they mark the table, clothes and skin far more readily than crayons. " +
+        "Washable markers solve most of that.",
 
         "Colored pencils call for a more precise finger grip and steadier pressure. Young children " +
         "often find them harder to use than thick crayons. They are worth trying later, once the " +
@@ -331,13 +330,12 @@ export const guides: Guide[] = [
 
         "Los crayones gruesos son una buena opción para las primeras actividades por varias " +
           "razones. Dejan un trazo visible con poca presión, son fáciles de sujetar con toda " +
-          "la mano, no tienen una punta afilada que pueda dañar el papel y no traspasan la " +
-          "hoja. Todo esto los convierte en una herramienta cómoda para empezar a dibujar.",
+          "la mano y no tienen una punta afilada que pueda dañar el papel. Todo esto los " +
+          "convierte en una herramienta cómoda para empezar a dibujar.",
 
         "Los rotuladores dejan colores intensos, y por eso gustan a muchos niños. Sin " +
-          "embargo, la tinta puede traspasar el papel corriente y dejar manchas en la mesa, la " +
-          "ropa o la piel. Para los más pequeños, conviene elegir rotuladores lavables y " +
-          "colocar una hoja adicional debajo de la página.",
+          "embargo, la tinta puede dejar manchas en la mesa, la ropa o la piel. Para los más " +
+          "pequeños, conviene elegir rotuladores lavables.",
 
         "Los lápices de colores requieren un agarre más preciso con los dedos y cierta " +
           "presión constante. Para un niño pequeño suelen resultar más difíciles de usar que " +
@@ -357,14 +355,13 @@ export const guides: Guide[] = [
 
         "Толстые восковые мелки, которые также называют восковыми карандашами, хорошо " +
           "подходят для первых занятий по нескольким причинам. Они оставляют заметный след " +
-          "почти без нажима, их удобно держать всей ладонью, они не протыкают бумагу острым " +
-          "кончиком и не пропитывают лист насквозь. Все это делает их удобным первым " +
+          "почти без нажима, их удобно держать всей ладонью, и они не протыкают бумагу острым " +
+          "кончиком. Все это делает их удобным первым " +
           "инструментом для рисования.",
 
         "Фломастеры дают яркий цвет, и именно поэтому они нравятся многим детям. Но чернила " +
-          "могут проходить сквозь обычную бумагу и оставлять следы на столе, одежде и коже. " +
-          "Поэтому для малышей удобнее выбирать смываемые фломастеры, а под страницу " +
-          "подкладывать дополнительный лист бумаги.",
+          "могут оставлять следы на столе, одежде и коже. Поэтому для малышей удобнее " +
+          "выбирать смываемые фломастеры.",
 
         "Цветные карандаши требуют более точного захвата пальцами и достаточного нажима. " +
           "Маленькому ребенку ими часто пользоваться сложнее, чем толстыми мелками. " +
@@ -383,8 +380,7 @@ export const guides: Guide[] = [
           q: "Are washable markers safe for a two year old?",
           a:
             "For young children, choose washable markers labelled non-toxic. They come off skin, clothes " +
-            "and many surfaces more easily, but they can still go through paper, so it is better to put a " +
-            "spare sheet underneath. Watch the caps as well: small parts should stay out of a child's " +
+            "and many surfaces more easily. Watch the caps as well: small parts should stay out of a child's " +
             "reach.",
         },
         {
@@ -410,8 +406,7 @@ export const guides: Guide[] = [
           a:
             "Para los niños pequeños, elija rotuladores lavables con indicación de que no " +
               "son tóxicos. Suelen limpiarse con mayor facilidad de la piel, la ropa y muchas " +
-              "superficies, aunque la tinta todavía puede traspasar el papel, por lo que " +
-              "conviene colocar una hoja adicional debajo. Mantenga también los capuchones " +
+              "superficies. Mantenga también los capuchones " +
               "fuera de su alcance, ya que son piezas pequeñas.",
         },
         {
@@ -438,9 +433,8 @@ export const guides: Guide[] = [
           q: "Безопасны ли смываемые фломастеры для двухлетнего?",
           a:
             "Для маленьких детей выбирайте смываемые фломастеры с маркировкой о " +
-              "нетоксичности. Они легче отмываются с кожи, одежды и многих поверхностей, но " +
-              "все равно могут проходить сквозь бумагу, поэтому под страницу лучше подложить " +
-              "дополнительный лист. Следите и за колпачками: мелкие детали должны оставаться " +
+              "нетоксичности. Они легче отмываются с кожи, одежды и многих поверхностей. " +
+              "Следите и за колпачками: мелкие детали должны оставаться " +
               "вне доступа ребенка.",
         },
         {
@@ -514,7 +508,7 @@ export const guides: Guide[] = [
         "page, prevents almost all of the incidents parents remember.",
 
         "Two practical arrangements are worth the small effort. Put a spare sheet of paper under the " +
-        "page, which catches both marker bleed and overshoot at the edges. And give one sheet at a " +
+        "page, which catches the lines that run over the edges. And give one sheet at a " +
         "time rather than the open book, which removes the temptation to turn the page mid-drawing " +
         "and halves the surface area available for accidents.",
 
@@ -546,8 +540,8 @@ export const guides: Guide[] = [
           "primeras señales de cansancio o aburrimiento y volver al dibujo más tarde.",
 
         "Hay dos medidas sencillas que ayudan mucho. Coloque debajo de la página una hoja " +
-          "adicional o un trozo de cartón: protegerá la superficie tanto de la tinta que " +
-          "traspase el papel como de los trazos que salgan por los bordes. Además, puede darle " +
+          "adicional o un trozo de cartón: protegerá la superficie de los trazos que salgan " +
+          "por los bordes. Además, puede darle " +
           "al niño una sola hoja en lugar del libro abierto para que le resulte más fácil " +
           "concentrarse en un dibujo.",
 
@@ -577,8 +571,8 @@ export const guides: Guide[] = [
           "скуки, а к рисунку вернуться позже.",
 
         "Есть два простых приема. Подложите под страницу дополнительный лист бумаги или " +
-          "кусок картона: он защитит поверхность от чернил, прошедших сквозь бумагу, и от " +
-          "линий, случайно вышедших за край. И давайте ребенку по одному листу вместо открытой " +
+          "кусок картона: он защитит поверхность от линий, случайно вышедших за край. " +
+          "И давайте ребенку по одному листу вместо открытой " +
           "книги - так ему проще сосредоточиться на одном рисунке.",
 
         "Стоит знать и о том, что наборы «без грязи», многоразовые раскраски со стираемым " +
@@ -639,172 +633,6 @@ export const guides: Guide[] = [
             "С восковыми мелками фартук обычно не нужен. При рисовании фломастерами или " +
               "красками можно надеть на ребенка старую футболку или рубашку. А самый простой " +
               "способ уменьшить количество пятен - сразу выбирать смываемые материалы.",
-        },
-      ],
-    },
-  },
-
-  /* ---------------------------------------------------------------- */
-  {
-    id: "bleed-through",
-    slug: {
-      en: "marker-bleeds-through-coloring-book-pages",
-      es: "el-rotulador-traspasa-las-hojas-del-libro",
-      ru: "flomaster-prohodit-bumagu-naskvoz",
-    },
-    stage: "aim",
-    title: {
-      en: "The marker goes through the page. What to do",
-      es: "El rotulador traspasa la hoja. Qué hacer",
-      ru: "Фломастер проходит бумагу насквозь. Что делать",
-    },
-    lead: {
-      en:
-        "Ordinary paper in coloring books often lets marker ink through. The simplest solution is to " +
-        "hand the child wax crayons or colored pencils instead: they sit on the surface and never " +
-        "come through. If markers stay, a spare sheet under the page catches what soaks through and " +
-        "keeps the table clean.",
-      es:
-        "El papel corriente de muchos libros para colorear puede dejar pasar la tinta de los " +
-          "rotuladores. La solución más sencilla es dar al niño ceras o lápices de colores: no " +
-          "traspasan el papel. Si se siguen usando rotuladores, una hoja adicional debajo de la " +
-          "página recoge la tinta que pasa y mantiene limpia la mesa.",
-      ru:
-        "Обычная бумага в раскрасках часто пропускает чернила фломастера. Самое простое " +
-          "решение - дать ребенку восковые мелки или цветные карандаши: они ложатся на " +
-          "поверхность и насквозь не проходят. Если фломастеры остаются, подложите под страницу " +
-          "дополнительный лист: он соберет чернила и защитит стол.",
-    },
-    body: {
-      en: [
-        "Marker ink often goes through the paper in children's coloring books, and that does not " +
-        "necessarily mean the book is badly printed. Paper heavy enough to hold the ink is thicker " +
-        "and more expensive, and it adds noticeably to the weight and the price of a book. That is " +
-        "why many children's coloring books use ordinary paper, and why the problem is solved with " +
-        "the tool the child draws with rather than with the book.",
-
-        "The simplest solution takes a few seconds: put a clean sheet of paper or thin card under the " +
-        "page the child is coloring. Whatever soaks through lands on it. It is worth doing straight " +
-        "away when markers come out, rather than after the next drawing has been spoiled.",
-
-        "You can also change the tool. Wax crayons and colored pencils do not soak through the paper, " +
-        "which makes them more convenient than markers on thin paper. If it does not matter to the " +
-        "child whether they use markers, that is the simplest way to avoid marks on the back.",
-
-        "It is better not to dry a page with a hairdryer, press it with an iron, or try to remove the " +
-        "ink with solvent. None of that removes marks that have already gone through the paper, and " +
-        "it can damage the page.",
-      ],
-      es: [
-        "La tinta de los rotuladores puede traspasar el papel de muchos libros infantiles " +
-          "para colorear, y eso no significa necesariamente que el libro esté mal impreso. " +
-          "Para impedirlo por completo se necesita un papel más grueso, que aumenta el coste y " +
-          "el peso del libro. Por eso, muchos libros utilizan papel corriente, y el problema se " +
-          "resuelve con el material con el que dibuja el niño, no con el libro.",
-
-        "La solución más sencilla lleva solo unos segundos: coloque una hoja de papel o un " +
-          "cartón fino debajo de la página que está coloreando el niño. La tinta que traspase " +
-          "quedará en esa hoja. Conviene hacerlo desde el principio cuando se utilizan " +
-          "rotuladores, en lugar de esperar a que se estropee el dibujo siguiente.",
-
-        "Otra opción es cambiar de material. Los crayones y los lápices de colores no " +
-          "traspasan el papel como la tinta de los rotuladores. Si al niño no le importa " +
-          "utilizar otro material, es la forma más sencilla de evitar marcas en el papel.",
-
-        "No intente secar la página con un secador o una plancha ni eliminar la tinta con " +
-          "disolventes. Estas medidas no solucionan las marcas que ya han traspasado el papel " +
-          "y pueden dañar la página.",
-      ],
-      ru: [
-        "Чернила фломастеров нередко проходят сквозь бумагу в детских раскрасках, и это не " +
-          "обязательно означает, что книга напечатана плохо. Чтобы полностью удерживать " +
-          "чернила, нужна более плотная и дорогая бумага, которая заметно увеличивает " +
-          "стоимость и вес книги. Поэтому многие детские раскраски печатают на обычной бумаге, " +
-          "а решать вопрос проще не книгой, а тем, чем ребенок рисует.",
-
-        "Самый простой способ занимает несколько секунд: положите под страницу, которую " +
-          "раскрашивает ребенок, чистый лист бумаги или тонкий картон. Чернила, прошедшие " +
-          "насквозь, останутся на нем. Лучше делать это сразу при использовании фломастеров, а " +
-          "не после того, как будет испорчен следующий рисунок.",
-
-        "Можно также выбрать другой инструмент. Восковые мелки и цветные карандаши не " +
-          "пропитывают бумагу насквозь, поэтому для тонкой бумаги они удобнее фломастеров. " +
-          "Если ребенку не принципиально рисовать именно фломастерами, это самый простой " +
-          "способ обойтись без следов на бумаге.",
-
-        "Не стоит пытаться сушить страницу феном, проглаживать ее утюгом или удалять чернила " +
-          "растворителем. Это не устранит следы, прошедшие сквозь бумагу, зато может повредить " +
-          "страницу.",
-      ],
-    },
-    faq: {
-      en: [
-        {
-          q: "Which coloring books do not bleed through?",
-          a:
-            "It depends mainly on the weight of the paper. The ordinary paper used in many children's " +
-            "coloring books can let marker ink through, and heavier paper makes a book thicker and " +
-            "dearer. Crayons and colored pencils do not come through at all, whatever the paper.",
-        },
-        {
-          q: "Will a coloring book bleed with crayons?",
-          a:
-            "No. Crayon is wax and sits on the surface of the paper rather than soaking into it, so " +
-            "it does not come through to the other side at any pressure a small child can apply. " +
-            "The same is true of colored pencils.",
-        },
-        {
-          q: "Can I still use markers on thin paper?",
-          a:
-            "Yes, with a spare sheet underneath. That catches everything that soaks through and the " +
-            "child never notices the difference. It is the simplest habit to build and it removes " +
-            "the problem entirely.",
-        },
-      ],
-      es: [
-        {
-          q: "¿Qué libros para colorear no traspasan?",
-          a:
-            "Depende principalmente del grosor del papel. El papel corriente de muchos " +
-              "libros infantiles para colorear puede dejar pasar la tinta de los rotuladores. " +
-              "Un papel más grueso encarece el libro. Las ceras y los lápices de colores no " +
-              "traspasan el papel, sea cual sea el libro.",
-        },
-        {
-          q: "¿Traspasa un libro para colorear con crayones?",
-          a:
-            "No. El crayón queda sobre la superficie del papel y no penetra en él como la " +
-              "tinta de un rotulador. Lo mismo ocurre con los lápices de colores.",
-        },
-        {
-          q: "¿Puedo usar rotuladores igualmente en papel fino?",
-          a:
-            "Sí. Coloque una hoja adicional o un trozo de cartón debajo de la página. " +
-              "Recogerá la tinta que traspase y protegerá tanto la página siguiente como la " +
-              "superficie de la mesa.",
-        },
-      ],
-      ru: [
-        {
-          q: "Какие раскраски не пропускают фломастер?",
-          a:
-            "Это зависит прежде всего от плотности бумаги. Обычная бумага многих детских " +
-              "раскрасок может пропускать чернила фломастера, а более плотная бумага делает " +
-              "книгу дороже. Восковые мелки и цветные карандаши не проходят насквозь ни на " +
-              "какой бумаге.",
-        },
-        {
-          q: "Проходят ли насквозь восковые мелки?",
-          a:
-            "Нет. Восковой мелок остается на поверхности бумаги и не впитывается в нее, как " +
-              "чернила фломастера. То же относится и к обычным цветным карандашам.",
-        },
-        {
-          q: "Можно ли все-таки пользоваться фломастерами на тонкой бумаге?",
-          a:
-            "Да. Просто подложите под страницу дополнительный лист бумаги или кусок картона. " +
-              "Он примет на себя чернила, прошедшие насквозь, и защитит следующую страницу или " +
-              "поверхность стола.",
         },
       ],
     },
@@ -1039,7 +867,7 @@ export const guides: Guide[] = [
         { h: "Traditional paper coloring books" },
         "These are regular paper pages with printed outlines that children color with crayons, colored pencils or markers.",
         "What they offer. The child makes a real mark that stays on the page. For a toddler, this is one of the most important discoveries in early drawing: I moved my hand, and a line appeared on the paper. The page can be saved, displayed on the refrigerator, dated or kept in a folder. A few months later, you can look back and see how your child's lines and drawings have changed.",
-        "Limitations. The pages get used up. A toddler may tear or crumple a page, and that is completely normal at this age. Markers may also bleed through thin paper.",
+        "Limitations. The pages get used up. A toddler may tear or crumple a page, and that is completely normal at this age.",
         "When they work best. From the beginning, often around twelve to eighteen months, when a child starts making intentional marks on paper. Traditional paper coloring books are the basic option. The other types are better viewed as additions rather than replacements.",
         { h: "Reusable coloring books with wipe-clean pages" },
         "These coloring books have laminated pages or pages made from a durable plastic-like material. Children draw with a dry-erase marker, wipe the page clean and use it again.",
@@ -1068,7 +896,7 @@ export const guides: Guide[] = [
         { h: "Libro para colorear tradicional de papel" },
         "Es una hoja de papel con un dibujo impreso que el niño colorea con crayones, lápices de colores o rotuladores.",
         "Qué aporta. El niño deja una huella real que no desaparece. Para un pequeño, este es uno de los principales descubrimientos de sus primeras experiencias con el dibujo: mueve la mano y aparece una línea sobre el papel. La página se puede guardar, colocar en el refrigerador, marcar con la fecha o archivar en una carpeta. Después de unos meses será interesante observar cómo han cambiado las líneas y los dibujos del niño.",
-        "Limitaciones. Las páginas se gastan. El niño puede romper o arrugar alguna, y a esta edad es completamente normal. Además, los rotuladores pueden traspasar el papel si es demasiado fino.",
+        "Limitaciones. Las páginas se gastan. El niño puede romper o arrugar alguna, y a esta edad es completamente normal.",
         "Cuándo conviene. Desde el principio, aproximadamente entre los doce y los dieciocho meses, cuando el niño empieza a dejar marcas sobre el papel de manera intencionada. Este es el tipo básico de libro para colorear. Las demás opciones sirven más como complemento que como sustituto.",
         { h: "Libro para colorear reutilizable con superficie borrable" },
         "Las páginas están plastificadas o impresas sobre un material plástico resistente. El niño dibuja con un rotulador borrable en seco y después se puede limpiar la página con un paño para volver a utilizarla.",
@@ -1097,7 +925,7 @@ export const guides: Guide[] = [
         { h: "Обычная бумажная раскраска" },
         "Это лист бумаги с напечатанным контуром, который ребенок раскрашивает мелками, карандашами или фломастерами.",
         "Что это дает. Ребенок оставляет настоящий след, который не исчезает. Для малыша это одно из главных открытий первых занятий рисованием: он провел рукой - и на бумаге появилась линия. Страницу можно сохранить, повесить на холодильник, подписать датой или убрать в папку. Через несколько месяцев будет интересно посмотреть, как изменились линии и рисунки ребенка.",
-        "Ограничения. Такие раскраски расходуются. Ребенок может порвать или смять страницу, и в этом возрасте это совершенно нормально. А фломастеры могут просвечивать или проходить сквозь тонкую бумагу.",
+        "Ограничения. Такие раскраски расходуются. Ребенок может порвать или смять страницу, и в этом возрасте это совершенно нормально.",
         "Когда уместно. С самого начала, примерно с двенадцати-восемнадцати месяцев, когда ребенок начинает осознанно оставлять следы на бумаге. Это основной вид раскраски. Остальные варианты скорее дополняют его, чем заменяют.",
         { h: "Многоразовая раскраска со стираемым покрытием" },
         "Страницы такой раскраски заламинированы или напечатаны на плотном пластике. Ребенок рисует маркером сухого стирания, затем рисунок можно стереть тряпочкой и начать заново.",

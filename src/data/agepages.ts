@@ -39,6 +39,9 @@ export type AgePage = {
      страницы можно уйти на страницу этапа и прочитать подробно. */
   stage: StageId;
   slug: Record<ContentLang, string>;
+  /** Слова ссылки на страницу книги в каталоге издательства.
+      Под каждый возраст свои: так родители ищут книгу. */
+  bookAnchor: Record<ContentLang, string>;
   copy: Record<ContentLang, AgePageCopy>;
 };
 
@@ -51,6 +54,11 @@ export const agePages: AgePage[] = [
       en: "coloring-pages-for-1-year-olds",
       es: "dibujos-para-colorear-para-ninos-de-1-ano",
       ru: "raskraski-dlya-rebenka-1-god",
+    },
+    bookAnchor: {
+      en: "coloring book for 1 year olds",
+      es: "libro para colorear para niños de 1 año",
+      ru: "раскраска для ребенка 1 года",
     },
     copy: {
       en: {
@@ -71,8 +79,7 @@ export const agePages: AgePage[] = [
           "What to look for on the page: an outline about as thick as the crayon itself, one shape " +
             "filling the sheet, sturdy paper because the pressure at this age is heavy enough to " +
             "tear a thin one, and a subject the child can already name out loud, like a ball, a cat " +
-            "or an apple. Crayons and colored pencils suit these books better than markers, since " +
-            "the sheet is usually printed on both sides and marker ink soaks through.",
+            "or an apple. Thick crayons and colored pencils are the easiest tools to start with.",
           "A session at one year old lasts a minute or two, and that is a normal length rather than " +
             "a short one. Say out loud what is on the page, let the child pick the crayon " +
             "themselves, and leave the marks alone. The right moment to stop is when the child gets " +
@@ -279,6 +286,11 @@ export const agePages: AgePage[] = [
       es: "dibujos-para-colorear-para-ninos-de-2-anos",
       ru: "raskraski-dlya-rebenka-2-goda",
     },
+    bookAnchor: {
+      en: "coloring book for 2 year olds",
+      es: "libro para colorear para niños de 2 años",
+      ru: "раскраска для детей 2 лет",
+    },
     copy: {
       en: {
         title: "Coloring pages for a 2 year old: what suits and what to expect",
@@ -329,8 +341,7 @@ export const agePages: AgePage[] = [
             q: "Are washable markers a good idea at two?",
             a:
               "They work well at this age, since the child now aims at the drawing, and washable " +
-              "ones save the table and the clothes. Worth knowing: marker ink goes through " +
-              "ordinary paper, while crayons and colored pencils do not.",
+              "ones save the table and the clothes.",
           },
           {
             q: "My child colors the same page over and over. Should I stop that?",
@@ -399,9 +410,7 @@ export const agePages: AgePage[] = [
             a:
               "Sí, se pueden utilizar rotuladores lavables si al niño le resulta cómodo " +
                 "dibujar con ellos. Dejan un trazo intenso y visible y suelen limpiarse con " +
-                "facilidad de las manos y de muchas superficies. Conviene saber que la tinta " +
-                "puede traspasar el papel corriente, mientras que las ceras y los lápices de " +
-                "colores no lo hacen.",
+                "facilidad de las manos y de muchas superficies.",
           },
           {
             q: "Mi hijo colorea la misma hoja una y otra vez. ¿Debo cortarlo?",
@@ -468,9 +477,7 @@ export const agePages: AgePage[] = [
             q: "Подходят ли фломастеры в 2 года?",
             a:
               "Смываемые фломастеры можно использовать, если ребенку удобно ими рисовать. " +
-                "Они дают яркий заметный след и легко смываются с рук и многих поверхностей. " +
-                "Стоит помнить, что чернила могут пройти сквозь обычную бумагу, а восковые " +
-                "мелки и карандаши насквозь не проходят.",
+                "Они дают яркий заметный след и легко смываются с рук и многих поверхностей.",
           },
           {
             q: "Ребенок раскрашивает одну и ту же страницу много раз. Стоит ли это прекращать?",
@@ -492,6 +499,11 @@ export const agePages: AgePage[] = [
       en: "coloring-pages-for-3-year-olds",
       es: "dibujos-para-colorear-para-ninos-de-3-anos",
       ru: "raskraski-dlya-rebenka-3-goda",
+    },
+    bookAnchor: {
+      en: "coloring book for 3 year olds",
+      es: "libro para colorear para niños de 3 años",
+      ru: "раскраска для детей 3 лет",
     },
     copy: {
       en: {
@@ -724,6 +736,9 @@ export type AgePageLabels = {
   otherAges: string;
   stageLink: string;
   toolLink: string;
+  /** Строка со ссылкой на страницу книги в каталоге издательства.
+      {link} заменяется ссылкой со словами этого возраста. */
+  bookLine: string;
 };
 
 export const agePageLabels: Record<ContentLang, AgePageLabels> = {
@@ -735,6 +750,7 @@ export const agePageLabels: Record<ContentLang, AgePageLabels> = {
     otherAges: "Other ages",
     stageLink: "How the hand develops at this point",
     toolLink: "Answer four questions about your child",
+    bookLine: "The full description of the book, with all 111 drawings and parents' questions, is on its page in the publisher's catalog: {link}.",
   },
   es: {
     listTitle: "Edad por edad",
@@ -744,6 +760,7 @@ export const agePageLabels: Record<ContentLang, AgePageLabels> = {
     otherAges: "Otras edades",
     stageLink: "Cómo se desarrollan las habilidades de la mano en esta etapa",
     toolLink: "Responda cuatro preguntas sobre su hijo",
+    bookLine: "La descripción completa del libro, con los 111 dibujos y las preguntas de los padres, está en su página del catálogo de la editorial: {link}.",
   },
   ru: {
     listTitle: "Разбор по возрастам",
@@ -753,5 +770,6 @@ export const agePageLabels: Record<ContentLang, AgePageLabels> = {
     otherAges: "Другие возрасты",
     stageLink: "Что обычно умеет ребенок на этом этапе",
     toolLink: "Ответьте на четыре вопроса о ребенке",
+    bookLine: "Полное описание книги со всеми 111 рисунками и вопросами родителей есть на ее странице в каталоге издательства: {link}.",
   },
 };

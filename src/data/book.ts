@@ -39,6 +39,12 @@ export type Edition = {
       подтверждает, что книга существует как самостоятельный объект,
       а не только как название на этом сайте. */
   wikidata?: string;
+  /** Страница этого издания в каталоге издательства на
+      magicofdiscoveries.com. Там полное описание книги, все 111 рисунков
+      и вопросы родителей. Ссылки между двумя сайтами идут в обе стороны:
+      каталог ссылается на возрастные страницы справочника, справочник
+      на страницу книги в каталоге. */
+  catalogUrl?: string;
   /** Номер книги в нашем магазине файлов для печати. Файл продается
       на этом сайте: оплата, письмо и ссылка на скачивание здесь.
       Номер тот же, что в каталоге издательства, потому что рукопись
@@ -186,6 +192,7 @@ export const editions: Record<UiLang, Edition> = {
     coverSize: { w: 900, h: 1165 },
     rating: { value: 5.0, count: 19 },
     slug: "first-coloring-book-toddlers-ages-1-3",
+    catalogUrl: "https://www.magicofdiscoveries.com/en/books/first-coloring-book-toddlers-1-3-111-drawings",
     lead:
       "A first coloring book works best with big, simple drawings and thick outlines, with no " +
         "small detail and nothing extra on the page. One picture per page makes it easier for " +
@@ -267,17 +274,21 @@ export const editions: Record<UiLang, Edition> = {
         q: "How thick is the paper?",
         a:
           "It is standard book paper, printed by Amazon, and some parents have wished for something " +
-          "heavier. Both sides of the sheet carry a drawing, so marker ink that soaks through will " +
-          "show on the drawing behind it. Crayons and colored pencils do not do this, and they are " +
-          "the better choice for this age anyway.",
+          "heavier. Crayons and colored pencils suit it well, and they are the better choice for " +
+          "this age anyway.",
       },
       {
         q: "Crayons, markers or colored pencils?",
         a:
           "Thick crayons at the beginning. They mark with very little pressure, they are easier on the " +
           "page, and they leave a wide mark that a child can actually see. Markers give a brighter " +
-          "result but go through the paper. Colored pencils call for a more precise finger grip, which " +
+          "result. Colored pencils call for a more precise finger grip, which " +
           "usually comes later.",
+      },
+      {
+        q: "Is this a good “My First Coloring Book” for a 1, 2 or 3 year old?",
+        a:
+          "Yes. It was made as a child's very first coloring book: one large picture on every page, outlines about as thick as a crayon, and a familiar subject to name. There is a page at the front for the child's name, so it really becomes their own first book.",
       },
       {
         q: "Can I use this book in a preschool or daycare?",
@@ -335,6 +346,7 @@ export const editions: Record<UiLang, Edition> = {
     coverSize: { w: 900, h: 1164 },
     rating: { value: 4.9, count: 26 },
     slug: "primer-libro-para-colorear-bebes-1-3-anos",
+    catalogUrl: "https://www.magicofdiscoveries.com/es/libros/primer-libro-colorear-bebes-1-3-anos-111-dibujos",
     lead:
       "Para un primer libro para colorear conviene que los dibujos sean grandes y simples, con " +
         "líneas gruesas, sin detalles pequeños ni elementos de más. En la página debe haber un " +
@@ -425,18 +437,22 @@ export const editions: Record<UiLang, Edition> = {
         q: "¿Qué grosor tiene el papel?",
         a:
           "Es papel de libro corriente, impreso por Amazon, y algunos padres preferirían que " +
-            "fuera más grueso. Las dos caras de la hoja llevan un dibujo, así que la tinta de " +
-            "un rotulador que traspase el papel se verá en el dibujo de detrás. Las ceras y los " +
-            "lápices de colores no hacen eso, y a esta edad son la mejor opción.",
+            "fuera más grueso. Las ceras y los lápices de colores funcionan bien con él, y a " +
+            "esta edad son la mejor opción.",
       },
       {
         q: "¿Crayones, rotuladores o lápices de colores?",
         a:
           "Para empezar, lo mejor son los crayones gruesos. Son fáciles de sujetar con una " +
             "mano pequeña, dejan una marca visible sin necesidad de presionar mucho y no " +
-            "suelen dañar el papel. Los rotuladores dan un color más intenso, pero pueden " +
-            "traspasar la hoja. Los lápices de colores requieren un agarre más preciso y " +
+            "suelen dañar el papel. Los rotuladores dan un color más intenso. Los lápices de " +
+            "colores requieren un agarre más preciso y " +
             "suelen resultar más difíciles para los niños pequeños.",
+      },
+      {
+        q: "¿Es un buen «mi primer libro para colorear» para un niño de 1, 2 o 3 años?",
+        a:
+          "Sí. Se hizo como el primer libro para colorear de un niño: un dibujo grande en cada página, contornos casi tan gruesos como una cera y objetos conocidos que el niño puede nombrar. Al principio hay una página para escribir su nombre, así que de verdad se convierte en su propio primer libro.",
       },
       {
         q: "¿Sirve para preescolar o guardería?",
@@ -495,6 +511,7 @@ export const editions: Record<UiLang, Edition> = {
     cover: "/covers/book-ru.webp",
     coverSize: { w: 900, h: 1165 },
     slug: "pervaya-kniga-raskraska-1-3-goda",
+    catalogUrl: "https://www.magicofdiscoveries.com/ru/knigi/pervaya-kniga-raskraska-dlya-malyshey-1-3-goda",
     lead:
       "Для первой раскраски лучше всего подходят крупные и простые рисунки с толстыми " +
         "контурами, без мелких деталей и лишних элементов. На странице должно быть только " +
@@ -578,21 +595,24 @@ export const editions: Record<UiLang, Edition> = {
             "книга подходит детям с разным уровнем навыков.",
       },
       {
+        q: "Подойдет ли книга как «моя первая раскраска» для ребенка 1, 2 или 3 лет?",
+        a:
+          "Да. Она задумана как самая первая раскраска ребенка: на каждой странице один крупный рисунок, контур почти такой же толщины, как мелок, и знакомый предмет, который можно назвать. В начале есть страница для имени, так что книга действительно становится его собственной первой раскраской.",
+      },
+      {
         q: "Чем лучше раскрашивать?",
         a:
           "Для начала лучше выбрать толстые восковые мелки или карандаши. Их удобно держать " +
             "маленькой рукой, они легко оставляют заметный след и не требуют сильного нажима. " +
-            "Фломастеры дают яркий цвет, но могут просвечивать или проходить сквозь бумагу. " +
+            "Фломастеры дают самый яркий цвет. " +
             "Обычными цветными карандашами маленьким детям пользоваться сложнее: они требуют " +
             "более точного захвата и сильнее нажима.",
       },
       {
         q: "На какой бумаге печатать файл?",
         a:
-          "Подойдет обычная бумага для принтера. Лучше печатать только с одной стороны: если " +
-            "ребенок рисует фломастером, чернила могут пройти сквозь лист и испортить рисунок " +
-            "на обороте. Для фломастеров можно использовать более плотную бумагу, например от " +
-            "120 г/м².",
+          "Подойдет обычная бумага для принтера. Если хочется бумагу поплотнее, можно взять " +
+            "лист от 120 г/м².",
       },
       {
         q: "Подойдет ли книга для детского сада?",

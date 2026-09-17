@@ -11,6 +11,11 @@ const nextConfig = {
       { source: "/es/libro-para-colorear", destination: "/es", permanent: true },
       { source: "/en/coloring-book/:path*", destination: "/en", permanent: true },
       { source: "/es/libro-para-colorear/:path*", destination: "/es", permanent: true },
+      /* Статья про фломастеры, которые проходят сквозь бумагу, снята.
+         Старые адреса ведут в раздел статей, чтобы ссылки не обрывались. */
+      { source: "/en/guides/marker-bleeds-through-coloring-book-pages", destination: "/en/guides", permanent: true },
+      { source: "/es/guias/el-rotulador-traspasa-las-hojas-del-libro", destination: "/es/guias", permanent: true },
+      { source: "/ru/stati/flomaster-prohodit-bumagu-naskvoz", destination: "/ru/stati", permanent: true },
     ];
   },
   /* Два указания браузеру, о которых просила проверка безопасности.

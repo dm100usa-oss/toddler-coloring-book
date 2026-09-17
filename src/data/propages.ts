@@ -299,8 +299,7 @@ export const proPages: ProPage[] = [
           {
             q: "Does the family need anything besides the book?",
             a:
-              "A crayon or a pencil. Crayons and colored pencils do not soak through the paper, " +
-              "which makes them the safer choice here. Nothing has to be cut out, printed or " +
+              "A crayon or a pencil. Nothing has to be cut out, printed or " +
               "prepared in advance.",
           },
           {
@@ -360,8 +359,7 @@ export const proPages: ProPage[] = [
           {
             q: "¿La familia necesita algo además del libro?",
             a:
-              "Solo hace falta un crayón o un lápiz de colores. No traspasan el papel, por " +
-                "lo que son la opción más segura aquí. No es necesario recortar, imprimir ni " +
+              "Solo hace falta un crayón o un lápiz de colores. No es necesario recortar, imprimir ni " +
                 "preparar nada de antemano.",
           },
           {
@@ -421,8 +419,7 @@ export const proPages: ProPage[] = [
           {
             q: "Нужно ли семье что-то кроме книги?",
             a:
-              "Только мелок или цветной карандаш. Они не проходят сквозь бумагу, поэтому " +
-                "здесь это самый надежный выбор. Ничего не нужно вырезать, распечатывать " +
+              "Только мелок или цветной карандаш. Ничего не нужно вырезать, распечатывать " +
                 "или готовить заранее.",
           },
           {
@@ -686,13 +683,6 @@ export const proPages: ProPage[] = [
               "families.",
           },
           {
-            q: "Will a marker come through the page?",
-            a:
-              "Marker ink can go through ordinary paper, and both sides of the sheet carry a " +
-              "drawing. Crayons and colored pencils do not soak through at all, which is why they " +
-              "work better in a room full of children.",
-          },
-          {
             q: "Is it too easy for the older children in a mixed room?",
             a:
               "Past about three and a half, many children may find these pages too simple. The main sign is " +
@@ -747,13 +737,6 @@ export const proPages: ProPage[] = [
               "Las páginas del libro no se pueden fotocopiar. Para actividades de grupo " +
                 "hemos preparado diez páginas gratuitas que pueden imprimirse en cualquier " +
                 "cantidad y, si lo desea, entregarse a los niños para llevar a casa.",
-          },
-          {
-            q: "¿El rotulador traspasa la página?",
-            a:
-              "La tinta de los rotuladores puede traspasar el papel corriente, y las dos caras " +
-                "de la hoja llevan un dibujo. Las ceras y los lápices de colores no traspasan " +
-                "el papel, por eso funcionan mejor en un grupo.",
           },
           {
             q: "¿Resulta demasiado fácil para los mayores de una sala mezclada?",
@@ -811,13 +794,6 @@ export const proPages: ProPage[] = [
               "Страницы самой книги копировать нельзя. Для групповых занятий мы подготовили " +
                 "десять бесплатных страниц, которые можно печатать в любом количестве и при " +
                 "необходимости отдавать детям домой.",
-          },
-          {
-            q: "Проходит ли фломастер страницу насквозь?",
-            a:
-              "Чернила фломастера могут проходить сквозь обычную бумагу, а рисунок есть на " +
-                "обеих сторонах листа. Восковые мелки и цветные карандаши насквозь не " +
-                "проходят, поэтому для группы они удобнее.",
           },
           {
             q: "Не слишком ли это легко для старших в смешанной группе?",
