@@ -119,7 +119,7 @@ editions are there and anyone can read the originals.",
       "Cover, back cover, and page after page, so you can see the line thickness and how much " +
       "of the sheet one drawing takes up before you decide.",
     forWhom: "Who it is for",
-    notFor: "When this book is the wrong choice",
+    notFor: "What comes after this book",
     /* Строка со ссылкой на страницу книги в каталоге издательства. */
     catalogLine: "The book also has its own page in the publisher's catalog, with the full description, all 111 drawings and parents' questions: {link}.",
     catalogAnchor: "coloring book for toddlers ages 1, 2 and 3",
@@ -157,7 +157,7 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
         "cortes. Verá la portada, la contraportada y todas las páginas en orden, para que " +
         "pueda apreciar el grosor de las líneas y el tamaño de los dibujos antes de decidir.",
     forWhom: "Para quién es",
-    notFor: "Cuándo este libro no es la opción",
+    notFor: "Qué viene después de este libro",
     /* Строка со ссылкой на страницу книги в каталоге издательства. */
     catalogLine: "El libro tiene también su propia página en el catálogo de la editorial, con la descripción completa, los 111 dibujos y las preguntas de los padres: {link}.",
     catalogAnchor: "libro para colorear para niños de 1, 2 y 3 años",
@@ -198,7 +198,7 @@ palabras. Las dos ediciones en papel están allí y cualquiera puede leer los or
         "английское издание: рисунки во всех изданиях одинаковые, отличается только слово под " +
         "каждым рисунком.",
     forWhom: "Кому подходит",
-    notFor: "Когда эта книга не подойдет",
+    notFor: "Что дальше после этой книги",
     /* Строка со ссылкой на страницу книги в каталоге издательства. */
     catalogLine: "У книги есть и своя страница в каталоге издательства, с полным описанием, всеми 111 рисунками и вопросами родителей: {link}.",
     catalogAnchor: "раскраска для малышей 1, 2 и 3 лет",

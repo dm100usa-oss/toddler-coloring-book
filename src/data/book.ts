@@ -259,9 +259,8 @@ export const editions: Record<UiLang, Edition> = {
       "first coloring book at home, in preschool and daycare, where one book keeps a whole " +
       "group busy, and as a birthday or holiday gift when you do not know the child well.",
     notFor:
-      "If your child already stays inside the line without effort and finishes a page in a few " +
-      "minutes, this book will bore them. At that point look for a scene with more areas to " +
-      "fill, or a step by step drawing book where the child builds the picture themselves.",
+      "Once a child colors inside the line without effort, the next step is a step by step " +
+      "drawing book, where the child builds the picture themselves.",
     faq: [
       {
         q: "Is this too hard for a 1 year old?",
@@ -419,10 +418,8 @@ export const editions: Record<UiLang, Edition> = {
         "guardería, y también es una buena opción como regalo de cumpleaños o para otra " +
         "ocasión, incluso si no conoce muy bien al niño.",
     notFor:
-      "Si su hijo ya colorea dentro del contorno con facilidad y termina una página en pocos " +
-        "minutos, este libro puede resultarle demasiado sencillo. En ese caso, conviene elegir " +
-        "un libro con dibujos más detallados o uno de dibujo paso a paso, donde el niño cree " +
-        "la imagen por sí mismo.",
+      "Cuando el niño ya colorea dentro del contorno con facilidad, el siguiente paso es un " +
+        "libro de dibujo paso a paso, donde crea el dibujo por sí mismo.",
     faq: [
       {
         q: "¿Es demasiado difícil para un niño de 1 año?",
@@ -581,10 +578,8 @@ export const editions: Record<UiLang, Edition> = {
         "подарком на день рождения или другой праздник, даже если вы не очень хорошо знаете " +
         "ребенка.",
     notFor:
-      "Если ребенок уже легко раскрашивает внутри контура и справляется со страницей за " +
-        "несколько минут, эта книга может показаться ему слишком простой. В таком случае лучше " +
-        "выбрать раскраску с более детальными рисунками или книгу с пошаговым рисованием, где " +
-        "ребенок сам создает рисунок.",
+      "Когда ребенок уже легко раскрашивает внутри контура, следующий шаг - книга с " +
+        "пошаговым рисованием, где он сам создает рисунок.",
     faq: [
       {
         q: "Не слишком ли это сложно для годовалого ребенка?",
