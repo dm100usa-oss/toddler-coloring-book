@@ -608,7 +608,7 @@ function Specs({ lang }: { lang: ContentLang }) {
             {x.printTitle}
           </h2>
           <p className="teach-p">{x.printText}</p>
-          <p style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+          <p className="btn-row btn-row--equal">
             <Link className="btn btn--sun" href={sectionPath(lang, "printables")}>
               {x.printCta}
             </Link>
@@ -645,7 +645,8 @@ function ProgramsContact({ lang }: { lang: ContentLang }) {
         <div className="teach">
           <h2 className="section">{x.contactTitle}</h2>
           <p className="teach-p">{x.contactText}</p>
-          <p style={{ margin: 0 }}>
+          {/* Кнопка того же размера, что три кнопки в блоке выше. */}
+          <p className="btn-row btn-row--equal" style={{ margin: 0 }}>
             <a className="btn btn--pink" href={`mailto:${CONTACT_EMAIL}`}>
               {x.contactCta}
             </a>

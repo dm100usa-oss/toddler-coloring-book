@@ -2682,3 +2682,54 @@ h2.section--center { text-align: center; }
 
 /* Вопросы сразу под вступительной строкой, без пустого промежутка. */
 .band.band--tight { padding-top: 0; }
+
+/* Ряд кнопок одинакового размера: на компьютере три равные колонки,
+   кнопки одной ширины и высоты, текст по центру. На телефоне друг под
+   другом во всю ширину. */
+.btn-row--equal { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+@media (min-width: 900px) {
+  .btn-row--equal { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.btn-row--equal .btn { width: 100% !important; display: flex; align-items: center; justify-content: center; text-align: center; }
+
+/* Текст внутри кнопок всегда по центру, в том числе последняя строка. */
+main .btn { text-align: center; text-align-last: center; }
+
+/* ==================== ПОДВАЛ ==================== */
+.footer__cols, .footer__bottom { max-width: calc(var(--maxw) - 2 * clamp(1rem, 4vw, 2rem)); margin-inline: auto; }
+@media (min-width: 760px) {
+  .footer__cols { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--gap-4); }
+}
+.footer .footer__title {
+  font-size: var(--t-micro); font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.06em; opacity: 0.7; margin: 0 0 0.6rem;
+}
+.footer .footer__about { margin: 0; max-width: none; text-align: left; }
+.footer__menu { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem 1.5rem; grid-template-columns: repeat(2, max-content); }
+.footer__menu--one { grid-template-columns: 1fr; }
+.footer__mail { overflow-wrap: anywhere; }
+.footer__bottom {
+  margin-top: var(--gap-3); padding-top: var(--gap-2);
+  border-top: 1px solid rgba(12, 63, 59, 0.18); text-align: center;
+}
+.footer .footer__bottom p { text-align: center; margin: 0 0 0.3rem; }
+.footer .footer__bottom .footer__disclaimer { max-width: none; margin: 0; padding: 0; border: 0; }
+@media (max-width: 520px) {
+  .footer__menu { grid-template-columns: 1fr 1fr; }
+}
+
+/* ==================== ПРОМЕЖУТКИ ==================== */
+/* Два белых блока подряд давали двойной пустой промежуток. Второй
+   начинается сразу, с обычным отступом первого. */
+.band:not([class*="band--"]) + .band:not([class*="band--"]) { padding-top: 0; }
+/* Карточка, оставшаяся одна в последнем ряду из двух, занимает всю
+   ширину, а не половину с пустотой справа. */
+@media (min-width: 760px) {
+  .guides > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* Текст о проекте в подвале по ширине, как весь обычный текст. */
+.footer .footer__about { text-align: justify; text-align-last: left; hyphens: auto; -webkit-hyphens: auto; }
+@media (min-width: 900px) { .footer .footer__about { hyphens: manual; -webkit-hyphens: manual; } }
+/* Почта и каталог всегда одной колонкой, почта не рвется посередине. */
+.footer .footer__menu--one { grid-template-columns: 1fr; }

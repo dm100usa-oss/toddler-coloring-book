@@ -149,45 +149,59 @@ export function Footer({ lang }: { lang: UiLang }) {
      Служебных строк со странами больше нет. Те же ссылки стоят выше,
      в блоке "Книга в других странах", и там они видны человеку, а не
      спрятаны мелким шрифтом в самом низу. */
+  /* Подвал в три колонки с подписями: о проекте, разделы, связаться.
+     Внизу за тонкой чертой по центру права и оговорка. Ширина подвала
+     совпадает с шириной страницы. */
   return (
     <footer className="footer">
       <div className="footer__cols">
-        {/* Кто мы. Пометка data-nosnippet не убирает текст со страницы
-            и не мешает его читать: она запрещает Google брать именно
-            этот кусок в описание под ссылкой в выдаче. Понадобилась
-            потому, что у русских страниц Google подставлял под каждой
-            ссылкой одну и ту же строку про издательство вместо
-            собственного описания страницы. Тег span выбран не
-            случайно: пометка действует только на div, span и section. */}
         <div className="footer__col">
+          <p className="footer__title">{t.footer.aboutTitle}</p>
           <p className="footer__about">
             <span data-nosnippet>{t.footer.about}</span>
           </p>
-          <p className="footer__copy">
-            © {new Date().getFullYear()} {PUBLISHER}. {t.footer.rights}
-          </p>
         </div>
 
-        {/* Куда пойти. Вопросы, права и каталог стоят в подвале, а не
-            в меню: страницы нужные, но не те, ради которых человек
-            пришел, а в шапке на телефоне и без них уже две строки. */}
-        <nav className="footer__col footer__links">
-          <a href={catalogUrl(lang)} rel="noopener">{t.footer.catalog}</a>
-          <Link href={sectionPath(lang, "faq")}>{t.nav.faq}</Link>
-          <Link href={sectionPath(lang, "terms")}>{t.nav.terms}</Link>
+        <nav className="footer__col" aria-label={t.footer.sectionsTitle}>
+          <p className="footer__title">{t.footer.sectionsTitle}</p>
+          <ul className="footer__menu">
+            {navFor(lang).map((s) => (
+              <li key={s}>
+                <Link href={sectionPath(lang, s)}>{t.nav[s]}</Link>
+              </li>
+            ))}
+            <li>
+              <Link href={sectionPath(lang, "faq")}>{t.nav.faq}</Link>
+            </li>
+            <li>
+              <Link href={sectionPath(lang, "terms")}>{t.nav.terms}</Link>
+            </li>
+          </ul>
         </nav>
 
-        {/* Как написать. */}
         <div className="footer__col">
-          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          <p className="footer__title">{t.footer.contactTitle}</p>
+          <ul className="footer__menu footer__menu--one">
+            <li>
+              <a className="footer__mail" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            </li>
+            <li>
+              <a href={catalogUrl(lang)} rel="noopener">{t.footer.catalog}</a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* Оговорка одной строкой. Полный текст на странице прав. */}
-      <p className="footer__disclaimer">
-        {t.footer.disclaimerShort}{" "}
-        <Link href={sectionPath(lang, "terms")}>{t.footer.disclaimerLink}</Link>
-      </p>
+      <div className="footer__bottom">
+        <p className="footer__copy">
+          © {new Date().getFullYear()} {PUBLISHER}. {t.footer.rights}
+        </p>
+        {/* Оговорка одной строкой. Полный текст на странице прав. */}
+        <p className="footer__disclaimer">
+          {t.footer.disclaimerShort}{" "}
+          <Link href={sectionPath(lang, "terms")}>{t.footer.disclaimerLink}</Link>
+        </p>
+      </div>
     </footer>
   );
 }

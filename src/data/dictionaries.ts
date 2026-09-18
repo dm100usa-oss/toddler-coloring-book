@@ -176,6 +176,10 @@ export type Dict = {
   };
   footer: {
     about: string;
+    /** Подписи колонок подвала. */
+    aboutTitle: string;
+    sectionsTitle: string;
+    contactTitle: string;
     catalog: string;
     rights: string;
     /** Оговорка о том, чем этот сайт не является. Стоит в подвале, то
@@ -436,6 +440,9 @@ export const dictionaries: Record<UiLang, Dict> = {
         `Page from the book, free to print: ${name}, thick outlines, one drawing per page`,
     },
     footer: {
+      aboutTitle: "About the project",
+      sectionsTitle: "Pages",
+      contactTitle: "Contact",
       about:
         "Toddler Coloring Book is published by Magic of Discoveries LLC, a children's book " +
         "publisher in Miami, Florida. We write about the first stage of drawing and we publish " +
@@ -700,6 +707,9 @@ export const dictionaries: Record<UiLang, Dict> = {
         `Página del libro, gratis para imprimir: ${name}, contornos gruesos, un dibujo por página`,
     },
     footer: {
+      aboutTitle: "Sobre el proyecto",
+      sectionsTitle: "Secciones",
+      contactTitle: "Contacto",
       about:
         "Toddler Coloring Book es un proyecto de Magic of Discoveries LLC, una editorial de " +
           "libros infantiles de Miami, Florida. Aquí hablamos de las primeras etapas del " +
@@ -882,7 +892,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Что спрашивают родители",
-      questionsPro: "Частые вопросы",
+      questionsPro: "Часто задаваемые вопросы",
       faqElsewhere: "Еще ответы на других страницах сайта",
       faqSourcesNote:
         "Все, что касается возраста ребенка, опирается на открытые источники, перечисленные внизу справочных страниц.",
@@ -953,6 +963,9 @@ export const dictionaries: Record<UiLang, Dict> = {
         `Страница из книги, бесплатно для печати: ${name}, толстый контур, один рисунок на странице`,
     },
     footer: {
+      aboutTitle: "О проекте",
+      sectionsTitle: "Разделы",
+      contactTitle: "Связаться",
       about:
         "Toddler Coloring Book (Раскраска для малышей) - проект издательства Magic of " +
           "Discoveries LLC из Майами, штат Флорида. Здесь мы рассказываем о первых этапах " +
