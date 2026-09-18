@@ -434,7 +434,7 @@ export const dictionaries: Record<UiLang, Dict> = {
         "You pay here, and the link arrives by email right after checkout. Print it at home as " +
         "many times as you need.",
       stageTitle: (title, age) => `${title}: coloring at ${age}`,
-      stageMetaTitle: (title, age) => `${title}: ${age.replace(/^about /, "")}`,
+      stageMetaTitle: (title, age) => `${title}: coloring at ${age.replace(/^about /, "")}`,
       sheetAlt: (name) => `Free printable coloring page: ${name}`,
       pageAlt: (name) =>
         `Page from the book, free to print: ${name}, thick outlines, one drawing per page`,
@@ -701,7 +701,7 @@ export const dictionaries: Record<UiLang, Dict> = {
         "El pago se hace aquí y el enlace llega por correo justo después de la compra. Se puede " +
         "imprimir en casa tantas veces como haga falta.",
       stageTitle: (title, age) => `${title}: colorear a ${age}`,
-      stageMetaTitle: (title, age) => `${title}: ${age.replace(/^aproximadamente de /, "")}`,
+      stageMetaTitle: (title, age) => `${title}: colorear de ${age.replace(/^aproximadamente de /, "")}`,
       sheetAlt: (name) => `Dibujo para colorear gratis: ${name}`,
       pageAlt: (name) =>
         `Página del libro, gratis para imprimir: ${name}, contornos gruesos, un dibujo por página`,
@@ -957,7 +957,7 @@ export const dictionaries: Record<UiLang, Dict> = {
         "Оплата проходит здесь, ссылка на файл приходит на почту сразу после оплаты. Печатать " +
         "его дома можно столько раз, сколько нужно.",
       stageTitle: (title, age) => `${title}: раскрашивание ${age}`,
-      stageMetaTitle: (title, age) => `${title}: ${age.replace(/^примерно /, "")}`,
+      stageMetaTitle: (title, age) => `${title}: раскрашивание ${age.replace(/^примерно /, "")}`,
       sheetAlt: (name) => `Бесплатная раскраска для печати: ${name}`,
       pageAlt: (name) =>
         `Страница из книги, бесплатно для печати: ${name}, толстый контур, один рисунок на странице`,

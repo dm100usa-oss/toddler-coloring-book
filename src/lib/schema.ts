@@ -37,12 +37,12 @@ export function breadcrumbs(lang: UiLang, trail: { name: string; path: string }[
 export function organization() {
   return {
     "@type": "Organization",
-    "@id": `${SITE_URL}/#publisher`,
+    "@id": "https://www.magicofdiscoveries.com/#publisher",
     name: PUBLISHER,
     url: SITE_URL,
     address: ADDRESS,
     sameAs: [CATALOG_URL, ...Object.values(SOCIAL)],
-    founder: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
+    founder: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
   };
 }
 
@@ -53,7 +53,7 @@ export function website(lang: UiLang) {
     name: SITE_NAME,
     url: `${SITE_URL}${homePath(lang)}`,
     inLanguage: dictionaries[lang].htmlLang,
-    publisher: { "@id": `${SITE_URL}/#publisher` },
+    publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
   };
 }
 

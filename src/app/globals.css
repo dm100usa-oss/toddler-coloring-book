@@ -2733,3 +2733,7 @@ main .btn { text-align: center; text-align-last: center; }
 @media (min-width: 900px) { .footer .footer__about { hyphens: manual; -webkit-hyphens: manual; } }
 /* Почта и каталог всегда одной колонкой, почта не рвется посередине. */
 .footer .footer__menu--one { grid-template-columns: 1fr; }
+
+/* Автор и даты под заголовком статьи. */
+.byline-top { margin: var(--gap-2) 0 0; font-size: var(--t-small); color: var(--ink-2); text-align: left; }
+.byline-top a { font-weight: 800; }

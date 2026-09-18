@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Byline } from "@/components/Chrome";
 import { notFound } from "next/navigation";
 import { activeLangs, contentLangs, dictionaries, isContentLang } from "@/data/dictionaries";
 import type { UiLang, ContentLang } from "@/data/dictionaries";
@@ -14,7 +15,7 @@ import { basisCopy, basisSlug, toolLabels } from "@/data/tool";
 import { agePages, agePageBySlug, agePageLabels } from "@/data/agepages";
 import { proPages, proPageBySlug, proLabels } from "@/data/propages";
 import type { ProPage } from "@/data/propages";
-import { CONTACT_EMAIL } from "@/lib/site";
+import { CONTACT_EMAIL, shortDesc } from "@/lib/site";
 import type { AgePage } from "@/data/agepages";
 import { homePath, sectionFromSlug, sectionSlugs, sectionPath, itemPath } from "@/lib/routes";
 import { SITE_URL, SOURCES, SITE_PUBLISHED, SITE_UPDATED, AUTHOR } from "@/lib/site";
@@ -73,7 +74,7 @@ export async function generateMetadata({
     if (!g) return {};
     return {
       title: g.metaTitle?.[l] ?? g.title[l],
-      description: g.lead[l],
+      description: shortDesc(g.lead[l]),
       alternates: {
         canonical: `${SITE_URL}${itemPath(l, "guides", g.slug[l])}`,
         languages: langAlternates({
@@ -91,7 +92,7 @@ export async function generateMetadata({
     const c = pp.copy[l];
     return {
       title: c.metaTitle ?? c.title,
-      description: c.lead,
+      description: shortDesc(c.lead),
       alternates: {
         canonical: `${SITE_URL}${itemPath(l, "programs", pp.slug[l])}`,
         languages: langAlternates({
@@ -109,7 +110,7 @@ export async function generateMetadata({
       const c = ap.copy[l];
       return {
         title: c.metaTitle ?? c.title,
-        description: c.lead,
+        description: shortDesc(c.lead),
         alternates: {
           canonical: `${SITE_URL}${itemPath(l, "tools", ap.slug[l])}`,
           languages: langAlternates({
@@ -124,7 +125,7 @@ export async function generateMetadata({
     const b = basisCopy[l];
     return {
       title: b.title,
-      description: b.lead,
+      description: shortDesc(b.lead),
       alternates: {
         canonical: `${SITE_URL}${itemPath(l, "tools", basisSlug[l])}`,
         languages: langAlternates({
@@ -145,7 +146,7 @@ export async function generateMetadata({
 
   return {
     title,
-    description: st.can[l].join(". ") + ". " + st.notYet[l],
+    description: shortDesc(st.can[l].join(". ") + ". " + st.notYet[l]),
     alternates: {
       canonical: `${SITE_URL}${itemPath(l, "ages", st.slug[l])}`,
       languages: langAlternates({
@@ -226,8 +227,8 @@ export default async function StagePage({
          биографии, которую можно проверить, а у автора есть:
          полка на Amazon с его книгами для детей. Издательство
          осталось на своем месте, отдельной строкой ниже. */
-      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
-      publisher: { "@id": `${SITE_URL}/#publisher` },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
+      publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
         name: src.title,
@@ -245,6 +246,7 @@ export default async function StagePage({
         <h1>{title}</h1>
         <p>{st.notYet[l]}</p>
       </div>
+      <Byline lang={l} />
 
       <section className="band">
         <div className="wrap">
@@ -509,8 +511,8 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
          биографии, которую можно проверить, а у автора есть:
          полка на Amazon с его книгами для детей. Издательство
          осталось на своем месте, отдельной строкой ниже. */
-      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
-      publisher: { "@id": `${SITE_URL}/#publisher` },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
+      publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
         name: src.title,
@@ -528,6 +530,7 @@ function GuideArticle({ lang, guide }: { lang: ContentLang; guide: Guide }) {
       <div className="pagehead">
         <h1>{guide.title[lang]}</h1>
       </div>
+      <Byline lang={lang} />
 
       <section className="band">
         <div className="wrap">
@@ -726,8 +729,8 @@ function BasisPage({ lang }: { lang: ContentLang }) {
          биографии, которую можно проверить, а у автора есть:
          полка на Amazon с его книгами для детей. Издательство
          осталось на своем месте, отдельной строкой ниже. */
-      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
-      publisher: { "@id": `${SITE_URL}/#publisher` },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
+      publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
         name: src.title,
@@ -745,6 +748,7 @@ function BasisPage({ lang }: { lang: ContentLang }) {
         <h1>{b.title}</h1>
         <p>{b.lead}</p>
       </div>
+      <Byline lang={lang} />
 
       <section className="band">
         <div className="wrap">
@@ -963,8 +967,8 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
          биографии, которую можно проверить, а у автора есть:
          полка на Amazon с его книгами для детей. Издательство
          осталось на своем месте, отдельной строкой ниже. */
-      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
-      publisher: { "@id": `${SITE_URL}/#publisher` },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
+      publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
       citation: SOURCES.map((src) => ({
         "@type": "CreativeWork",
         name: src.title,
@@ -983,6 +987,7 @@ function AgeArticle({ lang, page }: { lang: ContentLang; page: AgePage }) {
         <h1>{c.title}</h1>
         <p>{c.lead}</p>
       </div>
+      <Byline lang={lang} />
 
       <section className="band">
         <div className="wrap">
@@ -1207,8 +1212,8 @@ function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
          биографии, которую можно проверить, а у автора есть:
          полка на Amazon с его книгами для детей. Издательство
          осталось на своем месте, отдельной строкой ниже. */
-      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
-      publisher: { "@id": `${SITE_URL}/#publisher` },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
+      publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
     },
     faqPage(c.faq)
   );
@@ -1221,6 +1226,7 @@ function ProArticle({ lang, page }: { lang: ContentLang; page: ProPage }) {
         <h1>{c.title}</h1>
         <p>{c.lead}</p>
       </div>
+      <Byline lang={lang} />
 
       <section className="band">
         <div className="wrap">

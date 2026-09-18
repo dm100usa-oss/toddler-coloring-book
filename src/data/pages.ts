@@ -578,6 +578,7 @@ export const printablesCopy: Record<UiLang, SectionCopy> = {
 export const aboutCopy: Record<UiLang, SectionCopy> = {
   en: {
     title: "Who runs this site",
+    metaTitle: "About us: Magic of Discoveries, a children's book publisher in Miami",
     lead:
       "Toddler Coloring Book is published by Magic of Discoveries LLC, a small children's book " +
       "publisher in Miami, Florida, run by Ricardo and Maria Demi.",
@@ -605,6 +606,7 @@ export const aboutCopy: Record<UiLang, SectionCopy> = {
 
   es: {
     title: "Quién está detrás de este sitio",
+    metaTitle: "Quiénes somos: Magic of Discoveries, editorial de libros infantiles en Miami",
     lead:
       "Toddler Coloring Book es un proyecto de Magic of Discoveries LLC, una pequeña " +
         "editorial de libros infantiles de Miami, Florida. Ricardo y Maria Demi están detrás " +
@@ -637,6 +639,7 @@ export const aboutCopy: Record<UiLang, SectionCopy> = {
 
   ru: {
     title: "Кто ведет этот сайт",
+    metaTitle: "О нас: Magic of Discoveries, издательство детских книг в Майами",
     lead:
       "Toddler Coloring Book (Раскраска для малышей) - проект небольшого издательства " +
         "детских книг Magic of Discoveries LLC из Майами, штат Флорида. Сайтом занимаются " +

@@ -33,8 +33,7 @@ import {
   PUBLISHER,
   AUTHOR,
   ADDRESS,
-  PICKER_NAME,
-} from "@/lib/site";
+  PICKER_NAME, shortDesc } from "@/lib/site";
 import { jsonLd, organization, website, langAlternates } from "@/lib/schema";
 
 export async function generateMetadata({
@@ -48,7 +47,7 @@ export async function generateMetadata({
   const ed = editions[l];
   return {
     title: ed.title,
-    description: ed.headline + " " + ed.note,
+    description: shortDesc(ed.headline + " " + ed.note),
     alternates: {
       canonical: `${SITE_URL}${homePath(l)}`,
       languages: langAlternates({
@@ -66,7 +65,7 @@ export async function generateMetadata({
        мессенджер обрезал у нее название сверху и возраст снизу. */
     openGraph: {
       title: ed.title,
-      description: ed.headline,
+      description: shortDesc(ed.headline),
       images: [
         { url: SHARE.url(l), width: SHARE.w, height: SHARE.h, alt: ed.title },
       ],
@@ -257,7 +256,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       ...(ed.wikidata
         ? { sameAs: [`https://www.wikidata.org/wiki/${ed.wikidata}`] }
         : {}),
-      author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
       publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
       description: ed.headline + " " + ed.note,
       /* Весь состав книги словами: что внутри, что она дает и где
@@ -407,7 +406,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       inLanguage: t.htmlLang,
       isAccessibleForFree: true,
       isFamilyFriendly: true,
-      author: { "@type": "Person", name: AUTHOR.name },
+      author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
       publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
     },
     {

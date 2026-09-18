@@ -3,7 +3,7 @@ import Link from "next/link";
 import { sheets, sheetPreview, sheetPdf, sheetsPdfAll } from "@/data/sheets";
 import { euroUi, euroPath, type EuroLang, type EditionLang } from "@/data/euro";
 import { freeCopyOf, freePath } from "@/data/free";
-import { SITE_URL, PUBLISHER, ADDRESS, EURO_SHARE } from "@/lib/site";
+import { SITE_URL, PUBLISHER, ADDRESS, EURO_SHARE, shortDesc } from "@/lib/site";
 import { nb } from "@/lib/nobreak";
 
 /* Страница бесплатной печати. Одна из восьми.
@@ -38,13 +38,26 @@ import { nb } from "@/lib/nobreak";
    ровно то, что купит. Только A4: американский формат Letter
    в Европе не нужен. */
 
+/* Английская и испанская версии бесплатных листов одной страны раньше
+   назывались одинаково, и поисковик видел два одинаковых названия.
+   К названию добавлен язык слов под рисунками. */
+const WORDS_LANG: Partial<Record<string, Record<string, string>>> = {
+  de: { en: "(englische Wörter)", es: "(spanische Wörter)" },
+  fr: { en: "(mots en anglais)", es: "(mots en espagnol)" },
+  nl: { en: "(Engelse woorden)", es: "(Spaanse woorden)" },
+  pl: { en: "(słowa po angielsku)", es: "(słowa po hiszpańsku)" },
+  it: { en: "(parole in inglese)", es: "(parole in spagnolo)" },
+};
+
 export function freeMetadata(lang: EuroLang, ed: EditionLang): Metadata {
-  const c = freeCopyOf(lang, ed);
+  const base = freeCopyOf(lang, ed);
+  const suffix = WORDS_LANG[lang]?.[ed];
+  const c = { ...base, metaTitle: suffix ? `${base.metaTitle} ${suffix}` : base.metaTitle };
   const u = euroUi[lang];
   const url = `${SITE_URL}${freePath(lang, ed)}`;
   return {
     title: c.metaTitle,
-    description: c.metaDescription,
+    description: shortDesc(c.metaDescription),
     /* Своя единственная основная версия, как и у торговых страниц.
        hreflang не ставится: это не переводы друг друга, а разные
        материалы для разных стран. */
@@ -53,7 +66,7 @@ export function freeMetadata(lang: EuroLang, ed: EditionLang): Metadata {
       type: "article",
       locale: u.locale,
       title: c.metaTitle,
-      description: c.metaDescription,
+      description: shortDesc(c.metaDescription),
       url,
       /* Широкая картинка для мессенджеров: обложка книги с надписью
          про слова. Первый лист сюда не годится, он вертикальный
@@ -97,11 +110,11 @@ export default function FreePage({
            слова остается немецкой страницей. */
         inLanguage: u.htmlLang,
         isPartOf: { "@id": `${SITE_URL}/#website` },
-        publisher: { "@id": `${SITE_URL}/#publisher` },
+        publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
       },
       {
         "@type": "Organization",
-        "@id": `${SITE_URL}/#publisher`,
+        "@id": "https://www.magicofdiscoveries.com/#publisher",
         name: PUBLISHER,
         url: SITE_URL,
         address: ADDRESS,
@@ -123,7 +136,7 @@ export default function FreePage({
             encodingFormat: "application/pdf",
             inLanguage: ed,
             isAccessibleForFree: true,
-            publisher: { "@id": `${SITE_URL}/#publisher` },
+            publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
           },
         })),
       },

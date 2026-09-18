@@ -33,8 +33,7 @@ import {
   CATALOG_URL,
   EURO_SHARE,
   SITE_PUBLISHED,
-  SITE_UPDATED,
-} from "@/lib/site";
+  SITE_UPDATED, shortDesc } from "@/lib/site";
 
 /** Первоисточник независимой рецензии. */
 const CRITIC_URL =
@@ -71,7 +70,7 @@ export function euroMetadata(lang: EuroLang, ed: EditionLang): Metadata {
   const url = `${SITE_URL}${euroPath(lang, ed)}`;
   return {
     title: c.metaTitle,
-    description: c.metaDescription,
+    description: shortDesc(c.metaDescription),
     /* Своя основная версия у каждой страницы своя, и это главное:
        без нее поисковик начал бы выбирать между страницами одну,
        а нам нужно, чтобы каждая жила в своей стране.
@@ -97,7 +96,7 @@ export function euroMetadata(lang: EuroLang, ed: EditionLang): Metadata {
       type: "article",
       locale: u.locale,
       title: c.metaTitle,
-      description: c.metaDescription,
+      description: shortDesc(c.metaDescription),
       url,
       /* Широкая картинка для мессенджеров, не обложка. Обложка
          вертикальная и в формате WebP: WhatsApp такую не показывает
@@ -220,7 +219,7 @@ export default function EuroPage({
         datePublished: SITE_PUBLISHED,
         dateModified: SITE_UPDATED,
         isPartOf: { "@id": `${SITE_URL}/#website` },
-        publisher: { "@id": `${SITE_URL}/#publisher` },
+        publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
         primaryImageOfPage: `${SITE_URL}${art.cover}`,
       },
       /* Путь по разделам. В выдаче поисковик может показать его вместо
@@ -247,7 +246,7 @@ export default function EuroPage({
       },
       {
         "@type": "Organization",
-        "@id": `${SITE_URL}/#publisher`,
+        "@id": "https://www.magicofdiscoveries.com/#publisher",
         name: PUBLISHER,
         url: SITE_URL,
         address: ADDRESS,
@@ -259,7 +258,7 @@ export default function EuroPage({
         /* Второе название книги. То же издание, но словом, которым
            его чаще ищут. Подробнее в src/data/book.ts. */
         alternateName: editions[ed].altTitle,
-        author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
+        author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
         publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
         /* Язык книги: слова под рисунками. */
         inLanguage: ed,
@@ -362,7 +361,7 @@ export default function EuroPage({
         inLanguage: ed,
         isAccessibleForFree: true,
         isFamilyFriendly: true,
-        author: { "@type": "Person", name: AUTHOR.name },
+        author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
         publisher: { "@type": "Organization", name: PUBLISHER, address: ADDRESS },
       },
       {

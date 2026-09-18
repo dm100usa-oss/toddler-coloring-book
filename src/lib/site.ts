@@ -17,7 +17,7 @@ export const CONTACT_EMAIL = "magicofdiscoveries@gmail.com";
     материал с понятной датой, а без даты обновления страница
     со временем начинает выглядеть заброшенной. */
 export const SITE_PUBLISHED = "2026-08-21";
-export const SITE_UPDATED = "2026-09-04";
+export const SITE_UPDATED = "2026-09-18";
 
 /** Где находится издательство. Улицу не публикуем, только город. */
 export const ADDRESS = {
@@ -80,9 +80,24 @@ export const CATALOG_URL = "https://www.magicofdiscoveries.com";
     сайт: язык стоит первой частью адреса. */
 export const catalogUrl = (lang: "en" | "es" | "ru") => `${CATALOG_URL}/${lang}`;
 
+/** Издательство и автор под теми же внутренними номерами, что и на
+    основном сайте: для поисковика и ИИ это одно издательство и один
+    человек, а не двое однофамильцев на двух сайтах. */
+export const ORG_ID = "https://www.magicofdiscoveries.com/#publisher";
+
 export const AUTHOR = {
   name: "Ricardo Demi",
+  id: "https://www.magicofdiscoveries.com/#ricardo-demi",
   amazon: "https://www.amazon.com/stores/Ricardo-Demi/author/B0D3CQP21H",
+  /** Подтверждения автора: карточка в Wikidata, сайт с методикой,
+      полки в книжных магазинах. */
+  sameAs: [
+    "https://www.wikidata.org/wiki/Q137125272",
+    "https://www.ricardo-demi.com",
+    "https://www.amazon.com/stores/Ricardo-Demi/author/B0D3CQP21H",
+    "https://www.goodreads.com/author/show/49458093.Ricardo_Demi",
+    "https://www.thriftbooks.com/a/ricardo-demi/11319271/",
+  ],
 };
 
 export const SOCIAL = {
@@ -136,3 +151,22 @@ export const path = (lang: UiLang, ...parts: string[]) =>
    за ним стоит. Наш отличается тем, что работает для возраста от года
    до трех, где остальные не начинаются. */
 export const PICKER_NAME = "First Coloring Book Finder";
+
+/** Описание для выдачи поисковика. Поисковик показывает около 155 знаков
+    и обрезает остальное на полуслове, поэтому длинное описание
+    сокращается по целым предложениям. Если уже первое предложение
+    длиннее, оно обрезается по целому слову. */
+export function shortDesc(text: string, max = 158): string {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const sentences = t.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [];
+  let out = "";
+  for (const sn of sentences) {
+    if ((out + sn).trim().length > max) break;
+    out += sn;
+  }
+  out = out.trim();
+  if (out.length >= 70) return out;
+  const cut = t.slice(0, max - 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "") + "…";
+}

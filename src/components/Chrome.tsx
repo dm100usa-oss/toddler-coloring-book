@@ -2,7 +2,7 @@ import Link from "next/link";
 import { dictionaries, activeLangs, navFor } from "@/data/dictionaries";
 import type { UiLang } from "@/data/dictionaries";
 import { homePath, sectionPath } from "@/lib/routes";
-import { PUBLISHER, catalogUrl, CONTACT_EMAIL } from "@/lib/site";
+import { PUBLISHER, catalogUrl, CONTACT_EMAIL, AUTHOR, SITE_PUBLISHED, SITE_UPDATED } from "@/lib/site";
 
 /* Шапка сайта. Наверху рисованный баннер книги: название, возраст,
    число рисунков и перечень тем сразу, одной картинкой. Свой баннер
@@ -203,5 +203,34 @@ export function Footer({ lang }: { lang: UiLang }) {
         </p>
       </div>
     </footer>
+  );
+}
+
+/* Автор и даты под заголовком статьи. Видны человеку, а не только
+   машине: читатель статьи о развитии ребенка должен знать, кто ее
+   написал и когда ее проверяли. */
+const BYLINE = {
+  en: { by: "By", pub: "Published", upd: "Updated", locale: "en-US" },
+  es: { by: "Por", pub: "Publicado", upd: "Actualizado", locale: "es-ES" },
+  ru: { by: "Автор:", pub: "Опубликовано", upd: "Обновлено", locale: "ru-RU" },
+} as const;
+
+export function Byline({ lang }: { lang: "en" | "es" | "ru" }) {
+  const b = BYLINE[lang];
+  const fmt = (d: string) =>
+    new Date(d + "T12:00:00Z").toLocaleDateString(b.locale, {
+      day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+    }).replace(" г.", "");
+  return (
+    <div className="wrap">
+      <p className="byline-top">
+        {b.by}{" "}
+        <Link href={sectionPath(lang, "about")}>{AUTHOR.name}</Link>
+        {" · "}
+        {b.pub} <time dateTime={SITE_PUBLISHED}>{fmt(SITE_PUBLISHED)}</time>
+        {" · "}
+        {b.upd} <time dateTime={SITE_UPDATED}>{fmt(SITE_UPDATED)}</time>
+      </p>
+    </div>
   );
 }

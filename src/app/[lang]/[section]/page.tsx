@@ -22,7 +22,7 @@ import { toolCopy, toolLabels, ageRows, basisSlug } from "@/data/tool";
 import { agePages, agePageLabels } from "@/data/agepages";
 import { programsCopy, programsLabels, audiences, specs } from "@/data/programs";
 import { proPages, proLabels } from "@/data/propages";
-import { CONTACT_EMAIL } from "@/lib/site";
+import { CONTACT_EMAIL, shortDesc } from "@/lib/site";
 import Picker from "@/components/Picker";
 import { sectionFromSlug, sectionSlugs, sectionPath, itemPath, homePath } from "@/lib/routes";
 import type { Section } from "@/lib/routes";
@@ -95,7 +95,7 @@ export async function generateMetadata({
     /* metaTitle стоит только там, где заголовок длинный. Везде
        остальном берется обычный заголовок страницы. */
     title: copy.metaTitle ?? copy.title,
-    description: copy.lead,
+    description: shortDesc(copy.lead),
     alternates: {
       canonical: `${SITE_URL}${sectionPath(l, s)}`,
       languages: langAlternates({
@@ -146,8 +146,8 @@ export default async function SectionPage({
                    биографии, которую можно проверить, а у автора есть:
                    полка на Amazon с его книгами для детей. Издательство
                    осталось на своем месте, отдельной строкой ниже. */
-                author: { "@type": "Person", name: AUTHOR.name, sameAs: [AUTHOR.amazon] },
-                publisher: { "@id": `${SITE_URL}/#publisher` },
+                author: { "@type": "Person", "@id": AUTHOR.id, name: AUTHOR.name, sameAs: AUTHOR.sameAs },
+                publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
                 citation: SOURCES.map((src) => ({
                   "@type": "CreativeWork",
                   name: src.title,
@@ -190,7 +190,7 @@ export default async function SectionPage({
                         { "@type": "ParentAudience" },
                         { "@type": "PeopleAudience", suggestedMinAge: 1, suggestedMaxAge: 3 },
                       ],
-                      publisher: { "@id": `${SITE_URL}/#publisher` },
+                      publisher: { "@id": "https://www.magicofdiscoveries.com/#publisher" },
                       citation: SOURCES.map((src) => ({
                         "@type": "CreativeWork",
                         name: src.title,
