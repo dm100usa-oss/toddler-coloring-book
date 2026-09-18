@@ -265,11 +265,11 @@ export default async function SectionPage({
       {s === "printables" && isContentLang(l) && <SheetsByStage lang={l} />}
       {s === "guides" && isContentLang(l) && <GuideList lang={l} />}
 
-      {copy.faq && (
+      {copy.faq && s !== "programs" && (
         <section className="band band--cream">
           <div className="wrap">
             <div className="teach">
-              <h2 className="section">{t.sec.questions}</h2>
+              <h2 className="section section--center">{t.sec.questions}</h2>
               <div className="faq faq--two">
                 {copy.faq.map((item) => (
                   <details key={item.q}>
@@ -285,13 +285,33 @@ export default async function SectionPage({
 
       {s === "faq" && <FaqBody lang={l} />}
 
-      {s === "programs" && isContentLang(l) && <ProPageList lang={l} />}
+      {/* Для специалистов: сначала кто и где этим пользуется, чтобы
+          человек сразу узнал себя, потом страницы для покупки. */}
       {s === "programs" && isContentLang(l) && <Audiences lang={l} />}
+      {s === "programs" && isContentLang(l) && <ProPageList lang={l} />}
       {s === "programs" && isContentLang(l) && <Specs lang={l} />}
       {s === "printables" && isContentLang(l) && <ProgramsNote lang={l} />}
       {s === "tools" && isContentLang(l) && <AgePageList lang={l} />}
       {s === "tools" && isContentLang(l) && <BasisLink lang={l} />}
       {s === "programs" && isContentLang(l) && <ProgramsContact lang={l} />}
+      {/* Вопросы на странице для специалистов стоят в конце. */}
+      {copy.faq && s === "programs" && (
+        <section className="band band--cream">
+          <div className="wrap">
+            <div className="teach">
+              <h2 className="section section--center">{t.sec.questionsPro}</h2>
+              <div className="faq faq--two">
+                {copy.faq.map((item) => (
+                  <details key={item.q}>
+                    <summary>{item.q}</summary>
+                    <p>{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Бесплатные листы других стран. Только в разделе печати:
           человек уже пришел за листами, и ему может быть нужен свой
@@ -749,25 +769,35 @@ function FaqBody({ lang }: { lang: UiLang }) {
 
   return (
     <>
-      <section className="band">
+      <section className="band band--tight">
         <div className="wrap">
-          <div className="teach">
+          {/* Темы вопросов кнопками: нажал, и страница прокручивается к теме. */}
+          <nav className="faq-topics" aria-label={t.sec.questions}>
             {groups.map((g) => (
-              <div key={g.id} id={g.id} className="faq-group">
-                <h2 className="section">{g.title}</h2>
+              <a key={g.id} className="faq-topics__btn" href={`#${g.id}`}>
+                {g.title}
+              </a>
+            ))}
+          </nav>
+          {/* В каждой теме вопросы свернуты, в две колонки, как на всем
+              сайте. Ответы остаются в странице целиком: поисковик и ИИ
+              читают их, человек открывает свой вопрос. */}
+          {groups.map((g) => (
+            <div key={g.id} id={g.id} className="faq-group">
+              <h2 className="section section--center">{g.title}</h2>
+              <div className="faq faq--two">
                 {g.items.map((item) => (
-                  <div className="faq-item" key={item.q}>
-                    <h3 className="faq-q">{item.q}</h3>
+                  <details key={item.q}>
+                    <summary>{item.q}</summary>
                     {item.a.map((para) => (
-                      <p className="faq-a" key={para.slice(0, 40)}>
-                        {para}
-                      </p>
+                      <p key={para.slice(0, 40)}>{para}</p>
                     ))}
-                  </div>
+                  </details>
                 ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+          <p className="faq-sources">{t.sec.faqSourcesNote}</p>
         </div>
       </section>
 
@@ -827,7 +857,7 @@ function FaqElsewhere({ lang }: { lang: ContentLang }) {
     <section className="band band--cream">
       <div className="wrap">
         <div className="teach">
-          <h2 className="section">{t.sec.faqElsewhere}</h2>
+          <h2 className="section section--center">{t.sec.faqElsewhere}</h2>
           <p className="teach-p">{t.sec.faqElsewhereLead}</p>
           <ul className="faq-index">
             {unique.map((r) => (

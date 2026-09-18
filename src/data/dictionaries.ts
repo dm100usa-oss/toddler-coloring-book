@@ -110,6 +110,10 @@ export type Dict = {
     /** Указатель внизу раздела вопросов: где отвечено остальное. */
     faqElsewhere: string;
     faqElsewhereLead: string;
+    /** Строка об источниках внизу страницы вопросов. */
+    faqSourcesNote: string;
+    /** Заголовок вопросов на странице для специалистов. */
+    questionsPro: string;
     /** Ссылка на раздел вопросов с других страниц. */
     faqAll: string;
     coverAgeTitle: string;
@@ -248,7 +252,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     nav: {
       home: "Home",
       tools: "Choose a book",
-      programs: "For programs",
+      programs: "For professionals",
       ages: "By age",
       guides: "Guides",
       printables: "Free pages",
@@ -361,7 +365,10 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Questions parents ask",
-      faqElsewhere: "Answered elsewhere on this site",
+      questionsPro: "Frequently asked questions",
+      faqElsewhere: "More answers elsewhere on this site",
+      faqSourcesNote:
+        "Everything about a child's age rests on the public sources listed at the foot of the reference pages.",
       faqElsewhereLead:
         "These come up just as often, but each belongs on a page of its own, next to the " +
         "rest of that subject. Repeating them here would only split the answer in two.",
@@ -494,7 +501,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     nav: {
       home: "Inicio",
       tools: "Elegir un libro",
-      programs: "Para programas",
+      programs: "Para profesionales",
       ages: "Por edad",
       guides: "Guías",
       printables: "Dibujos gratis",
@@ -619,7 +626,10 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Preguntas que hacen los padres",
-      faqElsewhere: "Respondidas en otras páginas de esta web",
+      questionsPro: "Preguntas frecuentes",
+      faqElsewhere: "Más respuestas en otras páginas de esta web",
+      faqSourcesNote:
+        "Todo lo relativo a la edad del niño se apoya en las fuentes públicas que figuran al pie de las páginas de consulta.",
       faqElsewhereLead:
         "Se preguntan con la misma frecuencia, pero cada una pertenece a su propia página, " +
         "junto al resto de ese tema. Repetirlas aquí solo partiría la respuesta en dos.",
@@ -754,7 +764,7 @@ export const dictionaries: Record<UiLang, Dict> = {
     nav: {
       home: "Главная",
       tools: "Подбор раскраски",
-      programs: "Для программ",
+      programs: "Для специалистов",
       ages: "По возрасту",
       guides: "Статьи",
       printables: "Бесплатные листы",
@@ -872,7 +882,10 @@ export const dictionaries: Record<UiLang, Dict> = {
     },
     sec: {
       questions: "Что спрашивают родители",
-      faqElsewhere: "Отвечено на других страницах сайта",
+      questionsPro: "Частые вопросы",
+      faqElsewhere: "Еще ответы на других страницах сайта",
+      faqSourcesNote:
+        "Все, что касается возраста ребенка, опирается на открытые источники, перечисленные внизу справочных страниц.",
       faqElsewhereLead:
         "Эти вопросы задают не реже, но каждому место на своей странице, рядом с остальным " +
         "по той же теме. Повторить их здесь значило бы разделить ответ надвое.",

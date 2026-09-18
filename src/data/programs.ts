@@ -36,11 +36,10 @@ export type ProgramsCopy = {
 
 export const programsCopy: Record<ContentLang, ProgramsCopy> = {
   en: {
-    title: "Coloring books for toddler programs: daycare, home visiting, early intervention and libraries",
+    title: "Coloring books for daycares, preschools and early childhood specialists",
       metaTitle: "Coloring books for daycare and early childhood programs",
     lead:
-      "What is in the book, what you may print for a group, and how to get more than a few copies. " +
-      "Written for people who work with children aged one to three.",
+      "For daycare staff, speech therapists, librarians and anyone who works with children ages one to three: what is in the book, which pages you may print free for a group, and how to order in bulk.",
     body: [
       "This page is for adults who use coloring pages at work rather than at home: toddler rooms " +
         "in daycare centers, home visiting programs, early intervention and speech services, " +
@@ -118,9 +117,7 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
       "Libros para colorear para programas infantiles: guarderías, visitas al hogar, " +
         "intervención temprana y bibliotecas",
     lead:
-      "Qué contiene el libro, qué páginas puede imprimir gratuitamente para un grupo y cómo " +
-        "pedir varios ejemplares. Información para profesionales que trabajan con niños de uno " +
-        "a tres años.",
+      "Para educadoras, terapeutas del lenguaje, bibliotecarias y cualquier persona que trabaje con niños de uno a tres años: qué trae el libro, qué páginas se pueden imprimir gratis para el grupo y cómo pedir muchos ejemplares.",
     body: [
       "Esta página está dirigida a profesionales que utilizan dibujos para colorear en su " +
         "trabajo con niños: personal de guarderías y centros infantiles, programas de visitas " +
@@ -200,12 +197,10 @@ export const programsCopy: Record<ContentLang, ProgramsCopy> = {
   },
 
   ru: {
-    title: "Раскраски для детских программ: ясли, домашние визиты, раннее вмешательство и библиотеки",
+    title: "Раскраски для яслей, детских садов и специалистов раннего развития",
       metaTitle: "Раскраски для яслей и программ раннего развития",
     lead:
-      "Что входит в книгу, какие страницы можно бесплатно печатать для группы и как заказать " +
-        "большое количество экземпляров. Информация для специалистов, работающих с детьми от " +
-        "года до трех лет.",
+      "Для воспитателей, логопедов, библиотекарей и всех, кто занимается с малышами от года до трех: что в книге, какие листы можно бесплатно печатать на группу и как заказать много экземпляров.",
     body: [
       "Эта страница предназначена для специалистов, которые используют раскраски в работе с " +
         "детьми: сотрудников яслей и детских центров, программ домашних визитов и раннего " +
@@ -499,7 +494,7 @@ export const programsLabels: Record<ContentLang, ProgramsLabels> = {
     printablesNote:
       "Working with a group? These pages may be printed in any number for daycare, a library, a " +
       "home visit or a waiting room.",
-    printablesCta: "For programs and specialists",
+    printablesCta: "For professionals",
   },
   es: {
     audiencesTitle: "Dónde se usa este tipo de hoja",
@@ -522,7 +517,7 @@ export const programsLabels: Record<ContentLang, ProgramsLabels> = {
       "¿Trabaja con un grupo? Las páginas gratuitas pueden imprimirse en cualquier cantidad " +
         "para guarderías, bibliotecas, visitas al hogar, salas de espera y otras actividades " +
         "con niños.",
-    printablesCta: "Para programas y profesionales",
+    printablesCta: "Para profesionales",
   },
   ru: {
     audiencesTitle: "Где такие страницы используют",
@@ -544,6 +539,6 @@ export const programsLabels: Record<ContentLang, ProgramsLabels> = {
     printablesNote:
       "Работаете с группой? Бесплатные страницы можно печатать в любом количестве для яслей, " +
         "библиотеки, домашних визитов, поликлиники и других занятий с детьми.",
-    printablesCta: "Для программ и специалистов",
+    printablesCta: "Для специалистов",
   },
 };

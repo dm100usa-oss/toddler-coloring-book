@@ -2632,3 +2632,53 @@ html[lang="ru"] .hero {
   /* Раскрыли, и кнопка больше не нужна. */
   .wordlist-toggle:checked ~ .wordlist-more { display: none; }
 }
+
+/* ==================== ПРАВИЛА ОФОРМЛЕНИЯ, ОБЩИЕ С ОСНОВНЫМ САЙТОМ ====================
+   Обычный текст выровнен по ширине, правый край ровный, последняя строка
+   слева. На компьютере без переносов по слогам, на телефоне с переносами. */
+main p, main li { text-align: justify; text-justify: inter-word; text-align-last: left; }
+@media (min-width: 900px) {
+  main :is(p, li) { hyphens: manual !important; -webkit-hyphens: manual !important; }
+}
+@media (max-width: 899px) {
+  main :is(p, li) { hyphens: auto; -webkit-hyphens: auto; }
+}
+/* Где растягивать нельзя: карточки, кнопки, таблицы, короткие строки. */
+main :is(.card, .theme, .sheet, .sheets, .free-sheets, .guides, .guide-next, .ladder, .review,
+  .rating, .buys, .buy-block, .btn-row, .key-specs, .specs, .topics, .picker, .result, .markets,
+  .pick, .thumbs, .faq-topics, .video-card, .label-card, .labels, .steps, .needs, .facts,
+  .quick-facts, .sources, .agetable, .tablewrap, .wordlist, .wordlist-box, .note) :is(p, li),
+main :is(.guides, .ladder, .topics, .thumbs, .faq-index, .key-specs) > li { text-align: left; }
+main .pagehead p, main .nf p, main .section--center { text-align: center; text-align-last: center; }
+h2.section--center { text-align: center; }
+
+/* Общий текст вне карточек на всю ширину страницы на компьютере. */
+.lead, .lead--wide, .prose p, .why-text, .why-list, .showcase__lead, .what-lead,
+.book-body ul.inside, .book-body > p, .book-body .faq, .faq-item, .critic-quote,
+.topics, .topics-all, .faq-index { max-width: none; }
+.guide { max-width: var(--maxw); }
+
+/* Розовая плашка: заголовок и строка под ним шире на компьютере. */
+@media (min-width: 900px) {
+  .pagehead { padding-inline: clamp(1rem, 4vw, 2rem); }
+  .pagehead h1 { max-width: 40ch; }
+  .pagehead p { max-width: 70ch; }
+}
+
+/* Страница вопросов: темы кнопками, вопросы свернуты в две колонки. */
+.faq-topics { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 0 0 var(--gap-4); }
+.faq-topics__btn {
+  font-size: var(--t-small); font-weight: 700; padding: 0.45rem 1rem; border-radius: 999px;
+  background: var(--cream); color: var(--pink-deep); border: 1px solid rgba(51, 32, 44, 0.1);
+}
+.faq-topics__btn:hover { text-decoration: none; border-color: var(--pink-hot); }
+.faq-group { scroll-margin-top: 1rem; }
+.faq-sources { font-size: var(--t-small); color: var(--ink-2); margin: var(--gap-3) 0 0; }
+@media (max-width: 640px) {
+  .faq-topics { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; margin-bottom: var(--gap-3); }
+  .faq-topics::-webkit-scrollbar { display: none; }
+  .faq-topics__btn { white-space: nowrap; }
+}
+
+/* Вопросы сразу под вступительной строкой, без пустого промежутка. */
+.band.band--tight { padding-top: 0; }

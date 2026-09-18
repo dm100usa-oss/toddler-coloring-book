@@ -901,16 +901,7 @@ export const faqCopy: Record<UiLang, SectionCopy> = {
       "Answers to what parents, teachers and program staff actually ask about the first " +
       "stage of coloring, about the book itself, and about buying and printing it.",
     body: [
-      "Every answer here is written to be read on its own. Nothing refers back to an " +
-        "earlier answer and nothing depends on the one below it, so any single question " +
-        "can be read straight from a search result without the rest of the page.",
-      "Where an answer would have been easier to write as a promise, it states a fact " +
-        "instead. We do not claim that coloring develops anything in particular, and where " +
-        "we do not know something, we say so. Everything about a child's age rests on the " +
-        "public sources listed at the foot of the reference pages.",
-      "Questions already answered elsewhere on this site are not repeated here. They are " +
-        "gathered at the end of this page as a list of links to the pages where they " +
-        "belong.",
+      "These are the questions parents ask most often. Pick a topic and open your question.",
     ],
   },
   es: {
@@ -920,16 +911,7 @@ export const faqCopy: Record<UiLang, SectionCopy> = {
       "los programas sobre la primera etapa de colorear, sobre el libro y sobre cómo " +
       "comprarlo o imprimirlo.",
     body: [
-      "Cada respuesta está escrita para leerse por separado. Ninguna remite a otra anterior " +
-        "ni depende de la siguiente, así que cualquier pregunta se entiende aunque se llegue " +
-        "a ella directamente desde un buscador.",
-      "Donde habría sido más fácil escribir una promesa, hay un dato comprobable. No " +
-        "afirmamos que colorear desarrolle nada en concreto, y cuando no sabemos algo, lo " +
-        "decimos. Todo lo relativo a la edad del niño se apoya en las fuentes públicas que " +
-        "figuran al pie de las páginas de consulta.",
-      "Las preguntas ya respondidas en otras páginas de esta web no se repiten aquí. Están " +
-        "recogidas al final de esta página en forma de enlaces a las páginas que les " +
-        "corresponden.",
+      "Aquí están las preguntas que más hacen las familias. Elija un tema y abra su pregunta.",
     ],
   },
   ru: {
@@ -938,15 +920,7 @@ export const faqCopy: Record<UiLang, SectionCopy> = {
       "Ответы на то, что родители, воспитатели и специалисты спрашивают на самом деле: о " +
       "первом этапе раскрашивания, о самой книге, о покупке и о печати.",
     body: [
-      "Каждый ответ написан так, чтобы читаться отдельно. Ни один не ссылается на " +
-        "предыдущий и не зависит от следующего, поэтому любой вопрос понятен, даже если " +
-        "человек попал прямо на него из поиска.",
-      "Там, где проще было бы написать обещание, стоит проверяемый факт. Мы не утверждаем, " +
-        "что раскрашивание что-то развивает, а когда чего-то не знаем, так и говорим. Все, " +
-        "что касается возраста ребенка, опирается на открытые источники, перечисленные " +
-        "внизу справочных страниц.",
-      "Вопросы, уже разобранные на других страницах сайта, здесь не повторяются. Они " +
-        "собраны внизу этой страницы ссылками на те страницы, где им место.",
+      "Здесь вопросы, которые родители задают чаще всего. Выберите тему и откройте свой вопрос.",
     ],
   },
 };
