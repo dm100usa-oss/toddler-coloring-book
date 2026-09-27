@@ -28,6 +28,8 @@ export type ProPageCopy = {
      длинный и в выдаче обрезался. Пусто - берется обычный заголовок.
      На саму страницу это поле не влияет. */
   metaTitle?: string;
+  /** Описание для поиска, если вводный абзац слишком короткий. */
+  metaDescription?: string;
   lead: string;
   body: string[];
   fitTitle: string;
@@ -694,6 +696,9 @@ export const proPages: ProPage[] = [
 
       es: {
         title: "Libros para colorear para guarderías y centros de cuidado infantil",
+        metaDescription:
+          "Libros para colorear para guarderías: 111 dibujos grandes y sencillos, uno por " +
+            "página, en español o en inglés. Pida en Amazon un ejemplar para cada niño.",
         lead:
           "Un ejemplar para cada niño o uno para el grupo, en español o en inglés. 111 " +
             "dibujos y la posibilidad de pedir en Amazon la cantidad de ejemplares que " +

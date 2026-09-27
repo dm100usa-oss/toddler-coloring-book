@@ -92,7 +92,7 @@ export async function generateMetadata({
     const c = pp.copy[l];
     return {
       title: c.metaTitle ?? c.title,
-      description: shortDesc(c.lead),
+      description: c.metaDescription ?? shortDesc(c.lead),
       alternates: {
         canonical: `${SITE_URL}${itemPath(l, "programs", pp.slug[l])}`,
         languages: langAlternates({

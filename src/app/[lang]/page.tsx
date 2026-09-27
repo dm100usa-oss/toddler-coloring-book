@@ -47,7 +47,7 @@ export async function generateMetadata({
   const ed = editions[l];
   return {
     title: ed.title,
-    description: shortDesc(ed.headline + " " + ed.note),
+    description: ed.metaDescription ?? shortDesc(ed.headline + " " + ed.note),
     alternates: {
       canonical: `${SITE_URL}${homePath(l)}`,
       languages: langAlternates({

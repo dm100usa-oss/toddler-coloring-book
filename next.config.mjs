@@ -40,6 +40,16 @@ const nextConfig = {
         has: [{ type: "host", value: "toddler-coloring-book.vercel.app" }],
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
+      /* Бесплатные листы для печати. Каждый файл поисковик считал
+         отдельной страницей почти без текста, и таких файлов больше
+         шестидесяти: для него это выглядело как пачка пустых страниц
+         (Bing прямо так и написал). Помечаем файлы "не заносить в
+         поиск". Скачиваются они как раньше, а в поиске остаются сами
+         страницы с раскрасками, где про листы все написано. */
+      {
+        source: "/printables/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
       {
         source: "/:path*",
         headers: [

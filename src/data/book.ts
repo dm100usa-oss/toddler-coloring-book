@@ -61,6 +61,11 @@ export type Edition = {
      остальное, что было в длинном вводном абзаце, уже стоит выше
      в пунктах: повторять его второй раз незачем. */
   note: string;
+  /** Описание для поиска, если собранное из заголовка и строки выше
+      выходит слишком коротким. Bing отметил английскую главную:
+      длинная пара предложений не влезала, и оставалось одно, на 99
+      знаков. Если поля нет, описание собирается как раньше. */
+  metaDescription?: string;
   /** Пять свойств, которые родители ищут словами. Стоят справа
       от обложки, на первом экране, вместо кнопки покупки:
       сначала человек понимает, что это за книга, и только потом
@@ -201,6 +206,9 @@ export const editions: Record<UiLang, Edition> = {
         "sits its name in hollow letters, which can be colored too.",
     note:
       "111 drawings and 111 first words a child picks up while coloring.",
+    metaDescription:
+      "A first coloring book for kids ages 1 to 3: 111 big, simple hand-drawn pictures " +
+        "with thick outlines, one per page, each with a first word to color.",
     needs: [
       "Big, simple pictures, drawn by hand",
       "Thick outlines a child can actually see",
