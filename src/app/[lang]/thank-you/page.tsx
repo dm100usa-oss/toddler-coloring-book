@@ -36,6 +36,12 @@ export default async function ThankYouPage({
   const { s } = await searchParams;
 
   let link: string | null = null;
+  /* Покупка для аналитики. Считается только когда Stripe подтвердил
+     оплату, и один раз на заказ: если человек обновит страницу или
+     вернется к ней из письма, второй покупки не появится. Номер заказа
+     уходит в аналитику как номер сделки, по нему Google и сам убирает
+     повторы. */
+  let purchase: string | null = null;
   if (s) {
     try {
       const order = await paidOrder(s);
@@ -44,6 +50,13 @@ export default async function ThankYouPage({
           order.format === "a4" ? "a4" : "letter"
         ) as PdfFormat;
         link = `/api/download?t=${signDownload(order.book, format, s)}`;
+        const data = JSON.stringify({
+          transaction_id: s,
+          value: order.amount,
+          currency: order.currency,
+          items: [{ item_id: order.book, item_variant: format, price: order.amount, quantity: 1 }],
+        }).replace(/</g, "\\u003c");
+        purchase = `(function(){var k='ga_purchase_${s}';try{if(localStorage.getItem(k))return;localStorage.setItem(k,'1');}catch(e){}if(typeof gtag==='function'){gtag('event','purchase',${data});}})();`;
       }
     } catch (error) {
       console.error("thank-you lookup failed", error);
@@ -52,6 +65,7 @@ export default async function ThankYouPage({
 
   return (
     <main className="wrap thanks">
+      {purchase ? <script dangerouslySetInnerHTML={{ __html: purchase }} /> : null}
       {link ? (
         <>
           <h1>{t.title}</h1>

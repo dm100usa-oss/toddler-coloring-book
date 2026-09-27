@@ -55,6 +55,10 @@ export type PaidOrder = {
   format: string;
   lang: string;
   email: string | null;
+  /** Сколько заплатил, в обычных деньгах (3.99, а не 399), и в какой
+      валюте. Нужно только для счета покупок в аналитике. */
+  amount: number;
+  currency: string;
 };
 
 export async function paidOrder(sessionId: string): Promise<PaidOrder | null> {
@@ -71,6 +75,8 @@ export async function paidOrder(sessionId: string): Promise<PaidOrder | null> {
     format: meta.format ?? "",
     lang: meta.lang ?? "en",
     email: details?.email ?? null,
+    amount: typeof session.amount_total === "number" ? session.amount_total / 100 : 0,
+    currency: typeof session.currency === "string" ? session.currency.toUpperCase() : "USD",
   };
 }
 
