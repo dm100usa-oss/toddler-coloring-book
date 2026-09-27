@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { GoogleTag } from "@/components/GoogleTag";
 import { euroUi } from "@/data/euro";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 
@@ -26,6 +27,9 @@ export const metadata: Metadata = {
 export default function EuroLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
+      <head>
+        <GoogleTag />
+      </head>
       <body>
         <main>{children}</main>
       </body>

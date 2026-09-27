@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { GoogleTag } from "@/components/GoogleTag";
 import { euroUi } from "@/data/euro";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 
@@ -28,6 +29,9 @@ export const metadata: Metadata = {
 export default function EspanaLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head>
+        <GoogleTag />
+      </head>
       <body>
         <main>{children}</main>
       </body>

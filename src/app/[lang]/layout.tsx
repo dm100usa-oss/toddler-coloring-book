@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { GoogleTag } from "@/components/GoogleTag";
 import { Header, Footer } from "@/components/Chrome";
 import { activeLangs, dictionaries } from "@/data/dictionaries";
 import { editions } from "@/data/book";
@@ -93,6 +94,9 @@ export default async function LangLayout({
      набираются Nunito, а рукописная строка шрифтом Caveat. */
   return (
     <html lang={dictionaries[l].htmlLang}>
+      <head>
+        <GoogleTag />
+      </head>
       <body>
         <Header lang={l} />
         <main>{children}</main>
